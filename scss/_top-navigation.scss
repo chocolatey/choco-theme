@@ -1,0 +1,111 @@
+#topNav {
+    padding: .5rem 0;
+    background: $white;
+    background: var(--background-light);
+    transition: $theme-transition;
+
+    .navbar-brand img {
+        height: 3rem;
+        padding-left: 1rem;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+        margin-right: 69px;
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                padding-right: $spacer;
+            }
+
+            &:last-child {
+                padding-right: .25rem;
+            }
+
+            .nav-link {
+                padding: 0;
+            }
+
+            .btn-search {
+                border: 1px solid var(--border-secondary);
+                color: $secondary;
+                font-weight: 400;
+
+                &:focus, &:hover {
+                    background: $primary;
+
+                    .fas {
+                        color: $white;
+                    }
+                }
+
+                .fas {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    #topNav {
+        .navbar-nav {
+            .nav-item {
+                .btn-search {
+                    border-color: $primary;
+                    width: 250px;
+                    font-size: $font-size-base;
+
+                    &:focus, &:hover {
+                        background: none;
+                        box-shadow: 0 0 0 0.2rem $primary-opacity;
+                        color: var(--text);
+    
+                        .fas {
+                            color: $primary;
+                        }
+                    }
+
+                    .fas {
+                        color: $primary-opacity-50;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #topNav {
+        padding-bottom: .5rem;
+        height: 92px;
+
+        .navbar-brand img {
+            height: 100px;
+            top: -25px;
+            position: absolute;
+        }
+
+        .navbar-nav {
+            margin-right: 0;
+
+            .nav-item {
+                &:not(:last-child) {
+                    padding-right: $spacer * 2;
+                }
+
+                &:last-child {
+                    padding-right: 1rem;
+                }
+
+                .btn-search {
+                    width: 300px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "choco-theme",
+  "version": "0.1.0",
+  "description": "Global theme for Chocolatey.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chocolatey/choco-theme.git"
+  },
+  "author": "chocolatey",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/chocolatey/choco-theme/issues"
+  },
+  "homepage": "https://github.com/chocolatey/choco-theme#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "anchor-js": "^4.3.0",
+    "bootstrap": "^4.5.3",
+    "docsearch.js": "^2.6.3",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-purgecss": "^3.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "jquery": "^3.5.1",
+    "merge-stream": "^2.0.0",
+    "node-sass": "^5.0.0"
+  },
+  "devDependencies": {}
+}
