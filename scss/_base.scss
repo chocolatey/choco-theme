@@ -79,6 +79,14 @@ h1:not(.title), h2, .breadcrumb {
     list-style-type: disc;
 }
 
+.list-inline {
+    margin-bottom: $spacer / 4 * 3;
+
+    .list-inline-item {
+        margin-bottom: $spacer / 4;
+    }
+}
+
 /*Images & Main Content*/
 img {
     max-width: 100%;
