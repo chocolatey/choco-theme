@@ -43,10 +43,6 @@
     }
     
     .navbar-nav {
-        flex-direction: row;
-        align-items: center;
-        margin-right: 69px;
-
         .nav-item {
             display: flex;
             align-items: center;
@@ -77,6 +73,29 @@
                     color: $primary;
                 }
             }
+        }
+    }
+
+    .navbar-toggler {
+        display: inline-block;
+        line-height: 1.5;
+        margin: 0 $spacer;
+        background: $white;
+        background: var(--background-light);
+        border: 1px solid $gray-300;
+        border: 1px solid var(--border-secondary);
+        transition: $theme-transition;
+
+        &:focus, &:hover {
+            background: $primary;
+
+            .fas {
+                color: $white;
+            }
+        }
+
+        .fas {
+            color: $primary;
         }
     }
 
@@ -139,7 +158,6 @@
             }
         }
 
-
         .navbar-nav {
             margin-right: 0;
 
@@ -152,6 +170,10 @@
                     padding-right: 1rem;
                 }
             }
+        }
+
+        .navbar-toggler {
+            display: none;
         }
     }
 }
