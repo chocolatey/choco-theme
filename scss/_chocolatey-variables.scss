@@ -108,6 +108,7 @@ $theme-transition: .5s;
 $enable-responsive-font-sizes: true;
 $body-bg: $gray-100;
 $font-family-sans-serif: 'PT Sans', sans-serif;
+$font-size-base: 1rem;
 
 // Links
 $link-hover-decoration: none;
@@ -162,3 +163,7 @@ $input-focus-border-color: $primary;
 
 // Tabs
 $nav-tabs-link-active-bg: $white;
+
+// Navbars
+$navbar-toggler-padding-y: .375rem;
+$navbar-toggler-font-size: $font-size-base;

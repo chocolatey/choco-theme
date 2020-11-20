@@ -206,7 +206,7 @@ btnSearch.click(function() {
 
     topNav.css('height', topNavHeight);
     searchBox.add('.btn-search-close').removeClass('d-none');
-    topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(leftSidebarNav.find('.navbar-toggler')).addClass('d-none');
+    topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(topNav.find('.navbar-toggler')).add(leftSidebarNav.find('.navbar-toggler')).addClass('d-none');
     searchQuery.focus();
 });
 
@@ -217,7 +217,7 @@ btnSearchClose.click(function() {
 function closeMobileSearch() {
     topNav.css('height', '');
     searchBox.add('.btn-search-close').addClass('d-none');
-    topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(leftSidebarNav.find('.navbar-toggler')).removeClass('d-none');
+    topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(topNav.find('.navbar-toggler')).add(leftSidebarNav.find('.navbar-toggler')).removeClass('d-none');
 }
 
 // Wraps markdown task list items for styling
