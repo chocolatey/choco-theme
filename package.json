@@ -30,6 +30,7 @@
     "gulp-uglify-es": "^2.0.0",
     "jquery": "^3.5.1",
     "merge-stream": "^2.0.0",
+    "mousetrap": "^1.6.5",
     "node-sass": "^5.0.0"
   },
   "devDependencies": {}
