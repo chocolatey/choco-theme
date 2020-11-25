@@ -9,8 +9,7 @@ const leftSidebarNav =  $('#leftSidebarNav'),
       btnSearch = topNav.find('.btn-search'),
       btnSearchClose = topNav.find('.btn-search-close');
 
-var keys = {},
-    isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0,
+var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0,
     windowWidth = $(window).width();
 
 // Anchor
@@ -181,24 +180,17 @@ searchQuery.blur(function() {
 });
 
 // Open search box on key command
-$(document).keydown(function(e) {
-    keys[e.which] = true;
-
-    if (isMac) {
-        if (keys[91] && keys[75]) { // Ctrl + k
-            e.preventDefault();
-            searchQuery.focus();
-        }
-    } else {
-        if (keys[17] && keys[75]) { // Cmd + k
-            e.preventDefault();
-            searchQuery.focus();
-        }
-    }
-});
-$(document).keyup(function(e) {
-  delete keys[e.which];
-});
+if (isMac) {
+    Mousetrap.bind('command+k', function() {
+        searchQuery.focus();
+        return false;
+    });
+} else {
+    Mousetrap.bind('ctrl+k', function() {
+        searchQuery.focus();
+        return false;
+    });
+}
 
 // Mobile search
 btnSearch.click(function() {
