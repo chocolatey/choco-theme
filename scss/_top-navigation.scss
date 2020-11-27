@@ -169,6 +169,18 @@
                 &:nth-last-child(2) {
                     padding-right: 1rem;
                 }
+
+                .nav-link {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .navbar-collapse {
+            .navbar-nav {
+                .nav-item {
+                    padding-right: $spacer * 2;
+                }
             }
         }
 
