@@ -125,12 +125,28 @@ img {
     padding-left: $spacer * 3 - $spacer / 4 !important;
 }
 
+.pl-c375 {
+    padding-left: $spacer * 4 - $spacer / 4 !important;
+}
+
 .pl-c4 {
     padding-left: $spacer * 4 !important;
 }
 
+.pl-c475 {
+    padding-left: $spacer * 5 - $spacer / 4;
+}
+
 .pl-c5 {
     padding-left: $spacer * 5 !important;
+}
+
+.pl-c6 {
+    padding-left: $spacer * 6 !important;
+}
+
+.pl-c7 {
+    padding-left: $spacer * 7 !important;
 }
 
 /*Modals*/
