@@ -102,7 +102,7 @@ img {
         margin-top: 0;
     }
 
-    a:not(.anchorjs-link) {
+    a:not(.anchorjs-link):not(.btn):not(.badge) {
         padding: 14px 0;
     }
 
@@ -175,11 +175,6 @@ img {
     }
 }
 
-/*Badges*/
-.badge-key {
-    font-family: $font-family-monospace;
-}
-
 /*Gitter*/
 .gitter-chat-embed, .gitter-open-chat-button {
     z-index: 9999;
@@ -198,7 +193,7 @@ footer {
     }
 
     #mainContent {
-        a:not(.anchorjs-link) {
+        a:not(.anchorjs-link):not(.btn):not(.badge) {
             padding: 0;
         }
     }
