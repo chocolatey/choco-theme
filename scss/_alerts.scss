@@ -7,16 +7,46 @@
 
 @each $color, $value in $theme-colors {
     .alert-#{$color} {
-        color: color-yiq($value);
-
+        transition: $theme-transition;
+        
         a {
-            color: color-yiq($value);
             font-weight: bold;
 
             &:hover {
                 text-decoration: underline;
             }
         }
+        .close {
+            text-shadow: none;
+        }
+    }
+}
+
+.alert-primary, .alert-success, .alert-danger {
+    color: $white;
+    color: var(--background);
+
+    a {
+        color: $white;
+        color: var(--background);
+    }
+}
+
+.alert-warning {
+    color: $gray-900;
+    color: var(--background);
+
+    a {
+        color: $gray-900;
+        color: var(--background);
+    }
+}
+
+.alert-secondary {
+    color: $white;
+
+    a {
+        color: $white;
     }
 }
 

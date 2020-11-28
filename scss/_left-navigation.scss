@@ -105,8 +105,38 @@
                                                 > .navbar-nav {
                                                     > .nav-item {
                                                         > .nav-link {
+                                                            &.nav-link-collapse .btn-collapse {
+                                                                padding-left: $spacer * 4 - $spacer / 4;
+                                                            }
+            
                                                             &:not(.nav-link-collapse) {
                                                                 padding-left: $spacer * 5;
+                                                            }
+                                                        }
+                                                        > .collapse {
+                                                            > .navbar-nav {
+                                                                > .nav-item {
+                                                                    > .nav-link {
+                                                                        &.nav-link-collapse .btn-collapse {
+                                                                            padding-left: $spacer * 5 - $spacer / 4;
+                                                                        }
+
+                                                                        &:not(.nav-link-collapse) {
+                                                                            padding-left: $spacer * 6;
+                                                                        }
+                                                                    }
+                                                                    > .collapse {
+                                                                        > .navbar-nav {
+                                                                            > .nav-item {
+                                                                                > .nav-link {
+                                                                                    &:not(.nav-link-collapse) {
+                                                                                        padding-left: $spacer * 7;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
                                                             }
                                                         }
                                                     }

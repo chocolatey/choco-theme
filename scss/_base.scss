@@ -93,7 +93,7 @@ img {
     height: auto;
 }
 
-#mainContent {
+.chocolatey-docs #mainContent {
     h1:not(.title):first-of-type {
         display: none;
     }
@@ -101,8 +101,10 @@ img {
     h2:first-of-type {
         margin-top: 0;
     }
+}
 
-    a:not(.anchorjs-link) {
+#mainContent {
+    a:not(.anchorjs-link):not(.btn):not(.badge) {
         padding: 14px 0;
     }
 
@@ -125,12 +127,28 @@ img {
     padding-left: $spacer * 3 - $spacer / 4 !important;
 }
 
+.pl-c375 {
+    padding-left: $spacer * 4 - $spacer / 4 !important;
+}
+
 .pl-c4 {
     padding-left: $spacer * 4 !important;
 }
 
+.pl-c475 {
+    padding-left: $spacer * 5 - $spacer / 4;
+}
+
 .pl-c5 {
     padding-left: $spacer * 5 !important;
+}
+
+.pl-c6 {
+    padding-left: $spacer * 6 !important;
+}
+
+.pl-c7 {
+    padding-left: $spacer * 7 !important;
 }
 
 /*Modals*/
@@ -159,11 +177,6 @@ img {
     }
 }
 
-/*Badges*/
-.badge-key {
-    font-family: $font-family-monospace;
-}
-
 /*Gitter*/
 .gitter-chat-embed, .gitter-open-chat-button {
     z-index: 9999;
@@ -182,14 +195,14 @@ footer {
     }
 
     #mainContent {
-        a:not(.anchorjs-link) {
+        a:not(.anchorjs-link):not(.btn):not(.badge) {
             padding: 0;
         }
     }
 }
 
 @include media-breakpoint-up(xl) {
-    #mainContent {
+    .chocolatey-docs  #mainContent {
         h2:first-of-type {
             margin-top: $spacer * 2;
         }

@@ -1,0 +1,189 @@
+// General badges
+.badge-primary, .badge-success, .badge-danger {
+    color: var(--background);
+}
+
+// Custom badges
+.badge-key {
+    font-family: $font-family-monospace;
+}
+
+// Solid buttons/badges shared states
+.btn-primary, .btn-success, .btn-danger,
+a.badge-primary, a.badge-success, a.badge-danger
+{
+    color: var(--background);
+
+    &:not(:disabled):not(.disabled) {
+        &:active, &.active, &:active:focus, &.active:focus {
+            color: var(--background);
+        }
+    }
+
+    &:hover, &:focus, &.focus, &:disabled, &.disabled {
+        color: var(--background);
+    }
+}
+
+// Outline buttons shared states
+.btn-outline-primary, .btn-outline-success, .btn-outline-danger
+{
+    &:not(:disabled):not(.disabled) {
+        &:active, &.active, &:active:focus, &.active:focus {
+            color: var(--background);
+        }
+    }
+
+    &:hover {
+        color: var(--background);
+    }
+}
+
+// Outline buttons with badges
+.btn-outline-primary, .btn-outline-success, .btn-outline-danger {
+    .badge {
+        color: $white;
+        color: var(--background);
+    }
+
+    &:hover, &:active {
+        .badge {
+            background: $white;
+            background: var(--background);
+        }
+    }
+}
+
+.btn-outline-primary {
+    .badge {
+        background: $blue;
+    }
+
+    &:hover, &:active {
+        .badge {
+            color: $blue;
+        }
+    }
+}
+
+.btn-outline-danger {
+    .badge {
+        background: $red;
+    }
+
+    &:hover, &:active {
+        .badge {
+            color: $red;
+        }
+    }
+}
+
+.btn-outline-success {
+    .badge {
+        background: $green;
+    }
+
+    &:hover, &:active {
+        .badge {
+            color: $green;
+        }
+    }
+}
+
+.btn-outline-warning {
+    .badge {
+        background: $yellow;
+        color: $gray-900;
+    }
+
+    &:hover, &:active {
+        .badge {
+            background: $gray-900;
+            color: $yellow;
+        }
+    }
+}
+
+.btn-outline-secondary {
+    .badge {
+        background: $gray-600;
+        color: $white;
+    }
+
+    &:hover, &:active {
+        .badge {
+            background: $white;
+            color: $gray-600;
+        }
+    }
+}
+
+// Solid buttons with badges
+.btn-primary, .btn-success, .btn-danger {
+    .badge {
+        background: $white;
+        background: var(--background);
+    }
+}
+
+.btn-primary {
+    .badge {
+        color: $blue;
+    }
+
+    &:hover, &:active, &:focus {
+        .badge {
+            color: darken($blue, 7.5%);
+        }
+    }
+}
+
+.btn-success {
+    .badge {
+        color: $green;
+    }
+
+    &:hover, &:active, &:focus {
+        .badge {
+            color: darken($green, 7.5%);
+        }
+    }
+}
+
+.btn-danger {
+    .badge {
+        color: $red;
+    }
+
+    &:hover, &:active, &:focus {
+        .badge {
+            color: darken($red, 7.5%);
+        }
+    }
+}
+
+.btn-warning {
+    .badge {
+        background: $gray-900;
+        color: $yellow;
+    }
+
+    &:hover, &:active, &:focus {
+        .badge {
+            color: darken($yellow, 7.5%);
+        }
+    }
+}
+
+.btn-secondary {
+    .badge {
+        background: $white;
+        color: $gray-600;
+    }
+
+    &:hover, &:active, &:focus {
+        .badge {
+            color: darken($gray-600, 7.5%);
+        }
+    }
+}
