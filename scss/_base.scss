@@ -93,7 +93,7 @@ img {
     height: auto;
 }
 
-#mainContent {
+.chocolatey-docs #mainContent {
     h1:not(.title):first-of-type {
         display: none;
     }
@@ -101,7 +101,9 @@ img {
     h2:first-of-type {
         margin-top: 0;
     }
+}
 
+#mainContent {
     a:not(.anchorjs-link):not(.btn):not(.badge) {
         padding: 14px 0;
     }
@@ -200,7 +202,7 @@ footer {
 }
 
 @include media-breakpoint-up(xl) {
-    #mainContent {
+    .chocolatey-docs  #mainContent {
         h2:first-of-type {
             margin-top: $spacer * 2;
         }
