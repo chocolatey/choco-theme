@@ -167,3 +167,12 @@ $nav-tabs-link-active-bg: $white;
 // Navbars
 $navbar-toggler-padding-y: .375rem;
 $navbar-toggler-font-size: $font-size-base;
+
+// Embed Ratios
+$embed-responsive-aspect-ratios: (
+  (21 9),
+  (16 9),
+  (4 3),
+  (1 1),
+  (700 506)
+);
