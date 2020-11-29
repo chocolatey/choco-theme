@@ -187,3 +187,8 @@ a.badge-primary, a.badge-success, a.badge-danger
         }
     }
 }
+
+// Custom buttons
+.gitter-open-chat-button, .gitter-open-chat-button:visited {
+    color: var(--background);
+}
