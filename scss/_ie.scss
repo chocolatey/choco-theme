@@ -3,6 +3,16 @@
         max-height: none;
     }
 
+    .placeholder-container div {
+        &:first-child {
+            display: none;
+        }
+    
+        &:last-child {
+            filter: unset;
+        }
+    }
+
     @include media-breakpoint-up(md) {
         body > .container-fluid {
             margin-top: 0;
