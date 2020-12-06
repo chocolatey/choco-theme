@@ -115,6 +115,7 @@ showCollapsedHash();
 
 // Functions based on viewport
 getWindowVHHeight();
+getMainHeight();
 toggleRightSidebarNav();
 toggleStickyTop();
 getLeftSidebarNavHeight();
@@ -316,6 +317,7 @@ $.each($('.btn-collapse-target'), function() {
 
 $(window).on("resize", function () {
     getWindowVHHeight();
+    getMainHeight();
     toggleStickyTop();
     getLeftSidebarNavHeight();
     autoplayCarousels();
@@ -341,6 +343,11 @@ function getCookieExpirationNever() {
 function getWindowVHHeight() {
     let vh = window.innerHeight * 0.01;
     $('html').css('--vh', vh + 'px');
+}
+
+function getMainHeight() {
+    let mh = window.innerHeight - $('header').outerHeight(true) - $('footer').outerHeight(true);;
+    $('main').css('--mh', mh + 'px');
 }
 
 function toggleRightSidebarNav() {

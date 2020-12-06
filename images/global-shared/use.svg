@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <symbol id="bg-rounded-corner" viewBox="0 0 1000 1000">
+            <path d="M1083.5,1085.81864H.5v-1083c54.27649,148.17209,171.48669,408.57172,417,656C668.43677,911.71269,934.52515,1031.24626,1083.5,1085.81864Z"/>
+        </symbol>
+        <symbol id="bg-sharp-corner" viewBox="0 0 723 946">
+            <polygon points="0.707 723.505 222.707 945.505 723.005 945.505 723.005 1.207 0.707 723.505"/>
+        </symbol>
+        <symbol id="bg-facebook-share-placeholder" viewBox="0 0 1200 628">
+            <rect width="1200" height="628"/>
+        </symbol>
+        <symbol id="bg-twitter-share-placeholder" viewBox="0 0 150 150">
+            <rect width="150" height="150"/>
+        </symbol>
+    </defs>
+</svg>

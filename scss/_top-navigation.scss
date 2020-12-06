@@ -1,3 +1,8 @@
+header {
+    border-bottom: 1px solid $gray-300;
+    border-bottom: 1px solid var(--border);
+}
+
 #topNav {
     padding: $spacer / 2 0;
     background: $white;
@@ -76,6 +81,37 @@
         }
     }
 
+    .navbar-collapse {
+        .navbar-nav {
+            .nav-item {
+                padding: 0;
+
+                .nav-link {
+                    color: $gray-900;
+                    color: var(--text);
+                    width: 100%;
+                    padding: .5rem 1rem .5rem 2rem;
+                    border-left: 6px solid transparent;
+
+                    &.active, &:hover {
+                        border-color: $primary;
+                        color: $primary;
+                        background: $primary-opacity;
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-link.nav-link-expand {
+        padding-left: 0;
+    }
+
+    .global-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
     .navbar-toggler {
         display: inline-block;
         line-height: 1.5;
@@ -104,6 +140,10 @@
     }
 }
 
+.chocolatey-blog #topNav {
+    background: $gray-100;
+    background: var(--background);
+}
 
 @include media-breakpoint-up(sm) {
     #topNav {
@@ -180,8 +220,23 @@
             .navbar-nav {
                 .nav-item {
                     padding-right: $spacer * 2;
+
+                    .nav-link {
+                        color: $primary;
+                        padding: 0;
+                        border-left: none;
+
+                        &.active, &:hover {
+                            color: darken($primary, 15%);
+                            background: none;
+                        }
+                    }
                 }
             }
+        }
+
+        .nav-link.nav-link-expand {
+            padding-right: $spacer * 2;
         }
 
         .navbar-toggler {

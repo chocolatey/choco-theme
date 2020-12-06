@@ -190,5 +190,13 @@ a.badge-primary, a.badge-success, a.badge-danger
 
 // Custom buttons
 .gitter-open-chat-button, .gitter-open-chat-button:visited {
-    color: var(--background);
+    color: var(--background) !important;
+}
+
+@include media-breakpoint-up(md) {
+    .btn-sm.btn-responsive {
+        font-size: $font-size-base;
+        padding: .375rem .75rem;
+        border-radius: $border-radius;
+    }
 }
