@@ -24,3 +24,43 @@
         }
     }
 }
+
+// Icons inside a circle
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+
+    i {
+        color: $white;
+    }
+
+    &.bg-github {
+        i {
+            color: var(--background);
+            transition: $theme-transition;
+        }
+    }
+}
+
+.container-text-small .circle:not(.circle-sm):not(.circle-lg), .circle-sm {
+    height: 20px;
+    width: 20px;
+}
+
+.container-text-large .circle:not(.circle-sm):not(.circle-lg), .circle-lg {
+    height: 40px;
+    width: 40px;
+}
+
+@include media-breakpoint-up(md) {
+    .container-text-small-md-none {
+        .circle:not(.circle-sm):not(.circle-lg) {
+            height: 30px;
+            width: 30px;
+        }
+    }
+}
