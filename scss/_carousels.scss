@@ -1,0 +1,42 @@
+// All carousels
+.carousel {
+    .carousel-inner {
+        .carousel-item {
+            margin-bottom: $spacer * 3;
+
+            *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .carousel-indicators {
+        margin-bottom: 0;
+
+        li {
+            height: 15px;
+            width: 15px;
+            border-radius: 100%;
+        }
+    }
+
+    .carousel-control-next, .carousel-control-prev {
+        top: unset;
+        bottom: 6.5px;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    // Fixed height carousels
+    .carousel-h {
+        &.carousel-h-400 {
+            height: 400px;
+        }
+
+        .carousel-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

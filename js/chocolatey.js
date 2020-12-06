@@ -118,6 +118,7 @@ getWindowVHHeight();
 toggleRightSidebarNav();
 toggleStickyTop();
 getLeftSidebarNavHeight();
+autoplayCarousels();
 
 // Insert correct command key in search box based on OS
 if (isMac) {
@@ -210,6 +211,15 @@ function closeMobileSearch() {
     topNav.css('height', '');
     searchBox.add('.btn-search-close').addClass('d-none');
     topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(topNav.find('.navbar-toggler')).add(leftSidebarNav.find('.navbar-toggler')).removeClass('d-none');
+}
+
+// Prevent carousels from autoplaying on mobile
+function autoplayCarousels() {
+    if (window.innerWidth < 576) {
+        $('.carousel').carousel('pause');
+    } else {
+        $('.carousel').carousel('cycle');
+    }
 }
 
 // Wraps markdown task list items for styling
@@ -308,6 +318,7 @@ $(window).on("resize", function () {
     getWindowVHHeight();
     toggleStickyTop();
     getLeftSidebarNavHeight();
+    autoplayCarousels();
 
     if($(window).width() != windowWidth) {
         toggleRightSidebarNav();
