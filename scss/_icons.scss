@@ -51,16 +51,26 @@
     width: 20px;
 }
 
-.container-text-large .circle:not(.circle-sm):not(.circle-lg), .circle-lg {
+.container-text-large .circle:not(.circle-sm):not(.circle-lg),
+.container-text-large-md-small .circle:not(.circle-sm):not(.circle-lg),
+.circle-lg 
+{
     height: 40px;
     width: 40px;
 }
 
 @include media-breakpoint-up(md) {
-    .container-text-small-md-none {
+    .container-text-small-md-none, .container-text-large-md-none {
         .circle:not(.circle-sm):not(.circle-lg) {
             height: 30px;
             width: 30px;
+        }
+    }
+
+    .container-text-small-md, .container-text-large-md-small {
+        .circle:not(.circle-sm):not(.circle-lg) {
+            height: 20px;
+            width: 20px;
         }
     }
 }

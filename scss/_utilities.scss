@@ -90,7 +90,7 @@
     }
 }
 
-.container-text-large {
+.container-text-large, .container-text-large-md-small {
     p, ul, i {
         font-size: $font-size-lg;
     }
@@ -105,9 +105,15 @@
 }
 
 @include media-breakpoint-up(md) {
-    .container-text-small-md-none {
+    .container-text-small-md-none, .container-text-large-md-none {
         p, ul, i {
             font-size: $font-size-base;
+        }
+    }
+
+    .container-text-small-md, .container-text-large-md-small {
+        p, ul, i {
+            font-size: $small-font-size;
         }
     }
 }
