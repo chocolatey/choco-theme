@@ -1,0 +1,58 @@
+/*Background Colors*/
+@each $color, $value in $colors {
+    .bg-#{$color} {
+        background: $value;
+    }
+}
+
+@each $color, $value in $socialmedia-colors {
+    .bg-#{$color} {
+        transition: $theme-transition;
+        background: $value;
+
+        &:hover {
+            background: darken($value, 15%);
+        }
+    }
+}
+
+.bg-github {
+    background: var(--theme-opposite);
+
+    &:hover {
+        background: var(--theme-opposite-hover);
+    }
+}
+
+/*Background Utilities*/
+.bg-img-cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+/*Background Images*/
+.bg-sun-tornado {
+    background-image: url("/assets/images/global-shared/svg-backgrounds/sun-tornado.svg");
+}
+
+.bg-liquid-cheese {
+    background-image: url("/assets/images/global-shared/svg-backgrounds/liquid-cheese.svg");
+}
+
+.bg-wintery-sunburst {
+    background-image: url("/assets/images/global-shared/svg-backgrounds/wintery-sunburst.svg");
+}
+
+.bg-bullseye-gradient {
+    background-image: url("/assets/images/global-shared/svg-backgrounds/bullseye-gradient.svg");
+}
+
+.bg-geometric-intersection {
+    background-image: url("/assets/images/global-shared/svg-backgrounds/geometric-intersection.svg");
+}
+
+.bg-cornered-stairs {
+    background-image: url("/assets/images/global-shared/svg-backgrounds/cornered-stairs.svg");
+}

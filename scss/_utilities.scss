@@ -1,0 +1,113 @@
+/*Padding*/
+.pl-c175 {
+    padding-left: $spacer * 2 - $spacer / 4 !important;
+}
+
+.pt-c15 {
+    padding-top: $spacer * 1.5 !important;
+}
+
+.pl-c2 {
+    padding-left: $spacer * 2 !important;
+}
+
+.pl-c275 {
+    padding-left: $spacer * 3 - $spacer / 4 !important;
+}
+
+.pl-c375 {
+    padding-left: $spacer * 4 - $spacer / 4 !important;
+}
+
+.pl-c4 {
+    padding-left: $spacer * 4 !important;
+}
+
+.pl-c475 {
+    padding-left: $spacer * 5 - $spacer / 4;
+}
+
+.pl-c5 {
+    padding-left: $spacer * 5 !important;
+}
+
+.pl-c6 {
+    padding-left: $spacer * 6 !important;
+}
+
+.pl-c7 {
+    padding-left: $spacer * 7 !important;
+}
+
+/*Margin*/
+.mt-c2 {
+    margin-top: $spacer * 2 !important;
+}
+
+/*Roatation*/
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/*Height*/
+.h-90 {
+    height: 90%;
+}
+
+/*Position*/
+.position-t {
+    top: 0;
+}
+
+.position-tl {
+    top: 0;
+    left: 0;
+}
+
+.position-tr {
+    top: 0;
+    right: 0;
+}
+
+.position-b {
+    bottom: 0;
+}
+
+.position-bl {
+    bottom: 0;
+    left: 0;
+}
+
+.position-br {
+    bottom: 0;
+    right: 0;
+}
+
+/*Container Text Size*/
+.container-text-small {
+    p, ul, i {
+        font-size: $small-font-size;
+    }
+}
+
+.container-text-large {
+    p, ul, i {
+        font-size: $font-size-lg;
+    }
+}
+
+/*Lists*/
+.list-hr > li:not(:last-child) {
+    border-bottom: 1px solid $gray-300;
+    border-bottom: 1px  solid var(--border);
+    padding-bottom: $spacer * 2;
+    margin-bottom: $spacer * 2;
+}
+
+@include media-breakpoint-up(md) {
+    .container-text-small-md-none {
+        p, ul, i {
+            font-size: $font-size-base;
+        }
+    }
+}

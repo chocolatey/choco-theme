@@ -41,7 +41,10 @@ h1, h2 {
     }
 }
 
-h1:not(.title), h2, .breadcrumb {
+.chocolatey-docs h1:not(.title), .chocolatey-docs h2, 
+.chocolatey-blog #mainContent h1, .chocolatey-blog #mainContent h2,
+.sub-content h1, .sub-content h2, .breadcrumb 
+{
     padding-bottom: $spacer / 2;
     border-bottom: 3px solid $primary-opacity;
 }
@@ -88,9 +91,10 @@ h1:not(.title), h2, .breadcrumb {
 }
 
 /*Images & Main Content*/
-img {
+img, svg {
     max-width: 100%;
     height: auto;
+    transition: $theme-transition;
 }
 
 .chocolatey-docs #mainContent {
@@ -103,7 +107,7 @@ img {
     }
 }
 
-#mainContent {
+#mainContent, .sub-content {
     a:not(.anchorjs-link):not(.btn):not(.badge) {
         padding: 14px 0;
     }
@@ -112,43 +116,6 @@ img {
         border: 1px solid $gray-300;
         border: 1px solid var(--border);
     }
-}
-
-/*Utilities*/
-.pl-c175 {
-    padding-left: $spacer * 2 - $spacer / 4 !important;
-}
-
-.pl-c2 {
-    padding-left: $spacer * 2 !important;
-}
-
-.pl-c275 {
-    padding-left: $spacer * 3 - $spacer / 4 !important;
-}
-
-.pl-c375 {
-    padding-left: $spacer * 4 - $spacer / 4 !important;
-}
-
-.pl-c4 {
-    padding-left: $spacer * 4 !important;
-}
-
-.pl-c475 {
-    padding-left: $spacer * 5 - $spacer / 4;
-}
-
-.pl-c5 {
-    padding-left: $spacer * 5 !important;
-}
-
-.pl-c6 {
-    padding-left: $spacer * 6 !important;
-}
-
-.pl-c7 {
-    padding-left: $spacer * 7 !important;
 }
 
 /*Modals*/
@@ -182,19 +149,35 @@ img {
     z-index: 9999;
 }
 
+main {
+    margin-bottom: auto;
+}
+
+#centered-layout {
+    min-height: var(--mh);
+}
+
 footer {
     flex-shrink: 0;
     background: $white;
     background: var(--background-light);
+    border-top: 1px solid $gray-300;
+    border-top: 1px solid var(--border);
     transition: $theme-transition;
 }
+
+.chocolatey-blog footer {
+    background: $gray-100;
+    background: var(--background);
+}
+
 
 @include media-breakpoint-up(md) {
     .container-fluid .row:first-child {
         height: 100%;
     }
 
-    #mainContent {
+    #mainContent, .sub-content {
         a:not(.anchorjs-link):not(.btn):not(.badge) {
             padding: 0;
         }
@@ -202,7 +185,7 @@ footer {
 }
 
 @include media-breakpoint-up(xl) {
-    .chocolatey-docs  #mainContent {
+    .chocolatey-docs #mainContent {
         h2:first-of-type {
             margin-top: $spacer * 2;
         }
