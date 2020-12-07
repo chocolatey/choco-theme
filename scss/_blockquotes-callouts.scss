@@ -1,4 +1,4 @@
-blockquote {
+blockquote, .callout {
     padding: $spacer;
     background: $white;
     background: var(--background-light);
@@ -10,19 +10,19 @@ blockquote {
         margin-bottom: 0;
     }
 
-    &.blockquote-warning {
+    &.blockquote-warning, &.callout-warning {
         border-color: $warning;
     }
 
-    &.blockquote-danger {
+    &.blockquote-danger, &.callout-danger {
         border-color: $danger;
     }
 
-    &.blockquote-primary {
+    &.blockquote-primary, &.callout-primary {
         border-color: $primary;
     }
 
-    &.blockquote-success {
+    &.blockquote-success, &.callout-success {
         border-color: $success;
     }
 }

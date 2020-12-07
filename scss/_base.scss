@@ -72,22 +72,13 @@ h1, h2 {
     color: var(--text);
 }
 
+.table-thead-d-none thead {
+    display: none;
+}
+
 /*Borders*/
 [class^="border"], hr {
     border-color: var(--border) !important;
-}
-
-/*List*/
-.list-style-type-disc {
-    list-style-type: disc;
-}
-
-.list-inline {
-    margin-bottom: $spacer / 4 * 3;
-
-    .list-inline-item {
-        margin-bottom: $spacer / 4;
-    }
 }
 
 /*Images & Main Content*/
