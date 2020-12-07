@@ -1,0 +1,92 @@
+.list-style-type-disc, .blockquote.list-style-type-disc > ul {
+    list-style-type: disc;
+}
+
+.list-inline {
+    margin-bottom: $spacer / 4 * 3;
+
+    .list-inline-item {
+        margin-bottom: $spacer / 4;
+    }
+}
+
+.list-circle {
+    list-style: none;
+    padding-left: 40px;
+
+    &.list-circle-counter {
+        counter-reset: circle-counter;
+
+        > li {
+            counter-increment: circle-counter;
+
+            &::before {
+                content: counter(circle-counter);
+            }
+        }
+    }
+
+    &:not(.list-circle-counter) > li:not([class*="list-circle-content-"])::before {
+        font-family: "Font Awesome 5 Free";
+        font-size: .75rem;
+    }
+
+    &.list-circle-success-fade > li::before {
+        color: $success;
+        background: rgba($success, 0.15);
+    }
+
+    &.list-circle-danger-fade > li::before {
+        color: $danger;
+        background: rgba($danger, 0.15);
+    }
+
+    > li {
+        margin: 0 0 0.5rem 0;
+        position: relative;
+
+        &::before {
+            font-weight: 900;
+            position: absolute;
+            --size: 25px;
+            left: calc(-1 * var(--size) - 10px);
+            line-height: var(--size) !important;
+            width: var(--size);
+            height: var(--size);
+            top: 0px;
+            border-radius: 50%;
+            text-align: center;
+            background: $gray-300;
+            background: var(--background-disabled);
+        }
+
+        &.list-circle-content-1::before {
+            content: '1';
+        }
+
+        &.list-circle-content-2::before {
+            content: '2';
+        }
+
+        &.list-circle-content-3::before {
+            content: '3';
+        }
+
+        &.list-circle-content-4::before {
+            content: '4';
+        }
+
+        &.list-circle-content-5::before {
+            content: '5';
+        }
+
+        &.list-circle-content-6::before {
+            content: '6';
+        }
+    }
+
+    &.list-circle-md li::before {
+        --size: 35px;
+        font-size: $h3-font-size;
+    }
+}
