@@ -8,20 +8,17 @@
         border: 1px solid transparent;
 
         .circle {
-            height: 35px;
-            width: 35px;
+            position: absolute;
             background: $primary;
             background: var(--primary-25);
-            color: $white;
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
             left: -15px;
             top: 15px;
             transition: $theme-transition;
+
+            i {
+                color: $white;
+                color: var(--primary);
+            }
         }
 
         .card-content {
@@ -39,8 +36,11 @@
 
             .circle {
                 background: $primary-hover;
-                color: $white;
                 transition: $theme-transition;
+
+                i {
+                    color: $white;
+                }
             }
         }
     }
