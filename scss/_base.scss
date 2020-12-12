@@ -76,11 +76,6 @@ h1, h2 {
     display: none;
 }
 
-/*Borders*/
-[class^="border"], hr {
-    border-color: var(--border) !important;
-}
-
 /*Images & Main Content*/
 img, svg {
     max-width: 100%;
