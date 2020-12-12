@@ -1,9 +1,10 @@
 .card {
-    height: 100%;
     background: var(--background-light);
+    box-shadow: $box-shadow-sm;
     transition: $theme-transition;
 
     &.card-index {
+        height: 100%;
         margin-left: 15px;
         border: 1px solid transparent;
 
@@ -43,5 +44,23 @@
                 }
             }
         }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-user-color-scheme]) {
+        .card {
+            box-shadow: unset;
+            border: 1px solid $gray-300;
+            border: 1px solid var(--border);
+        }
+    }
+}
+
+[data-user-color-scheme='dark'] {
+    .card {
+        box-shadow: unset;
+        border: 1px solid $gray-300;
+        border: 1px solid var(--border);
     }
 }
