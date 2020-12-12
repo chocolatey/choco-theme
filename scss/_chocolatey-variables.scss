@@ -40,6 +40,7 @@ $primary-opacity-50:  rgba($primary, 0.5);
 $primary-hover:       darken($primary, 15%);
 $primary-dark:        darken($primary, 30%);
 $primary-light:       lighten($primary, 25%);
+$primary-900-opacity: rgba(9,15,21,.95); //convert this to use $primary-900 with upgrade to Bootstrap v5
 $purple-light:        lighten($purple, 25%);
 $orange-light:        lighten($orange, 20%);
 $red-light:           lighten($red, 15%);
@@ -169,6 +170,7 @@ $alert-color-level: 0;
 $carousel-indicator-active-bg: $primary;
 $carousel-control-color: $primary;
 $carousel-control-width: 5%;
+$carousel-caption-width: 90%;
 
 // Breadcrumbs
 $breadcrumb-padding-y: 0;

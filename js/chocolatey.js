@@ -214,12 +214,12 @@ function closeMobileSearch() {
     topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(topNav.find('.navbar-toggler')).add(leftSidebarNav.find('.navbar-toggler')).removeClass('d-none');
 }
 
-// Prevent carousels from autoplaying on mobile
+// Prevent carousels from autoplaying on mobile that have a fixed height on desktop
 function autoplayCarousels() {
     if (window.innerWidth < 576) {
-        $('.carousel').carousel('pause');
+        $('.carousel-h').carousel('pause');
     } else {
-        $('.carousel').carousel('cycle');
+        $('.carousel-h').carousel('cycle');
     }
 }
 
