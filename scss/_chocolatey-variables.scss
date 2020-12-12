@@ -77,6 +77,7 @@ $socialmedia-colors: (
     --theme-toggle-btn-background: #{$yellow-opacity};
     --theme-opposite: #{$gray-900};
     --theme-opposite-hover: #{$gray-700};
+    --theme-opposite-text: #{gray-400};
     --modal-backdrop: 0.5;
 }
 
@@ -102,6 +103,7 @@ $socialmedia-colors: (
       --theme-toggle-btn-background: #{$primary-opacity};
       --theme-opposite: #{$gray-100};
       --theme-opposite-hover: #{$gray-400};
+      --theme-opposite-text: #{gray-900};
       --modal-backdrop: 0.9;
     }
   }
@@ -123,6 +125,7 @@ $socialmedia-colors: (
     --theme-toggle-btn-background: #{$primary-opacity};
     --theme-opposite: #{$gray-100};
     --theme-opposite-hover: #{$gray-400};
+    --theme-opposite-text: #{gray-900};
     --modal-backdrop: 0.9;
   }
 

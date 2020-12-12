@@ -18,9 +18,37 @@
 
 .bg-github {
     background: var(--theme-opposite);
+    transition: $theme-transition;
 
     &:hover {
         background: var(--theme-opposite-hover);
+    }
+}
+
+.bg-primary, .bg-success, .bg-danger {
+    h1, h2, h3, h4, h5, h6, p, li {
+        color: var(--background);
+        transition: $theme-transition;
+    }
+}
+
+.bg-theme {
+    background: $gray-100;
+    background: var(--background);
+}
+
+.bg-theme-light {
+    background: $white;
+    background: var(--background-light);
+}
+
+.bg-theme, .bg-theme-light {
+    h1, h2 {
+        color: $primary;
+    }
+    
+    h3, h4, h5, h6, p, li {
+        color: var(--theme-opposite-text);
     }
 }
 
