@@ -193,6 +193,10 @@ a.badge-primary, a.badge-success, a.badge-danger
     color: var(--background) !important;
 }
 
+.btn-link:hover {
+    text-decoration: underline;
+}
+
 @include media-breakpoint-up(md) {
     .btn-sm.btn-responsive {
         font-size: $font-size-base;
