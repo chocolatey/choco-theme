@@ -49,6 +49,10 @@ h1, h2 {
     border-bottom: 3px solid $primary-opacity;
 }
 
+.chocolatey-blog #mainContent > p:first-child {
+    font-size: $h5-font-size;
+}
+
 .sticky-top {
     max-height: 100vh;
     overflow: auto;
