@@ -14,7 +14,7 @@ var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0,
 
 // Anchor
 anchors.options.placement = 'left';
-anchors.add();
+anchors.add('#mainContent h2, #mainContent h3, #mainContent h4, #mainContent h5, #mainContent h6');
 
 // Toggle theme but do not allow in IE (not supported)
 if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
