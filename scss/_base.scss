@@ -157,12 +157,6 @@ footer {
     transition: $theme-transition;
 }
 
-.chocolatey-blog footer {
-    background: $gray-100;
-    background: var(--background);
-}
-
-
 @include media-breakpoint-up(md) {
     .container-fluid .row:first-child {
         height: 100%;

@@ -1,6 +1,7 @@
 header {
     border-bottom: 1px solid $gray-300;
     border-bottom: 1px solid var(--border);
+    transition: $theme-transition;
 }
 
 #topNav {
@@ -138,11 +139,6 @@ header {
     .btn-search-close {
         width: 20%;
     }
-}
-
-.chocolatey-blog #topNav {
-    background: $gray-100;
-    background: var(--background);
 }
 
 @include media-breakpoint-up(sm) {
