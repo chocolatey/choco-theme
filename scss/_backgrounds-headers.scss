@@ -42,11 +42,16 @@
     background: var(--background-light);
 }
 
-.bg-theme, .bg-theme-light {
-    h1, h2 {
-        color: $primary;
-    }
-    
+.bg-theme-opposite {
+    background: $gray-900;
+    background: var(--theme-opposite);
+}
+
+.bg-primary-opacity {
+    background: $primary-opacity;
+}
+
+.bg-theme, .bg-theme-light, .bg-theme-opposite {
     h3, h4, h5, h6, p, li {
         color: var(--theme-opposite-text);
     }
