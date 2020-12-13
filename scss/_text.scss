@@ -1,0 +1,17 @@
+@each $color, $value in $colors {
+    .text-#{$color} {
+        color: $value;
+    }
+}
+
+.text-theme {
+    color: var(--text);
+}
+
+.text-theme-bg {
+    color: var(--background);
+}
+
+.text-theme-bg-light {
+    color: var(--background-light);
+}
