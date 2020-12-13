@@ -40,6 +40,7 @@ $primary-opacity-50:  rgba($primary, 0.5);
 $primary-hover:       darken($primary, 15%);
 $primary-dark:        darken($primary, 30%);
 $primary-light:       lighten($primary, 25%);
+$primary-900-opacity: rgba(9,15,21,.95); //convert this to use $primary-900 with upgrade to Bootstrap v5
 $purple-light:        lighten($purple, 25%);
 $orange-light:        lighten($orange, 20%);
 $red-light:           lighten($red, 15%);
@@ -77,6 +78,7 @@ $socialmedia-colors: (
     --theme-toggle-btn-background: #{$yellow-opacity};
     --theme-opposite: #{$gray-900};
     --theme-opposite-hover: #{$gray-700};
+    --theme-opposite-text: #{gray-400};
     --modal-backdrop: 0.5;
 }
 
@@ -102,6 +104,7 @@ $socialmedia-colors: (
       --theme-toggle-btn-background: #{$primary-opacity};
       --theme-opposite: #{$gray-100};
       --theme-opposite-hover: #{$gray-400};
+      --theme-opposite-text: #{gray-900};
       --modal-backdrop: 0.9;
     }
   }
@@ -123,6 +126,7 @@ $socialmedia-colors: (
     --theme-toggle-btn-background: #{$primary-opacity};
     --theme-opposite: #{$gray-100};
     --theme-opposite-hover: #{$gray-400};
+    --theme-opposite-text: #{gray-900};
     --modal-backdrop: 0.9;
   }
 
@@ -166,6 +170,7 @@ $alert-color-level: 0;
 $carousel-indicator-active-bg: $primary;
 $carousel-control-color: $primary;
 $carousel-control-width: 5%;
+$carousel-caption-width: 90%;
 
 // Breadcrumbs
 $breadcrumb-padding-y: 0;
@@ -200,4 +205,24 @@ $embed-responsive-aspect-ratios: (
   (1 1),
   (700 506),
   (1200 630)
+);
+
+// The below breakpoints and gridpoints should be removed with the upgrade to Bootstrap v5 as they are already included
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Grid containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
 );

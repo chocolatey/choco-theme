@@ -49,6 +49,10 @@ h1, h2 {
     border-bottom: 3px solid $primary-opacity;
 }
 
+.chocolatey-blog #mainContent > p:first-child {
+    font-size: $h5-font-size;
+}
+
 .sticky-top {
     max-height: 100vh;
     overflow: auto;
@@ -74,11 +78,6 @@ h1, h2 {
 
 .table-thead-d-none thead {
     display: none;
-}
-
-/*Borders*/
-[class^="border"], hr {
-    border-color: var(--border) !important;
 }
 
 /*Images & Main Content*/
@@ -156,12 +155,6 @@ footer {
     border-top: 1px solid var(--border);
     transition: $theme-transition;
 }
-
-.chocolatey-blog footer {
-    background: $gray-100;
-    background: var(--background);
-}
-
 
 @include media-breakpoint-up(md) {
     .container-fluid .row:first-child {

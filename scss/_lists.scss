@@ -10,6 +10,19 @@
     }
 }
 
+.list-hr > li:not(:last-child) {
+    border-bottom: 1px solid $gray-300;
+    border-bottom: 1px  solid var(--border);
+    padding-bottom: $spacer * 1.5;
+    margin-bottom: $spacer * 1.5;
+    transition: $theme-transition;
+}
+
+.list-hr-lg > li:not(:last-child) {
+    padding-bottom: $spacer * 2;
+    margin-bottom: $spacer * 2;
+}
+
 .list-circle {
     list-style: none;
     padding-left: 40px;

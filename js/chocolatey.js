@@ -14,7 +14,7 @@ var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0,
 
 // Anchor
 anchors.options.placement = 'left';
-anchors.add();
+anchors.add('#mainContent h2, #mainContent h3, #mainContent h4, #mainContent h5, #mainContent h6');
 
 // Toggle theme but do not allow in IE (not supported)
 if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
@@ -214,12 +214,12 @@ function closeMobileSearch() {
     topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(topNav.find('.navbar-toggler')).add(leftSidebarNav.find('.navbar-toggler')).removeClass('d-none');
 }
 
-// Prevent carousels from autoplaying on mobile
+// Prevent carousels from autoplaying on mobile that have a fixed height on desktop
 function autoplayCarousels() {
     if (window.innerWidth < 576) {
-        $('.carousel').carousel('pause');
+        $('.carousel-h').carousel('pause');
     } else {
-        $('.carousel').carousel('cycle');
+        $('.carousel-h').carousel('cycle');
     }
 }
 

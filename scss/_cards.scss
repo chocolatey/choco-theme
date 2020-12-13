@@ -1,27 +1,25 @@
 .card {
-    height: 100%;
     background: var(--background-light);
+    box-shadow: $box-shadow-sm;
     transition: $theme-transition;
 
     &.card-index {
+        height: 100%;
         margin-left: 15px;
         border: 1px solid transparent;
 
         .circle {
-            height: 35px;
-            width: 35px;
+            position: absolute;
             background: $primary;
             background: var(--primary-25);
-            color: $white;
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
             left: -15px;
             top: 15px;
             transition: $theme-transition;
+
+            i {
+                color: $white;
+                color: var(--primary);
+            }
         }
 
         .card-content {
@@ -39,9 +37,30 @@
 
             .circle {
                 background: $primary-hover;
-                color: $white;
                 transition: $theme-transition;
+
+                i {
+                    color: $white;
+                }
             }
         }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-user-color-scheme]) {
+        .card {
+            box-shadow: unset;
+            border: 1px solid $gray-300;
+            border: 1px solid var(--border);
+        }
+    }
+}
+
+[data-user-color-scheme='dark'] {
+    .card {
+        box-shadow: unset;
+        border: 1px solid $gray-300;
+        border: 1px solid var(--border);
     }
 }
