@@ -17,7 +17,7 @@
     "@babel/preset-env": "^7.12.1",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "anchor-js": "^4.3.0",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^5.0.0-beta1",
     "docsearch.js": "^2.6.3",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",

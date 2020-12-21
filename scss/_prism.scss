@@ -36,7 +36,6 @@ pre[class*="language-"] {
 	background: var(--background-light);
 	border: 1px solid $gray-300;
 	border: 1px solid var(--border);
-	transition: $theme-transition;
 }
 
 /* Inline code */
@@ -61,8 +60,7 @@ pre[class*="language-"] {
 .token.symbol,
 .token.deleted {
 	color: $red;
-	color: var(--red-color);
-	transition: $theme-transition;
+	color: var(--theme-red);
 }
 
 .token.selector,
@@ -79,15 +77,13 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.keyword {
 	color: $orange;
-	color: var(--orange-color);
-	transition: $theme-transition;
+	color: var(--theme-orange);
 }
 
 .token.function,
 .token.class-name {
 	color: $purple;
-	color: var(--purple-color);
-	transition: $theme-transition;
+	color: var(--theme-purple);
 }
 
 .token.regex,

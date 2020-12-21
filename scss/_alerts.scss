@@ -9,8 +9,6 @@
 
 @each $color, $value in $theme-colors {
     .alert-#{$color} {
-        transition: $theme-transition;
-        
         a {
             font-weight: bold;
 
@@ -18,7 +16,7 @@
                 text-decoration: underline;
             }
         }
-        .close {
+        .btn-close {
             text-shadow: none;
         }
     }
@@ -62,7 +60,7 @@
         padding: 0.5rem 15px;
     }
 
-    .close {
+    .btn-close {
         padding: .42rem 15px;
     }
 
@@ -90,7 +88,7 @@
         align-content: center;
         justify-content: center;
 
-        .close {
+        .btn-close {
             padding: .55rem 15px;
         }
 

@@ -1,4 +1,45 @@
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body {
+        font-family: $font-family-sans-serif;
+    }
+
+    .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+        padding: 0 15px;
+    }
+
+    .row {
+        margin: 0 -15px;
+
+        > * {
+            padding: 0 15px;
+        }
+    }
+
+    .ratio {
+        &.ratio-1x1 {
+            padding-top: 100%;
+        }
+        &.ratio-4x3 {
+            padding-top: calc(3 / 4 * 100%);
+        }
+        &.ratio-16x9 {
+            padding-top: calc(9 / 16 * 100%);
+        }
+        &.ratio-21x9 {
+            padding-top: calc(9 / 21 * 100%);
+        }
+        &.ratio-700x506 {
+            padding-top: calc(506 / 700 * 100%);
+        }
+        &.ratio-1200x630 {
+            padding-top: calc(630 / 1200 * 100%);
+        }
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: "/";
+    }
+
     .sticky-top {
         max-height: none;
     }

@@ -1,7 +1,6 @@
 #leftSidebarNav {
     background: $white;
     background: var(--background-light);
-    transition: $theme-transition;
 
     .navbar {
         .navbar-nav, .global-nav {
@@ -12,77 +11,99 @@
         > .navbar-collapse {
             width: 100%;
 
-            .nav-link {
-                color: $gray-900;
-                color: var(--text);
-                padding: 0;
-                border-left: 6px solid transparent;
+            .nav-item {
+                .nav-link {
+                    color: $gray-900;
+                    color: var(--text);
+                    padding: 0;
+    
+                    &.active {
+                        font-weight: bold;
+                    }
 
-                &.active, &:hover, &.nav-link-open {
-                    border-color: $primary;
-                    color: $primary;
-
-                    .btn-collapse:before, a {
+                    &.active, &:hover {
                         color: $primary;
+    
+                        .btn-collapse:before, a {
+                            color: $primary;
+                        }
+                    }
+    
+                    &.active-page, &:hover {
+                        background: $primary-150;
+                        background: var(--background-primary-light);
+                    }
+    
+                    &:not(.nav-link-collapse) {
+                        padding: $spacer / 2 $spacer $spacer / 2 $spacer * 2;
                     }
                 }
-                
-                &.active-page, &:hover, &.active-child {
-                    background: $primary-opacity;
-                }
 
-                &.active, &.active-child, &.nav-link-open {
-                    font-weight: bold;
-                }
-
-                &:not(.nav-link-collapse) {
-                    padding: $spacer / 2 $spacer;
-                }
-
-                .btn-collapse {
-                    padding: $spacer / 2 0 $spacer / 2 ($spacer / 4 * 3);
-
-                    &:before {
+                .nav-link-collapse {
+                    a {
+                        width: 100%;
+                        padding: $spacer / 2 $spacer / 4 $spacer / 2 0;
                         color: $gray-900;
                         color: var(--text);
-                        transition: $theme-transition;
                     }
 
-                    &:focus {
-                        box-shadow: none;
-
+                    .btn-collapse {
+                        padding: $spacer / 2 0 $spacer / 2 $spacer;
+    
                         &:before {
+                            color: $gray-900;
+                            color: var(--text);
+                        }
+    
+                        &:focus {
+                            box-shadow: none;
+    
+                            &:before {
+                                color: $primary;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        .collapsed, .collapsed + a {
+                            background: $primary-150;
+                            background: var(--background-primary-light);
+                        }
+                    }
+                }
+
+                &:not(.active) {
+                    .nav-link-collapse:not(.active) .btn-collapse:not(.collapsed) {
+                        &:before, + a {
                             color: $primary;
                         }
                     }
                 }
-            
-                a {
-                    width: 100%;
-                    padding: $spacer / 2 $spacer / 4 $spacer / 2 0;
-                    color: $gray-900;
-                    color: var(--text);
-                    transition: $theme-transition;
+                
+                &.active {
+                    border-left: 6px solid $primary;
                 }
             }
 
-            .collapse .nav-link {
-                border-left: 6px solid $primary;
-            }
-
             > .navbar-nav {
-                > .nav-item {
-                    > .nav-link {
-                        &:not(.nav-link-collapse) {
-                            padding-left: $spacer * 2;
+                > .nav-item { // First Level
+                    &:not(.active) .nav-link {
+                        border-left: 6px solid transparent;
+
+                        &:hover, &.active:not(.nav-link-collapse) {
+                            border-left: 6px solid $primary;
+                        }
+
+                        &.active:not(.nav-link-collapse) {
+                            border-left: 6px solid $primary;
                         }
                     }
                     > .collapse {
                         > .navbar-nav {
                             > .nav-item {
-                                > .nav-link {
+                                > .nav-link { // Second Level
                                     &.nav-link-collapse .btn-collapse {
-                                        padding-left: $spacer * 2 - $spacer / 4;
+                                        padding-left: $spacer * 2;
                                     }
 
                                     &:not(.nav-link-collapse) {
@@ -92,9 +113,9 @@
                                 > .collapse {
                                     > .navbar-nav {
                                         > .nav-item {
-                                            > .nav-link {
+                                            > .nav-link { // Third Level
                                                 &.nav-link-collapse .btn-collapse {
-                                                    padding-left: $spacer * 3 - $spacer / 4;
+                                                    padding-left: $spacer * 3;
                                                 }
 
                                                 &:not(.nav-link-collapse) {
@@ -104,9 +125,9 @@
                                             > .collapse {
                                                 > .navbar-nav {
                                                     > .nav-item {
-                                                        > .nav-link {
+                                                        > .nav-link { // Fourth Level
                                                             &.nav-link-collapse .btn-collapse {
-                                                                padding-left: $spacer * 4 - $spacer / 4;
+                                                                padding-left: $spacer * 4;
                                                             }
             
                                                             &:not(.nav-link-collapse) {
@@ -116,9 +137,9 @@
                                                         > .collapse {
                                                             > .navbar-nav {
                                                                 > .nav-item {
-                                                                    > .nav-link {
+                                                                    > .nav-link { // Fifth Level
                                                                         &.nav-link-collapse .btn-collapse {
-                                                                            padding-left: $spacer * 5 - $spacer / 4;
+                                                                            padding-left: $spacer * 5;
                                                                         }
 
                                                                         &:not(.nav-link-collapse) {
@@ -128,7 +149,7 @@
                                                                     > .collapse {
                                                                         > .navbar-nav {
                                                                             > .nav-item {
-                                                                                > .nav-link {
+                                                                                > .nav-link { // Sixth Level
                                                                                     &:not(.nav-link-collapse) {
                                                                                         padding-left: $spacer * 7;
                                                                                     }

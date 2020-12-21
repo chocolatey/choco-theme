@@ -5,20 +5,24 @@
     }
 }
 
+@each $color, $value in $palette-colors {
+    .bg-#{$color} {
+        background: $value;
+    }
+}
+
 @each $color, $value in $socialmedia-colors {
     .bg-#{$color} {
-        transition: $theme-transition;
         background: $value;
 
         &:hover {
-            background: darken($value, 15%);
+            background: shade-color($value, 15%);
         }
     }
 }
 
 .bg-github {
     background: var(--theme-opposite);
-    transition: $theme-transition;
 
     &:hover {
         background: var(--theme-opposite-hover);
@@ -27,8 +31,8 @@
 
 .bg-primary, .bg-success, .bg-danger {
     h1, h2, h3, h4, h5, h6, p, li {
+        color: $white;
         color: var(--background);
-        transition: $theme-transition;
     }
 }
 
@@ -42,18 +46,14 @@
     background: var(--background-light);
 }
 
-.bg-theme-opposite {
-    background: $gray-900;
-    background: var(--theme-opposite);
+.bg-primary-opacity-25 {
+    background: $primary-opacity-25;
 }
 
-.bg-primary-opacity {
-    background: $primary-opacity;
-}
-
-.bg-theme, .bg-theme-light, .bg-theme-opposite {
+.bg-theme, .bg-theme-light {
     h3, h4, h5, h6, p, li {
-        color: var(--theme-opposite-text);
+        color: $gray-900;
+        color: var(--text);
     }
 }
 
