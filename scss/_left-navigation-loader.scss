@@ -18,12 +18,12 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: $primary-opacity;
+                background: $primary-opacity-25;
                 -webkit-animation: loaderLines 1s infinite ease-in-out;
                 animation: loaderLines 1s infinite ease-in-out;
                 width: 1em;
                 height: 4em;
-                color: $primary-opacity;
+                color: $primary-opacity-25;
                 text-indent: -9999em;
                 margin: 88px auto;
                 font-size: 11px;
@@ -35,7 +35,7 @@
                 
 
                 &:before, &:after {
-                    background: $primary-opacity;
+                    background: $primary-opacity-25;
                     -webkit-animation: loaderLines 1s infinite ease-in-out;
                     animation: loaderLines 1s infinite ease-in-out;
                     width: 1em;

@@ -1,26 +1,28 @@
-// General badges
-.badge-primary, .badge-success, .badge-danger {
-    color: var(--background);
-}
-
 // Custom badges
 .badge-key {
     font-family: $font-family-monospace;
 }
 
+// Buttons with badges
+.btn-sm .badge {
+    top: 0;
+}
+
 // Solid buttons/badges shared states
-.btn-primary, .btn-success, .btn-danger,
-a.badge-primary, a.badge-success, a.badge-danger
+.btn-primary, .btn-success, .btn-danger, .btn-close
 {
+    color: $white;
     color: var(--background);
 
     &:not(:disabled):not(.disabled) {
         &:active, &.active, &:active:focus, &.active:focus {
+            color: $white;
             color: var(--background);
         }
     }
 
     &:hover, &:focus, &.focus, &:disabled, &.disabled {
+        color: $white;
         color: var(--background);
     }
 }
@@ -30,11 +32,13 @@ a.badge-primary, a.badge-success, a.badge-danger
 {
     &:not(:disabled):not(.disabled) {
         &:active, &.active, &:active:focus, &.active:focus {
+            color: $white;
             color: var(--background);
         }
     }
 
     &:hover {
+        color: $white;
         color: var(--background);
     }
 }
@@ -56,12 +60,12 @@ a.badge-primary, a.badge-success, a.badge-danger
 
 .btn-outline-primary {
     .badge {
-        background: $blue;
+        background: $primary;
     }
 
     &:hover, &:active {
         .badge {
-            color: $blue;
+            color: $primary;
         }
     }
 }
@@ -128,12 +132,12 @@ a.badge-primary, a.badge-success, a.badge-danger
 
 .btn-primary {
     .badge {
-        color: $blue;
+        color: $primary;
     }
 
     &:hover, &:active, &:focus {
         .badge {
-            color: darken($blue, 7.5%);
+            color: darken($primary, 7.5%);
         }
     }
 }

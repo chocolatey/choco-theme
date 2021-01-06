@@ -1,4 +1,4 @@
-$(function() {
+(function() {
     var placeholderContainer = $('.placeholder-container');
 
     placeholderContainer.each(function(){
@@ -27,4 +27,4 @@ $(function() {
         // Add background img
         placeholderImg.addClass(bgImg[~~(Math.random()*bgImg.length)]);
     });
-});
+})();

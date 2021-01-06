@@ -8,7 +8,6 @@ html, body {
     background: $light;
     background: var(--background);
     color: var(--text);
-    transition: $theme-transition;
 }
 
 body > .container-fluid {
@@ -46,7 +45,7 @@ h1, h2 {
 .sub-content h1, .sub-content h2, .breadcrumb 
 {
     padding-bottom: $spacer / 2;
-    border-bottom: 3px solid $primary-opacity;
+    border-bottom: 3px solid $primary-opacity-25;
 }
 
 .chocolatey-blog #mainContent > p:first-child {
@@ -67,11 +66,15 @@ h1, h2 {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px $primary-opacity;
-    background: $primary-opacity;
+    -webkit-box-shadow: inset 0 0 6px $primary-opacity-25;
+    background: $primary-opacity-25;
 }
 
 /*Tables*/
+.table {
+    word-break: normal;
+}
+
 .table-dark {
     color: var(--text);
 }
@@ -84,7 +87,6 @@ h1, h2 {
 img, svg {
     max-width: 100%;
     height: auto;
-    transition: $theme-transition;
 }
 
 .chocolatey-docs #mainContent {
@@ -128,7 +130,7 @@ img, svg {
     }
 
     .modal-header {
-        .close {
+        .btn-close {
             color: var(--text);
         }
     }
@@ -154,7 +156,6 @@ footer {
     background: var(--background-light);
     border-top: 1px solid $gray-300;
     border-top: 1px solid var(--border);
-    transition: $theme-transition;
 }
 
 @include media-breakpoint-up(md) {

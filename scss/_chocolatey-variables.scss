@@ -1,3 +1,5 @@
+@import "../../../node_modules/bootstrap/scss/_functions";
+
 // FontAwesome Free
 $fa-font-path: "/assets/fonts/fontawesome-free";
 
@@ -32,23 +34,132 @@ $facebook:  #1877f2;
 $rss:       $orange;
 
 // Theme
-$primary:   $blue;
+$primary:      $blue;
+$primary-50:   tint-color($primary, 90%);
+$primary-100:  tint-color($primary, 80%);
+$primary-150:  tint-color($primary, 70%);
+$primary-200:  tint-color($primary, 60%);
+$primary-250:  tint-color($primary, 50%);
+$primary-300:  tint-color($primary, 40%);
+$primary-350:  tint-color($primary, 30%);
+$primary-400:  tint-color($primary, 20%);
+$primary-450:  tint-color($primary, 10%);
+$primary-500:  $primary;
+$primary-550:  shade-color($primary, 10%);
+$primary-600:  shade-color($primary, 20%);
+$primary-650:  shade-color($primary, 30%);
+$primary-700:  shade-color($primary, 40%);
+$primary-750:  shade-color($primary, 50%);
+$primary-800:  shade-color($primary, 60%);
+$primary-850:  shade-color($primary, 70%);
+$primary-900:  shade-color($primary, 80%);
+$primary-950:  shade-color($primary, 90%);
+
+$red-50:   tint-color($red, 90%);
+$red-100:  tint-color($red, 80%);
+$red-150:  tint-color($red, 70%);
+$red-200:  tint-color($red, 60%);
+$red-250:  tint-color($red, 50%);
+$red-300:  tint-color($red, 40%);
+$red-350:  tint-color($red, 30%);
+$red-400:  tint-color($red, 20%);
+$red-450:  tint-color($red, 10%);
+$red-500:  $red;
+$red-550:  shade-color($red, 10%);
+$red-600:  shade-color($red, 20%);
+$red-650:  shade-color($red, 30%);
+$red-700:  shade-color($red, 40%);
+$red-750:  shade-color($red, 50%);
+$red-800:  shade-color($red, 60%);
+$red-850:  shade-color($red, 70%);
+$red-900:  shade-color($red, 80%);
+$red-950:  shade-color($red, 90%);
+
+$yellow-50:   tint-color($yellow, 90%);
+$yellow-100:  tint-color($yellow, 80%);
+$yellow-150:  tint-color($yellow, 70%);
+$yellow-200:  tint-color($yellow, 60%);
+$yellow-250:  tint-color($yellow, 50%);
+$yellow-300:  tint-color($yellow, 40%);
+$yellow-350:  tint-color($yellow, 30%);
+$yellow-400:  tint-color($yellow, 20%);
+$yellow-450:  tint-color($yellow, 10%);
+$yellow-500:  $yellow;
+$yellow-550:  shade-color($yellow, 10%);
+$yellow-600:  shade-color($yellow, 20%);
+$yellow-650:  shade-color($yellow, 30%);
+$yellow-700:  shade-color($yellow, 40%);
+$yellow-750:  shade-color($yellow, 50%);
+$yellow-800:  shade-color($yellow, 60%);
+$yellow-850:  shade-color($yellow, 70%);
+$yellow-900:  shade-color($yellow, 80%);
+$yellow-950:  shade-color($yellow, 90%);
+
+$green-50:   tint-color($green, 90%);
+$green-100:  tint-color($green, 80%);
+$green-150:  tint-color($green, 70%);
+$green-200:  tint-color($green, 60%);
+$green-250:  tint-color($green, 50%);
+$green-300:  tint-color($green, 40%);
+$green-350:  tint-color($green, 30%);
+$green-400:  tint-color($green, 20%);
+$green-450:  tint-color($green, 10%);
+$green-500:  $green;
+$green-550:  shade-color($green, 10%);
+$green-600:  shade-color($green, 20%);
+$green-650:  shade-color($green, 30%);
+$green-700:  shade-color($green, 40%);
+$green-750:  shade-color($green, 50%);
+$green-800:  shade-color($green, 60%);
+$green-850:  shade-color($green, 70%);
+$green-900:  shade-color($green, 80%);
+$green-950:  shade-color($green, 90%);
+
+$purple-50:   tint-color($purple, 90%);
+$purple-100:  tint-color($purple, 80%);
+$purple-150:  tint-color($purple, 70%);
+$purple-200:  tint-color($purple, 60%);
+$purple-250:  tint-color($purple, 50%);
+$purple-300:  tint-color($purple, 40%);
+$purple-350:  tint-color($purple, 30%);
+$purple-400:  tint-color($purple, 20%);
+$purple-450:  tint-color($purple, 10%);
+$purple-500:  $purple;
+$purple-550:  shade-color($purple, 10%);
+$purple-600:  shade-color($purple, 20%);
+$purple-650:  shade-color($purple, 30%);
+$purple-700:  shade-color($purple, 40%);
+$purple-750:  shade-color($purple, 50%);
+$purple-800:  shade-color($purple, 60%);
+$purple-850:  shade-color($purple, 70%);
+$purple-900:  shade-color($purple, 80%);
+$purple-950:  shade-color($purple, 90%);
+
+$orange-50:   tint-color($orange, 90%);
+$orange-100:  tint-color($orange, 80%);
+$orange-150:  tint-color($orange, 70%);
+$orange-200:  tint-color($orange, 60%);
+$orange-250:  tint-color($orange, 50%);
+$orange-300:  tint-color($orange, 40%);
+$orange-350:  tint-color($orange, 30%);
+$orange-400:  tint-color($orange, 20%);
+$orange-450:  tint-color($orange, 10%);
+$orange-500:  $orange;
+$orange-550:  shade-color($orange, 10%);
+$orange-600:  shade-color($orange, 20%);
+$orange-650:  shade-color($orange, 30%);
+$orange-700:  shade-color($orange, 40%);
+$orange-750:  shade-color($orange, 50%);
+$orange-800:  shade-color($orange, 60%);
+$orange-850:  shade-color($orange, 70%);
+$orange-900:  shade-color($orange, 80%);
+$orange-950:  shade-color($orange, 90%);
 
 // Custom Colors
-$primary-opacity:     rgba($primary, 0.25);
-$primary-opacity-50:  rgba($primary, 0.5);
-$primary-hover:       darken($primary, 15%);
-$primary-dark:        darken($primary, 30%);
-$primary-light:       lighten($primary, 25%);
-$primary-900-opacity: rgba(9,15,21,.95); //convert this to use $primary-900 with upgrade to Bootstrap v5
-$purple-light:        lighten($purple, 25%);
-$orange-light:        lighten($orange, 20%);
-$red-light:           lighten($red, 15%);
-$yellow-opacity:      rgba($yellow, 0.25);
-$border-dark:         lighten($gray-800, 7.5%);
-
-// Custom Non Color Variables
-$disabled-opacity:  .8;
+$primary-opacity-25:        rgba($primary, 0.25);
+$primary-opacity-50:        rgba($primary, 0.5);
+$primary-950-opacity-95:    rgba($primary-950, 0.95);
+$yellow-opacity-25:         rgba($yellow, 0.25);
 
 $socialmedia-colors: (
   twitch:   $twitch,
@@ -60,25 +171,142 @@ $socialmedia-colors: (
   rss:      $rss   
 );
 
+$palette-colors: (
+  primary-50:   $primary-50,
+  primary-100:  $primary-100,
+  primary-150:  $primary-150,
+  primary-200:  $primary-200,
+  primary-250:  $primary-250,
+  primary-300:  $primary-300,
+  primary-350:  $primary-350,
+  primary-400:  $primary-400,
+  primary-450:  $primary-450,
+  primary-500:  $primary-500,
+  primary-550:  $primary-550,
+  primary-600:  $primary-600,
+  primary-650:  $primary-650,
+  primary-700:  $primary-700,
+  primary-750:  $primary-750,
+  primary-800:  $primary-800,
+  primary-850:  $primary-850,
+  primary-900:  $primary-900,
+  primary-950:  $primary-950,
+  red-50:   $red-50,
+  red-100:  $red-100,
+  red-150:  $red-150,
+  red-200:  $red-200,
+  red-250:  $red-250,
+  red-300:  $red-300,
+  red-350:  $red-350,
+  red-400:  $red-400,
+  red-450:  $red-450,
+  red-500:  $red-500,
+  red-550:  $red-550,
+  red-600:  $red-600,
+  red-650:  $red-650,
+  red-700:  $red-700,
+  red-750:  $red-750,
+  red-800:  $red-800,
+  red-850:  $red-850,
+  red-900:  $red-900,
+  red-950:  $red-950,
+  yellow-50:   $yellow-50,
+  yellow-100:  $yellow-100,
+  yellow-150:  $yellow-150,
+  yellow-200:  $yellow-200,
+  yellow-250:  $yellow-250,
+  yellow-300:  $yellow-300,
+  yellow-350:  $yellow-350,
+  yellow-400:  $yellow-400,
+  yellow-450:  $yellow-450,
+  yellow-500:  $yellow-500,
+  yellow-550:  $yellow-550,
+  yellow-600:  $yellow-600,
+  yellow-650:  $yellow-650,
+  yellow-700:  $yellow-700,
+  yellow-750:  $yellow-750,
+  yellow-800:  $yellow-800,
+  yellow-850:  $yellow-850,
+  yellow-900:  $yellow-900,
+  yellow-950:  $yellow-950,
+  green-50:   $green-50,
+  green-100:  $green-100,
+  green-150:  $green-150,
+  green-200:  $green-200,
+  green-250:  $green-250,
+  green-300:  $green-300,
+  green-350:  $green-350,
+  green-400:  $green-400,
+  green-450:  $green-450,
+  green-500:  $green-500,
+  green-550:  $green-550,
+  green-600:  $green-600,
+  green-650:  $green-650,
+  green-700:  $green-700,
+  green-750:  $green-750,
+  green-800:  $green-800,
+  green-850:  $green-850,
+  green-900:  $green-900,
+  green-950:  $green-950,
+  purple-50:   $purple-50,
+  purple-100:  $purple-100,
+  purple-150:  $purple-150,
+  purple-200:  $purple-200,
+  purple-250:  $purple-250,
+  purple-300:  $purple-300,
+  purple-350:  $purple-350,
+  purple-400:  $purple-400,
+  purple-450:  $purple-450,
+  purple-500:  $purple-500,
+  purple-550:  $purple-550,
+  purple-600:  $purple-600,
+  purple-650:  $purple-650,
+  purple-700:  $purple-700,
+  purple-750:  $purple-750,
+  purple-800:  $purple-800,
+  purple-850:  $purple-850,
+  purple-900:  $purple-900,
+  purple-950:  $purple-950,
+  orange-50:   $orange-50,
+  orange-100:  $orange-100,
+  orange-150:  $orange-150,
+  orange-200:  $orange-200,
+  orange-250:  $orange-250,
+  orange-300:  $orange-300,
+  orange-350:  $orange-350,
+  orange-400:  $orange-400,
+  orange-450:  $orange-450,
+  orange-500:  $orange-500,
+  orange-550:  $orange-550,
+  orange-600:  $orange-600,
+  orange-650:  $orange-650,
+  orange-700:  $orange-700,
+  orange-750:  $orange-750,
+  orange-800:  $orange-800,
+  orange-850:  $orange-850,
+  orange-900:  $orange-900,
+  orange-950:  $orange-950
+);
+
 :root {
     --color-mode: 'light';
     --background: #{$gray-100};
     --background-light: #{$white};
+    --background-primary-light: #{$primary-150};
     --background-disabled: #{$gray-300};
     --text: #{$gray-900};
     --text-code: #{$gray-800};
     --border: #{$gray-300};
     --border-secondary: #{$gray-300};
-    --purple-color: #{$purple};
-    --orange-color: #{$orange};
-    --red-color: #{$red};
-    --primary-25: #{$primary-light};
-    --theme-toggle-opacity: #{$yellow-opacity};
+    --theme-purple: #{$purple};
+    --theme-orange: #{$orange};
+    --theme-red: #{$red};
+    --theme-toggle-opacity: #{$yellow-opacity-25};
     --theme-toggle-background: #{$white};
-    --theme-toggle-btn-background: #{$yellow-opacity};
+    --theme-toggle-btn-background: #{$yellow-opacity-25};
     --theme-opposite: #{$gray-900};
     --theme-opposite-hover: #{$gray-700};
-    --theme-opposite-text: #{gray-400};
+    --theme-opposite-text: #{$gray-400};
     --modal-backdrop: 0.5;
 }
 
@@ -88,45 +316,45 @@ $socialmedia-colors: (
     }
   
     :root:not([data-user-color-scheme]) {
-      --background: #{$gray-900};
-      --background-light: #{$gray-800};
-      --background-disabled: #{$gray-600};
+      --background: #{$primary-950};
+      --background-light: #{$primary-900};
+      --background-primary-light: #{$primary-850};
+      --background-disabled: #{$primary-800};
       --text: #{$gray-400};
       --text-code: #{$gray-500};
-      --border: #{$border-dark};
+      --border: #{$primary-800};
       --border-secondary: #{$primary-opacity-50};
-      --purple-color: #{$purple-light};
-      --orange-color: #{$orange-light};
-      --red-color: #{$red-light};
-      --primary-25: #{$primary-dark};
+      --theme-purple: #{$purple-300};
+      --theme-orange: #{$orange-300};
+      --theme-red: #{$red-300};
       --theme-toggle-opacity: #{$primary-opacity-50};
-      --theme-toggle-background: #{$primary-opacity};
-      --theme-toggle-btn-background: #{$primary-opacity};
+      --theme-toggle-background: #{$primary-opacity-25};
+      --theme-toggle-btn-background: #{$primary-opacity-25};
       --theme-opposite: #{$gray-100};
       --theme-opposite-hover: #{$gray-400};
-      --theme-opposite-text: #{gray-900};
+      --theme-opposite-text: #{$gray-900};
       --modal-backdrop: 0.9;
     }
   }
   
   [data-user-color-scheme='dark'] {
-    --background: #{$gray-900};
-    --background-light: #{$gray-800};
-    --background-disabled: #{$gray-600};
+    --background: #{$primary-950};
+    --background-light: #{$primary-900};
+    --background-primary-light: #{$primary-850};
+    --background-disabled: #{$primary-800};
     --text: #{$gray-400};
     --text-code: #{$gray-500};
-    --border: #{$border-dark};
+    --border: #{$primary-800};
     --border-secondary: #{$primary-opacity-50};
-    --purple-color: #{$purple-light};
-    --orange-color: #{$orange-light};
-    --red-color: #{$red-light};
-    --primary-25: #{$primary-dark};
+    --theme-purple: #{$purple-300};
+    --theme-orange: #{$orange-300};
+    --theme-red: #{$red-300};
     --theme-toggle-opacity: #{$primary-opacity-50};
-    --theme-toggle-background: #{$primary-opacity};
-    --theme-toggle-btn-background: #{$primary-opacity};
+    --theme-toggle-background: #{$primary-opacity-25};
+    --theme-toggle-btn-background: #{$primary-opacity-25};
     --theme-opposite: #{$gray-100};
     --theme-opposite-hover: #{$gray-400};
-    --theme-opposite-text: #{gray-900};
+    --theme-opposite-text: #{$gray-900};
     --modal-backdrop: 0.9;
   }
 
@@ -139,8 +367,11 @@ $body-bg: $gray-100;
 $font-family-sans-serif: 'PT Sans', sans-serif;
 $font-size-base: 1rem;
 
+// Margin
+$enable-negative-margins: true;
+
 // Links
-$link-hover-decoration: none;
+$link-decoration: none;
 
 // Code
 $code-color: $green;
@@ -151,7 +382,7 @@ $input-btn-padding-x-sm: 6px;
 $btn-font-weight: 700;
 
 // Tooltips
-$tooltip-bg: $primary-hover;
+$tooltip-bg: $primary;
 
 // Cards
 $card-border-radius: 0;
@@ -163,13 +394,17 @@ $alert-border-radius: 0;
 $alert-border-width: 0;
 $alert-margin-bottom: 0;
 $alert-border-width: 0;
-$alert-bg-level: 0;
-$alert-color-level: 0;
+$alert-bg-scale: 0;
+$alert-color-scale: 0;
+
+// Close Button
+$btn-close-bg: none;
 
 // Carousel
 $carousel-indicator-active-bg: $primary;
 $carousel-control-color: $primary;
-$carousel-control-width: 5%;
+$carousel-control-icon-width: 1.5rem;
+$carousel-control-width: 3.5%;
 $carousel-caption-width: 90%;
 
 // Breadcrumbs
@@ -179,16 +414,14 @@ $breadcrumb-border-radius: 0;
 $breadcrumb-margin-bottom: 0;
 $breadcrumb-bg: transparent;
 
-// Custom Select
-$custom-select-indicator: "";
-$custom-control-indicator-size: 1.5rem;
-$custom-select-disabled-bg: $gray-300;
-
-// Forms
+// Inputs
+$form-check-input-bg: $white;
+$form-check-input-border: $primary;
+$form-select-disabled-bg: $gray-300;
+$form-select-border-color: $primary;
 $input-border-color: $primary;
-$custom-control-indicator-border-color: $primary;
-$input-disabled-bg: $gray-300;
 $input-focus-border-color: $primary;
+$input-disabled-bg: $gray-300;
 
 // Tabs
 $nav-tabs-link-active-bg: $white;
@@ -197,32 +430,17 @@ $nav-tabs-link-active-bg: $white;
 $navbar-toggler-padding-y: .375rem;
 $navbar-toggler-font-size: $font-size-base;
 
+// Tables
+$table-variants: (
+  "dark":       $primary-900
+);
+
 // Embed Ratios
-$embed-responsive-aspect-ratios: (
-  (21 9),
-  (16 9),
-  (4 3),
-  (1 1),
-  (700 506),
-  (1200 630)
-);
-
-// The below breakpoints and gridpoints should be removed with the upgrade to Bootstrap v5 as they are already included
-// Grid breakpoints
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
-
-// Grid containers
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1320px
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%),
+  "700x506": calc(506 / 700 * 100%),
+  "1200x630": calc(630 / 1200 * 100%)
 );

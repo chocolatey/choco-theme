@@ -1,7 +1,6 @@
 .card {
     background: var(--background-light);
     box-shadow: $box-shadow-sm;
-    transition: $theme-transition;
 
     &.card-index {
         height: 100%;
@@ -10,15 +9,13 @@
 
         .circle {
             position: absolute;
-            background: $primary;
-            background: var(--primary-25);
+            background: $primary-150;
+            background: var(--background-primary-light);
             left: -15px;
             top: 15px;
-            transition: $theme-transition;
 
             i {
-                color: $white;
-                color: var(--primary);
+                color: $primary;
             }
         }
 
@@ -33,11 +30,9 @@
         &:hover {
             border: 1px solid $gray-300;
             border: 1px solid var(--border);
-            transition: $theme-transition;
 
             .circle {
-                background: $primary-hover;
-                transition: $theme-transition;
+                background: $primary;
 
                 i {
                     color: $white;

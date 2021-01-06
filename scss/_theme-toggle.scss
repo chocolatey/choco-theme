@@ -20,7 +20,6 @@ label[for="themeToggle"] {
         border-radius: 1em;
         background: $white;
         background: var(--theme-toggle-background);
-        transition: $theme-transition;
 
         .fas {
             position: absolute;

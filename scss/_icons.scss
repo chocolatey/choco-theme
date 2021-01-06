@@ -8,19 +8,14 @@
         -webkit-font-smoothing: antialiased;
         font-weight: 600;
         margin-right: $spacer / 2;
-    }
-
-    // Angle right
-    &.btn.collapsed {
-        &:before {
-            content: "\f105";
-        }
+        content: "\f105";
+        transition: transform 0.35s ease;
     }
 
     // Angle down
     &.btn:not(.collapsed) {
         &:before {
-            content: "\f107";
+            transform: rotate(90deg);
         }
     }
 }
@@ -41,7 +36,6 @@
     &.bg-github {
         i {
             color: var(--background);
-            transition: $theme-transition;
         }
     }
 }

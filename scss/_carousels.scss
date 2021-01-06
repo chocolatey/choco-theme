@@ -9,7 +9,7 @@
             }
 
             .carousel-caption {
-                background: $primary-900-opacity;
+                background: $primary-950-opacity-95;
             }
         }
     }
@@ -31,11 +31,11 @@
 
     &.carousel-control-center {
         .carousel-control-next {
-            right: -3.25rem;
+            right: -3.5%;
         }
         
         .carousel-control-prev {
-            left: -3.25rem;
+            left: -3.5%;
         }
     }
 }

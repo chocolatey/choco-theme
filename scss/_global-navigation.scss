@@ -6,10 +6,10 @@
     #globalNav {
         display: flex;
         padding: $spacer / 2 0;
-        background: $primary-opacity;
+        background: $primary-150;
+        background: var(--background-primary-light);
         border-bottom: 1px solid $gray-300;
         border-bottom: 1px solid var(--border);
-        transition: $theme-transition;
 
         .global-nav {
             justify-content: flex-end;
