@@ -1,41 +1,20 @@
-#globalNav {
-    display: none;
-}
+.global-nav {
+    background: $primary-150;
+    background: var(--background-primary-light);
+    border-bottom: 1px solid $primary;
 
-@include media-breakpoint-up(sm) {
-    #globalNav {
-        display: flex;
-        padding: $spacer / 2 0;
-        background: $primary-150;
-        background: var(--background-primary-light);
-        border-bottom: 1px solid $gray-300;
-        border-bottom: 1px solid var(--border);
-
-        .global-nav {
-            justify-content: flex-end;
-
-            .nav-item {
-                .nav-link {
-                    font-weight: bold;
-                    padding: 0;
-                }
-
-                &:not(:last-child) {
-                    padding-right: $spacer;
-                }
-            }
-        }
+    .nav-item {
+        flex-basis: 50%;
     }
 }
 
-@include media-breakpoint-up(md) {
-    #globalNav {
-        .global-nav {
-            .nav-item {
-                &:not(:last-child) {
-                    padding-right: $spacer * 2;
-                }
-            }
+@include media-breakpoint-up(sm) {
+    .global-nav {
+        border-color: $gray-300;
+        border-color: var(--border);
+    
+        .nav-item {
+            flex-basis: unset;
         }
     }
 }

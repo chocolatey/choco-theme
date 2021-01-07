@@ -59,3 +59,13 @@
         border: 1px solid var(--border);
     }
 }
+
+.navbar-nested-collapse {
+    .card {
+        border-width: 1px 0 0;
+        border-color: $gray-300;
+        border-color: var(--border);
+        border-style: solid;
+        box-shadow: unset;
+    }
+}

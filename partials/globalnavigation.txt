@@ -1,5 +1,5 @@
-<ul class="nav global-nav">
-    <li class="nav-item"><a class="nav-link" href="https://chocolatey.org" target="_blank" rel="noreferrer"><span class="d-sm-none">Back to </span>chocolatey.org</a></li>
+<ul class="nav global-nav fw-bold flex-wrap flex-sm-fill justify-content-sm-end">
+    <li class="nav-item"><a class="nav-link" href="https://chocolatey.org" target="_blank" rel="noreferrer">chocolatey.org</a></li>
     <li class="nav-item"><a class="nav-link" href="https://chocolatey.org/community" target="_blank" rel="noreferrer">Community</a></li>
     <li class="nav-item"><a class="nav-link" href="https://docs.chocolatey.org/en-us/" target="_blank" rel="noreferrer">Docs</a></li>
     <li class="nav-item"><a class="nav-link" href="https://blog.chocolatey.org" target="_blank" rel="noreferrer">Blog</a></li>

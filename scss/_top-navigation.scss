@@ -13,71 +13,23 @@ header {
         padding-left: 1rem;
     }
 
-    form[role="search"] {
-        width: 80%;
-        padding-left: 15px;
-
-        .fa-search {
-            position: absolute;
-            z-index: 1;
-            left: 25px;
-            top: 50%;
-            transform: translate(0, -50%);
-            color: $primary-opacity-25;
-        }
-
-        .form-control {
-            width: 100%;
-            padding-left: 35px;
-
-            &:hover {
-                border-color: $primary;
-                box-shadow: 0 0 0 0.2rem $primary-opacity-25;
-            }
-        }
-
-        &.active, &:hover {
-            .fa-search {
-                color: $primary;
-            }
-        }
-    }
-    
     .navbar-nav {
         .nav-item {
             display: flex;
             align-items: center;
 
-            &:not(:last-child) {
-                padding-right: $spacer;
-            }
-
             .nav-link {
                 padding: 0;
-            }
-
-            .btn-search {
-                border: 1px solid $gray-300;
-                border: 1px solid var(--border-secondary);
-                color: $secondary;
-                font-weight: 400;
-
-                &:focus, &:hover {
-                    background: $primary;
-
-                    .fas {
-                        color: $white;
-                    }
-                }
-
-                .fas {
-                    color: $primary;
-                }
             }
         }
     }
 
     .navbar-collapse {
+        &#topNavCollapse {
+            border-top: 1px solid var(--border);
+            margin-top: $spacer / 2;
+        }
+
         .navbar-nav {
             .nav-item {
                 padding: 0;
@@ -92,62 +44,58 @@ header {
                     &.active, &:hover {
                         border-color: $primary;
                         color: $primary;
-                        background: $primary-opacity-25;
+                        background: $primary-150;
+                        background: var(--background-primary-light);
                     }
                 }
             }
         }
     }
 
-    .nav-link.nav-link-expand {
-        padding-left: 0;
-    }
-
-    .global-nav {
-        flex-direction: column;
-        width: 100%;
-    }
-
     .navbar-toggler {
         display: inline-block;
         line-height: 1.5;
-        margin: 0 $spacer;
-        background: $white;
-        background: var(--background-light);
-        border: 1px solid $gray-300;
-        border: 1px solid var(--border-secondary);
 
         &:focus {
             box-shadow: 0 0 0 0.25rem $primary-opacity-25;
         }
-        
-        &:focus, &:hover {
-            background: $primary;
-
-            .fas {
-                color: $white;
-            }
-        }
-
-        .fas {
-            color: $primary;
-        }
     }
 
-    .btn-search-close {
-        width: 20%;
+    button.btn-link {
+        border-width: 0 0 0 6px;
+        border-radius: 0;
+        text-align: left;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
     }
 }
 
-@include media-breakpoint-up(sm) {
-    #topNav {
-        form[role="search"] {
-            width: 85%;
-        }
-    
-        .btn-search-close {
-            width: 15%;
-        }
+.navbar-nested-collapse ul:not(.global-nav) .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: .5rem 1rem;
+    color: $gray-900;
+    color: var(--text);
+    border-radius: 0;
+    border: 0;
+    border-left: 6px solid transparent;
+
+    &:hover {
+        text-decoration: none;
+        border-color: $primary;
+        color: $primary;
+        background: $primary-150;
+        background: var(--background-primary-light);
+    }
+
+    &:focus {
+        box-shadow: unset;
     }
 }
 
@@ -162,46 +110,10 @@ header {
             position: absolute;
         }
 
-        form[role="search"] {
-            padding-left: 0;
-            position: absolute;
-            left: 25%;
-            right: auto;
-            width: 40%;
-
-            .fa-search {
-               left: 12px;
-            }
-
-            .form-control {
-                padding-left: 35px;
-                padding-right: 80px;
-            }
-
-            .search-key-container {
-                position: absolute;
-                right: 12px;
-                top: 50%;
-                transform: translate(0, -50%);
-
-                .badge-key:not(:last-child) {
-                    margin-right: $spacer / 4;
-                }
-            }
-        }
-
         .navbar-nav {
             margin-right: 0;
 
             .nav-item {
-                &:not(:last-child), &:not(:nth-last-child(2)) {
-                    padding-right: $spacer * 2;
-                }
-
-                &:nth-last-child(2) {
-                    padding-right: 1rem;
-                }
-
                 .nav-link {
                     font-weight: bold;
                 }
@@ -209,10 +121,13 @@ header {
         }
 
         .navbar-collapse {
+            &#topNavCollapse {
+                border-top: none;
+                margin-top: 0;
+            }
+            
             .navbar-nav {
                 .nav-item {
-                    padding-right: $spacer * 2;
-
                     .nav-link {
                         color: $primary;
                         padding: 0;
@@ -227,32 +142,45 @@ header {
             }
         }
 
-        .nav-link.nav-link-expand {
-            padding-right: $spacer * 2;
-        }
-
         .navbar-toggler {
             display: none;
         }
     }
-}
 
-@include media-breakpoint-up(lg) {
-    #topNav {
-        form[role="search"] {
-            width: 45%;
+    .navbar-nested-collapse {
+        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid $gray-300;
+        border-bottom: 1px solid var(--border);
+        margin-top: 40px;
+        z-index: 3;
+    }
+
+    .chocolatey-org {
+        header {
+            margin-bottom: 46px;
+        }
+
+        #topNav {
+            .navbar-links {
+                margin-top: 19px;
+            }
+
+            #topNavCollapse.navbar-collapse {
+                margin-top: 27px;
+                background: var(--background-light);
+                border-top: 1px solid var(--border);
+            }
         }
     }
 }
 
 @include media-breakpoint-up(xl) {
-    #topNav {
-        form[role="search"] {
-            left: 50%;
-            right: 50%;
-            transform: translate(-50%, 0);
-            z-index: 1;
-            width: 700px;
+    .chocolatey-org {
+        #topNav {
+            #topNavCollapse.navbar-collapse {
+                border-top: 0;
+            }
         }
     }
-} 
+}

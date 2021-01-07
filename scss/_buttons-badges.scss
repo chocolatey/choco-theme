@@ -1,11 +1,10 @@
+.badge.bg-primary, .badge.bg-success, .badge.bg-danger {
+    color: var(--background);
+}
+
 // Custom badges
 .badge-key {
     font-family: $font-family-monospace;
-}
-
-// Buttons with badges
-.btn-sm .badge {
-    top: 0;
 }
 
 // Solid buttons/badges shared states
@@ -201,6 +200,26 @@
 
 .btn-link:hover {
     text-decoration: underline;
+}
+
+.btn-top-nav {
+    border: 1px solid $gray-300;
+    border: 1px solid var(--border-secondary);
+    color: $secondary;
+    font-weight: 400;
+
+    &:focus, &:hover {
+        background: $primary;
+
+        .fas {
+            color: $white;
+            color: var(--background);
+        }
+    }
+
+    .fas {
+        color: $primary;
+    }
 }
 
 @include media-breakpoint-up(md) {
