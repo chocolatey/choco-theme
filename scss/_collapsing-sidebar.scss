@@ -1,0 +1,79 @@
+.btn-collapsing-right-sidebar {
+    position: fixed;
+    top: 40%;
+    right: 0;
+    border-radius: 50% 0 0 50%;
+    z-index: 9999;
+    width: auto !important;
+
+    &:before {
+        content: none !important;
+    }
+
+    .notification-badge {
+        top: -10px;
+        right: 20px;
+        height: 25px;
+        width: 25px;
+        line-height: 24px;
+        font-size: 80%;
+    }
+}
+
+#collapsing-right-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 99999;
+    background: #fff;
+    background: var(--background-light);
+    transition: none;
+    margin-left: 0;
+    overflow: auto;
+    border-left: 3px solid $primary;
+    padding-bottom: 150px;
+
+    a[data-bs-toggle=collapse]:before {
+        content: none !important;
+    }
+}
+
+.notification-badge {
+    background: $danger;
+    border: 1px solid $red-300;
+    color: $gray-100;
+    color: var(--background);
+    border-radius: 100%;
+    position: absolute;
+    writing-mode: horizontal-tb;
+    font-weight: bold;
+}
+
+.btn-announcements.btn-announcement-notifications .notification-badge {
+    top: -8px;
+    left: -8px;
+    height: 20px;
+    width: 20px;
+    line-height: 18px;
+    font-size: 70%;
+}
+
+@include media-breakpoint-up(sm) {
+    .btn-collapsing-right-sidebar {
+        right: 350px;
+
+        &.collapsed {
+            right: 0;
+        }
+    }
+
+    #collapsing-right-sidebar {
+        position: fixed;
+        width: 350px;
+        left: auto;
+        padding-bottom: 1rem;
+    }
+}

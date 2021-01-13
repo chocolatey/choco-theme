@@ -21,10 +21,10 @@
 
             if ($(scrollHash).length) {
                 if ($(window).scrollTop() >= $(scrollHash).offset().top && $(scrollHash).is(':visible')) {
-                    $('a[href="' + scrollHash + '"]').addClass('active');
-                    $('a[href="' + scrollHash + '"]').parent().prev().find('a.active').removeClass('active');
+                    $('a[href="' + scrollHash + '"]').addClass('active active-page');
+                    $('a[href="' + scrollHash + '"]').parent().prev().find('a.active').removeClass('active active-page');
                 } else {
-                    $('a[href="' + scrollHash + '"]').removeClass('active');
+                    $('a[href="' + scrollHash + '"]').removeClass('active active-page');
                 }
             }
         }

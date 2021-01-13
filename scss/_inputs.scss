@@ -1,16 +1,16 @@
 // Inputs
-.form-control {
-    background: var(--background-light);
+.form-control, .form-select {
+    background-color: var(--background-light);
     color: var(--text);
 
     &:focus {
-        background: var(--background-light);
+        background-color: var(--background-light);
         border-color: $primary;
         color: var(--text);
     }
 
     &:disabled, &[readonly] {
-        background: var(--background-disabled);
+        background-color: var(--background-light-2);
     }
 }
 
@@ -20,10 +20,10 @@
         border: 1px solid $primary;
 
         &:not(:checked) {
-            background: var(--background-light);
+            background-color: var(--background-light);
 
             &[disabled], &:disabled {
-                background: var(--background-disabled);
+                background-color: var(--background-light-2);
                 border-color: $gray-500;
             }
         }
@@ -50,4 +50,27 @@
             }
         }
     }
+}
+
+.validation-summary-errors {
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: $spacer 0;
+
+        li {
+            &:not:first-child {
+                margin-top: $spacer / 2;
+            }
+
+            padding-left: $spacer;
+            border-left: 6px solid $danger;
+            color: $danger;
+            font-weight: bold;
+        }
+    }
+}
+
+.d-label-none label {
+    display: none;
 }

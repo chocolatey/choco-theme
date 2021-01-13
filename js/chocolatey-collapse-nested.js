@@ -10,6 +10,10 @@
                 var elScroll = el,
                     collapseParents = getParents(el).filter(el => el != document && el.classList.contains('collapse'));
 
+                if (collapseParents.length == 0 && el.classList.contains('collapse')) {
+                    collapseParents.push(el);
+                }
+
                 collapseParents.reverse().forEach(function (el, idx, array) {
                     el = document.getElementById(escapeId(el.id));
 

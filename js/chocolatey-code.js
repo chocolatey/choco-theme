@@ -4,7 +4,9 @@
     codeBlocks.forEach(trimString);
 
     // Highlight code blocks
-    $('pre').addClass('line-numbers py-2');
-    $('pre:not([class*="language-"])').addClass('language-none');
-    Prism.highlightAll();
+    if (!$('pre').hasClass('highlight-delay')) {
+        $('pre').addClass('line-numbers py-2');
+        $('pre:not([class*="language-"])').addClass('language-none');
+        Prism.highlightAll();
+    }
 })();

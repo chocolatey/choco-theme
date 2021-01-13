@@ -1,0 +1,35 @@
+.ribbon {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(30%) translateY(0%) rotate(45deg);
+    transform-origin: top left;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        margin: 0 -1px;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:before {
+        right: 100%;
+    }
+
+    &:after {
+        left: 100%;
+    }
+
+    &.bg-success:before, &.bg-success:after {
+        background: $success;
+    }
+
+    &.bg-theme-light:before, &.bg-theme-light:after {
+        background: $white;
+        background: var(--background-light);
+    }
+}
