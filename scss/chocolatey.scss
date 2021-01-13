@@ -10,11 +10,11 @@
 // Custom Styles
 @import "base";
 @import "theme-toggle";
-@import "global-navigation";
 @import "top-navigation";
-@import "search";
-@import "left-navigation-loader";
 @import "left-navigation";
+@import "global-navigation";
+@import "search";
+@import "algolia";
 @import "right-navigation";
 @import "utilities";
 @import "placeholders";
