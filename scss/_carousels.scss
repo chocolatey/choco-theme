@@ -45,17 +45,6 @@
     border-bottom: 1px solid var(--border);
 }
 
-@include media-breakpoint-up(sm) {
-    // Fixed height carousels
-    .carousel-h {
-        .carousel-inner {
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-    }
-}
-
 @include media-breakpoint-up(xl) {
     .carousel {
         .carousel-inner {

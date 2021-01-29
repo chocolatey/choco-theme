@@ -3,9 +3,12 @@
         mediaMd = window.matchMedia("(min-width: 768px)"),
         searchInput = document.querySelector('.search-box .search-input'),
         topNav = document.querySelector('#topNav'),
-        searchKey = document.querySelector('.search-key'),
-        topNavBtnSearch = topNav.querySelector('.btn-search'),
-        topNavBtnSearchClose = topNav.querySelector('.btn-search-close');
+        searchKey = document.querySelector('.search-key');
+
+    if (topNav) {
+        var topNavBtnSearch = topNav.querySelector('.btn-search'),
+            topNavBtnSearchClose = topNav.querySelector('.btn-search-close');
+    }
 
     searchDocs(mediaMd);
     mediaMd.addListener(searchDocs);

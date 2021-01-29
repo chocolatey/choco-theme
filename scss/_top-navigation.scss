@@ -153,12 +153,12 @@ header {
         border-bottom: 1px solid $gray-300;
         border-bottom: 1px solid var(--border);
         margin-top: 40px;
-        z-index: 3;
+        z-index: 1025;
     }
 
     .chocolatey-org {
         header {
-            margin-bottom: 46px;
+            margin-bottom: 40px;
         }
 
         #topNav {
@@ -168,7 +168,9 @@ header {
 
             #topNavCollapse.navbar-collapse {
                 margin-top: 27px;
+                background: $white;
                 background: var(--background-light);
+                border-top: 1px solid $gray-300;
                 border-top: 1px solid var(--border);
             }
         }

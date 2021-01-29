@@ -2,6 +2,14 @@
     list-style-type: disc;
 }
 
+.list-speaker li:not(:first-child):not(:last-child):after {
+    content: ",";
+}
+
+#events li:last-child hr {
+    display: none;
+}
+
 .list-inline {
     margin-bottom: $spacer / 4 * 3;
 
@@ -20,6 +28,11 @@
 .list-hr-lg > li:not(:last-child) {
     padding-bottom: $spacer * 2;
     margin-bottom: $spacer * 2;
+}
+
+.list-group-item {
+    background: var(--background-light);
+    border-color: var(--border);
 }
 
 .list-circle {
@@ -69,7 +82,7 @@
             border-radius: 50%;
             text-align: center;
             background: $gray-300;
-            background: var(--background-disabled);
+            background: var(--background-light-2);
         }
 
         &.list-circle-content-1::before {
@@ -100,5 +113,91 @@
     &.list-circle-md li::before {
         --size: 35px;
         font-size: $h3-font-size;
+    }
+}
+
+.list-curve {
+    margin: auto;
+
+    p {
+        border-top: 2px dashed;
+        border-color: $gray-300 !important;
+        border-color: var(--border) !important;
+        margin: 0;
+        padding: 15px 30px;
+        counter-increment: section;
+        position: relative;
+
+        &:nth-child(even) {
+            border-left: 2px dashed;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            margin-right: 30px;
+            padding-right: 0;
+
+            &::before {
+                right: 100%;
+                margin-right: -8px;
+            }
+        }
+
+        &:nth-child(odd) {
+            border-right: 2px dashed;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-left: 30px;
+            padding-left: 0;
+
+            &::before {
+                left: 100%;
+                margin-left: -8px;
+            }
+        }
+
+        &::before, &:last-child::after, &:first-child::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        &:last-child::after, &:first-child::after {
+            color: $gray-300;
+            color: var(--border);
+        }
+
+        &:not(:last-child)::before {
+            color: $red-150;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0 !important;
+
+            &::before {
+                color: $green-150;
+                margin-right: -13px;
+            }
+
+            &::after {
+                bottom: -17px;
+                z-index: 1;
+                right: 100%;
+                margin-right: -6px;
+            }
+        }
+
+        &:first-child {
+            border-top: 0;
+            border-top-right-radius: 0 !important;
+            border-top-left-radius: 0;
+
+            &::after {
+                top: -15px;
+                left: 100%;
+                margin-left: -7px;
+            }
+        }
     }
 }

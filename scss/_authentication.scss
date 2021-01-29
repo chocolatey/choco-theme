@@ -1,0 +1,19 @@
+body {
+    &.user-authenticated {
+        .user-authenticated {
+            display: block;
+        }
+
+        .user-unauthenticated {
+            display: none;
+        }
+    }
+
+    .user-authenticated {
+        display: none;
+    }
+
+    .user-unauthenticated {
+        display: block;
+    }
+}

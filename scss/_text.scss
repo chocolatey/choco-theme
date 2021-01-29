@@ -1,20 +1,42 @@
 @each $color, $value in $colors {
     .text-#{$color} {
-        color: $value;
+        color: $value !important;
     }
 }
 
 .text-theme {
     color: $gray-900;
     color: var(--text);
+
+    h3, h4, h5, h6, p, li {
+        color: $gray-900;
+        color: var(--text);
+    }
 }
 
-.text-theme-bg {
+.text-bg-theme {
     color: $gray-100;
     color: var(--background);
 }
 
-.text-theme-bg-light {
+.text-bg-theme-light {
     color: $white;
     color: var(--background-light);
+}
+
+.link-primary {
+    color: $primary !important;
+
+    &:hover {
+        color: $primary-400 !important;
+    }
+}
+
+.link-theme {
+    color: $gray-900 !important;
+    color: var(--text) !important;
+
+    &:hover {
+        color: $primary-500 !important;
+    }
 }

@@ -1,5 +1,6 @@
 blockquote, .callout {
     padding: $spacer;
+    margin-bottom: $spacer;
     background: $white;
     background: var(--background-light);
     box-shadow: $box-shadow-sm;
@@ -23,5 +24,21 @@ blockquote, .callout {
 
     &.blockquote-success, &.callout-success {
         border-color: $success;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-user-color-scheme]) {
+        blockquote, .callout {
+            box-shadow: unset;
+            outline: 1px solid var(--border);
+        }
+    }
+}
+
+[data-user-color-scheme='dark'] {
+    blockquote, .callout {
+        box-shadow: unset;
+        outline: 1px solid var(--border);
     }
 }

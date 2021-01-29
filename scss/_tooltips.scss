@@ -1,0 +1,103 @@
+.tt {
+    position: relative;
+
+    &:before {
+        position:absolute;
+        display: none;
+        width: 60px;
+        padding: 5px;
+        border-radius: .25rem;
+        background:$primary;
+        color: $gray-100;
+        color: var(--background);
+        text-align: center;
+        font-size: $small-font-size;
+        word-break: normal;
+        content: attr(data-tooltip-text);
+    }
+
+    &:after {
+        display: none;
+        content: "";
+        position: absolute;
+        border: 10px solid $primary;
+    }
+
+    &.tt-start, &.tt-end {
+        &:before, &:after {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &.tt-start {
+        &:before, &:after {
+            right: 100%;
+        }
+
+        &:before {
+            margin-right: $spacer;
+        }
+
+        &:after {
+            border-color: transparent transparent transparent $primary;
+        }
+    }
+
+    &.tt-end {
+        &:before, &:after {
+            left: 100%;
+        }
+
+        &:before {
+            margin-left: $spacer;
+        }
+
+        &:after {
+            border-color: transparent $primary transparent transparent;
+        }
+    }
+
+    &.tt-top, &.tt-bottom {
+        &:before, &:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &.tt-top {
+        &:before, &:after {
+            bottom: 100%;
+        }
+
+        &:before {
+            margin-bottom: $spacer;
+        }
+
+        &:after {
+            border-color: $primary transparent transparent transparent;
+        }
+    }
+
+    &.tt-bottom {
+        &:before, &:after {
+            top: 100%;
+        }
+
+        &:before {
+            margin-top: $spacer;
+        }
+
+        &:after {
+            border-color: transparent transparent $primary transparent;
+        }
+    }
+
+    &:hover:before, &:hover:after, &.active:before, &.active:after {
+        display: block;
+    }
+
+    &.active:before {
+        content: attr(data-tooltip-text-active);
+    }
+}

@@ -1,6 +1,6 @@
 .card {
     background: var(--background-light);
-    box-shadow: $box-shadow-sm;
+    box-shadow: $box-shadow;
 
     &.card-index {
         height: 100%;
@@ -41,6 +41,21 @@
         }
     }
 }
+
+
+a, .video-story {
+        .card {
+        transition: all 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            -webkit-transform: scale(0.98);
+            -ms-transform: scale(0.98);
+            transform: scale(0.98);
+        }
+    }
+}
+
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-user-color-scheme]) {

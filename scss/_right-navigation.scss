@@ -4,22 +4,22 @@
     .card.card-body {
         background: $white;
         background: var(--background-light);
+    }
 
-        .nav-item {
-            .nav-link {
-                display: block;
-                padding: .25rem 0 .25rem .5rem;
-                border-left: 3px solid transparent;
+    .nav-item {
+        .nav-link {
+            display: block;
+            padding: .25rem 0 .25rem .5rem;
+            border-left: 3px solid transparent;
 
-                &.active, &:hover {
-                    color: $primary;
-                    border-left: 3px solid $primary;
-                    background: $primary-opacity-25;
-                }
+            &.active, &:hover {
+                color: $primary;
+                border-left: 3px solid $primary;
+                background: $primary-opacity-25;
+            }
 
-                &.active {
-                    font-weight: bold;
-                }
+            &.active {
+                font-weight: bold;
             }
         }
     }
@@ -29,11 +29,11 @@
     #rightSidebarNav {
         .card.card-body {
             background: none;
+        }
 
-            .nav-item {
-                .nav-link {
-                    padding: .5rem 0 .5rem .5rem;
-                }
+        .nav-item {
+            .nav-link {
+                padding: .5rem 0 .5rem .5rem;
             }
         }
     }

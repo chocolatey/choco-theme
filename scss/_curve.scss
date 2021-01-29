@@ -1,0 +1,54 @@
+.curve {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+
+    &:before {
+        border-radius: 100%;
+        position: absolute;
+        right: -200px;
+        left: -200px;
+        content: '';
+    }
+
+    &.curve-bottom {
+        &:before {
+            bottom: -200px;
+            top: 0;
+        }
+    }
+
+    &.curve-top {
+        &:before {
+            top: -200px;
+            bottom: 0;
+        }
+    }
+
+    &.curve-bg-theme-light, &.curve-bg-theme-light .curve {
+        &:before {
+            background: $white;
+            background: var(--background-light);
+        }
+    }
+
+    &.curve-bg-theme, &.curve-bg-theme .curve {
+        &:before {
+            background: $gray-100;
+            background: var(--background);
+        }
+    }
+
+    &.curve-primary {
+        &:before {
+            background: $primary;
+            background: var(--theme-primary);
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .curve {
+        height: 80px;
+    }
+}

@@ -13,7 +13,7 @@
     }
 
     // Angle down
-    &.btn:not(.collapsed) {
+    &:not(.collapsed) {
         &:before {
             transform: rotate(90deg);
         }
@@ -40,9 +40,72 @@
     }
 }
 
+// Status balls
+.status {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    margin-right: .75rem;
+
+    &.status-sm {
+        height: 15px;
+        width: 15px;
+        margin-right: .5rem;
+
+        span {
+            border-top: 15px solid transparent;
+            border-right: 15px solid;
+        }
+    }
+
+    span {
+        height: 0px;
+        width: 0px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 30px solid transparent;
+        border-right: 30px solid;
+        /*Rotation*/
+        &:nth-child(1) {
+            transform: rotate(135deg);
+        }
+
+        &:nth-child(2) {
+            transform: rotate(-45deg);
+        }
+        /*Status Colors*/
+        &.Pending {
+            border-right-color: $yellow;
+        }
+
+        &.Failing {
+            border-right-color: $red;
+        }
+
+        &.Passing {
+            border-right-color: $green;
+        }
+
+        &.Exempted, &.Unknown {
+            border-right-color: $secondary;
+        }
+    }
+}
+
+#status h3 {
+    line-height: 1.75rem;
+}
+
 .container-text-small .circle:not(.circle-sm):not(.circle-lg), .circle-sm {
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
+
+    i {
+        font-size: $small-font-size;
+    }
 }
 
 .container-text-large .circle:not(.circle-sm):not(.circle-lg),
@@ -51,6 +114,104 @@
 {
     height: 40px;
     width: 40px;
+}
+
+.wrong {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-times);
+        text-align: center;
+    }
+}
+
+.course-list li.completed, .course-list li.mod-completed, .correct, .step_tabs li.step_inactive {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-check);
+        text-align: center;
+    }
+}
+
+.list-circle li.list-circle-fa-star {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-star);
+    }
+}
+
+.list-circle li.list-circle-fa-cogs {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-cogs);
+    }
+}
+
+.list-circle li.list-circle-fa-users {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-users);
+    }
+}
+
+.list-circle li.list-circle-fa-user-lock {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-user-lock);
+    }
+}
+
+.list-circle li.list-circle-fa-paper-plane {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-paper-plane);
+    }
+}
+
+.list-circle li.list-circle-fa-edit {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-edit);
+    }
+}
+
+.list-curve p:first-child {
+    &::after {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-angle-up);
+    }
+}
+
+.list-curve p:not(:last-child) {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-times);
+    }
+}
+
+.list-curve p:last-child, .list-circle li.list-circle-fa-check, .list-circle.list-circle-fa-check li {
+    &::before {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-check);
+    }
+}
+
+.list-curve p:last-child {
+    &::after {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-angle-down);
+    }
 }
 
 @include media-breakpoint-up(md) {
@@ -63,8 +224,12 @@
 
     .container-text-small-md, .container-text-large-md-small {
         .circle:not(.circle-sm):not(.circle-lg) {
-            height: 20px;
-            width: 20px;
+            height: 25px;
+            width: 25px;
+
+            i {
+                font-size: $small-font-size;
+            }
         }
     }
 }

@@ -21,6 +21,12 @@
     }
 }
 
+@each $color, $value in $theme-colors {
+    .bg-outline-#{$color} {
+        border: 1px solid $value;
+    }
+}
+
 .bg-github {
     background: var(--theme-opposite);
 
@@ -29,7 +35,7 @@
     }
 }
 
-.bg-primary, .bg-success, .bg-danger {
+.bg-primary, .bg-success, .bg-danger, .bg-theme-primary {
     h1, h2, h3, h4, h5, h6, p, li {
         color: $white;
         color: var(--background);
@@ -37,17 +43,37 @@
 }
 
 .bg-theme {
-    background: $gray-100;
-    background: var(--background);
+    background: $gray-100 !important;
+    background: var(--background) !important;
 }
 
 .bg-theme-light {
-    background: $white;
-    background: var(--background-light);
+    background: $white !important;
+    background: var(--background-light) !important;
+}
+
+.bg-theme-light-2 {
+    background: $gray-300 !important;
+    background: var(--background-light-2) !important;
+}
+
+.bg-theme-primary {
+    background: $primary !important;
+    background: var(--theme-primary) !important;
+}
+
+.bg-theme-primary-light {
+    background: $primary-150 !important;
+    background: var(--background-primary-light) !important;
+}
+
+.bg-theme-opposite {
+    background: $gray-900 !important;
+    background: var(--theme-opposite) !important;
 }
 
 .bg-primary-opacity-25 {
-    background: $primary-opacity-25;
+    background: $primary-opacity-25 !important;
 }
 
 .bg-theme, .bg-theme-light {
@@ -57,11 +83,17 @@
     }
 }
 
+.bg-primary-900 {
+    h3, h4, h5, h6, p, li {
+        color: $gray-400;
+    }
+}
+
 /*Background Utilities*/
 .bg-img-cover {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
     z-index: 1;
 }
 
@@ -88,4 +120,26 @@
 
 .bg-cornered-stairs {
     background-image: url("/assets/images/global-shared/svg-backgrounds/cornered-stairs.svg");
+}
+
+.bg-snowflake {
+    background: url("/Content/images/snowflake-background.png");
+    background-repeat: repeat;
+}
+
+.bg-desk {
+    background: -moz-linear-gradient(-45deg, rgba($primary, 0.8) 0%, rgba($primary, 0.8) 100%), url("/Content/images/headers/c4b-banner.jpg");
+    background: -webkit-linear-gradient(-45deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/Content/images/headers/c4b-banner.jpg");
+    background: linear-gradient(135deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/Content/images/headers/c4b-banner.jpg");
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e61a375a', endColorstr='#e67db9e8',GradientType=1 );
+}
+
+.img-berry {
+    width: 30px;
+}
+
+@include media-breakpoint-up(md) {
+    .img-berry {
+        width: 40px;
+    }
 }

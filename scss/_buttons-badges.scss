@@ -8,6 +8,11 @@
 }
 
 // Solid buttons/badges shared states
+.btn-width {
+    white-space: nowrap;
+    width: 100%;
+}
+
 .btn-primary, .btn-success, .btn-danger, .btn-close
 {
     color: $white;
@@ -219,6 +224,60 @@
 
     .fas {
         color: $primary;
+    }
+}
+
+.btn-theme {
+    border: 1px solid $gray-100;
+    border: 1px solid var(--background);
+    background: $gray-100;
+    background: var(--background);
+    color: $gray-900;
+    color: var(--theme-opposite);
+
+    &:not(:disabled):not(.disabled) {
+        &:active, &.active, &:active:focus, &.active:focus {
+            color: $gray-900;
+            color: var(--theme-opposite);
+        }
+    }
+
+    &:hover, &:focus, &.focus, &:disabled, &.disabled {
+        color: $gray-900;
+        color: var(--theme-opposite);
+    }
+}
+
+.btn-outline-theme {
+    border: 1px solid $gray-100;
+    border: 1px solid var(--background);
+    color: $gray-100;
+    color: var(--background);
+
+    &:not(:disabled):not(.disabled) {
+        &:active, &.active, &:active:focus, &.active:focus {
+            border: 1px solid $gray-100;
+            border: 1px solid var(--background);
+            background: $gray-100;
+            background: var(--background);
+            color: $gray-900;
+            color: var(--theme-opposite);
+        }
+    }
+
+    &:hover, &:focus, &.focus, &:disabled, &.disabled {
+        border: 1px solid $gray-100;
+        border: 1px solid var(--background);
+        background: $gray-100;
+        background: var(--background);
+        color: $gray-900;
+        color: var(--theme-opposite);
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .btn-width {
+        width: auto;
     }
 }
 

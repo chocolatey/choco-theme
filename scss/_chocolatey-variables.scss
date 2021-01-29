@@ -35,6 +35,8 @@ $rss:       $orange;
 
 // Theme
 $primary:      $blue;
+
+// Pallette
 $primary-50:   tint-color($primary, 90%);
 $primary-100:  tint-color($primary, 80%);
 $primary-150:  tint-color($primary, 70%);
@@ -154,6 +156,9 @@ $orange-800:  shade-color($orange, 60%);
 $orange-850:  shade-color($orange, 70%);
 $orange-900:  shade-color($orange, 80%);
 $orange-950:  shade-color($orange, 90%);
+
+// Additional Theme
+$dark:         $primary-950;
 
 // Custom Colors
 $primary-opacity-25:        rgba($primary, 0.25);
@@ -293,11 +298,12 @@ $palette-colors: (
     --background: #{$gray-100};
     --background-light: #{$white};
     --background-primary-light: #{$primary-150};
-    --background-disabled: #{$gray-300};
+    --background-light-2: #{$gray-300};
     --text: #{$gray-900};
     --text-code: #{$gray-800};
     --border: #{$gray-300};
     --border-secondary: #{$gray-300};
+    --theme-primary: #{$primary};
     --theme-purple: #{$purple};
     --theme-orange: #{$orange};
     --theme-red: #{$red};
@@ -319,11 +325,12 @@ $palette-colors: (
       --background: #{$primary-950};
       --background-light: #{$primary-900};
       --background-primary-light: #{$primary-850};
-      --background-disabled: #{$primary-800};
+      --background-light-2: #{$primary-800};
       --text: #{$gray-400};
       --text-code: #{$gray-500};
       --border: #{$primary-800};
       --border-secondary: #{$primary-opacity-50};
+      --theme-primary: #{$primary-600};
       --theme-purple: #{$purple-300};
       --theme-orange: #{$orange-300};
       --theme-red: #{$red-300};
@@ -341,11 +348,12 @@ $palette-colors: (
     --background: #{$primary-950};
     --background-light: #{$primary-900};
     --background-primary-light: #{$primary-850};
-    --background-disabled: #{$primary-800};
+    --background-light-2: #{$primary-800};
     --text: #{$gray-400};
     --text-code: #{$gray-500};
     --border: #{$primary-800};
     --border-secondary: #{$primary-opacity-50};
+    --theme-primary: #{$primary-600};
     --theme-purple: #{$purple-300};
     --theme-orange: #{$orange-300};
     --theme-red: #{$red-300};
@@ -422,6 +430,9 @@ $form-select-border-color: $primary;
 $input-border-color: $primary;
 $input-focus-border-color: $primary;
 $input-disabled-bg: $gray-300;
+$form-select-indicator-color: $primary;
+$form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$primary}'/></svg>") !default;
+
 
 // Tabs
 $nav-tabs-link-active-bg: $white;
