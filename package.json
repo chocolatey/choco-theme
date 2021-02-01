@@ -34,6 +34,7 @@
     "gulp-uglify-es": "^2.0.0",
     "jquery": "^3.5.1",
     "jquery-validation": "^1.19.3",
+    "jquery-validation-unobtrusive": "^3.2.11",
     "jquery.countdown": "^1.2.8",
     "knockout": "^3.5.1",
     "merge-stream": "^2.0.0",

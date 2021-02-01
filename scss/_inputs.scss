@@ -52,6 +52,10 @@
     }
 }
 
+.validation-summary-valid {
+    display: none;
+}
+
 .validation-summary-errors {
     ul {
         list-style-type: none;
@@ -59,7 +63,7 @@
         margin: $spacer 0;
 
         li {
-            &:not:first-child {
+            &:not(:first-child) {
                 margin-top: $spacer / 2;
             }
 
