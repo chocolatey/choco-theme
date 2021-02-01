@@ -100,7 +100,7 @@ img, svg {
 }
 
 #mainContent, .sub-content {
-    a:not(.anchorjs-link):not(.btn):not(.badge) {
+    a:not(.anchorjs-link):not(.btn):not(.badge):not(.nav-link) {
         padding: 14px 0;
     }
 
@@ -171,7 +171,7 @@ main {
     }
 
     #mainContent, .sub-content {
-        a:not(.anchorjs-link):not(.btn):not(.badge) {
+        a:not(.anchorjs-link):not(.btn):not(.badge):not(.nav-link) {
             padding: 0;
         }
     }
