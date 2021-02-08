@@ -2,7 +2,7 @@ $(getStats);
 
 function getStats(currData) {
     currData = currData || {};
-    $.get('/Stats', function(data) {
+    $.get('https://community.chocolatey.org/stats', function(data) {
         var section = $('section.aggstats');
         section.show();
         update(data, currData, 'UniquePackages');
