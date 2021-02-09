@@ -123,14 +123,14 @@
 }
 
 .bg-snowflake {
-    background: url("/Content/images/snowflake-background.png");
+    background: url("/assets/images/snowflake-background.png");
     background-repeat: repeat;
 }
 
 .bg-desk {
-    background: -moz-linear-gradient(-45deg, rgba($primary, 0.8) 0%, rgba($primary, 0.8) 100%), url("/Content/images/headers/c4b-banner.jpg");
-    background: -webkit-linear-gradient(-45deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/Content/images/headers/c4b-banner.jpg");
-    background: linear-gradient(135deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/Content/images/headers/c4b-banner.jpg");
+    background: -moz-linear-gradient(-45deg, rgba($primary, 0.8) 0%, rgba($primary, 0.8) 100%), url("/assets/images/headers/c4b-banner.jpg");
+    background: -webkit-linear-gradient(-45deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/assets/images/headers/c4b-banner.jpg");
+    background: linear-gradient(135deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/assets/images/headers/c4b-banner.jpg");
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e61a375a', endColorstr='#e67db9e8',GradientType=1 );
 }
 
