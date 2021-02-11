@@ -1,9 +1,9 @@
-$(getStats);
+jQuery(getStats);
 
 function getStats(currData) {
     currData = currData || {};
-    $.get('https://community.chocolatey.org/stats', function(data) {
-        var section = $('section.aggstats');
+    jQuery.get('https://community.chocolatey.org/stats', function(data) {
+        var section = jQuery('section.aggstats');
         section.show();
         update(data, currData, 'UniquePackages');
         update(data, currData, 'Downloads');
@@ -21,7 +21,7 @@ function getStats(currData) {
 function update(data, currData, key) {
     var currentValue = currData[key] || '';
     var value = data[key].toString();
-    var self = $('#' + key);
+    var self = jQuery('#' + key);
     
     if (currentValue != value) {
         currData[key] = value;
@@ -36,10 +36,10 @@ function update(data, currData, key) {
 
         if (currLength) {
             // Do not animate the first time around.
-            $.each(value.split('').reverse(), function (i, e) {
+            jQuery.each(value.split('').reverse(), function (i, e) {
                 var c = (i <= currLength) ? currentValue.charAt(currLength - i - 1) : '';
                 if (c != e) {
-                    var el = $(items[length - i - 1]);
+                    var el = jQuery(items[length - i - 1]);
                     animateEl(el, e);
                 }
             });
@@ -58,6 +58,6 @@ function animateEl(el, v) {
     v = v || '';
     var parent = el.parent();
     el.stop(true, true).animate({ top: 0.3 * parseInt(parent.height()) }, 350, 'linear', function () {
-        $(this).html(v).css({ top: -0.8 * parseInt(parent.height()) }).animate({ top: 0 }, 350, 'linear');
+        jQuery(this).html(v).css({ top: -0.8 * parseInt(parent.height()) }).animate({ top: 0 }, 350, 'linear');
     });
 }

@@ -6,11 +6,11 @@
     function getElementHeight() {
         // Get window height
         let vh = window.innerHeight * 0.01;
-        $('html').css('--vh', vh + 'px');
+        jQuery('html').css('--vh', vh + 'px');
 
         // Get main height
-        let mh = window.innerHeight - $('header').outerHeight(true) - $('footer').outerHeight(true);
-        $('main').css('--mh', mh + 'px');
+        let mh = window.innerHeight - jQuery('header').outerHeight(true) - jQuery('footer').outerHeight(true);
+        jQuery('main').css('--mh', mh + 'px');
     }
 
     // Set a cookie value that never expires based on current date

@@ -2,9 +2,9 @@
 // Package Preferences
 (function() {
     var cookieDisclaimerName = 'chocolatey_hide_packages_disclaimer',
-        preferenceGridView = $('#preferenceGridView'),
+        preferenceGridView = jQuery('#preferenceGridView'),
         gridView = getCookie("preferenceGridView"),
-        preferenceModView = $('#preferenceModView'),
+        preferenceModView = jQuery('#preferenceModView'),
         modView = getCookie("preferenceModView");
 
     // Community Disclaimer
@@ -29,7 +29,7 @@
     }
 
     // Save Preferences
-    $('.btn-preferences').click(function () {
+    jQuery('.btn-preferences').click(function () {
         if (preferenceGridView.prop("checked") == true) {
             document.cookie = "preferenceGridView=true";
         }
@@ -46,35 +46,35 @@
     });
 
     // Package warning callout
-    $('#callout-package-warning a[data-bs-toggle="collapse"]').click(function () {
+    jQuery('#callout-package-warning a[data-bs-toggle="collapse"]').click(function () {
         document.cookie = "chocolatey_hide_packages_warning=true";
     });
 
     // Package Filtering
-    $("#sortOrder,#prerelease,#moderatorQueue,#moderationStatus").change(function () {
-        $(this).closest("form").submit();
+    jQuery("#sortOrder,#prerelease,#moderatorQueue,#moderationStatus").change(function () {
+        jQuery(this).closest("form").submit();
     });
 
     // Package Details
     // Prism for Description section
     // Description Area
-    if ($('#description pre').length) {
-        $('#description').find("pre").addClass('line-numbers border').wrapInner('<code class="language-powershell"></code>');
-        Prism.highlightAllUnder($('#description')[0]);
+    if (jQuery('#description pre').length) {
+        jQuery('#description').find("pre").addClass('line-numbers border').wrapInner('<code class="language-powershell"></code>');
+        Prism.highlightAllUnder(jQuery('#description')[0]);
     }
 
-    $(".comments-list").each(function () {
-        var commentList = $(this);
+    jQuery(".comments-list").each(function () {
+        var commentList = jQuery(this);
 
         commentList.find("h4:contains('(maintainer)')").addClass('comment-title comment-maintainer');
         commentList.find("h4:contains('(reviewer)')").addClass('comment-title comment-reviewer');
         commentList.children().not('.comment-title').addClass("comment-body");
         
         // Style Code
-    	$('.comments-list pre').contents().unwrap().wrap('<p></p>');
+    	jQuery('.comments-list pre').contents().unwrap().wrap('<p></p>');
 
         commentList.find(".comment-title").each(function () {
-            var h4 = $(this),
+            var h4 = jQuery(this),
                 text = h4.text(),
                 textParts = text.split(' on');
 
@@ -108,11 +108,11 @@
     });
 
     // Files Section
-    var fileCollapse = $('.moderation-view [class*="file-path-"]');
+    var fileCollapse = jQuery('.moderation-view [class*="file-path-"]');
     // Files hidden on load and toggled
-    $('[class*="file-path-"]').on('show.bs.collapse', function () {
-        if (!$(this).find('pre').hasClass('line-numbers')) {
-            var langBrush = $(this).parent().find('span').first().text();
+    jQuery('[class*="file-path-"]').on('show.bs.collapse', function () {
+        if (!jQuery(this).find('pre').hasClass('line-numbers')) {
+            var langBrush = jQuery(this).parent().find('span').first().text();
             if (langBrush.indexOf("\\") >= 0) {
                 // Find everything after last \ if there is one
                 langBrush = langBrush.substr(langBrush.lastIndexOf("\\") + 1);
@@ -137,35 +137,35 @@
                 default:
                     langBrush = "none";
             }
-            $(this).find('pre').addClass('line-numbers').find("code").addClass('language-' + langBrush);
-            Prism.highlightElement($(this).find('code')[0]);
+            jQuery(this).find('pre').addClass('line-numbers').find("code").addClass('language-' + langBrush);
+            Prism.highlightElement(jQuery(this).find('code')[0]);
         }
     });
     // Expand or Show all files
-    $('#files .btn-collapse-files').click(function () {
-        var $this = $(this);
-        var thisText = $this.text();
-        if ($this.hasClass('btn-success')) {
-            $this.text(thisText.replace('Expand', 'Collapse'));
-            $this.removeClass('btn-success').addClass('btn-danger');
-            $('#files .btn:contains("Show")').html('Hide');
+    jQuery('#files .btn-collapse-files').click(function () {
+        var btnCollapseAll = jQuery(this);
+        var btnCollapseAllText = btnCollapseAll.text();
+        if (btnCollapseAll.hasClass('btn-success')) {
+            btnCollapseAll.text(btnCollapseAllText.replace('Expand', 'Collapse'));
+            btnCollapseAll.removeClass('btn-success').addClass('btn-danger');
+            jQuery('#files .btn:contains("Show")').html('Hide');
             fileCollapse.collapse('show');
-        } else if ($this.hasClass('btn-danger')) {
-            $this.text(thisText.replace('Collapse', 'Expand'));
-            $this.removeClass('btn-danger').addClass('btn-success');
-            $('#files .btn:contains("Hide")').html('Show');
+        } else if (btnCollapseAll.hasClass('btn-danger')) {
+            btnCollapseAll.text(btnCollapseAllText.replace('Collapse', 'Expand'));
+            btnCollapseAll.removeClass('btn-danger').addClass('btn-success');
+            jQuery('#files .btn:contains("Hide")').html('Show');
             fileCollapse.collapse('hide');
         }
     });
     
     // Initialize Text Editor
-    $('.text-editor').each(function () {
+    jQuery('.text-editor').each(function () {
         var placeholder = "";
 
-        if ($(this).is('#NewReviewComments')) {
+        if (jQuery(this).is('#NewReviewComments')) {
             placeholder = "Add to Review Comments";
         }
-        else if ($(this).is('#ExemptedFromVerificationReason')) {
+        else if (jQuery(this).is('#ExemptedFromVerificationReason')) {
             placeholder = "Exempted Reason";
         }
         var easymde = new EasyMDE({
@@ -175,29 +175,29 @@
             toolbar: ["bold", "italic", "heading", "strikethrough", "|", "quote", "unordered-list", "ordered-list", "code", "|", "link", "image", "|", "side-by-side", "fullscreen", "|", "preview"]
         });
         easymde.render();
-        $('<span class="ms-1"> Preview</span>').insertAfter($(this).next().find('.fa-eye')).parent().addClass('fw-bold text-primary').attr('style', 'width:90px');
+        jQuery('<span class="ms-1"> Preview</span>').insertAfter(jQuery(this).next().find('.fa-eye')).parent().addClass('fw-bold text-primary').attr('style', 'width:90px');
         // Below snippet added to allow content to be shown inside of collapsed or hidden items without having to click on the textarea. See https://github.com/Ionaru/easy-markdown-editor/issues/208#issuecomment-645656131.
         easymde.element.cmirror = easymde.codemirror;
     });
     // Below snippet added to allow content to be shown inside of collapsed or hidden items without having to click on the textarea. See https://github.com/Ionaru/easy-markdown-editor/issues/208#issuecomment-645656131.
-    $('.text-editor-refresh').each(function () {
-        $(this).on('shown.bs.collapse', function () {
-            if (!$(this).hasClass('text-editor-refreshed')) {
-                var easymdeRefresh = $(this).attr('id');
+    jQuery('.text-editor-refresh').each(function () {
+        jQuery(this).on('shown.bs.collapse', function () {
+            if (!jQuery(this).hasClass('text-editor-refreshed')) {
+                var easymdeRefresh = jQuery(this).attr('id');
 
-                $('#' + easymdeRefresh + ' textarea')[0].cmirror.refresh();
-                $('#' + easymdeRefresh).addClass('text-editor-refreshed');
+                jQuery('#' + easymdeRefresh + ' textarea')[0].cmirror.refresh();
+                jQuery('#' + easymdeRefresh).addClass('text-editor-refreshed');
             }
         });
     });
 
     // Hide comment instructions
-    $('#instructions').on('hidden.bs.collapse', function () {
+    jQuery('#instructions').on('hidden.bs.collapse', function () {
         if (!getCookie('chocolatey_hide_comment_instructions')) {
             document.cookie = "chocolatey_hide_comment_instructions=true;path=/";
         }
     });
-    $('#instructions').on('shown.bs.collapse', function () {
+    jQuery('#instructions').on('shown.bs.collapse', function () {
         if (getCookie('chocolatey_hide_comment_instructions')) {
             document.cookie = "chocolatey_hide_comment_instructions=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         }

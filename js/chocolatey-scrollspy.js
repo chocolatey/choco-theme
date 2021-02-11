@@ -1,13 +1,13 @@
 (function() {
     //Highlight/ find active right sidebar nav links when scrolling/clicked
-    $.each($('.nav-scrollspy .nav-link'), function() {
-        var scrollHash = $(this).attr('href');
+    jQuery.each(jQuery('.nav-scrollspy .nav-link'), function() {
+        var scrollHash = jQuery(this).attr('href');
 
         // Find active link on load
         findActiveRightNavLink(scrollHash);
 
         // Highlight active links when scrolled
-        $(window).scroll(function() {
+        jQuery(window).scroll(function() {
             findActiveRightNavLink(scrollHash);
         });
 
@@ -19,12 +19,12 @@
                 scrollHash = scrollHash.replace(/\./g, "\\.");
             }
 
-            if ($(scrollHash).length) {
-                if ($(window).scrollTop() >= $(scrollHash).offset().top && $(scrollHash).is(':visible')) {
-                    $('a[href="' + scrollHash + '"]').addClass('active active-page');
-                    $('a[href="' + scrollHash + '"]').parent().prev().find('a.active').removeClass('active active-page');
+            if (jQuery(scrollHash).length) {
+                if (jQuery(window).scrollTop() >= jQuery(scrollHash).offset().top && jQuery(scrollHash).is(':visible')) {
+                    jQuery('a[href="' + scrollHash + '"]').addClass('active active-page');
+                    jQuery('a[href="' + scrollHash + '"]').parent().prev().find('a.active').removeClass('active active-page');
                 } else {
-                    $('a[href="' + scrollHash + '"]').removeClass('active active-page');
+                    jQuery('a[href="' + scrollHash + '"]').removeClass('active active-page');
                 }
             }
         }

@@ -1,14 +1,14 @@
 (function() {
-    $(function () {
-        $(".lazy + noscript").remove();
+    jQuery(function () {
+        jQuery(".lazy + noscript").remove();
     });
     document.addEventListener("DOMContentLoaded", function () {
-        $.fn.isInViewport = function () {
-            var elementTop = $(this).offset().top;
-            var elementBottom = elementTop + $(this).outerHeight();
+        jQuery.fn.isInViewport = function () {
+            var elementTop = jQuery(this).offset().top;
+            var elementBottom = elementTop + jQuery(this).outerHeight();
     
-            var viewportTop = $(window).scrollTop();
-            var viewportBottom = viewportTop + $(window).height();
+            var viewportTop = jQuery(window).scrollTop();
+            var viewportBottom = viewportTop + jQuery(window).height();
     
             return elementBottom > viewportTop && elementTop < viewportBottom;
         };
@@ -46,14 +46,14 @@
         document.addEventListener("scroll", lazyLoad);
         window.addEventListener("resize", lazyLoad);
         window.addEventListener("orientationchange", lazyLoad);
-        $('.lazy').each(function () {
-            if ($(this).isInViewport() && $(this).parent().parent().parent().hasClass("carousel-item")) {
-                $('.carousel').on('slide.bs.carousel', function () {
+        jQuery('.lazy').each(function () {
+            if (jQuery(this).isInViewport() && jQuery(this).parent().parent().parent().hasClass("carousel-item")) {
+                jQuery('.carousel').on('slide.bs.carousel', function () {
                     lazyLoad();
                 });
             }
-            else if ($(this).isInViewport() && !$(this).parent().parent().parent().hasClass("carousel-item")) {
-                $(this).attr("src", $(this).attr("data-src"));
+            else if (jQuery(this).isInViewport() && !jQuery(this).parent().parent().parent().hasClass("carousel-item")) {
+                jQuery(this).attr("src", jQuery(this).attr("data-src"));
             }
         });
     });
