@@ -1,6 +1,6 @@
 (function() {
-    const collapseY =  $('.collapse-y-height'),
-          mainContent = $('#mainContent');
+    const collapseY =  jQuery('.collapse-y-height'),
+          mainContent = jQuery('#mainContent');
     
     if (collapseY.length && mainContent.length) {
 
@@ -11,8 +11,8 @@
             var mainContentOffset = mainContent.offset();
 
             if (window.innerWidth >= 768) {
-                if (mainContentOffset.top + mainContent.outerHeight(true) <  $(window).height()) {
-                    collapseYHeight = $(window).height() - $('header').outerHeight(true) - $('footer').outerHeight(true) + 'px';
+                if (mainContentOffset.top + mainContent.outerHeight(true) <  jQuery(window).height()) {
+                    collapseYHeight = jQuery(window).height() - jQuery('header').outerHeight(true) - jQuery('footer').outerHeight(true) + 'px';
 
                     collapseY.css('height', collapseYHeight);
                 } else {

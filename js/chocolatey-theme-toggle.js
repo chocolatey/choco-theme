@@ -1,6 +1,6 @@
 (function() {
-    const table = $('table'),
-          themeToggle = $('#themeToggle');
+    const table = jQuery('table'),
+          themeToggle = jQuery('#themeToggle');
 
     // Toggle theme but do not allow in IE (not supported)
     if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
@@ -19,7 +19,7 @@
         }
 
         // Detect system color scheme changes while user is on page
-        $(window.matchMedia('(prefers-color-scheme: dark)')).on('change', function(e) {
+        jQuery(window.matchMedia('(prefers-color-scheme: dark)')).on('change', function(e) {
             const newThemePreference = e.matches ? "dark" : "light";
 
             if (newThemePreference == 'dark' && !localStorage.getItem('theme')) {
@@ -33,11 +33,11 @@
 
         themeToggle.click(function() {
             if (themeToggle.is(':checked')) {
-                $('html').attr('data-user-color-scheme', 'dark');
+                jQuery('html').attr('data-user-color-scheme', 'dark');
                 localStorage.setItem('theme', 'dark');
                 table.addClass('table-dark');
             } else {
-                $('html').attr('data-user-color-scheme', 'light');
+                jQuery('html').attr('data-user-color-scheme', 'light');
                 localStorage.setItem('theme', 'light');
                 table.removeClass('table-dark');
             }

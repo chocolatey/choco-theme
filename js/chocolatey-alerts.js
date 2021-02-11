@@ -1,7 +1,7 @@
 (function() {
-    const topNoticeAlert = $('#topNoticeAlert'),
+    const topNoticeAlert = jQuery('#topNoticeAlert'),
           topNotice = window.sessionStorage.getItem('notice'),
-          cookieNoticeAlert = $('#cookieNoticeAlert'),
+          cookieNoticeAlert = jQuery('#cookieNoticeAlert'),
           cookieNoticeName = 'chocolatey_hide_cookies_notice',
           cookieNotice = getCookie(cookieNoticeName);
 

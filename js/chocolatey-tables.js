@@ -1,9 +1,9 @@
 (function() {
-    const table = $('table');
+    const table = jQuery('table');
 
     // Style Tables
-    $.each(table, function () {
-        $(this).wrap('<div class="table-responsive"></div>');
-        $(this).addClass('table table-bordered table-striped');
+    jQuery.each(table, function () {
+        jQuery(this).wrap('<div class="table-responsive"></div>');
+        jQuery(this).addClass('table table-bordered table-striped');
     });
 })();

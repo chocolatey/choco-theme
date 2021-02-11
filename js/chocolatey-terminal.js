@@ -1,7 +1,7 @@
 (function() {
-    if ($('#terminal .card-body').length) {
-        var phrasesSpan = $('#terminal .card-body span[data-animate]');
-        var phrases = $('#terminal .card-body span[data-animate]').attr('data-animate').split(',');
+    if (jQuery('#terminal .card-body').length) {
+        var phrasesSpan = jQuery('#terminal .card-body span[data-animate]');
+        var phrases = jQuery('#terminal .card-body span[data-animate]').attr('data-animate').split(',');
         var index = 0;
         var position = 0;
         var currentString = '';

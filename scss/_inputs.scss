@@ -27,6 +27,10 @@
                 border-color: $gray-500;
             }
         }
+
+        &.is-invalid {
+            border-color: $danger;
+        }
     }
 }
 

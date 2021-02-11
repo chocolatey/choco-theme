@@ -1,9 +1,9 @@
 (function() {
-    var placeholderContainer = $('.placeholder-container');
+    var placeholderContainer = jQuery('.placeholder-container');
 
     placeholderContainer.each(function(){
-        var placeholderImg = $(this).find('div:first-child');
-        var placeholderBg = $(this).find('div:last-child');
+        var placeholderImg = jQuery(this).find('div:first-child');
+        var placeholderBg = jQuery(this).find('div:last-child');
         var bgColor = [
             'bg-primary', 
             'bg-primary',

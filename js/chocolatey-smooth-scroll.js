@@ -1,6 +1,6 @@
 (function() {
     // Smooth scroll
-    $('a')
+    jQuery('a')
         // Remove links we don't want to smooth scroll to
         .not('[data-bs-toggle="collapse"]')
         .not('[data-bs-toggle="tab"]')
@@ -23,14 +23,14 @@
                 scrollHash = hash.replace(/\./g, "\\.");
             }
 
-            if ($(scrollHash).is(':hidden')) {
-                var scrollHashParent = $(scrollHash).parent();
+            if (jQuery(scrollHash).is(':hidden')) {
+                var scrollHashParent = jQuery(scrollHash).parent();
                 var scrollHashParentCollapse = Collapse.getInstance(scrollHashParent) ? Collapse.getInstance(scrollHashParent) : new Collapse(scrollHashParent, { toggle: false });
                 
                 // not working
                 scrollHashParentCollapse.show();
 
-                $(scrollHash).parent().on('shown.bs.collapse', function () {
+                jQuery(scrollHash).parent().on('shown.bs.collapse', function () {
                     console.log('smooth scroll collapse shown');
                     animateScroll();
                 })
@@ -39,8 +39,8 @@
             }
 
             function animateScroll() {
-                $('html, body').animate({
-                    scrollTop: $(scrollHash).offset().top
+                jQuery('html, body').animate({
+                    scrollTop: jQuery(scrollHash).offset().top
                     }, 800, function() {
                     window.location.hash = hash;
                 });

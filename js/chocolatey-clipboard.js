@@ -9,7 +9,7 @@
     });
 
     // Make input text selectable with one click
-    $(document).on('click', 'input[type=text]', function () {
+    jQuery(document).on('click', 'input[type=text]', function () {
         this.select();
     });
 })();
