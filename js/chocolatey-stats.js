@@ -1,4 +1,6 @@
-jQuery(getStats);
+if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1" && location.hostname !== "") {
+    jQuery(getStats);
+}
 
 function getStats(currData) {
     currData = currData || {};
