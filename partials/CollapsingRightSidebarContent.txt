@@ -1,0 +1,106 @@
+﻿<!-- When adding a new announcement, change the number on the end of the value to the next available. Example: 1 becomes 2, 2 becomes 3. -->
+<input id="announcementCookie" value="chocolatey_announcement_3" type="hidden" />
+<!-- When adding a new announcement, update the value number to the amount of new announcements added. -->
+<input id="announcementCount" value="1" type="hidden" />
+
+<div id="announcementCount"></div>
+<div id="announcementCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+    <div class="position-relative w-100 overflow-hidden">
+        <div class="carousel-item active">
+            <div class="card bg-theme-primary mb-0">
+                <div class="card-body text-center">
+                    <h3>Resources</h3>
+                    <p>Watch videos, read documentation, and hear Chocolatey success stories from companies you trust.</p>
+                    <a href="https://chocolatey.org/resources" class="btn btn-theme btn-width">View Resources</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card bg-success text-white mb-0">
+                <div class="card-body text-center">
+                    <h3>Events</h3>
+                    <p>Find past and upcoming webinars, workshops, and conferences. New events have recently been added!</p>
+                    <a href="https://chocolatey.org/events" class="btn btn-theme btn-width">View Events</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card bg-primary-900 mb-0">
+                <div class="card-body text-center">
+                    <h3>Courses</h3>
+                    <p>Step-by-step guides for all things Chocolatey! Earn badges as you learn through interactive digital courses.</p>
+                    <a href="https://community.chocolatey.org/courses" class="btn btn-primary btn-width">View Courses</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="text-center">
+    <a href="#" rel="noreferrer" target="_blank">
+        <img class="img-fluid mb-3" src="https://chocolatey.org/content/images/events/01-06.jpg" alt="12 Days of Chocolatey" />
+    </a>
+    <p><strong>Event from<br />December 1 - December 16 2020</strong></p>
+    <p class="text-start">
+        The 12 Days of Chocolatey livestream event may be over, but we've archived all the videos for you to watch again!
+    </p>
+    <a href="https://chocolatey.org/resources/12-days-of-chocolatey" class="btn btn-primary btn-width mt-2">Watch on-Demand</a>
+    <hr />
+</div>
+<div class="shuffle">
+    <div class="text-center">
+        <a href="https://chocolatey.org/events/chocolatey-deployments">
+            <img class="img-fluid mb-3" src="https://chocolatey.org/content/images/events/01-02.jpg" alt="Webinar: Chocolatey Deployments - Easily Orchestrate Amazing Things!" />
+        </a>
+        <p><strong>Webinar Replay from<br />Tuesday, 23 June 2020</strong></p>
+        <p class="text-start">Chocolatey Central Management now includes the premiere feature of managing endpoints through a Chocolatey-centered solution aka Deployments. We are excited to share what Deployments is all about!</p>
+        <a href="https://chocolatey.org/events/chocolatey-deployments" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
+        <a href="https://chocolatey.zoom.us/webinar/register/WN_MPT5b34zQnud8R0nGgpe5A" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <h3 class="mb-3"><a class="btn-link" href="https://chocolatey.org/covid-19">COVID-19 Resources</a></h3>
+        <p class="text-start">Chocolatey Software is working harder than ever to provide solutions and resources for our customers and community. We'll continue to add to this area so check back often.</p>
+        <a href="https://chocolatey.org/covid-19" class="btn btn-primary btn-width mt-2">Find Resources</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://chocolatey.org/resources/features">
+            <img class="img-fluid mb-3" src="https://chocolatey.org/content/images/videos/04-01.jpg" alt="Chocolatey for Business Feature Video Series" />
+        </a>
+        <p class="mb-3"><strong>Chocolatey for Business Feature Video Series</strong></p>
+        <p class="text-start">
+            In this video series, come take a tour of the many features available in our Chocolatey for Business offering.
+            Many organizations choose Chocolatey for Business when they want to scale out their solution across thousands of nodes, deploy rapidly and reliably every time,
+            mitigate risks with a greatly-simplified patching workflow, and access a Support Team that will guide you on your automation journey.
+        </p>
+        <a href="https://chocolatey.org/resources/features" class="btn btn-primary btn-width mt-2">Watch the Series</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://chocolatey.zoom.us/webinar/register/3516056467398/WN__AtcpeIbQnGACco6PE2QbA" rel="noreferrer" target="_blank">
+            <img class="img-fluid mb-3" src="https://chocolatey.org/content/images/events/01-05.jpg" alt="Chocolatey Central Managements Deployments Scheduling, Semi-Connected Environments, and API" />
+        </a>
+        <p><strong>Webinar Replay from<br />Thursday, 3 December 2020</strong></p>
+        <p class="text-start">
+            Chocolatey Central Management's premiere feature of Deployments now can work with schedules, semi-connected environments, and CCM (Chocolatey Central Management) overall has a published API so you can accomplish more, much more.
+            We are excited to share that with you!
+        </p>
+        <a href="https://chocolatey.org/events/chocolatey-deployment-schedules" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
+        <a href="https://chocolatey.zoom.us/webinar/register/3516056467398/WN__AtcpeIbQnGACco6PE2QbA" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://chocolatey.zoom.us/webinar/register/9116058944622/WN_4sBxu-fqRRSL3-fglGqclQ" rel="noreferrer" target="_blank">
+            <img class="img-fluid mb-3 border" src="https://chocolatey.org/content/images/events/01-07.jpg" alt="Accelerate Automation of Windows with Ansible + Chocolatey" />
+        </a>
+        <p><strong>Webinar Replay from<br />Thursday, 10 December 2020</strong></p>
+        <p class="text-start">
+            Together, Ansible and Chocolatey bring faster and more secure deployments to your Windows environments. Use Chocolatey for software/package management and Ansible to automate and guarantee the desired state of your Windows infrastructure,
+            allowing your team to securely deploy applications faster than ever.
+        </p>
+        <a href="https://chocolatey.org/events/chocolatey-and-ansible" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
+        <a href="https://chocolatey.zoom.us/webinar/register/9116058944622/WN_4sBxu-fqRRSL3-fglGqclQ" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
+        <hr />
+    </div>
+</div>
