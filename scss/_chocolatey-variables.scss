@@ -32,6 +32,8 @@ $linkedin:  #0073b1;
 $github:    $gray-900;
 $facebook:  #1877f2;
 $rss:       $orange;
+$gitter:    #d22e57;
+$google:    #4285F4;
 
 // Theme
 $primary:      $blue;
@@ -173,7 +175,9 @@ $socialmedia-colors: (
   linkedin: $linkedin,
   github:   $github,
   facebook: $facebook,
-  rss:      $rss   
+  rss:      $rss,
+  gitter:   $gitter,
+  google:   $google
 );
 
 $palette-colors: (
