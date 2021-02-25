@@ -1,5 +1,9 @@
-.flatpickr .form-control[readonly] {
+.flatpickr .form-control[readonly]:not([disabled]) {
     background: var(--background-light);
+}
+
+.flatpickr .flatpickr-input[disabled] {
+    cursor: default;
 }
 
 .flatpickr-calendar {

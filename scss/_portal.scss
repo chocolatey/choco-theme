@@ -1,0 +1,17 @@
+[data-license-type="professional"] {
+    #Form_LicenseCount, #Form_OrganizationName, #Form_IsPerpetual  {
+        display: none;
+    }
+}
+
+[data-license-type="architect"], [data-license-type="managed-service-provider"], [data-license-type="choco-mem"] {
+    #Form_Name,  #Form_IsPerpetual, #Form_AdditionalEmails {
+        display: none;
+    }
+}
+
+[data-license-type="business"] { 
+    #Form_Name, #Form_AdditionalEmails {
+        display: none;
+    }
+}
