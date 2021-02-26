@@ -11,6 +11,8 @@
 
     &:disabled, &[readonly] {
         background-color: var(--background-light-2);
+        color: var(--text);
+        opacity: 1;
     }
 }
 
