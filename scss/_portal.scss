@@ -4,14 +4,14 @@
     }
 }
 
-[data-license-type="architect"], [data-license-type="managed-service-provider"], [data-license-type="choco-mem"] {
-    #Form_Name,  #Form_IsPerpetual, #Form_AdditionalEmails {
+[data-license-type="architect"], [data-license-type="managed-service-provider"] {
+    #Form_Name,  #Form_IsPerpetual, .btn-add-cc-bcc {
         display: none;
     }
 }
 
 [data-license-type="business"] { 
-    #Form_Name, #Form_AdditionalEmails {
+    #Form_Name, .btn-add-cc-bcc {
         display: none;
     }
 }
