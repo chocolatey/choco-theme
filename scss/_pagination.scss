@@ -1,0 +1,9 @@
+.page-link {
+    background-color: unset;
+    border: 1px solid var(--border);
+}
+
+.page-item.disabled .page-link {
+    background: unset;
+    border-color: var(--border);
+}
