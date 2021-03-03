@@ -126,7 +126,7 @@
             }
         }
 
-         input {
+         input:not(.search-d-none-key-container) {
              padding-right: 90px;
          }
     }

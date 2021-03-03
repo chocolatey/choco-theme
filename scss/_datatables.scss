@@ -3,13 +3,20 @@
  * ©2020 SpryMedia Ltd, all rights reserved.
  * License: MIT datatables.net/license/mit
  */
+ .dataTables_processing {
+     z-index: 9999;
+ }
  table.dataTable {
     clear: both;
     margin-top: 6px !important;
     margin-bottom: 6px !important;
     max-width: none !important;
+    width: 100% !important;
     //border-collapse: separate !important;
     border-spacing: 0;
+}
+table.dataTable tr {
+    vertical-align: middle;
 }
 table.dataTable td,
 table.dataTable th {
