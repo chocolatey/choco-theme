@@ -74,6 +74,10 @@ h1, h2 {
 /*Tables*/
 .table {
     word-break: normal;
+
+    thead {
+        white-space: nowrap!important;
+    }
 }
 
 .table-dark {
