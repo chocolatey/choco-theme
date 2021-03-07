@@ -11,6 +11,12 @@
     }
 }
 
+@each $color, $value in $palette-colors {
+    .fill-#{$color} {
+        fill: $value;
+    }
+}
+
 @each $color, $value in $socialmedia-colors {
     .bg-#{$color} {
         background: $value;
