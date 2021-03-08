@@ -5,6 +5,10 @@
     if (collapseY.length && mainContent.length) {
 
         getCollapseYHeight();
+
+        // create an Observer instance
+        const resizeObserver = new ResizeObserver(entries => getCollapseYHeight());
+        resizeObserver.observe(document.body);
         window.onresize = getCollapseYHeight;
 
         function getCollapseYHeight() {
