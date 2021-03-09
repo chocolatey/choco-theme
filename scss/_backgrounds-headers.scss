@@ -33,6 +33,11 @@
     }
 }
 
+.fill-theme-light-2 {
+    fill: $gray-300 !important;
+    fill: var(--background-light-2) !important;
+}
+
 .bg-github {
     background: var(--theme-opposite);
 

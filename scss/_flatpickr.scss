@@ -15,7 +15,7 @@
 .flatpickr-day.today:not(.selected) {
     border-color: transparent !important;
     background: unset;
-    color: unset;
+    color: var(--background-light-2);
 }
 
 .flatpickr-months, .flatpickr-weekdays {
