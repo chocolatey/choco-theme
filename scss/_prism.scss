@@ -2,6 +2,11 @@ code {
 	font-weight: bold;
 }
 
+pre.d-format-none {
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-base;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: var(--text-code);
