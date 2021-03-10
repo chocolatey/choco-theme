@@ -4,7 +4,7 @@
     codeBlocks.forEach(trimString);
 
     // Highlight code blocks
-    if (!jQuery('pre').hasClass('highlight-delay')) {
+    if (!jQuery('pre').hasClass('highlight-delay') && !jQuery('pre').hasClass('d-format-none')) {
         jQuery('pre').addClass('line-numbers py-2');
         jQuery('pre:not([class*="language-"])').addClass('language-none');
         Prism.highlightAll();
