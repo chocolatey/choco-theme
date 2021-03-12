@@ -1,0 +1,57 @@
+.ct-legend {
+    position: relative;
+    z-index: 10;
+    font-size: $small-font-size;
+
+    li {
+        position: relative;
+        padding-left: 17px;
+        margin-bottom: 3px;
+    }
+
+    li:before {
+        width: 12px;
+        height: 12px;
+        margin-top: 4px;
+        position: absolute;
+        left: 0;
+        content: '';
+        border: 3px solid transparent;
+        border-radius: 2px;
+    }
+
+    li.inactive:before {
+        background: transparent;
+    }
+
+    li:not(:last-child) {
+        margin-right: 1rem !important;
+    }
+
+    $ct-series-colors: $purple-500, $green-500, $yellow-500, $red-500;
+
+    @for $i from 0 to length($ct-series-colors) {
+        .ct-series-#{$i}:before {
+            background-color: nth($ct-series-colors, $i + 1);
+            border-color: nth($ct-series-colors, $i + 1);
+        }
+    }
+}
+
+.chocolatey-license-portal .card-chartist-legend {
+    padding-bottom: 75px;
+
+    .ct-golden-section>svg {
+        top: 60px;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .chocolatey-license-portal .card-chartist-legend {
+        padding-bottom: 55px;
+    
+        .ct-golden-section>svg {
+            top: 40px;
+        }
+    }
+}
