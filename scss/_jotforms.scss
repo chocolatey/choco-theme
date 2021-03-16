@@ -1,0 +1,93 @@
+.form-all {
+    box-shadow : none;
+}
+
+.page-section>li, .form-all, .form-section.page-section {
+    padding : 0 !important;
+    margin : 0 !important;
+}
+
+.page-section>li {
+    padding: 0 1rem !important;
+}
+
+.form-buttons-wrapper, .form-submit-clear-wrapper {
+    padding : 0;
+}
+
+.form-all, .form-textbox, .form-dropdown, .form-textarea {
+    max-width : 100% !important;
+    width : 100% !important;
+}
+
+.form-textbox, .form-dropdown, .form-textarea {
+    border-color : #5c9fd8;
+}
+
+.form-textbox, .form-dropdown, .form-textarea, .form-dropdown.is-active, .form-dropdown:first-child, .form-all, .form-label-top, .form-label-left, .form-label-right, .form-html, span.form-sub-label, label.form-sub-label, div.form-header-group .form-subHeader, .rating-item-title.for-to > label:first-child, .rating-item-title.for-from > label:first-child, .rating-item-title .editor-container *, .form-checkbox-item label, .form-checkbox-item span, .form-radio-item label, .form-radio-item span, .form-textbox::placeholder, .form-dropdown:not(.time-dropdown):not(:required), .form-dropdown:not(:required), .form-dropdown:required:invalid {
+    color : #5c9fda;
+}
+
+.form-line-error, .page-section li[data-type=control_button].form-line-active, .form-line.jf-required.form-line-error, .form-textbox, .form-textarea, .form-radio-other-input, .form-checkbox-other-input, .form-captcha input, .form-spinner input, .form-dropdown, .supernova, .supernova .form-all, .form-all, .form-section.page-section, .form-line-active {
+    background : none;
+}
+
+.form-line-error input:not(#coupon-input), .form-line-error textarea, .form-line-error .form-validation-error {
+    padding-right : calc(1.5em + .75rem);
+    background-image : url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23f4516c'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23f4516c' stroke='none'/%3e%3c/svg%3e");
+    background-repeat : no-repeat;
+    background-position : right calc(.375em + .1875rem) center;
+    background-size : calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.form-line-error textarea {
+    padding-right : calc(1.5em + .75rem);
+    background-position : top calc(.375em + .1875rem) right calc(.375em + .1875rem);
+}
+
+li.form-line:not(.form-line-column) .form-input-wide[data-layout=half] {
+    width : 100%;
+}
+
+.form-line-error .form-error-message {
+    background : none;
+    padding : 0;
+    color : #f4516c;
+    font-size : .875em;
+}
+
+.form-buttons-wrapper, .form-pagebreak, .form-submit-clear-wrapper {
+    border : none;
+}
+
+.page-section>li:nth-child(2):not(.form-line-column):not([data-type=control_head]):not([data-type=control_text]):not([data-type=control_button]):not([data-type=control_collapse]) {
+    margin-top : 0;
+}
+
+.form-dropdown:hover, .form-textarea:hover, .form-textbox:hover, .signature-wrapper:hover, .calendar.popup:before, .jSignature:hover, li[data-type=control_fileupload] .qq-upload-button-hover, .form-line[data-payment="true"] .form-product-item .p_checkbox .checked, .form-line[data-payment="true"] .form-product-item .p_checkbox:hover .select_border, .form-checkbox:hover+label:before, .form-checkbox:hover+span:before, .form-radio:hover+label:before, .form-radio:hover+span:before, .calendar.popup:before, .form-dropdown:focus, .form-textarea:focus, .form-textbox:focus, .signature-wrapper:focus, li[data-type=control_fileupload] .qq-upload-button-focus, .form-checkbox:focus+label:before, .form-checkbox:focus+span:before, .form-radio:focus+label:before, .form-radio:focus+span:before, .calendar.popup:before {
+    border-color : #5c9fd8;
+    box-shadow : 0 0 0 0.2rem rgb(92 159 216 / 25%);
+}
+
+.form-line-error input:not(#coupon-input), .form-line-error textarea, .form-line-error .form-validation-error, .form-line-error .form-validation-error:hover {
+    color: #f4516c;
+    border-color: #f4516c;
+}
+
+.form-line-error .form-validation-error:hover {
+    box-shadow: 0 0 0 0.25rem rgb(244 81 108 / 25%) !important;
+}
+
+.form-section li:not(:first-child) {
+    margin-top: 1.5rem !important;
+}
+
+.form-section li[data-type="control_checkbox"] > label {
+    display: none !important;
+}
+
+.form-all .form-submit-button, .form-all .form-submit-print {
+    margin-bottom: 1rem;
+    background: #5c9fda;
+    border-color: #5c9fda;
+}
