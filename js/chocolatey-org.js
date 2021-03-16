@@ -23,4 +23,16 @@
              });
         });
     }
+
+    // Email Sent Success Modal
+    var emailSuccess = document.getElementById('Modal_EmailSuccess')
+    if (emailSuccess && window.location.search.includes('emailsuccess=true')) {
+        var emailSuccessModal = Modal.getInstance(emailSuccess) ? Modal.getInstance(emailSuccess) : new Modal(emailSuccess, { keyboard: false, backdrop: 'static' });
+
+        emailSuccessModal.show();
+
+        emailSuccess.addEventListener('hidden.bs.modal', function () {
+            emailSuccessModal.dispose();
+        });
+    }
 })();
