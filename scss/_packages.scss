@@ -1,19 +1,25 @@
 /*Package List View*/
-.package-list-view .package-image-header {
-    width: 50px;
-}
-
 .package-list-view li:last-child hr {
     display: none;
 }
 
 /*Package Grid View*/
-.package-grid-view .package-image-header {
-    width: 35px;
+.package-grid-view .card-body .flex-fill > :nth-child(2) {
+    margin-left: -65px;
 }
 
-.package-grid-view .card-body .flex-fill > :nth-child(2) {
-    margin-left: -50px;
+/*Package Icon & Background*/
+.package-image-header {
+    width: 50px;
+    max-width: 50px;
+    min-width: 50px;
+}
+
+.package-icon {
+    background: $white;
+    border-radius: .25rem;
+    padding: .5rem;
+    border: 1px solid var(--border);
 }
 
 /*Package Sidebar*/
