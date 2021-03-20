@@ -1,17 +1,17 @@
 [data-license-type="professional"] {
-    #Form_LicenseCount, #Form_OrganizationName, #Form_IsPerpetual  {
+    #Form_LicenseCount, #Form_OrganizationName, #Form_IsPerpetual, .btn-add-cc-bcc  {
         display: none;
     }
 }
 
 [data-license-type="architect"], [data-license-type="managed-service-provider"] {
-    #Form_Name,  #Form_IsPerpetual, .btn-add-cc-bcc {
+    #Form_Name,  #Form_IsPerpetual {
         display: none;
     }
 }
 
 [data-license-type="business"] { 
-    #Form_Name, .btn-add-cc-bcc {
+    #Form_Name {
         display: none;
     }
 }
