@@ -112,6 +112,11 @@
     opacity: .6;
 }
 
+// Description
+.chocolatey-org #description h1 {
+    text-transform: none;
+}
+
 // Easy MDE Editor
 .EasyMDEContainer {
     .editor-toolbar {
