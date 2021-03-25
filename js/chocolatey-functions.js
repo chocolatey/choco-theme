@@ -52,6 +52,6 @@
 
     // Trims off spaces from the beginning and end of a string and replaces it
     window.trimString=function(item) {
-        return item.innerHTML = item.innerHTML.replace(item.innerHTML, item.innerHTML.trim());
+        return item.innerHTML = item.innerHTML.trim();
     }
 })();
