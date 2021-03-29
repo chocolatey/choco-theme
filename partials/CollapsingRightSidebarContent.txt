@@ -78,7 +78,7 @@
         <hr />
     </div>
     <div class="text-center">
-        <a href="https://chocolatey.zoom.us/webinar/register/3516056467398/WN__AtcpeIbQnGACco6PE2QbA" rel="noreferrer" target="_blank">
+        <a href="https://chocolatey.zoom.us/rec/share/kx__8-8rmpcM865VJIWYi9G4ME531YR7fc9wCXntOPpLHoBHRzq-hpFumqicdaqf._23U15lBL4cf9_s6" rel="noreferrer" target="_blank">
             <img class="img-fluid mb-3" src="https://chocolatey.org/content/images/events/01-05.jpg" alt="Chocolatey Central Managements Deployments Scheduling, Semi-Connected Environments, and API" />
         </a>
         <p><strong>Webinar Replay from<br />Thursday, 3 December 2020</strong></p>
@@ -87,11 +87,11 @@
             We are excited to share that with you!
         </p>
         <a href="https://chocolatey.org/events/chocolatey-deployment-schedules" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
-        <a href="https://chocolatey.zoom.us/webinar/register/3516056467398/WN__AtcpeIbQnGACco6PE2QbA" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
+        <a href="https://chocolatey.zoom.us/rec/share/kx__8-8rmpcM865VJIWYi9G4ME531YR7fc9wCXntOPpLHoBHRzq-hpFumqicdaqf._23U15lBL4cf9_s6" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
         <hr />
     </div>
     <div class="text-center">
-        <a href="https://chocolatey.zoom.us/webinar/register/9116058944622/WN_4sBxu-fqRRSL3-fglGqclQ" rel="noreferrer" target="_blank">
+        <a href="https://www.youtube.com/watch?v=cPcEmT1OWDs&list=PLGvGJzqY88slekBOxwDi865ydvRL8OEqF&index=9" rel="noreferrer" target="_blank">
             <img class="img-fluid mb-3 border" src="https://chocolatey.org/content/images/events/01-07.jpg" alt="Accelerate Automation of Windows with Ansible + Chocolatey" />
         </a>
         <p><strong>Webinar Replay from<br />Thursday, 10 December 2020</strong></p>
@@ -100,7 +100,7 @@
             allowing your team to securely deploy applications faster than ever.
         </p>
         <a href="https://chocolatey.org/events/chocolatey-and-ansible" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
-        <a href="https://chocolatey.zoom.us/webinar/register/9116058944622/WN_4sBxu-fqRRSL3-fglGqclQ" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
+        <a href="https://www.youtube.com/watch?v=cPcEmT1OWDs&list=PLGvGJzqY88slekBOxwDi865ydvRL8OEqF&index=9" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
         <hr />
     </div>
 </div>
