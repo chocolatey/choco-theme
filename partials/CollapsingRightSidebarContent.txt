@@ -38,7 +38,7 @@
 <hr />
 <div class="text-center">
     <a href="#" rel="noreferrer" target="_blank">
-        <img class="img-fluid mb-3" src="https://chocolatey.org/content/images/events/01-06.jpg" alt="12 Days of Chocolatey" />
+        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-06.jpg" alt="12 Days of Chocolatey" />
     </a>
     <p><strong>Event from<br />December 1 - December 16 2020</strong></p>
     <p class="text-start">
@@ -50,7 +50,7 @@
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-deployments">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/content/images/events/01-02.jpg" alt="Webinar: Chocolatey Deployments - Easily Orchestrate Amazing Things!" />
+            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-02.jpg" alt="Webinar: Chocolatey Deployments - Easily Orchestrate Amazing Things!" />
         </a>
         <p><strong>Webinar Replay from<br />Tuesday, 23 June 2020</strong></p>
         <p class="text-start">Chocolatey Central Management now includes the premiere feature of managing endpoints through a Chocolatey-centered solution aka Deployments. We are excited to share what Deployments is all about!</p>
@@ -66,7 +66,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/resources/features">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/content/images/videos/04-01.jpg" alt="Chocolatey for Business Feature Video Series" />
+            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/videos/04-01.jpg" alt="Chocolatey for Business Feature Video Series" />
         </a>
         <p class="mb-3"><strong>Chocolatey for Business Feature Video Series</strong></p>
         <p class="text-start">
@@ -79,7 +79,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.zoom.us/rec/share/kx__8-8rmpcM865VJIWYi9G4ME531YR7fc9wCXntOPpLHoBHRzq-hpFumqicdaqf._23U15lBL4cf9_s6" rel="noreferrer" target="_blank">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/content/images/events/01-05.jpg" alt="Chocolatey Central Managements Deployments Scheduling, Semi-Connected Environments, and API" />
+            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-05.jpg" alt="Chocolatey Central Managements Deployments Scheduling, Semi-Connected Environments, and API" />
         </a>
         <p><strong>Webinar Replay from<br />Thursday, 3 December 2020</strong></p>
         <p class="text-start">
@@ -92,7 +92,7 @@
     </div>
     <div class="text-center">
         <a href="https://www.youtube.com/watch?v=cPcEmT1OWDs&list=PLGvGJzqY88slekBOxwDi865ydvRL8OEqF&index=9" rel="noreferrer" target="_blank">
-            <img class="img-fluid mb-3 border" src="https://chocolatey.org/content/images/events/01-07.jpg" alt="Accelerate Automation of Windows with Ansible + Chocolatey" />
+            <img class="img-fluid mb-3 border" src="https://chocolatey.org/assets/images/events/01-07.jpg" alt="Accelerate Automation of Windows with Ansible + Chocolatey" />
         </a>
         <p><strong>Webinar Replay from<br />Thursday, 10 December 2020</strong></p>
         <p class="text-start">
