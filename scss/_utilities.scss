@@ -51,9 +51,13 @@
     padding-left: $spacer * 7 !important;
 }
 
-/*Roatation*/
+/*Rotation*/
 .rotate-180 {
     transform: rotate(180deg);
+}
+
+.rotate-30 {
+    transform: rotate(30deg);
 }
 
 /*Height*/
