@@ -2,7 +2,12 @@
     // Set Login/Logoff Navigation
     jQuery(function () {
         // Only check authentication on certain parts of the site
-        var authenticatedURL = window.location.href.indexOf("/packages") > -1 || window.location.href.indexOf("/courses") > -1 || window.location.href.indexOf("/account") > -1 || window.location.href.indexOf("/profiles") > -1;
+        var authenticatedURL = 
+            window.location.href.indexOf("/packages") > -1 || 
+            window.location.href.indexOf("/courses") > -1 || 
+            window.location.href.indexOf("/account") > -1 || 
+            window.location.href.indexOf("/profiles") > -1 || 
+            window.location.href.indexOf("/admin") > -1;
         if (authenticatedURL) {
             jQuery.ajax({
                 type: "POST",
