@@ -1,10 +1,16 @@
 body {
     &.user-authenticated {
-        .user-authenticated {
+        &.user-site-admin {
+            .user-site-admin {
+                display: block;
+            }
+        }
+
+        .user-authenticated:not(.user-site-admin) {
             display: block;
         }
 
-        .user-unauthenticated {
+        .user-unauthenticated, .user-site-admin {
             display: none;
         }
     }
