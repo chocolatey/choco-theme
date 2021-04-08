@@ -24,10 +24,6 @@
 
         if (data.isAuthenticated) {
             authenticated.classList.add('user-authenticated');
-
-            if (data.isSiteAdmin) {
-                authenticated.classList.add('user-site-admin');
-            }
         }
     }
 })();
