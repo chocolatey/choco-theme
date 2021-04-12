@@ -2,7 +2,7 @@
     var countdownDateTime = jQuery('.countdown-date-time'),
         countdownContainer = jQuery('.countdown-container'),
         ellapsedButtonText = 'Watch On-Demand Now',
-        countdownContainerTime = '<div><div>%D</div><p>Days</p></div><div><div>%H</div><p>Hours</p></div><div><div>%M</div><p>Minutes</p></div><div><div>%S</div><p>Seconds</p></div>';
+        countdownContainerTime = '<div><div>%D</div><p class="text-dark">Days</p></div><div><div>%H</div><p class="text-dark">Hours</p></div><div><div>%M</div><p class="text-dark">Minutes</p></div><div><div>%S</div><p class="text-dark">Seconds</p></div>';
 
     if (countdownDateTime.length) {
         setCountdownTimer();
@@ -53,7 +53,8 @@
                 .replace('Reserve My Spot Now', ellapsedButtonText)
                 .replace('Register Now', ellapsedButtonText)
                 .replace('Register', ellapsedButtonText)
-                .replace('Join Us Live On', 'Watch The Replays On'));
+                .replace('Join Us Live On', 'Watch The Replays On')
+                .replace('Click Here to Register', ellapsedButtonText));
         });
     }
 
