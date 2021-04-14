@@ -1,7 +1,7 @@
 ﻿<!-- When adding a new announcement, change the number on the end of the value to the next available. Example: 1 becomes 2, 2 becomes 3. -->
-<input id="announcementCookie" value="chocolatey_announcement_3" type="hidden" />
+<input id="announcementCookie" value="chocolatey_announcement_4" type="hidden" />
 <!-- When adding a new announcement, update the value number to the amount of new announcements added. -->
-<input id="announcementCount" value="1" type="hidden" />
+<input id="announcementCount" value="2" type="hidden" />
 
 <div id="announcementCount"></div>
 <div id="announcementCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
@@ -37,17 +37,38 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="#" rel="noreferrer" target="_blank">
-        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-06.jpg" alt="12 Days of Chocolatey" />
+    <a href="https://chocolatey.zoom.us/webinar/register/1516184163516/WN_eqS2S6k2RgmE8Fh0HGbkOQ" rel="noreferrer" target="_blank">
+        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-08.jpg" alt="Automate and 'Tune Up' Intune with Chocolatey" />
     </a>
-    <p><strong>Event from<br />December 1 - December 16 2020</strong></p>
+    <p><strong>Thursday, 6 May 2021<br />10 AM CDT / 8 AM PDT / 5 PM CET</strong></p>
     <p class="text-start">
-        The 12 Days of Chocolatey livestream event may be over, but we've archived all the videos for you to watch again!
+        Microsoft is leading with Intune as its one-stop solution for remote endpoint management. But there are still some gaps that need to be addressed. 
+        Chocolatey for Business allows you to quickly on-board any Windows software into Intune with two simple commands! Sounds too good to be true? Join our webinar and watch us do it live.
     </p>
-    <a href="https://chocolatey.org/resources/12-days-of-chocolatey" class="btn btn-primary btn-width mt-2">Watch on-Demand</a>
+    <a href="https://chocolatey.org/events/automate-and-tune-up-intune-with-chocolatey" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
+    <a href="https://chocolatey.zoom.us/webinar/register/1516184163516/WN_eqS2S6k2RgmE8Fh0HGbkOQ" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Register</a>
+    <hr />
+</div>
+<div class="text-center">
+    <a href="https://events.devopscollective.org/2021-schedule/" rel="noreferrer" target="_blank">
+        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-09.jpg" alt="PowerShell Summit" />
+    </a>
+    <p><strong><span class="text-primary">PowerShell Summit</span><br />April 27 - April 29 2021</strong></p>
+    <a href="https://events.devopscollective.org/2021-schedule/" rel="noreferrer" target="_blank" class="btn btn-primary btn-width">Register</a>
     <hr />
 </div>
 <div class="shuffle">
+    <div class="text-center">
+        <a href="https://chocolatey.org/resources/12-days-of-chocolatey">
+            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-06.jpg" alt="12 Days of Chocolatey" />
+        </a>
+        <p><strong>Event from<br />December 1 - December 16 2020</strong></p>
+        <p class="text-start">
+            The 12 Days of Chocolatey livestream event may be over, but we've archived all the videos for you to watch again!
+        </p>
+        <a href="https://chocolatey.org/resources/12-days-of-chocolatey" class="btn btn-primary btn-width mt-2">Watch on-Demand</a>
+        <hr />
+    </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-deployments">
             <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-02.jpg" alt="Webinar: Chocolatey Deployments - Easily Orchestrate Amazing Things!" />
