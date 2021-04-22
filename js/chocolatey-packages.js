@@ -166,7 +166,13 @@
             placeholder = "Add to Review Comments";
         }
         else if (jQuery(this).is('#ExemptedFromVerificationReason')) {
-            placeholder = "Exempted Reason";
+            placeholder = "Verification Exempted Reason";
+        }
+        else if (jQuery(this).is('#ExemptedFromScannerReason')) {
+            placeholder = "Scanner Exempted Reason";
+        }
+        else if (jQuery(this).is('#ExemptedFromValidatorReason')) {
+            placeholder = "Validator Exempted Reason";
         }
         var easymde = new EasyMDE({
             element: this,
