@@ -157,6 +157,10 @@
         .CodeMirror-cursor {
             border-left: 1px solid var(--text);
         }
+
+        .CodeMirror-placeholder.CodeMirror-line-like {
+            z-index: 9 !important;
+        }
     }
 
     .CodeMirror-wrap pre.CodeMirror-line, .CodeMirror-wrap pre.CodeMirror-line-like {
