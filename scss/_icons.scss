@@ -92,20 +92,24 @@
             padding-top: 20px;
         }
 
-        .status-pending {
-            background: $yellow;
-        }
-
-        .status-failing, .status-flagged, .status-investigate, .status-scannerexempted {
+        .status-failing, .status-flagged-error, .status-investigate-none, .status-scannerexempted-none {
             background: $red;
         }
 
-        .status-passing, .status-notflagged {
+        .status-pending, .status-flagged-note, .status-pending-none {
+            background: $yellow;
+        }
+
+        .status-passing, .status-notflagged-none {
             background: $green;
         }
 
-        .status-exempted, .status-unknown {
+        .status-exempted, .status-unknown, .status-exempted-none, .status-unknown-none {
             background: $secondary;
+        }
+
+        .status-flagged-none, .status-flagged-warning {
+            background: $orange;
         }
     }
 }

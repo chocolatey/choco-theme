@@ -49,3 +49,7 @@
 .text-transform-none {
     text-transform: none !important;
 }
+
+.text-break-none {
+    word-break: keep-all;
+}
