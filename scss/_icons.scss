@@ -92,7 +92,7 @@
             padding-top: 20px;
         }
 
-        .status-failing, .status-flagged-error, .status-investigate-none, .status-scannerexempted-none {
+        .status-failing, .status-flagged-error, .status-investigate-none, .status-scannerexempted-none, .status-investigate-unknown, .status-scannerexempted-unknown {
             background: $red;
         }
 
@@ -100,11 +100,11 @@
             background: $yellow;
         }
 
-        .status-passing, .status-notflagged-none {
+        .status-passing, .status-notflagged-none, .status-notflagged-unknown {
             background: $green;
         }
 
-        .status-exempted, .status-unknown, .status-exempted-none, .status-unknown-none, .status-exempted-unknown, .status-flagged-unknown {
+        .status-exempted, .status-unknown, .status-exempted-none, .status-unknown-none, .status-exempted-unknown, .status-flagged-unknown, .status-unknown-unknown {
             background: $secondary;
         }
 
