@@ -104,11 +104,11 @@
             background: $green;
         }
 
-        .status-exempted, .status-unknown, .status-exempted-none, .status-unknown-none, .status-exempted-unknown, .status-flagged-unknown, .status-unknown-unknown {
+        .status-exempted, .status-unknown, .status-exempted-none, .status-unknown-none, .status-exempted-unknown, .status-unknown-unknown {
             background: $secondary;
         }
 
-        .status-flagged-none, .status-flagged-warning {
+        .status-flagged-none, .status-flagged-warning, .status-flagged-unknown {
             background: $orange;
         }
     }
