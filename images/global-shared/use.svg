@@ -12,5 +12,8 @@
         <symbol id="bg-twitter-share-placeholder" viewBox="0 0 150 150">
             <rect width="150" height="150"/>
         </symbol>
+        <symbol id="bg-triangle-corner" viewbox="0 0 1000 1000">
+            <polygon points="1000 586.159 1000 0 402.522 0 1000 586.159"/>
+        </symbol>
     </defs>
 </svg>
