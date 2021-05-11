@@ -1,11 +1,73 @@
 (function() {
     var countdownDateTime = jQuery('.countdown-date-time'),
+        countdownReoccurringDateTime = document.querySelector('.reoccurring-date-time'),
         countdownContainer = jQuery('.countdown-container'),
         ellapsedButtonText = 'Watch On-Demand Now',
         countdownContainerTime = '<div><div>%D</div><p class="text-dark">Days</p></div><div><div>%H</div><p class="text-dark">Hours</p></div><div><div>%M</div><p class="text-dark">Minutes</p></div><div><div>%S</div><p class="text-dark">Seconds</p></div>';
 
     if (countdownDateTime.length) {
         setCountdownTimer();
+    }
+
+    if (countdownReoccurringDateTime) {
+        setReoccurringCountdownTimer();
+    }
+
+    function setReoccurringCountdownTimer() {
+        var rDay = document.querySelector('.reoccurring-date-day').value,
+            rDate = document.querySelector('.reoccurring-date-date').value,
+            rMonth = document.querySelector('.reoccurring-date-month').value,
+            rHour = document.querySelector('.reoccurring-date-hour').value,
+            rMinutes = document.querySelector('.reoccurring-date-minutes').value,
+            rYear = document.querySelector('.reoccurring-date-year').value,
+            rNext = document.querySelector('.reoccurring-date-next'),
+            rInterval = document.querySelector('.reoccurring-interval').value;
+
+        switch(rDay) {
+            case "Monday":
+                rDay = 1;
+                break;
+            case "Tuesday":
+                rDay = 2;
+                break;
+            case "Wednesday":
+                rDay = 3;
+                break;
+            case "Thursday":
+                rDay = 4;
+                break;
+            case "Friday":
+                rDay = 5;
+                break;
+            }
+        
+        var minDate = luxon.DateTime.utc(parseInt(rYear), parseInt(rMonth), parseInt(rDate), parseInt(rHour), parseInt(rMinutes));
+        var reoccurringDate = luxon.DateTime.utc().set({weekday: rDay, hour: rHour, minutes: rMinutes, seconds: 00, milliseconds: 00});
+
+        // TODO: Add in checks for varying intervals. Example: every week vs. every other week event
+        if (minDate.toISO() >= luxon.DateTime.utc().toISO()) {
+            // Set to min date
+            setReoccurringCountdown(minDate.toFormat('yyyy/MM/dd HH:mm:ss') + " UTC");
+        } else if (reoccurringDate.toISO() >= luxon.DateTime.utc().toISO()) {
+            setReoccurringCountdown(reoccurringDate.toFormat('yyyy/MM/dd HH:mm:ss') + " UTC");
+            rNext.innerText = reoccurringDate.toFormat('cccc, dd LLL yyyy');
+        } else {
+            // Add days to reoccurringDate
+            setReoccurringCountdown(reoccurringDate.plus({days: rInterval}).toFormat('yyyy/MM/dd HH:mm:ss') + " UTC");
+            rNext.innerText = reoccurringDate.plus({days: rInterval}).toFormat('cccc, dd LLL yyyy');
+        }
+
+        function setReoccurringCountdown(countdownToDate) {
+            countdownContainer.countdown(countdownToDate, function (event) {
+                if (event.elapsed) {
+                    // Go back and check for more times
+                    setReoccurringCountdownTimer()
+                } else {
+                    // Show time
+                    countdownContainer.html(event.strftime(countdownContainerTime));
+                };
+            });
+        }
     }
 
     function setCountdownTimer() {
