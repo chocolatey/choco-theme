@@ -54,4 +54,41 @@
     window.trimString=function(item) {
         return item.innerHTML = item.innerHTML.trim();
     }
+
+    // Convert event time to local/utc
+    var convertEventTimeToLocal = document.querySelectorAll('.convert-utc-to-local');
+    convertEventTimeToLocal.forEach(function (el) {
+        var timeIncludeBreak = el.getAttribute('data-event-include-break'),
+            timeOccurrence = el.getAttribute('data-event-occurrence'),
+            utcTime = el.getAttribute('data-event-utc').split(' '),
+            datePart = utcTime[0].split('/'),
+            timePart = utcTime[1].split(':'),
+            utcDateTime = luxon.DateTime.utc(parseInt(datePart[2]), parseInt(datePart[0]), parseInt(datePart[1]), parseInt(timePart[0]), parseInt(timePart[1]), parseInt(timePart[2])),
+            timeIncludeBreakText,
+            timeOccurrenceText;
+
+        if (timeIncludeBreak == 'true') {
+            timeIncludeBreakText = '<br />'
+        } else {
+            timeIncludeBreakText = 'at ';
+        }
+
+        switch (timeOccurrence) {
+            case "0":
+                timeOccurrenceText = 'Every ' + utcDateTime.toLocal().toFormat('cccc') + ' ' + timeIncludeBreakText;
+                break;
+            case "1":
+                timeOccurrenceText = 'First ' + utcDateTime.toLocal().toFormat('cccc') +  ' of Every Month ' + timeIncludeBreakText;
+                break;
+            default:
+                timeOccurrenceText = '';
+        }
+
+        if (timeOccurrence) {
+            el.innerHTML = timeOccurrenceText + utcDateTime.toLocal().toFormat("h:mm a ZZZZ") + ' / ' + utcDateTime.toFormat("h:mm a 'GMT'");
+            return;
+        }
+
+        el.innerText = utcDateTime.toLocal().toFormat("cccc, dd LLL yyyy 'at' h:mm a ZZZZ");
+    });
 })();
