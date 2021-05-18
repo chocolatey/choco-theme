@@ -1,7 +1,13 @@
 (function() {
     // JS only used on docs.chocolatey.org
     // Show/hide child page title
-    if (!jQuery('h2:first-of-type').hasClass('title-child')) {
-        jQuery('.title-child').removeClass('d-none');
+    var titleChild = document.querySelector('h2.title-child');
+
+    if (titleChild) {
+        var allTitles = document.querySelectorAll('h2');
+
+        if (!allTitles[0].classList.contains('title-child')) {
+            titleChild.classList.remove('d-none');
+        }
     }
 })();
