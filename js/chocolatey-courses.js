@@ -5,21 +5,24 @@
         var path = window.location.pathname;
         path = path.replace(/\/$/, "");
         path = decodeURIComponent(path);
-
+        
         // Courses Section - Set Localstorage Items
         // Active
-        jQuery(".course-list li a").each(function () {
-            var href = jQuery(this).attr('href');
+        document.querySelectorAll('.course-list li a').forEach(function(el) {
+            var href = el.getAttribute('href');
+
             if (path.substring(0, href.indexOf('courses/').length) === href) {
                 window.localStorage.setItem('active', href);
             }
         });
+
         // Set Completed courses if user is NOT logged in
-        jQuery(".course-list:not(.authenticated) li a").each(function () {
-            var href = jQuery(this).attr('href');
+        document.querySelectorAll('.course-list:not(.authenticated) li a').forEach(function(el) {
+            var href = el.getAttribute('href');
+
             if (path.substring(0, href.indexOf('courses/').length) === href) {
                 var completed = localStorage.completed === undefined ? new Array() : JSON.parse(localStorage.completed);
-                if (jQuery.inArray(href, completed) == -1) //check that the element is not in the array
+                if (completed.indexOf(href) == -1) //check that the element is not in the array
                     completed.push(href);
                 localStorage.completed = JSON.stringify(completed);
             }
@@ -27,42 +30,50 @@
     }
     
     // Get Localstorage Items for Courses Section
-    jQuery(function () {
+    getCourseStorage();
+    function getCourseStorage() {
         // Get Active Localstorage Item
-        var active = window.localStorage.getItem('active');
-        if (active) {
-            jQuery('.course-list li a[href="' + active + '"]').parent().addClass('active');
+        var activeModule = window.localStorage.getItem('active');
+        if (activeModule) {
+            var activeModuleLinks = document.querySelectorAll('.course-list li a[href="' + activeModule + '"]');
+            for (var activeModuleLink of activeModuleLinks) {
+                activeModuleLink.parentNode.classList.add('active');
+            }
         }
+
         // Get Completed Localstorage Items
         var completed = localStorage.completed === undefined ? new Array() : JSON.parse(localStorage.completed); //get all completed items
         for (var i in completed) { //<-- completed is the name of the cookie
-            if (!jQuery('.course-list li a[href="' + completed[i] + '"]').parent().hasClass('active') && !jQuery('.course-list').hasClass("authenticated")) // check if this is not active
-            {
-                jQuery('.course-list li a[href="' + completed[i] + '"]').parent().addClass('completed');
+            var completedLinks = document.querySelectorAll('.course-list li a[href="' + completed[i] + '"]');
+
+            for (var completedLink of completedLinks) {
+                if (!completedLink.parentNode.classList.contains('active') && !document.querySelector('.course-list').classList.contains('authenticated')) // check if this is not active
+                {
+                    completedLink.parentNode.classList.add('completed');
+                }
             }
         }
+
         // Remove completed local storage if use is logged in, tracking progress through profile
-        if (jQuery(".course-list").hasClass("authenticated")) {
+        if (document.querySelector('.course-list').classList.contains('authenticated')) {
             localStorage.removeItem('completed')
         }
+
         // Styleize
-        jQuery(".course-list li").mouseover(function () {
-            jQuery(this).children().addClass("hover");
+        document.querySelector('.course-list li').addEventListener("mouseenter", function(e) {
+            e.target.children[0].classList.add('hover');
         });
-        jQuery(".course-list li").mouseleave(function () {
-            jQuery(this).children().removeClass("hover");
+
+        document.querySelector('.course-list li').addEventListener("mouseleave", function(e) {
+            e.target.children[0].classList.remove('hover');
         });
-    });
-    
+    }
+
     // Removes text from links in additional-course section
-    jQuery("#additional-courses .course-list a").each(function () {
-        jQuery(this).empty().append("<span class='additional-module'>...</span>");
+    document.querySelectorAll('#additional-courses .course-list a').forEach(function(el) {
+        el.innerHTML = '<span class="additional-module">...</span>';
     });
 
-    // Forms
-    jQuery("#quiz .disable input").attr("disabled", "disabled");
-    jQuery("#quiz .mod-completed input[value='1']").addClass("correct").prop("checked", true).parent().children().attr("disabled", "disabled");
-    jQuery("#quiz .mod-completed .btn").addClass("d-none");
     // Completed Module Pop-up
     var quiz = document.getElementById('quiz-modal')
     if (quiz && window.location.search.includes('quiz=true')) {
@@ -70,41 +81,94 @@
         
         quizModal.show();
     }
-    // Quiz
-    jQuery(document).change(function () {
-        var numItems = jQuery('#quiz .course-question').length;
-        var checkedItems = jQuery("#quiz input:checked").length;
 
-        if (checkedItems == numItems) {
-            jQuery("#quiz .btn").removeClass("disabled");
-        }
+    // Quiz & Forms
+    var completedQuiz = document.querySelector('#quiz .mod-completed'),
+        quizQuestions = document.querySelectorAll('#quiz .course-question'),
+        quizRadios = document.querySelectorAll('#quiz input[type="radio"]'),
+        quizSubmitBtn = document.querySelector('#quiz .btn');
+
+    if (completedQuiz) {
+        quizRadios.forEach(function(el) {
+            if (el.value == '1') {
+                el.classList.add('correct');
+                el.checked = true;
+            } else {
+                el.disabled = true;
+            }
+        });
+
+        quizSubmitBtn.classList.add('d-none');
+    }
+
+    quizRadios.forEach(function(el) {
+        el.addEventListener("change", function(e) {
+            var quizQuestionsChecked = document.querySelectorAll('#quiz input[type="radio"]:checked'),
+                parentQuestionChildren = el.parentNode.children;
+
+            if (quizQuestions.length == quizQuestionsChecked.length) {
+                quizSubmitBtn.classList.remove('disabled');
+            }
+
+            if (el.value == '1') {
+                el.classList.add('true');
+            } else {
+                el.classList.add('false');
+
+                for (var parentQuestionChild of parentQuestionChildren) {
+                    parentQuestionChild.classList.remove('true');
+                }
+            }
+
+            for (var parentQuestionChild of parentQuestionChildren) {
+                parentQuestionChild.classList.remove('wrong');
+            }
+        });
     });
-    jQuery("#quiz .btn").click(function (event) {
-        var numItems = jQuery('#quiz .course-question').length;
-        var correctItems = jQuery('#quiz .correct').length + jQuery('#quiz .true').length;
 
-        if (correctItems != numItems) {
-            event.preventDefault();
+    if (quizSubmitBtn) {
+        quizSubmitBtn.addEventListener('click', function(e) {
+            var quizQuestionsCorrect = document.querySelectorAll('#quiz .correct').length + document.querySelectorAll('#quiz .true').length;
 
-            jQuery(this).removeClass("btn-primary").addClass("btn-danger").attr("value", "Recheck Answsers");
-            jQuery("input").not("input:checked").removeClass("false");
-            jQuery(".true").removeClass("true").addClass("correct");
-            jQuery(".false").removeClass("false").addClass("wrong");
-            jQuery(".correct").parent().children().removeClass("wrong").not(".correct").attr("disabled", "disabled");
-        }
-    });
-    jQuery("#quiz input:radio").click(function (ev) {
-        if (ev.currentTarget.value == "1") {
-            jQuery(this).addClass('true');
+            if (quizQuestions.length != quizQuestionsCorrect) {
+                e.preventDefault();
 
-        } else if (ev.currentTarget.value == "0") {
-            jQuery(this).addClass('false');
-            jQuery(this).parent().children().removeClass("true");
-        }
-        jQuery(this).parent().children().removeClass("wrong");
-    });
+                quizSubmitBtn.classList.remove('btn-primary');
+                quizSubmitBtn.classList.add('btn-danger');
+                quizSubmitBtn.setAttribute('value','Recheck Answers');
+
+                for (var i of quizRadios) {
+                    if (i.checked === false) {
+                        i.classList.remove('false');
+                    }
+                    if (i.classList.contains('true')) {
+                        i.classList.remove('true');
+                        i.classList.add('correct');
+                    }
+                    if (i.classList.contains('false')) {
+                        i.classList.remove('false');
+                        i.classList.add('wrong');
+                    }
+                    if (i.classList.contains('correct')) {
+                        var parentQuestionChildren = i.parentNode.children;
+
+                        for (var parentQuestionChild of parentQuestionChildren) {
+                            parentQuestionChild.classList.remove('wrong');
+
+                            if (!parentQuestionChild.classList.contains('correct')) {
+                                parentQuestionChild.disabled = true;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
 
     // Highlight Syntax
-    jQuery('pre').addClass('line-numbers py-2 m-0');
+    var codeBlocks = document.querySelectorAll('pre');
+    for (var i of codeBlocks) {
+        i.classList.add('line-numbers', 'py-2', 'm-0');
+    }
     Prism.highlightAll();
 })();
