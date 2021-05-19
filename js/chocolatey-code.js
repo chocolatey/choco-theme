@@ -1,12 +1,15 @@
 (function() {
     // Trim extra space from beginning and end of a code block
-    var codeBlocks = document.querySelectorAll('code');
+    var codeBlocks = document.querySelectorAll('code'),
+        codePre = document.querySelectorAll('pre');
+        
     codeBlocks.forEach(trimString);
 
     // Highlight code blocks
-    if (!jQuery('pre').hasClass('highlight-delay') && !jQuery('pre').hasClass('d-format-none')) {
-        jQuery('pre').addClass('line-numbers py-2');
-        jQuery('pre:not([class*="language-"])').addClass('language-none');
-        Prism.highlightAll();
+    for (var i of codePre) {
+        if (!i.classList.contains('highlight-delay') && !i.classList.contains('d-format-none')) {
+            i.classList.add('line-numbers', 'language-none', 'py-2');
+            Prism.highlightAll();
+        }
     }
 })();
