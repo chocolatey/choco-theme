@@ -1,17 +1,19 @@
 (function() {
-    jQuery.each(jQuery('[data-substring]'), function (i,val) {
-        var subStringLength =  parseInt(jQuery(this).attr('data-substring') - 1);
+    document.querySelectorAll('[data-substring]').forEach(function(el) {
+        var subStringLength = parseInt(el.getAttribute('data-substring')) - 1;
 
-        if (jQuery(this).text().length > subStringLength) {
-            var subString =  jQuery.trim(jQuery(this).text().substring(0,subStringLength));
-            var subStringLink = jQuery(this).attr('data-link');
+        if (el.innerText.length > subStringLength) {
+            var subString =  el.innerText.substring(0,subStringLength),
+                subStringLink = el.getAttribute('data-link');
 
             // If a 'data-link' is supplied link the "..."
             if (typeof subStringLink !== typeof undefined && subStringLink !== false) {
-                return jQuery(this).html(subString + '<a href="' + subStringLink +'"><strong>...</strong></a>');
+                el.innerHTML = subString + '<a href="' + subStringLink +'"><strong>...</strong></a>';
+                return;
             }
 
-        return jQuery(this).html(subString + '...');
+            el.innerHTML = subString + '...';
+            return;
         }
     });
 })();
