@@ -80,6 +80,12 @@
             case "1":
                 timeOccurrenceText = 'First ' + utcDateTime.toLocal().toFormat('cccc') +  ' of Every Month ' + timeIncludeBreakText;
                 break;
+            case "-1":
+                timeOccurrenceText = utcDateTime.toLocal().toFormat('cccc, dd LLL yyyy') + timeIncludeBreakText;
+                break;
+            case "-2":
+                timeOccurrenceText = utcDateTime.toLocal().toFormat('cccc, dd LLL yyyy') + ' ' + timeIncludeBreakText;
+                break;
             default:
                 timeOccurrenceText = '';
         }
