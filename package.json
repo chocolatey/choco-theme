@@ -24,7 +24,7 @@
     "clipboard": "^2.0.6",
     "datatables.net": "^1.10.24",
     "docsearch.js": "^2.6.3",
-    "easymde": "^2.13.0",
+    "easymde": "2.13.0",
     "flatpickr": "^4.6.9",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
