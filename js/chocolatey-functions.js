@@ -68,7 +68,9 @@
             timeOccurrenceText;
 
         if (timeIncludeBreak == 'true') {
-            timeIncludeBreakText = '<br />'
+            timeIncludeBreakText = '<br />';
+        } else if (timeOccurrence == "-2" && utcDateTime.toISO() <= luxon.DateTime.utc().toISO()) {
+            timeIncludeBreakText = ' '
         } else {
             timeIncludeBreakText = 'at ';
         }
@@ -91,7 +93,11 @@
         }
 
         if (timeOccurrence) {
-            el.innerHTML = timeOccurrenceText + utcDateTime.toLocal().toFormat("h:mm a ZZZZ") + ' / ' + utcDateTime.toFormat("h:mm a 'GMT'");
+            if (timeOccurrence == "-2" && utcDateTime.toISO() <= luxon.DateTime.utc().toISO()) {
+                el.innerHTML = 'Webinar Replay from' + timeIncludeBreakText +  utcDateTime.toLocal().toFormat('cccc, dd LLL yyyy');
+            } else {
+                el.innerHTML = timeOccurrenceText + utcDateTime.toLocal().toFormat("h:mm a ZZZZ") + ' / ' + utcDateTime.toFormat("h:mm a 'GMT'");
+            }
             return;
         }
 

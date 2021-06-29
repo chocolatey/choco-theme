@@ -45,7 +45,10 @@
         var reoccurringDate = luxon.DateTime.utc().set({weekday: rDay, hour: rHour, minutes: rMinutes, seconds: 00, milliseconds: 00});
 
         // TODO: Add in checks for varying intervals. Example: every week vs. every other week event
-        if (minDate.toISO() >= luxon.DateTime.utc().toISO()) {
+        if (rInterval == "-2" && minDate.toISO() <= luxon.DateTime.utc().toISO()) {
+            //Single event, time elapsed
+            replaceElapsed();
+        } else if (minDate.toISO() >= luxon.DateTime.utc().toISO()) {
             // Set to min date
             setReoccurringCountdown(minDate.toFormat('yyyy/MM/dd HH:mm:ss') + " UTC");
         } else if (reoccurringDate.toISO() >= luxon.DateTime.utc().toISO()) {
