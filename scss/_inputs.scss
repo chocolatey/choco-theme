@@ -36,6 +36,125 @@
     }
 }
 
+// Custom Switches
+.form-switch {
+    &.form-switch-active, &.form-switch-expired, &.form-switch-deactivated, &.form-switch-latest {
+        .form-check-input {
+            background-image: none !important;
+            width: 3rem;
+            margin-right: .75rem;
+
+            &:active {
+                filter: unset;
+            }
+
+            &:not(:active):not(:focus) {
+                box-shadow: none !important;
+            }
+
+            &:after, &:before {
+                position: absolute;
+                font-family: "Font Awesome 5 Free";
+                top: 0;
+                content: "\f00c";
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                font-weight: 600;
+                font-size: .875em;
+                line-height: 1.9;
+            }
+
+            &:after {
+                left: 0;
+            }
+
+            &:checked:after {
+                left: 2.1rem;
+            }
+
+            &:before {
+                left: -5px;
+                content: "";
+                width: 25px;
+                height: 25px;
+                border-radius: 100%;
+            }
+
+            &:checked:before {
+                left: 1.8rem;
+            }
+        }
+    }
+
+    &.form-switch-active .form-check-input {
+        &:after {
+            content: "\f00c";
+            color: $white;
+        }
+
+        &:checked, &:before {
+            background: $success;
+        }
+
+        &:before {
+            border: 1px solid $green-300;
+        }
+    }
+
+    &.form-switch-expired .form-check-input {
+        &:after {
+            content: "\f12a";
+            color: $white;
+            left: 4.5px;
+        }
+
+        &:checked, &:before {
+            background: $danger;
+        }
+
+        &:before {
+            border: 1px solid $red-300;
+        }
+
+        &:checked:after {
+            left: 2.4rem;
+        }
+    }
+
+    &.form-switch-deactivated .form-check-input {
+        &:after {
+            content: "\f05e";
+            color: $white;
+        }
+
+        &:checked, &:before {
+            background: $secondary;
+        }
+
+        &:before {
+            border: 1px solid $gray-300;
+        }
+    }
+
+    &.form-switch-latest .form-check-input {
+        &:after {
+            content: "\f005";
+            color: $warning;
+        }
+
+        &:checked {
+            background: $warning;
+        }
+
+        &:before {
+            background: var(--background-light-3);
+            border: 1px solid $warning;
+        }
+    }
+}
+
 // Markdown task lists
 .task-list-item {
     .form-check {
