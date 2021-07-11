@@ -15,3 +15,22 @@
         display: none;
     }
 }
+
+// Status table cell
+.status-cell {
+    .circle.bg-success {
+        border: 1px solid $green-300;
+    }
+
+    .circle.bg-danger {
+        border: 1px solid $red-300;
+    }
+
+    .circle.bg-secondary {
+        border: 1px solid $gray-300;
+    }
+
+    .circle.bg-theme-light-3 {
+        border: 1px solid $warning;
+    }
+}
