@@ -89,6 +89,10 @@
     min-width: 60px;
 }
 
+.min-w-100 {
+    min-width: 100px;
+}
+
 /*Borders*/
 .border, .border-bottom, .border-top, .border-start, .border-end {
     border-color: var(--border) !important;
