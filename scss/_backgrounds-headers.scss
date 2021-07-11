@@ -68,6 +68,11 @@
     background: var(--background-light-2) !important;
 }
 
+.bg-theme-light-3 {
+    background: $white !important;
+    background: var(--background-light-3) !important;
+}
+
 .bg-theme-primary {
     background: $primary !important;
     background: var(--theme-primary) !important;
