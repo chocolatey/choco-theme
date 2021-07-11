@@ -275,6 +275,27 @@
     }
 }
 
+// Dropdown buttons
+.btn-outline-primary.dropdown-toggle.show {
+    color: var(--background);
+}
+
+.dropdown-menu {
+    background: var(--background-light);
+    color: var(--text);
+    border: 1px solid var(--border);
+
+    .dropdown-item {
+        color: var(--text);
+
+        &:hover {
+            color: var(--text);
+            background: var(--background);
+            cursor: pointer;
+        }
+    }
+}
+
 @include media-breakpoint-up(sm) {
     .btn-width {
         width: auto;
