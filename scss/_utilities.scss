@@ -51,6 +51,11 @@
     padding-left: $spacer * 7 !important;
 }
 
+.mx-nc75 {
+    margin-left: -.75rem;
+    margin-right: -.75rem;
+}
+
 /*Rotation*/
 .rotate-180 {
     transform: rotate(180deg);
@@ -87,6 +92,10 @@
 }
 .min-w-60 {
     min-width: 60px;
+}
+
+.min-w-100 {
+    min-width: 100px;
 }
 
 /*Borders*/
@@ -149,6 +158,13 @@ hr {
 /*Dark/Light mode images*/
 .d-dark-mode {
     display: none;
+}
+
+/*Box Shadow*/ 
+@each $color, $value in $colors {
+    .box-shadow-#{$color} {
+        box-shadow: 0 0 0 0.25rem rgba($value, 0.25) !important;
+    }
 }
 
 @media (prefers-color-scheme: dark) {

@@ -303,6 +303,7 @@ $palette-colors: (
     --background-light: #{$white};
     --background-primary-light: #{$primary-150};
     --background-light-2: #{$gray-300};
+    --background-light-3: #{$white};
     --text: #{$gray-900};
     --text-code: #{$gray-800};
     --border: #{$gray-300};
@@ -330,6 +331,7 @@ $palette-colors: (
       --background-light: #{$primary-900};
       --background-primary-light: #{$primary-850};
       --background-light-2: #{$primary-800};
+      --background-light-3: #{$primary-800};
       --text: #{$gray-400};
       --text-code: #{$gray-500};
       --border: #{$primary-800};
@@ -353,6 +355,7 @@ $palette-colors: (
     --background-light: #{$primary-900};
     --background-primary-light: #{$primary-850};
     --background-light-2: #{$primary-800};
+    --background-light-3: #{$primary-800};
     --text: #{$gray-400};
     --text-code: #{$gray-500};
     --border: #{$primary-800};

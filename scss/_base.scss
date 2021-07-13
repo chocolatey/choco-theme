@@ -105,7 +105,7 @@ img, svg {
 }
 
 #mainContent, .sub-content {
-    a:not(.anchorjs-link):not(.btn):not(.badge):not(.nav-link):not(.page-link) {
+    a:not(.anchorjs-link):not(.btn):not(.badge):not(.nav-link):not(.page-link):not(.dropdown-item) {
         padding: 14px 0;
     }
 
@@ -176,7 +176,7 @@ main {
     }
 
     #mainContent, .sub-content {
-        a:not(.anchorjs-link):not(.btn):not(.badge):not(.nav-link):not(.page-link) {
+        a:not(.anchorjs-link):not(.btn):not(.badge):not(.nav-link):not(.page-link):not(.dropdown-item) {
             padding: 0;
         }
     }
