@@ -24,7 +24,7 @@
     "clipboard": "^2.0.6",
     "datatables.net": "^1.10.24",
     "docsearch.js": "^2.6.3",
-    "easymde": "2.13.0",
+    "easymde": "^2.15.0",
     "flatpickr": "^4.6.9",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -34,7 +34,7 @@
     "gulp-inject-string": "^1.1.2",
     "gulp-purgecss": "^3.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.0.0",
     "gulp-uglify-es": "^2.0.0",
     "jquery": "^3.5.1",
     "jquery-countdown": "^2.2.0",
@@ -44,7 +44,7 @@
     "luxon": "^1.26.0",
     "merge-stream": "^2.0.0",
     "mousetrap": "^1.6.5",
-    "node-sass": "^5.0.0"
+    "node-sass": "^6.0.1"
   },
   "devDependencies": {}
 }
