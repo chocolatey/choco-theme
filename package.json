@@ -46,5 +46,9 @@
     "mousetrap": "^1.6.5",
     "node-sass": "^6.0.1"
   },
+  "resolutions": {
+    "glob-parent": "^6.0.1",
+    "yargs-parser": "^20.2.9"
+  },
   "devDependencies": {}
 }
