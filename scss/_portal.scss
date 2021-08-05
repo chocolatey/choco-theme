@@ -34,3 +34,8 @@
         border: 1px solid $warning;
     }
 }
+
+// Notes table cell
+.notes-cell > *:last-child {
+    margin-bottom: 0;
+}
