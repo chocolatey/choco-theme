@@ -75,7 +75,7 @@ h1, h2 {
 .table {
     word-break: normal;
 
-    thead {
+    thead:not(.text-wrap) {
         white-space: nowrap!important;
     }
 }
