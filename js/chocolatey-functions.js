@@ -101,6 +101,6 @@
             return;
         }
 
-        el.innerText = utcDateTime.toLocal().toFormat("cccc, dd LLL yyyy 'at' h:mm a ZZZZ");
+        el.innerHTML = utcDateTime.toLocal().toFormat("cccc, dd LLL yyyy ") + timeIncludeBreakText + utcDateTime.toLocal().toFormat("h:mm a ZZZZ") + ' / ' + utcDateTime.toFormat("h:mm a 'GMT'");
     });
 })();
