@@ -36,6 +36,31 @@
     </div>
 </div>
 <hr />
+<div class="text-center">
+    <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
+        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
+    </a>
+    <p class="convert-utc-to-local fw-bold" data-event-utc='09/02/2021 15:00:00' data-event-include-break="true"></p>
+    <p class="text-start">
+        We've been hard at work simplifying the setup of Chocolatey for Business (C4B) for our users. Whether you'd like to "Bring Your Own VM", or spin up a Cloud-ready solution, we've got you covered!
+    </p>
+    <a href="https://chocolatey.org/events/simplifying-chocolatey-setup" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
+    <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Register</a>
+    <hr />
+</div>
+<div class="text-center">
+    <a href="https://chocolatey.zoom.us/webinar/register/WN_bTFvKLKFRXKMVGEbXi-Psw" rel="noreferrer" target="_blank">
+        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/04-01.jpg" alt="Chocolatey for Business Overview and Demonstration" />
+    </a>
+    <p class="convert-utc-to-local fw-bold" data-event-utc='08/24/2021 15:00:00' data-event-occurrence="0" data-event-include-break="true"></p>
+    <p class="text-start">
+        This session is meant to provide attendees with a better understanding of how Chocolatey has helped in an organizational setting, 
+        and educate on the features included in Chocolatey for Business that can help your team more effectively manage its software.
+    </p>
+    <a href="https://chocolatey.org/events/chocolatey-for-business-overview-and-demonstration" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
+    <a href="https://chocolatey.zoom.us/webinar/register/WN_bTFvKLKFRXKMVGEbXi-Psw" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Register</a>
+    <hr />
+</div>
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.org/resources/12-days-of-chocolatey">
@@ -104,31 +129,6 @@
         <p class="convert-utc-to-local fw-bold" data-event-utc='06/03/2021 16:00:00' data-event-occurrence="1" data-event-include-break="true"></p>
         <p class="text-start">Join us on the first Thursday of every month for "Chocolatey Explained" where we will cover different Chocolatey topics in detail.</p>
         <a href="https://www.twitch.tv/chocolateysoftware" class="btn bg-twitch text-white btn-width mt-2" target="_blank" rel="nofollow"><i class="fab fa-twitch"></i> Follow on Twitch</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <a href="https://chocolatey.zoom.us/webinar/register/WN_bTFvKLKFRXKMVGEbXi-Psw" rel="noreferrer" target="_blank">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/04-01.jpg" alt="Chocolatey for Business Overview and Demonstration" />
-        </a>
-        <p class="convert-utc-to-local fw-bold" data-event-utc='08/24/2021 15:00:00' data-event-occurrence="0" data-event-include-break="true"></p>
-        <p class="text-start">
-            This session is meant to provide attendees with a better understanding of how Chocolatey has helped in an organizational setting, 
-            and educate on the features included in Chocolatey for Business that can help your team more effectively manage its software.
-        </p>
-        <a href="https://chocolatey.org/events/chocolatey-for-business-overview-and-demonstration" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
-        <a href="https://chocolatey.zoom.us/webinar/register/WN_bTFvKLKFRXKMVGEbXi-Psw" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Register</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
-        </a>
-        <p class="convert-utc-to-local fw-bold" data-event-utc='09/02/2021 15:00:00' data-event-include-break="true"></p>
-        <p class="text-start">
-            We've been hard at work simplifying the setup of Chocolatey for Business (C4B) for our users. Whether you'd like to "Bring Your Own VM", or spin up a Cloud-ready solution, we've got you covered!
-        </p>
-        <a href="https://chocolatey.org/events/simplifying-chocolatey-setup" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
-        <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Register</a>
         <hr />
     </div>
 </div>
