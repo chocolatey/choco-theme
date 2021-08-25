@@ -85,7 +85,7 @@
         <hr />
     </div>
     <div class="text-center">
-        <a href="https://chocolatey.zoom.us/webinar/register/1516184163516/WN_eqS2S6k2RgmE8Fh0HGbkOQ" rel="noreferrer" target="_blank">
+        <a href="https://chocolatey.zoom.us/rec/share/GBT2dK7ooi0Szxf7WWwpMzjfQBi14UtnHXKehalt3GUuYz0rTeOpBLwjqbV_gUHb.JPUukb5nOLFJARGC" rel="noreferrer" target="_blank">
             <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-08.jpg" alt="Automate and 'Tune Up' Intune with Chocolatey" />
         </a>
         <p><strong>Webinar Replay from<br />Thursday, 6 May 2021</strong></p>
@@ -94,7 +94,7 @@
             Chocolatey for Business allows you to quickly on-board any Windows software into Intune with two simple commands! Sounds too good to be true? Join our webinar and watch us do it live.
         </p>
         <a href="https://chocolatey.org/events/automate-and-tune-up-intune-with-chocolatey" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
-        <a href="https://chocolatey.zoom.us/webinar/register/1516184163516/WN_eqS2S6k2RgmE8Fh0HGbkOQ" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
+        <a href="https://chocolatey.zoom.us/rec/share/GBT2dK7ooi0Szxf7WWwpMzjfQBi14UtnHXKehalt3GUuYz0rTeOpBLwjqbV_gUHb.JPUukb5nOLFJARGC" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
         <hr />
     </div>
     <div class="text-center">
