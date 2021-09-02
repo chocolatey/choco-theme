@@ -37,18 +37,6 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
-        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
-    </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc='09/02/2021 15:00:00' data-event-include-break="true"></p>
-    <p class="text-start">
-        We've been hard at work simplifying the setup of Chocolatey for Business (C4B) for our users. Whether you'd like to "Bring Your Own VM", or spin up a Cloud-ready solution, we've got you covered!
-    </p>
-    <a href="https://chocolatey.org/events/simplifying-chocolatey-setup" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
-    <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Register</a>
-    <hr />
-</div>
-<div class="text-center">
     <a href="https://chocolatey.zoom.us/webinar/register/WN_bTFvKLKFRXKMVGEbXi-Psw" rel="noreferrer" target="_blank">
         <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/04-01.jpg" alt="Chocolatey for Business Overview and Demonstration" />
     </a>
@@ -59,6 +47,18 @@
     </p>
     <a href="https://chocolatey.org/events/chocolatey-for-business-overview-and-demonstration" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
     <a href="https://chocolatey.zoom.us/webinar/register/WN_bTFvKLKFRXKMVGEbXi-Psw" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Register</a>
+    <hr />
+</div>
+<div class="text-center">
+    <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
+        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
+    </a>
+    <p><strong>Webinar Replay from<br />Tuesday, 02 September 2020</strong></p>
+    <p class="text-start">
+        We've been hard at work simplifying the setup of Chocolatey for Business (C4B) for our users. Whether you'd like to "Bring Your Own VM", or spin up a Cloud-ready solution, we've got you covered!
+    </p>
+    <a href="https://chocolatey.org/events/simplifying-chocolatey-setup" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
+    <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
     <hr />
 </div>
 <div class="shuffle">
