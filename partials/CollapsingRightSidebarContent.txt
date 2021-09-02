@@ -53,7 +53,7 @@
     <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
         <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
     </a>
-    <p><strong>Webinar Replay from<br />Thursday, 02 September 2020</strong></p>
+    <p><strong>Webinar Replay from<br />Thursday, 02 September 2021</strong></p>
     <p class="text-start">
         We've been hard at work simplifying the setup of Chocolatey for Business (C4B) for our users. Whether you'd like to "Bring Your Own VM", or spin up a Cloud-ready solution, we've got you covered!
     </p>
