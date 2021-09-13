@@ -92,7 +92,7 @@
             padding-top: 20px;
         }
 
-        .status-failing, .status-flagged-error, .status-investigate-none, .status-scannerexempted-none, .status-investigate-unknown, .status-scannerexempted-unknown {
+        .status-failing, .status-flagged-error, .status-investigate-none, .status-scannerexempted-none, .status-investigate-unknown, .status-scannerexempted-unknown, .status-investigate-note {
             background: $red;
         }
 
