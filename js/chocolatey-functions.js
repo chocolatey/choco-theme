@@ -103,4 +103,42 @@
 
         el.innerHTML = utcDateTime.toLocal().toFormat("cccc, dd LLL yyyy ") + timeIncludeBreakText + utcDateTime.toLocal().toFormat("h:mm a ZZZZ") + ' / ' + utcDateTime.toFormat("h:mm a 'GMT'");
     });
+
+    window.copyCodeBlocks=function() {
+        jQuery('.copy-command .toolbar button').each(function () {
+            var copyCommand = jQuery(this).parentsUntil('.code-toolbar').parent().find('code').attr('class').split(" ");
+            
+            jQuery(this).addClass('btn-copy').attr('data-clipboard-target', '.' + copyCommand[0]);
+        });
+    }
+
+    window.selectDeploymentMethodTab=function() {
+        var selectedDeploymentMethod = getCookie('deployment_method') ? document.querySelectorAll('[data-deployment-method="' + getCookie('deployment_method') + '"]') : document.querySelectorAll('[data-deployment-method="individual"]');
+
+        for (i of selectedDeploymentMethod) {
+            var selectedMethodTab = Tab.getInstance(i) ? Tab.getInstance(i) : new Tab(i, { toggle: false });
+            selectedMethodTab.show();
+        }
+    }
+
+    // Set deployment method cookie
+    var deploymentMethods = document.querySelectorAll('[data-deployment-method]'),
+        deploymentMethodHash = window.location.hash.toString().toLowerCase().substring(1),
+        deploymentMethodHashArray = [];
+
+    deploymentMethods.forEach(function (el) {
+        var deploymentMethod = el.getAttribute('data-deployment-method');
+
+        if (!deploymentMethodHashArray.includes(deploymentMethod)) {
+            deploymentMethodHashArray.push(deploymentMethod);
+        }
+
+        el.addEventListener('click', function (e) {
+            document.cookie = 'deployment_method=' + deploymentMethod + '; path=/';
+        }, false);
+    });
+
+    if (deploymentMethodHashArray.includes(deploymentMethodHash)) {
+        document.cookie = 'deployment_method=' + deploymentMethodHash + '; path=/';
+    }
 })();
