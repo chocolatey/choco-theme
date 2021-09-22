@@ -36,14 +36,6 @@
     </div>
 </div>
 <hr />
-<div class="text-center">
-    <a href="https://blueprintldn.com/business/chocolatey/" rel="noreferrer" target="_blank">
-        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/02-02.jpg" alt="Blueprint LDN" />
-    </a>
-    <p class="fw-bold">Blueprint LDN Conference<br />September 22-23, 2021</p>
-    <a href="https://blueprintldn.com/business/chocolatey/" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Register</a>
-    <hr />
-</div>
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
