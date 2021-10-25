@@ -3,7 +3,7 @@
     top: 40%;
     right: 0;
     border-radius: 50% 0 0 50%;
-    z-index: 9999;
+    z-index: 1030;
     width: auto !important;
 
     &:before {
@@ -20,25 +20,61 @@
     }
 }
 
-#collapsing-right-sidebar {
+.btn-collapsing-left-sidebar {
+    position: fixed;
+    top: 34%;
+    left: 0;
+    width: auto !important;
+    border-radius: 0 .25rem .25rem 0;
+    -o-transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    text-orientation: upright;
+    z-index: 1030;
+
+    &:before {
+        content: none !important;
+    }
+
+    .notification-badge {
+        top: -10px;
+        left: 35px;
+        height: 25px;
+        width: 25px;
+        line-height: 24px;
+        font-size: 80%;
+    }
+}
+
+#collapsing-right-sidebar, #Nav_ScriptBuilder {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     height: 100vh;
-    z-index: 99999;
-    background: #fff;
+    z-index: 1030;
+    background: $white;
     background: var(--background-light);
     transition: none;
     margin-left: 0;
     overflow: auto;
-    border-left: 3px solid $primary;
     padding-bottom: 150px;
 
     a[data-bs-toggle=collapse]:before {
         content: none !important;
     }
+}
+
+#collapsing-right-sidebar {
+    border-left: 3px solid $primary;
+}
+
+#Nav_ScriptBuilder {
+    border-right: 3px solid $secondary;
 }
 
 .notification-badge {
@@ -74,6 +110,21 @@
         position: fixed;
         width: 350px;
         left: auto;
+        padding-bottom: 1rem;
+    }
+
+    .btn-collapsing-left-sidebar {
+        left: 350px;
+
+        &.collapsed {
+            left: 0;
+        }
+    }
+
+    #Nav_ScriptBuilder {
+        position: fixed;
+        width: 350px;
+        right: auto;
         padding-bottom: 1rem;
     }
 }

@@ -15,6 +15,14 @@
     padding-left: $spacer * 3 - $spacer / 4 !important;
 }
 
+.ps-c125 {
+    padding-left: 1.25rem !important;
+}
+
+.ps-c225 {
+    padding-left: 2.25rem !important;
+}
+
 .ps-c375 {
     padding-left: $spacer * 4 - $spacer / 4 !important;
 }
@@ -55,6 +63,11 @@
     margin-left: -.75rem;
     margin-right: -.75rem;
 }
+
+.ms-c30 {
+    margin-left: 30px;
+}
+
 
 /*Rotation*/
 .rotate-180 {

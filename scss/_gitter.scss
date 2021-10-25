@@ -1,16 +1,17 @@
-.gitter-chat-embed, .gitter-open-chat-button {
-    z-index: 9999;
+.gitter-open-chat-button {
+    z-index: 1020;
 }
 
 .gitter-chat-embed {
-    border-left: 3px solid #5c9fd8;
+    border-left: 3px solid $primary;
+    z-index: 9999;
 }
 
 .chocolatey-org .gitter-chat-embed {
     right: 0;
     left: 0;
     border-left: 0;
-    border-right: 3px solid #5c9fd8;
+    border-right: 3px solid $primary;
 
     &:after {
         left: 0;
