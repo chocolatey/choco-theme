@@ -307,6 +307,14 @@
         return scriptValue;
     }
 
+    function findScriptPre(scriptValue) {
+        if (scriptValue.indexOf('--pre') > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
     function injectIndividualScripts() {
         if (getCookie('deployment_method') == "individual" || !getCookie('deployment_method')) {
             var commandIndividual = document.querySelector('.command-builder-individual');
@@ -318,9 +326,10 @@
             for (var i in packages) {
                 var getStorage = packages[i].split(' , '),
                     storageVersion = getStorage[1],
-                    storageValue = findScriptValue(getStorage[3]);
+                    storageValue = findScriptValue(getStorage[3]),
+                    storagePre = findScriptPre(getStorage[3]) ? ' --pre' : '';
 
-                commandIndividual.innerHTML += 'choco install ' + storageValue + ' --version ' + storageVersion + ' -y\n';
+                commandIndividual.innerHTML += 'choco install ' + storageValue + ' --version ' + storageVersion + storagePre + ' -y\n';
             }
 
             // Syntax highlight
@@ -345,9 +354,10 @@
         for (var i in packages) {
             var getStorage = packages[i].split(' , '),
                 storageVersion = getStorage[1],
-                storageValue = findScriptValue(getStorage[3]);
+                storageValue = findScriptValue(getStorage[3]),
+                storagePre = findScriptPre(getStorage[3]) ? ' --pre' : '';
 
-            commandEnvironmentOne.innerHTML += 'choco download ' + storageValue + ' --version ' + storageVersion + ' --internalize --source=https://community.chocolatey.org/api/v2/\n';
+            commandEnvironmentOne.innerHTML += 'choco download ' + storageValue + ' --version ' + storageVersion + storagePre + ' --internalize --source=https://community.chocolatey.org/api/v2/\n';
         }
 
         // Syntax highlight
@@ -376,14 +386,16 @@
                 for (var i in packages) {
                     var getStorage = packages[i].split(' , '),
                         storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]);
+                        storageValue = findScriptValue(getStorage[3]),
+                        storagePre = findScriptPre(getStorage[3]) ? '    allow_prerelease: yes\n\n' : '\n';
 
-                    commandAnsible.innerHTML += "- name: Ensure " + storageValue + " installed\n" +
+                    commandAnsible.innerHTML += "- name: Install " + storageValue + "\n" +
                         "  win_chocolatey:\n" +
                         "    name: " + storageValue + "\n" +
-                        "    state: present\n" +
-                        "    version: " + storageVersion + "\n" +
-                        "    source: " + internalRepoUrl + "\n\n";
+                        "    version: '" + storageVersion + "'\n" +
+                        "    source: " + internalRepoUrl + "\n" +
+                        "    state: yes\n" + 
+                        storagePre;
                 }
 
                 highlightScript(commandAnsible, 'language-yaml');
@@ -393,12 +405,14 @@
                 for (var i in packages) {
                     var getStorage = packages[i].split(' , '),
                         storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]);
+                        storageValue = findScriptValue(getStorage[3]),
+                        storagePre = findScriptPre(getStorage[3]) ? "  options  '--prerelease'\n" : "";
 
                     commandChef.innerHTML += "chocolatey_package '" + storageValue + "' do\n" +
-                        "  action    :install\n" +
-                        "  version   '" + storageVersion + "'\n" +
-                        "  source    '" + internalRepoUrl + "'\n" +
+                        "  action   install\n" +
+                        "  source   '" + internalRepoUrl + "'\n" +
+                        "  version  '" + storageVersion + "'\n" +
+                        storagePre +
                         "end\n\n";
                 }
 
@@ -409,14 +423,16 @@
                 for (var i in packages) {
                     var getStorage = packages[i].split(' , '),
                         storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]);
+                        storageValue = findScriptValue(getStorage[3]),
+                        storagePre = findScriptPre(getStorage[3]) ? '   chocoParams = "--prerelease"\n' : '',
+                        storageSpace = findScriptPre(getStorage[3]) ? "    " : "";
 
-                    commandPSDSC.innerHTML += "cChocoPackageInstaller " + storageValue + "{\n" +
-                        "   Name    = '" + storageValue + "'\n" +
-                        "   Ensure  = 'Present'\n" +
-                        "   Version = '" + storageVersion + "'\n" +
-                        "   Source  = '" + internalRepoUrl + "'\n" +
-                        "}\n\n";
+                    commandPSDSC.innerHTML += 'cChocoPackageInstaller chocolateyAgent {\n' +
+                        '   Name    ' + storageSpace + '= "' + storageValue + '"\n' +
+                        '   Version ' + storageSpace + '= "' + storageVersion + '"\n' +
+                        '   Source  ' + storageSpace + '= "' + internalRepoUrl + '"\n' +
+                        storagePre +
+                        '}\n\n';
                 }
 
                 highlightScript(commandPSDSC, 'language-powershell');
@@ -426,12 +442,15 @@
                 for (var i in packages) {
                     var getStorage = packages[i].split(' , '),
                         storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]);
+                        storageValue = findScriptValue(getStorage[3]),
+                        storagePre = findScriptPre(getStorage[3]) ? "  install_options => ['--prerelease'],\n" : "",
+                        storageSpace = findScriptPre(getStorage[3]) ? "       " : "";
 
-                    commandPuppet.innerHTML += "package { '" + storageValue + "':\n" +
-                        "  provider => '" + storageValue + "',\n" +
-                        "  ensure   => '" + storageVersion + "',\n" +
-                        "  source   => '" + internalRepoUrl + "',\n" +
+                    commandPuppet.innerHTML += "package {'" + storageValue + "':\n" +
+                        "  ensure   " + storageSpace + "=> '" + storageVersion + "',\n" +
+                        storagePre +
+                        "  provider " + storageSpace + "=> chocolatey,\n" +
+                        "  source   " + storageSpace + "=> '" + internalRepoUrl + "',\n" +
                         "}\n\n";
                 }
 
@@ -439,15 +458,17 @@
 
                 break;
             case 'generic':
-                commandGenericTwo.innerHTML = '$validExitCodes = @(0, 1605, 1614, 1641, 3010)\n\n' +
-                'function Install-Package {\n' +
+                commandGenericTwo.innerHTML = 'function Install-ChocolateyPackage {\n' +
                 '  param (\n' +
-                '    [parameter(Mandatory=$true, Position=0)][string] $PackageName,\n' +
-                '    [parameter(Mandatory=$false)][string] $Source,\n' +
-                '    [parameter(Mandatory=$false)][alias("Params")][string] $PackageParameters = \'\',\n' +
-                '    [parameter(Mandatory=$false)][string] $Version = $null,\n' +
-                '    [parameter(Mandatory=$false)][alias("Pre")][switch] $Prerelease = $false,\n' +
-                '    [parameter(Mandatory=$false)][switch] $UseInstallNotUpgrade = $false\n' +
+                '    [Parameter(Mandatory, Position=0)]\n' +
+                '    [string]$PackageName,\n\n' +
+                '    [string]$Source,\n\n' +
+                '    [alias("Params")]\n' +
+                '    [string]$PackageParameters,\n\n' +
+                '    [string]$Version,\n\n' +
+                '    [alias("Pre")]\n' +
+                '    [switch]$Prerelease,\n\n' +
+                '    [switch]$UseInstallNotUpgrade\n' +
                 '  )\n\n' +
                 '  $chocoExecutionArgs = "choco.exe"\n' +
                 '  if ($UseInstallNotUpgrade) {\n' +
@@ -460,7 +481,8 @@
                 '  if ($Version) { $chocoExecutionArgs += " --version=\'$Version\'"}\n' +
                 '  if ($PackageParameters -and $PackageParameters -ne \'\') { $chocoExecutionArgs += " --package-parameters=\'$PackageParameters\'"}\n\n' +
                 '  Invoke-Expression -Command $chocoExecutionArgs\n' +
-                '  $exitCode = $LASTEXITCODE\n\n' +
+                '  $exitCode = $LASTEXITCODE\n' +
+                '  $validExitCodes = @(0, 1605, 1614, 1641, 3010)\n' +
                 '  if ($validExitCodes -notcontains $exitCode) {\n' +
                 '    throw "Error with package installation. See above."\n' +
                 '  }\n' +
@@ -470,10 +492,11 @@
                 for (var i in packages) {
                     var getStorage = packages[i].split(' , '),
                         storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]);
+                        storageValue = findScriptValue(getStorage[3]),
+                        storagePre = findScriptPre(getStorage[3]) ? ' -Prerelease' : '';
 
-                    commandGenericOne.innerHTML += "choco upgrade " + storageValue + " -y --source=\"'" + internalRepoUrl + "'\" [other options]\n";
-                    commandGenericTwo.querySelector('span').innerHTML += "Install-Package '" + storageValue + "' -Source " + internalRepoUrl + "\n"
+                    commandGenericOne.innerHTML += "choco upgrade " + storageValue + storagePre + " -y --source=\"'" + internalRepoUrl + "'\" [other options]\n";
+                    commandGenericTwo.querySelector('span').innerHTML += "Install-ChocolateyPackage " + storageValue + " -Source " + internalRepoUrl + " -Version " + storageVersion + storagePre +"\n"
                 }
 
                 highlightScript(commandGenericOne, 'language-powershell');
