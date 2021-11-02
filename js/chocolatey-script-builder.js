@@ -394,7 +394,7 @@
                         "    name: " + storageValue + "\n" +
                         "    version: '" + storageVersion + "'\n" +
                         "    source: " + internalRepoUrl + "\n" +
-                        "    state: yes\n" + 
+                        "    state: present\n" + 
                         storagePre;
                 }
 
@@ -409,7 +409,7 @@
                         storagePre = findScriptPre(getStorage[3]) ? "  options  '--prerelease'\n" : "";
 
                     commandChef.innerHTML += "chocolatey_package '" + storageValue + "' do\n" +
-                        "  action   install\n" +
+                        "  action   :install\n" +
                         "  source   '" + internalRepoUrl + "'\n" +
                         "  version  '" + storageVersion + "'\n" +
                         storagePre +
@@ -424,13 +424,14 @@
                     var getStorage = packages[i].split(' , '),
                         storageVersion = getStorage[1],
                         storageValue = findScriptValue(getStorage[3]),
-                        storagePre = findScriptPre(getStorage[3]) ? '   chocoParams = "--prerelease"\n' : '',
+                        storagePre = findScriptPre(getStorage[3]) ? '    chocoParams = "--prerelease"\n' : '',
                         storageSpace = findScriptPre(getStorage[3]) ? "    " : "";
 
-                    commandPSDSC.innerHTML += 'cChocoPackageInstaller chocolateyAgent {\n' +
-                        '   Name    ' + storageSpace + '= "' + storageValue + '"\n' +
-                        '   Version ' + storageSpace + '= "' + storageVersion + '"\n' +
-                        '   Source  ' + storageSpace + '= "' + internalRepoUrl + '"\n' +
+                    commandPSDSC.innerHTML += 'cChocoPackageInstaller ' + storageValue + '\n' +
+                        '{\n' +
+                        '    Name    ' + storageSpace + '= "' + storageValue + '"\n' +
+                        '    Version ' + storageSpace + '= "' + storageVersion + '"\n' +
+                        '    Source  ' + storageSpace + '= "' + internalRepoUrl + '"\n' +
                         storagePre +
                         '}\n\n';
                 }
@@ -446,10 +447,10 @@
                         storagePre = findScriptPre(getStorage[3]) ? "  install_options => ['--prerelease'],\n" : "",
                         storageSpace = findScriptPre(getStorage[3]) ? "       " : "";
 
-                    commandPuppet.innerHTML += "package {'" + storageValue + "':\n" +
+                    commandPuppet.innerHTML += "package { '" + storageValue + "':\n" +
                         "  ensure   " + storageSpace + "=> '" + storageVersion + "',\n" +
                         storagePre +
-                        "  provider " + storageSpace + "=> chocolatey,\n" +
+                        "  provider " + storageSpace + "=> 'chocolatey',\n" +
                         "  source   " + storageSpace + "=> '" + internalRepoUrl + "',\n" +
                         "}\n\n";
                 }
@@ -493,10 +494,11 @@
                     var getStorage = packages[i].split(' , '),
                         storageVersion = getStorage[1],
                         storageValue = findScriptValue(getStorage[3]),
-                        storagePre = findScriptPre(getStorage[3]) ? ' -Prerelease' : '';
+                        storagePreOne = findScriptPre(getStorage[3]) ? ' --prerelease' : '',
+                        storagePreTwo = findScriptPre(getStorage[3]) ? ' -Prerelease' : '';
 
-                    commandGenericOne.innerHTML += "choco upgrade " + storageValue + storagePre + " -y --source=\"'" + internalRepoUrl + "'\" [other options]\n";
-                    commandGenericTwo.querySelector('span').innerHTML += "Install-ChocolateyPackage " + storageValue + " -Source " + internalRepoUrl + " -Version " + storageVersion + storagePre +"\n"
+                    commandGenericOne.innerHTML += "choco upgrade " + storageValue + " -y --source=\"'" + internalRepoUrl + "'\"" + storagePreOne + " [other options]\n";
+                    commandGenericTwo.querySelector('span').innerHTML += "Install-ChocolateyPackage " + storageValue + " -Source " + internalRepoUrl + " -Version " + storageVersion + storagePreTwo +"\n"
                 }
 
                 highlightScript(commandGenericOne, 'language-powershell');
@@ -666,7 +668,8 @@
         for (var i in packages) {
             getStorage = packages[i].split(" , ");
             storageVersion = getStorage[1];
-            storageValue = findScriptValue(getStorage[3]);
+            storageValue = findScriptValue(getStorage[3]),
+            storagePre = findScriptPre(getStorage[3]);
 
             // Creates a new package entry for each item in builder
             var packageNode = xml.createElement("package");
@@ -674,6 +677,10 @@
 
             packageNode.setAttribute("id", storageValue);
             packageNode.setAttribute("version", storageVersion);
+            
+            if (storagePre) {
+                packageNode.setAttribute("prerelease", "true");
+            }
         }
 
         // Get xml doc as string
