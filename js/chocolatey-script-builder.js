@@ -357,7 +357,7 @@
                 storageValue = findScriptValue(getStorage[3]),
                 storagePre = findScriptPre(getStorage[3]) ? ' --pre' : '';
 
-            commandEnvironmentOne.innerHTML += 'choco download ' + storageValue + ' --version ' + storageVersion + storagePre + ' --internalize --source=https://community.chocolatey.org/api/v2/\n';
+            commandEnvironmentOne.innerHTML += 'choco download ' + storageValue + ' --internalize --version=' + storageVersion + storagePre + ' --source=https://community.chocolatey.org/api/v2/\n';
         }
 
         // Syntax highlight
@@ -497,7 +497,7 @@
                         storagePreOne = findScriptPre(getStorage[3]) ? ' --prerelease' : '',
                         storagePreTwo = findScriptPre(getStorage[3]) ? ' -Prerelease' : '';
 
-                    commandGenericOne.innerHTML += "choco upgrade " + storageValue + " -y --source=\"'" + internalRepoUrl + "'\"" + storagePreOne + " [other options]\n";
+                    commandGenericOne.innerHTML += "choco upgrade " + storageValue + " -y --source=\"'" + internalRepoUrl + "'\" --version \"'" + storageVersion + "'\"" + storagePreOne + " [other options]\n";
                     commandGenericTwo.querySelector('span').innerHTML += "Install-ChocolateyPackage " + storageValue + " -Source " + internalRepoUrl + " -Version " + storageVersion + storagePreTwo +"\n"
                 }
 
