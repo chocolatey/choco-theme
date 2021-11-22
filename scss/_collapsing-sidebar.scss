@@ -21,18 +21,11 @@
 }
 
 .btn-collapsing-left-sidebar {
-    position: fixed;
+    position: absolute;
     top: 34%;
     left: 0;
-    width: auto !important;
+    width: 50px;
     border-radius: 0 .25rem .25rem 0;
-    -o-transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-    writing-mode: vertical-rl;
-    -webkit-writing-mode: vertical-rl;
-    -ms-writing-mode: vertical-rl;
-    text-orientation: upright;
     z-index: 1030;
 
     &:before {
