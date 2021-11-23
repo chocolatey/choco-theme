@@ -299,8 +299,8 @@
     }
 
     function findScriptValue(scriptValue) {
-        if (scriptValue.indexOf('--version') > 0) {
-            scriptValue = scriptValue.split('--version');
+        if (scriptValue.indexOf('--') > 0) {
+            scriptValue = scriptValue.split('--');
             scriptValue = scriptValue[0].trim();
         }
 
