@@ -83,7 +83,7 @@
                 '<div id="' + packageIdentity + '" class="d-flex flex-row align-items-start storage-row ' + packageIdentity + '">' +
                 '<div class="ratio ratio-1x1 package-image-header">' +
                 '<div class="d-flex flex-fill align-items-center justify-content-center package-icon">' +
-                '<img class="package-image" src="' + packageImagePath + '' + packageImage + '" height="30" width="30">' +
+                '<img class="package-image" src="' + packageImagePath + '' + packageImage + '" height="30" width="30" onerror="this.src=\'/Content/Images/packageDefaultIcon-50x50.png\'">' +
                 '</div>' +
                 '</div>' +
                 '<div class="mx-2">' +
