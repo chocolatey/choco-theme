@@ -33,6 +33,12 @@
 .list-group-item {
     background: var(--background-light);
     border-color: var(--border);
+    color: var(--text);
+
+    &.list-group-item-action:hover {
+        background-color: var(--background-light-2);
+        color: var(--text);
+    }
 }
 
 .list-circle {

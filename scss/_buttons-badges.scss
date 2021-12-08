@@ -62,6 +62,13 @@
     }
 }
 
+.btn-check:checked+.btn-outline-primary {
+    color: $white;
+    color: var(--background);
+    border-top:1px solid var(--background-light);
+    border-bottom:1px solid var(--background-light);
+}
+
 .btn-outline-primary {
     .badge {
         background: $primary;

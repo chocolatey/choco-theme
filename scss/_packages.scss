@@ -180,6 +180,17 @@
         border-color: $primary;
     }
 }
+
+// Search selected tags/authors/query
+.selected-search-term-label {
+    display: flex;
+    justify-content: space-between;
+    border: 0;
+    border-radius: 0;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
 @include media-breakpoint-up(md) {
     #package-sidebar .package-logo {
         max-width: 150px;

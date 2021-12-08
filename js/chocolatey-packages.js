@@ -5,7 +5,8 @@
         preferenceGridView = jQuery('#preferenceGridView'),
         gridView = getCookie("preferenceGridView"),
         preferenceModView = jQuery('#preferenceModView'),
-        modView = getCookie("preferenceModView");
+        modView = getCookie("preferenceModView"),
+        packageTags = document.querySelectorAll('.package-tag');
 
     // Community Disclaimer
     if (!getCookie(cookieDisclaimerName)) {
@@ -27,6 +28,32 @@
     if (modView) {
         preferenceModView.prop("checked", true);
     }
+
+    // Set tag links on list page
+    packageTags.forEach(function (el) {
+        var tag = el.getAttribute('data-package-tag'),
+            query;
+
+        if (window.location.search) {
+            // Only search in approved packages
+            if (window.location.search.includes('moderatorQueue=true')) {
+                query = window.location.search.replace('moderatorQueue=true', 'moderatorQueue=false');
+            } else {
+                query = window.location.search;
+            }
+        } else {
+            query = '?';
+        }
+
+        // Only append tag to query if it doesn't already exist
+        if (query.includes('tags=' + tag + '&')) {
+            el.href = '/packages' + query;
+        } else if (query.endsWith('tags=' + tag)) {
+            el.href = '/packages' + query;
+        } else {
+            el.href = '/packages' + query + '&tags=' + tag;
+        }
+    });
 
     // Save Preferences
     jQuery('.btn-preferences').click(function () {
@@ -51,10 +78,10 @@
     });
 
     // Package Filtering
-    jQuery("#sortOrder,#prerelease,#moderatorQueue,#moderationStatus").change(function () {
+    jQuery("#sortOrder,#prerelease,#moderatorQueue,#moderationStatus,.selected-search-term").change(function () {
         jQuery(this).closest("form").submit();
     });
-
+    
     // Package Details
     // Prism for Description section
     // Description Area
