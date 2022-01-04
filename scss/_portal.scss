@@ -10,9 +10,15 @@
     }
 }
 
-[data-license-type="business"] { 
+[data-license-type="business"], [data-license-type="trial"] { 
     #Form_Name {
         display: none;
+    }
+}
+
+[data-license-type="trial"] { 
+    #Form_CheckboxContainer {
+        display: none !important;
     }
 }
 

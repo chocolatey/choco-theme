@@ -20,7 +20,7 @@
             }
 
             if (jQuery(scrollHash).length) {
-                if (jQuery(window).scrollTop() >= jQuery(scrollHash).offset().top && jQuery(scrollHash).is(':visible')) {
+                if (jQuery(window).scrollTop() > jQuery(scrollHash).offset().top - 30 && jQuery(scrollHash).is(':visible')) {
                     jQuery('a[href="' + scrollHash + '"]').addClass('active active-page');
                     jQuery('a[href="' + scrollHash + '"]').parent().prev().find('a.active').removeClass('active active-page');
                 } else {
