@@ -7,6 +7,27 @@
         z-index: 2;
     }
 
+    .twitter-typeahead {
+        width: 100%;
+    }
+
+    .tt-dataset-0 {
+        strong {
+            color: var(--bs-primary);
+        }
+
+        .bg-theme {
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+
+            &:not(.no-results):hover {
+                background: var(--background-light-2) !important;
+                cursor: pointer;
+            }
+        }
+    }
+
     .fa-search {
         position: absolute;
         z-index: 1;
