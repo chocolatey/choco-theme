@@ -132,53 +132,6 @@
     }
 }
 
-.nav-tabs-install {
-    display: flex;
-    justify-content: center;
-    border-bottom: none;
-
-    .nav-item {
-        margin: 15px;
-
-        .nav-link {
-            height: 100px;
-            align-items: center;
-            display: flex;
-            margin: 0 !important;
-            border: 5px solid var(--border);
-            background: $white;
-            border-radius: .25rem;
-            border-radius: unset;
-            font-weight: bold;
-            transition: .5s ease;
-
-            &:hover, &.active {
-                border: 5px solid $primary;
-                color: $dark;
-                //box-shadow: $box-shadow;
-            }
-
-            .nav-img {
-                height: 60px !important;
-            }
-        }
-    }
-
-    &.nav-tabs-install-package {
-        .nav-item {
-            margin: 10px;
-
-            .nav-link {
-                height: 90px;
-
-                .nav-img {
-                    height: 50px !important;
-                }
-            }
-        }
-    }
-}
-
 @include media-breakpoint-up(sm) {
     #Modal_ScriptBuilder .modal-dialog {
         max-width: 667px !important;
