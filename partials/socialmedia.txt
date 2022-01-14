@@ -42,9 +42,9 @@
         </a>
     </li>
     <li class="list-inline-item">
-        <a href="https://gitter.im/chocolatey/chocolatey.org" target="_blank" rel="noreferrer" aria-label="Connect with Chocolatey on Gitter">
-            <div class="bg-gitter circle" aria-hidden="true">
-                <i class="fab fa-gitter"></i>
+        <a href="https://ch0.co/community" target="_blank" rel="noreferrer" aria-label="Connect with Chocolatey on Community Chat">
+            <div class="bg-chat circle" aria-hidden="true">
+                <i class="far fa-comment"></i>
             </div>
         </a>
     </li>
