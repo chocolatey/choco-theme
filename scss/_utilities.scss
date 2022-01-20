@@ -68,6 +68,10 @@
     margin-left: 30px;
 }
 
+.mt-nc200 {
+    margin-top: -200px;
+}
+
 
 /*Rotation*/
 .rotate-180 {
@@ -87,8 +91,20 @@
     height: 5px;
 } 
 
+.h-30 {
+    height: 30px;
+}
+
 .h-90 {
     height: 90%;
+}
+
+.h-130 {
+    height: 130px;
+}
+
+.h-200 {
+    height: 200px;
 }
 
 .h-300 {
@@ -100,9 +116,18 @@
 }
 
 /*Width*/
+.w-30 {
+    width: 30px;
+}
+
 .w-300 {
     width: 300px;
 }
+
+.w-130 {
+    width: 130px;
+}
+
 .min-w-60 {
     min-width: 60px;
 }

@@ -16,6 +16,10 @@
     .list-inline-item {
         margin-bottom: $spacer / 4;
     }
+
+    .list-inline-item-lg:not(:last-child) {
+        margin-right: $spacer * 2;
+    }
 }
 
 .list-hr > li:not(:last-child) {
