@@ -170,6 +170,12 @@ main {
     margin-bottom: 0;
 }
 
+// General Show/Fade
+.toggle-fade-show-container:not(.show) {
+    height: 0;
+    overflow: hidden;
+}
+
 @include media-breakpoint-up(md) {
     .container-fluid .row:first-child {
         height: 100%;
