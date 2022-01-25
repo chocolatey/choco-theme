@@ -94,13 +94,14 @@
         display: none;
     }
 
-    .search-box, .navbar-links {
+    .search-box {
         display: flex;
         flex: auto;
     }
 
     .navbar-links {
         margin-left: 0 !important;
+        width: 100%;
     }
 }
 
@@ -158,12 +159,12 @@
     }
 
     .chocolatey-org #topNav.active-search {
-        .navbar-nav {
-            display: flex;
-        }
-
         .navbar-brand {
             display: block;
+
+            img {
+                top: -70px;
+            }
         }
 
         .search-box, .navbar-links {
@@ -181,7 +182,7 @@
     }
 
     .chocolatey-docs #topNav.active-search {
-        .navbar-nav, .navbar-brand {
+        .navbar-brand, .navbar-nav {
             display: flex;
         }
 
@@ -202,10 +203,20 @@
         //z-index: 1;
         width: 700px;
     }
+} 
 
+@include media-breakpoint-up(xxl) {
     .chocolatey-org #topNav.active-search {
         .navbar-nav {
-            display: none;
+            display: flex;
+        }
+
+        .navbar-brand img {
+            top: -58px;
+        }
+
+        .navbar-links {
+            width: auto;
         }
     }
 } 

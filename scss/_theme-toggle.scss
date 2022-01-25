@@ -13,7 +13,7 @@ label[for="themeToggle"] {
 
     + .toggle-slot {
         position: relative;
-        height: 2.25rem;
+        height: 1.75rem;
         width: 4rem;
         border: 1px solid $gray-300;
         border: 1px solid var(--border-secondary);
@@ -28,38 +28,40 @@ label[for="themeToggle"] {
 
         .sun-icon-wrapper {
             position: absolute;
-            height: 1.25rem;
             opacity: 1;
             transform: translate(0.55rem, 0.47rem);
             transform-origin: 50% 50%;
             transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+            top: -1px;
 
             .sun-icon {
-                font-size: 1.25rem;
+                font-size: .9rem;
             }
         }
 
         .toggle-button {
             transform: translate(2.35rem, 0.62rem);
             position: absolute;
-            height: 1rem;
-            width: 1rem;
+            height: .75rem;
+            width: .75rem;
             border-radius: 50%;
             background-color: var(--theme-toggle-btn-background);
             border: 1px solid $yellow;
             transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+            top: -2px;
         }
 
         .moon-icon-wrapper {
             position: absolute;
-            height: 1.25rem;
             opacity: 0;
             transform: translate(2rem, .25rem) rotate(0deg);
             transform-origin: 50% 50%;
             transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+            top: -3px;
+            left: -4px;
 
             .moon-icon {
-                font-size: 1rem;
+                font-size: .9rem;
             }
         }
 

@@ -1,4 +1,12 @@
 /*Padding & Margin*/
+.ps-c75 {
+    padding-left: .75rem;
+}
+
+.pe-c75 {
+    padding-right: .75rem;
+}
+
 .ps-c175 {
     padding-left: $spacer * 2 - $spacer / 4 !important;
 }
@@ -120,6 +128,10 @@
     width: 30px;
 }
 
+.w-90 {
+    width: 90%;
+}
+
 .w-300 {
     width: 300px;
 }
@@ -141,7 +153,7 @@
 }
 
 /*Borders*/
-.border, .border-bottom, .border-top, .border-start, .border-end {
+.border:not(.border-primary), .border-bottom, .border-top, .border-start, .border-end {
     border-color: var(--border) !important;
 }
 
@@ -195,6 +207,10 @@ hr {
 
 .z-index-2 {
     z-index: 2;
+}
+
+.z-index-3 {
+    z-index: 3;
 }
 
 /*Dark/Light mode images*/
@@ -256,6 +272,10 @@ hr {
     .px-md-c4 {
         padding-left: $spacer * 4 !important;
         padding-right: $spacer * 4 !important;
+    }
+    
+    .pe-md-c75 {
+        padding-right: .75rem !important;
     }    
 }
 
