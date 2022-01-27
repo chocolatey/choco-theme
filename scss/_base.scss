@@ -64,10 +64,10 @@ h1, h2 {
 .sticky-top {
     max-height: 100vh;
     overflow: auto;
+}
 
-    &:not(header) {
-        top: 65px;
-    }
+.sticky-nav-active .sticky-top:not(header) {
+    top: 65px;
 }
 
 /*Scrollbars*/
