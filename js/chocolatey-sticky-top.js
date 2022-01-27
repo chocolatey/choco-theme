@@ -4,7 +4,9 @@
     if (stickyHeader) {
         var navImage = document.querySelector('.navbar-brand-desktop'),
             logoSmall = '/assets/images/global-shared/logo.svg',
-            logoLarge = '/assets/images/global-shared/logo-square.svg';;
+            logoLarge = '/assets/images/global-shared/logo-square.svg';
+
+        document.body.classList.add('sticky-nav-active');
 
         if (document.body.scrollTop == 0 || document.documentElement.scrollTop == 0) {
             navImage.setAttribute('src', logoLarge);
