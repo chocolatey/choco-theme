@@ -2,9 +2,15 @@
     background: $primary-150;
     background: var(--background-primary-light);
     border-bottom: 1px solid $primary;
+    position: relative;
+    z-index: 1;
 
     .nav-item {
         flex-basis: 50%;
+
+        .nav-link {
+            font-size: .9rem;
+        }
     }
 }
 

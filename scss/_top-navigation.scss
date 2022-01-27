@@ -8,12 +8,19 @@ header {
     background: $white;
     background: var(--background-light);
 
-    .navbar-brand img {
-        height: 3rem;
-        padding-left: 1rem;
+    .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        img {
+            height: 3rem;
+            padding-left: 1rem;
+        }
     }
 
     .navbar-nav {
+        height: 38px;
+        
         .nav-item {
             display: flex;
             align-items: center;
@@ -25,11 +32,6 @@ header {
     }
 
     .navbar-collapse {
-        &#topNavCollapse {
-            border-top: 1px solid var(--border);
-            margin-top: $spacer / 2;
-        }
-
         .navbar-nav {
             .nav-item {
                 padding: 0;
@@ -76,7 +78,7 @@ header {
     }
 }
 
-.navbar-nested-collapse ul:not(.global-nav) .nav-link {
+.navbar-nested-collapse ul:not(.global-nav-ul) .nav-link {
     width: 100%;
     text-align: left;
     padding: .5rem 1rem;
@@ -99,6 +101,17 @@ header {
     }
 }
 
+.chocolatey-blog #topNav .navbar-collapse {
+    &.collapse.show {
+        border-top: 1px solid var(--border);
+        margin-top: .5rem;
+
+        .navbar-nav {
+            height: auto;
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
     #topNav {
         padding-bottom: .5rem;
@@ -108,6 +121,7 @@ header {
             height: 100px;
             top: -25px;
             position: absolute;
+            z-index: 1;
         }
 
         .navbar-nav {
@@ -121,15 +135,9 @@ header {
         }
 
         .navbar-collapse {
-            &#topNavCollapse {
-                border-top: none;
-                margin-top: 0;
-            }
-            
             .navbar-nav {
                 .nav-item {
                     .nav-link {
-                        color: $primary;
                         padding: 0;
                         border-left: none;
 
@@ -148,41 +156,36 @@ header {
     }
 
     .navbar-nested-collapse {
-        position: absolute;
-        width: 100%;
-        border-bottom: 1px solid $gray-300;
-        border-bottom: 1px solid var(--border);
-        margin-top: 40px;
         z-index: 1025;
     }
 
     .chocolatey-org {
-        header {
-            margin-bottom: 40px;
-        }
-
         #topNav {
-            .navbar-links {
-                margin-top: 19px;
+            .navbar-brand img {
+                top: -51px;
+                padding-left: 0;
             }
 
             #topNavCollapse.navbar-collapse {
-                margin-top: 27px;
                 background: $white;
                 background: var(--background-light);
-                border-top: 1px solid $gray-300;
-                border-top: 1px solid var(--border);
             }
+        }
+    }
+
+    .chocolatey-blog #topNav .navbar-collapse {
+        &.collapse.show {
+            border-top: none;
+            margin-top: 0;
         }
     }
 }
 
-@include media-breakpoint-up(xl) {
-    .chocolatey-org {
-        #topNav {
-            #topNavCollapse.navbar-collapse {
-                border-top: 0;
-            }
-        }
+header.sticky-top:not(.sticky-header) #topNav {
+    height: 64px;
+
+    .navbar-brand img.navbar-brand-desktop {
+        height: 3rem;
+        top: -5px;
     }
 }

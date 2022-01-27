@@ -32,6 +32,14 @@ h1, h2 {
     color: $primary;
 }
 
+.dark-theme .light-theme, .light-theme .dark-theme {
+    display: none;
+}
+
+.dark-theme .dark-theme, .light-theme .light-theme {
+    display: block;
+}
+
 .breadcrumb, .chocolatey-license-portal h1.title {
     margin-bottom: $spacer;
 
@@ -56,6 +64,10 @@ h1, h2 {
 .sticky-top {
     max-height: 100vh;
     overflow: auto;
+
+    &:not(header) {
+        top: 65px;
+    }
 }
 
 /*Scrollbars*/
