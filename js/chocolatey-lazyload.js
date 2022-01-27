@@ -16,7 +16,7 @@
         var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
         var active = false;
     
-        var lazyLoad = function () {
+        var lazyLoadImg = function () {
             if (active === false) {
                 active = true;
     
@@ -31,9 +31,9 @@
                             });
     
                             if (lazyImages.length === 0) {
-                                document.removeEventListener("scroll", lazyLoad);
-                                window.removeEventListener("resize", lazyLoad);
-                                window.removeEventListener("orientationchange", lazyLoad);
+                                document.removeEventListener("scroll", lazyLoadImg);
+                                window.removeEventListener("resize", lazyLoadImg);
+                                window.removeEventListener("orientationchange", lazyLoadImg);
                             }
                         }
                     });
@@ -42,14 +42,40 @@
                 }, 200);
             }
         };
+
+        var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+        if ("IntersectionObserver" in window) {
+            var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(video) {
+                    if (video.isIntersecting) {
+                        for (var source in video.target.children) {
+                            var videoSource = video.target.children[source];
+
+                            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                                videoSource.src = videoSource.dataset.src;
+                            }
+                        }
+
+                        video.target.load();
+                        video.target.classList.remove("lazy");
+                        lazyVideoObserver.unobserve(video.target);
+                    }
+                });
+            });
+
+            lazyVideos.forEach(function(lazyVideo) {
+                lazyVideoObserver.observe(lazyVideo);
+            });
+        }
     
-        document.addEventListener("scroll", lazyLoad);
-        window.addEventListener("resize", lazyLoad);
-        window.addEventListener("orientationchange", lazyLoad);
-        jQuery('.lazy').each(function () {
+        document.addEventListener("scroll", lazyLoadImg);
+        window.addEventListener("resize", lazyLoadImg);
+        window.addEventListener("orientationchange", lazyLoadImg);
+        jQuery('img.lazy').each(function () {
             if (jQuery(this).isInViewport() && jQuery(this).parent().parent().parent().hasClass("carousel-item")) {
                 jQuery('.carousel').on('slide.bs.carousel', function () {
-                    lazyLoad();
+                    lazyLoadImg();
                 });
             }
             else if (jQuery(this).isInViewport() && !jQuery(this).parent().parent().parent().hasClass("carousel-item")) {
