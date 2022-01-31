@@ -91,74 +91,36 @@
     }
 }
 
-/*Height*/
-.h-05 {
-    height: 5px;
-} 
+@each $number in $general-numbers {
+    // Height in px
+    .h-#{$number}-px {
+        height: #{$number}px;
+    }
 
-.h-30 {
-    height: 30px;
-}
+    // Width in px
+    .w-#{$number}-px {
+        width: #{$number}px;
+    }
 
-.h-90 {
-    height: 90%;
-}
+    // Min Width in px
+    .min-w-#{$number}-px {
+        min-width: #{$number}px;
+    }
 
-.h-130 {
-    height: 130px;
-}
+    // Height in %
+    .h-#{$number} {
+        height: #{$number}#{'%'};
+    }
 
-.h-200 {
-    height: 200px;
-}
+    // Width in %
+    .w-#{$number} {
+        width: #{$number}#{'%'};
+    }
 
-.h-300 {
-    height: 300px;
-}
-
-.h-400 {
-    height: 400px;
-}
-
-/*Width*/
-.w-30 {
-    width: 30px;
-}
-
-.w-90 {
-    width: 90%;
-}
-
-.w-300 {
-    width: 300px;
-}
-
-.w-130 {
-    width: 130px;
-}
-
-.min-w-60 {
-    min-width: 60px;
-}
-
-.min-w-100 {
-    min-width: 100px;
-}
-
-.min-w-300 {
-    min-width: 300px;
-}
-
-.w-35 {
-    width: 35px;
-}
-
-.w-20-percent {
-    width: 20%;
-}
-
-.w-40-percent {
-    width: 40%;
+    // Min Width in %
+    .min-w-#{$number} {
+        min-width: #{$number}#{'%'};
+    }
 }
 
 /*Borders*/
