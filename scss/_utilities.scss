@@ -85,16 +85,10 @@
 }
 
 /*Rotation*/
-.rotate-180 {
-    transform: rotate(180deg);
-}
-
-.rotate-90 {
-    transform: rotate(90deg);
-}
-
-.rotate-30 {
-    transform: rotate(30deg);
+@each $rotate, $value in $rotations {
+    .rotate-#{$rotate} {
+        transform: rotate($value);
+    }
 }
 
 /*Height*/
