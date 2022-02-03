@@ -175,16 +175,10 @@ hr {
 }
 
 /*Z Index*/
-.z-index-1 {
-    z-index: 1;
-}
-
-.z-index-2 {
-    z-index: 2;
-}
-
-.z-index-3 {
-    z-index: 3;
+@for $i from 0 through 5 {
+    .z-index-#{$i} {
+        z-index: $i;
+    }
 }
 
 /*Dark/Light mode images*/
