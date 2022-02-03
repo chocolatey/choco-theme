@@ -190,7 +190,7 @@
                                 storageImage = getStorage[2],
                                 storageValue = getStorage[3];
 
-                            if (storageTitle == packageTitle) {
+                            if (findScriptValue(storageValue) == findScriptValue(packageValue)) {
                                 // Show modal
                                 var modalBuilderVersionWarning = document.getElementById('Modal_ScriptBuilderVersionWarning'),
                                     modalBuilderVersionWarningInstance = Modal.getInstance(modalBuilderVersionWarning) ? Modal.getInstance(modalBuilderVersionWarning) : new Modal(modalBuilderVersionWarning, { keyboard: false, backdrop: 'static' });
