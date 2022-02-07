@@ -2,87 +2,87 @@
 @each $space, $value in $spaces {
     // Padding in rem
     .pt-c#{$space} {
-        padding-top: #{$space}rem;
+        padding-top: #{$space}rem !important;
     }
 
     .pe-c#{$space} {
-        padding-right: #{$space}rem;
+        padding-right: #{$space}rem !important;
     }
 
     .pb-c#{$space} {
-        padding-bottom: #{$space}rem;
+        padding-bottom: #{$space}rem !important;
     }
 
     .ps-c#{$space} {
-        padding-left: #{$space}rem;
+        padding-left: #{$space}rem !important;
     }
 
     // Margin in rem
     .mt-c#{$space} {
-        margin-top: #{$space}rem;
+        margin-top: #{$space}rem !important;
     }
 
     .me-c#{$space} {
-        margin-right: #{$space}rem;
+        margin-right: #{$space}rem !important;
     }
 
     .mb-c#{$space} {
-        margin-bottom: #{$space}rem;
+        margin-bottom: #{$space}rem !important;
     }
 
     .ms-c#{$space} {
-        margin-left: #{$space}rem;
+        margin-left: #{$space}rem !important;
     }
 
     .mt-cn#{$space} {
-        margin-top: -#{$space}rem;
+        margin-top: -#{$space}rem !important;
     }
 
     .me-cn#{$space} {
-        margin-right: -#{$space}rem;
+        margin-right: -#{$space}rem !important;
     }
 
     .mb-cn#{$space} {
-        margin-bottom: -#{$space}rem;
+        margin-bottom: -#{$space}rem !important;
     }
 
     .ms-nc#{$space} {
-        margin-left: -#{$space}rem;
+        margin-left: -#{$space}rem !important;
     }
 }
 
 // Padding and Margin Utilities in px
 @each $space in $general-numbers {
     .mt-c#{$space}-px {
-        margin-top: #{$space}px;
+        margin-top: #{$space}px !important;
     }
 
     .me-c#{$space}-px {
-        margin-right: #{$space}px;
+        margin-right: #{$space}px !important;
     }
 
     .mb-c#{$space}-px {
-        margin-bottom: #{$space}px;
+        margin-bottom: #{$space}px !important;
     }
 
     .ms-c#{$space}-px {
-        margin-left: #{$space}px;
+        margin-left: #{$space}px !important;
     }
 
     .mt-cn#{$space}-px {
-        margin-top: -#{$space}px;
+        margin-top: -#{$space}px !important;
     }
 
     .me-cn#{$space}-px {
-        margin-right: -#{$space}px;
+        margin-right: -#{$space}px !important;
     }
 
     .mb-cn#{$space}-px {
-        margin-bottom: -#{$space}px;
+        margin-bottom: -#{$space}px !important;
     }
 
     .ms-cn#{$space}-px {
-        margin-left: -#{$space}px;
+        margin-left: -#{$space}px !important;
     }
 }
 
