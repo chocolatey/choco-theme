@@ -1,170 +1,129 @@
-/*Padding & Margin*/
-.ps-c75 {
-    padding-left: .75rem;
+// Padding and Margin Utilities - Defaults to rem
+@each $space, $value in $spaces {
+    // Padding in rem
+    .pt-c#{$space} {
+        padding-top: #{$space}rem;
+    }
+
+    .pe-c#{$space} {
+        padding-right: #{$space}rem;
+    }
+
+    .pb-c#{$space} {
+        padding-bottom: #{$space}rem;
+    }
+
+    .ps-c#{$space} {
+        padding-left: #{$space}rem;
+    }
+
+    // Margin in rem
+    .mt-c#{$space} {
+        margin-top: #{$space}rem;
+    }
+
+    .me-c#{$space} {
+        margin-right: #{$space}rem;
+    }
+
+    .mb-c#{$space} {
+        margin-bottom: #{$space}rem;
+    }
+
+    .ms-c#{$space} {
+        margin-left: #{$space}rem;
+    }
+
+    .mt-cn#{$space} {
+        margin-top: -#{$space}rem;
+    }
+
+    .me-cn#{$space} {
+        margin-right: -#{$space}rem;
+    }
+
+    .mb-cn#{$space} {
+        margin-bottom: -#{$space}rem;
+    }
+
+    .ms-nc#{$space} {
+        margin-left: -#{$space}rem;
+    }
 }
 
-.pe-c75 {
-    padding-right: .75rem;
-}
+// Padding and Margin Utilities in px
+@each $space in $general-numbers {
+    .mt-c#{$space}-px {
+        margin-top: #{$space}px;
+    }
 
-.ps-c175 {
-    padding-left: $spacer * 2 - $spacer / 4 !important;
-}
+    .me-c#{$space}-px {
+        margin-right: #{$space}px;
+    }
 
-.ps-c2 {
-    padding-left: $spacer * 2 !important;
-}
+    .mb-c#{$space}-px {
+        margin-bottom: #{$space}px;
+    }
 
-.mt-c2 {
-    margin-top: $spacer * 2 !important;
-}
+    .ms-c#{$space}-px {
+        margin-left: #{$space}px;
+    }
 
-.ps-c275 {
-    padding-left: $spacer * 3 - $spacer / 4 !important;
-}
+    .mt-cn#{$space}-px {
+        margin-top: -#{$space}px;
+    }
 
-.ps-c125 {
-    padding-left: 1.25rem !important;
-}
+    .me-cn#{$space}-px {
+        margin-right: -#{$space}px;
+    }
 
-.ps-c225 {
-    padding-left: 2.25rem !important;
-}
+    .mb-cn#{$space}-px {
+        margin-bottom: -#{$space}px;
+    }
 
-.ps-c375 {
-    padding-left: $spacer * 4 - $spacer / 4 !important;
-}
-
-.ps-c4 {
-    padding-left: $spacer * 4 !important;
-}
-
-.ps-c45 {
-    padding-left: $spacer * 5 - $spacer / 2 !important;
-}
-
-.ps-c475 {
-    padding-left: $spacer * 5 - $spacer / 4 !important;
-}
-
-.ps-c5 {
-    padding-left: $spacer * 5 !important;
-}
-
-.ps-c6 {
-    padding-left: $spacer * 6 !important;
-}
-
-.pt-c6 {
-    padding-top: $spacer * 6 !important;
-}
-
-.mb-nc6 {
-    margin-bottom: -$spacer * 6 !important;
-}
-
-.ps-c7 {
-    padding-left: $spacer * 7 !important;
-}
-
-.mx-nc75 {
-    margin-left: -.75rem;
-    margin-right: -.75rem;
-}
-
-.ms-c30 {
-    margin-left: 30px;
-}
-
-.mt-nc200 {
-    margin-top: -200px;
-}
-
-.ms-c35 {
-    margin-left: 35px;
+    .ms-cn#{$space}-px {
+        margin-left: -#{$space}px;
+    }
 }
 
 /*Rotation*/
-.rotate-180 {
-    transform: rotate(180deg);
+@each $rotate, $value in $rotations {
+    .rotate-#{$rotate} {
+        transform: rotate($value);
+    }
 }
 
-.rotate-90 {
-    transform: rotate(90deg);
-}
+// Height and Width Utilities - Defaults to %
+@each $number in $general-numbers {
+    // Height in px
+    .h-#{$number}-px {
+        height: #{$number}px;
+    }
 
-.rotate-30 {
-    transform: rotate(30deg);
-}
+    // Width in px
+    .w-#{$number}-px {
+        width: #{$number}px;
+    }
 
-/*Height*/
-.h-05 {
-    height: 5px;
-} 
+    // Min Width in px
+    .min-w-#{$number}-px {
+        min-width: #{$number}px;
+    }
 
-.h-30 {
-    height: 30px;
-}
+    // Height in %
+    .h-#{$number} {
+        height: #{$number}#{'%'};
+    }
 
-.h-90 {
-    height: 90%;
-}
+    // Width in %
+    .w-#{$number} {
+        width: #{$number}#{'%'};
+    }
 
-.h-130 {
-    height: 130px;
-}
-
-.h-200 {
-    height: 200px;
-}
-
-.h-300 {
-    height: 300px;
-}
-
-.h-400 {
-    height: 400px;
-}
-
-/*Width*/
-.w-30 {
-    width: 30px;
-}
-
-.w-90 {
-    width: 90%;
-}
-
-.w-300 {
-    width: 300px;
-}
-
-.w-130 {
-    width: 130px;
-}
-
-.min-w-60 {
-    min-width: 60px;
-}
-
-.min-w-100 {
-    min-width: 100px;
-}
-
-.min-w-300 {
-    min-width: 300px;
-}
-
-.w-35 {
-    width: 35px;
-}
-
-.w-20-percent {
-    width: 20%;
-}
-
-.w-40-percent {
-    width: 40%;
+    // Min Width in %
+    .min-w-#{$number} {
+        min-width: #{$number}#{'%'};
+    }
 }
 
 /*Borders*/
@@ -216,16 +175,10 @@ hr {
 }
 
 /*Z Index*/
-.z-index-1 {
-    z-index: 1;
-}
-
-.z-index-2 {
-    z-index: 2;
-}
-
-.z-index-3 {
-    z-index: 3;
+@for $i from 0 through 5 {
+    .z-index-#{$i} {
+        z-index: $i;
+    }
 }
 
 /*Dark/Light mode images*/
@@ -268,7 +221,7 @@ hr {
         overflow: auto;
     }
     
-    .h-md-400 {
+    .h-md-400-px {
         height: 400px !important;
     }
 
