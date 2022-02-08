@@ -1,8 +1,8 @@
 (function() {
     nestedCollapseLocation();
     nestedTabLocation();
-    //window.onhashchange = nestedCollapseLocation;
-    //window.onhashchange = nestedTabLocation;
+    window.onhashchange = nestedCollapseLocation;
+    window.onhashchange = nestedTabLocation;
 
     function nestedCollapseLocation() {
         if (location.hash) {
