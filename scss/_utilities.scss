@@ -2,52 +2,52 @@
 @each $space, $value in $spaces {
     // Padding in rem
     .pt-c#{$space} {
-        padding-top: #{$space}rem !important;
+        padding-top: #{$value}rem !important;
     }
 
     .pe-c#{$space} {
-        padding-right: #{$space}rem !important;
+        padding-right: #{$value}rem !important;
     }
 
     .pb-c#{$space} {
-        padding-bottom: #{$space}rem !important;
+        padding-bottom: #{$value}rem !important;
     }
 
     .ps-c#{$space} {
-        padding-left: #{$space}rem !important;
+        padding-left: #{$value}rem !important;
     }
 
     // Margin in rem
     .mt-c#{$space} {
-        margin-top: #{$space}rem !important;
+        margin-top: #{$value}rem !important;
     }
 
     .me-c#{$space} {
-        margin-right: #{$space}rem !important;
+        margin-right: #{$value}rem !important;
     }
 
     .mb-c#{$space} {
-        margin-bottom: #{$space}rem !important;
+        margin-bottom: #{$value}rem !important;
     }
 
     .ms-c#{$space} {
-        margin-left: #{$space}rem !important;
+        margin-left: #{$value}rem !important;
     }
 
     .mt-cn#{$space} {
-        margin-top: -#{$space}rem !important;
+        margin-top: -#{$value}rem !important;
     }
 
     .me-cn#{$space} {
-        margin-right: -#{$space}rem !important;
+        margin-right: -#{$value}rem !important;
     }
 
     .mb-cn#{$space} {
-        margin-bottom: -#{$space}rem !important;
+        margin-bottom: -#{$value}rem !important;
     }
 
-    .ms-nc#{$space} {
-        margin-left: -#{$space}rem !important;
+    .ms-cn#{$space} {
+        margin-left: -#{$value}rem !important;
     }
 }
 
