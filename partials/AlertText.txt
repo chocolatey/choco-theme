@@ -1,1 +1,0 @@
-Chocolatey products not vulnerable to Log4j. <a href='https://blog.chocolatey.org/2021/12/chocolatey-products-not-affected-by-log4j-vulnerability/'>Read our announcement.</a>
