@@ -51,7 +51,7 @@ h1, h2 {
 .chocolatey-docs h1:not(.title), .chocolatey-docs h2, 
 .chocolatey-blog #mainContent h1, .chocolatey-blog #mainContent h2,
 .sub-content h1, .sub-content h2, .breadcrumb,
-.chocolatey-license-portal h1.title
+.chocolatey-license-portal h1.title, .border-bottom-primary-opacity
 {
     padding-bottom: $spacer / 2;
     border-bottom: 3px solid $primary-opacity-25;

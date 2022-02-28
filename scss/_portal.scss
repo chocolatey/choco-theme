@@ -1,22 +1,22 @@
-[data-license-type="professional"] {
+[data-license-type="Professional"] {
     #Form_LicenseCount, #Form_OrganizationName, #Form_IsPerpetual, .btn-add-cc-bcc, .automatic-bcc  {
         display: none;
     }
 }
 
-[data-license-type="architect"], [data-license-type="managed-service-provider"] {
+[data-license-type="Architect"], [data-license-type="ManagedServiceProvider"] {
     #Form_Name,  #Form_IsPerpetual {
         display: none;
     }
 }
 
-[data-license-type="business"], [data-license-type="trial"] { 
+[data-license-type="Business"], [data-license-type="Trial"] { 
     #Form_Name {
         display: none;
     }
 }
 
-[data-license-type="trial"] { 
+[data-license-type="Trial"] { 
     #Form_CheckboxContainer {
         display: none !important;
     }
