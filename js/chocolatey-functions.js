@@ -60,16 +60,13 @@
     convertEventTimeToLocal.forEach(function (el) {
         var timeIncludeBreak = el.getAttribute('data-event-include-break'),
             timeOccurrence = el.getAttribute('data-event-occurrence'),
-            utcTime = el.getAttribute('data-event-utc').split(' '),
-            datePart = utcTime[0].split('/'),
-            timePart = utcTime[1].split(':'),
-            utcDateTime = luxon.DateTime.utc(parseInt(datePart[2]), parseInt(datePart[0]), parseInt(datePart[1]), parseInt(timePart[0]), parseInt(timePart[1]), parseInt(timePart[2])),
+            definedDate = luxon.DateTime.fromISO(el.getAttribute('data-event-utc')),
             timeIncludeBreakText,
             timeOccurrenceText;
 
         if (timeIncludeBreak == 'true') {
             timeIncludeBreakText = '<br />';
-        } else if (timeOccurrence == "-2" && utcDateTime.toISO() <= luxon.DateTime.utc().toISO()) {
+        } else if (timeOccurrence == "-2" && definedDate <= luxon.DateTime.utc().toISO()) {
             timeIncludeBreakText = ' '
         } else {
             timeIncludeBreakText = 'at ';
@@ -77,31 +74,31 @@
 
         switch (timeOccurrence) {
             case "0":
-                timeOccurrenceText = 'Every ' + utcDateTime.toLocal().toFormat('cccc') + ' ' + timeIncludeBreakText;
+                timeOccurrenceText = 'Every ' + definedDate.toLocal().toFormat('cccc') + ' ' + timeIncludeBreakText;
                 break;
             case "1":
-                timeOccurrenceText = 'First ' + utcDateTime.toLocal().toFormat('cccc') +  ' of Every Month ' + timeIncludeBreakText;
+                timeOccurrenceText = 'First ' + definedDate.toLocal().toFormat('cccc') +  ' of Every Month ' + timeIncludeBreakText;
                 break;
             case "-1":
-                timeOccurrenceText = utcDateTime.toLocal().toFormat('cccc, dd LLL yyyy') + timeIncludeBreakText;
+                timeOccurrenceText = definedDate.toLocal().toFormat('cccc, dd LLL yyyy') + timeIncludeBreakText;
                 break;
             case "-2":
-                timeOccurrenceText = utcDateTime.toLocal().toFormat('cccc, dd LLL yyyy') + ' ' + timeIncludeBreakText;
+                timeOccurrenceText = definedDate.toLocal().toFormat('cccc, dd LLL yyyy') + ' ' + timeIncludeBreakText;
                 break;
             default:
                 timeOccurrenceText = '';
         }
 
         if (timeOccurrence) {
-            if (timeOccurrence == "-2" && utcDateTime.toISO() <= luxon.DateTime.utc().toISO()) {
-                el.innerHTML = 'Webinar Replay from' + timeIncludeBreakText +  utcDateTime.toLocal().toFormat('cccc, dd LLL yyyy');
+            if (timeOccurrence == "-2" && definedDate <= luxon.DateTime.utc().toISO()) {
+                el.innerHTML = 'Webinar Replay from' + timeIncludeBreakText +  definedDate.toLocal().toFormat('cccc, dd LLL yyyy');
             } else {
-                el.innerHTML = timeOccurrenceText + utcDateTime.toLocal().toFormat("h:mm a ZZZZ") + ' / ' + utcDateTime.toFormat("h:mm a 'GMT'");
+                el.innerHTML = timeOccurrenceText + definedDate.toLocal().toFormat("h:mm a ZZZZ") + ' / ' + definedDate.toUTC().toFormat("h:mm a ZZZZ");
             }
             return;
         }
 
-        el.innerHTML = utcDateTime.toLocal().toFormat("cccc, dd LLL yyyy ") + timeIncludeBreakText + utcDateTime.toLocal().toFormat("h:mm a ZZZZ") + ' / ' + utcDateTime.toFormat("h:mm a 'GMT'");
+        el.innerHTML = definedDate.toLocal().toFormat("cccc, dd LLL yyyy ") + timeIncludeBreakText + definedDate.toLocal().toFormat("h:mm a ZZZZ") + ' / ' + definedDate.toUTC().toFormat("h:mm a ZZZZ");
     });
 
     window.copyCodeBlocks=function() {
