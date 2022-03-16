@@ -38,7 +38,7 @@
 <hr />
 <div class="text-center">
     <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
-        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/chocolatey-11-twitch-social-share.png" alt="Something... Special... Twitch Stream" />
+        <img class="border mb-3" src="https://chocolatey.org/assets/images/events/chocolatey-11-twitch-social-share.png" alt="Something... Special... Twitch Stream" />
     </a>
     <p class="convert-utc-to-local fw-bold" data-event-utc="2022-03-21T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
     <p class="text-start">We don't want to give anything away. Just come along and join us...</p>
@@ -46,8 +46,16 @@
 </div>
 <hr />
 <div class="text-center">
+    <a href="https://blog.chocolatey.org/2022/03/announcing-11-years-of-chocolatey" rel="noreferrer" target="_blank">
+        <img class="border mb-3" src="https://blog.chocolatey.org/assets/images/social-share/chocolatey-11-blog-og.png" alt="Announcing 11 Years of Chocolatey" />
+    </a>
+    <p><strong>Announcing 11 Years of Chocolatey</strong></p>
+    <a href="https://blog.chocolatey.org/2022/03/announcing-11-years-of-chocolatey" class="btn btn-primary btn-width mt-2" target="_blank" rel="nofollow">Read the Blog</a>
+</div>
+<hr />
+<div class="text-center">
     <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank">
-        <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
+        <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
     </a>
     <p class="convert-utc-to-local fw-bold" data-event-utc="2022-03-30T17:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
     <p class="text-start">At Chocolatey Software we strive for simple, and teaching others. Please join us so we can teach you just how simple it could be to keep your 3rd party applications updated across your devices, all with Intune!</p>
@@ -58,7 +66,7 @@
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
+            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
         </a>
         <p><strong>Webinar Replay from<br />Thursday, 02 September 2021</strong></p>
         <p class="text-start">
@@ -70,7 +78,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/resources/12-days-of-chocolatey">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-06.jpg" alt="12 Days of Chocolatey" />
+            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-06.jpg" alt="12 Days of Chocolatey" />
         </a>
         <p><strong>Event from<br />December 1 - December 16 2020</strong></p>
         <p class="text-start">
@@ -81,7 +89,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-deployments">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-02.jpg" alt="Webinar: Chocolatey Deployments - Easily Orchestrate Amazing Things!" />
+            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-02.jpg" alt="Webinar: Chocolatey Deployments - Easily Orchestrate Amazing Things!" />
         </a>
         <p><strong>Webinar Replay from<br />Tuesday, 23 June 2020</strong></p>
         <p class="text-start">Chocolatey Central Management now includes the premiere feature of managing endpoints through a Chocolatey-centered solution aka Deployments. We are excited to share what Deployments is all about!</p>
@@ -91,7 +99,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/resources/features">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/videos/04-01.jpg" alt="Chocolatey for Business Feature Video Series" />
+            <img class="border mb-3" src="https://chocolatey.org/assets/images/videos/04-01.jpg" alt="Chocolatey for Business Feature Video Series" />
         </a>
         <p class="mb-3"><strong>Chocolatey for Business Feature Video Series</strong></p>
         <p class="text-start">
@@ -104,7 +112,7 @@
     </div>
     <div class="text-center">
         <a href="https://www.youtube.com/watch?v=cPcEmT1OWDs&list=PLGvGJzqY88slekBOxwDi865ydvRL8OEqF&index=9" rel="noreferrer" target="_blank">
-            <img class="img-fluid mb-3 border" src="https://chocolatey.org/assets/images/events/01-07.jpg" alt="Accelerate Automation of Windows with Ansible + Chocolatey" />
+            <img class="border mb-3 border" src="https://chocolatey.org/assets/images/events/01-07.jpg" alt="Accelerate Automation of Windows with Ansible + Chocolatey" />
         </a>
         <p><strong>Webinar Replay from<br />Thursday, 10 December 2020</strong></p>
         <p class="text-start">
@@ -116,21 +124,8 @@
         <hr />
     </div>
     <div class="text-center">
-        <a href="https://chocolatey.zoom.us/rec/share/GBT2dK7ooi0Szxf7WWwpMzjfQBi14UtnHXKehalt3GUuYz0rTeOpBLwjqbV_gUHb.JPUukb5nOLFJARGC" rel="noreferrer" target="_blank">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/01-08.jpg" alt="Automate and 'Tune Up' Intune with Chocolatey" />
-        </a>
-        <p><strong>Webinar Replay from<br />Thursday, 6 May 2021</strong></p>
-        <p class="text-start">
-            Microsoft is leading with Intune as its one-stop solution for remote endpoint management. But there are still some gaps that need to be addressed. 
-            Chocolatey for Business allows you to quickly on-board any Windows software into Intune with two simple commands! Sounds too good to be true? Join our webinar and watch us do it live.
-        </p>
-        <a href="https://chocolatey.org/events/automate-and-tune-up-intune-with-chocolatey" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
-        <a href="https://chocolatey.zoom.us/rec/share/GBT2dK7ooi0Szxf7WWwpMzjfQBi14UtnHXKehalt3GUuYz0rTeOpBLwjqbV_gUHb.JPUukb5nOLFJARGC" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
-        <hr />
-    </div>
-    <div class="text-center">
         <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
-            <img class="img-fluid mb-3" src="https://chocolatey.org/assets/images/events/04-00.jpg" alt="Chocolatey Explained - Monthly Twitch Stream" />
+            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/04-00.jpg" alt="Chocolatey Explained - Monthly Twitch Stream" />
         </a>
         <p class="convert-utc-to-local fw-bold" data-event-utc='2022-03-03T17:00:00Z' data-event-occurrence="1" data-event-include-break="true"></p>
         <p class="text-start">Join us on the first Thursday of every month for "Chocolatey Explained" where we will cover different Chocolatey topics in detail.</p>
