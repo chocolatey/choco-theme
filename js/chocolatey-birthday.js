@@ -1,4 +1,11 @@
 (function() {
+    let searchParams = new URLSearchParams(window.location.search.toLowerCase());
+
+    if((searchParams.get('q') === 'choco') || (searchParams.get('q') === 'chocolatey') || (window.location.pathname.toLowerCase().indexOf('/packages/chocolatey') > -1)) {
+        confettiBurst();
+        return;
+    }
+
     var birthdayCookie = 'chocolatey_11_birthday';
 
     if (getCookie(birthdayCookie)) {
