@@ -1,13 +1,13 @@
 (function() {
     nestedCollapseLocation();
     nestedTabLocation();
-    window.onhashchange = nestedCollapseLocation;
-    window.onhashchange = nestedTabLocation;
+    window.addEventListener('hashchange', nestedCollapseLocation, false);
+    window.addEventListener('hashchange', nestedTabLocation, false);
 
     function nestedCollapseLocation() {
         if (location.hash) {
             var el = document.querySelector(escapeId(location.hash));
-            
+
             if (el) {
                 var elScroll = el,
                     collapseParents = getParents(el).filter(el => el != document && el.classList.contains('collapse'));
