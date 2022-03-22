@@ -112,7 +112,7 @@
     }
 
     function replaceElapsed() {
-        jQuery('.countdown-details').add(countdownContainer).add(jQuery('.countdown-date')).add(jQuery('.btn-not-on-demand')).remove();
+        jQuery('.countdown-details').add(countdownContainer).add(jQuery('.countdown-date')).add(jQuery('.btn-not-on-demand')).add(jQuery('.btn-add-to-calendar')).remove();
         jQuery('a, h3').each(function () {
             jQuery(this).html(jQuery(this).html()
                 .replace('Reserve My Spot Now', ellapsedButtonText)
