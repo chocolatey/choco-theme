@@ -1,0 +1,184 @@
+/**
+ * ++++++++++++++++++++++
+ * Add-to-Calendar Button
+ * ++++++++++++++++++++++
+ * 
+ * Version: 1.7.2
+ * Creator: Jens Kuerschner (https://jenskuerschner.de)
+ * Project: https://github.com/jekuer/add-to-calendar-button
+ * License: MIT with “Commons Clause” License Condition v1.0
+ * 
+ */
+
+// Pulled from commit: https://github.com/chriswerstiuk/add-to-calendar-button/blob/f778683739d373be13ab205d612ebaa3699a3463/assets/css/atcb.css
+
+.atcb {
+    display: none;
+}
+
+.atcb_button_wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.atcb_button {
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid $primary;
+    border-radius: 0.25rem;
+    color: $primary;
+    cursor: pointer;
+    display: flex;
+    font-weight: 700;
+    line-height: 1.5;
+    max-width: 300px;
+    min-width: 150px;
+    padding: .375rem .75rem;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    width: auto;
+}
+
+.atcb_button:focus,
+.atcb_button:hover,
+.atcb_button.atcb_active {
+    background: $primary;
+    color: var(--background);
+}
+
+.atcb_button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem $primary-opacity-25;
+}
+
+.atcb-success .atcb_button {
+    border: 1px solid $success;
+    color: $success;
+
+    &:focus, &:hover, &.atcb_active {
+        background: $success;
+        color: var(--background);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba($success, .25);
+    }
+}
+
+.atcb-twitch .atcb_button {
+    border: 1px solid $twitch;
+    color: $twitch;
+
+    &:focus, &:hover, &.atcb_active {
+        background: $twitch;
+        color: $white;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba($twitch, .25);
+    }
+}
+
+.atcb-link {
+    .atcb_button {
+        padding: 0;
+        border: 0;
+        color: $primary;
+        
+        &:hover, &:focus, &.atcb_active {
+            background: transparent;
+            box-shadow: none;
+            color: if(color-contrast($primary) == $color-contrast-light, shade-color($primary, $link-shade-percentage), tint-color($primary, $link-shade-percentage));
+        }
+
+        .atcb_button_wrapper {
+            padding: 0;
+        }
+    }
+
+    &.atcb-link-success .atcb_button {
+        color: $success;
+        
+        &:hover, &:focus, &.atcb_active {
+            color: if(color-contrast($success) == $color-contrast-light, shade-color($success, $link-shade-percentage), tint-color($success, $link-shade-percentage));
+        }
+    }
+}
+
+.atcb-lg .atcb_button {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+}
+
+.atcb_button.atcb_active {
+    z-index: 2050;
+}
+
+.atcb_icon {
+    height: 1rem;
+    display: flex;
+    margin: auto 0 auto 8px;
+}
+.atcb_icon svg {
+    height: 100%;
+    color: var(--text);
+    width: auto;
+}
+
+.atcb_list {
+    box-sizing: border-box;
+    background: var(--background-light);
+    color: var(--text);
+    display: block;
+    max-width: 100%;
+    position: absolute;
+    padding: .5rem 0;
+    border: 1px solid var(--border);
+    border-radius: .25rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    min-width: 10.5em;
+    z-index: 1040;
+}
+
+.atcb_list.atcb_modal {
+    position: fixed;
+    width: 16em;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.atcb_list_item {
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    left: 50%;
+    position: relative;
+    padding: .375rem .75rem;
+    text-align: left;
+    transform: translate(-50%);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.atcb_list_item:focus,
+.atcb_list_item:hover {
+    background: var(--background);
+    color: var(--text);
+}
+
+.atcb_list_item .atcb_icon {
+    margin: auto 8px auto 0;
+}
