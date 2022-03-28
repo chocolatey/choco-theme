@@ -92,7 +92,7 @@
 
 @include media-breakpoint-up(sm) {
     .btn-collapsing-right-sidebar {
-        right: 350px;
+        right: 380px;
 
         &.collapsed {
             right: 0;
@@ -101,7 +101,7 @@
 
     #collapsing-right-sidebar {
         position: fixed;
-        width: 350px;
+        width: 380px;
         left: auto;
         padding-bottom: 1rem;
     }

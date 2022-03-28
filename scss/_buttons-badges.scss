@@ -276,6 +276,49 @@
     }
 }
 
+@each $color, $value in $socialmedia-colors {
+    .btn-#{$color} {
+        background: $value;
+        border: 1px solid $value;
+
+        &:focus, &:hover, &.active {
+            background: shade-color($value, 15%);
+            border: 1px solid $value;
+        }
+    }
+
+    .btn-outline-#{$color} {
+        background: transparent;
+        border: 1px solid $value;
+        color: $value;
+
+        &:focus, &:hover, &.active {
+            background: $value;
+            border: 1px solid $value;
+        }
+    }
+
+    .btn-#{$color}, .btn-outline-#{$color} {
+        &:focus {
+            box-shadow: 0 0 0 0.25rem rgba($value, .25);
+        }
+    }
+}
+
+.btn-twitch {
+    color: $white;
+
+    &:focus, &:hover, &.active {
+        color: $white;
+    }
+}
+
+.btn-outline-twitch {
+    &:focus, &:hover, &.active {
+        color: $white;
+    }
+}
+
 // Dropdown buttons
 .btn-outline-primary.dropdown-toggle.show {
     color: var(--background);
