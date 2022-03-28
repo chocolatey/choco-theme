@@ -171,7 +171,7 @@
         <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
             <img class="border mb-3" src="https://chocolatey.org/assets/images/events/04-00.jpg" alt="Chocolatey Explained - Monthly Twitch Stream" />
         </a>
-        <p class="convert-utc-to-local fw-bold" data-event-utc='2022-03-03T17:00:00Z' data-event-occurrence="1" data-event-include-break="true"></p>
+        <p class="convert-utc-to-local fw-bold" data-event-utc='2022-04-07T17:00:00Z' data-event-occurrence="1" data-event-include-break="true"></p>
         <p class="text-start">Join us on the first Thursday of every month for "Chocolatey Explained" where we will cover different Chocolatey topics in detail.</p>
         <a href="https://www.twitch.tv/chocolateysoftware" class="btn btn-twitch btn-width mt-2" target="_blank" rel="nofollow"><i class="fab fa-twitch"></i> Follow on Twitch</a>
         <hr />
