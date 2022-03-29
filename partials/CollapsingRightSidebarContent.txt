@@ -68,7 +68,7 @@
             }
             </div>
         </div>
-        <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Register Now</a>
+        <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank" class="btn btn-primary btn-sidebar mt-2 mx-1">Register Now</a>
     </div>
 </div>
 <hr />
