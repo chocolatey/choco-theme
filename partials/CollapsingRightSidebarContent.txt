@@ -40,7 +40,7 @@
     <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
     </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-03-30T17:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
+    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-03-30T15:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
     <p class="text-start">At Chocolatey Software we strive for simple, and teaching others. Please join us so we can teach you just how simple it could be to keep your 3rd party applications updated across your devices, all with Intune!</p>
     <div class="d-flex align-items-center justify-content-center flex-wrap">
         <a href="https://chocolatey.org/events/chocolatey-and-intune-overview" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
@@ -52,8 +52,8 @@
                 "location":"https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw",
                 "startDate":"2022-03-30",
                 "endDate":"2022-03-30",
-                "startTime":"17:00",
-                "endTime":"18:00",
+                "startTime":"15:00",
+                "endTime":"16:00",
                 "options":[
                     "Apple",
                     "Google",
