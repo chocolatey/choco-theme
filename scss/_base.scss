@@ -90,6 +90,10 @@ h1, h2 {
     thead:not(.text-wrap) {
         white-space: nowrap!important;
     }
+
+    > :not(:first-child) {
+        border-top: 2px solid var(--border);
+    }
 }
 
 .table-dark {
