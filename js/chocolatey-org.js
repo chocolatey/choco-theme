@@ -14,13 +14,15 @@
         videoModal.forEach(function (el) {
             var iFrame = el.querySelector('iframe');
 
-            el.addEventListener('show.bs.modal', function () {
-               iFrame.setAttribute('src', iFrame.getAttribute('data-src'));
-            });
+            if (iFrame) {
+                el.addEventListener('show.bs.modal', function () {
+                iFrame.setAttribute('src', iFrame.getAttribute('data-src'));
+                });
 
-            el.addEventListener('hide.bs.modal', function () {
-                iFrame.setAttribute('src', '');
-             });
+                el.addEventListener('hide.bs.modal', function () {
+                    iFrame.setAttribute('src', '');
+                });
+            }
         });
     }
 
@@ -33,6 +35,23 @@
 
         emailSuccess.addEventListener('hidden.bs.modal', function () {
             emailSuccessModal.dispose();
+        });
+    }
+
+    var speakerBtnContainers = document.querySelectorAll('.list-chocolatey-fest-speaker');
+    for (var i of speakerBtnContainers) {
+        var speakerModalBtns = i.querySelectorAll('.btn-link');
+
+        speakerModalBtns.forEach(function (value, i) {
+            if (i >= 1) {
+                let parentDiv = value.parentNode,
+                    divider = document.createElement('span');
+
+                divider.innerText = '&';
+                divider.classList.add('btn', 'btn-sm', 'disabled', 'text-theme', 'ms-n1');
+
+                parentDiv.insertBefore(divider, value)
+            }
         });
     }
 })();

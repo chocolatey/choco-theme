@@ -13,35 +13,55 @@
             return elementBottom > viewportTop && elementTop < viewportBottom;
         };
     
-        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-        var active = false;
-    
-        var lazyLoadImg = function () {
-            if (active === false) {
-                active = true;
-    
-                setTimeout(function () {
-                    lazyImages.forEach(function (lazyImage) {
-                        if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.classList.remove("lazy");
-    
-                            lazyImages = lazyImages.filter(function (image) {
-                                return image !== lazyImage;
-                            });
-    
-                            if (lazyImages.length === 0) {
-                                document.removeEventListener("scroll", lazyLoadImg);
-                                window.removeEventListener("resize", lazyLoadImg);
-                                window.removeEventListener("orientationchange", lazyLoadImg);
-                            }
+        var lazyloadItems;    
+
+        if ("IntersectionObserver" in window) {
+            lazyloadItems = document.querySelectorAll(".lazy:not(video)");
+
+            var itemObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var item = entry.target;
+                        item.src = item.dataset.src;
+                        item.classList.remove("lazy");
+                        itemObserver.unobserve(item);
+                    }
+                });
+            });
+
+            lazyloadItems.forEach(function(item) {
+                itemObserver.observe(item);
+            });
+        } else {  
+            var lazyloadThrottleTimeout;
+            lazyloadItems = document.querySelectorAll(".lazy");
+            
+            function lazyloadItems () {
+                if (lazyloadThrottleTimeout) {
+                    clearTimeout(lazyloadThrottleTimeout);
+                }    
+
+                lazyloadThrottleTimeout = setTimeout(function() {
+                    var scrollTop = window.pageYOffset;
+
+                    lazyloadItems.forEach(function(ite) {
+                        if (ite.offsetTop < (window.innerHeight + scrollTop)) {
+                            ite.src = ite.dataset.src;
+                            ite.classList.remove('lazy');
                         }
                     });
-    
-                    active = false;
-                }, 200);
+                    if (lazyloadItems.length == 0) { 
+                        document.removeEventListener("scroll", lazyloadItems);
+                        window.removeEventListener("resize", lazyloadItems);
+                        window.removeEventListener("orientationChange", lazyloadItems);
+                    }
+                }, 20);
             }
-        };
+
+            document.addEventListener("scroll", lazyloadItems);
+            window.addEventListener("resize", lazyloadItems);
+            window.addEventListener("orientationChange", lazyloadItems);
+        }
 
         var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
 
@@ -69,9 +89,6 @@
             });
         }
     
-        document.addEventListener("scroll", lazyLoadImg);
-        window.addEventListener("resize", lazyLoadImg);
-        window.addEventListener("orientationchange", lazyLoadImg);
         jQuery('img.lazy').each(function () {
             if (jQuery(this).isInViewport() && jQuery(this).parent().parent().parent().hasClass("carousel-item")) {
                 jQuery('.carousel').on('slide.bs.carousel', function () {
