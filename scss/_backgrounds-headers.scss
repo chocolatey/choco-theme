@@ -154,8 +154,27 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e61a375a', endColorstr='#e67db9e8',GradientType=1 );
 }
 
+.bg-san-fran-skyline {
+    background-image: url("/assets/images/san-fran-skyline.jpg");
+}
+
 .img-berry {
     width: 30px;
+}
+
+.speaker-img-overlay-container {
+    &:hover {
+        .speaker-img-overlay {
+            opacity: 1;
+        }
+    }
+        
+    .speaker-img-overlay {
+        transition: .5s ease;
+        opacity: 0;
+        max-width: 100%;
+        background-color: rgba($warning, 0.8)
+    }
 }
 
 @include media-breakpoint-up(md) {
