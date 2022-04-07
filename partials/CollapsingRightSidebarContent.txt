@@ -37,41 +37,6 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-12.jpg" alt="Find It, Add It, Install It with Script Builder" />
-    </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-04-07T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
-    <p class="text-start">Script Builder allows you to bulk install Chocolatey packages in just a few clicks. Just add packages to Script Builder and choose your integration method to get started! Join us on Twitch as we dive into Script Builder with a live demo.</p>
-    <div class="d-flex align-items-center justify-content-center flex-wrap">
-        <div class="mt-2 mx-1">
-            <div class="atcb atcb-twitch" style="display:none;">
-            {
-                "name":"Find It, Add It, Install It with Script Builder",
-                "description":"Script Builder allows you to bulk install Chocolatey packages in just a few clicks. Just add packages to Script Builder and choose your integration method to get started! Join us on Twitch as we dive into Script Builder with a live demo.",
-                "location":"https://www.twitch.tv/chocolateysoftware",
-                "startDate":"2022-04-07",
-                "endDate":"2022-04-07",
-                "startTime":"16:00",
-                "endTime":"17:00",
-                "options":[
-                    "Apple",
-                    "Google",
-                    "iCal",
-                    "Microsoft365",
-                    "Outlook.com",
-                    "Yahoo"
-                ],
-                "trigger":"click",
-                "inline":true,
-                "iCalFileName":"find-it-add-it-install-it-with-script-builder"
-            }
-            </div>
-        </div>
-        <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank" class="btn btn-twitch mt-2 mx-1"><i class="fab fa-twitch"></i> Follow on Twitch</a>
-    </div>
-</div>
-<hr />
-<div class="text-center">
     <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
     </a>
@@ -158,6 +123,18 @@
         </a>
         <p><strong>Announcing 11 Years of Chocolatey</strong></p>
         <a href="https://blog.chocolatey.org/2022/03/announcing-11-years-of-chocolatey" class="btn btn-primary btn-width mt-2" target="_blank" rel="nofollow">Read the Blog</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://chocolatey.org/events/find-it-add-it-install-it-with-script-builder" rel="noreferrer" target="_blank">
+            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-12.jpg" alt="Find It, Add It, Install It with Script Builder" />
+        </a>
+        <p><strong>Twitch Stream from<br />Thursday, 7 April 2022</strong></p>
+        <p class="text-start">Script Builder allows you to bulk install Chocolatey packages in just a few clicks. Just add packages to Script Builder and choose your integration method to get started!</p>
+        <div class="d-flex align-items-center justify-content-center flex-wrap">
+            <a href="https://chocolatey.org/events/find-it-add-it-install-it-with-script-builder" class="btn btn-outline-twitch mt-2 mx-1">Learn More</a>
+            <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank" class="btn btn-twitch mt-2 mx-1"><i class="fab fa-twitch"></i> Follow on Twitch</a>
+        </div>
         <hr />
     </div>
 </div>
