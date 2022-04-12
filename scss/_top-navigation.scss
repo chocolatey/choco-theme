@@ -101,7 +101,7 @@ header {
     }
 }
 
-.chocolatey-blog #topNav .navbar-collapse {
+.chocolatey-blog #topNav .navbar-collapse, .chocolateyfest #topNav .navbar-collapse {
     &.collapse.show {
         border-top: 1px solid var(--border);
         margin-top: .5rem;
@@ -159,7 +159,7 @@ header {
         z-index: 1025;
     }
 
-    .chocolatey-org, .chocolateyfest {
+    .chocolatey-org {
         #topNav {
             .navbar-brand img {
                 top: -51px;
@@ -173,7 +173,7 @@ header {
         }
     }
 
-    .chocolatey-blog #topNav .navbar-collapse {
+    .chocolatey-blog #topNav .navbar-collapse, .chocolateyfest #topNav .navbar-collapsew {
         &.collapse.show {
             border-top: none;
             margin-top: 0;
