@@ -42,6 +42,7 @@
     "jquery-validation": "^1.19.3",
     "jquery-validation-unobtrusive": "^3.2.11",
     "knockout": "^3.5.1",
+    "lite-youtube-embed": "^0.2.0",
     "luxon": "^2.0.2",
     "marked": "^4.0.10",
     "merge-stream": "^2.0.0",
