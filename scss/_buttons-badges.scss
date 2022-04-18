@@ -305,11 +305,21 @@
     }
 }
 
-.btn-twitch {
+.btn-twitch, .btn-linkedin, .btn-twitter, .btn-website, .btn-facebook, .btn-youtube {
     color: $white;
 
     &:focus, &:hover, &.active {
         color: $white;
+    }
+}
+
+.btn-github {
+    color: var(--background);
+    background: var(--theme-opposite);
+
+    &:focus, &:hover, &.active {
+        color: var(--background);
+        background: var(--theme-opposite-hover);
     }
 }
 
