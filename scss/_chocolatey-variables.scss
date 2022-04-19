@@ -34,6 +34,7 @@ $facebook:  #1877f2;
 $rss:       $orange;
 $chat:      #5865f2;
 $google:    #4285F4;
+$website:   $gray-600;
 
 // Theme
 $primary:      $blue;
@@ -180,7 +181,8 @@ $socialmedia-colors: (
   facebook: $facebook,
   rss:      $rss,
   chat:     $chat,
-  google:   $google
+  google:   $google,
+  website:  $website
 );
 
 $palette-colors: (

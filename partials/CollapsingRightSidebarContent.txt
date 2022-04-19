@@ -1,7 +1,7 @@
 ﻿<!-- When adding a new announcement, change the number on the end of the value to the next available. Example: 1 becomes 2, 2 becomes 3. -->
-<input id="announcementCookie" value="chocolatey_announcement_8" type="hidden" />
+<input id="announcementCookie" value="chocolatey_announcement_9" type="hidden" />
 <!-- When adding a new announcement, update the value number to the amount of new announcements added. -->
-<input id="announcementCount" value="2" type="hidden" />
+<input id="announcementCount" value="1" type="hidden" />
 
 <div id="announcementCount"></div>
 <div id="announcementCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
@@ -37,14 +37,37 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
+    <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
+        <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
     </a>
-    <p><strong>Webinar Replay from<br />Wednesday, 30 March 2022</strong></p>
-    <p class="text-start">At Chocolatey Software we strive for simple, and teaching others. Let us teach you just how simple it could be to keep your 3rd party applications updated across your devices, all with Intune!</p>
+    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-05-05T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
+    <p class="text-start">Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.</p>
     <div class="d-flex align-items-center justify-content-center flex-wrap">
-        <a href="https://chocolatey.org/events/chocolatey-and-intune-overview" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
-        <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank" class="btn btn-primary btn-sidebar mt-2 mx-1">Watch On-Demand</a>
+        <div class="mt-2 mx-1">
+            <div class="atcb atcb-twitch" style="display:none;">
+            {
+                "name":"Chocolatey For Business. In Azure. In One Click.",
+                "description":"Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.",
+                "location":"https://www.twitch.tv/chocolateysoftware",
+                "startDate":"2022-05-05",
+                "endDate":"2022-05-05",
+                "startTime":"16:00",
+                "endTime":"17:00",
+                "options":[
+                    "Apple",
+                    "Google",
+                    "iCal",
+                    "Microsoft365",
+                    "Outlook.com",
+                    "Yahoo"
+                ],
+                "trigger":"click",
+                "inline":true,
+                "iCalFileName":"twitch-azure"
+            }
+            </div>
+        </div>
+        <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank" class="btn btn-twitch mt-2 mx-1"><i class="fab fa-twitch"></i> Follow on Twitch</a>
     </div>
 </div>
 <hr />
@@ -134,6 +157,18 @@
         <div class="d-flex align-items-center justify-content-center flex-wrap">
             <a href="https://chocolatey.org/events/find-it-add-it-install-it-with-script-builder" class="btn btn-outline-twitch mt-2 mx-1">Learn More</a>
             <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank" class="btn btn-twitch mt-2 mx-1"><i class="fab fa-twitch"></i> Follow on Twitch</a>
+        </div>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank">
+            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
+        </a>
+        <p><strong>Webinar Replay from<br />Wednesday, 30 March 2022</strong></p>
+        <p class="text-start">At Chocolatey Software we strive for simple, and teaching others. Let us teach you just how simple it could be to keep your 3rd party applications updated across your devices, all with Intune!</p>
+        <div class="d-flex align-items-center justify-content-center flex-wrap">
+            <a href="https://chocolatey.org/events/chocolatey-and-intune-overview" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
+            <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank" class="btn btn-primary btn-sidebar mt-2 mx-1">Watch On-Demand</a>
         </div>
         <hr />
     </div>
