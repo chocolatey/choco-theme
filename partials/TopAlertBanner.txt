@@ -4,15 +4,11 @@
 
     if (!string.IsNullOrEmpty(topNoticeText))
     {
-        <div id="topNoticeAlert" class="alert bg-purple alert-dismissible alert-dismissible-center fade show d-none p-0 justify-content-between" role="alert">
-            <img class="d-none d-md-block" src="https://blog.chocolatey.org/assets/images/corner-party-garland-start.svg" style="height:85px" />
-            <div class="d-flex align-items-center justify-content-center px-3">
-                <p class="mb-0 text-white py-3 py-md-0 pe-3 pe-md-0">@Html.Raw(topNoticeText)</p>
-            </div>
+        <div id="topNoticeAlert" class="alert alert-success alert-dismissible alert-dismissible-center fade show d-none" role="alert">
+            <p class="mb-0">@Html.Raw(topNoticeText)</p>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                 <i class="fas fa-times" aria-hidden="true"></i>
             </button>
-            <img class="d-none d-md-block" src="https://blog.chocolatey.org/assets/images/corner-party-garland-end.svg" style="height:85px" />
         </div>
     }
 }

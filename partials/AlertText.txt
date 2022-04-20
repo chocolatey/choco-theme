@@ -1,1 +1,0 @@
-Happy Birthday to Chocolatey! As we turn 11 this month we wanted to <a class='fw-bold link-light' href='https://blog.chocolatey.org/2022/03/announcing-11-years-of-chocolatey/'><u> make an epic announcement</u></a>!
