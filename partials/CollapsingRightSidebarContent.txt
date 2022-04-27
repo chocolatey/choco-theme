@@ -1,5 +1,5 @@
 ﻿<!-- When adding a new announcement, change the number on the end of the value to the next available. Example: 1 becomes 2, 2 becomes 3. -->
-<input id="announcementCookie" value="chocolatey_announcement_9" type="hidden" />
+<input id="announcementCookie" value="chocolatey_announcement_10" type="hidden" />
 <!-- When adding a new announcement, update the value number to the amount of new announcements added. -->
 <input id="announcementCount" value="1" type="hidden" />
 
@@ -38,16 +38,16 @@
 <hr />
 <div class="text-center">
     <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
+        <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-15.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
     <p class="convert-utc-to-local fw-bold" data-event-utc="2022-05-05T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
-    <p class="text-start">Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.</p>
+    <p class="text-start">The Chocolatey Community is close to the hearts of many of the Chocolatey Team. If you want to find out more about it, what we do and how you can get involved then come along to our next live stream and join Gary, Kim and Paul.</p>
     <div class="d-flex align-items-center justify-content-center flex-wrap">
         <div class="mt-2 mx-1">
             <div class="atcb atcb-twitch" style="display:none;">
             {
-                "name":"Chocolatey For Business. In Azure. In One Click.",
-                "description":"Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.",
+                "name":"Chocolatey Community Coffee Break",
+                "description":"The Chocolatey Community is close to the hearts of many of the Chocolatey Team. If you want to find out more about it, what we do and how you can get involved then come along to our next live stream and join Gary, Kim and Paul.",
                 "location":"https://www.twitch.tv/chocolateysoftware",
                 "startDate":"2022-05-05",
                 "endDate":"2022-05-05",
