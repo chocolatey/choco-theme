@@ -1,30 +1,32 @@
 (function() {
-    var placeholderContainer = jQuery('.placeholder-container');
+    var placeholderContainers = document.querySelectorAll('.placeholder-container');
 
-    placeholderContainer.each(function(){
-        var placeholderImg = jQuery(this).find('div:first-child');
-        var placeholderBg = jQuery(this).find('div:last-child');
-        var bgColor = [
-            'bg-primary', 
-            'bg-primary',
-            'bg-success', 
-            'bg-success',
-            'bg-danger',
-            'bg-purple'
-            ];
-        var bgImg = [
-            'bg-sun-tornado', 
-            'bg-liquid-cheese',
-            'bg-wintery-sunburst',
-            'bg-bullseye-gradient',
-            'bg-geometric-intersection',
-            'bg-cornered-stairs'
-            ];
+    if (placeholderContainers) {
+        placeholderContainers.forEach(function (el) {
+            var placeholderImg = el.querySelector('div:first-child'),
+                placeholderBg = el.querySelector('div:last-child'),
+                bgColor = [
+                    'bg-primary', 
+                    'bg-primary',
+                    'bg-success', 
+                    'bg-success',
+                    'bg-danger',
+                    'bg-purple'
+                ],
+                bgImg = [
+                    'bg-sun-tornado', 
+                    'bg-liquid-cheese',
+                    'bg-wintery-sunburst',
+                    'bg-bullseye-gradient',
+                    'bg-geometric-intersection',
+                    'bg-cornered-stairs'
+                ];
 
-        // Add background color
-        placeholderBg.addClass(bgColor[~~(Math.random()*bgColor.length)]);
+            // Add background color
+            placeholderBg.classList.add(bgColor[~~(Math.random()*bgColor.length)]);
 
-        // Add background img
-        placeholderImg.addClass(bgImg[~~(Math.random()*bgImg.length)]);
-    });
+            // Add background img
+            placeholderImg.classList.add(bgImg[~~(Math.random()*bgImg.length)]);
+        });
+    }
 })();
