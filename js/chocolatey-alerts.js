@@ -1,33 +1,38 @@
 (function() {
-    const topNoticeAlert = jQuery('#topNoticeAlert'),
+    const topNoticeAlert = document.getElementById('topNoticeAlert'),
           topNotice = window.sessionStorage.getItem('notice'),
-          cookieNoticeAlert = jQuery('#cookieNoticeAlert'),
+          cookieNoticeAlert = document.getElementById('cookieNoticeAlert'),
           cookieNoticeName = 'chocolatey_hide_cookies_notice',
           cookieNotice = getCookie(cookieNoticeName);
 
     // Top notice alert
-    if (topNotice) {
-        topNoticeAlert.remove();
-    } else {
-        topNoticeAlert.removeClass('d-none');
-    }
+    if (topNoticeAlert) {
+        if (topNotice) {
+            topNoticeAlert.remove();
+        } else {
+            topNoticeAlert.classList.remove('d-none');
+        }
 
-    topNoticeAlert.find('button').click(function() {
-        sessionStorage.setItem('notice', 'true');
-    });
+        topNoticeAlert.querySelector('button').addEventListener('click', function() {
+            sessionStorage.setItem('notice', 'true');
+        }, false);
+
+    }
 
     // Bottom cookie notice
-    if (cookieNotice) {
-        cookieNoticeAlert.remove();
-    } else {
-        cookieNoticeAlert.removeClass('d-none');
-    }
-
-    cookieNoticeAlert.find('button').click(function() {
-        if (~location.hostname.indexOf('chocolatey.org')) {
-            document.cookie = cookieNoticeName + '=true; ' + setCookieExpirationNever() + 'path=/; domain=chocolatey.org;';
+    if (cookieNoticeAlert) {
+        if (cookieNotice) {
+            cookieNoticeAlert.remove();
         } else {
-            document.cookie = cookieNoticeName + '=true;' + setCookieExpirationNever() + 'path=/;';
+            cookieNoticeAlert.classList.remove('d-none');
         }
-    });
+    
+        cookieNoticeAlert.querySelector('button').addEventListener('click', function() {
+            if (~location.hostname.indexOf('chocolatey.org')) {
+                document.cookie = cookieNoticeName + '=true; ' + setCookieExpirationNever() + 'path=/; domain=chocolatey.org;';
+            } else {
+                document.cookie = cookieNoticeName + '=true;' + setCookieExpirationNever() + 'path=/;';
+            }
+        }, false);
+    }
 })();
