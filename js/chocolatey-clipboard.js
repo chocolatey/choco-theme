@@ -1,5 +1,6 @@
 (function() {
-    var clipboard = new ClipboardJS('.btn-copy');
+    var clipboard = new ClipboardJS('.btn-copy'),
+        userSelectAllInput = document.querySelectorAll('.user-select-all');
 
     clipboard.on('success', function (e) {
         var button = new Button(e.trigger)
@@ -9,7 +10,11 @@
     });
 
     // Make input text selectable with one click
-    jQuery(document).on('click', 'input[type=text]', function () {
-        this.select();
-    });
+    if (userSelectAllInput) {
+        userSelectAllInput.forEach(function (el) {
+            el.addEventListener('click', function () {
+                el.select();
+            }, false);
+        });
+    }
 })();
