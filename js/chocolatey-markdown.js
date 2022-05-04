@@ -1,19 +1,26 @@
 (function() {
     // Wraps markdown task list items for styling
-    jQuery.each(jQuery('.task-list-item [type="checkbox"]'), function () {
-        jQuery(this)
-            .addClass('form-check-input')
-            .wrap('<div class="form-check"></div>')
-            .after('<label class="form-check-label"></label>');
-    });
+    var taskListItems = document.querySelectorAll('.task-list-item [type="checkbox"]');
+
+    if (taskListItems) {
+        taskListItems.forEach(function (el) {
+            el.classList.add('form-check-input');
+            el.outerHTML = '<div class="form-check">' + el.outerHTML + '<label class="form-check-label"></label></div>';
+        });
+    }
 
     // Style markdown blockquotes with emojis
-    jQuery.each(jQuery('blockquote'), function () {
-        var warningEmoji = "⚠️";
+    var calloutBlockquotes = document.querySelectorAll('blockquote');
 
-        if (jQuery(this).text().indexOf(warningEmoji) >= 0) {
-            // Contains warning emoji
-            jQuery(this).addClass('blockquote-warning');
-        }
-    });
+    if (calloutBlockquotes) {
+        calloutBlockquotes.forEach(function (el) {
+            var warningEmoji = "⚠️";
+    
+            if (el.innerText.includes(warningEmoji)) {
+                // Contains warning emoji
+                el.classList.add('blockquote-warning');
+            }
+        });
+    }
+    
 })();
