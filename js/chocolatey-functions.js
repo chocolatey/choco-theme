@@ -102,10 +102,14 @@
     });
 
     window.copyCodeBlocks=function() {
-        jQuery('.copy-command .toolbar button').each(function () {
-            var copyCommand = jQuery(this).parentsUntil('.code-toolbar').parent().find('code').attr('class').split(" ");
-            
-            jQuery(this).addClass('btn-copy').attr('data-clipboard-target', '.' + copyCommand[0]);
+        document.querySelectorAll('.copy-command').forEach(function (el) {
+            var copyCommand = el.querySelector('code').getAttribute('class').split(" "),
+                copyBtn = el.querySelector('button');
+
+            if (copyBtn) {
+                copyBtn.classList.add('btn-copy');
+                copyBtn.setAttribute('data-clipboard-target', '.' + copyCommand[0]);
+            }
         });
     }
 
