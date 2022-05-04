@@ -1,8 +1,8 @@
 (function() {
-    const collapseY =  jQuery('.collapse-y-height'),
-          mainContent = jQuery('#mainContent');
+    const collapseY =  document.querySelector('.collapse-y-height'),
+          mainContent = document.getElementById('mainContent');
     
-    if (collapseY.length && mainContent.length) {
+    if (collapseY && mainContent) {
 
         getCollapseYHeight();
 
@@ -12,19 +12,17 @@
         window.onresize = getCollapseYHeight;
 
         function getCollapseYHeight() {
-            var mainContentOffset = mainContent.offset();
-
             if (window.innerWidth >= 768) {
-                if (mainContentOffset.top + mainContent.outerHeight(true) <  jQuery(window).height()) {
-                    collapseYHeight = jQuery(window).height() - jQuery('header').outerHeight(true) - jQuery('footer').outerHeight(true) + 'px';
+                if (getOffset(mainContent).top + outerHeightTrue(mainContent) <  window.innerHeight) {
+                    collapseYHeight = window.innerHeight - outerHeightTrue(document.querySelector('header')) - outerHeightTrue(document.querySelector('footer'));
 
-                    collapseY.css('height', collapseYHeight);
+                    collapseY.style.height = collapseYHeight + 'px';
                 } else {
-                    collapseY.css('height', '');
+                    collapseY.style.height = '';
                 }
             }
             else {
-                collapseY.css('height', '');
+                collapseY.style.height = '';
             }
         }
     }
