@@ -1,17 +1,32 @@
 (function() {
     // Show/Hide right side announcement bar notification badge
-    var announcementCookie = jQuery('#announcementCookie').val();
-    var announcementCount = jQuery('#announcementCount').val();
+    var announcementCookie = document.getElementById('announcementCookie').value,
+        announcementCount = document.getElementById('announcementCount'),
+        announcementBadges = document.querySelectorAll('.notification-badge-announcements'),
+        announcementBtns = document.querySelectorAll('.btn-announcement-notifications');
 
-    if (!getCookie(announcementCookie)) {
-        jQuery(".notification-badge-announcements").text(announcementCount).removeClass('d-none');
-    }
-
-    jQuery(".btn-announcement-notifications").click(function () {
+    if (announcementCount) {
         if (!getCookie(announcementCookie)) {
-            document.cookie = announcementCookie + '=true;' + setCookieExpirationNever() + 'path=/;';
-
-            jQuery(".notification-badge-announcements").addClass('d-none');
+            for (var i of announcementBadges) {
+                i.innerText = announcementCount.value;
+                i.classList.remove('d-none');
+            }
         }
-    });
+    
+        announcementBtns.forEach(function (el) {
+            el.addEventListener('click', function () {
+                if (!getCookie(announcementCookie)) {
+                    if (~location.hostname.indexOf('chocolatey.org')) {
+                        document.cookie = announcementCookie + '=true; ' + setCookieExpirationNever() + 'path=/; domain=chocolatey.org;';
+                    } else {
+                        document.cookie = announcementCookie + '=true;' + setCookieExpirationNever() + 'path=/;';
+                    }
+                    
+                    for (var i of announcementBadges) {
+                        i.classList.add('d-none');
+                    }
+                }
+            }, false);
+        });
+    }
 })();
