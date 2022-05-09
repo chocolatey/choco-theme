@@ -1,63 +1,74 @@
 (function() {
-    const table = jQuery('table'),
-          themeToggle = jQuery('.theme-toggle'),
-          themeMode = jQuery('html');
+    var themeSelectorToggles = document.querySelectorAll('.theme-toggle');
 
-    // Toggle theme but do not allow in IE (not supported)
-    if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
-    {
-        const themePreference = localStorage.getItem('theme');
+    if (themeSelectorToggles && !/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+        themeSelectorToggles.forEach(function (el) {
+            var htmlRoot = document.querySelector('html'),
+                themeQuery = window.matchMedia('(prefers-color-scheme: dark)'),
+                themeStorage = localStorage.getItem('theme'),
+                tables = document.querySelectorAll('table');
 
-        // On load find if user has set a preference & toggle
-        if (themePreference) {
-            if (themePreference == 'dark') {
-                themeToggle.prop('checked', true);
-                table.addClass('table-dark');
+            setToggle(htmlRoot.getAttribute('data-user-color-scheme'));
+
+            el.addEventListener('change', setTheme);
+
+            themeQuery.addEventListener('change', setSystemTheme);
+
+            el.addEventListener('click', function() {
+                themeQuery.removeEventListener('change', setSystemTheme);
+
+                if (el.checked) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+
+            function setSystemTheme(e) {
+                var themeSystem = e.matches ? 'dark' : 'light';
+
+                if (!themeStorage) {
+                    setToggle(themeSystem);
+                    setTheme();
+                }
             }
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            themeToggle.prop('checked', true);
-            table.addClass('table-dark');
-        }
 
-        // Detect system color scheme changes while user is on page
-        jQuery(window.matchMedia('(prefers-color-scheme: dark)')).on('change', function(e) {
-            const newThemePreference = e.matches ? "dark" : "light";
+            function setTheme() {
+                var themePrefers = el.checked ? 'dark' : 'light';
 
-            if (newThemePreference == 'dark' && !localStorage.getItem('theme')) {
-                themeToggle.prop('checked', true);
-                darkModeClasses();
-            } else if (!localStorage.getItem('theme')) {
-                themeToggle.prop('checked', false);
-                lightModeClasses();
+                if (el.checked) {
+                    htmlRoot.classList.add('dark-theme');
+                    htmlRoot.classList.remove('light-theme');
+                } else {
+                    htmlRoot.classList.add('light-theme');
+                    htmlRoot.classList.remove('dark-theme');
+                }
+
+                htmlRoot.setAttribute('data-user-color-scheme', themePrefers);
+                setAdditionalClasses(themePrefers);
+            }
+
+            function setToggle(themePrefers) {
+                if (themePrefers == 'dark') {
+                    el.checked = true;
+                } else {
+                    el.checked = false;
+                }
+
+                setAdditionalClasses(themePrefers);
+            }
+
+            function setAdditionalClasses(themePrefers) {
+                if (themePrefers == 'dark') {
+                    for (var i of tables) {
+                        i.classList.add('table-dark');
+                    }
+                } else {
+                    for (var i of tables) {
+                        i.classList.remove('table-dark');
+                    }
+                }
             }
         });
-
-        themeToggle.click(function() {
-            themeToggle.not(this).prop('checked', this.checked);
-
-            if (themeToggle.is(':checked')) {
-                jQuery('html').attr('data-user-color-scheme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                darkModeClasses();
-            } else {
-                jQuery('html').attr('data-user-color-scheme', 'light');
-                localStorage.setItem('theme', 'light');
-                lightModeClasses();
-            }
-        });
-    } else {
-        themeToggle.attr('disabled', 'true').next().addClass('disabled');
-    }
-
-    function darkModeClasses() {
-        table.addClass('table-dark');
-        themeMode.addClass('dark-theme');
-        themeMode.removeClass('light-theme');
-    }
-
-    function lightModeClasses() {
-        table.removeClass('table-dark');
-        themeMode.addClass('light-theme');
-        themeMode.removeClass('dark-theme');
     }
 })();
