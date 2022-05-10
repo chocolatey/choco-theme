@@ -1,35 +1,76 @@
-// Package List 
-// Package Preferences
 (function() {
-    var cookieDisclaimerName = 'chocolatey_hide_packages_disclaimer',
-        preferenceGridView = jQuery('#preferenceGridView'),
-        gridView = getCookie("preferenceGridView"),
-        preferenceModView = jQuery('#preferenceModView'),
-        modView = getCookie("preferenceModView"),
-        packageTags = document.querySelectorAll('.package-tag');
-
     // Community Disclaimer
+    var cookieDisclaimerName = 'chocolatey_hide_packages_disclaimer';
     if (!getCookie(cookieDisclaimerName)) {
         // Display modal
-        var disclaimer = document.getElementById('package-disclaimer')
-        var disclaimerModal = Modal.getInstance(disclaimer) ? Modal.getInstance(disclaimer) : new Modal(disclaimer, { keyboard: false, backdrop: 'static' });
-        
-        disclaimerModal.show();
+        var disclaimer = document.getElementById('package-disclaimer');
 
-        disclaimer.addEventListener('hidden.bs.modal', function () {
-            document.cookie = cookieDisclaimerName + '=true;' + setCookieExpirationNever() + 'path=/;';
+        if (disclaimer) {
+            disclaimerModal = Modal.getInstance(disclaimer) ? Modal.getInstance(disclaimer) : new Modal(disclaimer, { keyboard: false, backdrop: 'static' });
+        
+            disclaimerModal.show();
+
+            disclaimer.addEventListener('hidden.bs.modal', function () {
+                document.cookie = cookieDisclaimerName + '=true;' + setCookieExpirationNever() + 'path=/;';
+            });
+        }
+    }
+
+    // Package Warning Disclaimer
+    var packageWarning = document.getElementById('package-warning');
+    if (packageWarning) {
+        var cookiePackageWarningName = 'chocolatey_hide_packages_warning', 
+            packageWarningCallout = Collapse.getInstance(packageWarning) ? Collapse.getInstance(packageWarning) : new Collapse(packageWarning, { toggle: false });
+
+        if (!getCookie(cookiePackageWarningName)) {
+            var packageWarningBtn = document.querySelector('#callout-package-warning .btn');
+
+            packageWarningCallout.show();
+            packageWarningBtn.textContent = packageWarningBtn.textContent.replace('Show', 'Hide');
+        }
+
+        packageWarning.addEventListener('shown.bs.collapse', function () {
+            document.cookie = cookiePackageWarningName + '=true';
         });
     }
+    
+    // Save and Show Preferences
+    var btnPreferences = document.querySelector('.btn-preferences');
+    if (btnPreferences) {
+        var preferenceGridView = document.getElementById('preferenceGridView'),
+            gridView = getCookie("preferenceGridView"),
+            preferenceModView = document.getElementById('preferenceModView'),
+            modView = getCookie("preferenceModView");
 
-    // Show preferred package layout
-    if (gridView) {
-        preferenceGridView.prop("checked", true);
-    }
-    if (modView) {
-        preferenceModView.prop("checked", true);
+        if (gridView) {
+            preferenceGridView.checked = true;
+        }
+
+        if (modView) {
+            preferenceModView.checked = true;
+        }
+
+        btnPreferences.addEventListener('click', function() {
+            if (preferenceGridView.checked) {
+                document.cookie = "preferenceGridView=true";
+            } else if (!preferenceGridView.checked) {
+                document.cookie = "preferenceGridView=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            }
+
+            if (preferenceModView) {
+                if (preferenceModView.checked) {
+                    document.cookie = "preferenceModView=true";
+                } else if (!preferenceModView.checked) {
+                    document.cookie = "preferenceModView=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                }
+            }
+            
+            location.reload();
+        }, false);
     }
 
     // Set tag links on list page
+    var packageTags = document.querySelectorAll('.package-tag');
     packageTags.forEach(function (el) {
         var tag = el.getAttribute('data-package-tag'),
             query;
@@ -55,40 +96,74 @@
         }
     });
 
-    // Save Preferences
-    jQuery('.btn-preferences').click(function () {
-        if (preferenceGridView.prop("checked") == true) {
-            document.cookie = "preferenceGridView=true";
-        }
-        else if (preferenceGridView.prop("checked") == false) {
-            document.cookie = "preferenceGridView=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        }
-        if (preferenceModView.prop("checked") == true) {
-            document.cookie = "preferenceModView=true";
-        }
-        else if (preferenceModView.prop("checked") == false) {
-            document.cookie = "preferenceModView=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        }
-        location.reload();
-    });
-
-    // Package warning callout
-    jQuery('#callout-package-warning a[data-bs-toggle="collapse"]').click(function () {
-        document.cookie = "chocolatey_hide_packages_warning=true";
-    });
-
     // Package Filtering
-    jQuery("#sortOrder,#prerelease,#moderatorQueue,#moderationStatus,.selected-search-term").change(function () {
-        jQuery(this).closest("form").submit();
-    });
-    
-    // Package Details
-    // Prism for Description section
-    // Description Area
-    if (jQuery('#description pre').length) {
-        jQuery('#description').find("pre").addClass('line-numbers border').wrapInner('<code class="language-powershell"></code>');
-        Prism.highlightAllUnder(jQuery('#description')[0]);
+    var packageFilters = document.querySelectorAll('.package-filter'),
+        packageSearchTerms = document.querySelectorAll('.selected-search-term');
+
+    if (packageFilters) {
+        for (var i of packageFilters) {
+            i.onchange = function() {submitPackageFilterForm(i)};
+        }   
     }
+
+    if (packageSearchTerms) {
+        for (var i of packageSearchTerms) {
+            i.onchange = function() {submitPackageFilterForm(i)};
+        }   
+    }
+
+    function submitPackageFilterForm(filter) {
+        filter.closest('form').submit();
+    }
+    
+    // Prism for Description section
+    var descriptionCode = document.querySelectorAll('#description pre');
+    if (descriptionCode) {
+        descriptionCode.forEach(function (el) {
+            el.classList.add('line-numbers', 'border');
+            el.innerHTML = '<code>' + el.innerHTML + '</code>';
+
+            Prism.highlightAllUnder(document.getElementById('description'));
+        });
+    }
+
+    // Package Communication Area
+    // Below is a WIP function to replace the comments list jQuery function below
+    /*var commentsLists = document.querySelectorAll('.comments-list');
+    if (commentsLists) {
+        commentsLists.forEach(function (el) {
+            // Add classes to comments
+            var commentTitles = el.querySelectorAll('h4');
+
+            for (var i of commentTitles) {
+                var commentTitle = i.innerText.split(' on ')[0],
+                    commentDate = i.innerText.split(' on ')[1];
+
+                i.innerText = commentTitle;
+                i.classList.add('comment-title');
+
+                if (i.id.includes('maintainer')) {
+                    i.classList.add('comment-maintainer');
+                }
+
+                if (i.id.includes('reviewer')) {
+                    i.classList.add('comment-reviewer');
+                }
+
+                var newDate = document.createElement('h6');
+                newDate.classList.add('comment-date');
+                newDate.innerText = 'on ' + commentDate;
+
+                i.after(newDate);
+            }
+            
+            var commentBodies = el.querySelectorAll('*:not(.comment-title):not(.comment-date)');
+
+            for (var i of commentBodies) {
+                i.classList.add('comment-body');
+            }
+        });
+    }*/
 
     jQuery(".comments-list").each(function () {
         var commentList = jQuery(this);
@@ -135,104 +210,160 @@
     });
 
     // Files Section
-    var fileCollapse = jQuery('.moderation-view [class*="file-path-"]');
+    
     // Files hidden on load and toggled
-    jQuery('[class*="file-path-"]').on('show.bs.collapse', function () {
-        if (!jQuery(this).find('pre').hasClass('line-numbers')) {
-            var langBrush = jQuery(this).parent().find('span').first().text();
-            if (langBrush.indexOf("\\") >= 0) {
-                // Find everything after last \ if there is one
-                langBrush = langBrush.substr(langBrush.lastIndexOf("\\") + 1);
+    var filePathCollapseHighlight = document.querySelectorAll('[class*="file-path-"]');
+    if (filePathCollapseHighlight) {
+        filePathCollapseHighlight.forEach(function (el) {
+            if (!el.querySelector('pre').classList.contains('line-numbers')) {
+                el.addEventListener('show.bs.collapse', function () {
+                    var langBrush = el.previousElementSibling.innerText;
+
+                    if (langBrush.includes('\\')) {
+                        // Find everything after last \ if there is one
+                        langBrush = langBrush.substring(langBrush.lastIndexOf('\\') + 1);
+                    }
+
+                    // Find everything after first . (file extension)
+                    langBrush = langBrush.substring(langBrush.indexOf('.') + 1)
+
+                    switch (langBrush) {
+                        case "ps1":
+                        case "psm1":
+                            langBrush = "powershell";
+                            break;
+                        case "xml":
+                        case "config":
+                        case "nuspec":
+                        case "nuspec.template":
+                            langBrush = "xml";
+                            break;
+                        case "js":
+                        case "json":
+                            langBrush = "js";
+                            break;
+                        default:
+                            langBrush = "none";
+                    }
+
+                    el.querySelector('pre').classList.add('line-numbers');
+                    el.querySelector('code').classList.add('language-' + langBrush);
+
+                    Prism.highlightElement(el.querySelector('code'));
+                });
             }
-            // Find everything after first . (file extension)
-            langBrush = langBrush.substring(langBrush.indexOf('.') + 1);
-            switch (langBrush) {
-                case "ps1":
-                case "psm1":
-                    langBrush = "powershell";
-                    break;
-                case "xml":
-                case "config":
-                case "nuspec":
-                case "nuspec.template":
-                    langBrush = "xml";
-                    break;
-                case "js":
-                case "json":
-                    langBrush = "js";
-                    break;
-                default:
-                    langBrush = "none";
-            }
-            jQuery(this).find('pre').addClass('line-numbers').find("code").addClass('language-' + langBrush);
-            Prism.highlightElement(jQuery(this).find('code')[0]);
-        }
-    });
+        }); 
+    }
+
     // Expand or Show all files
-    jQuery('#files .btn-collapse-files').click(function () {
-        var btnCollapseAll = jQuery(this);
-        var btnCollapseAllText = btnCollapseAll.text();
-        if (btnCollapseAll.hasClass('btn-success')) {
-            btnCollapseAll.text(btnCollapseAllText.replace('Expand', 'Collapse'));
-            btnCollapseAll.removeClass('btn-success').addClass('btn-danger');
-            jQuery('#files .btn:contains("Show")').html('Hide');
-            fileCollapse.collapse('show');
-        } else if (btnCollapseAll.hasClass('btn-danger')) {
-            btnCollapseAll.text(btnCollapseAllText.replace('Collapse', 'Expand'));
-            btnCollapseAll.removeClass('btn-danger').addClass('btn-success');
-            jQuery('#files .btn:contains("Hide")').html('Show');
-            fileCollapse.collapse('hide');
-        }
-    });
+    var btnCollapseFiles = document.querySelector('#files .btn-collapse-files');
+    if (btnCollapseFiles) {
+        btnCollapseFiles.addEventListener('click', function() {
+            var btnCollapseIndividualFile = document.querySelectorAll('#files .btn'),
+                fileCollapse = document.querySelectorAll('.moderation-view [class*="file-path-"]');
+
+            if (btnCollapseFiles.classList.contains('btn-success')) {
+                btnCollapseFiles.innerText = btnCollapseFiles.innerText.replace('Expand', 'Collapse');
+                btnCollapseFiles.classList.remove('btn-success');
+                btnCollapseFiles.classList.add('btn-danger');
+
+                for (var i of btnCollapseIndividualFile) {
+                    i.innerText = i.innerText.replace('Show', 'Hide');
+                }
+                
+                for (var i of fileCollapse) {
+                    var fileCollapseTarget = Collapse.getInstance(i) ? Collapse.getInstance(i) : new Collapse(i, { toggle: false });
+
+                    fileCollapseTarget.show();
+                }  
+            } else if (btnCollapseFiles.classList.contains('btn-danger')) {
+                btnCollapseFiles.innerText = btnCollapseFiles.innerText.replace('Collapse', 'Expand');
+                btnCollapseFiles.classList.remove('btn-danger');
+                btnCollapseFiles.classList.add('btn-success');
+
+                for (var i of btnCollapseIndividualFile) {
+                    i.innerText = i.innerText.replace('Hide', 'Show');
+                }
+
+                for (var i of fileCollapse) {
+                    var fileCollapseTarget = Collapse.getInstance(i) ? Collapse.getInstance(i) : new Collapse(i, { toggle: false });
+                    
+                    fileCollapseTarget.hide();
+                }  
+            }
+            
+        }, false);
+    }
     
     // Initialize Text Editor
-    jQuery('.text-editor').each(function () {
-        var placeholder = "";
+    var textEditors = document.querySelectorAll('.text-editor');
+    if (textEditors) {
+        textEditors.forEach(function (el) {
+            var placeholder;
 
-        if (jQuery(this).is('#NewReviewComments')) {
-            placeholder = "Add to Review Comments";
-        }
-        else if (jQuery(this).is('#ExemptedFromVerificationReason')) {
-            placeholder = "Verification Exempted Reason";
-        }
-        else if (jQuery(this).is('#ExemptedFromScannerReason')) {
-            placeholder = "Scanner Exempted Reason";
-        }
-        else if (jQuery(this).is('#ExemptedFromValidatorReason')) {
-            placeholder = "Validator Exempted Reason";
-        }
-        var easymde = new EasyMDE({
-            element: this,
-            autoDownloadFontAwesome: false,
-            placeholder: placeholder,
-            toolbar: ["bold", "italic", "heading", "strikethrough", "|", "quote", "unordered-list", "ordered-list", "code", "|", "link", "image", "|", "side-by-side", "fullscreen", "|", "preview"]
-        });
-        easymde.render();
-        jQuery('<span class="ms-1"> Preview</span>').insertAfter(jQuery(this).next().find('.fa-eye')).parent().addClass('fw-bold text-primary').attr('style', 'width:90px');
-        // Below snippet added to allow content to be shown inside of collapsed or hidden items without having to click on the textarea. See https://github.com/Ionaru/easy-markdown-editor/issues/208#issuecomment-645656131.
-        easymde.element.cmirror = easymde.codemirror;
-    });
-    // Below snippet added to allow content to be shown inside of collapsed or hidden items without having to click on the textarea. See https://github.com/Ionaru/easy-markdown-editor/issues/208#issuecomment-645656131.
-    jQuery('.text-editor-refresh').each(function () {
-        jQuery(this).on('shown.bs.collapse', function () {
-            if (!jQuery(this).hasClass('text-editor-refreshed')) {
-                var easymdeRefresh = jQuery(this).attr('id');
-
-                jQuery('#' + easymdeRefresh + ' textarea')[0].cmirror.refresh();
-                jQuery('#' + easymdeRefresh).addClass('text-editor-refreshed');
+            switch (el.id) {
+                case 'NewReviewComments':
+                    placeholder = 'Add to Review Comments';
+                    break;
+                case 'ExemptedFromVerificationReason':
+                    placeholder = 'Verification Exempted Reason';
+                    break;
+                case 'ExemptedFromScannerReason':
+                    placeholder = 'Scanner Exempted Reason';
+                    break;
+                case 'ExemptedFromValidatorReason': 
+                    placeholder = 'Validator Exempted Reason';
             }
+
+            var easymde = new EasyMDE({
+                element: el,
+                autoDownloadFontAwesome: false,
+                placeholder: placeholder,
+                toolbar: ["bold", "italic", "heading", "strikethrough", "|", "quote", "unordered-list", "ordered-list", "code", "|", "link", "image", "|", "side-by-side", "fullscreen", "|", "preview"]
+            });
+
+            easymde.render();
+
+            var btnPreview = document.createElement('SPAN');
+            btnPreview.classList.add('ms-1');
+            btnPreview.innerText = ' Preview';
+
+            el.nextSibling.querySelector('button.preview').classList.add('fw-bold', 'text-primary');
+            el.nextSibling.querySelector('button.preview').style.width = "90px";
+            el.nextSibling.querySelector('.fa-eye').after(btnPreview);
+
+            // Below snippet added to allow content to be shown inside of collapsed or hidden items without having to click on the textarea. See https://github.com/Ionaru/easy-markdown-editor/issues/208#issuecomment-645656131.
+            easymde.element.cmirror = easymde.codemirror;
         });
-    });
+    }
+
+    // Below snippet added to allow content to be shown inside of collapsed or hidden items without having to click on the textarea. See https://github.com/Ionaru/easy-markdown-editor/issues/208#issuecomment-645656131.
+    var textEditorRefresh = document.querySelectorAll('.text-editor-refresh');
+    if (textEditorRefresh) {
+        textEditorRefresh.forEach(function (el) {
+            el.addEventListener('shown.bs.collapse', function () {
+                if (!el.classList.contains('.text-editor-refreshed')) {
+                    document.querySelector('#' + el.id + ' textarea').cmirror.refresh();
+                    document.getElementById(el.id).classList.add('text-editor-refreshed');
+                }
+            });
+        });
+    }
 
     // Hide comment instructions
-    jQuery('#instructions').on('hidden.bs.collapse', function () {
-        if (!getCookie('chocolatey_hide_comment_instructions')) {
-            document.cookie = "chocolatey_hide_comment_instructions=true;path=/";
-        }
-    });
-    jQuery('#instructions').on('shown.bs.collapse', function () {
-        if (getCookie('chocolatey_hide_comment_instructions')) {
-            document.cookie = "chocolatey_hide_comment_instructions=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        }
-    });
+    var commentInstructions = document.getElementById('instructions');
+    if (commentInstructions) {
+        var cookieCommentInstructionsName = 'chocolatey_hide_comment_instructions';
+
+        commentInstructions.addEventListener('hidden.bs.collapse', function () {
+            if (!getCookie('chocolatey_hide_comment_instructions')) {
+                document.cookie = cookieCommentInstructionsName + '=true;path=/';
+            }
+        });
+        commentInstructions.addEventListener('shown.bs.collapse', function () {
+            if (getCookie('chocolatey_hide_comment_instructions')) {
+                document.cookie = cookieCommentInstructionsName + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            }
+        });
+    }
 })();
