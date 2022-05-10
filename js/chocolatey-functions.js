@@ -6,11 +6,11 @@
     function getElementHeight() {
         // Get window height
         let vh = window.innerHeight * 0.01;
-        jQuery('html').css('--vh', vh + 'px');
+        document.querySelector('html').setAttribute('style','--vh:' + vh + 'px;');
 
         // Get main height
-        let mh = window.innerHeight - jQuery('header').outerHeight(true) - jQuery('footer').outerHeight(true);
-        jQuery('main').css('--mh', mh + 'px');
+        let mh = window.innerHeight - outerHeightTrue(document.querySelector('header')) - outerHeightTrue(document.querySelector('footer'));
+        document.querySelector('main').setAttribute('style','--mh:' + mh + 'px;');
     }
 
     // Set a cookie value that never expires based on current date
@@ -102,10 +102,14 @@
     });
 
     window.copyCodeBlocks=function() {
-        jQuery('.copy-command .toolbar button').each(function () {
-            var copyCommand = jQuery(this).parentsUntil('.code-toolbar').parent().find('code').attr('class').split(" ");
-            
-            jQuery(this).addClass('btn-copy').attr('data-clipboard-target', '.' + copyCommand[0]);
+        document.querySelectorAll('.copy-command').forEach(function (el) {
+            var copyCommand = el.querySelector('code').getAttribute('class').split(" "),
+                copyBtn = el.querySelector('button');
+
+            if (copyBtn) {
+                copyBtn.classList.add('btn-copy');
+                copyBtn.setAttribute('data-clipboard-target', '.' + copyCommand[0]);
+            }
         });
     }
 
@@ -139,3 +143,20 @@
         document.cookie = 'deployment_method=' + deploymentMethodHash + '; path=/';
     }
 })();
+
+// Replaces jQuery outerHeight(true)
+function outerHeightTrue(el) {
+    const rect = el.getBoundingClientRect();
+
+    return rect.height;
+}
+
+// Replaces jQuery .offset().top https://stackoverflow.com/a/28222246/10430540
+function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+
+    return {
+        left: rect.left + window.scrollX,
+        top: rect.top + window.scrollY
+    };
+}

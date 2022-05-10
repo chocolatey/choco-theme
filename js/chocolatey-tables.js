@@ -1,9 +1,11 @@
 (function() {
-    const table = jQuery('table');
+    const table = document.querySelectorAll('table');
 
     // Style Tables
-    jQuery.each(table, function () {
-        jQuery(this).wrap('<div class="table-responsive"></div>');
-        jQuery(this).addClass('table table-bordered table-striped');
-    });
+    if (table) {
+        table.forEach(function (el) {
+            el.classList.add('table', 'table-bordered', 'table-striped');
+            el.outerHTML = '<div class="table-responsive">' + el.outerHTML + '</div>';
+        });
+    }
 })();
