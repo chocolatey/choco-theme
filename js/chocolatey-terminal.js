@@ -17,11 +17,11 @@
                     index++;
                     direction = 1;
                 } else if (phrases[index][position] !== undefined) {
-                    currentString = phrases[index].substring(0, position);
+                    currentString = phrases[index].substring(0, position + 1);
                     phrasesSpan.innerHTML = currentString;
                     // if we've arrived at the last position reverse the direction
                 } else if (position > 0 && !phrases[index][position]) {
-                    currentString = phrases[index].substring(0, position);
+                    currentString = phrases[index].substring(0, position + 1);
                     direction = -1;
                     phrasesSpan.innerHTML = currentString;
 
