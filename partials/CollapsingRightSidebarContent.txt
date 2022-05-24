@@ -36,6 +36,41 @@
     </div>
 </div>
 <hr />
+<div class="text-center">
+    <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
+        <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
+    </a>
+    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-06-09T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
+    <p class="text-start">Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.</p>
+    <div class="d-flex align-items-center justify-content-center flex-wrap">
+        <div class="mt-2 mx-1">
+            <div class="atcb atcb-twitch" style="display:none;">
+            {
+                "name":"Chocolatey For Business. In Azure. In One Click.",
+                "description":"Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.",
+                "location":"https://www.twitch.tv/chocolateysoftware",
+                "startDate":"2022-06-09",
+                "endDate":"2022-06-09",
+                "startTime":"16:00",
+                "endTime":"17:00",
+                "options":[
+                    "Apple",
+                    "Google",
+                    "iCal",
+                    "Microsoft365",
+                    "Outlook.com",
+                    "Yahoo"
+                ],
+                "trigger":"click",
+                "inline":true,
+                "iCalFileName":"twitch-azure"
+            }
+            </div>
+        </div>
+        <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank" class="btn btn-twitch mt-2 mx-1"><i class="fab fa-twitch"></i> Follow on Twitch</a>
+    </div>
+</div>
+<hr />
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
