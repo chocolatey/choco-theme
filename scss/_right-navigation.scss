@@ -13,8 +13,8 @@
             border-left: 3px solid transparent;
 
             &.active, &:hover {
-                color: $primary;
-                border-left: 3px solid $primary;
+                color: var(--bs-primary);
+                border-left: 3px solid var(--bs-primary);
                 background: $primary-opacity-25;
             }
 

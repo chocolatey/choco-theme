@@ -115,6 +115,9 @@
     background-repeat: no-repeat !important;
     background-size: cover !important;
     z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
 }
 
 /*Background Images*/
@@ -175,6 +178,18 @@
         max-width: 100%;
         background-color: rgba($warning, 0.8)
     }
+}
+
+.bg-architect-factory {
+    background-image: radial-gradient(circle, rgba(var(--background-rgb),0) 0%, rgba(var(--background-rgb),1) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%,rgba(var(--background-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%,rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+}
+
+.bg-architect-factory-top {
+    background-image: linear-gradient(to right, rgba(var(--background-rgb), 0.4) 0%,rgba(var(--background-rgb), 1) 30%,rgba(var(--background-rgb), 1) 70%,rgba(var(--background-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%,rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+}
+
+.bg-architect-factory-bottom-primary {
+    background-image: linear-gradient(to right, rgba(var(--background-rgb), 0.4) 0%,rgba(var(--background-rgb), 1) 30%,rgba(var(--background-rgb), 1) 70%,rgba(var(--background-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%,rgba(var(--background-rgb), 0) 15%),url("/assets/images/architect-factory-green.svg");
 }
 
 @include media-breakpoint-up(md) {

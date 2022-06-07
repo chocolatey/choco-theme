@@ -1,0 +1,55 @@
+// Variables
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+// Default Colors
+$blue:    #5c9fd8;
+$purple:  #6f42c1;
+$red:     #f4516c;
+$pink:    #d63384;
+$yellow:  #ffc107;
+$orange:  #FD7E14;
+$green:   #36bc98;
+
+// Theme
+$primary:      $blue;
+
+// Body & Font
+$body-bg: $gray-100;
+$font-family-sans-serif: 'PT Sans', sans-serif;
+$font-size-base: 1rem;
+
+// Links
+$link-decoration: none;
+
+// Code
+$code-color: $green;
+
+// Tooltips
+$tooltip-bg: $primary;
+
+// Cards
+$card-border-radius: 0;
+$card-inner-border-radius: 0;
+$card-border-width: 0;
+$card-box-shadow: 0 .5rem 1rem rgba($black, .15);
+
+// Alerts
+$alert-border-radius: 0;
+$alert-border-width: 0;
+$alert-margin-bottom: 0;
+$alert-border-width: 0;
+$alert-bg-scale: 0;
+$alert-color-scale: 0;
+
+// Tabs
+$nav-tabs-link-active-bg: $white;

@@ -21,7 +21,7 @@
     }
 
     li:hover a.hover, li a:hover, li.active a {
-        color: $primary;
+        color: var(--bs-primary);
         font-weight: 700;
     }
 
@@ -53,8 +53,8 @@
         }
 
         &::before {
-            border-color: $primary;
-            background-color: $primary;
+            border-color: var(--bs-primary);
+            background-color: var(--bs-primary);
             line-height: 16px;
             font-size: 70%;
         }
@@ -65,7 +65,7 @@
     }
 
     li:not(.completed):hover:before, li:not(.mod-completed):hover:before, li.active:before {
-        border-color: $primary;
+        border-color: var(--bs-primary);
     }
 }
 
@@ -122,15 +122,15 @@
 }
 
 .level.intermediate:after {
-    background: $yellow;
+    background: var(--bs-yellow);
 }
 
 .level.beginner:after {
-    background: $green;
+    background: var(--bs-green);
 }
 
 .level.advanced:after {
-    background: $red;
+    background: var(--bs-red);
 }
 
 .correct, .wrong {
@@ -143,12 +143,12 @@
 
 .correct {
     &::before, &::after {
-        color: $green;
+        color: var(--bs-green);
     }
 }
 
 .wrong {
     &::before, &::after {
-        color: $red;
+        color: var(--bs-red);
     }
 }

@@ -1,0 +1,61 @@
+:root {
+  @each $color, $value in $colors-rgb {
+    --#{$variable-prefix}#{$color}-rgb: #{$value};
+  }
+}
+
+:root[data-user-color-scheme="light"] {
+    --color-mode: 'light';
+    --background: #{$gray-100};
+    --background-light: #{$white};
+    --background-primary-light: #{$primary-150};
+    --background-primary-opacity-10: #{$primary-opacity-10};
+    --background-primary-opacity-40: #{$primary-opacity-40};
+    --background-primary-opacity-90: #{$primary-opacity-90};
+    --background-light-2: #{$gray-300};
+    --background-light-3: #{$white};
+    --background-light-4: #{$gray-200};
+    --text: #{$gray-900};
+    --text-code: #{$gray-800};
+    --border: #{$gray-300};
+    --border-secondary: #{$gray-300};
+    --theme-primary: #{$primary};
+    --theme-purple: #{$purple};
+    --theme-orange: #{$orange};
+    --theme-red: #{$red};
+    --theme-toggle-opacity: #{$yellow-opacity-25};
+    --theme-toggle-background: #{$white};
+    --theme-toggle-btn-background: #{$yellow-opacity-25};
+    --theme-opposite: #{$gray-900};
+    --theme-opposite-hover: #{$gray-700};
+    --theme-opposite-text: #{$gray-400};
+    --modal-backdrop: 0.5;
+}
+
+:root[data-user-color-scheme="dark"] {
+    --color-mode: 'dark';
+    --background: #{$primary-950};
+    --background-light: #{$primary-900};
+    --background-primary-light: #{$primary-850};
+    --background-primary-opacity-10: #{$primary-opacity-10};
+    --background-primary-opacity-40: #{$primary-opacity-40};
+    --background-primary-opacity-90: #{$primary-opacity-90};
+    --background-light-2: #{$primary-800};
+    --background-light-3: #{$primary-800};
+    --background-light-4: #{$primary-850};
+    --text: #{$gray-400};
+    --text-code: #{$gray-500};
+    --border: #{$primary-800};
+    --border-secondary: #{$primary-opacity-50};
+    --theme-primary: #{$primary-600};
+    --theme-purple: #{$purple-300};
+    --theme-orange: #{$orange-300};
+    --theme-red: #{$red-300};
+    --theme-toggle-opacity: #{$primary-opacity-50};
+    --theme-toggle-background: #{$primary-opacity-25};
+    --theme-toggle-btn-background: #{$primary-opacity-25};
+    --theme-opposite: #{$gray-100};
+    --theme-opposite-hover: #{$gray-400};
+    --theme-opposite-text: #{$gray-900};
+    --modal-backdrop: 0.9;
+  }

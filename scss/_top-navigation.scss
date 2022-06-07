@@ -44,8 +44,8 @@ header {
                     border-left: 6px solid transparent;
 
                     &.active, &:hover {
-                        border-color: $primary;
-                        color: $primary;
+                        border-color: var(--bs-primary);
+                        color: var(--bs-primary);
                         background: $primary-150;
                         background: var(--background-primary-light);
                     }
@@ -90,8 +90,8 @@ header {
 
     &:hover {
         text-decoration: none;
-        border-color: $primary;
-        color: $primary;
+        border-color: var(--bs-primary);
+        color: var(--bs-primary);
         background: $primary-150;
         background: var(--background-primary-light);
     }

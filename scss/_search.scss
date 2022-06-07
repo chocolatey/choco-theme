@@ -75,7 +75,7 @@
 
         &:focus, &:hover {
             + .fa-search {
-                color: $primary;
+                color: var(--bs-primary);
             }
         }
     }
@@ -118,7 +118,7 @@
     .search-box {
         &:focus-within, &:hover {
             .fa-search {
-                color: $primary;
+                color: var(--bs-primary);
             }
         }
     }

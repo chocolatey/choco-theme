@@ -3,27 +3,6 @@
 // FontAwesome Free
 $fa-font-path: "/assets/fonts/fontawesome-free";
 
-// Variables
-$white:    #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
-$black:    #000;
-
-// Default Colors
-$blue:    #5c9fd8;
-$purple:  #6f42c1;
-$red:     #f4516c;
-$yellow:  #ffc107;
-$orange:  #FD7E14;
-$green:   #36bc98;
-
 // Social Media Colors
 $twitch:    #9147ff;
 $youtube:   #FF0000;
@@ -36,10 +15,7 @@ $chat:      #5865f2;
 $google:    #4285F4;
 $website:   $gray-600;
 
-// Theme
-$primary:      $blue;
-
-// Pallette
+// Palette
 $primary-50:   tint-color($primary, 90%);
 $primary-100:  tint-color($primary, 80%);
 $primary-150:  tint-color($primary, 70%);
@@ -60,6 +36,26 @@ $primary-850:  shade-color($primary, 70%);
 $primary-900:  shade-color($primary, 80%);
 $primary-950:  shade-color($primary, 90%);
 
+$blue-50:   tint-color($blue, 90%);
+$blue-100:  tint-color($blue, 80%);
+$blue-150:  tint-color($blue, 70%);
+$blue-200:  tint-color($blue, 60%);
+$blue-250:  tint-color($blue, 50%);
+$blue-300:  tint-color($blue, 40%);
+$blue-350:  tint-color($blue, 30%);
+$blue-400:  tint-color($blue, 20%);
+$blue-450:  tint-color($blue, 10%);
+$blue-500:  $blue;
+$blue-550:  shade-color($blue, 10%);
+$blue-600:  shade-color($blue, 20%);
+$blue-650:  shade-color($blue, 30%);
+$blue-700:  shade-color($blue, 40%);
+$blue-750:  shade-color($blue, 50%);
+$blue-800:  shade-color($blue, 60%);
+$blue-850:  shade-color($blue, 70%);
+$blue-900:  shade-color($blue, 80%);
+$blue-950:  shade-color($blue, 90%);
+
 $red-50:   tint-color($red, 90%);
 $red-100:  tint-color($red, 80%);
 $red-150:  tint-color($red, 70%);
@@ -79,6 +75,26 @@ $red-800:  shade-color($red, 60%);
 $red-850:  shade-color($red, 70%);
 $red-900:  shade-color($red, 80%);
 $red-950:  shade-color($red, 90%);
+
+$pink-50:   tint-color($pink, 90%);
+$pink-100:  tint-color($pink, 80%);
+$pink-150:  tint-color($pink, 70%);
+$pink-200:  tint-color($pink, 60%);
+$pink-250:  tint-color($pink, 50%);
+$pink-300:  tint-color($pink, 40%);
+$pink-350:  tint-color($pink, 30%);
+$pink-400:  tint-color($pink, 20%);
+$pink-450:  tint-color($pink, 10%);
+$pink-500:  $pink;
+$pink-550:  shade-color($pink, 10%);
+$pink-600:  shade-color($pink, 20%);
+$pink-650:  shade-color($pink, 30%);
+$pink-700:  shade-color($pink, 40%);
+$pink-750:  shade-color($pink, 50%);
+$pink-800:  shade-color($pink, 60%);
+$pink-850:  shade-color($pink, 70%);
+$pink-900:  shade-color($pink, 80%);
+$pink-950:  shade-color($pink, 90%);
 
 $yellow-50:   tint-color($yellow, 90%);
 $yellow-100:  tint-color($yellow, 80%);
@@ -172,6 +188,19 @@ $primary-opacity-90:        rgba($primary, 0.9);
 $primary-950-opacity-95:    rgba($primary-950, 0.95);
 $yellow-opacity-25:         rgba($yellow, 0.25);
 
+$colors: (
+  "blue":       $blue,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+);
+
 $socialmedia-colors: (
   twitch:   $twitch,
   youtube:  $youtube,
@@ -224,6 +253,44 @@ $palette-colors: (
   red-850:  $red-850,
   red-900:  $red-900,
   red-950:  $red-950,
+  pink-50:   $pink-50,
+  pink-100:  $pink-100,
+  pink-150:  $pink-150,
+  pink-200:  $pink-200,
+  pink-250:  $pink-250,
+  pink-300:  $pink-300,
+  pink-350:  $pink-350,
+  pink-400:  $pink-400,
+  pink-450:  $pink-450,
+  pink-500:  $pink-500,
+  pink-550:  $pink-550,
+  pink-600:  $pink-600,
+  pink-650:  $pink-650,
+  pink-700:  $pink-700,
+  pink-750:  $pink-750,
+  pink-800:  $pink-800,
+  pink-850:  $pink-850,
+  pink-900:  $pink-900,
+  pink-950:  $pink-950,
+  blue-50:   $blue-50,
+  blue-100:  $blue-100,
+  blue-150:  $blue-150,
+  blue-200:  $blue-200,
+  blue-250:  $blue-250,
+  blue-300:  $blue-300,
+  blue-350:  $blue-350,
+  blue-400:  $blue-400,
+  blue-450:  $blue-450,
+  blue-500:  $blue-500,
+  blue-550:  $blue-550,
+  blue-600:  $blue-600,
+  blue-650:  $blue-650,
+  blue-700:  $blue-700,
+  blue-750:  $blue-750,
+  blue-800:  $blue-800,
+  blue-850:  $blue-850,
+  blue-900:  $blue-900,
+  blue-950:  $blue-950,
   yellow-50:   $yellow-50,
   yellow-100:  $yellow-100,
   yellow-150:  $yellow-150,
@@ -302,93 +369,10 @@ $palette-colors: (
   orange-950:  $orange-950
 );
 
-:root {
-    --color-mode: 'light';
-    --background: #{$gray-100};
-    --background-light: #{$white};
-    --background-primary-light: #{$primary-150};
-    --background-primary-opacity-10: #{$primary-opacity-10};
-    --background-primary-opacity-40: #{$primary-opacity-40};
-    --background-primary-opacity-90: #{$primary-opacity-90};
-    --background-light-2: #{$gray-300};
-    --background-light-3: #{$white};
-    --background-light-4: #{$gray-200};
-    --text: #{$gray-900};
-    --text-code: #{$gray-800};
-    --border: #{$gray-300};
-    --border-secondary: #{$gray-300};
-    --theme-primary: #{$primary};
-    --theme-purple: #{$purple};
-    --theme-orange: #{$orange};
-    --theme-red: #{$red};
-    --theme-toggle-opacity: #{$yellow-opacity-25};
-    --theme-toggle-background: #{$white};
-    --theme-toggle-btn-background: #{$yellow-opacity-25};
-    --theme-opposite: #{$gray-900};
-    --theme-opposite-hover: #{$gray-700};
-    --theme-opposite-text: #{$gray-400};
-    --modal-backdrop: 0.5;
-}
+$variable-prefix:       bs-;
 
-@media (prefers-color-scheme: dark) {
-    :root {
-      --color-mode: 'dark';
-    }
-  
-    :root:not([data-user-color-scheme]) {
-      --background: #{$primary-950};
-      --background-light: #{$primary-900};
-      --background-primary-light: #{$primary-850};
-      --background-primary-opacity-10: #{$primary-opacity-10};
-      --background-primary-opacity-40: #{$primary-opacity-40};
-      --background-primary-opacity-90: #{$primary-opacity-90};
-      --background-light-2: #{$primary-800};
-      --background-light-3: #{$primary-800};
-      --background-light-4: #{$primary-850};
-      --text: #{$gray-400};
-      --text-code: #{$gray-500};
-      --border: #{$primary-800};
-      --border-secondary: #{$primary-opacity-50};
-      --theme-primary: #{$primary-600};
-      --theme-purple: #{$purple-300};
-      --theme-orange: #{$orange-300};
-      --theme-red: #{$red-300};
-      --theme-toggle-opacity: #{$primary-opacity-50};
-      --theme-toggle-background: #{$primary-opacity-25};
-      --theme-toggle-btn-background: #{$primary-opacity-25};
-      --theme-opposite: #{$gray-100};
-      --theme-opposite-hover: #{$gray-400};
-      --theme-opposite-text: #{$gray-900};
-      --modal-backdrop: 0.9;
-    }
-  }
-  
-  [data-user-color-scheme='dark'] {
-    --background: #{$primary-950};
-    --background-light: #{$primary-900};
-    --background-primary-light: #{$primary-850};
-    --background-primary-opacity-10: #{$primary-opacity-10};
-    --background-primary-opacity-40: #{$primary-opacity-40};
-    --background-primary-opacity-90: #{$primary-opacity-90};
-    --background-light-2: #{$primary-800};
-    --background-light-3: #{$primary-800};
-    --background-light-4: #{$primary-850};
-    --text: #{$gray-400};
-    --text-code: #{$gray-500};
-    --border: #{$primary-800};
-    --border-secondary: #{$primary-opacity-50};
-    --theme-primary: #{$primary-600};
-    --theme-purple: #{$purple-300};
-    --theme-orange: #{$orange-300};
-    --theme-red: #{$red-300};
-    --theme-toggle-opacity: #{$primary-opacity-50};
-    --theme-toggle-background: #{$primary-opacity-25};
-    --theme-toggle-btn-background: #{$primary-opacity-25};
-    --theme-opposite: #{$gray-100};
-    --theme-opposite-hover: #{$gray-400};
-    --theme-opposite-text: #{$gray-900};
-    --modal-backdrop: 0.9;
-  }
+// Create rgb colors for :root
+$colors-rgb: map-loop($colors, to-rgb, "$value");
 
 // Transition
 $theme-transition: .5s;
@@ -396,8 +380,6 @@ $theme-transition: .5s;
 // Body & Font
 $enable-responsive-font-sizes: true;
 $body-bg: $gray-100;
-$font-family-sans-serif: 'PT Sans', sans-serif;
-$font-size-base: 1rem;
 
 // Margin
 $enable-negative-margins: true;
@@ -412,22 +394,6 @@ $code-color: $green;
 $input-btn-padding-y-sm: 0;
 $input-btn-padding-x-sm: 6px;
 $btn-font-weight: 700;
-
-// Tooltips
-$tooltip-bg: $primary;
-
-// Cards
-$card-border-radius: 0;
-$card-inner-border-radius: 0;
-$card-border-width: 0;
-
-// Alerts
-$alert-border-radius: 0;
-$alert-border-width: 0;
-$alert-margin-bottom: 0;
-$alert-border-width: 0;
-$alert-bg-scale: 0;
-$alert-color-scale: 0;
 
 // Close Button
 $btn-close-bg: none;
@@ -456,7 +422,6 @@ $input-focus-border-color: $primary;
 $input-disabled-bg: $gray-300;
 $form-select-indicator-color: $primary;
 $form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$primary}'/></svg>") !default;
-
 
 // Tabs
 $nav-tabs-link-active-bg: $white;
@@ -511,4 +476,17 @@ $spaces: (
     "5":      5,
     "6":      6,
     "7":      7,
+);
+
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 6,
+    7: $spacer * 12,
+    8: $spacer * 20
 );

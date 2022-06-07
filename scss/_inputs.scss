@@ -5,7 +5,7 @@
 
     &:focus {
         background-color: var(--background-light);
-        border-color: $primary;
+        border-color: var(--bs-primary);
         color: var(--text);
     }
 
@@ -19,7 +19,7 @@
 // Checkboxes
 .form-check {
     .form-check-input {
-        border: 1px solid $primary;
+        border: 1px solid var(--bs-primary);
 
         &:not(:checked) {
             background-color: var(--background-light);
@@ -31,7 +31,7 @@
         }
 
         &.is-invalid {
-            border-color: $danger;
+            border-color: var(--bs-danger);
         }
     }
 }
@@ -95,7 +95,7 @@
         }
 
         &:checked, &:before {
-            background: $success;
+            background: var(--bs-success);
         }
 
         &:before {
@@ -111,7 +111,7 @@
         }
 
         &:checked, &:before {
-            background: $danger;
+            background: var(--bs-danger);
         }
 
         &:before {
@@ -141,16 +141,16 @@
     &.form-switch-latest .form-check-input {
         &:after {
             content: "\f005";
-            color: $warning;
+            color: var(--bs-warning);
         }
 
         &:checked {
-            background: $warning;
+            background: var(--bs-warning);
         }
 
         &:before {
             background: var(--background-light-3);
-            border: 1px solid $warning;
+            border: 1px solid var(--bs-warning);
         }
     }
 }
@@ -169,7 +169,7 @@
                 &[disabled], &:disabled {
                     background: $white;
                     background: var(--background-light);
-                    border-color: $primary;
+                    border-color: var(--bs-primary);
                     opacity: 1;
                 }
             }
@@ -193,8 +193,8 @@
             }
 
             padding-left: $spacer;
-            border-left: 6px solid $danger;
-            color: $danger;
+            border-left: 6px solid var(--bs-danger);
+            color: var(--bs-danger);
             font-weight: bold;
         }
     }

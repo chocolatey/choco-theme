@@ -41,7 +41,7 @@
 
     &.curve-primary {
         &:before {
-            background: $primary;
+            background: var(--bs-primary);
             background: var(--theme-primary);
         }
     }

@@ -25,10 +25,10 @@
                         }
 
                         &.active, &:hover {
-                            color: $primary;
+                            color: var(--bs-primary);
         
                             .btn-collapse:before, a {
-                                color: $primary;
+                                color: var(--bs-primary);
                             }
                         }
         
@@ -62,7 +62,7 @@
                                 box-shadow: none;
         
                                 &:before {
-                                    color: $primary;
+                                    color: var(--bs-primary);
                                 }
                             }
                         }
@@ -78,13 +78,13 @@
                     &:not(.active) {
                         .nav-link-collapse:not(.active) .btn-collapse:not(.collapsed) {
                             &:before, + a {
-                                color: $primary;
+                                color: var(--bs-primary);
                             }
                         }
                     }
                     
                     &.active {
-                        border-left: 6px solid $primary;
+                        border-left: 6px solid var(--bs-primary);
                     }
                 }
             }
@@ -95,11 +95,11 @@
                         border-left: 6px solid transparent;
 
                         &:hover, &.active:not(.nav-link-collapse) {
-                            border-left: 6px solid $primary;
+                            border-left: 6px solid var(--bs-primary);
                         }
 
                         &.active:not(.nav-link-collapse) {
-                            border-left: 6px solid $primary;
+                            border-left: 6px solid var(--bs-primary);
                         }
                     }
                     > .collapse {

@@ -19,15 +19,15 @@
 }
 
 .flatpickr-months, .flatpickr-weekdays {
-    background: $primary;
+    background: var(--bs-primary);
 }
 
 .flatpickr-calendar.arrowBottom:before, .flatpickr-calendar.arrowBottom:after {
-    border-top-color: $primary;
+    border-top-color: var(--bs-primary);
 }
 
 .flatpickr-calendar.arrowTop:after {
-    border-bottom-color: $primary;
+    border-bottom-color: var(--bs-primary);
 }
 
 .dayContainer {

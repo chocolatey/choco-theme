@@ -13,57 +13,52 @@
     width: 100%;
 }
 
-.btn-primary, .btn-success, .btn-danger, .btn-close
+.btn-close
 {
-    color: $white;
     color: var(--background);
 
     &:not(:disabled):not(.disabled) {
         &:active, &.active, &:active:focus, &.active:focus {
-            color: $white;
             color: var(--background);
         }
     }
 
     &:hover, &:focus, &.focus, &:disabled, &.disabled {
-        color: $white;
         color: var(--background);
     }
 }
 
-// Outline buttons shared states
-.btn-outline-primary, .btn-outline-success, .btn-outline-danger
-{
-    &:not(:disabled):not(.disabled) {
-        &:active, &.active, &:active:focus, &.active:focus {
-            color: $white;
-            color: var(--background);
-        }
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        border-color: var(--bs-#{$color});
+        background: var(--bs-#{$color});
     }
 
-    &:hover {
-        color: $white;
-        color: var(--background);
+    .btn-outline-#{$color} {
+        border-color: var(--bs-#{$color});
+        color: var(--bs-#{$color});
+
+        &:hover {
+            background: var(--bs-#{$color});
+            border-color: var(--bs-#{$color});
+        }
     }
 }
 
 // Outline buttons with badges
 .btn-outline-primary, .btn-outline-success, .btn-outline-danger {
     .badge {
-        color: $white;
         color: var(--background);
     }
 
     &:hover, &:active {
         .badge {
-            background: $white;
             background: var(--background);
         }
     }
 }
 
 .btn-check:checked+.btn-outline-primary {
-    color: $white;
     color: var(--background);
     border-top:1px solid var(--background-light);
     border-bottom:1px solid var(--background-light);
@@ -71,64 +66,64 @@
 
 .btn-outline-primary {
     .badge {
-        background: $primary;
+        background: var(--bs-primary);
     }
 
     &:hover, &:active {
         .badge {
-            color: $primary;
+            color: var(--bs-primary);
         }
     }
 }
 
 .btn-outline-danger {
     .badge {
-        background: $red;
+        background: var(--bs-red);
     }
 
     &:hover, &:active {
         .badge {
-            color: $red;
+            color: var(--bs-red);
         }
     }
 }
 
 .btn-outline-success {
     .badge {
-        background: $green;
+        background: var(--bs-green);
     }
 
     &:hover, &:active {
         .badge {
-            color: $green;
+            color: var(--bs-green);
         }
     }
 }
 
 .btn-outline-warning {
     .badge {
-        background: $yellow;
-        color: $gray-900;
+        background: var(--bs-yellow);
+        color: var(--bs-gray-900);
     }
 
     &:hover, &:active {
         .badge {
-            background: $gray-900;
-            color: $yellow;
+            background: var(--bs-gray-900);
+            color: var(--bs-yellow);
         }
     }
 }
 
 .btn-outline-secondary {
     .badge {
-        background: $gray-600;
-        color: $white;
+        background: var(--bs-gray-600);
+        color: var(--bs-white);
     }
 
     &:hover, &:active {
         .badge {
-            background: $white;
-            color: $gray-600;
+            background: var(--bs-white);
+            color: var(--bs-gray-600);
         }
     }
 }
@@ -136,14 +131,13 @@
 // Solid buttons with badges
 .btn-primary, .btn-success, .btn-danger {
     .badge {
-        background: $white;
         background: var(--background);
     }
 }
 
 .btn-primary {
     .badge {
-        color: $primary;
+        color: var(--bs-primary);
     }
 
     &:hover, &:active, &:focus {
@@ -155,7 +149,7 @@
 
 .btn-success {
     .badge {
-        color: $green;
+        color: var(--bs-green);
     }
 
     &:hover, &:active, &:focus {
@@ -167,7 +161,7 @@
 
 .btn-danger {
     .badge {
-        color: $red;
+        color: var(--bs-red);
     }
 
     &:hover, &:active, &:focus {
@@ -179,8 +173,8 @@
 
 .btn-warning {
     .badge {
-        background: $gray-900;
-        color: $yellow;
+        background: var(--bs-gray-900);
+        color: var(--bs-yellow);
     }
 
     &:hover, &:active, &:focus {
@@ -192,8 +186,8 @@
 
 .btn-secondary {
     .badge {
-        background: $white;
-        color: $gray-600;
+        background: var(--bs-white);
+        color: var(--bs-gray-600);
     }
 
     &:hover, &:active, &:focus {
@@ -209,70 +203,76 @@
 }
 
 .btn-top-nav {
-    border: 1px solid $gray-300;
+    border: 1px solid var(--bs-gray-300);
     border: 1px solid var(--border-secondary);
-    color: $secondary;
+    color: var(--bs-secondary);
     font-weight: 400;
 
     &:focus, &:hover {
-        background: $primary;
+        background: var(--bs-primary);
 
         .fas {
-            color: $white;
+            color: var(--bs-white);
             color: var(--background);
         }
     }
 
     .fas {
-        color: $primary;
+        color: var(--bs-primary);
     }
 }
 
 .btn-theme {
-    border: 1px solid $gray-100;
     border: 1px solid var(--background);
-    background: $gray-100;
     background: var(--background);
-    color: $gray-900;
     color: var(--theme-opposite);
 
     &:not(:disabled):not(.disabled) {
         &:active, &.active, &:active:focus, &.active:focus {
-            color: $gray-900;
             color: var(--theme-opposite);
         }
     }
 
     &:hover, &:focus, &.focus, &:disabled, &.disabled {
-        color: $gray-900;
         color: var(--theme-opposite);
     }
 }
 
 .btn-outline-theme {
-    border: 1px solid $gray-100;
     border: 1px solid var(--background);
-    color: $gray-100;
     color: var(--background);
 
     &:not(:disabled):not(.disabled) {
         &:active, &.active, &:active:focus, &.active:focus {
-            border: 1px solid $gray-100;
             border: 1px solid var(--background);
-            background: $gray-100;
             background: var(--background);
-            color: $gray-900;
             color: var(--theme-opposite);
         }
     }
 
     &:hover, &:focus, &.focus, &:disabled, &.disabled {
-        border: 1px solid $gray-100;
         border: 1px solid var(--background);
-        background: $gray-100;
         background: var(--background);
-        color: $gray-900;
         color: var(--theme-opposite);
+    }
+}
+
+.btn-outline-theme-opposite {
+    border: 1px solid var(--text);
+    color: var(--text);
+
+    &:not(:disabled):not(.disabled) {
+        &:active, &.active, &:active:focus, &.active:focus {
+            border: 1px solid var(--text);
+            background: var(--text);
+            color: var(--background-light);
+        }
+    }
+
+    &:hover, &:focus, &.focus, &:disabled, &.disabled {
+        border: 1px solid var(--text);
+        background: var(--text);
+        color: var(--background-light);
     }
 }
 
@@ -306,10 +306,10 @@
 }
 
 .btn-twitch, .btn-linkedin, .btn-twitter, .btn-website, .btn-facebook, .btn-youtube {
-    color: $white;
+    color: var(--bs-white);
 
     &:focus, &:hover, &.active {
-        color: $white;
+        color: var(--bs-white);
     }
 }
 
@@ -325,7 +325,7 @@
 
 .btn-outline-twitch {
     &:focus, &:hover, &.active {
-        color: $white;
+        color: var(--bs-white);
     }
 }
 

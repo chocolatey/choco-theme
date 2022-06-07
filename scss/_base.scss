@@ -29,7 +29,7 @@ h1, h2, h3 {
 }
 
 h1, h2 {
-    color: $primary;
+    color: var(--bs-primary);
 }
 
 .dark-theme .light-theme, .light-theme .dark-theme {
@@ -48,7 +48,7 @@ h1, h2 {
     }
 }
 
-.chocolatey-docs h1:not(.title), .chocolatey-docs h2, 
+.chocolatey-docs h1:not(.title), .chocolatey-docs main:not(#noSidebar) h2,
 .chocolatey-blog #mainContent h1, .chocolatey-blog #mainContent h2,
 .sub-content h1, .sub-content h2, .breadcrumb,
 .chocolatey-license-portal h1.title, .border-bottom-primary-opacity

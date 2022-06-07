@@ -67,12 +67,12 @@
     }
 
     &.list-circle-success-fade > li::before {
-        color: $success;
+        color: var(--bs-success);
         background: rgba($success, 0.15);
     }
 
     &.list-circle-danger-fade > li::before {
-        color: $danger;
+        color: var(--bs-danger);
         background: rgba($danger, 0.15);
     }
 

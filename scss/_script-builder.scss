@@ -72,18 +72,18 @@
 
                 &.done {
                     color: var(--background);
-                    border-color: $success;
-                    background: $success;
+                    border-color: var(--bs-success);
+                    background: var(--bs-success);
 
                     &::after {
-                        border-left-color: $success;
+                        border-left-color: var(--bs-success);
                     }
                 }
 
                 &.active {
                     color: var(--background);
-                    border-color: $primary;
-                    background: $primary;
+                    border-color: var(--bs-primary);
+                    background: var(--bs-primary);
 
                     &::after {
                         border-left-color: $primary !important;

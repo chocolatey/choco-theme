@@ -92,14 +92,14 @@
                             }
 
                             .algolia-docsearch-suggestion--highlight {
-                                color: $primary;
+                                color: var(--bs-primary);
                                 background: none;
                             }
                         }
                     }
         
                     &.ds-cursor .algolia-docsearch-suggestion--wrapper {
-                        border-left: 3px solid $primary;
+                        border-left: 3px solid var(--bs-primary);
                         background: $primary-opacity-25 !important;
 
                         .algolia-docsearch-suggestion--content {

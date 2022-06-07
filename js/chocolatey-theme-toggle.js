@@ -22,6 +22,8 @@
                 } else {
                     localStorage.setItem('theme', 'light');
                 }
+
+                copyCheckboxValue(el);
             });
 
             function setSystemTheme(e) {
@@ -70,5 +72,16 @@
                 }
             }
         });
+
+        // Set checkbox value for all toggles
+        function copyCheckboxValue(el) {
+            for (var i of themeSelectorToggles) {
+                if (el.checked) {
+                    i.checked = true;
+                } else {
+                    i.checked = false;
+                }
+            }
+        }
     }
 })();
