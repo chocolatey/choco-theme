@@ -1,0 +1,23 @@
+{
+  "name": "chocolatey.org",
+  "packageManager": "yarn@3.2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chocolatey/chocolatey.org.git"
+  },
+  "author": "chocolatey",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/chocolatey/chocolatey.org/issues"
+  },
+  "homepage": "https://github.com/chocolatey/chocolatey.org#readme",
+  "devDependencies": {
+    "choco-theme": "git+https://github.com/chocolatey/choco-theme.git"
+  },
+  "resolutions": {
+    "glob-parent": "^6.0.1",
+    "yargs-parser": "^20.2.9",
+    "ansi-regex": "^5.0.1",
+    "set-value": "^4.0.1"
+  }
+}
