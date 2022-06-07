@@ -1,0 +1,105 @@
+@import "../../../node_modules/bootstrap/scss/_functions";
+// Variables
+$white:    #fffcf0;
+$gray-100: #e5e2d8;
+$gray-200: #cccac0;
+$gray-300: #b2b0a8;
+$gray-400: #999790;
+$gray-500: #7f7e78;
+$gray-600: #666560;
+$gray-700: #4c4b48;
+$gray-800: #333230;
+$gray-900: #191918;
+$black:    #0c0c0b;
+
+// Default Colors
+$blue:          #008d9c;
+$purple:        #9d3a74;
+$red:           #c02636;
+$pink:          #af2e51;
+$yellow:        #fba830;
+$yellow-light:  #b87000;
+$orange:        #eb4420;
+$green-light:   #007427;
+$green:         #019a4a;
+
+// Theme
+$primary:        $green;
+
+// Body & Font
+$body-bg:                 $gray-100;
+$font-family-sans-serif: 'Inter', sans-serif;
+$font-size-base:          1rem;
+$text-muted:              var(--text-code);
+
+// Links
+$link-decoration: none;
+
+// Code
+$code-color: var(--text);
+
+// Tooltips
+$tooltip-bg: $primary;
+$tooltip-border-radius:               0;
+$form-feedback-tooltip-border-radius: 0;
+
+// Popovers
+$popover-border-radius:             0;
+$popover-inner-border-radius:       0;
+
+// Cards
+$card-border-radius:                0;
+$card-inner-border-radius:          0;
+$card-border-color: var(--border);
+
+// Alerts
+$alert-border-radius:               0;
+$alert-border-width:                0;
+$alert-margin-bottom:               0;
+$alert-border-width:                0;
+$alert-bg-scale:                    0;
+$alert-color-scale:                 0;
+
+// Tabs
+$nav-tabs-link-active-bg:           $white;
+$nav-tabs-border-radius:            0;
+$nav-pills-border-radius:           0;
+
+// Buttons
+$btn-border-radius:                 0;
+$btn-border-radius-sm:              0;
+$btn-border-radius-lg:              0;
+$navbar-toggler-border-radius:      0;
+
+// Inputs
+$input-border-radius:               0;
+$input-border-radius-sm:            0;
+$input-border-radius-lg:            0;
+$form-check-input-border-radius:    0;
+$form-select-border-radius:         0;
+$form-select-border-radius-sm:      0;
+$form-select-border-radius-lg:      0;
+$dropdown-border-radius:            0;
+$dropdown-inner-border-radius:      0;
+
+// Breadcrumbs and Pagination
+$breadcrumb-border-radius:          0;
+$pagination-border-radius:          0;
+$pagination-border-radius-sm:       0;
+$pagination-border-radius-lg:       0;
+
+// Images
+$thumbnail-border-radius:           0;
+
+// List group
+$list-group-border-radius:          0;
+
+// Modals
+$modal-content-border-radius:       0;
+$modal-content-inner-border-radius: 0;
+
+// Toast
+$toast-border-radius:               0;
+
+// Navigation
+$nav-link-color:                    var(--text);

@@ -1,6 +1,5 @@
 .card {
     background: var(--background-light);
-    box-shadow: $box-shadow;
 
     &.card-index {
         height: 100%;
@@ -15,7 +14,7 @@
             top: 15px;
 
             i {
-                color: $primary;
+                color: var(--bs-primary);
             }
         }
 
@@ -32,7 +31,7 @@
             border: 1px solid var(--border);
 
             .circle {
-                background: $primary;
+                background: var(--bs-primary);
 
                 i {
                     color: $white;
@@ -41,7 +40,6 @@
         }
     }
 }
-
 
 a, .video-story {
         .card {
@@ -56,22 +54,15 @@ a, .video-story {
     }
 }
 
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-user-color-scheme]) {
-        .card {
-            box-shadow: unset;
-            border: 1px solid $gray-300;
-            border: 1px solid var(--border);
-        }
+.dark-theme body:not(.boxstarter-org) {
+    .card {
+        border: 1px solid var(--border);
     }
 }
 
-[data-user-color-scheme='dark'] {
+.light-theme body:not(.boxstarter-org) {
     .card {
-        box-shadow: unset;
-        border: 1px solid $gray-300;
-        border: 1px solid var(--border);
+        box-shadow: $card-box-shadow;
     }
 }
 

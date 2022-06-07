@@ -11,19 +11,19 @@ blockquote, .callout {
     }
 
     &.blockquote-warning, &.callout-warning {
-        border-color: $warning;
+        border-color: var(--bs-warning);
     }
 
     &.blockquote-danger, &.callout-danger {
-        border-color: $danger;
+        border-color: var(--bs-danger);
     }
 
     &.blockquote-primary, &.callout-primary {
-        border-color: $primary;
+        border-color: var(--bs-primary);
     }
 
     &.blockquote-success, &.callout-success {
-        border-color: $success;
+        border-color: var(--bs-success);
     }
 }
 

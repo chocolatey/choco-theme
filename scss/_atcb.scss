@@ -24,9 +24,9 @@
 .atcb_button {
     align-items: center;
     background-color: transparent;
-    border: 1px solid $primary;
+    border: 1px solid var(--bs-primary);
     border-radius: 0.25rem;
-    color: $primary;
+    color: var(--bs-primary);
     cursor: pointer;
     display: flex;
     font-weight: 700;
@@ -48,7 +48,7 @@
 .atcb_button:focus,
 .atcb_button:hover,
 .atcb_button.atcb_active {
-    background: $primary;
+    background: var(--bs-primary);
     color: var(--background);
 }
 
@@ -58,11 +58,11 @@
 }
 
 .atcb-success .atcb_button {
-    border: 1px solid $success;
-    color: $success;
+    border: 1px solid var(--bs-success);
+    color: var(--bs-success);
 
     &:focus, &:hover, &.atcb_active {
-        background: $success;
+        background: var(--bs-success);
         color: var(--background);
     }
 
@@ -89,7 +89,7 @@
     .atcb_button {
         padding: 0;
         border: 0;
-        color: $primary;
+        color: var(--bs-primary);
         
         &:hover, &:focus, &.atcb_active {
             background: transparent;
@@ -103,7 +103,7 @@
     }
 
     &.atcb-link-success .atcb_button {
-        color: $success;
+        color: var(--bs-success);
         
         &:hover, &:focus, &.atcb_active {
             color: if(color-contrast($success) == $color-contrast-light, shade-color($success, $link-shade-percentage), tint-color($success, $link-shade-percentage));

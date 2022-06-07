@@ -147,7 +147,7 @@ hr {
 }
 
 .border-hr, .border-hr-lg {
-    border: 3px solid $primary;
+    border: 3px solid var(--bs-primary);
     border-radius: $border-radius;
 }
 

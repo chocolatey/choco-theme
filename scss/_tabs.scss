@@ -19,7 +19,7 @@
             transition: .5s ease;
 
             &:hover, &.active {
-                border: 5px solid $primary;
+                border: 5px solid var(--bs-primary);
                 color: $dark;
                 //box-shadow: $box-shadow;
             }

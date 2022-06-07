@@ -37,9 +37,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: $white;
 	background: var(--background-light);
-	border: 1px solid $gray-300;
 	border: 1px solid var(--border);
 }
 
@@ -53,7 +51,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: $gray-600;
+	color: var(--text-code);
 	font-weight: normal;
 }
 
@@ -64,7 +62,6 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: $red;
 	color: var(--theme-red);
 }
 
@@ -75,26 +72,24 @@ pre[class*="language-"] {
 .token.builtin,
 .token.url,
 .token.inserted {
-	color: $primary;
+	color: var(--bs-primary);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: $orange;
 	color: var(--theme-orange);
 }
 
 .token.function,
 .token.class-name {
-	color: $purple;
 	color: var(--theme-purple);
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-	color: $green;
+	color: var(--bs-green);
 }
 
 .token.important,
@@ -128,7 +123,7 @@ pre[class*="language-"].line-numbers > code {
 	left: -3.8em;
 	width: 3em; /* works for line-numbers below 1000 lines */
 	letter-spacing: -1px;
-	border-right: 1px solid $primary;
+	border-right: 1px solid var(--bs-primary);
 
 	-webkit-user-select: none;
 	-moz-user-select: none;

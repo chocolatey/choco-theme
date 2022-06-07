@@ -7,7 +7,7 @@
         width: 60px;
         padding: 5px;
         border-radius: .25rem;
-        background:$primary;
+        background:var(--bs-primary);
         color: $gray-100;
         color: var(--background);
         text-align: center;
@@ -20,7 +20,7 @@
         display: none;
         content: "";
         position: absolute;
-        border: 10px solid $primary;
+        border: 10px solid var(--bs-primary);
     }
 
     &.tt-start, &.tt-end {
@@ -40,7 +40,7 @@
         }
 
         &:after {
-            border-color: transparent transparent transparent $primary;
+            border-color: transparent transparent transparent var(--bs-primary);
         }
     }
 
@@ -54,7 +54,7 @@
         }
 
         &:after {
-            border-color: transparent $primary transparent transparent;
+            border-color: transparent var(--bs-primary) transparent transparent;
         }
     }
 
@@ -75,7 +75,7 @@
         }
 
         &:after {
-            border-color: $primary transparent transparent transparent;
+            border-color: var(--bs-primary) transparent transparent transparent;
         }
     }
 
@@ -89,7 +89,7 @@
         }
 
         &:after {
-            border-color: transparent transparent $primary transparent;
+            border-color: transparent transparent var(--bs-primary) transparent;
         }
     }
 

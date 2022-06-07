@@ -120,7 +120,7 @@
 // Easy MDE Editor
 .EasyMDEContainer {
     .editor-toolbar {
-        border-color: $primary;
+        border-color: var(--bs-primary);
 
         button {
             color: var(--text);
@@ -128,7 +128,7 @@
 
             &.active, &:hover {
                 background: none;
-                border-color: $primary;
+                border-color: var(--bs-primary);
             }
         }
 
@@ -146,7 +146,7 @@
     }
 
     .CodeMirror {
-        border-color: $primary;
+        border-color: var(--bs-primary);
         background: var(--background-light);
         color: var(--text);
 
@@ -177,7 +177,7 @@
     }
 
     .editor-preview-side {
-        border-color: $primary;
+        border-color: var(--bs-primary);
     }
 }
 

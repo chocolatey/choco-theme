@@ -36,7 +36,7 @@
         > :first-child {
             font-size: $h3-font-size;
             font-weight: bold;
-            color: $primary;
+            color: var(--bs-primary);
         }
 
         * {
@@ -45,7 +45,7 @@
     }
 
     &.countdown-container-success  > div > :first-child {
-        color: $success;
+        color: var(--bs-success);
     }
 }
 
@@ -57,7 +57,7 @@
     border-radius: .25rem;
 
     div:first-child {
-        background: $danger;
+        background: var(--bs-danger);
         color: $white;
         padding: .25rem 0;
         border-top-left-radius: .25rem;

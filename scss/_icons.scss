@@ -93,15 +93,15 @@
         }
 
         .status-failing, .status-flagged-error, .status-investigate-none, .status-scannerexempted-none, .status-investigate-unknown, .status-scannerexempted-unknown, .status-investigate-note {
-            background: $red;
+            background: var(--bs-red);
         }
 
         .status-pending, .status-flagged-note, .status-pending-none, .status-pending-unknown {
-            background: $yellow;
+            background: var(--bs-yellow);
         }
 
         .status-passing, .status-notflagged-none, .status-notflagged-unknown {
-            background: $green;
+            background: var(--bs-green);
         }
 
         .status-exempted, .status-unknown, .status-exempted-none, .status-unknown-none, .status-exempted-unknown, .status-unknown-unknown, .status-exempted-note {

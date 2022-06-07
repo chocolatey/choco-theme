@@ -9,6 +9,8 @@
 
 @each $color, $value in $theme-colors {
     .alert-#{$color} {
+        background: var(--bs-#{$color});
+
         a {
             font-weight: bold;
 
@@ -16,6 +18,7 @@
                 text-decoration: underline;
             }
         }
+        
         .btn-close {
             text-shadow: none;
         }
