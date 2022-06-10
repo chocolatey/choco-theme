@@ -36,41 +36,6 @@
     </div>
 </div>
 <hr />
-<div class="text-center">
-    <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
-    </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-06-09T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
-    <p class="text-start">Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.</p>
-    <div class="d-flex align-items-center justify-content-center flex-wrap">
-        <div class="mt-2 mx-1">
-            <div class="atcb atcb-twitch" style="display:none;">
-            {
-                "name":"Chocolatey For Business. In Azure. In One Click.",
-                "description":"Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.",
-                "location":"https://www.twitch.tv/chocolateysoftware",
-                "startDate":"2022-06-09",
-                "endDate":"2022-06-09",
-                "startTime":"16:00",
-                "endTime":"17:00",
-                "options":[
-                    "Apple",
-                    "Google",
-                    "iCal",
-                    "Microsoft365",
-                    "Outlook.com",
-                    "Yahoo"
-                ],
-                "trigger":"click",
-                "inline":true,
-                "iCalFileName":"twitch-azure"
-            }
-            </div>
-        </div>
-        <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank" class="btn btn-twitch mt-2 mx-1"><i class="fab fa-twitch"></i> Follow on Twitch</a>
-    </div>
-</div>
-<hr />
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
@@ -92,17 +57,7 @@
         <p class="text-start">
             The 12 Days of Chocolatey livestream event may be over, but we've archived all the videos for you to watch again!
         </p>
-        <a href="https://chocolatey.org/resources/12-days-of-chocolatey" class="btn btn-primary btn-width mt-2">Watch on-Demand</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <a href="https://chocolatey.org/events/chocolatey-deployments">
-            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-02.jpg" alt="Webinar: Chocolatey Deployments - Easily Orchestrate Amazing Things!" />
-        </a>
-        <p><strong>Webinar Replay from<br />Tuesday, 23 June 2020</strong></p>
-        <p class="text-start">Chocolatey Central Management now includes the premiere feature of managing endpoints through a Chocolatey-centered solution aka Deployments. We are excited to share what Deployments is all about!</p>
-        <a href="https://chocolatey.org/events/chocolatey-deployments" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
-        <a href="https://chocolatey.zoom.us/webinar/register/WN_MPT5b34zQnud8R0nGgpe5A" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
+        <a href="https://chocolatey.org/resources/12-days-of-chocolatey" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
         <hr />
     </div>
     <div class="text-center">
@@ -179,7 +134,19 @@
         <p><strong>Twitch Stream from<br />Thursday, 5 May 2022</strong></p>
         <p class="text-start">The Chocolatey Community is close to the hearts of many of the Chocolatey Team. Join Gary, Kim, and Paul if you want to find out more about it, what we do, and how you can get involved.</p>
         <div class="d-flex align-items-center justify-content-center flex-wrap">
-            <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" class="btn btn-outline-twitch mt-2 mx-1">Learn More</a>
+            <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" class="btn btn-outline-twitch mt-2 mx-1">Watch On-Demand</a>
+            <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank" class="btn btn-twitch mt-2 mx-1"><i class="fab fa-twitch"></i> Follow on Twitch</a>
+        </div>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
+            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
+        </a>
+        <p><strong>Twitch Stream from<br />Thursday, 9 June 2022</strong></p>
+        <p class="text-start">Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.</p>
+        <div class="d-flex align-items-center justify-content-center flex-wrap">
+            <a href="https://chocolatey.org/events/chocolatey-for-business-in-azure" class="btn btn-outline-twitch mt-2 mx-1">Watch On-Demand</a>
             <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank" class="btn btn-twitch mt-2 mx-1"><i class="fab fa-twitch"></i> Follow on Twitch</a>
         </div>
         <hr />
