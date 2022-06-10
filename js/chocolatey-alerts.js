@@ -27,12 +27,14 @@
             cookieNoticeAlert.classList.remove('d-none');
         }
     
-        cookieNoticeAlert.querySelector('button').addEventListener('click', function() {
-            if (~location.hostname.indexOf('chocolatey.org')) {
-                document.cookie = cookieNoticeName + '=true; ' + setCookieExpirationNever() + 'path=/; domain=chocolatey.org;';
-            } else {
-                document.cookie = cookieNoticeName + '=true;' + setCookieExpirationNever() + 'path=/;';
-            }
-        }, false);
+        cookieNoticeAlert.querySelectorAll('button').forEach(function (el) {
+            el.addEventListener('click', function() {
+                if (~location.hostname.indexOf('chocolatey.org')) {
+                    document.cookie = cookieNoticeName + '=true; ' + setCookieExpirationNever() + 'path=/; domain=chocolatey.org;';
+                } else {
+                    document.cookie = cookieNoticeName + '=true;' + setCookieExpirationNever() + 'path=/;';
+                }
+            }, false);
+        });
     }
 })();
