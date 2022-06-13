@@ -39,7 +39,7 @@
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
         </a>
         <p><strong>Webinar Replay from<br />Thursday, 02 September 2021</strong></p>
         <p class="text-start">
@@ -51,7 +51,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/resources/12-days-of-chocolatey">
-            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-06.jpg" alt="12 Days of Chocolatey" />
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-06.jpg" alt="12 Days of Chocolatey" />
         </a>
         <p><strong>Event from<br />December 1 - December 16 2020</strong></p>
         <p class="text-start">
@@ -75,7 +75,7 @@
     </div>
     <div class="text-center">
         <a href="https://www.youtube.com/watch?v=cPcEmT1OWDs&list=PLGvGJzqY88slekBOxwDi865ydvRL8OEqF&index=9" rel="noreferrer" target="_blank">
-            <img class="border mb-3 border" src="https://chocolatey.org/assets/images/events/01-07.jpg" alt="Accelerate Automation of Windows with Ansible + Chocolatey" />
+            <img class="border mb-3 border" src="https://img.chocolatey.org/events/01-07.jpg" alt="Accelerate Automation of Windows with Ansible + Chocolatey" />
         </a>
         <p><strong>Webinar Replay from<br />Thursday, 10 December 2020</strong></p>
         <p class="text-start">
@@ -88,7 +88,7 @@
     </div>
     <div class="text-center">
         <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/04-00.jpg" alt="Chocolatey Explained - Monthly Twitch Stream" />
+            <img class="border mb-3" src="https://img.chocolatey.org/events/04-00.jpg" alt="Chocolatey Explained - Monthly Twitch Stream" />
         </a>
         <p class="convert-utc-to-local fw-bold" data-event-utc='2022-04-07T17:00:00Z' data-event-occurrence="1" data-event-include-break="true"></p>
         <p class="text-start">Join us on the first Thursday of every month for "Chocolatey Explained" where we will cover different Chocolatey topics in detail.</p>
@@ -105,7 +105,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/find-it-add-it-install-it-with-script-builder" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-12.jpg" alt="Find It, Add It, Install It with Script Builder" />
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-12.jpg" alt="Find It, Add It, Install It with Script Builder" />
         </a>
         <p><strong>Twitch Stream from<br />Thursday, 7 April 2022</strong></p>
         <p class="text-start">Script Builder allows you to bulk install Chocolatey packages in just a few clicks. Just add packages to Script Builder and choose your integration method to get started!</p>
@@ -117,7 +117,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
         </a>
         <p><strong>Webinar Replay from<br />Wednesday, 30 March 2022</strong></p>
         <p class="text-start">At Chocolatey Software we strive for simple, and teaching others. Let us teach you just how simple it could be to keep your 3rd party applications updated across your devices, all with Intune!</p>
@@ -129,7 +129,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-15.jpg" alt="Chocolatey Community Coffee Break" />
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-15.jpg" alt="Chocolatey Community Coffee Break" />
         </a>
         <p><strong>Twitch Stream from<br />Thursday, 5 May 2022</strong></p>
         <p class="text-start">The Chocolatey Community is close to the hearts of many of the Chocolatey Team. Join Gary, Kim, and Paul if you want to find out more about it, what we do, and how you can get involved.</p>
@@ -141,7 +141,7 @@
     </div>
     <div class="text-center">
         <a href="https://www.twitch.tv/chocolateysoftware" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://chocolatey.org/assets/images/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
         </a>
         <p><strong>Twitch Stream from<br />Thursday, 9 June 2022</strong></p>
         <p class="text-start">Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.</p>
