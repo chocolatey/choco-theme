@@ -1,7 +1,7 @@
 (function() {
     var themeSelectorToggles = document.querySelectorAll('.theme-toggle');
 
-    if (themeSelectorToggles && !/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+    if (themeSelectorToggles) {
         themeSelectorToggles.forEach(function (el) {
             var htmlRoot = document.querySelector('html'),
                 themeQuery = window.matchMedia('(prefers-color-scheme: dark)'),
