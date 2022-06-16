@@ -1,0 +1,174 @@
+.chocolatey-zendesk {
+    // Top header navigation
+    header.header {
+        width: 100%;
+        max-width: unset;
+        background: var(--background-light);
+        padding: 0 5%;
+
+        // Username dropdown
+        .user-nav-list {
+            display: flex;
+            margin-bottom: 0;
+        }
+
+        .user-info .dropdown-toggle::after {
+            display: none;
+        }
+    }
+
+    .hero {
+        background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width: 767px) {
+        .hero {
+            height: 150px;
+        }
+    }
+
+    // Theme toggle
+    .sun-icon:before {
+        content: '';
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        background: url("/guide/settings/sun-solid.svg");
+    }
+
+    .moon-icon:before {
+        content: '';
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        background: url("/guide/settings/moon-solid.svg");
+    }
+
+    // General links
+    .article-list-item a {
+        color: var(--bs-primary);
+    }
+
+    // Dropdowns
+    .dropdown-menu {
+        [role="menuitem"] {
+            color: var(--text);
+
+            &:hover {
+                color: var(--text);
+                background: var(--background);
+            }
+        }
+
+        [role="separator"] {
+            border-bottom: 1px solid var(--border);
+        }
+    }
+
+    // Cards
+    .blocks-item {
+        background: var(--background-light);
+        border-radius: 0;
+        border: 0;
+    }
+
+    &.dark-theme .blocks-item {
+        border: 1px solid var(--border);
+    }
+
+    &.light-theme .blocks-item {
+        box-shadow: $box-shadow;
+    }
+
+    // Links inside cards
+    .blocks-item-link:visited, .blocks-item-link:hover, .blocks-item-link:active,
+    .blocks-item:hover *, .blocks-item:focus *, .blocks-item:active * {
+        color: $primary-400;
+    }
+
+    // Lists
+    ul {
+        padding-left: 0;
+    }
+
+    // Override with text color
+    .attachments .attachment-item .attachment-icon,
+    .recent-activity-item-meta {
+        color: var(--text);
+    }
+    
+    // Buttons
+    .button, .split-button button, .section-subscribe button, 
+    .article-subscribe button, .community-follow button, 
+    .requests-table-toolbar .organization-subscribe button, 
+    .subscriptions-subscribe button, .pagination-next-link, 
+    .pagination-prev-link, .pagination-first-link, .pagination-last-link {
+        border-radius: .25rem;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.5;
+        padding: 0.375rem 0.75rem;
+
+        &:hover {
+            color: var(--bs-gray-900);
+        }
+    }
+
+    .button-large, input[type="submit"] {
+        color: var(--bs-gray-900);
+    }
+
+    // Seach input
+    .search input[type="search"], .search {
+        color: var(--text);
+        border-radius: .25rem;
+    }
+
+    .search {
+        border: 1px solid transparent;
+        background-color: transparent;
+
+        input[type="search"] {
+            border: 1px solid var(--bs-primary);
+            background-color: var(--background-light);
+
+            &:focus {
+                box-shadow: 0 0 0 0.25rem rgba(92, 159, 216, .25);
+            }
+        }
+
+        &.search-has-value {
+            input[type="search"] {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+                border-right-color: transparent;
+            }
+        }
+
+        .clear-button {
+            border-bottom-right-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            border: 1px solid var(--bs-primary);
+            background: var(--bs-primary);
+            color: var(--bs-gray-900);
+        }
+    }
+
+    // Footer
+    footer.footer {
+        background: var(--background-light);
+
+        .footer-inner {
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            max-width: unset;
+            padding: 0 5%;
+            font-size: $font-size-sm;
+
+            a {
+                color: var(--text);
+            }
+        }
+    }
+}

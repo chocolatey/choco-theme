@@ -4,41 +4,9 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
 // FontAwesome Free
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "fontawesome";
 
 // Custom Styles
-@import "base";
-@import "theme-toggle";
-@import "top-navigation";
-@import "left-navigation";
-@import "global-navigation";
-@import "search";
-@import "authentication";
-@import "right-navigation";
-@import "utilities";
-@import "placeholders";
-@import "cards";
-@import "backgrounds-headers";
-@import "text";
-@import "carousels";
-@import "alerts";
-@import "blockquotes-callouts";
-@import "buttons-badges";
-@import "prism";
+@import "styles";
 @import "icons";
-@import "inputs";
-@import "packages";
-@import "lists";
-@import "dividers";
-@import "curve";
-@import "ribbons";
-@import "collapsing-sidebar";
-@import "tooltips";
-@import "pagination";
-@import "accordions";
-@import "tabs";
-@import "atcb";
 @import "boxstarterorg";
