@@ -85,6 +85,20 @@
     }
 }
 
+.atcb-theme-opposite .atcb_button {
+    border: 1px solid var(--text);
+    color: var(--text);
+
+    &:focus, &:hover, &.atcb_active {
+        background: var(--text);
+        color: var(--background-light);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba($secondary, .25);
+    }
+}
+
 .atcb-link {
     .atcb_button {
         padding: 0;
