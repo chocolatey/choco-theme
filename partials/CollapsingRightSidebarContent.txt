@@ -38,7 +38,7 @@
 <hr />
 <div class="text-center">
     <a href="https://chocolatey.org/events/unboxing-the-third-major-release-of-boxstarter" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://img.chocolatey.org/events/01-16.jpg" alt="Unboxing The Third Marjor Release of Boxstarter" />
+        <img class="border mb-3" src="https://img.chocolatey.org/events/01-16.jpg" alt="Unboxing The Third Major Release of Boxstarter" />
     </a>
     <p class="convert-utc-to-local fw-bold" data-event-utc="2022-07-14T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
     <p class="text-start">Boxstarter version 3.0 marks the beginning of a new era of Boxstarter and Chocolatey. Join Gary, Paul, and Manfred as they unbox the best features of Boxstarter live.</p>
@@ -47,7 +47,7 @@
         <div class="mt-2 mx-1">
             <div class="atcb" style="display:none;">
             {
-                "name":"Unboxing The Third Marjor Release of Boxstarter",
+                "name":"Unboxing The Third Major Release of Boxstarter",
                 "description":"Boxstarter version 3.0 marks the beginning of a new era of Boxstarter and Chocolatey. Join Gary, Paul, and Manfred as they unbox the best features of Boxstarter live.",
                 "location":"https://chocolatey.org/events/unboxing-the-third-major-release-of-boxstarter",
                 "startDate":"2022-07-14",
