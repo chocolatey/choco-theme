@@ -97,7 +97,7 @@
     });
 
     // Package Filtering
-    var packageFilters = document.querySelectorAll('.package-filter'),
+    /*var packageFilters = document.querySelectorAll('.package-filter'),
         packageSearchTerms = document.querySelectorAll('.selected-search-term');
 
     if (packageFilters) {
@@ -114,7 +114,11 @@
 
     function submitPackageFilterForm(filter) {
         filter.closest('form').submit();
-    }
+    }*/
+
+    jQuery("#sortOrder,#prerelease,#moderatorQueue,#moderationStatus,.selected-search-term").change(function () {
+        jQuery(this).closest("form").submit();
+    });
     
     // Prism for Description section
     var descriptionCode = document.querySelectorAll('#description pre');
