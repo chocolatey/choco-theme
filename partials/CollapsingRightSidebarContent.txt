@@ -75,7 +75,7 @@
     <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-06-28T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
+    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-07-21T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
     <p class="text-start">The Chocolatey Community is close to the hearts of the Chocolatey Team. Join us on Discord and meet the Chocolatey Team, find out more about the Chocolatey Community, what we do, and how you can get involved.</p>
     <div class="d-flex align-items-center justify-content-center flex-wrap">
         <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
@@ -85,8 +85,8 @@
                 "name":"Chocolatey Community Coffee Break",
                 "description":"The Chocolatey Community is close to the hearts of the Chocolatey Team. Join us on Discord and meet the Chocolatey Team, find out more about the Chocolatey Community, what we do, and how you can get involved.",
                 "location":"https://chocolatey.org/events/chocolatey-community-coffee-break",
-                "startDate":"2022-06-28",
-                "endDate":"2022-06-28",
+                "startDate":"2022-07-21",
+                "endDate":"2022-07-21",
                 "startTime":"16:00",
                 "endTime":"17:00",
                 "options":[
@@ -154,14 +154,6 @@
         </p>
         <a href="https://chocolatey.org/events/chocolatey-and-ansible" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
         <a href="https://www.youtube.com/watch?v=cPcEmT1OWDs&list=PLGvGJzqY88slekBOxwDi865ydvRL8OEqF&index=9" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <img class="border mb-3" src="https://img.chocolatey.org/events/04-00.jpg" alt="Chocolatey Explained - Monthly Twitch Stream" />
-        <p class="convert-utc-to-local fw-bold" data-event-utc='2022-04-07T17:00:00Z' data-event-occurrence="1" data-event-include-break="true"></p>
-        <p class="text-start">Join us on the first Thursday of every month for "Chocolatey Explained" where we will cover different Chocolatey topics in detail.</p>
-        <a href="https://www.twitch.tv/chocolateysoftware" class="btn btn-twitch btn-width mt-2" target="_blank" rel="nofollow"><i class="fab fa-twitch"></i> Follow on Twitch</a>
-        <a href="https://www.youtube.com/chocolateysoftware" class="btn btn-youtube btn-width mt-2" target="_blank" rel="nofollow"><i class="fab fa-youtube"></i> Subscribe on YouTube</a>
         <hr />
     </div>
     <div class="text-center">
