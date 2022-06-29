@@ -28,20 +28,22 @@
     }
 
     // Theme toggle
-    .sun-icon:before {
+    .sun-icon:before, .moon-icon:before {
         content: '';
         position: absolute;
         height: 15px;
         width: 15px;
-        background: url("/guide/settings/sun-solid.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .sun-icon:before {
+        background-image: url("$sun_solid");
     }
 
     .moon-icon:before {
-        content: '';
-        position: absolute;
-        height: 15px;
-        width: 15px;
-        background: url("/guide/settings/moon-solid.svg");
+        background-image: url("$moon_solid");
     }
 
     // General links
