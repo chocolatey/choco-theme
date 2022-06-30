@@ -15,6 +15,39 @@
         .user-info .dropdown-toggle::after {
             display: none;
         }
+
+        .nav-wrapper-mobile {
+            .menu-button-mobile .icon-menu, .menu-list-mobile-items a {
+                color: var(--text);
+            }
+
+            .menu-list-mobile-items a:hover, .menu-button-mobile[aria-expanded="true"] .icon-menu {
+                background: none;
+            }
+
+            .menu-list-mobile {
+                background: var(--background-light);
+                border: 0;
+            }
+
+            .menu-list-mobile-items .nav-divider {
+                border-color: var(--border);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .nav-wrapper-desktop {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .nav-wrapper-mobile {
+                display: flex;
+                align-items: center;
+            }
+        }
     }
 
     .hero {
@@ -68,18 +101,22 @@
     }
 
     // Cards
-    .blocks-item {
+    .blocks-item, .category-content .section {
         background: var(--background-light);
         border-radius: 0;
         border: 0;
     }
 
-    &.dark-theme .blocks-item {
-        border: 1px solid var(--border);
+    &.dark-theme {
+        .blocks-item, .category-content .section {
+            border: 1px solid var(--border);
+        }
     }
 
-    &.light-theme .blocks-item {
-        box-shadow: $box-shadow;
+    &.light-theme {
+        .blocks-item, .category-content .section {
+            box-shadow: $box-shadow;
+        }
     }
 
     // Links inside cards
@@ -94,13 +131,12 @@
     }
 
     // Override with text color
-    .attachments .attachment-item .attachment-icon,
-    .recent-activity-item-meta {
+    .attachments .attachment-item .attachment-icon, .recent-activity-item-meta {
         color: var(--text);
     }
     
     // Buttons
-    .button, .split-button button, .section-subscribe button, 
+    .button, .section-subscribe button, 
     .article-subscribe button, .community-follow button, 
     .requests-table-toolbar .organization-subscribe button, 
     .subscriptions-subscribe button, .pagination-next-link, 
@@ -156,6 +192,42 @@
         }
     }
 
+    // Catagory & Article pages
+    .category-container {
+        display: block;
+
+        .category-content {
+            .page-header {
+                margin-bottom: 40px;
+            }
+    
+            .section {
+                padding: 1rem;
+
+                .article-list {
+                    margin-bottom: 0;
+                }
+
+                .section-tree-title a {
+                    color: var(--text);
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .article-container {
+            .article {
+                flex: 1 0 83%;
+                max-width: 83%;
+            }
+        }
+    }
+        // Section pages
+    .section-container {
+        display: block;
+    }
+
     // Footer
     footer.footer {
         background: var(--background-light);
@@ -172,5 +244,30 @@
                 color: var(--text);
             }
         }
+    }
+
+    // Profile
+    .profile-nav, .profile-header, .my-activities-nav {
+        background: var(--background-light);
+    }
+
+    .collapsible-nav-list li a {
+        color: var(--text);
+    }
+
+    .collapsible-nav-list li[aria-selected="true"] a, .collapsible-nav-list li.current a {
+        color: var(--bs-primary);
+    }
+
+    .profile-private-badge {
+        flex-basis: 100%;
+    }
+
+    .my-activities-table th:first-child, .my-activities-table td:first-child {
+        padding-left: .5rem;
+    }
+
+    .my-activities-header {
+        margin-top: 20px;
     }
 }
