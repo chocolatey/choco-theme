@@ -40,35 +40,9 @@
     <a href="https://chocolatey.org/events/unboxing-the-third-major-release-of-boxstarter" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-16.jpg" alt="Unboxing The Third Major Release of Boxstarter" />
     </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-07-14T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
-    <p class="text-start">Boxstarter version 3.0 marks the beginning of a new era of Boxstarter and Chocolatey. Join Gary, Paul, and Manfred as they unbox the best features of Boxstarter live.</p>
-    <div class="d-flex align-items-center justify-content-center flex-wrap">
-        <a href="https://chocolatey.org/events/unboxing-the-third-major-release-of-boxstarter" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
-        <div class="mt-2 mx-1">
-            <div class="atcb" style="display:none;">
-            {
-                "name":"Unboxing The Third Major Release of Boxstarter",
-                "description":"Boxstarter version 3.0 marks the beginning of a new era of Boxstarter and Chocolatey. Join Gary, Paul, and Manfred as they unbox the best features of Boxstarter live.",
-                "location":"https://chocolatey.org/events/unboxing-the-third-major-release-of-boxstarter",
-                "startDate":"2022-07-14",
-                "endDate":"2022-07-14",
-                "startTime":"16:00",
-                "endTime":"17:00",
-                "options":[
-                    "Apple",
-                    "Google",
-                    "iCal",
-                    "Microsoft365",
-                    "Outlook.com",
-                    "Yahoo"
-                ],
-                "trigger":"click",
-                "inline":true,
-                "iCalFileName":"unboxing-the-third-major-release-of-boxstarter"
-            }
-            </div>
-        </div>
-    </div>
+    <p><strong>Livestream from<br />Thursday, 14 July 2022</strong></p>
+    <p class="text-start">Boxstarter version 3.0 marks the beginning of a new era of Boxstarter and Chocolatey. Join Gary, Paul, and Manfred as they unbox the best features of Boxstarter.</p>
+    <a href="https://chocolatey.org/events/unboxing-the-third-major-release-of-boxstarter" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
 </div>
 <hr />
 <div class="text-center">
@@ -168,28 +142,25 @@
         <a href="https://chocolatey.org/events/find-it-add-it-install-it-with-script-builder" rel="noreferrer" target="_blank">
             <img class="border mb-3" src="https://img.chocolatey.org/events/01-12.jpg" alt="Find It, Add It, Install It with Script Builder" />
         </a>
-        <p><strong>Twitch Stream from<br />Thursday, 7 April 2022</strong></p>
+        <p><strong>Livestream from<br />Thursday, 7 April 2022</strong></p>
         <p class="text-start">Script Builder allows you to bulk install Chocolatey packages in just a few clicks. Just add packages to Script Builder and choose your integration method to get started!</p>
         <a href="https://chocolatey.org/events/find-it-add-it-install-it-with-script-builder" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
     </div>
     <div class="text-center">
-        <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank">
+        <a href="https://chocolatey.org/events/chocolatey-and-intune-overview" rel="noreferrer" target="_blank">
             <img class="border mb-3" src="https://img.chocolatey.org/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
         </a>
         <p><strong>Webinar Replay from<br />Wednesday, 30 March 2022</strong></p>
         <p class="text-start">At Chocolatey Software we strive for simple, and teaching others. Let us teach you just how simple it could be to keep your 3rd party applications updated across your devices, all with Intune!</p>
-        <div class="d-flex align-items-center justify-content-center flex-wrap">
-            <a href="https://chocolatey.org/events/chocolatey-and-intune-overview" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
-            <a href="https://chocolatey.zoom.us/webinar/register/3616467726065/WN_JHQYiUcMTTShJ_F_cDqPPw" rel="noreferrer" target="_blank" class="btn btn-primary btn-sidebar mt-2 mx-1">Watch On-Demand</a>
-        </div>
+        <a href="https://chocolatey.org/events/chocolatey-and-intune-overview" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-for-business-in-azure" rel="noreferrer" target="_blank">
             <img class="border mb-3" src="https://img.chocolatey.org/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
         </a>
-        <p><strong>Twitch Stream from<br />Thursday, 9 June 2022</strong></p>
+        <p><strong>Livestream from<br />Thursday, 9 June 2022</strong></p>
         <p class="text-start">Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.</p>
         <a href="https://chocolatey.org/events/chocolatey-for-business-in-azure" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
