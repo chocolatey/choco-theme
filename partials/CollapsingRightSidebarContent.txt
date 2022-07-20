@@ -106,7 +106,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/resources/features">
-            <img class="border mb-3" src="https://chocolatey.org/assets/images/videos/04-01.jpg" alt="Chocolatey for Business Feature Video Series" />
+            <img class="border mb-3" src="https://img.chocolatey.org/videos/04-01.jpg" alt="Chocolatey for Business Feature Video Series" />
         </a>
         <p class="mb-3"><strong>Chocolatey for Business Feature Video Series</strong></p>
         <p class="text-start">
