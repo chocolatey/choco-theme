@@ -7,7 +7,7 @@
     "url": "git+https://github.com/chocolatey/choco-theme.git"
   },
   "author": "chocolatey",
-  "license": "Apache-2.0",
+  "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/chocolatey/choco-theme/issues"
   },
