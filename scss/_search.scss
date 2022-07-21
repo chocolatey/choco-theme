@@ -144,7 +144,7 @@
             transform: translate(0, -50%);
 
             .badge-key:not(:last-child) {
-                margin-right: $spacer / 4;
+                margin-right: calc($spacer / 4);
             }
         }
 

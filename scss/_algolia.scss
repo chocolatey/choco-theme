@@ -23,12 +23,12 @@
                     .algolia-docsearch-suggestion--wrapper {
                         border-bottom: 1px solid $gray-300;
                         border-bottom: 1px solid var(--border);
-                        padding: $spacer / 2;
+                        padding: calc($spacer / 2);
                     }
                 }
 
                 .ds-suggestions {
-                    padding: $spacer / 2;
+                    padding: calc($spacer / 2);
                     border-bottom: 1px solid $gray-300;
                     border-bottom: 1px solid var(--border);
                     margin-top: 0;
@@ -51,7 +51,7 @@
                         .algolia-docsearch-suggestion--wrapper {
                             display: flex;
                             flex-direction: column;
-                            padding: $spacer / 2 $spacer;
+                            padding: calc($spacer / 2) $spacer;
                             border-left: 3px solid transparent;
                         
                             .algolia-docsearch-suggestion--subcategory-column, .algolia-docsearch-suggestion--content {
@@ -88,7 +88,7 @@
                             .algolia-docsearch-suggestion--text {
                                 color: $gray-800;
                                 color: var(--text-code);
-                                margin: $spacer / 2 0;
+                                margin: calc($spacer / 2) 0;
                             }
 
                             .algolia-docsearch-suggestion--highlight {
@@ -124,7 +124,7 @@
 
     .algolia-docsearch-footer {
         position: relative;
-        margin: $spacer / 2 0;
+        margin: calc($spacer / 2) 0;
         width: 100%;
         background: $white;
         background: var(--background);

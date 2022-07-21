@@ -160,7 +160,7 @@
     .form-check {
         display: inline-block;
         min-height: $spacer;
-        margin-right: -$spacer / 2;
+        margin-right: -.5rem;;
 
         .form-check-input {
             opacity: 1;
@@ -189,7 +189,7 @@
 
         li {
             &:not(:first-child) {
-                margin-top: $spacer / 2;
+                margin-top: calc($spacer / 2);
             }
 
             padding-left: $spacer;

@@ -4,7 +4,7 @@ header {
 }
 
 #topNav {
-    padding: $spacer / 2 0;
+    padding: calc($spacer / 2) 0;
     background: $white;
     background: var(--background-light);
 

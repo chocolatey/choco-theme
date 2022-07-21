@@ -16,7 +16,7 @@ body > .container-fluid {
 
 h1, h2, h3, .display-1, .display-2, .display-3, .display-4 {
     &:not(:first-child) {
-        margin-top: $spacer * 2;
+        margin-top: calc($spacer * 2);
     }
 }
 
@@ -53,7 +53,7 @@ h1, h2 {
 .sub-content h1, .sub-content h2, .breadcrumb,
 .chocolatey-license-portal h1.title, .border-bottom-primary-opacity
 {
-    padding-bottom: $spacer / 2;
+    padding-bottom: calc($spacer / 2);
     border-bottom: 3px solid $primary-opacity-25;
 }
 
@@ -189,7 +189,7 @@ img, svg {
 }
 
 .nav-tabs .nav-item:not(:last-child) {
-    margin-right: $spacer / 2;
+    margin-right: calc($spacer / 2);
 }
 
 .nav-tabs .nav-link {
@@ -233,11 +233,11 @@ main {
 @include media-breakpoint-up(xl) {
     .chocolatey-docs #mainContent {
         h2:first-of-type {
-            margin-top: $spacer * 2;
+            margin-top: calc($spacer * 2);
         }
     }
 
     .breadcrumb, .chocolatey-license-portal h1.title {
-        margin-bottom: $spacer * 2;
+        margin-bottom: calc($spacer * 2);
     }
 }

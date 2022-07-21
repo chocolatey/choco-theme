@@ -38,20 +38,20 @@
                         }
         
                         &:not(.nav-link-collapse) {
-                            padding: $spacer / 2 $spacer $spacer / 2 $spacer * 2;
+                            padding: calc($spacer / 2) $spacer calc($spacer / 2) calc($spacer * 2);
                         }
                     }
 
                     .nav-link-collapse {
                         a {
                             width: 100%;
-                            padding: $spacer / 2 $spacer / 4 $spacer / 2 0;
+                            padding: calc($spacer / 2) calc($spacer / 4) calc($spacer / 2) 0;
                             color: $gray-900;
                             color: var(--text);
                         }
 
                         .btn-collapse {
-                            padding: $spacer / 2 0 $spacer / 2 $spacer;
+                            padding: calc($spacer / 2) 0 calc($spacer / 2) $spacer;
         
                             &:before {
                                 color: $gray-900;
@@ -107,11 +107,11 @@
                             > .nav-item {
                                 > .nav-link { // Second Level
                                     &.nav-link-collapse .btn-collapse {
-                                        padding-left: $spacer * 2;
+                                        padding-left: calc($spacer * 2);
                                     }
 
                                     &:not(.nav-link-collapse) {
-                                        padding-left: $spacer * 3;
+                                        padding-left: calc($spacer * 3);
                                     }
                                 }
                                 > .collapse {
@@ -119,11 +119,11 @@
                                         > .nav-item {
                                             > .nav-link { // Third Level
                                                 &.nav-link-collapse .btn-collapse {
-                                                    padding-left: $spacer * 3;
+                                                    padding-left: calc($spacer * 3);
                                                 }
 
                                                 &:not(.nav-link-collapse) {
-                                                    padding-left: $spacer * 4;
+                                                    padding-left: calc($spacer * 4);
                                                 }
                                             }
                                             > .collapse {
@@ -131,11 +131,11 @@
                                                     > .nav-item {
                                                         > .nav-link { // Fourth Level
                                                             &.nav-link-collapse .btn-collapse {
-                                                                padding-left: $spacer * 4;
+                                                                padding-left: calc($spacer * 4);
                                                             }
             
                                                             &:not(.nav-link-collapse) {
-                                                                padding-left: $spacer * 5;
+                                                                padding-left: calc($spacer * 5);
                                                             }
                                                         }
                                                         > .collapse {
@@ -143,11 +143,11 @@
                                                                 > .nav-item {
                                                                     > .nav-link { // Fifth Level
                                                                         &.nav-link-collapse .btn-collapse {
-                                                                            padding-left: $spacer * 5;
+                                                                            padding-left: calc($spacer * 5);
                                                                         }
 
                                                                         &:not(.nav-link-collapse) {
-                                                                            padding-left: $spacer * 6;
+                                                                            padding-left: calc($spacer * 6);
                                                                         }
                                                                     }
                                                                     > .collapse {
@@ -155,7 +155,7 @@
                                                                             > .nav-item {
                                                                                 > .nav-link { // Sixth Level
                                                                                     &:not(.nav-link-collapse) {
-                                                                                        padding-left: $spacer * 7;
+                                                                                        padding-left: calc($spacer * 7);
                                                                                     }
                                                                                 }
                                                                             }
