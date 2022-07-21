@@ -7,7 +7,7 @@
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         font-weight: 600;
-        margin-right: $spacer / 2;
+        margin-right: calc($spacer / 2);
         content: "\f105";
         transition: transform 0.35s ease;
     }
