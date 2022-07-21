@@ -49,6 +49,7 @@
     "merge-stream": "^2.0.0",
     "mousetrap": "^1.6.5",
     "nouislider": "^15.6.0",
+    "rimraf": "^3.0.2",
     "sass": "^1.53.0"
   },
   "resolutions": {
