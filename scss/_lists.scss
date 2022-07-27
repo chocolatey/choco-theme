@@ -62,7 +62,10 @@
     }
 
     &:not(.list-circle-counter) > li:not([class*="list-circle-content-"])::before {
-        font-family: "Font Awesome 5 Free";
+        font: var(--fa-font-solid);
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
         font-size: .75rem;
     }
 
@@ -165,7 +168,10 @@
         }
 
         &::before, &:last-child::after, &:first-child::after {
-            font-family: "Font Awesome 5 Free";
+            font: var(--fa-font-solid);
+            display: inline-block;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
             font-weight: 900;
             position: absolute;
             text-align: center;
@@ -194,7 +200,7 @@
                 bottom: -17px;
                 z-index: 1;
                 right: 100%;
-                margin-right: -6px;
+                margin-right: -8px;
             }
         }
 
@@ -206,7 +212,7 @@
             &::after {
                 top: -15px;
                 left: 100%;
-                margin-left: -7px;
+                margin-left: -8px;
             }
         }
     }

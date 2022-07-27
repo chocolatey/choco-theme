@@ -28,7 +28,7 @@
         }
     }
 
-    .fa-search {
+    .fa-magnifying-glass {
         position: absolute;
         z-index: 1;
         left: 12px;
@@ -74,7 +74,7 @@
         }
 
         &:focus, &:hover {
-            + .fa-search {
+            + .fa-magnifying-glass {
                 color: var(--bs-primary);
             }
         }
@@ -117,7 +117,7 @@
 
     .search-box {
         &:focus-within, &:hover {
-            .fa-search {
+            .fa-magnifying-glass {
                 color: var(--bs-primary);
             }
         }

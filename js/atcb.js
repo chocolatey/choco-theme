@@ -257,7 +257,7 @@
    buttonTrigger.classList.add('atcb_button');
    buttonTriggerWrapper.appendChild(buttonTrigger);
    buttonTrigger.innerHTML = '<span class="atcb_text">' + (data['label'] || 'Add to Calendar') + '</span>';
-   buttonTrigger.innerHTML += '<span class="atcb_icon"><i class="fas fa-caret-down"></i></span>';
+   buttonTrigger.innerHTML += '<span class="atcb_icon"><i class="fa-solid fa-caret-down"></i></span>';
    // set event listeners for the button trigger
    if (data['trigger'] == 'click') {
      buttonTrigger.addEventListener('mousedown', () => atcb_toggle(data, buttonTrigger, true, false));
@@ -294,7 +294,7 @@
      optionsList.appendChild(optionItem);
      switch (optionParts[0]) {
        case "Apple":
-         optionItem.innerHTML = '<span class="atcb_icon"><i class="fab fa-apple"></i></span>';
+         optionItem.innerHTML = '<span class="atcb_icon"><i class="fa-brands fa-apple"></i></span>';
          optionItem.innerHTML += '<span class="atcb_text">';
          optionItem.innerHTML += optionParts[1] || 'Apple';
          optionItem.innerHTML += '</span>';
@@ -314,7 +314,7 @@
          });
          break;
        case "iCal":
-         optionItem.innerHTML = '<span class="atcb_icon"><i class="fas fa-calendar-alt"></i></span>';
+         optionItem.innerHTML = '<span class="atcb_icon"><i class="fa-solid fa-calendar-days"></i></span>';
          optionItem.innerHTML += '<span class="atcb_text">';
          optionItem.innerHTML += optionParts[1] || 'iCal File';
          optionItem.innerHTML += '</span>';

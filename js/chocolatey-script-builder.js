@@ -55,9 +55,9 @@
 
     function builderButtonRemove(builderButton) {
         if (builderButton.classList.contains('btn-builder-text')) {
-            builderButton.innerHTML = '<span class="fas fa-minus-circle" alt="Remove from Script Builder"></span> Remove from Script Builder';
+            builderButton.innerHTML = '<span class="fa-solid fa-circle-minus" alt="Remove from Script Builder"></span> Remove from Script Builder';
         } else {
-            builderButton.innerHTML = '<span class="fas fa-minus-circle" alt="Remove from Script Builder"></span>';
+            builderButton.innerHTML = '<span class="fa-solid fa-circle-minus" alt="Remove from Script Builder"></span>';
         }
 
         builderButton.classList.remove('btn-success');
@@ -66,9 +66,9 @@
 
     function builderButtonAdd(builderButton) {
         if (builderButton.classList.contains('btn-builder-text')) {
-            builderButton.innerHTML = '<span class="fas fa-plus-circle" alt="Add to Script Builder"></span> Add to Script Builder';
+            builderButton.innerHTML = '<span class="fa-solid fa-circle-plus" alt="Add to Script Builder"></span> Add to Script Builder';
         } else {
-            builderButton.innerHTML = '<span class="fas fa-plus-circle" alt="Add to Script Builder"></span>';
+            builderButton.innerHTML = '<span class="fa-solid fa-circle-plus" alt="Add to Script Builder"></span>';
         }
 
         builderButton.classList.remove('btn-danger');
@@ -90,7 +90,7 @@
                 '<a class="text-reset btn-link mb-0 h5 text-break" href="/packages/' + packageUrl + '/' + packageVersion + '">' + packageTitle + '</a>' +
                 '<p class="mb-0"><small>' + packageVersion + '</small></p>' +
                 '</div>' +
-                '<button class="btn btn-sm btn-builder btn-danger ms-auto" value="' + packageValue + '" title="' + packageTitle + '" version="' + packageVersion + '" image="' + packageImage + '"><span class="fas fa-minus-circle"></span></button>' +
+                '<button class="btn btn-sm btn-builder btn-danger ms-auto" value="' + packageValue + '" title="' + packageTitle + '" version="' + packageVersion + '" image="' + packageImage + '"><span class="fa-solid fa-circle-minus"></span></button>' +
                 '</div>';
         }
     }
