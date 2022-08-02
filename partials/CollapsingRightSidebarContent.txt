@@ -76,14 +76,14 @@
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
     <p class="convert-utc-to-local fw-bold" data-event-utc="2022-08-18T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
-    <p class="text-start">The Chocolatey Community is close to the hearts of the Chocolatey Team. Join us on Discord and meet the Chocolatey Team, find out more about the Chocolatey Community, what we do, and how you can get involved.</p>
+    <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.</p>
     <div class="d-flex align-items-center justify-content-center flex-wrap">
         <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
         <div class="mt-2 mx-1">
             <div class="atcb" style="display:none;">
             {
                 "name":"Chocolatey Community Coffee Break",
-                "description":"The Chocolatey Community is close to the hearts of the Chocolatey Team. Join us on Discord and meet the Chocolatey Team, find out more about the Chocolatey Community, what we do, and how you can get involved.",
+                "description":"Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.",
                 "location":"https://chocolatey.org/events/chocolatey-community-coffee-break",
                 "startDate":"2022-08-18",
                 "endDate":"2022-08-18",
