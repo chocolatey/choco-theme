@@ -37,41 +37,6 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="https://chocolatey.org/events/the-future-of-chocolatey-cli" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://img.chocolatey.org/events/01-17.jpg" alt="The Future of Chocolatey CLI" />
-    </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-08-04T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
-    <p class="text-start">Join Paul and Gary to hear more about the plans for the Chocolatey CLI in the not so distant future. We'll talk about some cool new features, long term asks from Customers and Community and how you can get involved!</p>
-    <div class="d-flex align-items-center justify-content-center flex-wrap">
-        <a href="https://chocolatey.org/events/the-future-of-chocolatey-cli" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
-        <div class="mt-2 mx-1">
-            <div class="atcb" style="display:none;">
-            {
-                "name":"The Future of Chocolatey CLI",
-                "description":"Join Paul and Gary to hear more about the plans for the Chocolatey CLI in the not so distant future. We'll talk about some cool new features, long term asks from Customers and Community and how you can get involved!",
-                "location":"https://chocolatey.org/events/the-future-of-chocolatey-cli",
-                "startDate":"2022-08-04",
-                "endDate":"2022-08-04",
-                "startTime":"16:00",
-                "endTime":"17:00",
-                "options":[
-                    "Apple",
-                    "Google",
-                    "iCal",
-                    "Microsoft365",
-                    "Outlook.com",
-                    "Yahoo"
-                ],
-                "trigger":"click",
-                "inline":true,
-                "iCalFileName":"the-future-of-chocolatey-cli"
-            }
-            </div>
-        </div>
-    </div>
-</div>
-<hr />
-<div class="text-center">
     <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
@@ -198,6 +163,15 @@
         <p><strong>Livestream from<br />Thursday, 14 July 2022</strong></p>
         <p class="text-start">Boxstarter version 3.0 marks the beginning of a new era of Boxstarter and Chocolatey. Join Gary, Paul, and Manfred as they unbox the best features of Boxstarter.</p>
         <a href="https://chocolatey.org/events/unboxing-the-third-major-release-of-boxstarter" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://chocolatey.org/events/the-future-of-chocolatey-cli" rel="noreferrer" target="_blank">
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-17.jpg" alt="The Future of Chocolatey CLI" />
+        </a>
+        <p><strong>Livestream from<br />Thursday, 04 August 2022</strong></p>
+        <p class="text-start">Join Paul and Gary to hear more about the plans for the Chocolatey CLI in the not so distant future. We'll talk about some cool new features, long term asks from Customers and Community and how you can get involved!</p>
+        <a href="https://chocolatey.org/events/the-future-of-chocolatey-cli" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
     </div>
 </div>
