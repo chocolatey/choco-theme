@@ -1,14 +1,11 @@
 .btn-collapse {
     &:before {
-        font-family: "Font Awesome 5 Free";
         display: inline-block;
-        font-style: normal;
-        font-variant: normal;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
-        font-weight: 600;
         margin-right: calc($spacer / 2);
-        content: "\f105";
+        font: var(--fa-font-solid);
+        content: "\f054";
         transition: transform 0.35s ease;
     }
 
@@ -134,8 +131,8 @@
 .wrong {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
-        content: fa-content($fa-var-times);
+        @extend .fa-solid;
+        content: fa-content($fa-var-xmark);
         text-align: center;
     }
 }
@@ -143,7 +140,7 @@
 .course-list li.completed, .course-list li.mod-completed, .correct, .step_tabs li.step_inactive {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
+        @extend .fa-solid;
         content: fa-content($fa-var-check);
         text-align: center;
     }
@@ -152,7 +149,7 @@
 .list-circle li.list-circle-fa-star {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
+        @extend .fa-solid;
         content: fa-content($fa-var-star);
     }
 }
@@ -160,15 +157,15 @@
 .list-circle li.list-circle-fa-cogs {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
-        content: fa-content($fa-var-cogs);
+        @extend .fa-solid;
+        content: fa-content($fa-var-gears);
     }
 }
 
 .list-circle li.list-circle-fa-users {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
+        @extend .fa-solid;
         content: fa-content($fa-var-users);
     }
 }
@@ -176,7 +173,7 @@
 .list-circle li.list-circle-fa-user-lock {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
+        @extend .fa-solid;
         content: fa-content($fa-var-user-lock);
     }
 }
@@ -184,7 +181,7 @@
 .list-circle li.list-circle-fa-paper-plane {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
+        @extend .fa-solid;
         content: fa-content($fa-var-paper-plane);
     }
 }
@@ -192,15 +189,15 @@
 .list-circle li.list-circle-fa-edit {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
-        content: fa-content($fa-var-edit);
+        @extend .fa-solid;
+        content: fa-content($fa-var-pen-to-square);
     }
 }
 
 .list-curve p:first-child {
     &::after {
         @extend %fa-icon;
-        @extend .fas;
+        @extend .fa-solid;
         content: fa-content($fa-var-angle-up);
     }
 }
@@ -208,15 +205,15 @@
 .list-curve p:not(:last-child) {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
-        content: fa-content($fa-var-times);
+        @extend .fa-solid;
+        content: fa-content($fa-var-xmark);
     }
 }
 
 .list-curve p:last-child, .list-circle li.list-circle-fa-check, .list-circle.list-circle-fa-check li {
     &::before {
         @extend %fa-icon;
-        @extend .fas;
+        @extend .fa-solid;
         content: fa-content($fa-var-check);
     }
 }
@@ -224,7 +221,7 @@
 .list-curve p:last-child {
     &::after {
         @extend %fa-icon;
-        @extend .fas;
+        @extend .fa-solid;
         content: fa-content($fa-var-angle-down);
     }
 }

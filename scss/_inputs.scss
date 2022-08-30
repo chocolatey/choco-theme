@@ -54,24 +54,15 @@
 
             &:after, &:before {
                 position: absolute;
-                font-family: "Font Awesome 5 Free";
+                font: var(--fa-font-solid);
                 top: 0;
-                content: "\f00c";
+                content: "\f054";
                 font-style: normal;
                 font-variant: normal;
                 text-rendering: auto;
                 -webkit-font-smoothing: antialiased;
-                font-weight: 600;
                 font-size: .875em;
                 line-height: 1.9;
-            }
-
-            &:after {
-                left: 0;
-            }
-
-            &:checked:after {
-                left: 2.1rem;
             }
 
             &:before {
@@ -92,6 +83,7 @@
         &:after {
             content: "\f00c";
             color: $white;
+            left: .1rem;
         }
 
         &:checked, &:before {
@@ -101,13 +93,17 @@
         &:before {
             border: 1px solid $green-300;
         }
+
+        &:checked:after {
+            left: 2.2rem;
+        }
     }
 
     &.form-switch-expired .form-check-input {
         &:after {
-            content: "\f12a";
+            content: "\21";
             color: $white;
-            left: 4.5px;
+            left: .35rem;
         }
 
         &:checked, &:before {
@@ -119,7 +115,7 @@
         }
 
         &:checked:after {
-            left: 2.4rem;
+            left: 2.45rem;
         }
     }
 
@@ -127,6 +123,8 @@
         &:after {
             content: "\f05e";
             color: $white;
+            left: .04rem;
+            top: -.03rem;
         }
 
         &:checked, &:before {
@@ -136,12 +134,18 @@
         &:before {
             border: 1px solid $gray-300;
         }
+
+        &:checked:after {
+            left: 2.15rem;
+        }
     }
 
     &.form-switch-latest .form-check-input {
         &:after {
             content: "\f005";
             color: var(--bs-warning);
+            left: -.04rem;
+            top: -.03rem;
         }
 
         &:checked {
@@ -151,6 +155,10 @@
         &:before {
             background: var(--background-light-3);
             border: 1px solid var(--bs-warning);
+        }
+
+        &:checked:after {
+            left: 2.09rem;
         }
     }
 }

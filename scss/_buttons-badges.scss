@@ -211,13 +211,13 @@
     &:focus, &:hover {
         background: var(--bs-primary);
 
-        .fas {
+        .fa-solid {
             color: var(--bs-white);
             color: var(--background);
         }
     }
 
-    .fas {
+    .fa-solid {
         color: var(--bs-primary);
     }
 }
