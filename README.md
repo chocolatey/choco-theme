@@ -77,7 +77,13 @@ const paths = {
 
 In the choco-theme repository, navigate to `getting-started/_bundleconfig.json`, and copy the file into your new repository in the same directory as the `package.json` file. Change the name to `bundleconfig.json`.
 
-At this point, an informed decision will need to be made about what JS files from choco-theme need to be included in the project. Files can be added, however the files included in the getting-started template are generally required.
+In the bundle named `input/assets/js/chocolatey.bundle.js` you will need to modify the input file name to match the name of your project. Replace the `${projectName}` variable.
+
+#### Create a New JavaScript File
+
+In choco-theme, you will need to copy a file inside of `js/init` into the same folder and name it according to the project name, and the name that you chose for the `bundleconfig.json` file's input path in the step above.
+
+At this point, an informed decision will need to be made about what JavaScript files from choco-theme need to be included in the project.
 
 ### Step 3: Run It!
 
@@ -121,6 +127,9 @@ File paths may need to be updated based on your project structure.
 
 Given that everything succeeded, choco-theme is set up and ready to go!
 
+## ESLint
+To run ESLint on a file or folder, run the following command `yarn run eslint js/filename.js`. Visit the [ESLint documentation](https://eslint.org/docs/latest/user-guide/getting-started#installation-and-usage) for more information.
+
 ## What's Included
 
 ### External Libraries
@@ -136,7 +145,7 @@ Choco-theme contains many external libraries in which it depends on for various 
 
 | External Libraries            | chocolatey.org     | community          | docs               | blog               | design             | company            | chocolateyfest.com | boxstarter.org     | zendesk            |
 |-------------------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------| -------------------|
-| jQuery                        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: |
+| jQuery                        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: |
 | Bootstrap                     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Popper                        | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :grey_question:    | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | Font Awesome                  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: |
@@ -151,7 +160,6 @@ Choco-theme contains many external libraries in which it depends on for various 
 | DOCSEARCH (Algolia)           | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | Elasticsearch                 | :heavy_minus_sign: | :grey_question:    | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | EasyMDE                       | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :grey_question:    | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
-| The Final Countdown           | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :grey_question:    | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | Mousetrap                     | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :grey_question:    | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | Knockout                      | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | Lite YouTube Embed            | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :grey_question:    | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: |
@@ -181,10 +189,11 @@ Along with external libraries, choco-theme contains many individual custom JavaS
 | chocolatey-collapse-responsive.js | Toggles collapsed items and navigates to them.                                             |
 | chocolatey-collapse-topnav.js     | Special handling for nested collapse in top navigation.                                    |
 | chocolatey-collapse-y-height.js   | Configures page height based on collapsed or shown items.                                  |
-| chocolatey-countdown.js           | Displays a countdown timer.                                                                |
 | chocolatey-courses.js             | Sets cookies and manages courses when unauthenticated.                                     |
 | chocolatey-docs.js                | Special handling of titles in the docs project only.                                       |
-| chocolatey-functions.js           | Provides helper functions that can be called from any JavaScript file.                     |
+| chocolatey-docsearch.js           | Initilizes the docsearch library for docs.chocolatey.org.                                  |
+| chocolatey-events.js              | Controls showing/hiding of time sensitive information in the events area.                  |
+| util/chocolatey-functions.js      | Provides helper functions that can be imported into any JavaScript file.                   |
 | chocolatey-internal-url.js        | Sets internal url in code blocks based on user input.                                      |
 | chocolatey-lazyload.js            | Lazy loading for images and videos.                                                        |
 | chocolatey-loader.js              | Shows and removes spinning Chocolatey loader.                                              |
@@ -198,7 +207,6 @@ Along with external libraries, choco-theme contains many individual custom JavaS
 | chocolatey-search.js              | Initializes mousetrap.js and search bar interactivity.                                     |
 | chocolatey-show-hide.js           | Replaces button text on collapse buttons based on status.                                  |
 | chocolatey-shuffle.js             | shuffles elements around inside a container.                                               |
-| chocolatey-smooth-scroll.js       | Prevents or allows smooth scroll if conditions are met.                                    |
 | chocolatey-stats.js               | Gets Chocolatey Community Repository package stats and displays them on a page.            |
 | chocolatey-sticky-table.js        | Allows sticky headers on tables.                                                           |
 | chocolatey-sticky-top.js          | Controls top navigation look and feel when a sticky top header is enabled.                 |

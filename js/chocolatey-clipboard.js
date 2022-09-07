@@ -1,20 +1,19 @@
-(function() {
-    var clipboard = new ClipboardJS('.btn-copy'),
-        userSelectAllInput = document.querySelectorAll('.user-select-all');
+import { Button } from 'bootstrap';
+import ClipboardJS from 'clipboard';
 
-    clipboard.on('success', function (e) {
-        var button = new Button(e.trigger)
-        
-        setTimeout(function () { button.toggle() }, 2000);
+(() => {
+    const clipboard = new ClipboardJS('.btn-copy');
+    const userSelectAllInput = document.querySelectorAll('.user-select-all');
+
+    clipboard.on('success', e => {
+        const button = new Button(e.trigger);
+
+        setTimeout(() => { button.toggle(); }, 2000);
         e.clearSelection();
     });
 
     // Make input text selectable with one click
     if (userSelectAllInput) {
-        userSelectAllInput.forEach(function (el) {
-            el.addEventListener('click', function () {
-                el.select();
-            }, false);
-        });
+        userSelectAllInput.forEach(el => el.addEventListener('click', () => el.select(), false));
     }
 })();
