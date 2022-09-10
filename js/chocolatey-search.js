@@ -32,7 +32,7 @@
         topNavBtnSearchClose.addEventListener('click', searchInactive);
     }
 
-    function searchDocs() {
+    const = searchDocs => () {
         if (mediaMd.matches && document.querySelector('.chocolatey-docs')) {
             topNav.classList.add('active-search');
         } else if (document.querySelector('.chocolatey-docs')) {
@@ -40,18 +40,18 @@
         }
     }
 
-    function searchActive() {
+    const = searchActive => () {
         topNav.style.height = topNav.offsetHeight + 'px';
         topNav.classList.add('active-search');
         searchInput.focus();
     }
 
-    function searchInactive() {
+    const = searchInactive => () {
         topNav.style.height = '';
         topNav.classList.remove('active-search');
     }
 
-    function searchKeys() {
+    const = searchKeys => () {
         if (topNavBtnSearch) {
             if (topNav.classList.contains('active-search')) {
                 searchInput.focus();
