@@ -41,14 +41,14 @@
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-18.jpg" alt="Announcing Chocolatey Central Management 0.10.0" />
     </a>
     <p class="convert-utc-to-local fw-bold" data-event-utc="2022-10-06T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
-    <p class="text-start">We recently released our largest update to Chocolatey Central Management so far. Join Gary to find out more about Chocolatey Central Management and the new features and fixes we've added to this release..</p>
+    <p class="text-start">We recently released our largest update to Chocolatey Central Management so far. Join Gary and Steph to find out more about Chocolatey Central Management and the new features and fixes we've added to this release..</p>
     <div class="d-flex align-items-center justify-content-center flex-wrap">
         <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
         <div class="mt-2 mx-1">
             <div class="atcb" style="display:none;">
             {
                 "name":"Announcing Chocolatey Central Management 0.10.0",
-                "description":"We recently released our largest update to Chocolatey Central Management so far. Join Gary to find out more about Chocolatey Central Management and the new features and fixes we've added to this release.",
+                "description":"We recently released our largest update to Chocolatey Central Management so far. Join Gary and Steph to find out more about Chocolatey Central Management and the new features and fixes we've added to this release.",
                 "location":"https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0",
                 "startDate":"2022-10-06",
                 "endDate":"2022-10-06",
