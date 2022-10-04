@@ -1,0 +1,154 @@
+/* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+csharp+diff+json+powershell+puppet+python+ruby+scss+shell-session+xml-doc+yaml&plugins=line-numbers+toolbar+copy-to-clipboard+diff-highlight */
+/**
+* prism.js default theme for JavaScript, CSS and HTML
+* Based on dabblet (http://dabblet.com)
+* @author Lea Verou
+*/
+
+code {
+	font-weight: bold;
+}
+
+pre.d-format-none {
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-base;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: var(--text-code);
+    text-shadow: none;
+    font-family: var(--bs-font-monospace);
+    font-size: .85rem;
+    font-weight: bold;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+    background: rgba($primary, .2);
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+    background: rgba($primary, .2);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	max-height: 500px;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: var(--background-light);
+	border: 1px solid var(--border);
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--text-code);
+	font-weight: normal;
+}
+
+.token.punctuation {
+    color: #999;
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: var(--theme-red);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.url {
+    color: var(--bs-primary);
+}
+
+
+// These styles are currently not used and may need updated in the future
+.token.operator,
+.token.entity,
+.language-css .token.string,
+.style .token.string {
+    color: var(--theme-orange);
+    background: none;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: var(--theme-orange);
+}
+
+.token.function,
+.token.class-name {
+    color: var(--theme-purple);
+}
+
+.token.regex,
+.token.important,
+.token.variable,
+.token.inserted {
+    color: var(--bs-green);
+}
+
+.line-numbers .line-numbers-rows {
+    border-right: 1px solid var(--bs-primary);
+}
+
+.line-numbers-rows > span:before {
+    color: $gray-500;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar > .toolbar-item > span {
+    color: $white;
+	font-size: .8em;
+	padding: .25em .5em;
+	background: $gray-600;
+    box-shadow: none;
+	border-radius: .25em;
+}
+
+pre.diff-highlight > code .token.deleted:not(.prefix),
+pre > code.diff-highlight .token.deleted:not(.prefix) {
+    background-color: rgba($red, .2);
+}
+
+pre.diff-highlight > code .token.inserted:not(.prefix),
+pre > code.diff-highlight .token.inserted:not(.prefix) {
+    background-color: rgba($green, .2);
+}
+
+// Diff highlighting specific
+.token.inserted-sign .inserted, 
+.token.deleted-sign .deleted, 
+.token.unchanged .unchanged {
+    margin-right: 1rem; 
+    margin-left: .5rem;
+}
+
+.token.coord {
+    background: rgba($secondary, .15);
+    color: $secondary;
+    padding: .5rem 0 .5rem 1rem;
+    display: inline-block;
+    width: 100%;
+}
