@@ -85,8 +85,42 @@
                                         const elPre = el.querySelector('pre');
                                         const elCode = el.querySelector('code');
 
+                                        // TODO: Move this to functions after choco-theme milestone 0.1.0
+                                        const htmlEntities = {
+                                            nbsp: ' ',
+                                            cent: '¢',
+                                            pound: '£',
+                                            yen: '¥',
+                                            euro: '€',
+                                            copy: '©',
+                                            reg: '®',
+                                            lt: '<',
+                                            gt: '>',
+                                            quot: '"',
+                                            amp: '&',
+                                            apos: '\''
+                                        };
+                                        
+                                        const unescapeHTML = str => {
+                                            return str.replace(/\&([^;]+);/g, (entity, entityCode) => {
+                                                let match;
+
+                                                if (entityCode in htmlEntities) {
+                                                    return htmlEntities[entityCode];
+                                                    /*eslint no-cond-assign: 0*/
+                                                } else if (match = entityCode.match(/^#x([\da-fA-F]+)$/)) {
+                                                    return String.fromCharCode(parseInt(match[1], 16));
+                                                    /*eslint no-cond-assign: 0*/
+                                                } else if (match = entityCode.match(/^#(\d+)$/)) {
+                                                    return String.fromCharCode(~~match[1]);
+                                                } else {
+                                                    return entity;
+                                                }
+                                            });
+                                        };
+
                                         // Insert content into containers
-                                        elCode.textContent = fileContent;
+                                        elCode.insertAdjacentText('afterbegin', unescapeHTML(fileContent));
 
                                         const extendDiffHighlight = () => {
                                             // TODO: Move to functions.js after ES6 migration
