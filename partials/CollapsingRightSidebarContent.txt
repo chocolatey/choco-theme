@@ -46,41 +46,6 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://img.chocolatey.org/events/01-18.jpg" alt="Announcing Chocolatey Central Management 0.10.0" />
-    </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-10-06T16:00:00Z" data-event-occurrence="-1" data-event-include-break="true"></p>
-    <p class="text-start">We recently released our largest update to Chocolatey Central Management so far. Join Gary and Steph to find out more about Chocolatey Central Management and the new features and fixes we've added to this release.</p>
-    <div class="d-flex align-items-center justify-content-center flex-wrap">
-        <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
-        <div class="mt-2 mx-1">
-            <div class="atcb" style="display:none;">
-            {
-                "name":"Announcing Chocolatey Central Management 0.10.0",
-                "description":"We recently released our largest update to Chocolatey Central Management so far. Join Gary and Steph to find out more about Chocolatey Central Management and the new features and fixes we've added to this release.",
-                "location":"https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0",
-                "startDate":"2022-10-06",
-                "endDate":"2022-10-06",
-                "startTime":"16:00",
-                "endTime":"17:00",
-                "options":[
-                    "Apple",
-                    "Google",
-                    "iCal",
-                    "Microsoft365",
-                    "Outlook.com",
-                    "Yahoo"
-                ],
-                "trigger":"click",
-                "inline":true,
-                "iCalFileName":"announcing-chocolatey-central-management-0-10-0"
-            }
-            </div>
-        </div>
-    </div>
-</div>
-<hr />
-<div class="text-center">
     <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
@@ -117,26 +82,12 @@
 <hr />
 <div class="shuffle">
     <div class="text-center">
-        <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-10.jpg" alt="Simplifying Chocolatey Setup: Have it Your Way" />
+        <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" rel="noreferrer" target="_blank">
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-18.jpg" alt="Announcing Chocolatey Central Management 0.10.0" />
         </a>
-        <p><strong>Webinar Replay from<br />Thursday, 02 September 2021</strong></p>
-        <p class="text-start">
-            We've been hard at work simplifying the setup of Chocolatey for Business (C4B) for our users. Whether you'd like to "Bring Your Own VM", or spin up a Cloud-ready solution, we've got you covered!
-        </p>
-        <a href="https://chocolatey.org/events/simplifying-chocolatey-setup" class="btn btn-outline-primary btn-width mt-2">Learn More</a>
-        <a href="https://chocolatey.zoom.us/webinar/register/WN_3llbuDHORCuexvvR0d8naA" rel="noreferrer" target="_blank" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <a href="https://chocolatey.org/resources/12-days-of-chocolatey">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-06.jpg" alt="12 Days of Chocolatey" />
-        </a>
-        <p><strong>Event from<br />December 1 - December 16 2020</strong></p>
-        <p class="text-start">
-            The 12 Days of Chocolatey livestream event may be over, but we've archived all the videos for you to watch again!
-        </p>
-        <a href="https://chocolatey.org/resources/12-days-of-chocolatey" class="btn btn-primary btn-width mt-2">Watch On-Demand</a>
+        <p><strong>Livestream from<br />Thursday, 06 October 2022</strong></p>
+        <p class="text-start">We recently released our largest update to Chocolatey Central Management so far. Join Gary and Steph to find out more about Chocolatey Central Management and the new features and fixes we've added to this release.</p>
+        <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
     </div>
     <div class="text-center">
