@@ -1,5 +1,7 @@
 # Chocolatey choco-theme
 
+**NOTE: This project is used on Chocolatey websites and is being released for the benefit of the community. While we endeavour to help and fix issues, it will be limited to GitHub issues, discussions and pull requests when we are able to.**
+
 This repository holds all of the CSS, JS, images, and shared partial files that are used across many Chocolatey projects. 
 
 ## Getting Started
