@@ -7,7 +7,7 @@
         const diffSelector = document.querySelector('#diffSelector');
         const anyPackageRole = (document.querySelector('#anyPackageRole').value.toLowerCase() === 'true');
 
-        const callEndpoint = async (url) => {
+        const callEndpoint = async url => {
             try {
                 const response = await fetch(url);
                 const data = await response.json();
@@ -23,10 +23,10 @@
 
             return callEndpoint(`${window.location.protocol}//${window.location.host}/json/JsonApi?invoke&action=GetDiffFileUrls&folderName=${diffFolder}`).then(filePaths => {
                 filePaths.forEach(filePath => {
-                    let diffFilePath = filePath.replaceAll('\\', '\/').replace('.patch', '').trim();
-                    diffFilePath = diffFilePath.split('\/').slice(3);
+                    let diffFilePath = filePath.replaceAll('\\', '/').replace('.patch', '').trim();
+                    diffFilePath = diffFilePath.split('/').slice(3);
                     diffFilePath = diffFilePath.join('\\');
-                    
+
                     const diffFileName = /[^\\]*$/.exec(diffFilePath)[0];
                     const diffTarget = `diff-path-${diffFileName.replaceAll('.', '-')}`;
 
@@ -59,7 +59,7 @@
                         diffBtnText = 'Hide';
                     }
 
-                    fileContainer = 
+                    fileContainer =
                     `<div class="mb-1" data-file-path="${filePath}">
                         <div class="p-2 border border-start border-end bg-theme-light d-flex align-items-center">
                             <button class="btn btn-sm btn-secondary btn-show-hide me-2" type="button" data-bs-toggle="collapse" data-bs-target=".${diffTarget}" aria-expanded="${diffCollapseExpanded}" aria-controls="${diffTarget}">${diffBtnText}</button>
@@ -100,17 +100,18 @@
                                             amp: '&',
                                             apos: '\''
                                         };
-                                        
+
                                         const unescapeHTML = str => {
+                                            // eslint-disable-next-line
                                             return str.replace(/\&([^;]+);/g, (entity, entityCode) => {
                                                 let match;
 
                                                 if (entityCode in htmlEntities) {
                                                     return htmlEntities[entityCode];
-                                                    /*eslint no-cond-assign: 0*/
+                                                    // eslint-disable-next-line
                                                 } else if (match = entityCode.match(/^#x([\da-fA-F]+)$/)) {
                                                     return String.fromCharCode(parseInt(match[1], 16));
-                                                    /*eslint no-cond-assign: 0*/
+                                                    // eslint-disable-next-line
                                                 } else if (match = entityCode.match(/^#(\d+)$/)) {
                                                     return String.fromCharCode(~~match[1]);
                                                 } else {
@@ -127,7 +128,7 @@
                                             const isOverflowing = element => {
                                                 return element.scrollWidth > element.offsetWidth;
                                             };
-                        
+
                                             // Add widths to tokens that overflow so they can be properly syntax highlighted
                                             if (isOverflowing(elPre)) {
                                                 const elPreStyle = window.getComputedStyle(elPre);
@@ -136,21 +137,21 @@
                                                 const insertedToken = elPre.querySelectorAll('.token.inserted-sign.inserted');
                                                 const deletedToken = elPre.querySelectorAll('.token.deleted-sign.deleted');
                                                 const coordToken = elPre.querySelectorAll('.token.coord');
-                        
+
                                                 for (const i of insertedToken) {
                                                     i.style.width = `${elPreScrollWidth}px`;
                                                 }
-                        
+
                                                 for (const i of deletedToken) {
                                                     i.style.width = `${elPreScrollWidth}px`;
                                                 }
-                        
+
                                                 for (const i of coordToken) {
                                                     i.style.width = `${elPreScrollWidth}px`;
                                                 }
                                             }
                                         };
-                        
+
                                         // Syntax highlight
                                         Prism.highlightElement(elCode, false, extendDiffHighlight);
 
@@ -181,11 +182,10 @@
                     });
 
                     if (anyPackageRole) {
-                        getDiffContent(filePath)
+                        getDiffContent(filePath);
                     }
                 });
-            })
-            .catch(error => {
+            }).catch(error => {
                 console.error(error.message);
             });
         };
@@ -213,7 +213,7 @@
             initDiffSelector();
         } else {
             // Hidden by default
-            diffContainer.addEventListener('show.bs.collapse', e => {
+            diffContainer.addEventListener('show.bs.collapse', () => {
                 if (!isDiffContainerExpandedClick) {
                     if (diffSelector.nodeName === 'INPUT') {
                         getDiffFiles(diffSelector.value);

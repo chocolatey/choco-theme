@@ -1,24 +1,30 @@
 {
   "name": "choco-theme",
   "version": "0.1.0",
-  "description": "Global theme for Chocolatey.",
+  "description": "The global theme for Chocolatey Software.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chocolatey/choco-theme.git"
   },
-  "author": "chocolatey",
-  "license": "Apache License 2.0",
+  "author": "Chocolatey Software (https://chocolatey.org/)",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/chocolatey/choco-theme/issues"
   },
   "homepage": "https://github.com/chocolatey/choco-theme#readme",
+  "browser": "js/init/chocolatey-org.js",
+  "main": "js/init/chocolatey-org.js",
+  "sass": "scss/chocolatey.scss",
   "dependencies": {
     "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
+    "@babel/preset-react": "^7.18.6",
     "@fortawesome/fontawesome-free": "^6.1.2",
     "@popperjs/core": "^2.11.5",
     "anchor-js": "^4.3.1",
-    "bootstrap": "5.1.3",
+    "babelify": "^10.0.0",
+    "bootstrap": "^5.2.2",
+    "browserify": "^17.0.0",
     "canvas-confetti": "^1.5.1",
     "chartist": "^0.11.4",
     "chartist-plugin-legend": "^0.6.2",
@@ -26,6 +32,11 @@
     "datatables.net": "^1.12.1",
     "docsearch.js": "^2.6.3",
     "easymde": "^2.16.1",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
     "flatpickr": "^4.6.13",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -38,8 +49,8 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify-es": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "jquery": "^3.6.0",
-    "jquery-countdown": "^2.2.0",
     "jquery-validation": "^1.19.5",
     "jquery-validation-unobtrusive": "^4.0.0",
     "knockout": "^3.5.1",
@@ -50,7 +61,9 @@
     "mousetrap": "^1.6.5",
     "nouislider": "^15.6.0",
     "rimraf": "^3.0.2",
-    "sass": "^1.53.0"
+    "sass": "^1.53.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "resolutions": {
     "glob-parent": "^6.0.2",

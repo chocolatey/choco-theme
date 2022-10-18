@@ -1,0 +1,12 @@
+import { Alert, Button, Collapse, Dropdown, Modal, Tab } from 'bootstrap';
+import '../lib/prism.min.js';
+import '../chocolatey-code.js';
+import '../chocolatey-collapse-nested.js';
+import '../chocolatey-collapse-responsive.js';
+import '../chocolatey-collapse-y-height.js';
+import '../chocolatey-markdown.js';
+import '../chocolatey-scrollspy.js';
+import '../chocolatey-theme-toggle.js';
+import '../../src/util/reset-modal.js';
+import '../../src/util/reset-toast.js';
+import '../../src/util/status-modal.js';

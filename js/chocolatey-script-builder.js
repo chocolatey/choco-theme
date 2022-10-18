@@ -1,59 +1,18 @@
-(function() {
-    var packages = localStorage.packageList === undefined ? new Array() : JSON.parse(localStorage.packageList),
-        modalBuilder = document.getElementById('Modal_ScriptBuilder'),
-        modalBuilderInstance = Modal.getInstance(modalBuilder) ? Modal.getInstance(modalBuilder) : new Modal(modalBuilder, { keyboard: false, backdrop: 'static' }),
-        deploymentMethods = document.querySelectorAll('[data-deployment-method]'),
-        builderStep3 = document.querySelector('#builder-step-3-tab'),
-        builderStep4 = document.querySelector('#builder-step-4-tab'),
-        builderStep5 = document.querySelector('#builder-step-5-tab'),
-        builderIndividual = document.querySelector('.builder-individual'),
-        builderOrganization = document.querySelector('.builder-organization');
+import { Collapse, Modal, Tab } from 'bootstrap';
+import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/chocolatey-functions';
 
-    // Packages in storage on load
-    if (packages.length > 0) {
-        for (var i in packages) {
-            var getStorage = packages[i].split(" , "),
-                storageTitle = getStorage[0],
-                storageVersion = getStorage[1],
-                storageImage = getStorage[2],
-                storageValue = getStorage[3],
-                packageUrl = findPackagePath(storageValue),
-                imageUrl = findImagePath(storageImage),
-                packageButtons = document.querySelectorAll('.btn-builder[value="' + storageValue + '"]'),
-                storageIdentity = 'package-' + storageTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '') + '-' + storageVersion.replace(/\./gi, '');
+(() => {
+    const packages = localStorage.packageList === undefined ? new Array() : JSON.parse(localStorage.packageList); // eslint-disable-line
+    const modalBuilder = document.getElementById('Modal_ScriptBuilder');
+    const modalBuilderInstance = Modal.getOrCreateInstance(modalBuilder, { keyboard: false, backdrop: 'static' });
+    const deploymentMethods = document.querySelectorAll('[data-deployment-method]');
+    const builderStep3 = document.querySelector('#builder-step-3-tab');
+    const builderStep4 = document.querySelector('#builder-step-4-tab');
+    const builderStep5 = document.querySelector('#builder-step-5-tab');
+    const builderIndividual = document.querySelector('.builder-individual');
+    const builderOrganization = document.querySelector('.builder-organization');
 
-            for (var el of packageButtons) {
-                builderButtonRemove(el);
-            }
-
-            // Generate Package List
-            appendPackage(storageTitle, storageValue, storageIdentity, storageVersion, packageUrl, storageImage, imageUrl);
-        }
-    }
-
-    // On load
-    countPackages();
-    addOrRemoveButtons();
-    selectDeploymentMethodTab(); // Do we need this
-    builderScriptType();
-
-    function findImagePath(imageTitle) {
-        if (imageTitle.includes('packageDefaultIcon')) {
-            return '/Content/Images/';
-        }
-
-        return '/content/packageimages/';
-    }
-
-    function findPackagePath(packageValue) {
-        if (packageValue.indexOf("--") >= 0) {
-            return packageValue.substr(0, packageValue.indexOf('--')).trim();
-        }
-
-        return packageValue;
-    }
-
-    function builderButtonRemove(builderButton) {
+    const builderButtonRemove = builderButton => {
         if (builderButton.classList.contains('btn-builder-text')) {
             builderButton.innerHTML = '<span class="fa-solid fa-circle-minus" alt="Remove from Script Builder"></span> Remove from Script Builder';
         } else {
@@ -62,9 +21,88 @@
 
         builderButton.classList.remove('btn-success');
         builderButton.classList.add('btn-danger');
+    };
+
+    const appendPackage = (packageTitle, packageValue, packageIdentity, packageVersion, packageUrl, packageImage, packageImagePath) => {
+        const builderStorage = document.querySelectorAll('.storage');
+
+        for (const i of builderStorage) {
+            i.innerHTML += `<hr />
+                <div id="${packageIdentity}" class="d-flex flex-row align-items-start storage-row ${packageIdentity}">
+                <div class="ratio ratio-1x1 package-image-header">
+                <div class="d-flex flex-fill align-items-center justify-content-center package-icon">
+                <img class="package-image" src="${packageImagePath}${packageImage}" height="30" width="30" onerror="this.src='/Content/Images/packageDefaultIcon-50x50.png'">
+                </div>
+                </div>
+                <div class="mx-2">
+                <a class="text-reset btn-link mb-0 h5 text-break" href="/packages/${packageUrl}/${packageVersion}">${packageTitle}</a>
+                <p class="mb-0"><small>${packageVersion}</small></p>
+                </div>
+                <button class="btn btn-sm btn-builder btn-danger ms-auto" value="${packageValue}" title="${packageTitle}" version="${packageVersion}" image="${packageImage}"><span class="fa-solid fa-circle-minus"></span></button>
+                </div>`;
+        }
+    };
+
+    const findPackagePath = packageValue => {
+        if (packageValue.indexOf('--') >= 0) {
+            return packageValue.substr(0, packageValue.indexOf('--')).trim();
+        }
+
+        return packageValue;
+    };
+
+    const findImagePath = imageTitle => {
+        if (imageTitle.includes('packageDefaultIcon')) {
+            return '/Content/Images/';
+        }
+
+        return '/content/packageimages/';
+    };
+
+    // Packages in storage on load
+    if (packages.length > 0) {
+        for (const i in packages) {
+            const getStorage = packages[i].split(' , ');
+            const storageTitle = getStorage[0];
+            const storageVersion = getStorage[1];
+            const storageImage = getStorage[2];
+            const storageValue = getStorage[3];
+            const packageUrl = findPackagePath(storageValue);
+            const imageUrl = findImagePath(storageImage);
+            const packageButtons = document.querySelectorAll(`.btn-builder[value="${storageValue}"]`);
+            const storageIdentity = `package-${storageTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '')}-${storageVersion.replace(/\./gi, '')}`;
+
+            for (const el of packageButtons) {
+                builderButtonRemove(el);
+            }
+
+            // Generate Package List
+            appendPackage(storageTitle, storageValue, storageIdentity, storageVersion, packageUrl, storageImage, imageUrl);
+        }
     }
 
-    function builderButtonAdd(builderButton) {
+    const countPackages = () => {
+        const notificationBadge = document.querySelector('.notification-badge-builder');
+        const builderViewBtn = document.querySelector('.btn-view-builder');
+
+        notificationBadge.innerHTML = localStorage.packageList ? JSON.parse(localStorage.packageList).length : 0;
+
+        if (packages.length > 0) {
+            builderViewBtn.classList.remove('d-none');
+        } else {
+            const collapseBuilder = document.getElementById('Nav_ScriptBuilder');
+            const collapseBuilderInstance = Collapse.getOrCreateInstance(collapseBuilder, { toggle: false });
+
+            modalBuilderInstance.hide();
+            collapseBuilderInstance.hide();
+            builderViewBtn.classList.add('d-none');
+        }
+    };
+
+    countPackages();
+
+    // Add or remove packages
+    const builderButtonAdd = builderButton => {
         if (builderButton.classList.contains('btn-builder-text')) {
             builderButton.innerHTML = '<span class="fa-solid fa-circle-plus" alt="Add to Script Builder"></span> Add to Script Builder';
         } else {
@@ -73,66 +111,27 @@
 
         builderButton.classList.remove('btn-danger');
         builderButton.classList.add('btn-success');
-    }
+    };
 
-    function appendPackage(packageTitle, packageValue, packageIdentity, packageVersion, packageUrl, packageImage, packageImagePath) {
-        var builderStorage = document.querySelectorAll('.storage');
+    const addOrRemoveButtons = () => {
+        const builderAddRemoveBtns = document.querySelectorAll('.btn-builder');
 
-        for (var i of builderStorage) {
-            i.innerHTML += '<hr />' +
-                '<div id="' + packageIdentity + '" class="d-flex flex-row align-items-start storage-row ' + packageIdentity + '">' +
-                '<div class="ratio ratio-1x1 package-image-header">' +
-                '<div class="d-flex flex-fill align-items-center justify-content-center package-icon">' +
-                '<img class="package-image" src="' + packageImagePath + '' + packageImage + '" height="30" width="30" onerror="this.src=\'/Content/Images/packageDefaultIcon-50x50.png\'">' +
-                '</div>' +
-                '</div>' +
-                '<div class="mx-2">' +
-                '<a class="text-reset btn-link mb-0 h5 text-break" href="/packages/' + packageUrl + '/' + packageVersion + '">' + packageTitle + '</a>' +
-                '<p class="mb-0"><small>' + packageVersion + '</small></p>' +
-                '</div>' +
-                '<button class="btn btn-sm btn-builder btn-danger ms-auto" value="' + packageValue + '" title="' + packageTitle + '" version="' + packageVersion + '" image="' + packageImage + '"><span class="fa-solid fa-circle-minus"></span></button>' +
-                '</div>';
-        }
-    }
-
-    function countPackages() {
-        var notificationBadge = document.querySelector('.notification-badge-builder'),
-            builderViewBtn = document.querySelector('.btn-view-builder');
-
-        notificationBadge.innerHTML = localStorage.packageList ? JSON.parse(localStorage.packageList).length : 0;
-
-        if (packages.length > 0) {
-            builderViewBtn.classList.remove('d-none');
-        } else {
-            var collapseBuilder = document.getElementById('Nav_ScriptBuilder'),
-                collapseBuilderInstance = Collapse.getInstance(collapseBuilder) ? Collapse.getInstance(collapseBuilder) : new Collapse(collapseBuilder, { toggle: false });
-
-            modalBuilderInstance.hide();
-            collapseBuilderInstance.hide();
-            builderViewBtn.classList.add('d-none');
-        }
-    }
-
-    // Add or remove packages
-    function addOrRemoveButtons() {
-        var builderAddRemoveBtns = document.querySelectorAll('.btn-builder');
-
-        builderAddRemoveBtns.forEach(function (el) {
-            el.addEventListener('click', function (e) {
+        builderAddRemoveBtns.forEach(el => {
+            el.addEventListener('click', e => {
                 e.stopImmediatePropagation();
 
-                var packageTitle = el.getAttribute('title'),
-                    packageValue = el.getAttribute('value'),
-                    packageVersion = el.getAttribute('version'),
-                    packageIdentity = 'package-' + packageTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '') + '-' + packageVersion.replace(/\./gi, ''),
-                    packageImage = /[^/]*$/.exec(el.getAttribute('image'))[0],
-                    packageUrl = findPackagePath(packageValue),
-                    imageUrl = findImagePath(packageImage),
-                    packageButtons = document.querySelectorAll('.btn-builder[value="' + packageValue + '"]:not(.btn-builder-version)');
+                let packageTitle = el.getAttribute('title');
+                let packageValue = el.getAttribute('value');
+                let packageVersion = el.getAttribute('version');
+                let packageIdentity = `package-${packageTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '')}-${packageVersion.replace(/\./gi, '')}`;
+                let packageImage = /[^/]*$/.exec(el.getAttribute('image'))[0];
+                let packageButtons = document.querySelectorAll(`.btn-builder[value="${packageValue}"]:not(.btn-builder-version)`);
+                const packageUrl = findPackagePath(packageValue);
+                const imageUrl = findImagePath(packageImage);
 
-                function addPackages() {
+                const addPackages = () => {
                     // Update button
-                    for (var i of packageButtons) {
+                    for (const i of packageButtons) {
                         builderButtonRemove(i);
                     }
 
@@ -143,62 +142,62 @@
                     addOrRemoveButtons();
 
                     // Save to local storage
-                    packages.push(packageTitle + " , " + packageVersion + " , " + packageImage + " , " + packageValue);
+                    packages.push(`${packageTitle} , ${packageVersion} , ${packageImage} , ${packageValue}`);
                     localStorage.packageList = JSON.stringify(packages);
-                }
+                };
 
-                function removePackages(currentTitle, currentVersion, currentImage, currentValue) {
+                const removePackages = (currentTitle, currentVersion, currentImage, currentValue) => {
                     // Remove packages
                     if (currentTitle) {
                         packageTitle = currentTitle;
                         packageVersion = currentVersion;
                         packageImage = currentImage;
                         packageValue = currentValue;
-                        packageButtons = document.querySelectorAll('.btn-builder[value="' + currentValue + '"]:not(.btn-builder-version)');
-                        packageIdentity = 'package-' + currentTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '') + '-' + currentVersion.replace(/\./gi, '');
+                        packageButtons = document.querySelectorAll(`.btn-builder[value="${currentValue}"]:not(.btn-builder-version)`);
+                        packageIdentity = `package-${currentTitle.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '')}-${currentVersion.replace(/\./gi, '')}`;
                     }
 
                     // Update button
-                    for (var i of packageButtons) {
+                    for (const i of packageButtons) {
                         builderButtonAdd(i);
                     }
 
                     // Remove package from lists
-                    var packageInNavAndModal = document.querySelectorAll('.storage .' + packageIdentity)
-                    for (var i of packageInNavAndModal) {
+                    const packageInNavAndModal = document.querySelectorAll(`.storage .${packageIdentity}`);
+                    for (const i of packageInNavAndModal) {
                         i.previousElementSibling.remove();
                         i.remove();
                     }
 
                     // Remove from local storage
-                    for (var i in packages) {
-                        if (packages[i] == packageTitle + " , " + packageVersion + " , " + packageImage + " , " + packageValue) {
+                    for (const i in packages) {
+                        if (packages[i] == `${packageTitle} , ${packageVersion} , ${packageImage} , ${packageValue}`) {
                             packages.splice(i, 1);
                         }
                     }
 
                     localStorage.packageList = JSON.stringify(packages);
-                }
+                };
 
                 // Determine if there is already a version of the package in their list
                 if (!el.classList.contains('btn-builder-version')) {
-                    for (var i in packages) {
+                    for (const i in packages) {
                         if (packages.length != 0 && el.classList.contains('btn-success')) {
-                            var getStorage = packages[i].split(" , "),
-                                storageTitle = getStorage[0],
-                                storageVersion = getStorage[1],
-                                storageImage = getStorage[2],
-                                storageValue = getStorage[3];
+                            const getStorage = packages[i].split(' , ');
+                            const storageTitle = getStorage[0];
+                            const storageVersion = getStorage[1];
+                            const storageImage = getStorage[2];
+                            const storageValue = getStorage[3];
 
                             if (findScriptValue(storageValue) == findScriptValue(packageValue)) {
                                 // Show modal
-                                var modalBuilderVersionWarning = document.getElementById('Modal_ScriptBuilderVersionWarning'),
-                                    modalBuilderVersionWarningInstance = Modal.getInstance(modalBuilderVersionWarning) ? Modal.getInstance(modalBuilderVersionWarning) : new Modal(modalBuilderVersionWarning, { keyboard: false, backdrop: 'static' });
+                                const modalBuilderVersionWarning = document.getElementById('Modal_ScriptBuilderVersionWarning');
+                                const modalBuilderVersionWarningInstance = Modal.getOrCreateInstance(modalBuilderVersionWarning, { keyboard: false, backdrop: 'static' });
 
-                                modalBuilderVersionWarning.addEventListener('show.bs.modal', function (event) {
-                                    var btnBuilderVersion = document.querySelector('.btn-builder-version'),
-                                        builderCurrentVersion = document.querySelector('.current-version'),
-                                        builderNewVersion = document.querySelector('.new-version');
+                                modalBuilderVersionWarning.addEventListener('show.bs.modal', () => {
+                                    const btnBuilderVersion = document.querySelector('.btn-builder-version');
+                                    const builderCurrentVersion = document.querySelector('.current-version');
+                                    const builderNewVersion = document.querySelector('.new-version');
 
                                     btnBuilderVersion.setAttribute('value', packageValue);
                                     btnBuilderVersion.setAttribute('title', packageTitle);
@@ -236,41 +235,14 @@
                 countPackages();
             }, false);
         });
-    }
+    };
 
-    // On builder open
-    modalBuilder.addEventListener('show.bs.modal', function () {
-        injectIndividualScripts();
-        injectEnvironmentScripts();
-        injectOrganizationScripts();
-        builderNavButtons();
-        copyCodeBlocks();
-    });
+    addOrRemoveButtons();
 
-    builderStep3.addEventListener('show.bs.tab', function () {
-        injectIndividualScripts();
-        copyCodeBlocks();
-    });
+    selectDeploymentMethodTab(); // Do we need this
 
-    builderStep4.addEventListener('show.bs.tab', function () {
-        injectEnvironmentScripts();
-        copyCodeBlocks();
-    });
-
-    builderStep5.addEventListener('show.bs.tab', function () {
-        injectOrganizationScripts();
-        copyCodeBlocks();
-    });
-
-    deploymentMethods.forEach(function (el) {
-        el.addEventListener('click', function (e) {
-            selectDeploymentMethodTab();
-            builderScriptType();
-        }, false);
-    });
-
-    function builderScriptType() {
-        if (getCookie('deployment_method') == "individual" || !getCookie('deployment_method')) {
+    const builderScriptType = () => {
+        if (getCookie('deployment_method') == 'individual' || !getCookie('deployment_method')) {
             builderStep3.innerHTML = '<strong><span class="d-none d-sm-inline-block me-1">STEP</span><span>3</span></strong><p class="mb-0 d-none d-lg-block">Install Script / Config</p>';
             builderStep4.classList.add('d-none');
             builderStep4.parentElement.classList.add('d-none');
@@ -291,214 +263,233 @@
             builderIndividual.classList.remove('active');
             builderOrganization.classList.add('active');
         }
-    }
+    };
 
-    function highlightScript(commandMethod, commandLanguage) {
+    builderScriptType();
+
+    const highlightScript = (commandMethod, commandLanguage) => {
         commandMethod.classList.add(commandLanguage);
         Prism.highlightElement(commandMethod);
-    }
+    };
 
-    function findScriptValue(scriptValue) {
+    const findScriptValue = scriptValue => {
         if (scriptValue.indexOf('--') > 0) {
             scriptValue = scriptValue.split('--');
             scriptValue = scriptValue[0].trim();
         }
 
         return scriptValue;
-    }
+    };
 
-    function findScriptPre(scriptValue) {
+    const findScriptPre = scriptValue => {
         if (scriptValue.indexOf('--pre') > 0) {
             return true;
         }
 
         return false;
-    }
+    };
 
-    function injectIndividualScripts() {
-        if (getCookie('deployment_method') == "individual" || !getCookie('deployment_method')) {
-            var commandIndividual = document.querySelector('.command-builder-individual');
+    const injectIndividualScripts = () => {
+        if (getCookie('deployment_method') == 'individual' || !getCookie('deployment_method')) {
+            const commandIndividual = document.querySelector('.command-builder-individual');
 
             // Clear previously injected scripts
             commandIndividual.innerHTML = '';
 
             // Inject scripts
-            for (var i in packages) {
-                var getStorage = packages[i].split(' , '),
-                    storageVersion = getStorage[1],
-                    storageValue = findScriptValue(getStorage[3]),
-                    storagePre = findScriptPre(getStorage[3]) ? ' --pre' : '';
+            for (const i in packages) {
+                const getStorage = packages[i].split(' , ');
+                const storageVersion = getStorage[1];
+                const storageValue = findScriptValue(getStorage[3]);
+                const storagePre = findScriptPre(getStorage[3]) ? ' --pre' : '';
 
-                commandIndividual.innerHTML += 'choco install ' + storageValue + ' --version ' + storageVersion + storagePre + ' -y\n';
+                commandIndividual.innerHTML += `choco install ${storageValue} --version ${storageVersion}${storagePre} -y\n`;
             }
 
             // Syntax highlight
-            highlightScript(commandIndividual, 'language-powershell')
+            highlightScript(commandIndividual, 'language-powershell');
         }
-    }
+    };
 
-    function injectEnvironmentScripts() {
-        var internalRepoUrl = document.querySelector('.internalRepoUrlInput').value ? document.querySelector('.internalRepoUrlInput').value : "http://internal/odata/repo",
-            commandInjectedScripts = document.querySelectorAll('.command-injected-environment-script'),
-            commandEnvironmentOne = document.querySelector('.command-builder-environment-one'),
-            commandEnvironmentTwo = document.querySelector('.command-builder-environment-two');
+    const injectEnvironmentScripts = () => {
+        const internalRepoUrl = document.querySelector('.internalRepoUrlInput').value ? document.querySelector('.internalRepoUrlInput').value : 'http://internal/odata/repo';
+        const commandInjectedScripts = document.querySelectorAll('.command-injected-environment-script');
+        const commandEnvironmentOne = document.querySelector('.command-builder-environment-one');
+        const commandEnvironmentTwo = document.querySelector('.command-builder-environment-two');
 
         // Clear previously injected scripts
-        for (var i of commandInjectedScripts) {
+        for (const i of commandInjectedScripts) {
             i.innerHTML = '';
         }
 
         // Inject scripts
-        commandEnvironmentTwo.innerHTML = "choco push --source=\"'" + internalRepoUrl + "'\"";
-        
-        for (var i in packages) {
-            var getStorage = packages[i].split(' , '),
-                storageVersion = getStorage[1],
-                storageValue = findScriptValue(getStorage[3]),
-                storagePre = findScriptPre(getStorage[3]) ? ' --pre' : '';
+        commandEnvironmentTwo.innerHTML = `choco push --source="'${internalRepoUrl}'"`;
 
-            commandEnvironmentOne.innerHTML += 'choco download ' + storageValue + ' --internalize --version=' + storageVersion + storagePre + ' --source=https://community.chocolatey.org/api/v2/\n';
+        for (const i in packages) {
+            const getStorage = packages[i].split(' , ');
+            const storageVersion = getStorage[1];
+            const storageValue = findScriptValue(getStorage[3]);
+            const storagePre = findScriptPre(getStorage[3]) ? ' --pre' : '';
+
+            commandEnvironmentOne.innerHTML += `choco download ${storageValue} --internalize --version='${storageVersion}${storagePre}' --source=https://community.chocolatey.org/api/v2/\n`;
         }
 
         // Syntax highlight
         highlightScript(commandEnvironmentOne, 'language-powershell');
         highlightScript(commandEnvironmentTwo, 'language-powershell');
-    }
+    };
 
-    function injectOrganizationScripts() {
-        var internalRepoUrl = document.querySelector('.internalRepoUrlInput').value ? document.querySelector('.internalRepoUrlInput').value : "http://internal/odata/repo",
-            commandInjectedScripts = document.querySelectorAll('.command-injected-organization-script'),
-            commandAnsible = document.querySelector('.command-builder-organization-ansible'),
-            commandChef = document.querySelector('.command-builder-organization-chef'),
-            commandPSDSC = document.querySelector('.command-builder-organization-psdsc'),
-            commandPuppet = document.querySelector('.command-builder-organization-puppet'),
-            commandGenericOne = document.querySelector('.command-builder-organization-generic-one'),
-            commandGenericTwo = document.querySelector('.command-builder-organization-generic-two');
+    const injectOrganizationScripts = () => {
+        const internalRepoUrl = document.querySelector('.internalRepoUrlInput').value ? document.querySelector('.internalRepoUrlInput').value : 'http://internal/odata/repo';
+        const commandInjectedScripts = document.querySelectorAll('.command-injected-organization-script');
+        const commandAnsible = document.querySelector('.command-builder-organization-ansible');
+        const commandChef = document.querySelector('.command-builder-organization-chef');
+        const commandPSDSC = document.querySelector('.command-builder-organization-psdsc');
+        const commandPuppet = document.querySelector('.command-builder-organization-puppet');
+        const commandGenericOne = document.querySelector('.command-builder-organization-generic-one');
+        const commandGenericTwo = document.querySelector('.command-builder-organization-generic-two');
 
         // Clear previously injected scripts
-        for (var i of commandInjectedScripts) {
+        for (const i of commandInjectedScripts) {
             i.innerHTML = '';
         }
 
         // Syntax highlight
         switch (getCookie('deployment_method')) {
             case 'ansible':
-                for (var i in packages) {
-                    var getStorage = packages[i].split(' , '),
-                        storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]),
-                        storagePre = findScriptPre(getStorage[3]) ? '    allow_prerelease: yes\n\n' : '\n';
+                for (const i in packages) {
+                    const getStorage = packages[i].split(' , ');
+                    const storageVersion = getStorage[1];
+                    const storageValue = findScriptValue(getStorage[3]);
+                    const storagePre = findScriptPre(getStorage[3]) ? 'allow_prerelease: yes' : '';
 
-                    commandAnsible.innerHTML += "- name: Install " + storageValue + "\n" +
-                        "  win_chocolatey:\n" +
-                        "    name: " + storageValue + "\n" +
-                        "    version: '" + storageVersion + "'\n" +
-                        "    source: " + internalRepoUrl + "\n" +
-                        "    state: present\n" + 
-                        storagePre;
+                    commandAnsible.innerHTML += `- name: Install ${storageValue}
+                      win_chocolatey:
+                        name: ${storageValue}
+                        version: ${storageVersion}
+                        source: ${internalRepoUrl}
+                        state: present
+                        ${storagePre}
+                      
+                    `;
                 }
 
                 highlightScript(commandAnsible, 'language-yaml');
 
                 break;
             case 'chef':
-                for (var i in packages) {
-                    var getStorage = packages[i].split(' , '),
-                        storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]),
-                        storagePre = findScriptPre(getStorage[3]) ? "  options  '--prerelease'\n" : "";
+                for (const i in packages) {
+                    const getStorage = packages[i].split(' , ');
+                    const storageVersion = getStorage[1];
+                    const storageValue = findScriptValue(getStorage[3]);
+                    const storagePre = findScriptPre(getStorage[3]) ? "options  '--prerelease'" : ''; // eslint-disable-line
 
-                    commandChef.innerHTML += "chocolatey_package '" + storageValue + "' do\n" +
-                        "  action   :install\n" +
-                        "  source   '" + internalRepoUrl + "'\n" +
-                        "  version  '" + storageVersion + "'\n" +
-                        storagePre +
-                        "end\n\n";
+                    commandChef.innerHTML += `chocolatey_package ${storageValue}
+                      action   :install
+                      source   '${internalRepoUrl}'
+                      version  '${storageVersion}'
+                      ${storagePre}
+                    end
+                        
+                    `;
                 }
 
                 highlightScript(commandChef, 'language-ruby');
 
                 break;
             case 'psdsc':
-                for (var i in packages) {
-                    var getStorage = packages[i].split(' , '),
-                        storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]),
-                        storagePre = findScriptPre(getStorage[3]) ? '    chocoParams = "--prerelease"\n' : '',
-                        storageSpace = findScriptPre(getStorage[3]) ? "    " : "";
+                for (const i in packages) {
+                    const getStorage = packages[i].split(' , ');
+                    const storageVersion = getStorage[1];
+                    const storageValue = findScriptValue(getStorage[3]);
+                    const storagePre = findScriptPre(getStorage[3]) ? 'chocoParams = "--prerelease"' : '';
+                    const storageSpace = findScriptPre(getStorage[3]) ? '    ' : '';
 
-                    commandPSDSC.innerHTML += 'cChocoPackageInstaller ' + storageValue + '\n' +
-                        '{\n' +
-                        '    Name    ' + storageSpace + '= "' + storageValue + '"\n' +
-                        '    Version ' + storageSpace + '= "' + storageVersion + '"\n' +
-                        '    Source  ' + storageSpace + '= "' + internalRepoUrl + '"\n' +
-                        storagePre +
-                        '}\n\n';
+                    commandPSDSC.innerHTML += `cChocoPackageInstaller ${storageValue}
+                    {
+                        Name    ${storageSpace} = "${storageValue}"
+                        Version ${storageSpace} = "${storageVersion}"
+                        Source  ${storageSpace} = "${internalRepoUrl}"
+                        ${storagePre}
+                    }
+                        
+                    `;
                 }
 
                 highlightScript(commandPSDSC, 'language-powershell');
 
                 break;
             case 'puppet':
-                for (var i in packages) {
-                    var getStorage = packages[i].split(' , '),
-                        storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]),
-                        storagePre = findScriptPre(getStorage[3]) ? "  install_options => ['--prerelease'],\n" : "",
-                        storageSpace = findScriptPre(getStorage[3]) ? "       " : "";
+                for (const i in packages) {
+                    const getStorage = packages[i].split(' , ');
+                    const storageVersion = getStorage[1];
+                    const storageValue = findScriptValue(getStorage[3]);
+                    const storagePre = findScriptPre(getStorage[3]) ? "install_options => ['--prerelease']," : ''; // eslint-disable-line
+                    const storageSpace = findScriptPre(getStorage[3]) ? '       ' : '';
 
-                    commandPuppet.innerHTML += "package { '" + storageValue + "':\n" +
-                        "  ensure   " + storageSpace + "=> '" + storageVersion + "',\n" +
-                        storagePre +
-                        "  provider " + storageSpace + "=> 'chocolatey',\n" +
-                        "  source   " + storageSpace + "=> '" + internalRepoUrl + "',\n" +
-                        "}\n\n";
+                    commandPuppet.innerHTML += `package { '${storageValue}':
+                      ensure   ${storageSpace} => '${storageVersion}',
+                      ${storagePre}
+                      provider ${storageSpace} => 'chocolatey',
+                      source   ${storageSpace} => '${internalRepoUrl}',
+                    }
+                    
+                    `;
                 }
 
                 highlightScript(commandPuppet, 'language-puppet');
 
                 break;
             case 'generic':
-                commandGenericTwo.innerHTML = 'function Install-ChocolateyPackage {\n' +
-                '  param (\n' +
-                '    [Parameter(Mandatory, Position=0)]\n' +
-                '    [string]$PackageName,\n\n' +
-                '    [string]$Source,\n\n' +
-                '    [alias("Params")]\n' +
-                '    [string]$PackageParameters,\n\n' +
-                '    [string]$Version,\n\n' +
-                '    [alias("Pre")]\n' +
-                '    [switch]$Prerelease,\n\n' +
-                '    [switch]$UseInstallNotUpgrade\n' +
-                '  )\n\n' +
-                '  $chocoExecutionArgs = "choco.exe"\n' +
-                '  if ($UseInstallNotUpgrade) {\n' +
-                '    $chocoExecutionArgs += " install"\n' +
-                '  } else {\n' +
-                '    $chocoExecutionArgs += " upgrade"\n' +
-                '  }\n\n' +
-                '  $chocoExecutionArgs += " $PackageName -y --source=\'$Source\'"\n' +
-                '  if ($Prerelease) { $chocoExecutionArgs += " --prerelease"}\n' +
-                '  if ($Version) { $chocoExecutionArgs += " --version=\'$Version\'"}\n' +
-                '  if ($PackageParameters -and $PackageParameters -ne \'\') { $chocoExecutionArgs += " --package-parameters=\'$PackageParameters\'"}\n\n' +
-                '  Invoke-Expression -Command $chocoExecutionArgs\n' +
-                '  $exitCode = $LASTEXITCODE\n' +
-                '  $validExitCodes = @(0, 1605, 1614, 1641, 3010)\n' +
-                '  if ($validExitCodes -notcontains $exitCode) {\n' +
-                '    throw "Error with package installation. See above."\n' +
-                '  }\n' +
-                '}\n\n' +
-                '<span></span>';
+                commandGenericTwo.innerHTML = `function Install-ChocolateyPackage {
+                  param (
+                    [Parameter(Mandatory, Position=0)]
+                    [string]$PackageName,
 
-                for (var i in packages) {
-                    var getStorage = packages[i].split(' , '),
-                        storageVersion = getStorage[1],
-                        storageValue = findScriptValue(getStorage[3]),
-                        storagePreOne = findScriptPre(getStorage[3]) ? ' --prerelease' : '',
-                        storagePreTwo = findScriptPre(getStorage[3]) ? ' -Prerelease' : '';
+                    [string]$Source,
 
-                    commandGenericOne.innerHTML += "choco upgrade " + storageValue + " -y --source=\"'" + internalRepoUrl + "'\" --version \"'" + storageVersion + "'\"" + storagePreOne + " [other options]\n";
-                    commandGenericTwo.querySelector('span').innerHTML += "Install-ChocolateyPackage " + storageValue + " -Source " + internalRepoUrl + " -Version " + storageVersion + storagePreTwo +"\n"
+                    [alias("Params")]
+                    [string]$PackageParameters,
+
+                    [string]$Version,
+
+                    [alias("Pre")]
+                    [switch]$Prerelease,
+
+                    [switch]$UseInstallNotUpgrade
+                  )
+
+                  $chocoExecutionArgs = "choco.exe"
+                  if ($UseInstallNotUpgrade) {
+                    $chocoExecutionArgs += " install"
+                  } else {
+                    $chocoExecutionArgs += " upgrade"
+                  }
+
+                  $chocoExecutionArgs += " $PackageName -y --source='$Source'"
+                  if ($Prerelease) { $chocoExecutionArgs += " --prerelease"}
+                  if ($Version) { $chocoExecutionArgs += " --version='$Version'"}
+                  if ($PackageParameters -and $PackageParameters -ne '') { $chocoExecutionArgs += " --package-parameters='$PackageParameters'"}
+
+                  Invoke-Expression -Command $chocoExecutionArgs
+                  $exitCode = $LASTEXITCODE
+                  $validExitCodes = @(0, 1605, 1614, 1641, 3010)
+                  if ($validExitCodes -notcontains $exitCode) {
+                    throw "Error with package installation. See above."
+                  }
+                }
+
+                <span></span>`;
+
+                for (const i in packages) {
+                    const getStorage = packages[i].split(' , ');
+                    const storageVersion = getStorage[1];
+                    const storageValue = findScriptValue(getStorage[3]);
+                    const storagePreOne = findScriptPre(getStorage[3]) ? ' --prerelease' : '';
+                    const storagePreTwo = findScriptPre(getStorage[3]) ? ' -Prerelease' : '';
+
+                    commandGenericOne.innerHTML += `choco upgrade ${storageValue} -y --source="'${internalRepoUrl}'" --version "'${storageVersion}"'${storagePreOne} [other options]\n`;
+                    commandGenericTwo.querySelector('span').innerHTML += `Install-ChocolateyPackage ${storageValue} -Source ${internalRepoUrl} -Version ${storageVersion}${storagePreTwo}\n`;
                 }
 
                 highlightScript(commandGenericOne, 'language-powershell');
@@ -507,83 +498,37 @@
                 break;
             default:
                 // do nothing
-        }
-    }
+        };
+    };
 
-    // Builder prev/next buttons
-    var builderNextBtn = document.querySelectorAll('.btn-next-step'),
-        builderPrevBtn = document.querySelectorAll('.btn-prev-step');
-    
-    builderNextBtn.forEach(function (el) {
-        el.addEventListener('click', function (e) {
-            var builderNextStep = document.querySelector('#builder-steps .active').closest('li').nextElementSibling;
-
-            if (builderNextStep) {
-                if (!builderStep3.classList.contains('active') || !builderIndividual.classList.contains('active')) {
-                    var builderNextStepTab = builderNextStep.firstElementChild,
-                        builderNextStepTabInstance = Tab.getInstance(builderNextStepTab) ? Tab.getInstance(builderNextStepTab) : new Tab(builderNextStepTab, { toggle: false });
-
-                    builderNextStepTabInstance.show();
-                }
-            }
-
-        }, false);
-    });
-
-    builderPrevBtn.forEach(function (el) {
-        el.addEventListener('click', function (e) {
-            var builderPrevStep = document.querySelector('#builder-steps .active').closest('li').previousElementSibling;
-
-            if (builderPrevStep) {
-                var builderPrevStepTab = builderPrevStep.firstElementChild,
-                    builderPrevStepTabInstance = Tab.getInstance(builderPrevStepTab) ? Tab.getInstance(builderPrevStepTab) : new Tab(builderPrevStepTab, { toggle: false });
-
-                builderPrevStepTabInstance.show();
-            }
-
-        }, false);
-    });
-
-    document.querySelectorAll('#builder-steps a[data-bs-toggle="pill"]').forEach(function (el) {
-        el.addEventListener('shown.bs.tab', function (e) {
-            builderNavButtons();
-        });
-    });
-
-    document.querySelectorAll('.internalRepoUrlInput').forEach(function (el) {
-        el.addEventListener('keyup', function (e) {
-            builderNavButtons();
-        });
-    });
-
-    function builderNavButtons() {
-        var builderCurrentStep = document.querySelector('#builder-steps .active'),
-            builderNextStep = document.querySelector('#builder-steps .active').closest('li').nextElementSibling,
-            builderPrevStep = document.querySelector('#builder-steps .active').closest('li').previousElementSibling,
-            internalRepoUrl = document.querySelector('.internalRepoUrlInput');
+    const builderNavButtons = () => {
+        const builderCurrentStep = document.querySelector('#builder-steps .active');
+        const builderNextStep = document.querySelector('#builder-steps .active').closest('li').nextElementSibling;
+        const builderPrevStep = document.querySelector('#builder-steps .active').closest('li').previousElementSibling;
+        const internalRepoUrl = document.querySelector('.internalRepoUrlInput');
+        const builderStep3Tab = Tab.getOrCreateInstance(builderStep3, { toggle: false });
 
         // Next Button
         if (builderNextStep) {
-            var builderNextStepTab = builderNextStep.firstElementChild;
+            const builderNextStepTab = builderNextStep.firstElementChild;
 
             if (builderNextStepTab.classList.contains('d-none')) {
-                for (var i = 0; i < builderNextBtn.length; i++) {
+                for (let i = 0; i < builderNextBtn.length; i++) {
                     builderNextBtn[i].classList.add('disabled');
                 }
             } else { // Organization
                 if (!internalRepoUrl.value && builderCurrentStep.id == 'builder-step-4-tab') {
-                    var builderStep3Tab = Tab.getInstance(builderStep3) ? Tab.getInstance(builderStep3) : new Tab(builderStep3, { toggle: false });
                     builderStep3Tab.show();
                     return;
                 }
 
                 if (!internalRepoUrl.value) {
                     if (builderCurrentStep.id == 'builder-step-3-tab') {
-                        for (var i = 0; i < builderNextBtn.length; i++) {
+                        for (let i = 0; i < builderNextBtn.length; i++) {
                             builderNextBtn[i].classList.add('disabled');
                         }
                     } else {
-                        for (var i = 0; i < builderNextBtn.length; i++) {
+                        for (let i = 0; i < builderNextBtn.length; i++) {
                             builderNextBtn[i].classList.remove('disabled');
                         }
                     }
@@ -591,7 +536,7 @@
                     builderStep4.classList.add('disabled');
                     builderStep5.classList.add('disabled');
                 } else {
-                    for (var i = 0; i < builderNextBtn.length; i++) {
+                    for (let i = 0; i < builderNextBtn.length; i++) {
                         builderNextBtn[i].classList.remove('disabled');
                     }
 
@@ -600,12 +545,11 @@
                 }
             }
         } else {
-            for (var i = 0; i < builderNextBtn.length; i++) {
+            for (let i = 0; i < builderNextBtn.length; i++) {
                 builderNextBtn[i].classList.add('disabled');
             }
 
             if (!internalRepoUrl.value && builderCurrentStep.id == 'builder-step-5-tab') {
-                var builderStep3Tab = Tab.getInstance(builderStep3) ? Tab.getInstance(builderStep3) : new Tab(builderStep3, { toggle: false });
                 builderStep3Tab.show();
                 return;
             }
@@ -613,94 +557,175 @@
 
         // Previous Button
         if (builderPrevStep) {
-            for (var i = 0; i < builderPrevBtn.length; i++) {
+            for (let i = 0; i < builderPrevBtn.length; i++) {
                 builderPrevBtn[i].classList.remove('disabled');
             }
         } else {
-            for (var i = 0; i < builderPrevBtn.length; i++) {
+            for (let i = 0; i < builderPrevBtn.length; i++) {
                 builderPrevBtn[i].classList.add('disabled');
             }
         }
-    }
+    };
+
+    // On builder open
+    modalBuilder.addEventListener('show.bs.modal', () => {
+        injectIndividualScripts();
+        injectEnvironmentScripts();
+        injectOrganizationScripts();
+        builderNavButtons();
+        copyCodeBlocks();
+    });
+
+    builderStep3.addEventListener('show.bs.tab', () => {
+        injectIndividualScripts();
+        copyCodeBlocks();
+    });
+
+    builderStep4.addEventListener('show.bs.tab', () => {
+        injectEnvironmentScripts();
+        copyCodeBlocks();
+    });
+
+    builderStep5.addEventListener('show.bs.tab', () => {
+        injectOrganizationScripts();
+        copyCodeBlocks();
+    });
+
+    deploymentMethods.forEach(el => {
+        el.addEventListener('click', () => {
+            selectDeploymentMethodTab();
+            builderScriptType();
+        }, false);
+    });
+
+    // Builder prev/next buttons
+    const builderNextBtn = document.querySelectorAll('.btn-next-step');
+    const builderPrevBtn = document.querySelectorAll('.btn-prev-step');
+
+    builderNextBtn.forEach(el => {
+        el.addEventListener('click', () => {
+            const builderNextStep = document.querySelector('#builder-steps .active').closest('li').nextElementSibling;
+
+            if (builderNextStep) {
+                if (!builderStep3.classList.contains('active') || !builderIndividual.classList.contains('active')) {
+                    const builderNextStepTab = builderNextStep.firstElementChild;
+                    const builderNextStepTabInstance = Tab.getOrCreateInstance(builderNextStepTab, { toggle: false });
+
+                    builderNextStepTabInstance.show();
+                }
+            }
+        }, false);
+    });
+
+    builderPrevBtn.forEach(el => {
+        el.addEventListener('click', () => {
+            const builderPrevStep = document.querySelector('#builder-steps .active').closest('li').previousElementSibling;
+
+            if (builderPrevStep) {
+                const builderPrevStepTab = builderPrevStep.firstElementChild;
+                const builderPrevStepTabInstance = Tab.getOrCreateInstance(builderPrevStepTab, { toggle: false });
+
+                builderPrevStepTabInstance.show();
+            }
+        }, false);
+    });
+
+    document.querySelectorAll('#builder-steps a[data-bs-toggle="pill"]').forEach(el => {
+        el.addEventListener('shown.bs.tab', () => {
+            builderNavButtons();
+        });
+    });
+
+    document.querySelectorAll('.internalRepoUrlInput').forEach(el => {
+        el.addEventListener('keyup', () => {
+            builderNavButtons();
+        });
+    });
 
     // Download xml file
-    function download(filename, text) {
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/xml;charset=utf-8,' + encodeURIComponent(text));
+    const download = (filename, text) => {
+        const element = document.createElement('a');
+
+        element.setAttribute('href', `data:text/xml;charset=utf-8, ${encodeURIComponent(text)}`);
         element.setAttribute('download', filename);
         element.style.display = 'none';
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
-    }
+    };
 
     // Beautify xml document
-    function formatXml(text) {
-        var filename = "packages.config"
-        formatted = '', indent = '',
-            tab = '\t';
+    const formatXml = text => {
+        const filename = 'packages.config';
+        const tab = '\t';
+        let formatted = '';
+        let indent = '';
 
-        text.split(/>\s*</).forEach(function (node) {
-            if (node.match(/^\/\w/)) indent = indent.substring(tab.length); // decrease indent by one 'tab'
-            formatted += indent + '<' + node + '>\r\n';
-            if (node.match(/^<?\w[^>]*[^\/]$/)) indent += tab; // increase indent
+        text.split(/>\s*</).forEach(node => {
+            // decrease indent by one 'tab'
+            if (node.match(/^\/\w/)) {
+                indent = indent.substring(tab.length);
+            }
+
+            formatted += `${indent}<${node}>\r\n`;
+
+            // increase indent
+            // eslint-disable-next-line
+            if (node.match(/^<?\w[^>]*[^\/]$/)) {
+                indent += tab;
+            }
         });
+
         text = formatted.substring(1, formatted.length - 3);
 
         // Send to download
         download(filename, text);
-    }
+    };
 
-    document.querySelector('.btn-xml').addEventListener('click', function () {
-        var xmlDoc = document.implementation.createDocument(null, "packages");
+    document.querySelector('.btn-xml').addEventListener('click', () => {
+        const xmlDoc = document.implementation.createDocument(null, 'packages');
         (new XMLSerializer()).serializeToString(xmlDoc);
 
-        var parser = new DOMParser();
-        prolog = '<?xml version="1.0" encoding="utf-8"?>';
+        const parser = new DOMParser();
+        const prolog = '<?xml version="1.0" encoding="utf-8"?>';
+        const newXmlStr = prolog + (new XMLSerializer()).serializeToString(xmlDoc);
+        const xml = parser.parseFromString(newXmlStr, 'application/xml');
+        const packagesObject = xml.getElementsByTagName('packages');
 
-        // Add prolog
-        newXmlStr = prolog + (new XMLSerializer()).serializeToString(xmlDoc);
-        var xml = parser.parseFromString(newXmlStr, "application/xml");
+        for (const i in packages) {
+            const getStorage = packages[i].split(' , ');
+            const storageVersion = getStorage[1];
+            const storageValue = findScriptValue(getStorage[3]);
+            const storagePre = findScriptPre(getStorage[3]);
+            const packageNode = xml.createElement('package');
 
-        // Build xml & add each package node
-        var packagesObject = xml.getElementsByTagName("packages");
-
-        for (var i in packages) {
-            getStorage = packages[i].split(" , ");
-            storageVersion = getStorage[1];
-            storageValue = findScriptValue(getStorage[3]),
-            storagePre = findScriptPre(getStorage[3]);
-
-            // Creates a new package entry for each item in builder
-            var packageNode = xml.createElement("package");
             packagesObject[0].appendChild(packageNode);
+            packageNode.setAttribute('id', storageValue);
+            packageNode.setAttribute('version', storageVersion);
 
-            packageNode.setAttribute("id", storageValue);
-            packageNode.setAttribute("version", storageVersion);
-            
             if (storagePre) {
-                packageNode.setAttribute("prerelease", "true");
+                packageNode.setAttribute('prerelease', 'true');
             }
         }
 
         // Get xml doc as string
-        var text = (new XMLSerializer()).serializeToString(xml);
+        const text = (new XMLSerializer()).serializeToString(xml);
 
         // Send off to beautify
         formatXml(text);
     }, false);
 
     // Bulk package download
-    document.querySelectorAll('.btn-bulk-package-download').forEach(function (el) {
-        el.addEventListener('click', function (e) {
+    document.querySelectorAll('.btn-bulk-package-download').forEach(el => {
+        el.addEventListener('click', e => {
             e.preventDefault();
 
-            for (var i in packages) {
-                getStorage = packages[i].split(" , ");
-                storageVersion = getStorage[1];
-                storageValue = findScriptValue(getStorage[3]);
+            for (const i in packages) {
+                const getStorage = packages[i].split(' , ');
+                const storageVersion = getStorage[1];
+                const storageValue = findScriptValue(getStorage[3]);
 
-                window.open('https://community.chocolatey.org/api/v2/package/' + storageValue + '/' + storageVersion);
+                window.open(`https://community.chocolatey.org/api/v2/package/${storageValue}/${storageVersion}`);
             }
         }, false);
     });

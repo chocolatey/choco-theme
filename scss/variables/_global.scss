@@ -371,6 +371,11 @@ $palette-colors: (
 
 $variable-prefix:       bs-;
 
+// Border radius
+$border-radius:               .25rem;
+$border-radius-sm:            .2rem;
+$border-radius-lg:            .3rem;
+
 // Create rgb colors for :root
 $colors-rgb: map-loop($colors, to-rgb, "$value");
 

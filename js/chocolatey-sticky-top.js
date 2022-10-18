@@ -1,10 +1,10 @@
-(function() {
-    var stickyHeader = document.querySelector('header.sticky-top');
-    
+(() => {
+    const stickyHeader = document.querySelector('header.sticky-top');
+
     if (stickyHeader) {
-        var navImage = document.querySelector('.navbar-brand-desktop'),
-            logoSmall = '/assets/images/global-shared/logo.svg',
-            logoLarge = '/assets/images/global-shared/logo-square.svg';
+        const navImage = document.querySelector('.navbar-brand-desktop');
+        const logoSmall = '/assets/images/global-shared/logo.svg';
+        const logoLarge = '/assets/images/global-shared/logo-square.svg';
 
         document.body.classList.add('sticky-nav-active');
 
@@ -12,7 +12,7 @@
             navImage.setAttribute('src', logoLarge);
         }
 
-        document.addEventListener('scroll', function(e) {
+        document.addEventListener('scroll', () => {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 if (stickyHeader.classList.contains('sticky-header')) {
                     stickyHeader.classList.remove('sticky-header');

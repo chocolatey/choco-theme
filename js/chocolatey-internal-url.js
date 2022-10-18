@@ -1,52 +1,48 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    var defaultUrl = 'http://internal/odata/repo',
-        containsInternalRepoUrl = document.querySelectorAll('.contains-internal-repo-url'),
-        internalRepoUrls = document.querySelectorAll('.internalRepoUrlInput'),
-        deploymentMethods = document.querySelectorAll('[data-deployment-method]');
+import { Tab } from 'bootstrap';
+import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/chocolatey-functions';
 
-    for (var i of containsInternalRepoUrl) {
-        i.innerHTML = i.innerHTML.replace(/(INTERNAL REPO URL)/g, '<span class="internalRepoUrl">' + defaultUrl + '</span>');
+document.addEventListener('DOMContentLoaded', () => {
+    const defaultUrl = 'http://internal/odata/repo';
+    const containsInternalRepoUrl = document.querySelectorAll('.contains-internal-repo-url');
+    const deploymentMethods = document.querySelectorAll('[data-deployment-method]');
+    const internalRepoUrls = document.querySelectorAll('.internalRepoUrlInput');
+
+    for (const i of containsInternalRepoUrl) {
+        i.innerHTML = i.innerHTML.replace(/(INTERNAL REPO URL)/g, `<span class="internalRepoUrl">${defaultUrl}</span>`);
     }
-    
-    internalRepoUrls.forEach(function (el) {
+
+    internalRepoUrls.forEach(el => {
         if (getCookie('internal_repo_url')) {
-            for (var i = 0; i < internalRepoUrls.length; i++) {
+            for (let i = 0; i < internalRepoUrls.length; i++) {
                 internalRepoUrls[i].value = getCookie('internal_repo_url');
             }
         }
 
-        internalUrlWarningAndCopy();
+        const internalUrlWarningAndCopy = () => {
+            const internalRepoUrl = document.querySelectorAll('.internalRepoUrl');
 
-        el.addEventListener('keyup', function (e) {
-            document.cookie = 'internal_repo_url=' + el.value + '; path=/';
-            internalUrlWarningAndCopy();
-        });
-
-        function internalUrlWarningAndCopy() {
-            var internalRepoUrl = document.querySelectorAll('.internalRepoUrl');
-
-            for (var i = 0; i < internalRepoUrls.length; i++) {
+            for (let i = 0; i < internalRepoUrls.length; i++) {
                 internalRepoUrls[i].value = el.value;
             }
 
             if (el.value) {
-                for (var i = 0; i < internalRepoUrl.length; i++) {
+                for (let i = 0; i < internalRepoUrl.length; i++) {
                     internalRepoUrl[i].innerHTML = el.value;
                 }
 
-                for (var i of containsInternalRepoUrl) {
+                for (const i of containsInternalRepoUrl) {
                     if (i.querySelector('.internal-repo-url-warning')) {
                         i.querySelector('.internal-repo-url-warning').remove();
                     }
                 }
             } else {
-                for (var i = 0; i < internalRepoUrl.length; i++) {
+                for (let i = 0; i < internalRepoUrl.length; i++) {
                     internalRepoUrl[i].innerHTML = defaultUrl;
                 }
-                
-                for (var i of containsInternalRepoUrl) {
+
+                for (const i of containsInternalRepoUrl) {
                     if (!i.querySelector('.internal-repo-url-warning')) {
-                        var calloutNoUrl = document.createElement('p');
+                        const calloutNoUrl = document.createElement('p');
 
                         calloutNoUrl.classList.add('internal-repo-url-warning', 'callout', 'callout-danger', 'shadow-none', 'text-danger', 'fw-bold', 'small');
                         calloutNoUrl.innerText = 'You must enter your internal repository url above before proceeding.';
@@ -55,35 +51,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     }
                 }
             }
-        }
+        };
+
+        internalUrlWarningAndCopy();
+
+        el.addEventListener('keyup', () => {
+            document.cookie = `internal_repo_url=${el.value}; path=/`;
+            internalUrlWarningAndCopy();
+        });
     });
 
-    selectDeploymentMethodTab();
-    pageScriptType();
-    copyCodeBlocks();
+    const pageScriptType = () => {
+        const installStepsGeneric = document.querySelector('.install-steps-generic');
 
-    deploymentMethods.forEach(function (el) {
-        el.addEventListener('click', function (e) {
-            pageScriptType();
-        }, false);
-    });
-
-    function pageScriptType() {
-        var installStepsGeneric = document.querySelector('.install-steps-generic');
-
-        if (getCookie('deployment_method') == "individual" || !getCookie('deployment_method')) {
-            var packagePageIndividual = document.querySelector('#individual-method-tab');
+        if (getCookie('deployment_method') == 'individual' || !getCookie('deployment_method')) {
+            const packagePageIndividual = document.querySelector('#individual-method-tab');
 
             if (packagePageIndividual) {
-                var packagePageIndividualTab = Tab.getInstance(packagePageIndividual) ? Tab.getInstance(packagePageIndividual) : new Tab(packagePageIndividual, { toggle: false });
+                const packagePageIndividualTab = Tab.getOrCreateInstance(packagePageIndividual, { toggle: false });
 
                 packagePageIndividualTab.show();
             }
         } else {
-            var packagePageOrganization = document.querySelector('#organization-method-tab');
+            const packagePageOrganization = document.querySelector('#organization-method-tab');
 
             if (packagePageOrganization) {
-                var packagePageOrganizationTab = Tab.getInstance(packagePageOrganization) ? Tab.getInstance(packagePageOrganization) : new Tab(packagePageOrganization, { toggle: false });
+                const packagePageOrganizationTab = Tab.getOrCreateInstance(packagePageOrganization, { toggle: false });
 
                 packagePageOrganizationTab.show();
             }
@@ -91,11 +84,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         // Install page specific
         if (installStepsGeneric) {
-            if (getCookie('deployment_method') == "chef" || getCookie('deployment_method') == "puppet") {
+            if (getCookie('deployment_method') == 'chef' || getCookie('deployment_method') == 'puppet') {
                 installStepsGeneric.classList.add('d-none');
             } else {
                 installStepsGeneric.classList.remove('d-none');
             }
         }
-    }
+    };
+
+    deploymentMethods.forEach(el => {
+        el.addEventListener('click', () => pageScriptType(), false);
+    });
+
+    selectDeploymentMethodTab();
+    pageScriptType();
+    copyCodeBlocks();
 });

@@ -1,7 +1,13 @@
-(function() {
-    jQuery('.authentication-error').remove();
+(() => {
+    const authenticationErrors = document.querySelectorAll('.authentication-error');
+    const loader = document.querySelector('#loader');
+
+    for (const i of authenticationErrors) {
+        i.remove();
+    }
+
     // Manually remove loader so it's not still playing animation in the background
-    jQuery('#loader').fadeOut(500, function () {
-        jQuery(this).remove();
-    });
+    if (loader) {
+        setTimeout(() => loader.remove(), 5000);
+    }
 })();

@@ -1,98 +1,98 @@
-(function() {
-    nestedCollapseLocation();
-    nestedTabLocation();
-    window.addEventListener('hashchange', nestedCollapseLocation, false);
-    window.addEventListener('hashchange', nestedTabLocation, false);
+import { Collapse, Tab } from 'bootstrap';
+import { escapeId, getParents } from './util/chocolatey-functions';
 
-    function nestedCollapseLocation() {
+(() => {
+    const nestedCollapseLocation = () => {
         if (location.hash) {
-            var el = document.querySelector(escapeId(location.hash));
+            const el = document.querySelector(escapeId(location.hash));
 
             if (el) {
-                var elScroll = el,
-                    collapseParents = getParents(el).filter(el => el != document && el.classList.contains('collapse'));
+                const elScroll = el;
+                const collapseParents = getParents(el).filter(el => el != document && el.classList.contains('collapse'));
 
                 if (collapseParents.length == 0 && el.classList.contains('collapse')) {
                     collapseParents.push(el);
                 }
 
-                collapseParents.reverse().forEach(function (el, idx, array) {
+                collapseParents.reverse().forEach((el, idx, array) => {
                     el = document.getElementById(escapeId(el.id));
 
-                    var collapseParentContainer = Collapse.getInstance(el) ? Collapse.getInstance(el) : new Collapse(el, { toggle: false });
-                    
+                    const collapseParentContainer = Collapse.getOrCreateInstance(el, { toggle: false });
+
                     collapseParentContainer.show();
 
-                    el.addEventListener('shown.bs.collapse', function (e) {
+                    el.addEventListener('shown.bs.collapse', e => {
                         e.stopImmediatePropagation();
 
-                        if (idx === array.length - 1){
+                        if (idx === array.length - 1) {
                             elScroll.scrollIntoView();
                         }
                     });
                 });
             }
         }
-    }
+    };
 
-    function nestedTabLocation() {
+    const nestedTabLocation = () => {
         if (location.hash) {
-            var el = document.querySelector('[data-bs-toggle="tab"][href="' + escapeId(location.hash) + '"]');
-            
-            if (el) {               
-                var elScroll = el,
-                    tabParents = getParents(el).filter(el => el != document && el.classList.contains('tab-pane'));
+            const el = document.querySelector(`[data-bs-toggle="tab"][href="${escapeId(location.hash)}"]`);
+
+            if (el) {
+                const elScroll = el;
+                const tabParents = getParents(el).filter(el => el != document && el.classList.contains('tab-pane'));
 
                 tabParents.push(el);
 
-                tabParents.reverse().forEach(function (el, idx, array) {
+                tabParents.reverse().forEach((el, idx, array) => {
                     if (!el.id.includes('-tab')) {
-                        el = document.getElementById(escapeId(el.id) + '-tab');
+                        el = document.getElementById(`${escapeId(el.id)}-tab`);
                     }
 
-                    var tabParentContainer = Tab.getInstance(el) ? Tab.getInstance(el) : new Tab(el, { toggle: false });
-                    
+                    const tabParentContainer = Tab.getOrCreateInstance(el, { toggle: false });
+
                     tabParentContainer.show();
 
-                    el.addEventListener('shown.bs.tab', function (e) {
+                    el.addEventListener('shown.bs.tab', e => {
                         e.stopImmediatePropagation();
 
-                        if (idx === array.length - 1){
+                        if (idx === array.length - 1) {
                             elScroll.scrollIntoView();
                         }
                     });
                 });
             }
         }
-    }
+    };
 
-    var btnCollapseTarget = document.querySelectorAll('.btn-collapse-target');
+    nestedCollapseLocation();
+    nestedTabLocation();
+    window.addEventListener('hashchange', nestedCollapseLocation, false);
+    window.addEventListener('hashchange', nestedTabLocation, false);
+
+    const btnCollapseTarget = document.querySelectorAll('.btn-collapse-target');
+
     if (btnCollapseTarget) {
-        btnCollapseTarget.forEach(function (el) {
-            el.addEventListener('click', function () {
-                var collapseTarget = document.querySelector(el.getAttribute('data-collapse-target')),
-                    collapseTargetContainer = Collapse.getInstance(collapseTarget) ? Collapse.getInstance(collapseTarget) : new Collapse(collapseTarget, { toggle: false });
+        btnCollapseTarget.forEach(el => {
+            el.addEventListener('click', () => {
+                const collapseTarget = document.querySelector(el.getAttribute('data-collapse-target'));
+                const collapseTargetContainer = Collapse.getOrCreateInstance(collapseTarget, { toggle: false });
 
                 collapseTargetContainer.show();
             }, false);
         });
     }
 
-    document.querySelectorAll('[data-bs-toggle="tab"]:not(.d-hash-none)').forEach(function (el) {
-        changeHash(el);
-    });
-
-    document.querySelectorAll('[data-bs-toggle="collapse"]:not(.d-hash-none)').forEach(function (el) {
-        changeHash(el);
-    });
-
-    function changeHash(el) {
-        el.addEventListener('click', function (e) {
+    const changeHash = el => {
+        el.addEventListener('click', e => {
             if (history.pushState) {
                 history.pushState(null, null, e.target.hash);
             } else {
-                window.location.hash = e.target.hash; //Polyfill for old browsers
+                window.location.hash = e.target.hash; // Polyfill for old browsers
             }
         });
-    }
+    };
+
+    document.querySelectorAll('[data-bs-toggle="tab"]:not(.d-hash-none)').forEach(el => changeHash(el));
+
+    document.querySelectorAll('[data-bs-toggle="collapse"]:not(.d-hash-none)').forEach(el => changeHash(el));
 })();
