@@ -52,7 +52,7 @@
     <p class="convert-utc-to-local fw-bold" data-event-utc="2022-11-03T16:00:00Z" data-event-include-break="true"></p>
     <p class="text-start">Join Paul and Gary for this months Chocolatey product livestream where we look at the latest release of Chocolatey 1.2.0, Chocolatey Licensed Extension 5.0.0 and shine a spotlight on the new hook scripts functionality. This opens up so many possibilities for Chocolatey CLI users!</p>
     <div class="d-flex align-items-center justify-content-center flex-wrap">
-        <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
+        <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-november" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
         <div class="mt-2 mx-1">
             <div class="atcb" style="display:none;">
             {
