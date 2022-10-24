@@ -57,7 +57,8 @@ h1, h2 {
     border-bottom: 3px solid $primary-opacity-25;
 }
 
-.chocolatey-blog #mainContent > p:first-child {
+.chocolatey-blog #mainContent > p:first-child,
+.chocolatey-design #mainContent > p:first-of-type {
     font-size: $h5-font-size;
 }
 

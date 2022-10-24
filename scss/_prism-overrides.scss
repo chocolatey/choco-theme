@@ -137,7 +137,7 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
     background-color: rgba($green, .2);
 }
 
-// Diff highlighting specific
+// Chocolatey diff highlighting specific
 .token.inserted-sign .inserted, 
 .token.deleted-sign .deleted, 
 .token.unchanged .unchanged {
@@ -151,4 +151,10 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
     padding: .5rem 0 .5rem 1rem;
     display: inline-block;
     width: 100%;
+}
+
+// Chocolatey toolbar specific
+.code-static-toolbar + .toolbar {
+    opacity: 1 !important;
+    top: -2.2rem !important;
 }
