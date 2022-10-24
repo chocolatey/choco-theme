@@ -1,7 +1,7 @@
 import jQuery from 'jquery';
 import EasyMDE from 'easymde';
 import { Collapse, Modal } from 'bootstrap';
-import { getCookie, setCookieExpirationNever } from './util/chocolatey-functions';
+import { getCookie, setCookieExpirationNever, truncateResults } from './util/chocolatey-functions';
 
 (() => {
     // Community Disclaimer
@@ -373,4 +373,7 @@ import { getCookie, setCookieExpirationNever } from './util/chocolatey-functions
             }
         });
     }
+
+    // Show or hide truncated version history table results on click
+    truncateResults(document.querySelector('#versionTableTruncateResults'));
 })();

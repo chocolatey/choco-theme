@@ -167,3 +167,20 @@ deploymentMethods.forEach(el => {
 if (deploymentMethodHashArray.includes(deploymentMethodHash)) {
     document.cookie = `deployment_method=${deploymentMethodHash}; path=/`;
 }
+
+// Show more or hide truncated results on click
+export const truncateResults = btnId => {
+    if (btnId) {
+        btnId.addEventListener('click', () => {
+            const results = document.querySelectorAll('tr.truncate-results');
+
+            for (const i of results) {
+                if (i.classList.contains('d-none')) {
+                    i.classList.remove('d-none');
+                } else {
+                    i.classList.add('d-none');
+                }
+            }
+        });
+    }
+};
