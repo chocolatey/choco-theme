@@ -1,5 +1,5 @@
 import { Collapse, Modal, Tab } from 'bootstrap';
-import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/chocolatey-functions';
+import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab } from './util/chocolatey-functions';
 
 (() => {
     const packages = localStorage.packageList === undefined ? new Array() : JSON.parse(localStorage.packageList); // eslint-disable-line
@@ -363,17 +363,17 @@ import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/cho
                     const storageValue = findScriptValue(getStorage[3]);
                     const storagePre = findScriptPre(getStorage[3]) ? 'allow_prerelease: yes' : '';
 
-                    commandAnsible.innerHTML += `- name: Install ${storageValue}
-                      win_chocolatey:
-                        name: ${storageValue}
-                        version: ${storageVersion}
-                        source: ${internalRepoUrl}
-                        state: present
-                        ${storagePre}
-                      
-                    `;
+                    commandAnsible.innerHTML += `
+- name: Install ${storageValue}
+  win_chocolatey:
+    name: ${storageValue}
+    version: '${storageVersion}'
+    source: ${internalRepoUrl}
+    state: present
+    ${storagePre}`;
                 }
 
+                commandAnsible.innerHTML = removeLineBreaks(commandAnsible.innerHTML);
                 highlightScript(commandAnsible, 'language-yaml');
 
                 break;
@@ -384,16 +384,16 @@ import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/cho
                     const storageValue = findScriptValue(getStorage[3]);
                     const storagePre = findScriptPre(getStorage[3]) ? "options  '--prerelease'" : ''; // eslint-disable-line
 
-                    commandChef.innerHTML += `chocolatey_package ${storageValue}
-                      action   :install
-                      source   '${internalRepoUrl}'
-                      version  '${storageVersion}'
-                      ${storagePre}
-                    end
-                        
-                    `;
+                    commandChef.innerHTML += `
+chocolatey_package '${storageValue}' do
+  action   :install
+  source   '${internalRepoUrl}'
+  version  '${storageVersion}'
+  ${storagePre}
+end`;
                 }
 
+                commandChef.innerHTML = removeLineBreaks(commandChef.innerHTML);
                 highlightScript(commandChef, 'language-ruby');
 
                 break;
@@ -405,17 +405,17 @@ import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/cho
                     const storagePre = findScriptPre(getStorage[3]) ? 'chocoParams = "--prerelease"' : '';
                     const storageSpace = findScriptPre(getStorage[3]) ? '    ' : '';
 
-                    commandPSDSC.innerHTML += `cChocoPackageInstaller ${storageValue}
-                    {
-                        Name    ${storageSpace} = "${storageValue}"
-                        Version ${storageSpace} = "${storageVersion}"
-                        Source  ${storageSpace} = "${internalRepoUrl}"
-                        ${storagePre}
-                    }
-                        
-                    `;
+                    commandPSDSC.innerHTML += `
+cChocoPackageInstaller ${storageValue}
+{
+   Name    ${storageSpace} = "${storageValue}"
+   Version ${storageSpace} = "${storageVersion}"
+   Source  ${storageSpace} = "${internalRepoUrl}"
+   ${storagePre}
+}`;
                 }
 
+                commandPSDSC.innerHTML = removeLineBreaks(commandPSDSC.innerHTML);
                 highlightScript(commandPSDSC, 'language-powershell');
 
                 break;
@@ -427,59 +427,59 @@ import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/cho
                     const storagePre = findScriptPre(getStorage[3]) ? "install_options => ['--prerelease']," : ''; // eslint-disable-line
                     const storageSpace = findScriptPre(getStorage[3]) ? '       ' : '';
 
-                    commandPuppet.innerHTML += `package { '${storageValue}':
-                      ensure   ${storageSpace} => '${storageVersion}',
-                      ${storagePre}
-                      provider ${storageSpace} => 'chocolatey',
-                      source   ${storageSpace} => '${internalRepoUrl}',
-                    }
-                    
-                    `;
+                    commandPuppet.innerHTML += `
+package { '${storageValue}':
+  ensure   ${storageSpace} => '${storageVersion}',
+  ${storagePre}
+  provider ${storageSpace} => 'chocolatey',
+  source   ${storageSpace} => '${internalRepoUrl}',
+}`;
                 }
 
+                commandPuppet.innerHTML = removeLineBreaks(commandPuppet.innerHTML);
                 highlightScript(commandPuppet, 'language-puppet');
 
                 break;
             case 'generic':
                 commandGenericTwo.innerHTML = `function Install-ChocolateyPackage {
-                  param (
-                    [Parameter(Mandatory, Position=0)]
-                    [string]$PackageName,
+  param (
+    [Parameter(Mandatory, Position=0)]
+    [string]$PackageName,
 
-                    [string]$Source,
+    [string]$Source,
 
-                    [alias("Params")]
-                    [string]$PackageParameters,
+    [alias("Params")]
+    [string]$PackageParameters,
 
-                    [string]$Version,
+    [string]$Version,
 
-                    [alias("Pre")]
-                    [switch]$Prerelease,
+    [alias("Pre")]
+    [switch]$Prerelease,
 
-                    [switch]$UseInstallNotUpgrade
-                  )
+    [switch]$UseInstallNotUpgrade
+  )
 
-                  $chocoExecutionArgs = "choco.exe"
-                  if ($UseInstallNotUpgrade) {
-                    $chocoExecutionArgs += " install"
-                  } else {
-                    $chocoExecutionArgs += " upgrade"
-                  }
+  $chocoExecutionArgs = "choco.exe"
+  if ($UseInstallNotUpgrade) {
+    $chocoExecutionArgs += " install"
+  } else {
+    $chocoExecutionArgs += " upgrade"
+  }
 
-                  $chocoExecutionArgs += " $PackageName -y --source='$Source'"
-                  if ($Prerelease) { $chocoExecutionArgs += " --prerelease"}
-                  if ($Version) { $chocoExecutionArgs += " --version='$Version'"}
-                  if ($PackageParameters -and $PackageParameters -ne '') { $chocoExecutionArgs += " --package-parameters='$PackageParameters'"}
+  $chocoExecutionArgs += " $PackageName -y --source='$Source'"
+  if ($Prerelease) { $chocoExecutionArgs += " --prerelease"}
+  if ($Version) { $chocoExecutionArgs += " --version='$Version'"}
+  if ($PackageParameters -and $PackageParameters -ne '') { $chocoExecutionArgs += " --package-parameters='$PackageParameters'"}
 
-                  Invoke-Expression -Command $chocoExecutionArgs
-                  $exitCode = $LASTEXITCODE
-                  $validExitCodes = @(0, 1605, 1614, 1641, 3010)
-                  if ($validExitCodes -notcontains $exitCode) {
-                    throw "Error with package installation. See above."
-                  }
-                }
+  Invoke-Expression -Command $chocoExecutionArgs
+  $exitCode = $LASTEXITCODE
+  $validExitCodes = @(0, 1605, 1614, 1641, 3010)
+  if ($validExitCodes -notcontains $exitCode) {
+    throw "Error with package installation. See above."
+  }
+}
 
-                <span></span>`;
+<span></span>`;
 
                 for (const i in packages) {
                     const getStorage = packages[i].split(' , ');
@@ -488,7 +488,7 @@ import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/cho
                     const storagePreOne = findScriptPre(getStorage[3]) ? ' --prerelease' : '';
                     const storagePreTwo = findScriptPre(getStorage[3]) ? ' -Prerelease' : '';
 
-                    commandGenericOne.innerHTML += `choco upgrade ${storageValue} -y --source="'${internalRepoUrl}'" --version "'${storageVersion}"'${storagePreOne} [other options]\n`;
+                    commandGenericOne.innerHTML += `choco upgrade ${storageValue} -y --source="'${internalRepoUrl}'" --version "'${storageVersion}'"${storagePreOne} [other options]\n`;
                     commandGenericTwo.querySelector('span').innerHTML += `Install-ChocolateyPackage ${storageValue} -Source ${internalRepoUrl} -Version ${storageVersion}${storagePreTwo}\n`;
                 }
 
