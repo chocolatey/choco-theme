@@ -41,7 +41,7 @@
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-19.jpg" alt="Hacktoberfest Tuesdays 2022" />
     </a>
     <p>Every Tuesday in October</p>
-    <p class="text-start">For Hacktoberfest, Chocolatey will be running a livestream every Tuesday to cover different timezones! Join Cory, James, Gary, Rain and Josh each week as they share knowledge on how to contribute to open-source projects such as Chocolatey CLI.</p>
+    <p class="text-start">For Hacktoberfest, Chocolatey ran a livestream every Tuesday! Rewatch Cory, James, Gary, and Rain as they share knowledge on how to contribute to open-source projects such as Chocolatey CLI.</p>
     <a href="https://chocolatey.org/events/hacktoberfest-tuesdays-2022" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
 </div>
 <hr />
