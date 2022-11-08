@@ -1,44 +1,45 @@
 blockquote, .callout {
-    padding: $spacer;
+    padding: $spacer $spacer $spacer 1.75rem;
     margin-bottom: $spacer;
-    background: $white;
-    background: var(--background-light);
-    box-shadow: $box-shadow-sm;
-    border-left: 6px solid $secondary;
+    background: rgba($secondary, .1);
+    outline: 1px solid var(--bs-secondary);
+    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 0 0 .1rem var(--bs-secondary);
 
     *:last-child {
         margin-bottom: 0;
     }
 
-    &.blockquote-warning, &.callout-warning {
-        border-color: var(--bs-warning);
+    &:after {
+        content: "";
+        height: calc(100% - 1rem);
+        width: .25rem;
+        position: absolute;
+        left: .5rem;
+        top: .5rem;
+        border-radius: .25rem;
+        background: var(--bs-secondary);
     }
 
-    &.blockquote-danger, &.callout-danger {
-        border-color: var(--bs-danger);
-    }
+    .callout-header {
+        display: none;
 
-    &.blockquote-primary, &.callout-primary {
-        border-color: var(--bs-primary);
-    }
-
-    &.blockquote-success, &.callout-success {
-        border-color: var(--bs-success);
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-user-color-scheme]) {
-        blockquote, .callout {
-            box-shadow: unset;
-            outline: 1px solid var(--border);
+        + * {
+            margin-top: 1rem;
         }
     }
-}
 
-[data-user-color-scheme='dark'] {
-    blockquote, .callout {
-        box-shadow: unset;
-        outline: 1px solid var(--border);
+    @each $color, $value in $theme-colors {
+        &.blockquote-#{$color}, &.callout-#{$color} {
+            border-color: var(--bs-#{$color});
+            outline-color: var(--bs-#{$color});
+            background-color: rgba($value, .1);
+            box-shadow: 0 0 0 .1rem var(--bs-#{$color});
+
+            &:after {
+                 background: var(--bs-#{$color});
+            }
+        }
     }
 }

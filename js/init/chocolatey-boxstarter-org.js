@@ -3,6 +3,7 @@ import '../lib/prism.min.js';
 import '../chocolatey-alerts.js';
 import '../chocolatey-anchors.js';
 import '../chocolatey-clipboard.js';
+import '../chocolatey-callouts.js';
 import '../chocolatey-code.js';
 import '../chocolatey-collapse-nested.js';
 import '../chocolatey-collapse-responsive.js';

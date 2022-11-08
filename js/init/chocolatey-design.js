@@ -3,6 +3,7 @@ import '../lib/prism.min.js';
 import '../chocolatey-alerts.js';
 import '../chocolatey-anchors.js';
 import '../chocolatey-code-copy-for-view.js'; // Purposely put before callouts.js because this script needs to execute first
+import '../chocolatey-callouts.js';
 import '../chocolatey-code.js';
 import '../chocolatey-collapse-nested.js';
 import '../chocolatey-collapse-responsive.js';
