@@ -10,7 +10,7 @@
     }
 
     &:disabled, &[readonly] {
-        background-color: var(--background-light-2);
+        background-color: var(--choco-theme-neutral);
         color: var(--text);
         opacity: 1;
     }
@@ -25,7 +25,7 @@
             background-color: var(--background-light);
 
             &[disabled], &:disabled {
-                background-color: var(--background-light-2);
+                background-color: var(--choco-theme-neutral);
                 border-color: $gray-500;
             }
         }

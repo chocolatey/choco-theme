@@ -4,14 +4,14 @@
 $fa-font-path: "/assets/fonts/fontawesome-free";
 
 // Social Media Colors
-$twitch:    #9147ff;
+$twitch:    #9147ff; // No automatic contrasting color
 $youtube:   #FF0000;
 $twitter:   #00aced;
 $linkedin:  #0073b1;
 $github:    $gray-900;
 $facebook:  #1877f2;
 $rss:       $orange;
-$chat:      #5865f2;
+$chat:      #5865f2; // No automatic contrasting color
 $google:    #4285F4;
 $website:   $gray-600;
 $mastodon:  #6364ff;
@@ -404,6 +404,7 @@ $btn-font-weight: 700;
 
 // Close Button
 $btn-close-bg: none;
+$btn-close-color: var(--choco-theme-contrast);
 
 // Carousel
 $carousel-indicator-active-bg: $primary;
@@ -437,9 +438,17 @@ $nav-tabs-link-active-bg: $white;
 $navbar-toggler-padding-y: .375rem;
 $navbar-toggler-font-size: $font-size-base;
 
+// Dropdowns
+$dropdown-color:                    var(--text);
+$dropdown-bg:                       var(--background-light);
+$dropdown-border-color:             var(--border);
+$dropdown-link-color:               var(--text);
+$dropdown-link-hover-color:         var(--text);
+$dropdown-link-hover-bg:            var(--choco-theme-background);
+
 // Tables
 $table-variants: (
-  "dark":       $primary-900
+  "dark":       $primary-950
 );
 
 // Embed Ratios
@@ -465,7 +474,7 @@ $rotations: (
 );
 
 // Numbers
-$general-numbers: 5, 10, 20, 30, 35, 40, 50, 60, 65, 70, 75, 80, 90, 100, 125, 130, 200, 250, 300, 400;
+$general-numbers: 5, 10, 20, 30, 35, 40, 50, 60, 65, 70, 75, 80, 90, 100, 125, 130, 200, 250, 300, 400, 500;
 
 // Padding and Margin in rem
 $spaces: (

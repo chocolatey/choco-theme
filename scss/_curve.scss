@@ -35,7 +35,7 @@
     &.curve-bg-theme, &.curve-bg-theme .curve {
         &:before {
             background: $gray-100;
-            background: var(--background);
+            background: var(--choco-theme-background);
         }
     }
 

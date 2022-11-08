@@ -22,7 +22,7 @@
             border-bottom: 1px solid var(--border);
 
             &:not(.no-results):hover {
-                background: var(--background-light-2) !important;
+                background: var(--choco-theme-neutral) !important;
                 cursor: pointer;
             }
         }
@@ -60,7 +60,7 @@
                 border-left: solid transparent;
                 border-right: solid transparent;
                 border-bottom: solid $gray-300;
-                border-bottom: solid var(--background);
+                border-bottom: solid var(--choco-theme-background);
                 border-width: 0 .75rem .75rem;
             }
         }

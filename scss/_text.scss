@@ -5,22 +5,18 @@
 }
 
 .text-theme {
-    color: $gray-900;
     color: var(--text) !important;
 
     h3, h4, h5, h6, p, li {
-        color: $gray-900;
         color: var(--text) !important;
     }
 }
 
 .text-bg-theme {
-    color: $gray-100;
-    color: var(--background) !important;
+    color: var(--choco-theme-background) !important;
 }
 
 .text-bg-theme-light {
-    color: $white;
     color: var(--background-light);
 }
 
@@ -33,7 +29,6 @@
 }
 
 .link-theme {
-    color: $gray-900 !important;
     color: var(--text) !important;
 
     &:hover {

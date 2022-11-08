@@ -6,35 +6,40 @@
         background: var(--background-light);
     }
 
-    .nav-item {
-        .nav-link {
+    .nav-item .nav-link {
+        display: block;
+        padding: .5rem 0 .5rem 1rem;
+        position: relative;
+
+        &:before {
+            content: '';
+            height: calc(100% + 4px);
+            width: .25rem;
+            border-radius: .25rem;
+            background: transparent;
             display: block;
-            padding: .25rem 0 .25rem .5rem;
-            border-left: 3px solid transparent;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
 
-            &.active, &:hover {
-                color: var(--bs-primary);
-                border-left: 3px solid var(--bs-primary);
-                background: $primary-opacity-25;
-            }
+        &.active, &:hover {
+            color: var(--bs-primary);
+            background: $primary-opacity-25;
 
-            &.active {
-                font-weight: bold;
+            &:before {
+                background: var(--bs-primary);
             }
+        }
+
+        &.active {
+            font-weight: bold;
         }
     }
 }
 
 @include media-breakpoint-up(xl) {
-    #rightSidebarNav {
-        .card.card-body {
-            background: none;
-        }
-
-        .nav-item {
-            .nav-link {
-                padding: .5rem 0 .5rem .5rem;
-            }
-        }
+    #rightSidebarNav .card.card-body {
+        background: none;
     }
 }

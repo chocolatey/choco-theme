@@ -4,15 +4,20 @@
   }
 }
 
-:root[data-user-color-scheme="light"] {
-    --color-mode: 'light';
-    --background: #{$gray-100};
-    --background-light: #{$white};
-    --background-primary-light: #{$primary-150};
+:root {
     --background-primary-opacity-10: #{$primary-opacity-10};
     --background-primary-opacity-40: #{$primary-opacity-40};
     --background-primary-opacity-90: #{$primary-opacity-90};
-    --background-light-2: #{$gray-300};
+    
+}
+
+:root[data-user-color-scheme="light"] {
+    --color-mode: 'light';
+    --choco-theme-background: #{$gray-100};
+    --background-light: #{$white};
+    --background-primary-light: #{$primary-150};
+    --choco-theme-neutral: #{$gray-300}; 
+    --choco-theme-neutral-hover: #{$gray-400};
     --background-light-3: #{$white};
     --background-light-4: #{$gray-200};
     --text: #{$gray-900};
@@ -26,21 +31,27 @@
     --theme-toggle-opacity: #{$yellow-opacity-25};
     --theme-toggle-background: #{$white};
     --theme-toggle-btn-background: #{$yellow-opacity-25};
-    --theme-opposite: #{$gray-900};
+    --choco-theme-contrast: #{$primary-950};
     --theme-opposite-hover: #{$gray-700};
     --theme-opposite-text: #{$gray-400};
+    --theme-hover: #{$gray-400};
+    --choco-blue-light: #{rgba($blue, .2)};
+    --choco-green-light: #{rgba($green, .2)};
+    --choco-yellow-light: #{rgba($yellow, .2)};
+    --choco-orange-light: #{rgba($orange, .2)};
+    --choco-red-light: #{rgba($red, .2)};
+    --choco-pink-light: #{rgba($pink, .2)};
+    --choco-purple-light: #{rgba($purple, .2)};
     --modal-backdrop: 0.5;
 }
 
 :root[data-user-color-scheme="dark"] {
     --color-mode: 'dark';
-    --background: #{$primary-950};
+    --choco-theme-background: #{$primary-950};
     --background-light: #{$primary-900};
     --background-primary-light: #{$primary-850};
-    --background-primary-opacity-10: #{$primary-opacity-10};
-    --background-primary-opacity-40: #{$primary-opacity-40};
-    --background-primary-opacity-90: #{$primary-opacity-90};
-    --background-light-2: #{$primary-800};
+    --choco-theme-neutral: #{$primary-800};
+    --choco-theme-neutral-hover: #{$primary-700};
     --background-light-3: #{$primary-800};
     --background-light-4: #{$primary-850};
     --text: #{$gray-400};
@@ -54,8 +65,16 @@
     --theme-toggle-opacity: #{$primary-opacity-50};
     --theme-toggle-background: #{$primary-opacity-25};
     --theme-toggle-btn-background: #{$primary-opacity-25};
-    --theme-opposite: #{$gray-100};
+    --choco-theme-contrast: #{$gray-100};
     --theme-opposite-hover: #{$gray-400};
     --theme-opposite-text: #{$gray-900};
+    --theme-hover: #{$gray-700};
+    --choco-blue-light: #{rgba($blue, .1)};
+    --choco-green-light: #{rgba($green, .1)};
+    --choco-yellow-light: #{rgba($yellow, .1)};
+    --choco-orange-light: #{rgba($orange, .1)};
+    --choco-red-light: #{rgba($red, .1)};
+    --choco-pink-light: #{rgba($pink, .1)};
+    --choco-purple-light: #{rgba($purple, .1)};
     --modal-backdrop: 0.9;
-  }
+}

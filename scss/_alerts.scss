@@ -27,21 +27,21 @@
 
 .alert-primary, .alert-success, .alert-danger {
     color: $white;
-    color: var(--background);
+    color: var(--choco-theme-background);
 
     a {
         color: $white;
-        color: var(--background);
+        color: var(--choco-theme-background);
     }
 }
 
 .alert-warning {
     color: $gray-900;
-    color: var(--background);
+    color: var(--choco-theme-background);
 
     a {
         color: $gray-900;
-        color: var(--background);
+        color: var(--choco-theme-background);
     }
 }
 

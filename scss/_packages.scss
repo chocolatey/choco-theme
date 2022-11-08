@@ -54,7 +54,7 @@
 .comments-list {
     > span {
         background: $gray-300;
-        background: var(--background-light-2);
+        background: var(--choco-theme-neutral);
         -webkit-border-radius: .25rem;
         border-radius: .25rem;
         margin-bottom: 30px;
@@ -101,7 +101,7 @@
 
 .chat-right:after, .chat-left:after {
     border-top: 20px solid $gray-300;
-    border-top: 20px solid var(--background-light-2);
+    border-top: 20px solid var(--choco-theme-neutral);
     bottom: -20px;
     content: "";
     position: absolute;
@@ -151,7 +151,7 @@
         color: var(--text);
 
         span.CodeMirror-selectedtext {
-            background: var(--background-light-2);
+            background: var(--choco-theme-neutral);
         }
 
         .CodeMirror-cursor {
@@ -168,7 +168,7 @@
     }
 
     .editor-preview {
-        background: var(--background);
+        background: var(--choco-theme-background);
 
         pre {
             background: var(--background-light);

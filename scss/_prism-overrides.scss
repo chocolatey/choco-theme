@@ -43,6 +43,7 @@ pre[class*="language-"] {
 pre[class*="language-"] {
     background: var(--background-light);
 	border: 1px solid var(--border);
+    border-radius: $card-border-radius;
 }
 
 .token.comment,
@@ -114,6 +115,11 @@ pre[class*="language-"] {
 
 .line-numbers-rows > span:before {
     color: $gray-500;
+}
+
+div.code-toolbar > .toolbar {
+    right: 1rem;
+    top: .8rem;
 }
 
 div.code-toolbar > .toolbar > .toolbar-item > a,

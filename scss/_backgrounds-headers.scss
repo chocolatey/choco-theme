@@ -1,3 +1,35 @@
+/* Background Colors with Contrasting Text */
+@each $color, $value in $colors {
+    $color-rgb: to-rgb($value);
+    .text-bg-#{$color} {
+        color: color-contrast($value) if($enable-important-utilities, !important, null);
+        background-color: RGBA($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+    }
+}
+
+@each $color, $value in $palette-colors {
+    $color-rgb: to-rgb($value);
+    .text-bg-#{$color} {
+        color: color-contrast($value) if($enable-important-utilities, !important, null);
+        background-color: $value;
+    }
+}
+
+.text-bg-theme-background {
+    color: var(--choco-theme-contrast);
+    background: var(--choco-theme-background);
+}
+
+.text-bg-theme-contrast {
+    color: var(--choco-theme-background);
+    background: var(--choco-theme-contrast);
+}
+
+.text-bg-theme-neutral {
+    color: var(--choco-theme-contrast);
+    background: var(--choco-theme-neutral);
+}
+
 /*Background Colors*/
 @each $color, $value in $colors {
     .bg-#{$color} {
@@ -35,57 +67,43 @@
 
 .fill-theme-light-2 {
     fill: $gray-300 !important;
-    fill: var(--background-light-2) !important;
+    fill: var(--choco-theme-neutral) !important;
 }
 
 .bg-github {
-    background: var(--theme-opposite);
+    background: var(--choco-theme-contrast);
 
     &:hover {
         background: var(--theme-opposite-hover);
     }
 }
 
-.bg-primary, .bg-success, .bg-danger, .bg-theme-primary {
-    h1, h2, h3, h4, h5, h6, p, li {
-        color: $white;
-        color: var(--background);
-    }
-}
-
 .bg-theme {
-    background: $gray-100 !important;
-    background: var(--background) !important;
+    background: var(--choco-theme-background) !important;
 }
 
 .bg-theme-light {
-    background: $white !important;
     background: var(--background-light) !important;
 }
 
 .bg-theme-light-2 {
-    background: $gray-300 !important;
-    background: var(--background-light-2) !important;
+    background: var(--choco-theme-neutral) !important;
 }
 
 .bg-theme-light-3 {
-    background: $white !important;
     background: var(--background-light-3) !important;
 }
 
 .bg-theme-primary {
-    background: $primary !important;
     background: var(--theme-primary) !important;
 }
 
 .bg-theme-primary-light {
-    background: $primary-150 !important;
     background: var(--background-primary-light) !important;
 }
 
 .bg-theme-opposite {
-    background: $gray-900 !important;
-    background: var(--theme-opposite) !important;
+    background: var(--choco-theme-contrast) !important;
 }
 
 .bg-primary-opacity-25 {
@@ -98,7 +116,6 @@
 
 .bg-theme, .bg-theme-light {
     h3, h4, h5, h6, p, li {
-        color: $gray-900;
         color: var(--text);
     }
 }

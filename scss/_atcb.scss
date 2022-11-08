@@ -49,7 +49,7 @@
 .atcb_button:hover,
 .atcb_button.atcb_active {
     background: var(--bs-primary);
-    color: var(--background);
+    color: var(--choco-theme-background);
 }
 
 .atcb_button:focus {
@@ -63,7 +63,7 @@
 
     &:focus, &:hover, &.atcb_active {
         background: var(--bs-success);
-        color: var(--background);
+        color: var(--choco-theme-background);
     }
 
     &:focus {
@@ -189,7 +189,7 @@
 
 .atcb_list_item:focus,
 .atcb_list_item:hover {
-    background: var(--background);
+    background: var(--choco-theme-background);
     color: var(--text);
 }
 

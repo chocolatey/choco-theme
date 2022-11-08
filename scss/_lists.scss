@@ -40,7 +40,7 @@
     color: var(--text);
 
     &.list-group-item-action:hover {
-        background-color: var(--background-light-2);
+        background-color: var(--choco-theme-neutral);
         color: var(--text);
     }
 }
@@ -95,7 +95,7 @@
             border-radius: 50%;
             text-align: center;
             background: $gray-300;
-            background: var(--background-light-2);
+            background: var(--choco-theme-neutral);
         }
 
         &.list-circle-content-1::before {

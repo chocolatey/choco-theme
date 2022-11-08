@@ -40,11 +40,11 @@
 }
 
 .flatpickr-weekday, .flatpickr-months .flatpickr-next-month, .flatpickr-months .flatpickr-prev-month, .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year, span.flatpickr-weekday {
-    color: var(--background);
+    color: var(--choco-theme-background);
 }
 
 .flatpickr-months .flatpickr-next-month svg, .flatpickr-months .flatpickr-prev-month svg {
-    fill: var(--background);
+    fill: var(--choco-theme-background);
 }
 
 .flatpickr-months .flatpickr-next-month:hover svg, .flatpickr-months .flatpickr-prev-month:hover svg {
@@ -55,19 +55,19 @@
 {
     background: $primary !important;
     border-color: $primary !important;
-    color: var(--background) !important;
+    color: var(--choco-theme-background) !important;
     font-weight: bold !important;
 }
 
 .flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover, .flatpickr-day.nextMonthDay, .flatpickr-day.notAllowed, .flatpickr-day.notAllowed.nextMonthDay, .flatpickr-day.notAllowed.prevMonthDay, .flatpickr-day.prevMonthDay
 {
-    color: var(--background-light-2);
+    color: var(--choco-theme-neutral);
 }
 
 .flatpickr-day.today:not(.selected):hover, .flatpickr-day.inRange, .flatpickr-day.nextMonthDay.inRange, .flatpickr-day.today.inRange, .flatpickr-day.nextMonthDay.today.inRange, .flatpickr-day.nextMonthDay:focus, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.prevMonthDay.inRange, .flatpickr-day.prevMonthDay.today.inRange, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.prevMonthDay:hover, .flatpickr-day:focus, .flatpickr-day:hover
 {
-    background: var(--background-light-2);
-    border-color: var(--background-light-2);
+    background: var(--choco-theme-neutral);
+    border-color: var(--choco-theme-neutral);
     color: var(--text);
 }
 
@@ -76,6 +76,6 @@
 }
 
 .flatpickr-day.inRange {
-    -webkit-box-shadow: -5px 0 0 var(--background-light-2), 5px 0 0 var(--background-light-2);
-    box-shadow: -5px 0 0 var(--background-light-2), 5px 0 0 var(--background-light-2);
+    -webkit-box-shadow: -5px 0 0 var(--choco-theme-neutral), 5px 0 0 var(--choco-theme-neutral);
+    box-shadow: -5px 0 0 var(--choco-theme-neutral), 5px 0 0 var(--choco-theme-neutral);
 }

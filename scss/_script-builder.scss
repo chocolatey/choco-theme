@@ -52,7 +52,7 @@
                 text-decoration: none;
                 color: var(--text);
                 border-color: var(--border);
-                background: var(--background-light-2);
+                background: var(--choco-theme-neutral);
                 cursor: pointer;
                 border-radius: unset;
                 font-weight: 400;
@@ -71,7 +71,7 @@
                 }
 
                 &.done {
-                    color: var(--background);
+                    color: var(--choco-theme-background);
                     border-color: var(--bs-success);
                     background: var(--bs-success);
 
@@ -81,7 +81,7 @@
                 }
 
                 &.active {
-                    color: var(--background);
+                    color: var(--choco-theme-background);
                     border-color: var(--bs-primary);
                     background: var(--bs-primary);
 
@@ -101,7 +101,7 @@
                     margin-top: -50px;
                     border-top: 50px solid transparent;
                     border-bottom: 50px solid transparent;
-                    border-left: 30px solid var(--background-light-2);
+                    border-left: 30px solid var(--choco-theme-neutral);
                 }
 
                 &::before {

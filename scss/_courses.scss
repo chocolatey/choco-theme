@@ -33,7 +33,7 @@
     li:before {
         border-radius: 50%;
         background-color: $gray-100;
-        background-color: var(--background);
+        background-color: var(--choco-theme-background);
         border: 3px solid $gray-300;
         border: 3px solid var(--border);
         content: "";

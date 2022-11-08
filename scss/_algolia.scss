@@ -7,7 +7,7 @@
             z-index: 99999 !important;
 
             &:before {
-                background: var(--background);
+                background: var(--choco-theme-background);
                 border-color: var(--border);
             }
 
@@ -16,7 +16,7 @@
                 z-index: 1;
 
                 > .algolia-docsearch-suggestion {
-                    background: var(--background);
+                    background: var(--choco-theme-background);
                     color: var(--text);
                     padding: 0;
 
@@ -36,14 +36,14 @@
 
                 .ds-suggestion {
                     .algolia-docsearch-suggestion {
-                        background: var(--background);
+                        background: var(--choco-theme-background);
                         padding: 0;
 
                         .algolia-docsearch-suggestion--category-header {
                             display: none;
                             border-color: $gray-300;
                             border-color: var(--border);
-                            background: var(--background);
+                            background: var(--choco-theme-background);
                             margin-top: 0;
                             color: var(--text);
                         }
@@ -115,7 +115,7 @@
             }
 
             [class^=ds-dataset-] {
-                background: var(--background);
+                background: var(--choco-theme-background);
                 border-color: $gray-300;
                 border-color: var(--border);
             }
@@ -127,7 +127,7 @@
         margin: calc($spacer / 2) 0;
         width: 100%;
         background: $white;
-        background: var(--background);
+        background: var(--choco-theme-background);
 
         .algolia-docsearch-footer--logo {
             position: absolute;
