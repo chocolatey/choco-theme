@@ -62,6 +62,10 @@
     "nouislider": "^15.6.0",
     "rimraf": "^3.0.2",
     "sass": "^1.53.0",
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-config-twbs-bootstrap": "^6.0.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },

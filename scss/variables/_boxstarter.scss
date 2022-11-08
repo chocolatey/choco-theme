@@ -1,4 +1,4 @@
-@import "node_modules/bootstrap/scss/_functions";
+@import "node_modules/bootstrap/scss/functions";
 // Variables
 $white:    #fffcf0;
 $gray-100: #e5e2d8;
@@ -28,7 +28,7 @@ $primary:        $green;
 
 // Body & Font
 $body-bg:                 $gray-100;
-$font-family-sans-serif: 'Inter', sans-serif;
+$font-family-sans-serif: "Inter", sans-serif;
 $font-size-base:          1rem;
 $text-muted:              var(--text-code);
 
@@ -48,8 +48,8 @@ $popover-border-radius:             0;
 $popover-inner-border-radius:       0;
 
 // Cards
-$card-border-radius:                0;
-$card-inner-border-radius:          0;
+$card-border-radius: 0;
+$card-inner-border-radius: 0;
 $card-border-color: var(--border);
 
 // Alerts

@@ -1,22 +1,18 @@
 :root {
-  @each $color, $value in $colors-rgb {
-    --#{$variable-prefix}#{$color}-rgb: #{$value};
-  }
-}
-
-:root {
     --background-primary-opacity-10: #{$primary-opacity-10};
     --background-primary-opacity-40: #{$primary-opacity-40};
     --background-primary-opacity-90: #{$primary-opacity-90};
-    
+    @each $color, $value in $colors-rgb {
+        --#{$variable-prefix}#{$color}-rgb: #{$value};
+    }
 }
 
 :root[data-user-color-scheme="light"] {
-    --color-mode: 'light';
+    --color-mode: "light";
     --choco-theme-background: #{$gray-100};
     --background-light: #{$white};
     --background-primary-light: #{$primary-150};
-    --choco-theme-neutral: #{$gray-300}; 
+    --choco-theme-neutral: #{$gray-300};
     --choco-theme-neutral-hover: #{$gray-400};
     --background-light-3: #{$white};
     --background-light-4: #{$gray-200};
@@ -42,11 +38,11 @@
     --choco-red-light: #{rgba($red, .2)};
     --choco-pink-light: #{rgba($pink, .2)};
     --choco-purple-light: #{rgba($purple, .2)};
-    --modal-backdrop: 0.5;
+    --modal-backdrop: .5;
 }
 
 :root[data-user-color-scheme="dark"] {
-    --color-mode: 'dark';
+    --color-mode: "dark";
     --choco-theme-background: #{$primary-950};
     --background-light: #{$primary-900};
     --background-primary-light: #{$primary-850};
@@ -76,5 +72,5 @@
     --choco-red-light: #{rgba($red, .1)};
     --choco-pink-light: #{rgba($pink, .1)};
     --choco-purple-light: #{rgba($purple, .1)};
-    --modal-backdrop: 0.9;
+    --modal-backdrop: .9;
 }

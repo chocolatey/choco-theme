@@ -2,9 +2,12 @@
     "cSpell.words": [
         "blockquotes",
         "Boxstarter",
+        "callouts",
+        "choco",
         "chocolateyfest",
         "datatables",
         "DOCSEARCH",
+        "fileupload",
         "Flatpickr",
         "globalnavigation",
         "lazyload",
@@ -14,7 +17,9 @@
         "navigations",
         "scrollspy",
         "socialmedia",
+        "stylelint",
         "svgstyles",
+        "textbox",
         "topnav",
         "typeahead"
     ]

@@ -1,0 +1,16 @@
+{
+    "extends": [
+        "stylelint-config-twbs-bootstrap"
+    ],
+    "rules": {
+        "scss/selector-no-union-class-name": true,
+        "indentation": 4,
+        "selector-max-id" : 20,
+        "selector-max-class" : 20,
+        "selector-max-compound-selectors": 20,
+        "selector-max-combinators": 20,
+        "selector-id-pattern": "^[a-z][a-zA-Z0-9]+$",
+        "selector-no-qualifying-type": null,
+        "declaration-no-important": null
+    }
+}

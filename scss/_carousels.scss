@@ -18,13 +18,14 @@
         margin-bottom: 0;
 
         li {
-            height: 15px;
             width: 15px;
+            height: 15px;
             border-radius: 100%;
         }
     }
 
-    &:not(.carousel-control-center) .carousel-control-next, &:not(.carousel-control-center) .carousel-control-prev {
+    &:not(.carousel-control-center) .carousel-control-next,
+    &:not(.carousel-control-center) .carousel-control-prev {
         top: unset;
         bottom: 6.5px;
     }
@@ -33,7 +34,7 @@
         .carousel-control-next {
             right: -3.5%;
         }
-        
+
         .carousel-control-prev {
             left: -3.5%;
         }

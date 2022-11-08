@@ -20,7 +20,7 @@ header {
 
     .navbar-nav {
         height: 38px;
-        
+
         .nav-item {
             display: flex;
             align-items: center;
@@ -37,17 +37,18 @@ header {
                 padding: 0;
 
                 .nav-link {
-                    color: $gray-900;
-                    color: var(--text);
                     width: 100%;
                     padding: .5rem 1rem .5rem 2rem;
+                    color: $gray-900;
+                    color: var(--text);
                     border-left: 6px solid transparent;
 
-                    &.active, &:hover {
-                        border-color: var(--bs-primary);
+                    &.active,
+                    &:hover {
                         color: var(--bs-primary);
                         background: $primary-150;
                         background: var(--background-primary-light);
+                        border-color: var(--bs-primary);
                     }
                 }
             }
@@ -59,14 +60,14 @@ header {
         line-height: 1.5;
 
         &:focus {
-            box-shadow: 0 0 0 0.25rem $primary-opacity-25;
+            box-shadow: 0 0 0 .25rem $primary-opacity-25;
         }
     }
 
     button.btn-link {
+        text-align: left;
         border-width: 0 0 0 6px;
         border-radius: 0;
-        text-align: left;
 
         &:hover {
             text-decoration: none;
@@ -80,20 +81,20 @@ header {
 
 .navbar-nested-collapse ul:not(.global-nav-ul) .nav-link {
     width: 100%;
-    text-align: left;
     padding: .5rem 1rem;
     color: $gray-900;
     color: var(--text);
-    border-radius: 0;
+    text-align: left;
     border: 0;
     border-left: 6px solid transparent;
+    border-radius: 0;
 
     &:hover {
-        text-decoration: none;
-        border-color: var(--bs-primary);
         color: var(--bs-primary);
+        text-decoration: none;
         background: $primary-150;
         background: var(--background-primary-light);
+        border-color: var(--bs-primary);
     }
 
     &:focus {
@@ -101,10 +102,11 @@ header {
     }
 }
 
-.chocolatey-blog #topNav .navbar-collapse, .chocolateyfest #topNav .navbar-collapse {
+.chocolatey-blog #topNav .navbar-collapse,
+.chocolateyfest #topNav .navbar-collapse {
     &.collapse.show {
-        border-top: 1px solid var(--border);
         margin-top: .5rem;
+        border-top: 1px solid var(--border);
 
         .navbar-nav {
             height: auto;
@@ -114,14 +116,14 @@ header {
 
 @include media-breakpoint-up(md) {
     #topNav {
-        padding-bottom: .5rem;
         height: 92px;
+        padding-bottom: .5rem;
 
         .navbar-brand img {
-            height: 100px;
-            top: -25px;
             position: absolute;
+            top: -25px;
             z-index: 1;
+            height: 100px;
         }
 
         .navbar-nav {
@@ -129,7 +131,7 @@ header {
 
             .nav-item {
                 .nav-link {
-                    font-weight: bold;
+                    font-weight: 700;
                 }
             }
         }
@@ -141,7 +143,8 @@ header {
                         padding: 0;
                         border-left: none;
 
-                        &.active, &:hover {
+                        &.active,
+                        &:hover {
                             color: darken($primary, 15%);
                             background: none;
                         }
@@ -173,10 +176,11 @@ header {
         }
     }
 
-    .chocolatey-blog #topNav .navbar-collapse, .chocolateyfest #topNav .navbar-collapsew {
+    .chocolatey-blog #topNav .navbar-collapse,
+    .chocolateyfest #topNav .navbar-collapsew {
         &.collapse.show {
-            border-top: none;
             margin-top: 0;
+            border-top: none;
         }
     }
 }
@@ -185,7 +189,7 @@ header.sticky-top:not(.sticky-header) #topNav {
     height: 64px;
 
     .navbar-brand img.navbar-brand-desktop {
-        height: 3rem;
         top: -5px;
+        height: 3rem;
     }
 }

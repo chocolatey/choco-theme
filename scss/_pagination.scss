@@ -2,7 +2,8 @@
     background-color: unset;
     border: 1px solid var(--border);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         background-color: var(--choco-theme-neutral);
         border-color: var(--choco-theme-neutral);
     }

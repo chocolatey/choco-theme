@@ -1,18 +1,18 @@
-/*Package List View*/
+/* Package List View */
 .package-list-view li:last-child hr {
     display: none;
 }
 
-/*Package Grid View*/
+/* Package Grid View */
 .package-grid-view .card-body .flex-fill > :nth-child(2) {
     margin-left: -65px;
 }
 
-/*Package Icon & Background*/
+/* Package Icon & Background */
 .package-image-header {
     width: 50px;
-    max-width: 50px;
     min-width: 50px;
+    max-width: 50px;
 
     img {
         max-height: 30px;
@@ -20,25 +20,25 @@
 }
 
 .package-icon {
-    background: $white;
-    border-radius: .25rem;
     padding: .5rem;
+    background: $white;
     border: 1px solid var(--border);
+    border-radius: .25rem;
 }
 
-/*Package Sidebar*/
-#package-sidebar .package-logo {
+/* Package Sidebar */
+#packageSidebar .package-logo {
     max-width: 40px;
 }
 
-#package-sidebar img:not(.package-logo) {
+#packageSidebar img:not(.package-logo) {
     max-width: 100%;
 }
 
-/*Chat*/
+/* Chat */
 .table-hover tbody tr[id*="divVersion"]:hover {
-    background: none;
     color: initial;
+    background: none;
 }
 
 .comments-list-container {
@@ -46,29 +46,29 @@
     overflow: auto;
 }
 
-.comments-list, .comments-list > span {
+.comments-list,
+.comments-list > span {
     display: flex;
     flex-flow: column;
 }
- 
+
 .comments-list {
     > span {
-        background: $gray-300;
-        background: var(--choco-theme-neutral);
-        -webkit-border-radius: .25rem;
-        border-radius: .25rem;
-        margin-bottom: 30px;
+        position: relative;
         max-width: 80%;
         padding: 15px;
-        position: relative;
+        margin-bottom: 30px;
+        background: $gray-300;
+        background: var(--choco-theme-neutral);
+        border-radius: .25rem;
     }
 
     .comment-date {
         order: 3;
-        font-size: 70%;
-        font-weight: lighter;
         margin-bottom: 0;
+        font-size: 70%;
         font-style: italic;
+        font-weight: lighter;
     }
 
     p.comment-body {
@@ -79,19 +79,19 @@
 .chat-left {
     margin-right: auto;
 
-    &:after {
-        border-right: 20px solid transparent;
+    &::after {
         left: 20px;
+        border-right: 20px solid transparent;
     }
 }
 
 .chat-right {
-    margin-left: auto;
     align-items: flex-end;
+    margin-left: auto;
 
-    &:after {
-        border-left: 20px solid transparent;
+    &::after {
         right: 20px;
+        border-left: 20px solid transparent;
     }
 
     .comment-body {
@@ -99,12 +99,13 @@
     }
 }
 
-.chat-right:after, .chat-left:after {
-    border-top: 20px solid $gray-300;
-    border-top: 20px solid var(--choco-theme-neutral);
+.chat-right::after,
+.chat-left::after {
+    position: absolute;
     bottom: -20px;
     content: "";
-    position: absolute;
+    border-top: 20px solid $gray-300;
+    border-top: 20px solid var(--choco-theme-neutral);
 }
 
 .btn-load-more:hover {
@@ -117,82 +118,18 @@
     text-transform: none;
 }
 
-// Easy MDE Editor
-.EasyMDEContainer {
-    .editor-toolbar {
-        border-color: var(--bs-primary);
-
-        button {
-            color: var(--text);
-            margin: 0 .25rem;
-
-            &.active, &:hover {
-                background: none;
-                border-color: var(--bs-primary);
-            }
-        }
-
-        i.separator {
-            border-color: var(--border);
-        }
-
-        &.fullscreen {
-            background: var(--background-light);
-
-            &:before, &:after {
-                display: none;
-            }
-        }
-    }
-
-    .CodeMirror {
-        border-color: var(--bs-primary);
-        background: var(--background-light);
-        color: var(--text);
-
-        span.CodeMirror-selectedtext {
-            background: var(--choco-theme-neutral);
-        }
-
-        .CodeMirror-cursor {
-            border-left: 1px solid var(--text);
-        }
-
-        .CodeMirror-placeholder.CodeMirror-line-like {
-            z-index: 9 !important;
-        }
-    }
-
-    .CodeMirror-wrap pre.CodeMirror-line, .CodeMirror-wrap pre.CodeMirror-line-like {
-        background: var(--background-light);
-    }
-
-    .editor-preview {
-        background: var(--choco-theme-background);
-
-        pre {
-            background: var(--background-light);
-            border: 1px solid var(--border);
-        }
-    }
-
-    .editor-preview-side {
-        border-color: var(--bs-primary);
-    }
-}
-
 // Search selected tags/authors/query
 .selected-search-term-label {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border: 0;
-    border-radius: 0;
-    align-items: center;
     border-bottom: 1px solid var(--border);
+    border-radius: 0;
 }
 
 @include media-breakpoint-up(md) {
-    #package-sidebar .package-logo {
+    #packageSidebar .package-logo {
         max-width: 150px;
     }
 }

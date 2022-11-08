@@ -3,7 +3,7 @@
     $color-rgb: to-rgb($value);
     .text-bg-#{$color} {
         color: color-contrast($value) if($enable-important-utilities, !important, null);
-        background-color: RGBA($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+        background-color: rgba($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
     }
 }
 
@@ -30,7 +30,7 @@
     background: var(--choco-theme-neutral);
 }
 
-/*Background Colors*/
+/* Background Colors */
 @each $color, $value in $colors {
     .bg-#{$color} {
         background: $value;
@@ -114,30 +114,39 @@
     background: $primary-opacity-90 !important;
 }
 
-.bg-theme, .bg-theme-light {
-    h3, h4, h5, h6, p, li {
+.bg-theme,
+.bg-theme-light {
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
         color: var(--text);
     }
 }
 
 .bg-primary-900 {
-    h3, h4, h5, h6, p, li {
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
         color: $gray-400;
     }
 }
 
-/*Background Utilities*/
+/* Background Utilities */
 .bg-img-cover {
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
     z-index: 1;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility:    hidden;
-    -ms-backface-visibility:     hidden;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    backface-visibility: hidden;
 }
 
-/*Background Images*/
+/* Background Images */
 .bg-sun-tornado {
     background-image: url("/assets/images/global-shared/svg-backgrounds/sun-tornado.svg");
 }
@@ -168,10 +177,9 @@
 }
 
 .bg-desk {
-    background: -moz-linear-gradient(-45deg, rgba($primary, 0.8) 0%, rgba($primary, 0.8) 100%), url("/assets/images/headers/c4b-banner.jpg");
-    background: -webkit-linear-gradient(-45deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/assets/images/headers/c4b-banner.jpg");
-    background: linear-gradient(135deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/assets/images/headers/c4b-banner.jpg");
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e61a375a', endColorstr='#e67db9e8',GradientType=1 );
+    background: linear-gradient(-45deg, rgba($primary, .8) 0%, rgba($primary, .8) 100%), url("/assets/images/headers/c4b-banner.jpg");
+    background: linear-gradient(135deg, rgba($primary, .8) 0%, rgba($primary, .8) 100%), url("/assets/images/headers/c4b-banner.jpg");
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr="#e61a375a", endColorstr="#e67db9e8", GradientType=1);
 }
 
 .bg-san-fran-skyline {
@@ -188,25 +196,25 @@
             opacity: 1;
         }
     }
-        
+
     .speaker-img-overlay {
-        transition: .5s ease;
-        opacity: 0;
         max-width: 100%;
-        background-color: rgba($warning, 0.8)
+        background-color: rgba($warning, .8);
+        opacity: 0;
+        transition: .5s ease;
     }
 }
 
 .bg-architect-factory {
-    background-image: radial-gradient(circle, rgba(var(--background-rgb),0) 0%, rgba(var(--background-rgb),1) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%,rgba(var(--background-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%,rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+    background-image: radial-gradient(circle, rgba(var(--background-rgb), 0) 0%, rgba(var(--background-rgb), 1) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%, rgba(var(--background-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%, rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
 }
 
 .bg-architect-factory-top {
-    background-image: linear-gradient(to right, rgba(var(--background-rgb), 0.4) 0%,rgba(var(--background-rgb), 1) 30%,rgba(var(--background-rgb), 1) 70%,rgba(var(--background-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%,rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+    background-image: linear-gradient(to right, rgba(var(--background-rgb), .4) 0%, rgba(var(--background-rgb), 1) 30%, rgba(var(--background-rgb), 1) 70%, rgba(var(--background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%, rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
 }
 
 .bg-architect-factory-bottom-primary {
-    background-image: linear-gradient(to right, rgba(var(--background-rgb), 0.4) 0%,rgba(var(--background-rgb), 1) 30%,rgba(var(--background-rgb), 1) 70%,rgba(var(--background-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%,rgba(var(--background-rgb), 0) 15%),url("/assets/images/architect-factory-green.svg");
+    background-image: linear-gradient(to right, rgba(var(--background-rgb), .4) 0%, rgba(var(--background-rgb), 1) 30%, rgba(var(--background-rgb), 1) 70%, rgba(var(--background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%, rgba(var(--background-rgb), 0) 15%), url("/assets/images/architect-factory-green.svg");
 }
 
 @include media-breakpoint-up(md) {

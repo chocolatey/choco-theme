@@ -7,7 +7,12 @@
 .text-theme {
     color: var(--text) !important;
 
-    h3, h4, h5, h6, p, li {
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
         color: var(--text) !important;
     }
 }

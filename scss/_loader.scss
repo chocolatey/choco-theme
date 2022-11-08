@@ -1,44 +1,46 @@
 #loader {
-    background: $gray-100;
-    background: var(--choco-theme-background);
     position: fixed;
-    display: flex;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
+    left: 0;
     z-index: 9999;
+    display: flex;
     visibility: hidden;
-    animation: loaderFade 2s;
+    background: $gray-100;
+    background: var(--choco-theme-background);
+    animation: loader-fade 2s;
 
     > div {
         height: 90px;
         margin: auto;
-        /*Shape*/
+
+        /* Shape */
         > :first-child {
             width: 75px;
             height: 75px;
-            animation: loaderShape 750ms linear infinite;
+            animation: loader-shape 750ms linear infinite;
         }
-        /*Shadow*/
+
+        /* Shadow */
         > :nth-child(2) {
-            width: 50px;
-            height: 5px;
-            background: $primary-950;
-            opacity: 0.2;
             position: relative;
             top: 30%;
-            border-radius: 50%;
+            width: 50px;
+            height: 5px;
             margin: auto;
-            animation: loaderShadow 0.5s linear infinite;
+            background: $primary-950;
+            border-radius: 50%;
+            opacity: .2;
+            animation: loader-shadow .5s linear infinite;
         }
     }
 }
 
-@keyframes loaderFade {
+@keyframes loader-fade {
     0% {
-        opacity: 1;
         visibility: visible;
+        opacity: 1;
     }
 
     90% {
@@ -50,14 +52,14 @@
     }
 }
 
-@keyframes loaderShape {
+@keyframes loader-shape {
     25% {
         transform: translateY(9px) rotate(90deg);
     }
 
     50% {
-        transform: translateY(18px) scale(1, 0.9) rotate(180deg);
         border-bottom-right-radius: 40px;
+        transform: translateY(18px) scale(1, .9) rotate(180deg);
     }
 
     75% {
@@ -69,7 +71,7 @@
     }
 }
 
-@keyframes loaderShadow {
+@keyframes loader-shadow {
     50% {
         transform: scale(1.2, 1);
     }

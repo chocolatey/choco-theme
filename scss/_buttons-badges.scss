@@ -7,10 +7,11 @@
 
 // Outline button with badge
 .btn-outline-primary {
-    &:hover, &:active {
+    &:hover,
+    &:active {
         .badge {
-            background: var(--bs-dark) !important;
             color: var(--bs-primary) !important;
+            background: var(--bs-dark) !important;
         }
     }
 }
@@ -27,14 +28,18 @@
     text-decoration: underline;
 }
 
-.btn-theme-background, .btn-theme-contrast,
-.btn-outline-theme-background, .btn-outline-theme-contrast,
+.btn-theme-background,
+.btn-theme-contrast,
+.btn-outline-theme-background,
+.btn-outline-theme-contrast,
 .btn-theme-neutral {
     --#{$prefix}btn-focus-shadow-rgb: var(--bs-secondary-rgb);
 }
 
-.btn-theme-background, .btn-theme-contrast,
-.btn-outline-theme-background, .btn-outline-theme-contrast,
+.btn-theme-background,
+.btn-theme-contrast,
+.btn-outline-theme-background,
+.btn-outline-theme-contrast,
 .btn-theme-neutral,
 .btn-top-nav {
     --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
@@ -137,8 +142,8 @@
 
 @include media-breakpoint-up(md) {
     .btn-sm.btn-responsive {
-        font-size: $font-size-base;
         padding: .375rem .75rem;
+        font-size: $font-size-base;
         border-radius: $border-radius;
     }
 }

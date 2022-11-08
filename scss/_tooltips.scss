@@ -1,103 +1,114 @@
 .tt {
     position: relative;
 
-    &:before {
-        position:absolute;
+    &::before {
+        position: absolute;
         display: none;
         width: 60px;
         padding: 5px;
-        border-radius: .25rem;
-        background:var(--bs-primary);
+        font-size: $small-font-size;
         color: $gray-100;
         color: var(--choco-theme-background);
         text-align: center;
-        font-size: $small-font-size;
         word-break: normal;
         content: attr(data-tooltip-text);
+        background: var(--bs-primary);
+        border-radius: .25rem;
     }
 
-    &:after {
+    &::after {
+        position: absolute;
         display: none;
         content: "";
-        position: absolute;
         border: 10px solid var(--bs-primary);
     }
 
-    &.tt-start, &.tt-end {
-        &:before, &:after {
+    &.tt-start,
+    &.tt-end {
+        &::before,
+        &::after {
             top: 50%;
             transform: translateY(-50%);
         }
     }
 
     &.tt-start {
-        &:before, &:after {
+        &::before,
+        &::after {
             right: 100%;
         }
 
-        &:before {
+        &::before {
             margin-right: $spacer;
         }
 
-        &:after {
+        &::after {
             border-color: transparent transparent transparent var(--bs-primary);
         }
     }
 
     &.tt-end {
-        &:before, &:after {
+        &::before,
+        &::after {
             left: 100%;
         }
 
-        &:before {
+        &::before {
             margin-left: $spacer;
         }
 
-        &:after {
+        &::after {
             border-color: transparent var(--bs-primary) transparent transparent;
         }
     }
 
-    &.tt-top, &.tt-bottom {
-        &:before, &:after {
+    &.tt-top,
+    &.tt-bottom {
+        &::before,
+        &::after {
             left: 50%;
             transform: translateX(-50%);
         }
     }
 
     &.tt-top {
-        &:before, &:after {
+        &::before,
+        &::after {
             bottom: 100%;
         }
 
-        &:before {
+        &::before {
             margin-bottom: $spacer;
         }
 
-        &:after {
+        &::after {
             border-color: var(--bs-primary) transparent transparent transparent;
         }
     }
 
     &.tt-bottom {
-        &:before, &:after {
+        &::before,
+        &::after {
             top: 100%;
         }
 
-        &:before {
+        &::before {
             margin-top: $spacer;
         }
 
-        &:after {
+        &::after {
             border-color: transparent transparent var(--bs-primary) transparent;
         }
     }
 
-    &:hover:before, &:hover:after, &.active:before, &.active:after {
+    &:hover::before,
+    &:hover::after,
+    &.active::before,
+    &.active::after {
         display: block;
     }
 
-    &.active:before {
+    &.active::before {
         content: attr(data-tooltip-text-active);
     }
 }

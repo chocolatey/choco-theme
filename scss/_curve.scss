@@ -1,46 +1,48 @@
 .curve {
     position: relative;
-    overflow: hidden;
     height: 40px;
+    overflow: hidden;
 
-    &:before {
-        border-radius: 100%;
+    &::before {
         position: absolute;
         right: -200px;
         left: -200px;
-        content: '';
+        content: "";
+        border-radius: 100%;
     }
 
     &.curve-bottom {
-        &:before {
-            bottom: -200px;
+        &::before {
             top: 0;
+            bottom: -200px;
         }
     }
 
     &.curve-top {
-        &:before {
+        &::before {
             top: -200px;
             bottom: 0;
         }
     }
 
-    &.curve-bg-theme-light, &.curve-bg-theme-light .curve {
-        &:before {
+    &.curve-bg-theme-light,
+    &.curve-bg-theme-light .curve {
+        &::before {
             background: $white;
             background: var(--background-light);
         }
     }
 
-    &.curve-bg-theme, &.curve-bg-theme .curve {
-        &:before {
+    &.curve-bg-theme,
+    &.curve-bg-theme .curve {
+        &::before {
             background: $gray-100;
             background: var(--choco-theme-background);
         }
     }
 
     &.curve-primary {
-        &:before {
+        &::before {
             background: var(--bs-primary);
             background: var(--theme-primary);
         }
@@ -48,7 +50,6 @@
 }
 
 .slant-top-end {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
 }
 

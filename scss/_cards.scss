@@ -7,9 +7,9 @@
 
         .circle {
             position: absolute;
-            background: var(--background-primary-light);
-            left: -15px;
             top: 15px;
+            left: -15px;
+            background: var(--background-primary-light);
 
             i {
                 color: var(--bs-primary);
@@ -36,13 +36,11 @@
     }
 
     &.card-link {
-        transition: all 0.3s ease;
+        transition: all .3s ease;
 
         &:hover {
             cursor: pointer;
-            -webkit-transform: scale(0.98);
-            -ms-transform: scale(0.98);
-            transform: scale(0.98);
+            transform: scale(.98);
         }
 
         a {
@@ -52,23 +50,22 @@
 }
 
 // TODO: Find all cards wrapped in an a or .video story and add the class .card-link and remove these lines
-a, .video-story {
+a,
+.video-story {
     .card {
-        transition: all 0.3s ease;
+        transition: all .3s ease;
 
         &:hover {
             cursor: pointer;
-            -webkit-transform: scale(0.98);
-            -ms-transform: scale(0.98);
-            transform: scale(0.98);
+            transform: scale(.98);
         }
     }
 }
 
 .navbar-nested-collapse {
     .card {
-        border-width: 1px 0 0;
         border-color: var(--border);
         border-style: solid;
+        border-width: 1px 0 0;
     }
 }

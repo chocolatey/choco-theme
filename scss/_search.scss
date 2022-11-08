@@ -1,7 +1,7 @@
 .search-box {
-    display: flex;
     position: relative;
     z-index: 4;
+    display: flex;
 
     &.search-d-submit.search-d-none-close {
         z-index: 2;
@@ -17,51 +17,51 @@
         }
 
         .bg-theme {
-            border-left: 1px solid var(--border);
             border-right: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
+            border-left: 1px solid var(--border);
 
             &:not(.no-results):hover {
-                background: var(--choco-theme-neutral) !important;
                 cursor: pointer;
+                background: var(--choco-theme-neutral) !important;
             }
         }
     }
 
     .fa-magnifying-glass {
         position: absolute;
-        z-index: 1;
-        left: 12px;
         top: 50%;
-        transform: translate(0, -50%);
+        left: 12px;
+        z-index: 1;
         color: $primary-opacity-25;
+        transform: translate(0, -50%);
     }
 
     .search-help {
         display: none;
 
         .arrow-up {
-            z-index: 1;
             top: .3rem;
             left: .75rem;
+            z-index: 1;
             width: 0;
             height: 0;
-            border-left: solid transparent;
+            border-width: 0 .75rem .75rem;
             border-right: solid transparent;
             border-bottom: solid $gray-100;
             border-bottom: solid var(--border);
-            border-width: 0 .75rem .75rem;
-    
+            border-left: solid transparent;
+
             .arrow-up-inner {
                 top: .1rem;
                 left: -.75rem;
                 width: 0;
                 height: 0;
-                border-left: solid transparent;
+                border-width: 0 .75rem .75rem;
                 border-right: solid transparent;
                 border-bottom: solid $gray-300;
                 border-bottom: solid var(--choco-theme-background);
-                border-width: 0 .75rem .75rem;
+                border-left: solid transparent;
             }
         }
     }
@@ -70,10 +70,11 @@
         padding-left: 35px;
 
         &:hover {
-            box-shadow: 0 0 0 0.2rem $primary-opacity-25;
+            box-shadow: 0 0 0 .2rem $primary-opacity-25;
         }
 
-        &:focus, &:hover {
+        &:focus,
+        &:hover {
             + .fa-magnifying-glass {
                 color: var(--bs-primary);
             }
@@ -90,7 +91,10 @@
 }
 
 .chocolatey-org #topNav.active-search {
-    .navbar-nav, label[for="themeToggle"], .btn-top-nav, .navbar-brand {
+    .navbar-nav,
+    label[for="themeToggle"],
+    .btn-top-nav,
+    .navbar-brand {
         display: none;
     }
 
@@ -100,23 +104,24 @@
     }
 
     .navbar-links {
-        margin-left: 0 !important;
         width: 100%;
+        margin-left: 0 !important;
     }
 }
 
 .chocolatey-docs #topNav.active-search {
-    .navbar-nav, .navbar-brand, .navbar-toggler {
+    .navbar-nav,
+    .navbar-brand,
+    .navbar-toggler {
         display: none;
     }
 
     .search-box {
         display: flex;
         flex: auto;
-    }
 
-    .search-box {
-        &:focus-within, &:hover {
+        &:focus-within,
+        &:hover {
             .fa-magnifying-glass {
                 color: var(--bs-primary);
             }
@@ -148,9 +153,9 @@
             }
         }
 
-         input:not(.search-d-none-key-container) {
-             padding-right: 90px;
-         }
+        input:not(.search-d-none-key-container) {
+            padding-right: 90px;
+        }
     }
 
     #topNav .search-box {
@@ -167,7 +172,8 @@
             }
         }
 
-        .search-box, .navbar-links {
+        .search-box,
+        .navbar-links {
             flex: unset;
         }
 
@@ -182,28 +188,30 @@
     }
 
     .chocolatey-docs #topNav.active-search {
-        .navbar-brand, .navbar-nav {
+        .navbar-brand,
+        .navbar-nav {
             display: flex;
         }
 
         .search-box {
+            left: 25%;
             display: flex;
             flex: unset;
-            left: 25%;
             width: 53%;
         }
     }
 }
 
 @include media-breakpoint-up(xl) {
-    .chocolatey-docs #topNav.active-search .search-box, .chocolatey-org #topNav.active-search .search-box {
-        left: 50%;
+    .chocolatey-docs #topNav.active-search .search-box,
+    .chocolatey-org #topNav.active-search .search-box {
         right: 50%;
-        transform: translate(-50%, 0);
+        left: 50%;
         //z-index: 1;
         width: 700px;
+        transform: translate(-50%, 0);
     }
-} 
+}
 
 @include media-breakpoint-up(xxl) {
     .chocolatey-org #topNav.active-search {
@@ -219,4 +227,4 @@
             width: auto;
         }
     }
-} 
+}

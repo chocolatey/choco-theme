@@ -312,7 +312,7 @@ import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab 
     };
 
     const injectEnvironmentScripts = () => {
-        const internalRepoUrl = document.querySelector('.internalRepoUrlInput').value ? document.querySelector('.internalRepoUrlInput').value : 'http://internal/odata/repo';
+        const internalRepoUrl = document.querySelector('.internal-repo-url-input').value ? document.querySelector('.internal-repo-url-input').value : 'http://internal/odata/repo';
         const commandInjectedScripts = document.querySelectorAll('.command-injected-environment-script');
         const commandEnvironmentOne = document.querySelector('.command-builder-environment-one');
         const commandEnvironmentTwo = document.querySelector('.command-builder-environment-two');
@@ -340,7 +340,7 @@ import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab 
     };
 
     const injectOrganizationScripts = () => {
-        const internalRepoUrl = document.querySelector('.internalRepoUrlInput').value ? document.querySelector('.internalRepoUrlInput').value : 'http://internal/odata/repo';
+        const internalRepoUrl = document.querySelector('.internal-repo-url-input').value ? document.querySelector('.internal-repo-url-input').value : 'http://internal/odata/repo';
         const commandInjectedScripts = document.querySelectorAll('.command-injected-organization-script');
         const commandAnsible = document.querySelector('.command-builder-organization-ansible');
         const commandChef = document.querySelector('.command-builder-organization-chef');
@@ -505,7 +505,7 @@ package { '${storageValue}':
         const builderCurrentStep = document.querySelector('#builder-steps .active');
         const builderNextStep = document.querySelector('#builder-steps .active').closest('li').nextElementSibling;
         const builderPrevStep = document.querySelector('#builder-steps .active').closest('li').previousElementSibling;
-        const internalRepoUrl = document.querySelector('.internalRepoUrlInput');
+        const internalRepoUrl = document.querySelector('.internal-repo-url-input');
         const builderStep3Tab = Tab.getOrCreateInstance(builderStep3, { toggle: false });
 
         // Next Button
@@ -636,7 +636,7 @@ package { '${storageValue}':
         });
     });
 
-    document.querySelectorAll('.internalRepoUrlInput').forEach(el => {
+    document.querySelectorAll('.internal-repo-url-input').forEach(el => {
         el.addEventListener('keyup', () => {
             builderNavButtons();
         });

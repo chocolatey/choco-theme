@@ -1,39 +1,40 @@
 #rightSidebarNav {
     font-size: $small-font-size;
-    
+
     .card.card-body {
         background: $white;
         background: var(--background-light);
     }
 
     .nav-item .nav-link {
+        position: relative;
         display: block;
         padding: .5rem 0 .5rem 1rem;
-        position: relative;
 
-        &:before {
-            content: '';
-            height: calc(100% + 4px);
-            width: .25rem;
-            border-radius: .25rem;
-            background: transparent;
-            display: block;
+        &::before {
             position: absolute;
-            left: 0;
             top: -2px;
+            left: 0;
+            display: block;
+            width: .25rem;
+            height: calc(100% + 4px);
+            content: "";
+            background: transparent;
+            border-radius: .25rem;
         }
 
-        &.active, &:hover {
+        &.active,
+        &:hover {
             color: var(--bs-primary);
             background: $primary-opacity-25;
 
-            &:before {
+            &::before {
                 background: var(--bs-primary);
             }
         }
 
         &.active {
-            font-weight: bold;
+            font-weight: 700;
         }
     }
 }
