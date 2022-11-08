@@ -37,50 +37,6 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="https://chocolatey.org/events/hacktoberfest-tuesdays-2022" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://img.chocolatey.org/events/01-19.jpg" alt="Hacktoberfest Tuesdays 2022" />
-    </a>
-    <p>Every Tuesday in October</p>
-    <p class="text-start">For Hacktoberfest, Chocolatey ran a livestream every Tuesday! Rewatch Cory, James, Gary, and Rain as they share knowledge on how to contribute to open-source projects such as Chocolatey CLI.</p>
-    <a href="https://chocolatey.org/events/hacktoberfest-tuesdays-2022" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
-</div>
-<hr />
-<div class="text-center">
-    <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-november" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://img.chocolatey.org/events/01-20.jpg" alt="Chocolatey Product Spotlight: Chocolatey 1.2.0 and Chocolatey Licensed Extension 5.0.0" />
-    </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-11-03T16:00:00Z" data-event-include-break="true"></p>
-    <p class="text-start">Join Paul and Gary for this months Chocolatey product livestream where we look at the latest release of Chocolatey 1.2.0, Chocolatey Licensed Extension 5.0.0 and shine a spotlight on the new hook scripts functionality. This opens up so many possibilities for Chocolatey CLI users!</p>
-    <div class="d-flex align-items-center justify-content-center flex-wrap">
-        <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-november" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
-        <div class="mt-2 mx-1">
-            <div class="atcb" style="display:none;">
-            {
-                "name":"Chocolatey Product Spotlight: Chocolatey 1.2.0 and Chocolatey Licensed Extension 5.0.0",
-                "description":"Join Paul and Gary for this months Chocolatey product livestream where we look at the latest release of Chocolatey 1.2.0, Chocolatey Licensed Extension 5.0.0 and shine a spotlight on the new hook scripts functionality. This opens up so many possibilities for Chocolatey CLI users!",
-                "location":"https://chocolatey.org/events/chocolatey-spotlight-2022-november",
-                "startDate":"2022-11-03",
-                "endDate":"2022-11-03",
-                "startTime":"16:00",
-                "endTime":"17:00",
-                "options":[
-                    "Apple",
-                    "Google",
-                    "iCal",
-                    "Microsoft365",
-                    "Outlook.com",
-                    "Yahoo"
-                ],
-                "trigger":"click",
-                "inline":true,
-                "iCalFileName":"chocolatey-spotlight-2022-november"
-            }
-            </div>
-        </div>
-    </div>
-</div>
-<hr />
-<div class="text-center">
     <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
@@ -202,6 +158,24 @@
         <p><strong>Livestream from<br />Thursday, 04 August 2022</strong></p>
         <p class="text-start">Join Paul and Gary to hear more about the plans for the Chocolatey CLI in the not so distant future. We'll talk about some cool new features, long term asks from Customers and Community and how you can get involved!</p>
         <a href="https://chocolatey.org/events/the-future-of-chocolatey-cli" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://chocolatey.org/events/hacktoberfest-tuesdays-2022" rel="noreferrer" target="_blank">
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-19.jpg" alt="Hacktoberfest Tuesdays 2022" />
+        </a>
+        <p><strong>Livestreams from<br />October 2022</strong></p>
+        <p class="text-start">For Hacktoberfest, Chocolatey ran a livestream every Tuesday! Re-watch Cory, James, Gary, and Rain as they share knowledge on how to contribute to open-source projects such as Chocolatey CLI.</p>
+        <a href="https://chocolatey.org/events/hacktoberfest-tuesdays-2022" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-november" rel="noreferrer" target="_blank">
+            <img class="border mb-3" src="https://img.chocolatey.org/events/01-20.jpg" alt="Chocolatey Product Spotlight: Chocolatey 1.2.0 and Chocolatey Licensed Extension 5.0.0" />
+        </a>
+        <p><strong>Livestream from<br />Thursday, 03 November 2022</strong></p>
+        <p class="text-start">Join Paul and Gary for this months Chocolatey product livestream where we look at the latest release of Chocolatey 1.2.0, Chocolatey Licensed Extension 5.0.0 and shine a spotlight on the new hook scripts functionality. This opens up so many possibilities for Chocolatey CLI users!</p>
+        <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-november" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
     </div>
 </div>
