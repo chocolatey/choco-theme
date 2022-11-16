@@ -21,7 +21,7 @@ pre[class*="language-"] {
     font-family: var(--bs-font-monospace);
     font-size: .85rem;
     font-weight: 700;
-    color: var(--text-code);
+    color: var(--choco-theme-text-code);
     text-shadow: none;
 }
 
@@ -39,8 +39,8 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-    background: var(--background-light);
-    border: 1px solid var(--border);
+    background: var(--choco-theme-elevation-1);
+    border: 1px solid var(--choco-theme-border);
     border-radius: $card-border-radius;
 }
 
@@ -49,7 +49,7 @@ pre[class*="language-"] {
 .token.doctype,
 .token.cdata {
     font-weight: 400;
-    color: var(--text-code);
+    color: var(--choco-theme-text-code);
 }
 
 .token.punctuation {
@@ -67,7 +67,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-    color: var(--theme-red);
+    color: var(--choco-theme-red);
 }
 
 .token.selector,
@@ -85,19 +85,19 @@ pre[class*="language-"] {
 .token.entity,
 .language-css .token.string,
 .style .token.string {
-    color: var(--theme-orange);
+    color: var(--choco-theme-orange);
     background: none;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-    color: var(--theme-orange);
+    color: var(--choco-theme-orange);
 }
 
 .token.function,
 .token.class-name {
-    color: var(--theme-purple);
+    color: var(--choco-theme-purple);
 }
 
 .token.regex,

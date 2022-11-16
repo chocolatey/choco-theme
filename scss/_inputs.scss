@@ -1,18 +1,18 @@
 // Inputs
 .form-control,
 .form-select {
-    color: var(--text);
-    background-color: var(--background-light);
+    color: var(--choco-theme-text);
+    background-color: var(--choco-theme-elevation-1);
 
     &:focus {
-        color: var(--text);
-        background-color: var(--background-light);
+        color: var(--choco-theme-text);
+        background-color: var(--choco-theme-elevation-1);
         border-color: var(--bs-primary);
     }
 
     &:disabled,
     &[readonly] {
-        color: var(--text);
+        color: var(--choco-theme-text);
         background-color: var(--choco-theme-neutral);
         opacity: 1;
     }
@@ -24,7 +24,7 @@
         border: 1px solid var(--bs-primary);
 
         &:not(:checked) {
-            background-color: var(--background-light);
+            background-color: var(--choco-theme-elevation-1);
 
             &[disabled],
             &:disabled {
@@ -89,7 +89,7 @@
     &.form-switch-active .form-check-input {
         &::after {
             left: .1rem;
-            color: $white;
+            color: $black;
             content: "\f00c";
         }
 
@@ -110,7 +110,7 @@
     &.form-switch-expired .form-check-input {
         &::after {
             left: .35rem;
-            color: $white;
+            color: $black;
             content: "\21";
         }
 
@@ -163,7 +163,7 @@
         }
 
         &::before {
-            background: var(--background-light-3);
+            background: var(--choco-theme-elevation-2);
             border: 1px solid var(--bs-warning);
         }
 
@@ -186,8 +186,7 @@
             &:not(:checked) {
                 &[disabled],
                 &:disabled {
-                    background: $white;
-                    background: var(--background-light);
+                    background: var(--choco-theme-elevation-1);
                     border-color: var(--bs-primary);
                     opacity: 1;
                 }

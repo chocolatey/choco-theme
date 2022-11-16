@@ -7,48 +7,39 @@
 <div id="announcementCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
     <div class="position-relative w-100 overflow-hidden">
         <div class="carousel-item active">
-            <div class="card bg-theme-primary mb-0">
+            <div class="card text-bg-primary mb-0">
                 <div class="card-body text-center">
                     <h3>Resources</h3>
                     <p>Watch videos, read documentation, and hear Chocolatey success stories from companies you trust.</p>
-                    <a href="https://chocolatey.org/resources" class="btn btn-theme btn-width">View Resources</a>
+                    <a href="https://chocolatey.org/resources" class="btn btn-theme-background">View Resources</a>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <div class="card bg-success text-white mb-0">
+            <div class="card text-bg-success mb-0">
                 <div class="card-body text-center">
                     <h3>Events</h3>
                     <p>Find past and upcoming webinars, workshops, and conferences. New events have recently been added!</p>
-                    <a href="https://chocolatey.org/events" class="btn btn-theme btn-width">View Events</a>
+                    <a href="https://chocolatey.org/events" class="btn btn-theme-background">View Events</a>
                 </div>
             </div>
         </div>
         <div class="carousel-item">
-            <div class="card bg-primary-900 mb-0">
+            <div class="card text-bg-primary-900 mb-0">
                 <div class="card-body text-center">
                     <h3>Courses</h3>
                     <p>Step-by-step guides for all things Chocolatey! Earn badges as you learn through interactive digital courses.</p>
-                    <a href="https://community.chocolatey.org/courses" class="btn btn-primary btn-width">View Courses</a>
+                    <a href="https://community.chocolatey.org/courses" class="btn btn-primary">View Courses</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <hr />
-<div class="text-center">
-    <a href="https://community.veeam.com/automation-desk-103/event-december-chocolatey-month-3720" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://img.chocolatey.org/events/02-04.jpg" alt="December Chocolatey Month with Veeam" />
-    </a>
-    <p class="fw-bold">December 2022</p>
-    <p class="text-start">Join Veeam and Chocolatey in the month of December in the Automation Desk group to answer questions, gain points, and win prizes.</p>
-    <a href="https://community.veeam.com/automation-desk-103/event-december-chocolatey-month-3720" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Register Now</a>
-</div>
-<hr />
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-18.jpg" alt="Announcing Chocolatey Central Management 0.10.0" />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-18.jpg" alt="Announcing Chocolatey Central Management 0.10.0" />
         </a>
         <p><strong>Livestream from<br />Thursday, 06 October 2022</strong></p>
         <p class="text-start">We recently released our largest update to Chocolatey Central Management so far. Join Gary and Steph to find out more about Chocolatey Central Management and the new features and fixes we've added to this release.</p>
@@ -57,7 +48,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-and-intune-overview" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-11.jpg" alt="Chocolatey and Intune Overview" />
         </a>
         <p><strong>Webinar Replay from<br />Wednesday, 30 March 2022</strong></p>
         <p class="text-start">At Chocolatey Software we strive for simple, and teaching others. Let us teach you just how simple it could be to keep your 3rd party applications updated across your devices, all with Intune!</p>
@@ -66,7 +57,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-for-business-in-azure" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-14.jpg" alt="Chocolatey For Business. In Azure. In One Click." />
         </a>
         <p><strong>Livestream from<br />Thursday, 9 June 2022</strong></p>
         <p class="text-start">Join James and Josh to show you how you can get the Chocolatey For Business recommended infrastructure and workflow, created, in Azure, in around 20 minutes.</p>
@@ -75,7 +66,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/the-future-of-chocolatey-cli" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-17.jpg" alt="The Future of Chocolatey CLI" />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-17.jpg" alt="The Future of Chocolatey CLI" />
         </a>
         <p><strong>Livestream from<br />Thursday, 04 August 2022</strong></p>
         <p class="text-start">Join Paul and Gary to hear more about the plans for the Chocolatey CLI in the not so distant future. We'll talk about some cool new features, long term asks from Customers and Community and how you can get involved!</p>
@@ -84,7 +75,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/hacktoberfest-tuesdays-2022" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-19.jpg" alt="Hacktoberfest Tuesdays 2022" />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-19.jpg" alt="Hacktoberfest Tuesdays 2022" />
         </a>
         <p><strong>Livestreams from<br />October 2022</strong></p>
         <p class="text-start">For Hacktoberfest, Chocolatey ran a livestream every Tuesday! Re-watch Cory, James, Gary, and Rain as they share knowledge on how to contribute to open-source projects such as Chocolatey CLI.</p>
@@ -93,7 +84,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-november" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-20.jpg" alt="Chocolatey Product Spotlight: Chocolatey 1.2.0 and Chocolatey Licensed Extension 5.0.0" />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-20.jpg" alt="Chocolatey Product Spotlight: Chocolatey 1.2.0 and Chocolatey Licensed Extension 5.0.0" />
         </a>
         <p><strong>Livestream from<br />Thursday, 03 November 2022</strong></p>
         <p class="text-start">Join Paul and Gary for this months Chocolatey product livestream where we look at the latest release of Chocolatey 1.2.0, Chocolatey Licensed Extension 5.0.0 and shine a spotlight on the new hook scripts functionality. This opens up so many possibilities for Chocolatey CLI users!</p>
@@ -102,7 +93,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-21.jpg" alt="Chocolatey Coding Livestream" />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-21.jpg" alt="Chocolatey Coding Livestream" />
         </a>
         <p><strong>Livestream from<br />Tuesday, 29 November 2022</strong></p>
         <p class="text-start">Join Josh as he adds the ability to manage Chocolatey GUI config and features with the Chocolatey Ansible Collection.</p>
@@ -111,7 +102,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-december" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-22.jpg" alt="Chocolatey Product Spotlight: A Year in Review" />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-22.jpg" alt="Chocolatey Product Spotlight: A Year in Review" />
         </a>
         <p><strong>Livestream from<br />Thursday, 01 December 2022</strong></p>
         <p class="text-start">Join Paul and Gary for this months Chocolatey product livestream where we look at all of Chocolatey's product releases and livestreams over the past year.</p>
@@ -120,7 +111,7 @@
     </div>
     <div class="text-center">
         <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
         </a>
         <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.</p>
         <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" class="btn btn-primary mt-2 mx-1">Watch Archives</a>
@@ -128,7 +119,7 @@
     </div>
     <div class="text-center">
         <a href="https://youtube.com/@@veeam" rel="noreferrer" target="_blank">
-            <img class="border mb-3" src="https://img.chocolatey.org/events/02-03.jpg" alt="Introduction into Chocolatey with Veeam" />
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/02-03.jpg" alt="Introduction into Chocolatey with Veeam" />
         </a>
         <p><strong>Webinar from<br />Tuesday, 13 December 2022</strong></p>
         <p class="text-start">Join Gary, Paul, and Maurice as they introduce and demonstrate how to use Chocolatey! Questions will be answered live in an Ask Me Anything format.</p>

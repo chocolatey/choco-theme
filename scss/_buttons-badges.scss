@@ -16,11 +16,21 @@
     }
 }
 
-// TODO: 0.2.0 Not sure what this is or if it's needed
 .btn-check:checked + .btn-outline-primary {
     color: var(--choco-theme-background);
-    border-top: 1px solid var(--background-light);
-    border-bottom: 1px solid var(--background-light);
+    border-top: 1px solid var(--choco-theme-elevation-1);
+    border-bottom: 1px solid var(--choco-theme-elevation-1);
+}
+
+// Navbar toggler
+.navbar-toggler {
+    &:hover .fa-solid {
+        color: $dark;
+    }
+
+    .fa-solid {
+        color: $primary;
+    }
 }
 
 // Custom buttons
@@ -47,8 +57,8 @@
 
 .btn-top-nav {
     --#{$prefix}btn-focus-shadow-rgb: var(--bs-primary-rgb);
-    --#{$prefix}btn-color: var(--bs-secondary);
-    --#{$prefix}btn-border-color: var(--border-secondary);
+    --#{$prefix}btn-color: var(--bs-primary);
+    --#{$prefix}btn-border-color: var(--choco-theme-border-secondary);
     --#{$prefix}btn-hover-color: var(--bs-dark);
     --#{$prefix}btn-hover-bg: var(--bs-primary);
     --#{$prefix}btn-hover-border-color: var(--bs-primary);
@@ -56,7 +66,7 @@
     --#{$prefix}btn-active-bg: var(--bs-primary);
     --#{$prefix}btn-active-border-color: var(--bs-primary);
     --#{$prefix}btn-disabled-color: var(--bs-secondary);
-    --#{$prefix}btn-disabled-border-color: var(--border-secondary);
+    --#{$prefix}btn-disabled-border-color: var(--choco-theme-border-secondary);
 }
 
 .btn-theme-background {
@@ -64,11 +74,11 @@
     --#{$prefix}btn-bg: var(--choco-theme-background);
     --#{$prefix}btn-border-color: var(--choco-theme-background);
     --#{$prefix}btn-hover-color: var(--choco-theme-contrast);
-    --#{$prefix}btn-hover-bg: var(--theme-hover);
-    --#{$prefix}btn-hover-border-color: var(--theme-hover);
+    --#{$prefix}btn-hover-bg: var(--choco-theme-background-hover);
+    --#{$prefix}btn-hover-border-color: var(--choco-theme-background-hover);
     --#{$prefix}btn-active-color: var(--choco-theme-contrast);
-    --#{$prefix}btn-active-bg: var(--theme-hover);
-    --#{$prefix}btn-active-border-color: var(--theme-hover);
+    --#{$prefix}btn-active-bg: var(--choco-theme-background-hover);
+    --#{$prefix}btn-active-border-color: var(--choco-theme-background-hover);
     --#{$prefix}btn-disabled-color: var(--choco-theme-contrast);
     --#{$prefix}btn-disabled-bg: var(--choco-theme-background);
     --#{$prefix}btn-disabled-border-color: var(--choco-theme-background);
@@ -79,11 +89,11 @@
     --#{$prefix}btn-bg: var(--choco-theme-contrast);
     --#{$prefix}btn-border-color: var(--choco-theme-contrast);
     --#{$prefix}btn-hover-color: var(--choco-theme-background);
-    --#{$prefix}btn-hover-bg: var(--theme-opposite-hover);
-    --#{$prefix}btn-hover-border-color: var(--theme-opposite-hover);
+    --#{$prefix}btn-hover-bg: var(--choco-theme-contrast-hover);
+    --#{$prefix}btn-hover-border-color: var(--choco-theme-contrast-hover);
     --#{$prefix}btn-active-color: var(--choco-theme-background);
-    --#{$prefix}btn-active-bg: var(--theme-opposite-hover);
-    --#{$prefix}btn-active-border-color: var(--theme-opposite-hover);
+    --#{$prefix}btn-active-bg: var(--choco-theme-contrast-hover);
+    --#{$prefix}btn-active-border-color: var(--choco-theme-contrast-hover);
     --#{$prefix}btn-disabled-color: var(--choco-theme-background);
     --#{$prefix}btn-disabled-bg: var(--choco-theme-contrast);
     --#{$prefix}btn-disabled-border-color: var(--choco-theme-contrast);

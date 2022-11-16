@@ -4,10 +4,9 @@ body {
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    color: var(--text);
+    color: var(--choco-theme-text);
     word-break: break-word;
     overflow-wrap: break-word;
-    background: $light;
     background: var(--choco-theme-background);
 }
 
@@ -52,7 +51,7 @@ strong {
     margin-bottom: $spacer;
 
     .breadcrumb-item.active {
-        color: var(--text);
+        color: var(--choco-theme-text);
     }
 }
 
@@ -106,12 +105,12 @@ strong {
     }
 
     > :not(:first-child) {
-        border-top: 2px solid var(--border);
+        border-top: 2px solid var(--choco-theme-border);
     }
 }
 
 .table-dark {
-    color: var(--text);
+    color: var(--choco-theme-text);
 }
 
 .table-thead-d-none thead {
@@ -173,7 +172,7 @@ svg {
 
     img {
         border: 1px solid $gray-300;
-        border: 1px solid var(--border);
+        border: 1px solid var(--choco-theme-border);
     }
 }
 
@@ -186,18 +185,17 @@ svg {
     opacity: var(--modal-backdrop);
 }
 .modal-content {
-    background: var(--background-light);
+    background: var(--choco-theme-elevation-1);
 
     .modal-header,
     .modal-footer {
-        border-color: var(--border);
+        border-color: var(--choco-theme-border);
     }
 
     .modal-header,
     .modal-body,
     .modal-footer {
-        background: $white;
-        background: var(--background-light);
+        background: var(--choco-theme-elevation-1);
     }
 }
 
@@ -206,7 +204,7 @@ svg {
 .nav-tabs,
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
-    border-color: var(--border);
+    border-color: var(--choco-theme-border);
 }
 
 .nav-tabs .nav-item:not(:last-child) {
@@ -214,15 +212,15 @@ svg {
 }
 
 .nav-tabs .nav-link {
-    background: var(--background-light);
+    background: var(--choco-theme-elevation-1);
 }
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
     font-weight: $font-weight-bold;
-    color: var(--text);
-    background: var(--background-light);
-    border-color: var(--border);
+    color: var(--choco-theme-text);
+    background: var(--choco-theme-elevation-1);
+    border-color: var(--choco-theme-border);
 }
 
 main {

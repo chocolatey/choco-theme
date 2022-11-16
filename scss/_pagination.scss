@@ -1,6 +1,6 @@
 .page-link {
     background-color: unset;
-    border: 1px solid var(--border);
+    border: 1px solid var(--choco-theme-border);
 
     &:hover,
     &:focus {
@@ -11,5 +11,5 @@
 
 .page-item.disabled .page-link {
     background: unset;
-    border-color: var(--border);
+    border-color: var(--choco-theme-border);
 }

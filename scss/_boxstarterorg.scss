@@ -3,7 +3,7 @@
     .h2,
     h1,
     h2 {
-        color: var(--text);
+        color: var(--choco-theme-text);
     }
 
     a:not(.nav-link):not(.btn),
@@ -30,25 +30,30 @@
             .nav-item .nav-link {
                 &.active-page,
                 &:hover {
-                    background: var(--background-primary-light);
+                    background: var(--choco-theme-primary-light);
                 }
 
                 &.active,
                 &:hover {
-                    color: var(--text) !important;
+                    color: var(--choco-theme-text) !important;
 
                     a,
                     .btn-collapse::before {
-                        color: var(--text) !important;
+                        color: var(--choco-theme-text) !important;
                     }
                 }
+            }
+
+            .nav-link::before,
+            .nav-item:hover::before {
+                border-radius: 0 !important;
             }
         }
     }
 
     // Toggle switch
     .theme-toggle + .toggle-slot {
-        border-color: var(--border);
+        border-color: var(--choco-theme-border);
     }
 
     // Tooltips
@@ -61,8 +66,34 @@
     // Code
     code:not(code[class*="language-"]) {
         padding: 1px 3px;
-        color: var(--text);
-        background: var(--background-primary-light);
+        color: var(--choco-theme-text);
+        background: var(--choco-theme-primary-light);
+    }
+
+    // Buttons
+    .btn-primary {
+        --bs-btn-bg: var(--bs-primary);
+        --bs-btn-border-color: var(--bs-primary);
+    }
+
+    .btn-outline-primary {
+        --bs-btn-color: var(--bs-primary);
+        --bs-btn-border-color: var(--bs-primary);
+        --bs-btn-hover-bg: var(--bs-primary);
+        --bs-btn-hover-border-color: var(--bs-primary);
+        --bs-btn-active-bg: var(--bs-primary);
+        --bs-btn-active-border-color: var(--bs-primary);
+        --bs-btn-disabled-color: var(--bs-primary);
+        --bs-btn-disabled-border-color: var(--bs-primary);
+    }
+
+    // Callouts
+    .callout, blockquote {
+        border-radius: 0;
+
+        &:after {
+            border-radius: 0;
+        }
     }
 }
 

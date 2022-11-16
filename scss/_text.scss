@@ -4,37 +4,32 @@
     }
 }
 
-.text-theme {
-    color: var(--text) !important;
-
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    li {
-        color: var(--text) !important;
-    }
-}
-
-.text-bg-theme {
+.text-theme-background {
     color: var(--choco-theme-background) !important;
 }
 
-.text-bg-theme-light {
-    color: var(--background-light);
+.text-theme-contrast {
+    color: var(--choco-theme-contrast) !important;
 }
 
-.link-primary {
-    color: var(--bs-primary) !important;
+.text-theme-neutral {
+    color: var(--choco-theme-neutral) !important;
+}
 
-    &:hover {
-        color: $primary-400 !important;
-    }
+.text-theme-elevation-1 {
+    color: var(--choco-theme-elevation-1) !important;
+}
+
+.text-theme-elevation-2 {
+    color: var(--choco-theme-elevation-2) !important;
+}
+
+.text-theme-elevation-3 {
+    color: var(--choco-theme-elevation-3) !important;
 }
 
 .link-theme {
-    color: var(--text) !important;
+    color: var(--choco-theme-text) !important;
 
     &:hover {
         color: $primary-500 !important;
@@ -42,8 +37,8 @@
 }
 
 .ct-label {
-    color: var(--text);
-    fill: var(--text);
+    color: var(--choco-theme-text);
+    fill: var(--choco-theme-text);
 }
 
 .text-transform-none {

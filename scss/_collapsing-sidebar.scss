@@ -54,8 +54,7 @@
     padding-bottom: 150px;
     margin-left: 0;
     overflow: auto;
-    background: $white;
-    background: var(--background-light);
+    background: var(--choco-theme-elevation-1);
     transition: none;
 
     a[data-bs-toggle="collapse"]::before {
@@ -74,7 +73,6 @@
 .notification-badge {
     position: absolute;
     font-weight: 700;
-    color: $gray-100;
     color: var(--choco-theme-background);
     background: var(--bs-danger);
     border: 1px solid $red-300;

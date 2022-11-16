@@ -2,8 +2,7 @@
     font-size: $small-font-size;
 
     .card.card-body {
-        background: $white;
-        background: var(--background-light);
+        background: var(--choco-theme-elevation-1);
     }
 
     .nav-item .nav-link {
@@ -25,7 +24,7 @@
 
         &.active,
         &:hover {
-            color: var(--bs-primary);
+            color: var(--bs-text);
             background: $primary-opacity-25;
 
             &::before {

@@ -437,18 +437,19 @@ $nav-tabs-link-active-bg: $white;
 // Navbars
 $navbar-toggler-padding-y: .375rem;
 $navbar-toggler-font-size: $font-size-base;
+$navbar-light-toggler-border-color: var(--choco-theme-border-secondary);
 
 // Dropdowns
-$dropdown-color:                    var(--text);
-$dropdown-bg:                       var(--background-light);
-$dropdown-border-color:             var(--border);
-$dropdown-link-color:               var(--text);
-$dropdown-link-hover-color:         var(--text);
+$dropdown-color:                    var(--choco-theme-text);
+$dropdown-bg:                       var(--choco-theme-elevation-1);
+$dropdown-border-color:             var(--choco-theme-border);
+$dropdown-link-color:               var(--choco-theme-text);
+$dropdown-link-hover-color:         var(--choco-theme-text);
 $dropdown-link-hover-bg:            var(--choco-theme-background);
 
 // Tables
 $table-variants: (
-    "dark":       $primary-950
+    "dark":       $primary-900
 );
 
 // Embed Ratios

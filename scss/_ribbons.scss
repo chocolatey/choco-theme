@@ -30,9 +30,8 @@
         background: var(--bs-success);
     }
 
-    &.bg-theme-light::before,
-    &.bg-theme-light::after {
-        background: $white;
-        background: var(--background-light);
+    &.text-bg-theme-elevation-1::before,
+    &.text-bg-theme-elevation-1::after {
+        background: var(--choco-theme-elevation-1);
     }
 }

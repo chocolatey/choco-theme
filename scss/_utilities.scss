@@ -133,11 +133,11 @@
 .border-top,
 .border-start,
 .border-end {
-    border-color: var(--border) !important;
+    border-color: var(--choco-theme-border) !important;
 }
 
 hr {
-    color: var(--border);
+    color: var(--choco-theme-border);
     opacity: 1;
 }
 

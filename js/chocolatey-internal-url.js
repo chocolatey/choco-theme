@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!i.querySelector('.internal-repo-url-warning')) {
                         const calloutNoUrl = document.createElement('p');
 
-                        calloutNoUrl.classList.add('internal-repo-url-warning', 'callout', 'callout-danger', 'shadow-none', 'text-danger', 'fw-bold', 'small');
+                        calloutNoUrl.classList.add('internal-repo-url-warning', 'callout', 'callout-danger', 'text-danger', 'fw-bold', 'small');
                         calloutNoUrl.innerText = 'You must enter your internal repository url above before proceeding.';
 
                         i.prepend(calloutNoUrl);

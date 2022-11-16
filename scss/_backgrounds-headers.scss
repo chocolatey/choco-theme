@@ -11,23 +11,43 @@
     $color-rgb: to-rgb($value);
     .text-bg-#{$color} {
         color: color-contrast($value) if($enable-important-utilities, !important, null);
-        background-color: $value;
+        background-color: rgba($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
     }
 }
 
 .text-bg-theme-background {
-    color: var(--choco-theme-contrast);
-    background: var(--choco-theme-background);
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-background) !important;
 }
 
 .text-bg-theme-contrast {
-    color: var(--choco-theme-background);
-    background: var(--choco-theme-contrast);
+    color: var(--choco-theme-background) !important;
+    background: var(--choco-theme-contrast) !important;
 }
 
 .text-bg-theme-neutral {
-    color: var(--choco-theme-contrast);
-    background: var(--choco-theme-neutral);
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-neutral) !important;
+}
+
+.text-bg-theme-elevation-1 {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-elevation-1) !important;
+}
+
+.text-bg-theme-elevation-2 {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-elevation-2) !important;
+}
+
+.text-bg-theme-elevation-3 {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-elevation-3) !important;
+}
+
+.text-bg-theme-primary-light {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-primary-light) !important;
 }
 
 /* Background Colors */
@@ -52,11 +72,22 @@
 @each $color, $value in $socialmedia-colors {
     .bg-#{$color} {
         background: $value;
+    }
+}
+
+@each $color, $value in $socialmedia-colors {
+    .text-bg-#{$color} {
+        color: color-contrast($value) if($enable-important-utilities, !important, null);
+        background: $value;
 
         &:hover {
             background: shade-color($value, 15%);
         }
     }
+}
+
+a.circle.text-bg-theme-contrast:hover {
+    background: var(--choco-theme-contrast-hover);
 }
 
 @each $color, $value in $theme-colors {
@@ -65,8 +96,7 @@
     }
 }
 
-.fill-theme-light-2 {
-    fill: $gray-300 !important;
+.fill-theme-neutral {
     fill: var(--choco-theme-neutral) !important;
 }
 
@@ -74,36 +104,16 @@
     background: var(--choco-theme-contrast);
 
     &:hover {
-        background: var(--theme-opposite-hover);
+        background: var(--choco-theme-contrast-hover);
     }
 }
 
-.bg-theme {
-    background: var(--choco-theme-background) !important;
+.bg-theme-elevation-2 {
+    background: var(--choco-theme-elevation-2) !important;
 }
 
-.bg-theme-light {
-    background: var(--background-light) !important;
-}
-
-.bg-theme-light-2 {
-    background: var(--choco-theme-neutral) !important;
-}
-
-.bg-theme-light-3 {
-    background: var(--background-light-3) !important;
-}
-
-.bg-theme-primary {
-    background: var(--theme-primary) !important;
-}
-
-.bg-theme-primary-light {
-    background: var(--background-primary-light) !important;
-}
-
-.bg-theme-opposite {
-    background: var(--choco-theme-contrast) !important;
+.bg-theme-elevation-3 {
+    background: var(--choco-theme-elevation-3) !important;
 }
 
 .bg-primary-opacity-25 {
@@ -112,29 +122,6 @@
 
 .bg-primary-opacity-90 {
     background: $primary-opacity-90 !important;
-}
-
-.bg-theme,
-.bg-theme-light {
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    li {
-        color: var(--text);
-    }
-}
-
-.bg-primary-900 {
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    li {
-        color: $gray-400;
-    }
 }
 
 /* Background Utilities */
@@ -206,15 +193,15 @@
 }
 
 .bg-architect-factory {
-    background-image: radial-gradient(circle, rgba(var(--background-rgb), 0) 0%, rgba(var(--background-rgb), 1) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%, rgba(var(--background-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%, rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+    background-image: radial-gradient(circle, rgba(var(--choco-theme-background-rgb), 0) 0%, rgba(var(--choco-theme-background-rgb), 1) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 1) 0%, rgba(var(--choco-theme-background-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 0) 85%, rgba(var(--choco-theme-background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
 }
 
 .bg-architect-factory-top {
-    background-image: linear-gradient(to right, rgba(var(--background-rgb), .4) 0%, rgba(var(--background-rgb), 1) 30%, rgba(var(--background-rgb), 1) 70%, rgba(var(--background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%, rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+    background-image: linear-gradient(to right, rgba(var(--choco-theme-background-rgb), .4) 0%, rgba(var(--choco-theme-background-rgb), 1) 30%, rgba(var(--choco-theme-background-rgb), 1) 70%, rgba(var(--choco-theme-background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 0) 85%, rgba(var(--choco-theme-background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
 }
 
 .bg-architect-factory-bottom-primary {
-    background-image: linear-gradient(to right, rgba(var(--background-rgb), .4) 0%, rgba(var(--background-rgb), 1) 30%, rgba(var(--background-rgb), 1) 70%, rgba(var(--background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%, rgba(var(--background-rgb), 0) 15%), url("/assets/images/architect-factory-green.svg");
+    background-image: linear-gradient(to right, rgba(var(--choco-theme-background-rgb), .4) 0%, rgba(var(--choco-theme-background-rgb), 1) 30%, rgba(var(--choco-theme-background-rgb), 1) 70%, rgba(var(--choco-theme-background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 1) 0%, rgba(var(--choco-theme-background-rgb), 0) 15%), url("/assets/images/architect-factory-green.svg");
 }
 
 @include media-breakpoint-up(md) {

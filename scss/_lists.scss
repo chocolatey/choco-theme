@@ -27,7 +27,7 @@
     padding-bottom: calc($spacer * 1.5);
     margin-bottom: calc($spacer * 1.5);
     border-bottom: 1px solid $gray-300;
-    border-bottom: 1px  solid var(--border);
+    border-bottom: 1px  solid var(--choco-theme-border);
 }
 
 .list-hr-lg > li:not(:last-child) {
@@ -36,12 +36,12 @@
 }
 
 .list-group-item {
-    color: var(--text);
-    background: var(--background-light);
-    border-color: var(--border);
+    color: var(--choco-theme-text);
+    background: var(--choco-theme-elevation-1);
+    border-color: var(--choco-theme-border);
 
     &.list-group-item-action:hover {
-        color: var(--text);
+        color: var(--choco-theme-text);
         background-color: var(--choco-theme-neutral);
     }
 }
@@ -93,7 +93,6 @@
             font-weight: 900;
             line-height: var(--size) !important;
             text-align: center;
-            background: $gray-300;
             background: var(--choco-theme-neutral);
             border-radius: 50%;
             --size: 25px;
@@ -138,8 +137,7 @@
         padding: 15px 30px;
         margin: 0;
         counter-increment: section;
-        border-color: $gray-300 !important;
-        border-color: var(--border) !important;
+        border-color: var(--choco-theme-border) !important;
         border-top: 2px dashed;
 
         &:nth-child(even) {
@@ -183,8 +181,7 @@
 
         &:last-child::after,
         &:first-child::after {
-            color: $gray-300;
-            color: var(--border);
+            color: var(--choco-theme-border);
         }
 
         &:not(:last-child)::before {

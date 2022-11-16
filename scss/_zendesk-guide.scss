@@ -4,7 +4,7 @@
         width: 100%;
         max-width: unset;
         padding: 0 5%;
-        background: var(--background-light);
+        background: var(--choco-theme-elevation-1);
 
         // Username dropdown
         .user-nav-list {
@@ -19,7 +19,7 @@
         .nav-wrapper-mobile {
             .menu-button-mobile .icon-menu,
             .menu-list-mobile-items a {
-                color: var(--text);
+                color: var(--choco-theme-text);
             }
 
             .menu-list-mobile-items a:hover,
@@ -28,12 +28,12 @@
             }
 
             .menu-list-mobile {
-                background: var(--background-light);
+                background: var(--choco-theme-elevation-1);
                 border: 0;
             }
 
             .menu-list-mobile-items .nav-divider {
-                border-color: var(--border);
+                border-color: var(--choco-theme-border);
             }
         }
 
@@ -90,39 +90,25 @@
     // Dropdowns
     .dropdown-menu {
         [role="menuitem"] {
-            color: var(--text);
+            color: var(--choco-theme-text);
 
             &:hover {
-                color: var(--text);
+                color: var(--choco-theme-text);
                 background: var(--choco-theme-background);
             }
         }
 
         [role="separator"] {
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--choco-theme-border);
         }
     }
 
     // Cards
     .blocks-item,
     .category-content .section {
-        background: var(--background-light);
-        border: 0;
-        border-radius: 0;
-    }
-
-    &.dark-theme {
-        .blocks-item,
-        .category-content .section {
-            border: 1px solid var(--border);
-        }
-    }
-
-    &.light-theme {
-        .blocks-item,
-        .category-content .section {
-            box-shadow: $box-shadow;
-        }
+        background: var(--choco-theme-elevation-1);
+        border: 1px solid var(--choco-theme-border);
+        border-radius: .375rem;
     }
 
     // Links inside cards
@@ -143,7 +129,7 @@
     // Override with text color
     .attachments .attachment-item .attachment-icon,
     .recent-activity-item-meta {
-        color: var(--text);
+        color: var(--choco-theme-text);
     }
 
     // Buttons
@@ -176,7 +162,7 @@
     // Seach input
     .search input[type="search"],
     .search {
-        color: var(--text);
+        color: var(--choco-theme-text);
         border-radius: .25rem;
     }
 
@@ -185,7 +171,7 @@
         border: 1px solid transparent;
 
         input[type="search"] {
-            background-color: var(--background-light);
+            background-color: var(--choco-theme-elevation-1);
             border: 1px solid var(--bs-primary);
 
             &:focus {
@@ -227,7 +213,7 @@
                 }
 
                 .section-tree-title a {
-                    color: var(--text);
+                    color: var(--choco-theme-text);
                 }
             }
         }
@@ -248,7 +234,7 @@
 
     // Footer
     footer.footer {
-        background: var(--background-light);
+        background: var(--choco-theme-elevation-1);
 
         .footer-inner {
             display: inline-block;
@@ -259,7 +245,7 @@
             text-align: center;
 
             a {
-                color: var(--text);
+                color: var(--choco-theme-text);
             }
         }
     }
@@ -268,11 +254,11 @@
     .profile-nav,
     .profile-header,
     .my-activities-nav {
-        background: var(--background-light);
+        background: var(--choco-theme-elevation-1);
     }
 
     .collapsible-nav-list li a {
-        color: var(--text);
+        color: var(--choco-theme-text);
     }
 
     .collapsible-nav-list li[aria-selected="true"] a,
@@ -291,5 +277,10 @@
 
     .my-activities-header {
         margin-top: 20px;
+    }
+
+    // Code blocks
+    .article-body pre {
+        background: var(--choco-theme-elevation-1);
     }
 }

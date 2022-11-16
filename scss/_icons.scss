@@ -25,16 +25,6 @@
     width: 30px;
     height: 30px;
     border-radius: 100%;
-
-    i {
-        color: $white;
-    }
-
-    &.bg-github {
-        i {
-            color: var(--choco-theme-background);
-        }
-    }
 }
 
 // Status balls

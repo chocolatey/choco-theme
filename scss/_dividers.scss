@@ -1,7 +1,6 @@
 .row-divider {
     [class*="col-"]:not(:last-child) {
-        border-bottom: 1px solid $gray-300;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--choco-theme-border);
     }
 }
 
@@ -9,8 +8,7 @@
     .row-divider {
         &.row-sm-divider {
             [class*="col-"]:not(:last-child) {
-                border-right: 1px solid $gray-300;
-                border-right: 1px solid var(--border);
+                border-right: 1px solid var(--choco-theme-border);
                 border-bottom: 0;
             }
         }
@@ -27,8 +25,7 @@
     .row-divider {
         &.row-md-divider {
             [class*="col-"]:not(:last-child) {
-                border-right: 1px solid $gray-300;
-                border-right: 1px solid var(--border);
+                border-right: 1px solid var(--choco-theme-border);
                 border-bottom: 0;
             }
         }
@@ -45,8 +42,7 @@
     .row-divider {
         &.row-lg-divider {
             [class*="col-"]:not(:last-child) {
-                border-right: 1px solid $gray-300;
-                border-right: 1px solid var(--border);
+                border-right: 1px solid var(--choco-theme-border);
                 border-bottom: 0;
             }
         }
@@ -63,8 +59,7 @@
     .row-divider {
         &.row-xl-divider {
             [class*="col-"]:not(:last-child) {
-                border-right: 1px solid $gray-300;
-                border-right: 1px solid var(--border);
+                border-right: 1px solid var(--choco-theme-border);
                 border-bottom: 0;
             }
         }

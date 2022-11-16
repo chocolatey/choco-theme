@@ -1,7 +1,7 @@
 /* stylelint-disable selector-class-pattern */
 
 .flatpickr .form-control[readonly]:not([disabled]) {
-    background: var(--background-light);
+    background: var(--choco-theme-elevation-1);
 }
 
 .flatpickr .flatpickr-input[disabled] {
@@ -9,8 +9,8 @@
 }
 
 .flatpickr-calendar {
-    background: var(--background-light);
-    border: 1px solid var(--border);
+    background: var(--choco-theme-elevation-1);
+    border: 1px solid var(--choco-theme-border);
     box-shadow: none;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .flatpickr-day {
-    color: var(--text);
+    color: var(--choco-theme-text);
 }
 
 .flatpickr-weekday,
@@ -59,7 +59,7 @@ span.flatpickr-weekday {
 
 .flatpickr-months .flatpickr-next-month:hover svg,
 .flatpickr-months .flatpickr-prev-month:hover svg {
-    fill: var(--background-primary-light);
+    fill: var(--choco-theme-primary-light);
 }
 
 .flatpickr-day.endRange,
@@ -112,7 +112,7 @@ span.flatpickr-weekday {
 .flatpickr-day:focus,
 .flatpickr-day:hover
 {
-    color: var(--text);
+    color: var(--choco-theme-text);
     background: var(--choco-theme-neutral);
     border-color: var(--choco-theme-neutral);
 }

@@ -44,3 +44,9 @@ blockquote,
         }
     }
 }
+
+.callout-marker-none {
+    &::after {
+        background: transparent !important;
+    }
+}

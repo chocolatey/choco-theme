@@ -7,7 +7,6 @@
     z-index: 9999;
     display: flex;
     visibility: hidden;
-    background: $gray-100;
     background: var(--choco-theme-background);
     animation: loader-fade 2s;
 

@@ -55,22 +55,22 @@
                 margin-right: 30px;
                 margin-left: -30px;
                 font-weight: 400;
-                color: var(--text);
+                color: var(--choco-theme-text);
                 text-align: center;
                 text-decoration: none;
                 cursor: pointer;
                 background: var(--choco-theme-neutral);
-                border-color: var(--border);
+                border-color: var(--choco-theme-border);
                 border-radius: unset;
 
                 &.disabled {
                     color: $secondary;
-                    background: var(--background-primary-light) !important;
-                    border-color: var(--background-primary-light) !important;
+                    background: var(--choco-theme-primary-light) !important;
+                    border-color: var(--choco-theme-primary-light) !important;
 
                     &::after,
                     &.active::after {
-                        border-left-color: var(--background-primary-light) !important;
+                        border-left-color: var(--choco-theme-primary-light) !important;
                     }
                 }
 
@@ -133,7 +133,7 @@
         width: 100%;
         padding: 10px;
         margin: 1%;
-        border: 1px solid var(--border);
+        border: 1px solid var(--choco-theme-border);
     }
 }
 

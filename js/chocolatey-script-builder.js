@@ -3,7 +3,7 @@ import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab 
 
 (() => {
     const packages = localStorage.packageList === undefined ? new Array() : JSON.parse(localStorage.packageList); // eslint-disable-line
-    const modalBuilder = document.getElementById('Modal_ScriptBuilder');
+    const modalBuilder = document.getElementById('modalScriptBuilder');
     const modalBuilderInstance = Modal.getOrCreateInstance(modalBuilder, { keyboard: false, backdrop: 'static' });
     const deploymentMethods = document.querySelectorAll('[data-deployment-method]');
     const builderStep3 = document.querySelector('#builder-step-3-tab');
@@ -90,7 +90,7 @@ import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab 
         if (packages.length > 0) {
             builderViewBtn.classList.remove('d-none');
         } else {
-            const collapseBuilder = document.getElementById('Nav_ScriptBuilder');
+            const collapseBuilder = document.getElementById('navScriptBuilder');
             const collapseBuilderInstance = Collapse.getOrCreateInstance(collapseBuilder, { toggle: false });
 
             modalBuilderInstance.hide();
@@ -191,7 +191,7 @@ import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab 
 
                             if (findScriptValue(storageValue) == findScriptValue(packageValue)) {
                                 // Show modal
-                                const modalBuilderVersionWarning = document.getElementById('Modal_ScriptBuilderVersionWarning');
+                                const modalBuilderVersionWarning = document.getElementById('modalScriptBuilderVersionWarning');
                                 const modalBuilderVersionWarningInstance = Modal.getOrCreateInstance(modalBuilderVersionWarning, { keyboard: false, backdrop: 'static' });
 
                                 modalBuilderVersionWarning.addEventListener('show.bs.modal', () => {

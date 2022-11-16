@@ -25,18 +25,16 @@
         }
     }
 
-    &.curve-bg-theme-light,
-    &.curve-bg-theme-light .curve {
+    &.curve-bg-theme-elevation-1,
+    &.curve-bg-theme-elevation-1 .curve {
         &::before {
-            background: $white;
-            background: var(--background-light);
+            background: var(--choco-theme-elevation-1);
         }
     }
 
-    &.curve-bg-theme,
-    &.curve-bg-theme .curve {
+    &.curve-bg-theme-background,
+    &.curve-bg-theme-background .curve {
         &::before {
-            background: $gray-100;
             background: var(--choco-theme-background);
         }
     }
@@ -44,7 +42,6 @@
     &.curve-primary {
         &::before {
             background: var(--bs-primary);
-            background: var(--theme-primary);
         }
     }
 }

@@ -9,10 +9,12 @@
 
 @each $color, $value in $theme-colors {
     .alert-#{$color} {
+        color: color-contrast($value);
         background: var(--bs-#{$color});
 
         a {
             font-weight: 700;
+            color: color-contrast($value);
 
             &:hover {
                 text-decoration: underline;
@@ -22,36 +24,6 @@
         .btn-close {
             text-shadow: none;
         }
-    }
-}
-
-.alert-primary,
-.alert-success,
-.alert-danger {
-    color: $white;
-    color: var(--choco-theme-background);
-
-    a {
-        color: $white;
-        color: var(--choco-theme-background);
-    }
-}
-
-.alert-warning {
-    color: $gray-900;
-    color: var(--choco-theme-background);
-
-    a {
-        color: $gray-900;
-        color: var(--choco-theme-background);
-    }
-}
-
-.alert-secondary {
-    color: $white;
-
-    a {
-        color: $white;
     }
 }
 

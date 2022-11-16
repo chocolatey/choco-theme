@@ -1,12 +1,11 @@
 header {
     border-bottom: 1px solid $gray-300;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--choco-theme-border);
 }
 
 #topNav {
     padding: calc($spacer / 2) 0;
-    background: $white;
-    background: var(--background-light);
+    background: var(--choco-theme-elevation-1);
 
     .navbar-brand {
         padding-top: 0;
@@ -40,14 +39,13 @@ header {
                     width: 100%;
                     padding: .5rem 1rem .5rem 2rem;
                     color: $gray-900;
-                    color: var(--text);
+                    color: var(--choco-theme-text);
                     border-left: 6px solid transparent;
 
                     &.active,
                     &:hover {
                         color: var(--bs-primary);
-                        background: $primary-150;
-                        background: var(--background-primary-light);
+                        background: var(--choco-theme-primary-light);
                         border-color: var(--bs-primary);
                     }
                 }
@@ -82,8 +80,7 @@ header {
 .navbar-nested-collapse ul:not(.global-nav-ul) .nav-link {
     width: 100%;
     padding: .5rem 1rem;
-    color: $gray-900;
-    color: var(--text);
+    color: var(--choco-theme-text);
     text-align: left;
     border: 0;
     border-left: 6px solid transparent;
@@ -92,8 +89,7 @@ header {
     &:hover {
         color: var(--bs-primary);
         text-decoration: none;
-        background: $primary-150;
-        background: var(--background-primary-light);
+        background: var(--choco-theme-primary-light);
         border-color: var(--bs-primary);
     }
 
@@ -106,7 +102,7 @@ header {
 .chocolateyfest #topNav .navbar-collapse {
     &.collapse.show {
         margin-top: .5rem;
-        border-top: 1px solid var(--border);
+        border-top: 1px solid var(--choco-theme-border);
 
         .navbar-nav {
             height: auto;
@@ -170,8 +166,7 @@ header {
             }
 
             #topNavCollapse.navbar-collapse {
-                background: $white;
-                background: var(--background-light);
+                background: var(--choco-theme-elevation-1);
             }
         }
     }

@@ -1,15 +1,15 @@
 .accordion-button {
     font-weight: 700;
-    color: var(--text);
+    color: var(--choco-theme-text);
 
     &:not(.collapsed) {
-        background: var(--background-primary-opacity-10);
+        background: var(--choco-theme-primary-opacity-10);
     }
 }
 
 .accordion-collapse,
 .accordion-button {
-    border-color: var(--border);
+    border-color: var(--choco-theme-border);
 }
 
 .accordion-body *:last-child{

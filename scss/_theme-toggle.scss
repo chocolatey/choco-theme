@@ -1,7 +1,7 @@
 label[for="themeToggle"] {
     &:focus-within {
         border-radius: 1rem;
-        box-shadow: 0 0 0 .2rem var(--theme-toggle-opacity);
+        box-shadow: 0 0 0 .2rem var(--choco-theme-toggle-opacity);
     }
 }
 
@@ -15,10 +15,9 @@ label[for="themeToggle"] {
         position: relative;
         width: 4rem;
         height: 1.75rem;
-        background: $white;
-        background: var(--theme-toggle-background);
+        background: var(--choco-theme-toggle-background);
         border: 1px solid $gray-300;
-        border: 1px solid var(--border-secondary);
+        border: 1px solid var(--choco-theme-border-secondary);
         border-radius: 1em;
 
         .fa-solid {
@@ -44,7 +43,7 @@ label[for="themeToggle"] {
             top: -2px;
             width: .75rem;
             height: .75rem;
-            background-color: var(--theme-toggle-btn-background);
+            background-color: var(--choco-theme-toggle-btn-background);
             border: 1px solid var(--bs-yellow);
             border-radius: 50%;
             transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
@@ -67,7 +66,7 @@ label[for="themeToggle"] {
 
         &:not(.disabled):active,
         &:not(.disabled):focus {
-            box-shadow: 0 0 0 .2rem var(--theme-toggle-opacity);
+            box-shadow: 0 0 0 .2rem var(--choco-theme-toggle-opacity);
         }
 
         &:not(.disabled):hover {

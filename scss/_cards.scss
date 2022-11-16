@@ -1,5 +1,5 @@
 .card {
-    background: var(--background-light);
+    background: var(--choco-theme-elevation-1);
 
     &.card-index {
         height: 100%;
@@ -9,7 +9,7 @@
             position: absolute;
             top: 15px;
             left: -15px;
-            background: var(--background-primary-light);
+            background: var(--choco-theme-primary-light);
 
             i {
                 color: var(--bs-primary);
@@ -17,7 +17,7 @@
         }
 
         .card-content {
-            color: var(--text);
+            color: var(--choco-theme-text);
         }
 
         :last-child {
@@ -29,7 +29,7 @@
                 background: var(--bs-primary);
 
                 i {
-                    color: $white;
+                    color: $dark;
                 }
             }
         }
@@ -44,8 +44,12 @@
         }
 
         a {
-            color: var(--text);
+            color: var(--choco-theme-text);
         }
+    }
+
+    .card-footer {
+        border-top: 0;
     }
 }
 
@@ -64,8 +68,6 @@ a,
 
 .navbar-nested-collapse {
     .card {
-        border-color: var(--border);
-        border-style: solid;
         border-width: 1px 0 0;
     }
 }

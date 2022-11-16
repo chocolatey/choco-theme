@@ -31,19 +31,19 @@
 
 // Status table cell
 .status-cell {
-    .circle.bg-success {
+    .circle.text-bg-success {
         border: 1px solid $green-300;
     }
 
-    .circle.bg-danger {
+    .circle.text-bg-danger {
         border: 1px solid $red-300;
     }
 
-    .circle.bg-secondary {
+    .circle.text-bg-secondary {
         border: 1px solid $gray-300;
     }
 
-    .circle.bg-theme-light-3 {
+    .circle.bg-theme-elevation-2 {
         border: 1px solid var(--bs-warning);
     }
 }

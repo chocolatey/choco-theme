@@ -49,7 +49,7 @@
 .atcb_button:hover,
 .atcb_button.atcb_active {
     background: var(--bs-primary);
-    color: var(--choco-theme-background);
+    color: #000;
 }
 
 .atcb_button:focus {
@@ -63,7 +63,7 @@
 
     &:focus, &:hover, &.atcb_active {
         background: var(--bs-success);
-        color: var(--choco-theme-background);
+        color: #000;
     }
 
     &:focus {
@@ -86,12 +86,12 @@
 }
 
 .atcb-theme-opposite .atcb_button {
-    border: 1px solid var(--text);
-    color: var(--text);
+    border: 1px solid var(--choco-theme-text);
+    color: var(--choco-theme-text);
 
     &:focus, &:hover, &.atcb_active {
-        background: var(--text);
-        color: var(--background-light);
+        background: var(--choco-theme-text);
+        color: var(--choco-theme-elevation-1);
     }
 
     &:focus {
@@ -142,19 +142,19 @@
 }
 .atcb_icon svg {
     height: 100%;
-    color: var(--text);
+    color: var(--choco-theme-text);
     width: auto;
 }
 
 .atcb_list {
     box-sizing: border-box;
-    background: var(--background-light);
-    color: var(--text);
+    background: var(--choco-theme-elevation-1);
+    color: var(--choco-theme-text);
     display: block;
     max-width: 100%;
     position: absolute;
     padding: .5rem 0;
-    border: 1px solid var(--border);
+    border: 1px solid var(--choco-theme-border);
     border-radius: .25rem;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -190,7 +190,7 @@
 .atcb_list_item:focus,
 .atcb_list_item:hover {
     background: var(--choco-theme-background);
-    color: var(--text);
+    color: var(--choco-theme-text);
 }
 
 .atcb_list_item .atcb_icon {

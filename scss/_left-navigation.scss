@@ -1,5 +1,5 @@
 #leftSidebarNav {
-    background: var(--background-light);
+    background: var(--choco-theme-elevation-1);
 
     .navbar {
         .navbar-nav {
@@ -9,12 +9,12 @@
 
         > .navbar-collapse {
             width: 100%;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--choco-theme-border);
 
             .navbar-nav .nav-item {
                 .nav-link {
                     padding: 0;
-                    color: var(--text);
+                    color: var(--choco-theme-text);
 
                     &.active {
                         font-weight: 700;
@@ -29,14 +29,14 @@
                     a {
                         width: 100%;
                         padding: calc($spacer / 2) calc($spacer / 4) calc($spacer / 2) 0;
-                        color: var(--text);
+                        color: var(--choco-theme-text);
                     }
 
                     .btn-collapse {
                         padding: calc($spacer / 2) 0 calc($spacer / 2) $spacer;
 
                         &::before {
-                            color: var(--text);
+                            color: var(--choco-theme-text);
                         }
 
                         &:focus {
@@ -73,14 +73,14 @@
                         .nav-link {
                             &.active-page,
                             &:hover {
-                                background: var(--choco-#{$color}-light);
+                                background: var(--choco-theme-#{$color}-light);
                             }
                         }
 
                         .nav-link-collapse.active {
                             .collapsed,
                             .collapsed + a {
-                                background: var(--choco-#{$color}-light);
+                                background: var(--choco-theme-#{$color}-light);
                             }
                         }
                     }
