@@ -14,6 +14,7 @@ $rss:       $orange;
 $chat:      #5865f2;
 $google:    #4285F4;
 $website:   $gray-600;
+$mastodon:  #6364ff;
 
 // Palette
 $primary-50:   tint-color($primary, 90%);
@@ -211,7 +212,8 @@ $socialmedia-colors: (
   rss:      $rss,
   chat:     $chat,
   google:   $google,
-  website:  $website
+  website:  $website,
+  mastodon: $mastodon
 );
 
 $palette-colors: (
