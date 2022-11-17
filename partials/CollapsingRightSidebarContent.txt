@@ -40,7 +40,7 @@
     <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-11-17T17:00:00Z" data-event-include-break="true"></p>
+    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-12-15T17:00:00Z" data-event-include-break="true"></p>
     <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.</p>
     <div class="d-flex align-items-center justify-content-center flex-wrap">
         <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
@@ -50,10 +50,10 @@
                 "name":"Chocolatey Community Coffee Break",
                 "description":"Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.",
                 "location":"https://chocolatey.org/events/chocolatey-community-coffee-break",
-                "startDate":"2022-11-17",
-                "endDate":"2022-11-17",
-                "startTime":"16:00",
-                "endTime":"17:00",
+                "startDate":"2022-12-15",
+                "endDate":"2022-12-15",
+                "startTime":"17:00",
+                "endTime":"18:00",
                 "options":[
                     "Apple",
                     "Google",
@@ -65,6 +65,41 @@
                 "trigger":"click",
                 "inline":true,
                 "iCalFileName":"chocolatey-community-coffee-break"
+            }
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="text-center">
+    <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank">
+        <img class="border mb-3" src="https://img.chocolatey.org/events/01-21.jpg" alt="Chocolatey Coding Livestream" />
+    </a>
+    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-11-29T20:00:00Z" data-event-include-break="true"></p>
+    <p class="text-start">Join Josh as he adds the ability to manage Chocolatey GUI config and features with the Chocolatey Ansible Collection.</p>
+    <div class="d-flex align-items-center justify-content-center flex-wrap">
+        <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
+        <div class="mt-2 mx-1">
+            <div class="atcb" style="display:none;">
+            {
+                "name":"Chocolatey Coding Livestream",
+                "description":"Join Josh as he adds the ability to manage Chocolatey GUI config and features with the Chocolatey Ansible Collection.",
+                "location":"https://chocolatey.org/events/chocolatey-coding-livestream",
+                "startDate":"2022-11-29",
+                "endDate":"2022-11-29",
+                "startTime":"20:00",
+                "endTime":"21:00",
+                "options":[
+                    "Apple",
+                    "Google",
+                    "iCal",
+                    "Microsoft365",
+                    "Outlook.com",
+                    "Yahoo"
+                ],
+                "trigger":"click",
+                "inline":true,
+                "iCalFileName":"chocolatey-coding-livestream"
             }
             </div>
         </div>

@@ -1,0 +1,1 @@
+<a class='text-dark' href='https://status.chocolatey.org/issues/2022-11-16-scheduled-maintenance-chocolatey-community-repository-and-website/' target='_blank' rel='noreferrer'>We will be performing scheduled maintenance on the Chocolatey Community Repository (community.chocolatey.org) on Sunday 27th November 2022, between 20:00 and 23:59 UTC.</a>
