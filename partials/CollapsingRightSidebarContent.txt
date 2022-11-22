@@ -37,6 +37,41 @@
 </div>
 <hr />
 <div class="text-center">
+    <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-december" rel="noreferrer" target="_blank">
+        <img class="border mb-3" src="https://img.chocolatey.org/events/01-22.jpg" alt="Chocolatey Product Spotlight: A Year in Review" />
+    </a>
+    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-12-01T17:00:00Z" data-event-include-break="true"></p>
+    <p class="text-start">Join Paul and Gary for this months Chocolatey product livestream where we look at all of Chocolatey's product releases and livestreams over the past year.</p>
+    <div class="d-flex align-items-center justify-content-center flex-wrap">
+        <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-december" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
+        <div class="mt-2 mx-1">
+            <div class="atcb" style="display:none;">
+            {
+                "name":"Chocolatey Product Spotlight: A Year in Review",
+                "description":"Join Paul and Gary for this months Chocolatey product livestream where we look at all of Chocolatey's product releases and livestreams over the past year.",
+                "location":"https://chocolatey.org/events/chocolatey-spotlight-2022-december",
+                "startDate":"2022-12-01",
+                "endDate":"2022-12-01",
+                "startTime":"17:00",
+                "endTime":"18:00",
+                "options":[
+                    "Apple",
+                    "Google",
+                    "iCal",
+                    "Microsoft365",
+                    "Outlook.com",
+                    "Yahoo"
+                ],
+                "trigger":"click",
+                "inline":true,
+                "iCalFileName":"chocolatey-spotlight-2022-december"
+            }
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="text-center">
     <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
