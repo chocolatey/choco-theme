@@ -37,6 +37,41 @@
 </div>
 <hr />
 <div class="text-center">
+    <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank">
+        <img class="border mb-3" src="https://img.chocolatey.org/events/01-21.jpg" alt="Chocolatey Coding Livestream" />
+    </a>
+    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-11-29T20:00:00Z" data-event-include-break="true"></p>
+    <p class="text-start">Join Josh as he adds the ability to manage Chocolatey GUI config and features with the Chocolatey Ansible Collection.</p>
+    <div class="d-flex align-items-center justify-content-center flex-wrap">
+        <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
+        <div class="mt-2 mx-1">
+            <div class="atcb" style="display:none;">
+            {
+                "name":"Chocolatey Coding Livestream",
+                "description":"Join Josh as he adds the ability to manage Chocolatey GUI config and features with the Chocolatey Ansible Collection.",
+                "location":"https://chocolatey.org/events/chocolatey-coding-livestream",
+                "startDate":"2022-11-29",
+                "endDate":"2022-11-29",
+                "startTime":"20:00",
+                "endTime":"21:00",
+                "options":[
+                    "Apple",
+                    "Google",
+                    "iCal",
+                    "Microsoft365",
+                    "Outlook.com",
+                    "Yahoo"
+                ],
+                "trigger":"click",
+                "inline":true,
+                "iCalFileName":"chocolatey-coding-livestream"
+            }
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="text-center">
     <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-december" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://img.chocolatey.org/events/01-22.jpg" alt="Chocolatey Product Spotlight: A Year in Review" />
     </a>
@@ -69,6 +104,15 @@
             </div>
         </div>
     </div>
+</div>
+<hr />
+<div class="text-center">
+    <a href="https://community.veeam.com/events/introduction-into-chocolatey-80" rel="noreferrer" target="_blank">
+        <img class="border mb-3" src="https://img.chocolatey.org/events/02-03.jpg" alt="Introduction into Chocolatey with Veeam" />
+    </a>
+    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-12-13T17:00:00Z" data-event-include-break="true"></p>
+    <p class="text-start">Join Gary, Paul, and Maurice as they introduce and demonstrate how to use Chocolatey! Questions will be answered live in an Ask Me Anything format.</p>
+   <a href="https://community.veeam.com/events/introduction-into-chocolatey-80" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Register Now</a>
 </div>
 <hr />
 <div class="text-center">
@@ -107,38 +151,12 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://img.chocolatey.org/events/01-21.jpg" alt="Chocolatey Coding Livestream" />
+    <a href="https://community.veeam.com/automation-desk-103/event-december-chocolatey-month-3720" rel="noreferrer" target="_blank">
+        <img class="border mb-3" src="https://img.chocolatey.org/events/02-04.jpg" alt="December Chocolatey Month with Veeam" />
     </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-11-29T20:00:00Z" data-event-include-break="true"></p>
-    <p class="text-start">Join Josh as he adds the ability to manage Chocolatey GUI config and features with the Chocolatey Ansible Collection.</p>
-    <div class="d-flex align-items-center justify-content-center flex-wrap">
-        <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
-        <div class="mt-2 mx-1">
-            <div class="atcb" style="display:none;">
-            {
-                "name":"Chocolatey Coding Livestream",
-                "description":"Join Josh as he adds the ability to manage Chocolatey GUI config and features with the Chocolatey Ansible Collection.",
-                "location":"https://chocolatey.org/events/chocolatey-coding-livestream",
-                "startDate":"2022-11-29",
-                "endDate":"2022-11-29",
-                "startTime":"20:00",
-                "endTime":"21:00",
-                "options":[
-                    "Apple",
-                    "Google",
-                    "iCal",
-                    "Microsoft365",
-                    "Outlook.com",
-                    "Yahoo"
-                ],
-                "trigger":"click",
-                "inline":true,
-                "iCalFileName":"chocolatey-coding-livestream"
-            }
-            </div>
-        </div>
-    </div>
+    <p class="fw-bold">December 2022</p>
+    <p class="text-start">Join Veeam and Chocolatey in the month of December in the Automation Desk group to answer questions, gain points, and win prizes.</p>
+    <a href="https://community.veeam.com/automation-desk-103/event-december-chocolatey-month-3720" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Register</a>
 </div>
 <hr />
 <div class="shuffle">
