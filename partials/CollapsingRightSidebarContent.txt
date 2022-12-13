@@ -37,15 +37,6 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="https://community.veeam.com/events/introduction-into-chocolatey-80" rel="noreferrer" target="_blank">
-        <img class="border mb-3" src="https://img.chocolatey.org/events/02-03.jpg" alt="Introduction into Chocolatey with Veeam" />
-    </a>
-    <p class="convert-utc-to-local fw-bold" data-event-utc="2022-12-13T17:00:00Z" data-event-include-break="true"></p>
-    <p class="text-start">Join Gary, Paul, and Maurice as they introduce and demonstrate how to use Chocolatey! Questions will be answered live in an Ask Me Anything format.</p>
-   <a href="https://community.veeam.com/events/introduction-into-chocolatey-80" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Register Now</a>
-</div>
-<hr />
-<div class="text-center">
     <a href="https://community.veeam.com/automation-desk-103/event-december-chocolatey-month-3720" rel="noreferrer" target="_blank">
         <img class="border mb-3" src="https://img.chocolatey.org/events/02-04.jpg" alt="December Chocolatey Month with Veeam" />
     </a>
@@ -133,6 +124,15 @@
         </a>
         <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.</p>
         <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" class="btn btn-primary mt-2 mx-1">Watch Archives</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://youtube.com/@veeam" rel="noreferrer" target="_blank">
+            <img class="border mb-3" src="https://img.chocolatey.org/events/02-03.jpg" alt="Introduction into Chocolatey with Veeam" />
+        </a>
+        <p><strong>Webinar from<br />Tuesday, 13 December 2022</strong></p>
+        <p class="text-start">Join Gary, Paul, and Maurice as they introduce and demonstrate how to use Chocolatey! Questions will be answered live in an Ask Me Anything format.</p>
+        <a href="https://youtube.com/@veeam" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
     </div>
 </div>
