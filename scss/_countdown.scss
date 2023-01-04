@@ -6,20 +6,20 @@
 
     &.countdown-container-absolute-center {
         position: absolute;
+        top: -40px;
         right: 0;
         left: 0;
-        top: -40px;
         z-index: 999;
     }
 
     &.countdown-container-blocks {
         > div {
-            box-shadow: $box-shadow;
-            background: $white;
-            color: $dark;
-            border-radius: $border-radius;
             width: 80px;
             height: 80px;
+            color: $dark;
+            background: $white;
+            border-radius: $border-radius;
+            box-shadow: $box-shadow;
         }
     }
 
@@ -35,7 +35,7 @@
 
         > :first-child {
             font-size: $h3-font-size;
-            font-weight: bold;
+            font-weight: 700;
             color: var(--bs-primary);
         }
 
@@ -44,22 +44,22 @@
         }
     }
 
-    &.countdown-container-success  > div > :first-child {
+    &.countdown-container-success > div > :first-child {
         color: var(--bs-success);
     }
 }
 
 .calendar-date {
-    box-shadow: $box-shadow;
-    text-align: center;
-    font-weight: bold;
     margin: 0 auto;
+    font-weight: 700;
+    text-align: center;
     border-radius: .25rem;
+    box-shadow: $box-shadow;
 
     div:first-child {
-        background: var(--bs-danger);
-        color: $white;
         padding: .25rem 0;
+        color: $white;
+        background: var(--bs-danger);
         border-top-left-radius: .25rem;
         border-top-right-radius: .25rem;
     }
@@ -68,10 +68,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: $white;
         color: $dark;
-        border-bottom-left-radius: .25rem;
+        background: $white;
         border-bottom-right-radius: .25rem;
+        border-bottom-left-radius: .25rem;
     }
 
     &:not(.calendar-date-sm) {
@@ -82,8 +82,8 @@
         }
 
         div:last-child {
-            font-size: 3.5rem;
             padding: .5rem;
+            font-size: 3.5rem;
 
             sup {
                 font-size: $h3-font-size;

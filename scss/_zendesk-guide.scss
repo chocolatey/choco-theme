@@ -3,8 +3,8 @@
     header.header {
         width: 100%;
         max-width: unset;
-        background: var(--background-light);
         padding: 0 5%;
+        background: var(--choco-theme-elevation-1);
 
         // Username dropdown
         .user-nav-list {
@@ -17,21 +17,23 @@
         }
 
         .nav-wrapper-mobile {
-            .menu-button-mobile .icon-menu, .menu-list-mobile-items a {
-                color: var(--text);
+            .menu-button-mobile .icon-menu,
+            .menu-list-mobile-items a {
+                color: var(--choco-theme-text);
             }
 
-            .menu-list-mobile-items a:hover, .menu-button-mobile[aria-expanded="true"] .icon-menu {
+            .menu-list-mobile-items a:hover,
+            .menu-button-mobile[aria-expanded="true"] .icon-menu {
                 background: none;
             }
 
             .menu-list-mobile {
-                background: var(--background-light);
+                background: var(--choco-theme-elevation-1);
                 border: 0;
             }
 
             .menu-list-mobile-items .nav-divider {
-                border-color: var(--border);
+                border-color: var(--choco-theme-border);
             }
         }
 
@@ -61,21 +63,22 @@
     }
 
     // Theme toggle
-    .sun-icon:before, .moon-icon:before {
-        content: '';
+    .sun-icon::before,
+    .moon-icon::before {
         position: absolute;
-        height: 15px;
         width: 15px;
-        background-size: contain;
+        height: 15px;
+        content: "";
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
     }
 
-    .sun-icon:before {
+    .sun-icon::before {
         background-image: url("$sun_solid");
     }
 
-    .moon-icon:before {
+    .moon-icon::before {
         background-image: url("$moon_solid");
     }
 
@@ -87,41 +90,34 @@
     // Dropdowns
     .dropdown-menu {
         [role="menuitem"] {
-            color: var(--text);
+            color: var(--choco-theme-text);
 
             &:hover {
-                color: var(--text);
-                background: var(--background);
+                color: var(--choco-theme-text);
+                background: var(--choco-theme-background);
             }
         }
 
         [role="separator"] {
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--choco-theme-border);
         }
     }
 
     // Cards
-    .blocks-item, .category-content .section {
-        background: var(--background-light);
-        border-radius: 0;
-        border: 0;
-    }
-
-    &.dark-theme {
-        .blocks-item, .category-content .section {
-            border: 1px solid var(--border);
-        }
-    }
-
-    &.light-theme {
-        .blocks-item, .category-content .section {
-            box-shadow: $box-shadow;
-        }
+    .blocks-item,
+    .category-content .section {
+        background: var(--choco-theme-elevation-1);
+        border: 1px solid var(--choco-theme-border);
+        border-radius: .375rem;
     }
 
     // Links inside cards
-    .blocks-item-link:visited, .blocks-item-link:hover, .blocks-item-link:active,
-    .blocks-item:hover *, .blocks-item:focus *, .blocks-item:active * {
+    .blocks-item-link:visited,
+    .blocks-item-link:hover,
+    .blocks-item-link:active,
+    .blocks-item:hover *,
+    .blocks-item:focus *,
+    .blocks-item:active * {
         color: $primary-400;
     }
 
@@ -131,64 +127,72 @@
     }
 
     // Override with text color
-    .attachments .attachment-item .attachment-icon, .recent-activity-item-meta {
-        color: var(--text);
+    .attachments .attachment-item .attachment-icon,
+    .recent-activity-item-meta {
+        color: var(--choco-theme-text);
     }
-    
+
     // Buttons
-    .button, .section-subscribe button, 
-    .article-subscribe button, .community-follow button, 
-    .requests-table-toolbar .organization-subscribe button, 
-    .subscriptions-subscribe button, .pagination-next-link, 
-    .pagination-prev-link, .pagination-first-link, .pagination-last-link {
-        border-radius: .25rem;
+    .button,
+    .section-subscribe button,
+    .article-subscribe button,
+    .community-follow button,
+    .requests-table-toolbar .organization-subscribe button,
+    .subscriptions-subscribe button,
+    .pagination-next-link,
+    .pagination-prev-link,
+    .pagination-first-link,
+    .pagination-last-link {
+        padding: .375rem .75rem;
         font-size: 1rem;
         font-weight: 700;
         line-height: 1.5;
-        padding: 0.375rem 0.75rem;
+        border-radius: .25rem;
 
         &:hover {
             color: var(--bs-gray-900);
         }
     }
 
-    .button-large, input[type="submit"] {
+    .button-large,
+    input[type="submit"] {
         color: var(--bs-gray-900);
     }
 
     // Seach input
-    .search input[type="search"], .search {
-        color: var(--text);
+    .search input[type="search"],
+    .search {
+        color: var(--choco-theme-text);
         border-radius: .25rem;
     }
 
     .search {
-        border: 1px solid transparent;
         background-color: transparent;
+        border: 1px solid transparent;
 
         input[type="search"] {
+            background-color: var(--choco-theme-elevation-1);
             border: 1px solid var(--bs-primary);
-            background-color: var(--background-light);
 
             &:focus {
-                box-shadow: 0 0 0 0.25rem rgba(92, 159, 216, .25);
+                box-shadow: 0 0 0 .25rem rgba(92, 159, 216, .25);
             }
         }
 
         &.search-has-value {
             input[type="search"] {
-                border-bottom-right-radius: 0;
-                border-top-right-radius: 0;
                 border-right-color: transparent;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
             }
         }
 
         .clear-button {
-            border-bottom-right-radius: 0.25rem;
-            border-top-right-radius: 0.25rem;
-            border: 1px solid var(--bs-primary);
-            background: var(--bs-primary);
             color: var(--bs-gray-900);
+            background: var(--bs-primary);
+            border: 1px solid var(--bs-primary);
+            border-top-right-radius: .25rem;
+            border-bottom-right-radius: .25rem;
         }
     }
 
@@ -200,7 +204,7 @@
             .page-header {
                 margin-bottom: 40px;
             }
-    
+
             .section {
                 padding: 1rem;
 
@@ -209,7 +213,7 @@
                 }
 
                 .section-tree-title a {
-                    color: var(--text);
+                    color: var(--choco-theme-text);
                 }
             }
         }
@@ -223,39 +227,42 @@
             }
         }
     }
-        // Section pages
+    // Section pages
     .section-container {
         display: block;
     }
 
     // Footer
     footer.footer {
-        background: var(--background-light);
+        background: var(--choco-theme-elevation-1);
 
         .footer-inner {
             display: inline-block;
-            text-align: center;
             width: 100%;
             max-width: unset;
             padding: 0 5%;
             font-size: $font-size-sm;
+            text-align: center;
 
             a {
-                color: var(--text);
+                color: var(--choco-theme-text);
             }
         }
     }
 
     // Profile
-    .profile-nav, .profile-header, .my-activities-nav {
-        background: var(--background-light);
+    .profile-nav,
+    .profile-header,
+    .my-activities-nav {
+        background: var(--choco-theme-elevation-1);
     }
 
     .collapsible-nav-list li a {
-        color: var(--text);
+        color: var(--choco-theme-text);
     }
 
-    .collapsible-nav-list li[aria-selected="true"] a, .collapsible-nav-list li.current a {
+    .collapsible-nav-list li[aria-selected="true"] a,
+    .collapsible-nav-list li.current a {
         color: var(--bs-primary);
     }
 
@@ -263,11 +270,17 @@
         flex-basis: 100%;
     }
 
-    .my-activities-table th:first-child, .my-activities-table td:first-child {
+    .my-activities-table th:first-child,
+    .my-activities-table td:first-child {
         padding-left: .5rem;
     }
 
     .my-activities-header {
         margin-top: 20px;
+    }
+
+    // Code blocks
+    .article-body pre {
+        background: var(--choco-theme-elevation-1);
     }
 }

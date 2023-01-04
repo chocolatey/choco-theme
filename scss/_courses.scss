@@ -2,69 +2,75 @@
     padding-left: 10px;
     list-style-type: none;
 
-    span:not(.additional-module), .fa-angle-right {
+    span:not(.additional-module),
+    .fa-angle-right {
         display: none;
     }
 
     li {
-        border-left: 3px solid $gray-300;
-        border-left: 3px solid var(--border);
         padding: 0 0 20px 23px;
+        border-left: 3px solid $gray-300;
+        border-left: 3px solid var(--choco-theme-border);
 
         a {
-            color: var(--text);
-            transition: all 0.3s ease;
             padding-bottom: 20px;
-            font-weight: 400;
             font-size: .9rem;
+            font-weight: 400;
+            color: var(--choco-theme-text);
+            transition: all .3s ease;
         }
     }
 
-    li:hover a.hover, li a:hover, li.active a {
-        color: var(--bs-primary);
+    li:hover a.hover,
+    li a:hover,
+    li.active a {
         font-weight: 700;
+        color: var(--bs-primary);
     }
 
     li:last-child {
-        border-left: 3px solid transparent;
         padding-bottom: 0;
+        border-left: 3px solid transparent;
     }
 
-    li:before {
-        border-radius: 50%;
-        background-color: $gray-100;
-        background-color: var(--background);
-        border: 3px solid $gray-300;
-        border: 3px solid var(--border);
-        content: "";
+    li::before {
         float: left;
-        height: 20px;
-        line-height: 20px;
-        margin: 0 1rem 0 -35px;
         width: 20px;
-        transition: all 0.3s ease;
+        height: 20px;
+        margin: 0 1rem 0 -35px;
+        line-height: 20px;
+        content: "";
+        background-color: var(--choco-theme-background);
+        border: 3px solid $gray-300;
+        border: 3px solid var(--choco-theme-border);
+        border-radius: 50%;
+        transition: all .3s ease;
     }
 
-    li.completed, li.mod-completed {
-        &::before, &::after {
-            color: $white;
-            color: var(--background-light);
+    li.completed,
+    li.mod-completed {
+        &::before,
+        &::after {
             padding-left: 1px;
+            color: var(--choco-theme-elevation-1);
         }
 
         &::before {
-            border-color: var(--bs-primary);
-            background-color: var(--bs-primary);
-            line-height: 16px;
             font-size: 70%;
+            line-height: 16px;
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
         }
     }
 
-    li.completed:last-child, li.mod-completed:last-child {
+    li.completed:last-child,
+    li.mod-completed:last-child {
         border-left: 3px solid transparent;
     }
 
-    li:not(.completed):hover:before, li:not(.mod-completed):hover:before, li.active:before {
+    li:not(.completed):hover::before,
+    li:not(.mod-completed):hover::before,
+    li.active::before {
         border-color: var(--bs-primary);
     }
 }
@@ -73,8 +79,8 @@
 
     span {
         display: block;
-        font-weight: 100;
         font-size: 80%;
+        font-weight: 100;
     }
 
     .fa-angle-right {
@@ -82,19 +88,19 @@
     }
 
     li a {
-        font-weight: 700;
         font-size: initial;
+        font-weight: 700;
     }
 }
 
-#additional-courses {
+#additionalCourses {
 
     .course-list {
 
         li {
             float: left;
-            border-left: 0;
             padding: 0 0 0 25px;
+            border-left: 0;
 
             a {
                 margin-left: -33px;
@@ -107,48 +113,53 @@
         }
     }
 
-    .completed + .btn, .resume + .btn {
+    .completed + .btn,
+    .resume + .btn {
         display: none;
     }
 }
 
-.level:after {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
+.level::after {
     display: inline-block;
-    content: "";
+    width: 10px;
+    height: 10px;
     margin-left: 5px;
+    content: "";
+    border-radius: 50%;
 }
 
-.level.intermediate:after {
+.level.intermediate::after {
     background: var(--bs-yellow);
 }
 
-.level.beginner:after {
+.level.beginner::after {
     background: var(--bs-green);
 }
 
-.level.advanced:after {
+.level.advanced::after {
     background: var(--bs-red);
 }
 
-.correct, .wrong {
-    &::before, &::after {
-        margin-left: -22px;
+.correct,
+.wrong {
+    &::before,
+    &::after {
         display: flex;
         margin-top: -3px;
+        margin-left: -22px;
     }
 }
 
 .correct {
-    &::before, &::after {
+    &::before,
+    &::after {
         color: var(--bs-green);
     }
 }
 
 .wrong {
-    &::before, &::after {
+    &::before,
+    &::after {
         color: var(--bs-red);
     }
 }

@@ -1,17 +1,17 @@
 .btn-collapse {
-    &:before {
+    &::before {
         display: inline-block;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         margin-right: calc($spacer / 2);
         font: var(--fa-font-solid);
         content: "\f054";
-        transition: transform 0.35s ease;
+        transition: transform .35s ease;
     }
 
     // Angle down
     &:not(.collapsed) {
-        &:before {
+        &::before {
             transform: rotate(90deg);
         }
     }
@@ -22,19 +22,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
-    height: 30px;
     width: 30px;
-
-    i {
-        color: $white;
-    }
-
-    &.bg-github {
-        i {
-            color: var(--background);
-        }
-    }
+    height: 30px;
+    border-radius: 100%;
 }
 
 // Status balls
@@ -44,27 +34,27 @@
 
 .status {
     position: relative;
-    padding: 0;
-    margin: 0 .75rem 0 0;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    list-style: none;
+    padding: 0;
+    margin: 0 .75rem 0 0;
     overflow: hidden;
+    list-style: none;
+    border-radius: 50%;
 
     &.status-sm {
-        height: 15px;
         width: 15px;
+        height: 15px;
         margin: 0 .5rem 0 0;
     }
 
     li {
-        overflow: hidden;
         position: absolute;
         top: -20%;
         right: -20%;
         width: 70%;
         height: 70%;
+        overflow: hidden;
         transform-origin: 0% 100%;
 
         &:first-child {
@@ -84,36 +74,56 @@
             left: -100%;
             width: 200%;
             height: 200%;
+            padding-top: 20px;
             text-align: center;
             transform: skewY(-60deg) rotate(15deg);
-            padding-top: 20px;
         }
 
-        .status-failing, .status-flagged-error, .status-investigate-none, .status-scannerexempted-none, .status-investigate-unknown, .status-scannerexempted-unknown, .status-investigate-note {
+        .status-failing,
+        .status-flagged-error,
+        .status-investigate-none,
+        .status-scannerexempted-none,
+        .status-investigate-unknown,
+        .status-scannerexempted-unknown,
+        .status-investigate-note {
             background: var(--bs-red);
         }
 
-        .status-pending, .status-flagged-note, .status-pending-none, .status-pending-unknown {
+        .status-pending,
+        .status-flagged-note,
+        .status-pending-none,
+        .status-pending-unknown {
             background: var(--bs-yellow);
         }
 
-        .status-passing, .status-notflagged-none, .status-notflagged-unknown {
+        .status-passing,
+        .status-notflagged-none,
+        .status-notflagged-unknown {
             background: var(--bs-green);
         }
 
-        .status-exempted, .status-unknown, .status-exempted-none, .status-unknown-none, .status-exempted-unknown, .status-unknown-unknown, .status-exempted-note {
+        .status-exempted,
+        .status-unknown,
+        .status-exempted-none,
+        .status-unknown-none,
+        .status-exempted-unknown,
+        .status-unknown-unknown,
+        .status-exempted-note {
             background: $secondary;
         }
 
-        .status-flagged-none, .status-flagged-warning, .status-flagged-unknown {
+        .status-flagged-none,
+        .status-flagged-warning,
+        .status-flagged-unknown {
             background: $orange;
         }
     }
 }
 
-.container-text-small .circle:not(.circle-sm):not(.circle-lg), .circle-sm {
-    height: 25px;
+.container-text-small .circle:not(.circle-sm):not(.circle-lg),
+.circle-sm {
     width: 25px;
+    height: 25px;
 
     i {
         font-size: $small-font-size;
@@ -122,27 +132,30 @@
 
 .container-text-large .circle:not(.circle-sm):not(.circle-lg),
 .container-text-large-md-small .circle:not(.circle-sm):not(.circle-lg),
-.circle-lg 
+.circle-lg
 {
-    height: 40px;
     width: 40px;
+    height: 40px;
 }
 
 .wrong {
     &::before {
         @extend %fa-icon;
         @extend .fa-solid;
-        content: fa-content($fa-var-xmark);
         text-align: center;
+        content: fa-content($fa-var-xmark);
     }
 }
 
-.course-list li.completed, .course-list li.mod-completed, .correct, .step_tabs li.step_inactive {
+.course-list li.completed,
+.course-list li.mod-completed,
+.correct,
+.step-tabs li.step-inactive {
     &::before {
         @extend %fa-icon;
         @extend .fa-solid;
-        content: fa-content($fa-var-check);
         text-align: center;
+        content: fa-content($fa-var-check);
     }
 }
 
@@ -210,7 +223,9 @@
     }
 }
 
-.list-curve p:last-child, .list-circle li.list-circle-fa-check, .list-circle.list-circle-fa-check li {
+.list-curve p:last-child,
+.list-circle li.list-circle-fa-check,
+.list-circle.list-circle-fa-check li {
     &::before {
         @extend %fa-icon;
         @extend .fa-solid;
@@ -227,17 +242,19 @@
 }
 
 @include media-breakpoint-up(md) {
-    .container-text-small-md-none, .container-text-large-md-none {
+    .container-text-small-md-none,
+    .container-text-large-md-none {
         .circle:not(.circle-sm):not(.circle-lg) {
-            height: 30px;
             width: 30px;
+            height: 30px;
         }
     }
 
-    .container-text-small-md, .container-text-large-md-small {
+    .container-text-small-md,
+    .container-text-large-md-small {
         .circle:not(.circle-sm):not(.circle-lg) {
-            height: 25px;
             width: 25px;
+            height: 25px;
 
             i {
                 font-size: $small-font-size;

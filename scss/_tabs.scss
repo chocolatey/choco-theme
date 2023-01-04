@@ -7,20 +7,21 @@
         margin: 15px;
 
         .nav-link {
-            height: 100px;
-            align-items: center;
             display: flex;
+            align-items: center;
+            height: 100px;
             margin: 0 !important;
-            border: 5px solid var(--border);
+            font-weight: 700;
             background: $white;
+            border: 5px solid var(--choco-theme-border);
             border-radius: .25rem;
             border-radius: unset;
-            font-weight: bold;
             transition: .5s ease;
 
-            &:hover, &.active {
-                border: 5px solid var(--bs-primary);
+            &:hover,
+            &.active {
                 color: $dark;
+                border: 5px solid var(--bs-primary);
                 //box-shadow: $box-shadow;
             }
 

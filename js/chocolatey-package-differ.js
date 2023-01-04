@@ -61,7 +61,7 @@
 
                     fileContainer =
                     `<div class="mb-1" data-file-path="${filePath}">
-                        <div class="p-2 border border-start border-end bg-theme-light d-flex align-items-center">
+                        <div class="p-2 border border-start border-end text-bg-theme-elevation-1 d-flex align-items-center">
                             <button class="btn btn-sm btn-secondary btn-show-hide me-2" type="button" data-bs-toggle="collapse" data-bs-target=".${diffTarget}" aria-expanded="${diffCollapseExpanded}" aria-controls="${diffTarget}">${diffBtnText}</button>
                             <span>${diffFilePath}</span>
                         </div>

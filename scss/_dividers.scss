@@ -1,22 +1,20 @@
 .row-divider {
-    [class*=col-]:not(:last-child) {
-        border-bottom: 1px solid $gray-300;
-        border-bottom: 1px solid var(--border);
+    [class*="col-"]:not(:last-child) {
+        border-bottom: 1px solid var(--choco-theme-border);
     }
 }
 
 @include media-breakpoint-up(sm) {
     .row-divider {
         &.row-sm-divider {
-            [class*=col-]:not(:last-child) {
+            [class*="col-"]:not(:last-child) {
+                border-right: 1px solid var(--choco-theme-border);
                 border-bottom: 0;
-                border-right: 1px solid $gray-300;
-                border-right: 1px solid var(--border);
             }
         }
 
         &.row-sm-divider-none {
-            [class*=col-]:not(:last-child) {
+            [class*="col-"]:not(:last-child) {
                 border-bottom: 0;
             }
         }
@@ -26,15 +24,14 @@
 @include media-breakpoint-up(md) {
     .row-divider {
         &.row-md-divider {
-            [class*=col-]:not(:last-child) {
+            [class*="col-"]:not(:last-child) {
+                border-right: 1px solid var(--choco-theme-border);
                 border-bottom: 0;
-                border-right: 1px solid $gray-300;
-                border-right: 1px solid var(--border);
             }
         }
 
         &.row-md-divider-none {
-            [class*=col-]:not(:last-child) {
+            [class*="col-"]:not(:last-child) {
                 border-bottom: 0;
             }
         }
@@ -44,15 +41,14 @@
 @include media-breakpoint-up(lg) {
     .row-divider {
         &.row-lg-divider {
-            [class*=col-]:not(:last-child) {
+            [class*="col-"]:not(:last-child) {
+                border-right: 1px solid var(--choco-theme-border);
                 border-bottom: 0;
-                border-right: 1px solid $gray-300;
-                border-right: 1px solid var(--border);
             }
         }
 
         &.row-lg-divider-none {
-            [class*=col-]:not(:last-child) {
+            [class*="col-"]:not(:last-child) {
                 border-bottom: 0;
             }
         }
@@ -62,15 +58,14 @@
 @include media-breakpoint-up(xl) {
     .row-divider {
         &.row-xl-divider {
-            [class*=col-]:not(:last-child) {
+            [class*="col-"]:not(:last-child) {
+                border-right: 1px solid var(--choco-theme-border);
                 border-bottom: 0;
-                border-right: 1px solid $gray-300;
-                border-right: 1px solid var(--border);
             }
         }
 
         &.row-xl-divider-none {
-            [class*=col-]:not(:last-child) {
+            [class*="col-"]:not(:last-child) {
                 border-bottom: 0;
             }
         }

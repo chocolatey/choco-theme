@@ -76,7 +76,7 @@ import { Modal } from 'bootstrap';
         getCourseStorage();
 
         // Removes text from links in additional-course section
-        document.querySelectorAll('#additional-courses .course-list a').forEach(el => {
+        document.querySelectorAll('#additionalCourses .course-list a').forEach(el => {
             el.innerHTML = '<span class="additional-module">...</span>';
         });
 

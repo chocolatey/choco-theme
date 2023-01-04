@@ -1,17 +1,19 @@
 // Inputs
-.form-control, .form-select {
-    background-color: var(--background-light);
-    color: var(--text);
+.form-control,
+.form-select {
+    color: var(--choco-theme-text);
+    background-color: var(--choco-theme-elevation-1);
 
     &:focus {
-        background-color: var(--background-light);
+        color: var(--choco-theme-text);
+        background-color: var(--choco-theme-elevation-1);
         border-color: var(--bs-primary);
-        color: var(--text);
     }
 
-    &:disabled, &[readonly] {
-        background-color: var(--background-light-2);
-        color: var(--text);
+    &:disabled,
+    &[readonly] {
+        color: var(--choco-theme-text);
+        background-color: var(--choco-theme-neutral);
         opacity: 1;
     }
 }
@@ -22,10 +24,11 @@
         border: 1px solid var(--bs-primary);
 
         &:not(:checked) {
-            background-color: var(--background-light);
+            background-color: var(--choco-theme-elevation-1);
 
-            &[disabled], &:disabled {
-                background-color: var(--background-light-2);
+            &[disabled],
+            &:disabled {
+                background-color: var(--choco-theme-neutral);
                 border-color: $gray-500;
             }
         }
@@ -38,11 +41,14 @@
 
 // Custom Switches
 .form-switch {
-    &.form-switch-active, &.form-switch-expired, &.form-switch-deactivated, &.form-switch-latest {
+    &.form-switch-active,
+    &.form-switch-expired,
+    &.form-switch-deactivated,
+    &.form-switch-latest {
         .form-check-input {
-            background-image: none !important;
             width: 3rem;
             margin-right: .75rem;
+            background-image: none !important;
 
             &:active {
                 filter: unset;
@@ -52,112 +58,116 @@
                 box-shadow: none !important;
             }
 
-            &:after, &:before {
+            &::after,
+            &::before {
                 position: absolute;
-                font: var(--fa-font-solid);
                 top: 0;
-                content: "\f054";
+                font: var(--fa-font-solid);
+                font-size: .875em;
                 font-style: normal;
                 font-variant: normal;
+                line-height: 1.9;
+                content: "\f054";
                 text-rendering: auto;
                 -webkit-font-smoothing: antialiased;
-                font-size: .875em;
-                line-height: 1.9;
             }
 
-            &:before {
+            &::before {
                 left: -5px;
-                content: "";
                 width: 25px;
                 height: 25px;
+                content: "";
                 border-radius: 100%;
             }
 
-            &:checked:before {
+            &:checked::before {
                 left: 1.8rem;
             }
         }
     }
 
     &.form-switch-active .form-check-input {
-        &:after {
-            content: "\f00c";
-            color: $white;
+        &::after {
             left: .1rem;
+            color: $black;
+            content: "\f00c";
         }
 
-        &:checked, &:before {
+        &:checked,
+        &::before {
             background: var(--bs-success);
         }
 
-        &:before {
+        &::before {
             border: 1px solid $green-300;
         }
 
-        &:checked:after {
+        &:checked::after {
             left: 2.2rem;
         }
     }
 
     &.form-switch-expired .form-check-input {
-        &:after {
-            content: "\21";
-            color: $white;
+        &::after {
             left: .35rem;
+            color: $black;
+            content: "\21";
         }
 
-        &:checked, &:before {
+        &:checked,
+        &::before {
             background: var(--bs-danger);
         }
 
-        &:before {
+        &::before {
             border: 1px solid $red-300;
         }
 
-        &:checked:after {
+        &:checked::after {
             left: 2.45rem;
         }
     }
 
     &.form-switch-deactivated .form-check-input {
-        &:after {
-            content: "\f05e";
-            color: $white;
-            left: .04rem;
+        &::after {
             top: -.03rem;
+            left: .04rem;
+            color: $white;
+            content: "\f05e";
         }
 
-        &:checked, &:before {
+        &:checked,
+        &::before {
             background: $secondary;
         }
 
-        &:before {
+        &::before {
             border: 1px solid $gray-300;
         }
 
-        &:checked:after {
+        &:checked::after {
             left: 2.15rem;
         }
     }
 
     &.form-switch-latest .form-check-input {
-        &:after {
-            content: "\f005";
-            color: var(--bs-warning);
-            left: -.04rem;
+        &::after {
             top: -.03rem;
+            left: -.04rem;
+            color: var(--bs-warning);
+            content: "\f005";
         }
 
         &:checked {
             background: var(--bs-warning);
         }
 
-        &:before {
-            background: var(--background-light-3);
+        &::before {
+            background: var(--choco-theme-elevation-2);
             border: 1px solid var(--bs-warning);
         }
 
-        &:checked:after {
+        &:checked::after {
             left: 2.09rem;
         }
     }
@@ -168,15 +178,15 @@
     .form-check {
         display: inline-block;
         min-height: $spacer;
-        margin-right: -.5rem;;
+        margin-right: -.5rem;
 
         .form-check-input {
             opacity: 1;
-            
+
             &:not(:checked) {
-                &[disabled], &:disabled {
-                    background: $white;
-                    background: var(--background-light);
+                &[disabled],
+                &:disabled {
+                    background: var(--choco-theme-elevation-1);
                     border-color: var(--bs-primary);
                     opacity: 1;
                 }
@@ -191,9 +201,9 @@
 
 .validation-summary-errors {
     ul {
-        list-style-type: none;
         padding-left: 0;
         margin: $spacer 0;
+        list-style-type: none;
 
         li {
             &:not(:first-child) {
@@ -201,9 +211,9 @@
             }
 
             padding-left: $spacer;
-            border-left: 6px solid var(--bs-danger);
+            font-weight: 700;
             color: var(--bs-danger);
-            font-weight: bold;
+            border-left: 6px solid var(--bs-danger);
         }
     }
 }

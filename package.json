@@ -1,6 +1,6 @@
 {
   "name": "choco-theme",
-  "version": "0.1.13",
+  "version": "0.2.0",
   "description": "The global theme for Chocolatey Software.",
   "repository": {
     "type": "git",
@@ -39,7 +39,6 @@
     "eslint-plugin-promise": "^6.0.0",
     "flatpickr": "^4.6.13",
     "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
@@ -53,7 +52,6 @@
     "jquery": "^3.6.0",
     "jquery-validation": "^1.19.5",
     "jquery-validation-unobtrusive": "^4.0.0",
-    "knockout": "^3.5.1",
     "lite-youtube-embed": "^0.2.0",
     "luxon": "^3.0.1",
     "marked": "^4.0.18",
@@ -62,6 +60,10 @@
     "nouislider": "^15.6.0",
     "rimraf": "^3.0.2",
     "sass": "^1.53.0",
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-config-twbs-bootstrap": "^6.0.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },

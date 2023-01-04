@@ -1,36 +1,39 @@
-#Modal_ScriptBuilder {
+#modalScriptBuilder {
     z-index: 99999;
 
     .modal-body {
         height: 90vh;
         overflow: auto;
 
-        .internalRepoUrlInput {
+        .internal-repo-url-input {
             margin: 0 auto;
         }
     }
 }
 
-#warning-version {
+#warningVersion {
     z-index: 99999;
 }
 
 #wizard {
-    *, &::after, &::before {
+    *,
+    &::after,
+    &::before {
         box-sizing: border-box;
     }
 
-    .tab-content .btn-next-step.disabled, .tab-content .btn-prev-step.disabled {
+    .tab-content .btn-next-step.disabled,
+    .tab-content .btn-prev-step.disabled {
         cursor: not-allowed;
     }
 
     > .nav {
-        overflow: hidden;
         display: flex;
         flex-wrap: wrap;
-        list-style: none;
         padding-left: 0;
         margin-top: 0;
+        overflow: hidden;
+        list-style: none;
 
         .nav-item {
             flex-basis: 0;
@@ -43,37 +46,38 @@
 
             .nav-link {
                 position: relative;
-                height: 100%;
-                min-height: 100%;
-                margin-right: 30px;
-                margin-left: -30px;
-                padding-left: 40px;
                 display: block;
-                text-decoration: none;
-                color: var(--text);
-                border-color: var(--border);
-                background: var(--background-light-2);
-                cursor: pointer;
-                border-radius: unset;
-                font-weight: 400;
                 flex-basis: 0;
                 flex-grow: 1;
+                height: 100%;
+                min-height: 100%;
+                padding-left: 40px;
+                margin-right: 30px;
+                margin-left: -30px;
+                font-weight: 400;
+                color: var(--choco-theme-text);
                 text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                background: var(--choco-theme-neutral);
+                border-color: var(--choco-theme-border);
+                border-radius: unset;
 
                 &.disabled {
                     color: $secondary;
-                    border-color: var(--background-primary-light) !important;
-                    background: var(--background-primary-light) !important;
+                    background: var(--choco-theme-primary-light) !important;
+                    border-color: var(--choco-theme-primary-light) !important;
 
-                    &::after, &.active::after {
-                        border-left-color: var(--background-primary-light) !important;
+                    &::after,
+                    &.active::after {
+                        border-left-color: var(--choco-theme-primary-light) !important;
                     }
                 }
 
                 &.done {
-                    color: var(--background);
-                    border-color: var(--bs-success);
+                    color: var(--choco-theme-background);
                     background: var(--bs-success);
+                    border-color: var(--bs-success);
 
                     &::after {
                         border-left-color: var(--bs-success);
@@ -81,27 +85,28 @@
                 }
 
                 &.active {
-                    color: var(--background);
-                    border-color: var(--bs-primary);
+                    color: var(--choco-theme-background);
                     background: var(--bs-primary);
+                    border-color: var(--bs-primary);
 
                     &::after {
                         border-left-color: $primary !important;
                     }
                 }
 
-                &:before, &:after {
-                    content: " ";
+                &::before,
+                &::after {
                     position: absolute;
+                    top: 50%;
+                    left: 100%;
                     display: block;
                     width: 0;
                     height: 0;
-                    top: 50%;
-                    left: 100%;
                     margin-top: -50px;
+                    content: " ";
                     border-top: 50px solid transparent;
                     border-bottom: 50px solid transparent;
-                    border-left: 30px solid var(--background-light-2);
+                    border-left: 30px solid var(--choco-theme-neutral);
                 }
 
                 &::before {
@@ -125,31 +130,31 @@
     }
 
     .storage-row {
-        border: 1px solid var(--border);
         width: 100%;
-        margin: 1%;
         padding: 10px;
+        margin: 1%;
+        border: 1px solid var(--choco-theme-border);
     }
 }
 
 @include media-breakpoint-up(sm) {
-    #Modal_ScriptBuilder .modal-dialog {
+    #modalScriptBuilder .modal-dialog {
         max-width: 667px !important;
 
         .storage-builder .storage-row {
-                width: 48%;
+            width: 48%;
         }
     }
 }
 
 @include media-breakpoint-up(md) {
-    #Modal_ScriptBuilder .modal-dialog {
+    #modalScriptBuilder .modal-dialog {
         max-width: 800px !important;
     }
 }
 
 @include media-breakpoint-up(lg) {
-    #Modal_ScriptBuilder .modal-dialog {
+    #modalScriptBuilder .modal-dialog {
         max-width: 992px !important;
 
         .storage-builder .storage-row {
@@ -159,7 +164,7 @@
 }
 
 @include media-breakpoint-up(xl) {
-    #Modal_ScriptBuilder .modal-dialog {
+    #modalScriptBuilder .modal-dialog {
         max-width: 1200px !important;
     }
 }

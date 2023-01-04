@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultUrl = 'http://internal/odata/repo';
     const containsInternalRepoUrl = document.querySelectorAll('.contains-internal-repo-url');
     const deploymentMethods = document.querySelectorAll('[data-deployment-method]');
-    const internalRepoUrls = document.querySelectorAll('.internalRepoUrlInput');
+    const internalRepoUrls = document.querySelectorAll('.internal-repo-url-input');
 
     for (const i of containsInternalRepoUrl) {
         i.innerHTML = i.innerHTML.replace(/(INTERNAL REPO URL)/g, `<span class="internalRepoUrl">${defaultUrl}</span>`);
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!i.querySelector('.internal-repo-url-warning')) {
                         const calloutNoUrl = document.createElement('p');
 
-                        calloutNoUrl.classList.add('internal-repo-url-warning', 'callout', 'callout-danger', 'shadow-none', 'text-danger', 'fw-bold', 'small');
+                        calloutNoUrl.classList.add('internal-repo-url-warning', 'callout', 'callout-danger', 'text-danger', 'fw-bold', 'small');
                         calloutNoUrl.innerText = 'You must enter your internal repository url above before proceeding.';
 
                         i.prepend(calloutNoUrl);

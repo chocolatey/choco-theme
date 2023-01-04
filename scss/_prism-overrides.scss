@@ -1,5 +1,6 @@
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+csharp+diff+json+powershell+puppet+python+ruby+scss+shell-session+xml-doc+yaml&plugins=line-numbers+toolbar+copy-to-clipboard+diff-highlight */
+
 /**
 * prism.js default theme for JavaScript, CSS and HTML
 * Based on dabblet (http://dabblet.com)
@@ -7,50 +8,48 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 */
 
 code {
-	font-weight: bold;
+    font-weight: 700;
 }
 
 pre.d-format-none {
-	font-family: $font-family-sans-serif;
-	font-size: $font-size-base;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-    color: var(--text-code);
-    text-shadow: none;
     font-family: var(--bs-font-monospace);
     font-size: .85rem;
-    font-weight: bold;
+    font-weight: 700;
+    color: var(--choco-theme-text-code);
+    text-shadow: none;
 }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-    background: rgba($primary, .2);
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
     background: rgba($primary, .2);
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	max-height: 500px;
+    max-height: 500px;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-    background: var(--background-light);
-	border: 1px solid var(--border);
+    background: var(--choco-theme-elevation-1);
+    border: 1px solid var(--choco-theme-border);
+    border-radius: $card-border-radius;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: var(--text-code);
-	font-weight: normal;
+    font-weight: 400;
+    color: var(--choco-theme-text-code);
 }
 
 .token.punctuation {
@@ -68,7 +67,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-    color: var(--theme-red);
+    color: var(--choco-theme-red);
 }
 
 .token.selector,
@@ -86,19 +85,19 @@ pre[class*="language-"] {
 .token.entity,
 .language-css .token.string,
 .style .token.string {
-    color: var(--theme-orange);
+    color: var(--choco-theme-orange);
     background: none;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-    color: var(--theme-orange);
+    color: var(--choco-theme-orange);
 }
 
 .token.function,
 .token.class-name {
-    color: var(--theme-purple);
+    color: var(--choco-theme-purple);
 }
 
 .token.regex,
@@ -112,19 +111,24 @@ pre[class*="language-"] {
     border-right: 1px solid var(--bs-primary);
 }
 
-.line-numbers-rows > span:before {
+.line-numbers-rows > span::before {
     color: $gray-500;
+}
+
+div.code-toolbar > .toolbar {
+    top: .8rem;
+    right: 1rem;
 }
 
 div.code-toolbar > .toolbar > .toolbar-item > a,
 div.code-toolbar > .toolbar > .toolbar-item > button,
 div.code-toolbar > .toolbar > .toolbar-item > span {
+    padding: .25em .5em;
+    font-size: .8em;
     color: $white;
-	font-size: .8em;
-	padding: .25em .5em;
-	background: $gray-600;
+    background: $gray-600;
+    border-radius: .25em;
     box-shadow: none;
-	border-radius: .25em;
 }
 
 pre.diff-highlight > code .token.deleted:not(.prefix),
@@ -137,18 +141,24 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
     background-color: rgba($green, .2);
 }
 
-// Diff highlighting specific
-.token.inserted-sign .inserted, 
-.token.deleted-sign .deleted, 
+// Chocolatey diff highlighting specific
+.token.inserted-sign .inserted,
+.token.deleted-sign .deleted,
 .token.unchanged .unchanged {
-    margin-right: 1rem; 
+    margin-right: 1rem;
     margin-left: .5rem;
 }
 
 .token.coord {
-    background: rgba($secondary, .15);
-    color: $secondary;
-    padding: .5rem 0 .5rem 1rem;
     display: inline-block;
     width: 100%;
+    padding: .5rem 0 .5rem 1rem;
+    color: $secondary;
+    background: rgba($secondary, .15);
+}
+
+// Chocolatey toolbar specific
+.code-static-toolbar + .toolbar {
+    top: -2.2rem !important;
+    opacity: 1 !important;
 }

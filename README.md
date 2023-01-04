@@ -130,6 +130,9 @@ Given that everything succeeded, choco-theme is set up and ready to go!
 ## ESLint
 To run ESLint on a file or folder, run the following command `yarn run eslint js/filename.js`. Visit the [ESLint documentation](https://eslint.org/docs/latest/user-guide/getting-started#installation-and-usage) for more information.
 
+## Sytlelint
+To run Stylelint on a file or folder, run the following command `yarn run stylelint "scss/filename.scss"`. Visit the [Stylelint documentation](https://stylelint.io/) for more information.
+
 ## What's Included
 
 ### External Libraries

@@ -9,18 +9,18 @@
         margin-bottom: 3px;
     }
 
-    li:before {
+    li::before {
+        position: absolute;
+        left: 0;
         width: 12px;
         height: 12px;
         margin-top: 4px;
-        position: absolute;
-        left: 0;
-        content: '';
+        content: "";
         border: 3px solid transparent;
         border-radius: 2px;
     }
 
-    li.inactive:before {
+    li.inactive::before {
         background: transparent;
     }
 
@@ -41,7 +41,7 @@
 .chocolatey-license-portal .card-chartist-legend {
     padding-bottom: 75px;
 
-    .ct-golden-section>svg {
+    .ct-golden-section > svg {
         top: 60px;
     }
 }
@@ -49,8 +49,8 @@
 @include media-breakpoint-up(sm) {
     .chocolatey-license-portal .card-chartist-legend {
         padding-bottom: 55px;
-    
-        .ct-golden-section>svg {
+
+        .ct-golden-section > svg {
             top: 40px;
         }
     }

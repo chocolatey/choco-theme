@@ -1,4 +1,56 @@
-/*Background Colors*/
+/* Background Colors with Contrasting Text */
+@each $color, $value in $colors {
+    $color-rgb: to-rgb($value);
+    .text-bg-#{$color} {
+        color: color-contrast($value) if($enable-important-utilities, !important, null);
+        background-color: rgba($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+    }
+}
+
+@each $color, $value in $palette-colors {
+    $color-rgb: to-rgb($value);
+    .text-bg-#{$color} {
+        color: color-contrast($value) if($enable-important-utilities, !important, null);
+        background-color: rgba($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+    }
+}
+
+.text-bg-theme-background {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-background) !important;
+}
+
+.text-bg-theme-contrast {
+    color: var(--choco-theme-background) !important;
+    background: var(--choco-theme-contrast) !important;
+}
+
+.text-bg-theme-neutral {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-neutral) !important;
+}
+
+.text-bg-theme-elevation-1 {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-elevation-1) !important;
+}
+
+.text-bg-theme-elevation-2 {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-elevation-2) !important;
+}
+
+.text-bg-theme-elevation-3 {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-elevation-3) !important;
+}
+
+.text-bg-theme-primary-light {
+    color: var(--choco-theme-contrast) !important;
+    background: var(--choco-theme-primary-light) !important;
+}
+
+/* Background Colors */
 @each $color, $value in $colors {
     .bg-#{$color} {
         background: $value;
@@ -20,11 +72,22 @@
 @each $color, $value in $socialmedia-colors {
     .bg-#{$color} {
         background: $value;
+    }
+}
+
+@each $color, $value in $socialmedia-colors {
+    .text-bg-#{$color} {
+        color: color-contrast($value) if($enable-important-utilities, !important, null);
+        background: $value;
 
         &:hover {
             background: shade-color($value, 15%);
         }
     }
+}
+
+a.circle.text-bg-theme-contrast:hover {
+    background: var(--choco-theme-contrast-hover);
 }
 
 @each $color, $value in $theme-colors {
@@ -33,59 +96,24 @@
     }
 }
 
-.fill-theme-light-2 {
-    fill: $gray-300 !important;
-    fill: var(--background-light-2) !important;
+.fill-theme-neutral {
+    fill: var(--choco-theme-neutral) !important;
 }
 
 .bg-github {
-    background: var(--theme-opposite);
+    background: var(--choco-theme-contrast);
 
     &:hover {
-        background: var(--theme-opposite-hover);
+        background: var(--choco-theme-contrast-hover);
     }
 }
 
-.bg-primary, .bg-success, .bg-danger, .bg-theme-primary {
-    h1, h2, h3, h4, h5, h6, p, li {
-        color: $white;
-        color: var(--background);
-    }
+.bg-theme-elevation-2 {
+    background: var(--choco-theme-elevation-2) !important;
 }
 
-.bg-theme {
-    background: $gray-100 !important;
-    background: var(--background) !important;
-}
-
-.bg-theme-light {
-    background: $white !important;
-    background: var(--background-light) !important;
-}
-
-.bg-theme-light-2 {
-    background: $gray-300 !important;
-    background: var(--background-light-2) !important;
-}
-
-.bg-theme-light-3 {
-    background: $white !important;
-    background: var(--background-light-3) !important;
-}
-
-.bg-theme-primary {
-    background: $primary !important;
-    background: var(--theme-primary) !important;
-}
-
-.bg-theme-primary-light {
-    background: $primary-150 !important;
-    background: var(--background-primary-light) !important;
-}
-
-.bg-theme-opposite {
-    background: $gray-900 !important;
-    background: var(--theme-opposite) !important;
+.bg-theme-elevation-3 {
+    background: var(--choco-theme-elevation-3) !important;
 }
 
 .bg-primary-opacity-25 {
@@ -96,31 +124,16 @@
     background: $primary-opacity-90 !important;
 }
 
-.bg-theme, .bg-theme-light {
-    h3, h4, h5, h6, p, li {
-        color: $gray-900;
-        color: var(--text);
-    }
-}
-
-.bg-primary-900 {
-    h3, h4, h5, h6, p, li {
-        color: $gray-400;
-    }
-}
-
-/*Background Utilities*/
+/* Background Utilities */
 .bg-img-cover {
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
     z-index: 1;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility:    hidden;
-    -ms-backface-visibility:     hidden;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    backface-visibility: hidden;
 }
 
-/*Background Images*/
+/* Background Images */
 .bg-sun-tornado {
     background-image: url("/assets/images/global-shared/svg-backgrounds/sun-tornado.svg");
 }
@@ -151,10 +164,9 @@
 }
 
 .bg-desk {
-    background: -moz-linear-gradient(-45deg, rgba($primary, 0.8) 0%, rgba($primary, 0.8) 100%), url("/assets/images/headers/c4b-banner.jpg");
-    background: -webkit-linear-gradient(-45deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/assets/images/headers/c4b-banner.jpg");
-    background: linear-gradient(135deg, rgba($primary, 0.8) 0%,rgba($primary, 0.8) 100%), url("/assets/images/headers/c4b-banner.jpg");
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e61a375a', endColorstr='#e67db9e8',GradientType=1 );
+    background: linear-gradient(-45deg, rgba($primary, .8) 0%, rgba($primary, .8) 100%), url("/assets/images/headers/c4b-banner.jpg");
+    background: linear-gradient(135deg, rgba($primary, .8) 0%, rgba($primary, .8) 100%), url("/assets/images/headers/c4b-banner.jpg");
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr="#e61a375a", endColorstr="#e67db9e8", GradientType=1);
 }
 
 .bg-san-fran-skyline {
@@ -171,25 +183,25 @@
             opacity: 1;
         }
     }
-        
+
     .speaker-img-overlay {
-        transition: .5s ease;
-        opacity: 0;
         max-width: 100%;
-        background-color: rgba($warning, 0.8)
+        background-color: rgba($warning, .8);
+        opacity: 0;
+        transition: .5s ease;
     }
 }
 
 .bg-architect-factory {
-    background-image: radial-gradient(circle, rgba(var(--background-rgb),0) 0%, rgba(var(--background-rgb),1) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%,rgba(var(--background-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%,rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+    background-image: radial-gradient(circle, rgba(var(--choco-theme-background-rgb), 0) 0%, rgba(var(--choco-theme-background-rgb), 1) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 1) 0%, rgba(var(--choco-theme-background-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 0) 85%, rgba(var(--choco-theme-background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
 }
 
 .bg-architect-factory-top {
-    background-image: linear-gradient(to right, rgba(var(--background-rgb), 0.4) 0%,rgba(var(--background-rgb), 1) 30%,rgba(var(--background-rgb), 1) 70%,rgba(var(--background-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 0) 85%,rgba(var(--background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+    background-image: linear-gradient(to right, rgba(var(--choco-theme-background-rgb), .4) 0%, rgba(var(--choco-theme-background-rgb), 1) 30%, rgba(var(--choco-theme-background-rgb), 1) 70%, rgba(var(--choco-theme-background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 0) 85%, rgba(var(--choco-theme-background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
 }
 
 .bg-architect-factory-bottom-primary {
-    background-image: linear-gradient(to right, rgba(var(--background-rgb), 0.4) 0%,rgba(var(--background-rgb), 1) 30%,rgba(var(--background-rgb), 1) 70%,rgba(var(--background-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--background-rgb), 1) 0%,rgba(var(--background-rgb), 0) 15%),url("/assets/images/architect-factory-green.svg");
+    background-image: linear-gradient(to right, rgba(var(--choco-theme-background-rgb), .4) 0%, rgba(var(--choco-theme-background-rgb), 1) 30%, rgba(var(--choco-theme-background-rgb), 1) 70%, rgba(var(--choco-theme-background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 1) 0%, rgba(var(--choco-theme-background-rgb), 0) 15%), url("/assets/images/architect-factory-green.svg");
 }
 
 @include media-breakpoint-up(md) {

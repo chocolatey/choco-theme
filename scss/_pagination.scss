@@ -1,14 +1,15 @@
 .page-link {
     background-color: unset;
-    border: 1px solid var(--border);
+    border: 1px solid var(--choco-theme-border);
 
-    &:hover, &:focus {
-        background-color: var(--background-light-2);
-        border-color: var(--background-light-2);
+    &:hover,
+    &:focus {
+        background-color: var(--choco-theme-neutral);
+        border-color: var(--choco-theme-neutral);
     }
 }
 
 .page-item.disabled .page-link {
     background: unset;
-    border-color: var(--border);
+    border-color: var(--choco-theme-border);
 }

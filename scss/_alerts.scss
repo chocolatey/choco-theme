@@ -1,66 +1,40 @@
 #cookieNoticeAlert {
-    z-index: 99999;
     position: fixed;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    z-index: 99999;
     width: 100%;
 }
 
 @each $color, $value in $theme-colors {
     .alert-#{$color} {
+        color: color-contrast($value);
         background: var(--bs-#{$color});
 
         a {
-            font-weight: bold;
+            font-weight: 700;
+            color: color-contrast($value);
 
             &:hover {
                 text-decoration: underline;
             }
         }
-        
+
         .btn-close {
             text-shadow: none;
         }
     }
 }
 
-.alert-primary, .alert-success, .alert-danger {
-    color: $white;
-    color: var(--background);
-
-    a {
-        color: $white;
-        color: var(--background);
-    }
-}
-
-.alert-warning {
-    color: $gray-900;
-    color: var(--background);
-
-    a {
-        color: $gray-900;
-        color: var(--background);
-    }
-}
-
-.alert-secondary {
-    color: $white;
-
-    a {
-        color: $white;
-    }
-}
-
 .alert-dismissible-center {
     display: block;
-    text-align: center;
-    font-size: $small-font-size;
     padding: .5rem 2.5rem .5rem 15px;
+    font-size: $small-font-size;
+    text-align: center;
 
     &.alert-btn-center {
-        padding: 0.5rem 15px;
+        padding: .5rem 15px;
     }
 
     .btn-close {
@@ -68,14 +42,14 @@
     }
 
     .btn {
-        margin-top: $spacer;
         width: 100%;
+        margin-top: $spacer;
     }
 }
 
 @include media-breakpoint-up(sm) {
     .alert-dismissible-center {
-        padding: 0.5rem 15px;
+        padding: .5rem 15px;
 
         .btn {
             width: 50%;
@@ -85,11 +59,11 @@
 
 @include media-breakpoint-up(md) {
     .alert-dismissible-center {
-        text-align: center;
-        font-size: $font-size-base;
         display: flex;
         align-content: center;
         justify-content: center;
+        font-size: $font-size-base;
+        text-align: center;
 
         .btn-close {
             padding: .55rem 15px;

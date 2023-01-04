@@ -6,6 +6,7 @@ import '../chocolatey-announcements.js';
 import '../chocolatey-authentication.js';
 import '../chocolatey-carousels.js';
 import '../chocolatey-clipboard.js';
+import '../chocolatey-callouts.js';
 import '../chocolatey-code.js';
 import '../chocolatey-collapse-nested.js';
 import '../chocolatey-collapse-responsive.js';

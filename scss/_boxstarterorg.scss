@@ -1,59 +1,108 @@
 .boxstarter-org {
-    .h1, .h2, h1, h2 {
-        color: var(--text);
+    .h1,
+    .h2,
+    h1,
+    h2 {
+        color: var(--choco-theme-text);
     }
 
-    a:not(.nav-link):not(.btn), .btn-link {
+    a:not(.nav-link):not(.btn),
+    .btn-link {
         color: var(--bs-primary);
     }
 
     // Docs area navigation
     main:not(#noSidebar) {
-        .breadcrumb, .h1:not(.title), h1:not(.title), .h2, h2, .sub-content .h1, .sub-content .h2, .sub-content h1, .sub-content h2 {
+        .breadcrumb,
+        .h1:not(.title),
+        h1:not(.title),
+        .h2,
+        h2,
+        .sub-content .h1,
+        .sub-content .h2,
+        .sub-content h1,
+        .sub-content h2 {
             border-bottom: 1px solid var(--bs-primary);
         }
 
-        #rightSidebarNav, #leftSidebarNav {
+        #rightSidebarNav,
+        #leftSidebarNav {
             .nav-item .nav-link {
-                &.active-page, &:hover {
-                    background: var(--background-primary-light);
+                &.active-page,
+                &:hover {
+                    background: var(--choco-theme-primary-light);
                 }
 
-                &.active, &:hover {
-                    color: var(--text) !important;
-                    
-                    a, .btn-collapse:before {
-                        color: var(--text) !important;
+                &.active,
+                &:hover {
+                    color: var(--choco-theme-text) !important;
+
+                    a,
+                    .btn-collapse::before {
+                        color: var(--choco-theme-text) !important;
                     }
                 }
+            }
+
+            .nav-link::before,
+            .nav-item:hover::before {
+                border-radius: 0 !important;
             }
         }
     }
 
     // Toggle switch
     .theme-toggle + .toggle-slot {
-        border-color: var(--border);
+        border-color: var(--choco-theme-border);
     }
 
     // Tooltips
-    .tt:before {
+    .tt::before {
         width: 70px;
         font-size: .75em;
-        font-weight: bold;
+        font-weight: 700;
     }
 
     // Code
     code:not(code[class*="language-"]) {
-        color: var(--text);
-        background: var(--background-primary-light);
         padding: 1px 3px;
+        color: var(--choco-theme-text);
+        background: var(--choco-theme-primary-light);
+    }
+
+    // Buttons
+    .btn-primary {
+        --bs-btn-bg: var(--bs-primary);
+        --bs-btn-border-color: var(--bs-primary);
+    }
+
+    .btn-outline-primary {
+        --bs-btn-color: var(--bs-primary);
+        --bs-btn-border-color: var(--bs-primary);
+        --bs-btn-hover-bg: var(--bs-primary);
+        --bs-btn-hover-border-color: var(--bs-primary);
+        --bs-btn-active-bg: var(--bs-primary);
+        --bs-btn-active-border-color: var(--bs-primary);
+        --bs-btn-disabled-color: var(--bs-primary);
+        --bs-btn-disabled-border-color: var(--bs-primary);
+    }
+
+    // Callouts
+    .callout, blockquote {
+        border-radius: 0;
+
+        &:after {
+            border-radius: 0;
+        }
     }
 }
 
 .light-theme {
     .boxstarter-org {
-        .btn-primary, .btn-outline-primary:hover,
-        .btn-success, .btn-outline-success:hover {
+        .btn-primary,
+        .btn-outline-primary:hover,
+        .btn-success,
+        .btn-outline-success:hover {
             color: $white;
         }
     }

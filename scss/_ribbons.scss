@@ -1,35 +1,37 @@
 .ribbon {
-    margin: 0;
-    padding: 0;
     position: absolute;
     top: 0;
     right: 0;
+    padding: 0;
+    margin: 0;
     transform: translateX(30%) translateY(0%) rotate(45deg);
     transform-origin: top left;
 
-    &:before, &:after {
-        content: '';
+    &::before,
+    &::after {
         position: absolute;
         top: 0;
-        margin: 0 -1px;
         width: 100%;
         height: 100%;
+        margin: 0 -1px;
+        content: "";
     }
 
-    &:before {
+    &::before {
         right: 100%;
     }
 
-    &:after {
+    &::after {
         left: 100%;
     }
 
-    &.bg-success:before, &.bg-success:after {
+    &.bg-success::before,
+    &.bg-success::after {
         background: var(--bs-success);
     }
 
-    &.bg-theme-light:before, &.bg-theme-light:after {
-        background: $white;
-        background: var(--background-light);
+    &.text-bg-theme-elevation-1::before,
+    &.text-bg-theme-elevation-1::after {
+        background: var(--choco-theme-elevation-1);
     }
 }

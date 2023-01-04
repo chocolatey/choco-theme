@@ -1,61 +1,72 @@
 :root {
-  @each $color, $value in $colors-rgb {
-    --#{$variable-prefix}#{$color}-rgb: #{$value};
-  }
+    --choco-theme-primary-opacity-10: #{$primary-opacity-10};
+    --choco-theme-primary-opacity-40: #{$primary-opacity-40};
+    --choco-theme-primary-opacity-90: #{$primary-opacity-90};
+    @each $color, $value in $colors-rgb {
+        --#{$variable-prefix}#{$color}-rgb: #{$value};
+    }
 }
 
 :root[data-user-color-scheme="light"] {
-    --color-mode: 'light';
-    --background: #{$gray-100};
-    --background-light: #{$white};
-    --background-primary-light: #{$primary-150};
-    --background-primary-opacity-10: #{$primary-opacity-10};
-    --background-primary-opacity-40: #{$primary-opacity-40};
-    --background-primary-opacity-90: #{$primary-opacity-90};
-    --background-light-2: #{$gray-300};
-    --background-light-3: #{$white};
-    --background-light-4: #{$gray-200};
-    --text: #{$gray-900};
-    --text-code: #{$gray-800};
-    --border: #{$gray-300};
-    --border-secondary: #{$gray-300};
-    --theme-primary: #{$primary};
-    --theme-purple: #{$purple};
-    --theme-orange: #{$orange};
-    --theme-red: #{$red};
-    --theme-toggle-opacity: #{$yellow-opacity-25};
-    --theme-toggle-background: #{$white};
-    --theme-toggle-btn-background: #{$yellow-opacity-25};
-    --theme-opposite: #{$gray-900};
-    --theme-opposite-hover: #{$gray-700};
-    --theme-opposite-text: #{$gray-400};
-    --modal-backdrop: 0.5;
+    --color-mode: "light";
+    --choco-theme-background: #{$gray-100};
+    --choco-theme-background-hover: #{$gray-400};
+    --choco-theme-contrast: #{$primary-950};
+    --choco-theme-contrast-hover: #{$gray-700};
+    --choco-theme-neutral: #{$gray-300};
+    --choco-theme-neutral-hover: #{$gray-400};
+    --choco-theme-elevation-1: #{$white};
+    --choco-theme-elevation-2: #{$white};
+    --choco-theme-elevation-3: #{$gray-200};
+    --choco-theme-primary-light: #{$primary-150};
+    --choco-theme-text: #{$gray-900};
+    --choco-theme-text-code: #{$gray-800};
+    --choco-theme-border: #{$gray-300};
+    --choco-theme-border-secondary: #{$gray-300};
+    --choco-theme-purple: #{$purple};
+    --choco-theme-orange: #{$orange};
+    --choco-theme-red: #{$red};
+    --choco-theme-toggle-opacity: #{$yellow-opacity-25};
+    --choco-theme-toggle-background: #{$white};
+    --choco-theme-toggle-btn-background: #{$yellow-opacity-25};
+    --choco-theme-blue-light: #{rgba($blue, .2)};
+    --choco-theme-green-light: #{rgba($green, .2)};
+    --choco-theme-yellow-light: #{rgba($yellow, .2)};
+    --choco-theme-orange-light: #{rgba($orange, .2)};
+    --choco-theme-red-light: #{rgba($red, .2)};
+    --choco-theme-pink-light: #{rgba($pink, .2)};
+    --choco-theme-purple-light: #{rgba($purple, .2)};
+    --modal-backdrop: .5;
 }
 
 :root[data-user-color-scheme="dark"] {
-    --color-mode: 'dark';
-    --background: #{$primary-950};
-    --background-light: #{$primary-900};
-    --background-primary-light: #{$primary-850};
-    --background-primary-opacity-10: #{$primary-opacity-10};
-    --background-primary-opacity-40: #{$primary-opacity-40};
-    --background-primary-opacity-90: #{$primary-opacity-90};
-    --background-light-2: #{$primary-800};
-    --background-light-3: #{$primary-800};
-    --background-light-4: #{$primary-850};
-    --text: #{$gray-400};
-    --text-code: #{$gray-500};
-    --border: #{$primary-800};
-    --border-secondary: #{$primary-opacity-50};
-    --theme-primary: #{$primary-600};
-    --theme-purple: #{$purple-300};
-    --theme-orange: #{$orange-300};
-    --theme-red: #{$red-300};
-    --theme-toggle-opacity: #{$primary-opacity-50};
-    --theme-toggle-background: #{$primary-opacity-25};
-    --theme-toggle-btn-background: #{$primary-opacity-25};
-    --theme-opposite: #{$gray-100};
-    --theme-opposite-hover: #{$gray-400};
-    --theme-opposite-text: #{$gray-900};
-    --modal-backdrop: 0.9;
-  }
+    --color-mode: "dark";
+    --choco-theme-background: #{$primary-950};
+    --choco-theme-background-hover: #{$gray-700};
+    --choco-theme-contrast: #{$gray-100};
+    --choco-theme-contrast-hover: #{$gray-400};
+    --choco-theme-neutral: #{$primary-800};
+    --choco-theme-neutral-hover: #{$primary-700};
+    --choco-theme-elevation-1: #{$primary-900};
+    --choco-theme-elevation-2: #{$primary-800};
+    --choco-theme-elevation-3: #{$primary-850};
+    --choco-theme-primary-light: #{$primary-850};
+    --choco-theme-text: #{$gray-400};
+    --choco-theme-text-code: #{$gray-500};
+    --choco-theme-border: #{$primary-800};
+    --choco-theme-border-secondary: #{$primary-opacity-50};
+    --choco-theme-purple: #{$purple-300};
+    --choco-theme-orange: #{$orange-300};
+    --choco-theme-red: #{$red-300};
+    --choco-theme-toggle-opacity: #{$primary-opacity-50};
+    --choco-theme-toggle-background: #{$primary-opacity-25};
+    --choco-theme-toggle-btn-background: #{$primary-opacity-25};
+    --choco-theme-blue-light: #{rgba($blue, .1)};
+    --choco-theme-green-light: #{rgba($green, .1)};
+    --choco-theme-yellow-light: #{rgba($yellow, .1)};
+    --choco-theme-orange-light: #{rgba($orange, .1)};
+    --choco-theme-red-light: #{rgba($red, .1)};
+    --choco-theme-pink-light: #{rgba($pink, .1)};
+    --choco-theme-purple-light: #{rgba($purple, .1)};
+    --modal-backdrop: .9;
+}

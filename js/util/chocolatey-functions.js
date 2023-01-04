@@ -191,3 +191,33 @@ export const removeLineBreaks = str => {
         .filter(line => line.trim() !== '') // Filter out lines that are empty or contain only whitespace
         .join('\n'); // Join line array into a string
 };
+
+export const escapeHTML = str => {
+    const escapeChars = {
+        '¢': 'cent',
+        '£': 'pound',
+        '¥': 'yen',
+        '€': 'euro',
+        '©': 'copy',
+        '®': 'reg',
+        '<': 'lt',
+        '>': 'gt',
+        '"': 'quot',
+        '&': 'amp',
+        '\'': '#39'
+    };
+
+    let regexString = '[';
+
+    for (const key in escapeChars) {
+        regexString += key;
+    }
+
+    regexString += ']';
+
+    const regex = new RegExp(regexString, 'g');
+
+    return str.replace(regex, m => {
+        return `&${escapeChars[m]};`;
+    });
+};

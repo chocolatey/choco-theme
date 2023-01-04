@@ -1,24 +1,27 @@
 .global-nav {
-    background: $primary-150;
-    background: var(--background-primary-light);
-    border-bottom: 1px solid var(--bs-primary);
     position: relative;
     z-index: 1;
+    background: var(--choco-theme-primary-light);
+    border-bottom: 1px solid var(--bs-primary);
 
     .nav-item {
         flex-basis: 50%;
 
         .nav-link {
             font-size: .9rem;
+            color: var(--choco-theme-text);
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
 
 @include media-breakpoint-up(sm) {
     .global-nav {
-        border-color: $gray-300;
-        border-color: var(--border);
-    
+        border-color: var(--choco-theme-border);
+
         .nav-item {
             flex-basis: unset;
         }

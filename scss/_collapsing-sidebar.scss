@@ -2,21 +2,21 @@
     position: fixed;
     top: 40%;
     right: 0;
-    border-radius: 50% 0 0 50%;
     z-index: 1030;
     width: auto !important;
+    border-radius: 50% 0 0 50%;
 
-    &:before {
+    &::before {
         content: none !important;
     }
 
     .notification-badge {
         top: -10px;
         right: 20px;
-        height: 25px;
         width: 25px;
-        line-height: 24px;
+        height: 25px;
         font-size: 80%;
+        line-height: 24px;
     }
 }
 
@@ -24,70 +24,69 @@
     position: fixed;
     top: 34%;
     left: 0;
+    z-index: 1030;
     width: 50px;
     border-radius: 0 .25rem .25rem 0;
-    z-index: 1030;
 
-    &:before {
+    &::before {
         content: none !important;
     }
 
     .notification-badge {
         top: -10px;
         left: 35px;
-        height: 25px;
         width: 25px;
-        line-height: 24px;
+        height: 25px;
         font-size: 80%;
+        line-height: 24px;
     }
 }
 
-#collapsing-right-sidebar, #Nav_ScriptBuilder {
+#collapsingRightSidebar,
+#navScriptBuilder {
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
     bottom: 0;
-    height: 100vh;
+    left: 0;
     z-index: 1030;
-    background: $white;
-    background: var(--background-light);
-    transition: none;
+    height: 100vh;
+    padding-bottom: 150px;
     margin-left: 0;
     overflow: auto;
-    padding-bottom: 150px;
+    background: var(--choco-theme-elevation-1);
+    transition: none;
 
-    a[data-bs-toggle=collapse]:before {
+    a[data-bs-toggle="collapse"]::before {
         content: none !important;
     }
 }
 
-#collapsing-right-sidebar {
+#collapsingRightSidebar {
     border-left: 3px solid var(--bs-primary);
 }
 
-#Nav_ScriptBuilder {
+#navScriptBuilder {
     border-right: 3px solid $secondary;
 }
 
 .notification-badge {
+    position: absolute;
+    font-weight: 700;
+    color: var(--choco-theme-background);
     background: var(--bs-danger);
     border: 1px solid $red-300;
-    color: $gray-100;
-    color: var(--background);
     border-radius: 100%;
-    position: absolute;
     writing-mode: horizontal-tb;
-    font-weight: bold;
 }
 
 .btn-announcements.btn-announcement-notifications .notification-badge {
     top: -8px;
     left: -8px;
-    height: 20px;
     width: 20px;
-    line-height: 18px;
+    height: 20px;
     font-size: 70%;
+    line-height: 18px;
 }
 
 @include media-breakpoint-up(sm) {
@@ -99,10 +98,10 @@
         }
     }
 
-    #collapsing-right-sidebar {
+    #collapsingRightSidebar {
         position: fixed;
-        width: 380px;
         left: auto;
+        width: 380px;
         padding-bottom: 1rem;
     }
 
@@ -114,10 +113,10 @@
         }
     }
 
-    #Nav_ScriptBuilder {
+    #navScriptBuilder {
         position: fixed;
-        width: 350px;
         right: auto;
+        width: 350px;
         padding-bottom: 1rem;
     }
 }

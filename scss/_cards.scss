@@ -1,17 +1,15 @@
 .card {
-    background: var(--background-light);
+    background: var(--choco-theme-elevation-1);
 
     &.card-index {
         height: 100%;
         margin-left: 15px;
-        border: 1px solid transparent;
 
         .circle {
             position: absolute;
-            background: $primary-150;
-            background: var(--background-primary-light);
-            left: -15px;
             top: 15px;
+            left: -15px;
+            background: var(--choco-theme-primary-light);
 
             i {
                 color: var(--bs-primary);
@@ -19,7 +17,7 @@
         }
 
         .card-content {
-            color: var(--text);
+            color: var(--choco-theme-text);
         }
 
         :last-child {
@@ -27,51 +25,49 @@
         }
 
         &:hover {
-            border: 1px solid $gray-300;
-            border: 1px solid var(--border);
-
             .circle {
                 background: var(--bs-primary);
 
                 i {
-                    color: $white;
+                    color: $dark;
                 }
             }
         }
     }
-}
 
-a, .video-story {
-        .card {
-        transition: all 0.3s ease;
+    &.card-link {
+        transition: all .3s ease;
 
         &:hover {
             cursor: pointer;
-            -webkit-transform: scale(0.98);
-            -ms-transform: scale(0.98);
-            transform: scale(0.98);
+            transform: scale(.98);
+        }
+
+        a {
+            color: var(--choco-theme-text);
         }
     }
-}
 
-.dark-theme body:not(.boxstarter-org) {
-    .card {
-        border: 1px solid var(--border);
+    .card-footer {
+        border-top: 0;
     }
 }
 
-.light-theme body:not(.boxstarter-org) {
+// TODO: Find all cards wrapped in an a or .video story and add the class .card-link and remove these lines
+a,
+.video-story {
     .card {
-        box-shadow: $card-box-shadow;
+        transition: all .3s ease;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(.98);
+        }
     }
 }
 
 .navbar-nested-collapse {
     .card {
         border-width: 1px 0 0;
-        border-color: $gray-300;
-        border-color: var(--border);
-        border-style: solid;
-        box-shadow: unset;
     }
 }
