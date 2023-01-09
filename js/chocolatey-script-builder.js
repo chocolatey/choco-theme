@@ -1,4 +1,4 @@
-import { Collapse, Modal, Tab } from 'bootstrap';
+import { Offcanvas, Modal, Tab } from 'bootstrap';
 import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab } from './util/chocolatey-functions';
 
 (() => {
@@ -90,11 +90,11 @@ import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab 
         if (packages.length > 0) {
             builderViewBtn.classList.remove('d-none');
         } else {
-            const collapseBuilder = document.getElementById('navScriptBuilder');
-            const collapseBuilderInstance = Collapse.getOrCreateInstance(collapseBuilder, { toggle: false });
+            const offcanvasBuilder = document.getElementById('navScriptBuilder');
+            const offcanvasBuilderInstance = Offcanvas.getOrCreateInstance(offcanvasBuilder, { toggle: false });
 
             modalBuilderInstance.hide();
-            collapseBuilderInstance.hide();
+            offcanvasBuilderInstance.hide();
             builderViewBtn.classList.add('d-none');
         }
     };
