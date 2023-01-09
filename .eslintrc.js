@@ -21,7 +21,7 @@ module.exports = {
         'no-var': 'error',
         'one-var': ['error', 'never'],
         'one-var-declaration-per-line': ['error', 'always'],
-        'no-unused-vars': ['error', { varsIgnorePattern: 'Alert|Button|Carousel|Collapse|Dropdown|Modal|Tab' }],
+        'no-unused-vars': ['error', { varsIgnorePattern: 'Alert|Button|Carousel|Collapse|Dropdown|Modal|Offcanvas|Tab' }],
         'prefer-template': 'error',
         'prefer-arrow-callback': ['error'],
         'func-style': ['error', 'expression'],
