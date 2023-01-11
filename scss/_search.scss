@@ -57,8 +57,7 @@
                 width: 0;
                 height: 0;
                 border-right: solid transparent;
-                border-bottom: solid $gray-300;
-                border-bottom: solid var(--choco-theme-background);
+                border-bottom: solid var(--choco-theme-elevation-1);
                 border-left: solid transparent;
                 border-width: 0 .75rem .75rem; /* stylelint-disable-line */
             }

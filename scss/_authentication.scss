@@ -1,19 +1,25 @@
 body {
     &.user-authenticated {
         .user-authenticated {
-            display: block;
+            display: block !important;
         }
 
         .user-unauthenticated {
-            display: none;
+            display: none !important;
         }
     }
 
-    .user-authenticated {
-        display: none;
+    &.user-unauthenticated {
+        .user-authenticated {
+            display: none !important;
+        }
+
+        .user-unauthenticated {
+            display: block !important;
+        }
     }
 
-    .user-unauthenticated {
-        display: block;
+    .user-authenticated, .user-unauthenticated {
+        display: none !important;
     }
 }

@@ -1,5 +1,4 @@
 header {
-    border-bottom: 1px solid $gray-300;
     border-bottom: 1px solid var(--choco-theme-border);
 }
 
@@ -38,13 +37,11 @@ header {
                 .nav-link {
                     width: 100%;
                     padding: .5rem 1rem .5rem 2rem;
-                    color: $gray-900;
                     color: var(--choco-theme-text);
                     border-left: 6px solid transparent;
 
                     &.active,
                     &:hover {
-                        color: var(--bs-primary);
                         background: var(--choco-theme-primary-light);
                         border-color: var(--bs-primary);
                     }
@@ -87,7 +84,6 @@ header {
     border-radius: 0;
 
     &:hover {
-        color: var(--bs-primary);
         text-decoration: none;
         background: var(--choco-theme-primary-light);
         border-color: var(--bs-primary);
