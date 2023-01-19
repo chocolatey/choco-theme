@@ -1,5 +1,5 @@
 import { Alert, Button, Carousel, Collapse, Modal, Offcanvas, Tab } from 'bootstrap';
-import '../lib/atcb.js';
+import { atcb_init } from 'add-to-calendar-button'; // eslint-disable-line camelcase
 import '../lib/prism.min.js';
 import '../chocolatey-alerts.js';
 import '../chocolatey-announcements.js';
@@ -23,3 +23,4 @@ import '../chocolatey-sticky-top.js';
 import '../chocolatey-terminal.js';
 import '../chocolatey-theme-toggle.js';
 import '../chocolatey-toggle-fade-show.js';
+atcb_init();
