@@ -36,6 +36,19 @@
     </div>
 </div>
 <hr />
+<div class="text-center">
+    <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
+        <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
+    </a>
+    <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.</p>
+    <div class="d-flex justify-content-center">
+        <div class="btn-add-to-calendar mt-2 mx-1">
+            <span id="FlyoutCalendarButtonCoffeeBreak"></span>
+        </div>
+        <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
+    </div>
+</div>
+<hr />
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" rel="noreferrer" target="_blank">
@@ -107,14 +120,6 @@
         <p><strong>Livestream from<br />Thursday, 01 December 2022</strong></p>
         <p class="text-start">Join Paul and Gary for this months Chocolatey product livestream where we look at all of Chocolatey's product releases and livestreams over the past year.</p>
         <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-december" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
-            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
-        </a>
-        <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.</p>
-        <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" class="btn btn-primary mt-2 mx-1">Watch Archives</a>
         <hr />
     </div>
     <div class="text-center">
