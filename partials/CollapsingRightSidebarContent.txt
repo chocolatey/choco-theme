@@ -49,6 +49,19 @@
     </div>
 </div>
 <hr />
+<div class="text-center">
+    <a href="https://chocolatey.org/events/chocolatey-product-spotlight" rel="noreferrer" target="_blank">
+        <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-23.jpg" alt="Chocolatey Product Spotlight" />
+    </a>
+    <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we put a spotlight on the most recent Chocolatey product releases. You'll have a chance to have your questions answered in a live Ask Me Anything format.</p>
+    <div class="d-flex justify-content-center">
+        <div class="btn-add-to-calendar mt-2 mx-1">
+            <span id="FlyoutCalendarButtonProductSpotlight"></span>
+        </div>
+        <a href="https://chocolatey.org/events/chocolatey-product-spotlight" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
+    </div>
+</div>
+<hr />
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" rel="noreferrer" target="_blank">
@@ -111,15 +124,6 @@
         <p><strong>Livestream from<br />Tuesday, 29 November 2022</strong></p>
         <p class="text-start">Join Josh as he adds the ability to manage Chocolatey GUI config and features with the Chocolatey Ansible Collection.</p>
         <a href="https://chocolatey.org/events/chocolatey-coding-livestream" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-december" rel="noreferrer" target="_blank">
-            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-22.jpg" alt="Chocolatey Product Spotlight: A Year in Review" />
-        </a>
-        <p><strong>Livestream from<br />Thursday, 01 December 2022</strong></p>
-        <p class="text-start">Join Paul and Gary for this months Chocolatey product livestream where we look at all of Chocolatey's product releases and livestreams over the past year.</p>
-        <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-december" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
     </div>
     <div class="text-center">
