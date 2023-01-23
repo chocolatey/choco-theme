@@ -127,12 +127,12 @@
         <hr />
     </div>
     <div class="text-center">
-        <a href="https://youtube.com/@@veeam" rel="noreferrer" target="_blank">
+        <a href="https://www.youtube.com/watch?v=Kr3gGdOTsbA" rel="noreferrer" target="_blank">
             <img class="border rounded mb-3" src="https://img.chocolatey.org/events/02-03.jpg" alt="Introduction into Chocolatey with Veeam" />
         </a>
         <p><strong>Webinar from<br />Tuesday, 13 December 2022</strong></p>
         <p class="text-start">Join Gary, Paul, and Maurice as they introduce and demonstrate how to use Chocolatey! Questions will be answered live in an Ask Me Anything format.</p>
-        <a href="https://youtube.com/@@veeam" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
+        <a href="https://www.youtube.com/watch?v=Kr3gGdOTsbA" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
     </div>
 </div>
