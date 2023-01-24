@@ -41,7 +41,7 @@
         <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
     <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.</p>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center flex-wrap">
         <div class="btn-add-to-calendar mt-2 mx-1">
             <span id="FlyoutCalendarButtonCoffeeBreak"></span>
         </div>
@@ -54,7 +54,7 @@
         <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-23.jpg" alt="Chocolatey Product Spotlight" />
     </a>
     <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we put a spotlight on the most recent Chocolatey product releases. You'll have a chance to have your questions answered in a live Ask Me Anything format.</p>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center flex-wrap">
         <div class="btn-add-to-calendar mt-2 mx-1">
             <span id="FlyoutCalendarButtonProductSpotlight"></span>
         </div>
