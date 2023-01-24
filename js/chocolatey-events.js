@@ -81,7 +81,7 @@ import { DateTime } from 'luxon';
     };
 
     const replaceElapsed = () => {
-        jQuery('.countdown-details').add(countdownContainer).add(jQuery('.countdown-date')).add(jQuery('.btn-not-on-demand')).add(jQuery('.btn-add-to-calendar')).remove();
+        jQuery('.countdown-details').add(countdownContainer).add(jQuery('.countdown-date')).add(jQuery('.btn-not-on-demand')).remove();
         jQuery('a:not(.btn-sidebar), h3').each((index, element) => {
             jQuery(element).html(jQuery(element).html()
                 .replace('Reserve My Spot Now', ellapsedButtonText)
