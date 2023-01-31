@@ -434,6 +434,11 @@ $form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/200
 // Tabs
 $nav-tabs-link-active-bg: $white;
 
+// Tooltips
+$tooltip-bg: $primary;
+$tooltip-color: $dark;
+$tooltip-opacity: 1;
+
 // Navbars
 $navbar-toggler-padding-y: .375rem;
 $navbar-toggler-font-size: $font-size-base;
