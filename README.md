@@ -202,6 +202,7 @@ Along with external libraries, choco-theme contains many individual custom JavaS
 | chocolatey-loader.js              | Shows and removes spinning Chocolatey loader.                                              |
 | chocolatey-markdown.js            | Styles blockquotes based on emojis and checkboxes in markdown.                             |
 | chocolatey-multi-tabs.js          | Allows showing or hiding of multiple tabs in one click.                                    |
+| chocolatey-modal-auto-close.js    | Auto closes a modal when an external link is clicked.                                      |
 | chocolatey-org.js                 | Special handling for chocolatey.org.                                                       |
 | chocolatey-packages.js            | Controls interactive elements in the Chocolatey Community Repository package pages.        |
 | chocolatey-placeholders.js        | Generates random placeholder images.                                                       |

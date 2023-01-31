@@ -17,6 +17,7 @@ import '../chocolatey-internal-url.js';
 import '../chocolatey-lazyload.js';
 import '../chocolatey-loader.js';
 import '../chocolatey-markdown.js';
+import '../chocolatey-modal-auto-close.js';
 import '../chocolatey-org.js';
 import '../chocolatey-scrollspy.js';
 import '../chocolatey-search.js';
