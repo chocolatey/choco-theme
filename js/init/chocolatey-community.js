@@ -23,5 +23,6 @@ import '../chocolatey-search.js';
 import '../chocolatey-show-hide.js';
 import '../chocolatey-shuffle.js';
 import '../chocolatey-terminal.js';
+import '../chocolatey-tooltips.js';
 import '../chocolatey-theme-toggle.js';
 atcb_init();
