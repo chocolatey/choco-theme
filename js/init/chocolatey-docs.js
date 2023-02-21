@@ -1,4 +1,4 @@
-import { Alert, Button, Collapse } from 'bootstrap';
+import { Alert, Button, Collapse, Tab } from 'bootstrap';
 import '../lib/prism.min.js';
 import '../chocolatey-alerts.js';
 import '../chocolatey-anchors.js';
