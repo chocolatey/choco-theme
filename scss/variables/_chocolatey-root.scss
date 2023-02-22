@@ -1,5 +1,6 @@
 :root {
     --choco-theme-primary-opacity-10: #{$primary-opacity-10};
+    --choco-theme-primary-opacity-15: #{$primary-opacity-15};
     --choco-theme-primary-opacity-40: #{$primary-opacity-40};
     --choco-theme-primary-opacity-90: #{$primary-opacity-90};
     @each $color, $value in $colors-rgb {
@@ -10,6 +11,7 @@
 :root[data-user-color-scheme="light"] {
     --color-mode: "light";
     --choco-theme-background: #{$gray-100};
+    --choco-theme-background-rgb: #{to-rgb($gray-100)};
     --choco-theme-background-hover: #{$gray-400};
     --choco-theme-contrast: #{$primary-950};
     --choco-theme-contrast-hover: #{$gray-700};
@@ -42,6 +44,7 @@
 :root[data-user-color-scheme="dark"] {
     --color-mode: "dark";
     --choco-theme-background: #{$primary-950};
+    --choco-theme-background-rgb: #{to-rgb($primary-950)};
     --choco-theme-background-hover: #{$gray-700};
     --choco-theme-contrast: #{$gray-100};
     --choco-theme-contrast-hover: #{$gray-400};

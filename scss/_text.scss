@@ -48,3 +48,23 @@
 .text-break-none {
     word-break: keep-all;
 }
+
+.text-shiny {
+    --text-shiny-shine: #{$primary};
+    --text-shiny-color: var(--choco-theme-text);
+
+    display: inline-block;
+    background: linear-gradient(110deg, var(--text-shiny-color), 45%, var(--text-shiny-shine), 55%, var(--text-shiny-color));
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 260% auto;
+    -webkit-text-fill-color: transparent;
+    animation: text-shine 2.5s ease-out;
+}
+
+@keyframes text-shine {
+    to {
+        background-position: -200%;
+    }
+}

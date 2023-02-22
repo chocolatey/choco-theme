@@ -124,6 +124,14 @@ a.circle.text-bg-theme-contrast:hover {
     background: $primary-opacity-90 !important;
 }
 
+.bg-gradient-body-primary-light {
+    background-image: linear-gradient(-180deg, var(--choco-theme-background), var(--choco-theme-primary-light));
+}
+
+.bg-gradient-primary-light-body {
+    background-image: linear-gradient(-180deg, var(--choco-theme-primary-light), var(--choco-theme-background));
+}
+
 /* Background Utilities */
 .bg-img-cover {
     z-index: 1;
@@ -202,6 +210,43 @@ a.circle.text-bg-theme-contrast:hover {
 
 .bg-architect-factory-bottom-primary {
     background-image: linear-gradient(to right, rgba(var(--choco-theme-background-rgb), .4) 0%, rgba(var(--choco-theme-background-rgb), 1) 30%, rgba(var(--choco-theme-background-rgb), 1) 70%, rgba(var(--choco-theme-background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 1) 0%, rgba(var(--choco-theme-background-rgb), 0) 15%), url("/assets/images/architect-factory-green.svg");
+}
+
+.bg-retrowave1,
+.bg-retrowave2 {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.bg-retrowave1::before {
+    height: 80%;
+    background-color: var(--choco-theme-background);
+    background-image: linear-gradient(-180deg, transparent, var(--choco-theme-background)), url("https://img.chocolatey.org/backgrounds/retrowave1.svg");
+}
+
+.bg-retrowave2 {
+    &::before {
+        background-color: var(--choco-theme-primary-light);
+        background-image: linear-gradient(180deg, transparent 80%, var(--choco-theme-primary-light) 100%), linear-gradient(0deg, transparent 80%, var(--choco-theme-primary-light) 100%), url("https://img.chocolatey.org/backgrounds/retrowave2.svg");
+
+    }
+
+    .card {
+        --bs-card-border-color: var(--choco-theme-blue-light);
+    }
 }
 
 @include media-breakpoint-up(md) {

@@ -150,10 +150,43 @@
     }
 }
 
+@include media-breakpoint-down(sm) {
+    .btn-cta.btn-lg {
+        --bs-btn-font-size: 1.25rem;
+
+        &.btn-link {
+            padding-left: 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .btn-cta.btn-lg {
+        --bs-btn-font-size: 1.75rem;
+    }
+}
+
 @include media-breakpoint-up(md) {
     .btn-sm.btn-responsive {
         padding: .375rem .75rem;
         font-size: $font-size-base;
         border-radius: $border-radius;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .btn-group-featured-events {
+        .btn,
+        button.atcb-button,
+        button.atcb-button:focus,
+        button.atcb-button:hover {
+            min-width: auto;
+            padding: .25rem .5rem !important;
+            font-size: .85rem;
+        }
+
+        .atcb-icon {
+            height: .75rem;
+        }
     }
 }

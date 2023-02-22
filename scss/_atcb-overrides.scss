@@ -88,7 +88,7 @@ button.atcb-button {
     text-transform: none;
     background-color: transparent;
     border: 1px solid var(--bs-primary);
-    border-radius: .25rem;
+    border-radius: .375rem;
 
     &:hover,
     &:focus,
@@ -110,7 +110,7 @@ button.atcb-button {
 .atcb-lg button.atcb-button {
     padding: .5rem 1rem;
     font-size: 1.25rem;
-    border-radius: .3rem;
+    border-radius: .5rem;
 
     &:hover,
     &:focus,

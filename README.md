@@ -170,6 +170,7 @@ Choco-theme contains many external libraries in which it depends on for various 
 | noUiSlider                    | :clock3:           | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :grey_question:    | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | Add-to-Calendar Button        | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :grey_question:    | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | Prism                         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: |
+| Splide                        | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | typeahead.js                  | :heavy_minus_sign: | :clock3:           | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | jQuery Validation             | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :grey_question:    | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
 | jQuery Validation Unobtrusive | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :grey_question:    | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: |
@@ -194,7 +195,8 @@ Along with external libraries, choco-theme contains many individual custom JavaS
 | chocolatey-collapse-y-height.js   | Configures page height based on collapsed or shown items.                                  |
 | chocolatey-courses.js             | Sets cookies and manages courses when unauthenticated.                                     |
 | chocolatey-docs.js                | Special handling of titles in the docs project only.                                       |
-| chocolatey-docsearch.js           | Initilizes the docsearch library for docs.chocolatey.org.                                  |
+| chocolatey-docsearch.js           | Initializes the docsearch library for docs.chocolatey.org.                                  |
+| chocolatey-dropdown-hover.js      | Controls the top navigation hoverable dropdowns.                                           |
 | chocolatey-events.js              | Controls showing/hiding of time sensitive information in the events area.                  |
 | util/chocolatey-functions.js      | Provides helper functions that can be imported into any JavaScript file.                   |
 | chocolatey-internal-url.js        | Sets internal url in code blocks based on user input.                                      |
@@ -211,6 +213,7 @@ Along with external libraries, choco-theme contains many individual custom JavaS
 | chocolatey-search.js              | Initializes mousetrap.js and search bar interactivity.                                     |
 | chocolatey-show-hide.js           | Replaces button text on collapse buttons based on status.                                  |
 | chocolatey-shuffle.js             | shuffles elements around inside a container.                                               |
+| chocolatey-splide.js              | Initiates and controls Splide carousels.                                                   |
 | chocolatey-stats.js               | Gets Chocolatey Community Repository package stats and displays them on a page.            |
 | chocolatey-sticky-table.js        | Allows sticky headers on tables.                                                           |
 | chocolatey-sticky-top.js          | Controls top navigation look and feel when a sticky top header is enabled.                 |

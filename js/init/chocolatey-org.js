@@ -20,6 +20,7 @@ import '../chocolatey-org.js';
 import '../chocolatey-scrollspy.js';
 import '../chocolatey-show-hide.js';
 import '../chocolatey-shuffle.js';
+import '../chocolatey-splide.js';
 import '../chocolatey-sticky-top.js';
 import '../chocolatey-terminal.js';
 import '../chocolatey-theme-toggle.js';
