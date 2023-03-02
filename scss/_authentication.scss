@@ -1,5 +1,11 @@
 body {
     &.user-authenticated {
+        #topNav .nav-item.user-authenticated,
+        #topNav .dropdown.user-authenticated {
+            display: flex !important;
+            align-items: center;
+        }
+
         .user-authenticated {
             display: block !important;
         }
@@ -10,6 +16,11 @@ body {
     }
 
     &.user-unauthenticated {
+        #topNav .nav-item.user-unauthenticated {
+            display: flex !important;
+            align-items: center;
+        }
+
         .user-authenticated {
             display: none !important;
         }
@@ -19,7 +30,8 @@ body {
         }
     }
 
-    .user-authenticated, .user-unauthenticated {
+    .user-authenticated,
+    .user-unauthenticated {
         display: none !important;
     }
 }

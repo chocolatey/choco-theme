@@ -11,6 +11,7 @@ import '../chocolatey-collapse-nested.js';
 import '../chocolatey-collapse-responsive.js';
 import '../chocolatey-collapse-topnav.js';
 import '../chocolatey-collapse-y-height.js';
+import '../chocolatey-dropdown-hover.js';
 import '../chocolatey-internal-url.js';
 import '../chocolatey-lazyload.js';
 import '../chocolatey-loader.js';

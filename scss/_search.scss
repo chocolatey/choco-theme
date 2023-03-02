@@ -101,17 +101,17 @@
         flex: auto;
     }
 
-    .navbar-links {
+    .navbar-brand + div {
         width: 100%;
-        margin-left: 0 !important;
     }
 }
 
 .chocolatey-docs #topNav.active-search {
     .navbar-nav,
     .navbar-brand,
+    .navbar-brand + div,
     .navbar-toggler {
-        display: none;
+        display: none !important;
     }
 
     .search-box {
@@ -165,30 +165,22 @@
         .navbar-brand {
             display: block;
 
-            img {
-                top: -70px;
+            + div {
+                width: auto;
             }
-        }
-
-        .search-box,
-        .navbar-links {
-            flex: unset;
-        }
-
-        .navbar-links {
-            margin-left: auto !important;
         }
 
         .search-box {
             left: 24%;
+            flex: unset;
             width: 58%;
         }
     }
 
     .chocolatey-docs #topNav.active-search {
         .navbar-brand,
-        .navbar-nav {
-            display: flex;
+        .navbar-brand + div {
+            display: flex !important;
         }
 
         .search-box {
@@ -208,21 +200,5 @@
         //z-index: 1;
         width: 700px;
         transform: translate(-50%, 0);
-    }
-}
-
-@include media-breakpoint-up(xxl) {
-    .chocolatey-org #topNav.active-search {
-        .navbar-nav {
-            display: flex;
-        }
-
-        .navbar-brand img {
-            top: -58px;
-        }
-
-        .navbar-links {
-            width: auto;
-        }
     }
 }

@@ -88,10 +88,11 @@
     }
 
     // Callouts
-    .callout, blockquote {
+    .callout,
+    blockquote {
         border-radius: 0;
 
-        &:after {
+        &::after {
             border-radius: 0;
         }
     }

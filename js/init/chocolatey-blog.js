@@ -1,5 +1,4 @@
 import { Alert, Button, Carousel, Collapse } from 'bootstrap';
-import '../lib/atcb.js';
 import '../lib/prism.min.js';
 import '../chocolatey-alerts.js';
 import '../chocolatey-anchors.js';
