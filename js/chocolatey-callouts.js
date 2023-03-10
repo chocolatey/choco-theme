@@ -7,7 +7,7 @@
             let calloutHeader = callout.querySelector('.callout-header');
 
             if (callout.nodeName === 'BLOCKQUOTE') {
-                if (callout.querySelector('p:first-child').textContent.includes(':choco-')) {
+                if (callout.querySelector('p:first-child') && callout.querySelector('p:first-child').textContent.includes(':choco-')) {
                     calloutHeader = callout.querySelector('p:first-child');
                 }
             }
