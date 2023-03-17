@@ -1,6 +1,6 @@
 {
   "name": "choco-theme",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "The global theme for Chocolatey Software.",
   "repository": {
     "type": "git",
@@ -21,6 +21,9 @@
     "@babel/preset-react": "^7.18.6",
     "@fortawesome/fontawesome-free": "^6.1.2",
     "@popperjs/core": "^2.11.5",
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@splidejs/splide-extension-intersection": "^0.2.0",
     "add-to-calendar-button": "^1.18.8",
     "anchor-js": "^4.3.1",
     "babelify": "^10.0.0",

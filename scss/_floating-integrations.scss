@@ -1,0 +1,97 @@
+.floating-animation {
+    animation-name: floating-up;
+    animation-duration: 9s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.floating-animation-fast {
+    animation-name: floating-down;
+    animation-duration: 6s;
+}
+
+.floating-animation-medium {
+    animation-name: floating-down;
+    animation-duration: 12s;
+}
+
+.floating-animation-slow {
+    animation-duration: 15s;
+}
+
+@keyframes floating-up {
+    0% { transform: translate(0, 0); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0); }
+}
+
+@keyframes floating-down {
+    0% { transform: translate(0, -0); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, 0); }
+}
+
+#floatingIntegrations {
+    top: 50%;
+
+    .circle-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .circle-logo-sm {
+        padding: 15%;
+    }
+
+    .circle-logo-md {
+        padding: 12.75%;
+    }
+
+    .circle-logo-lg {
+        padding: 9.7%;
+    }
+
+    .circle-logo-xl {
+        padding: 6.5%;
+    }
+
+    /* Second column of circles */
+    .circle-logo-m-2 {
+        margin-top: -50px;
+        margin-bottom: -50px;
+    }
+
+    /* Fourth column of circles */
+    .circle-logo-m-4 {
+        margin-top: 50px;
+    }
+
+    /* Fifth column of circles */
+    .circle-logo-m-5 {
+        margin-top: -50px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #floatingIntegrations {
+        + svg {
+            margin-top: -10%;
+        }
+
+        /* Second column of circles */
+        .circle-logo-m-2 {
+            margin-top: -100px;
+            margin-bottom: 75px;
+        }
+
+        /* Fourth column of circles */
+        .circle-logo-m-4 {
+            margin-top: 100px;
+        }
+
+        /* Fifth column of circles */
+        .circle-logo-m-5 {
+            margin-top: 25px;
+        }
+    }
+}

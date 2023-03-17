@@ -41,7 +41,7 @@ pre[class*="language-"] {
 pre[class*="language-"] {
     background: var(--choco-theme-elevation-1);
     border: 1px solid var(--choco-theme-border);
-    border-radius: $card-border-radius;
+    border-radius: .25rem;
 }
 
 .token.comment,

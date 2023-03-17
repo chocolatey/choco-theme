@@ -1,3 +1,4 @@
+@import "node_modules/bootstrap/scss/functions";
 // Variables
 $white:    #fff;
 $gray-100: #f8f9fa;
@@ -37,6 +38,7 @@ $code-color: $green;
 
 // Cards
 $card-border-color: var(--choco-theme-border);
+$card-border-radius: 1rem;
 
 // Alerts
 $alert-border-radius: 0;

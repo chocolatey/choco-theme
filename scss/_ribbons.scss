@@ -1,17 +1,19 @@
 .ribbon {
+    --ribbon-size: -15%;
+
     position: absolute;
     top: 0;
     right: 0;
     padding: 0;
     margin: 0;
-    transform: translateX(30%) translateY(0%) rotate(45deg);
-    transform-origin: top left;
+    transform: translate(calc(-1 * var(--ribbon-size)), var(--ribbon-size)) rotate(45deg);
+    transform-origin: center left;
 
     &::before,
     &::after {
         position: absolute;
         top: 0;
-        width: 100%;
+        width: 150%;
         height: 100%;
         margin: 0 -1px;
         content: "";
@@ -25,13 +27,10 @@
         left: 100%;
     }
 
-    &.bg-success::before,
-    &.bg-success::after {
-        background: var(--bs-success);
-    }
-
-    &.text-bg-theme-elevation-1::before,
-    &.text-bg-theme-elevation-1::after {
-        background: var(--choco-theme-elevation-1);
+    @each $color, $value in $colors {
+        &.text-bg-#{$color}::before,
+        &.text-bg-#{$color}::after {
+            background: var(--bs-#{$color});
+        }
     }
 }

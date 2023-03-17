@@ -182,6 +182,7 @@ $dark:         $primary-950;
 
 // Custom Colors
 $primary-opacity-10:        rgba($primary, .1);
+$primary-opacity-15:        rgba($primary, .15);
 $primary-opacity-25:        rgba($primary, .25);
 $primary-opacity-40:        rgba($primary, .4);
 $primary-opacity-50:        rgba($primary, .5);
@@ -374,9 +375,9 @@ $palette-colors: (
 $variable-prefix:       bs-;
 
 // Border radius
-$border-radius:               .25rem;
-$border-radius-sm:            .2rem;
-$border-radius-lg:            .3rem;
+// $border-radius:               .25rem;
+// $border-radius-sm:            .2rem;
+// $border-radius-lg:            .3rem;
 
 // Create rgb colors for :root
 $colors-rgb: map-loop($colors, to-rgb, "$value");
@@ -483,7 +484,7 @@ $rotations: (
 );
 
 // Numbers
-$general-numbers: 5, 10, 20, 30, 35, 40, 50, 60, 65, 70, 75, 80, 90, 100, 125, 130, 200, 250, 300, 400, 500;
+$general-numbers: 5, 10, 15, 20, 30, 35, 40, 50, 60, 65, 70, 75, 80, 90, 100, 125, 130, 200, 250, 300, 400, 500;
 
 // Padding and Margin in rem
 $spaces: (
@@ -515,3 +516,27 @@ $spacers: (
     7: $spacer * 12,
     8: $spacer * 20
 );
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 1600px
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px,
+    xxxl: 1536px
+);
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
