@@ -40,11 +40,11 @@
 @include media-breakpoint-up(xl) {
     .terminal {
         .terminal-body {
-            font-size: 3.5rem;
+            font-size: 3.4rem;
         }
 
         .terminal-cursor {
-            height: 3.5rem;
+            height: 3.4rem;
         }
     }
 }
@@ -52,11 +52,11 @@
 @include media-breakpoint-up(xxxl) {
     .terminal {
         .terminal-body {
-            font-size: 4.4rem;
+            font-size: 4rem;
         }
 
         .terminal-cursor {
-            height: 4.4rem;
+            height: 4rem;
         }
     }
 }
