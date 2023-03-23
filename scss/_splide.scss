@@ -70,6 +70,8 @@
             .card {
                 min-height: 650px;
                 background: none;
+                /* stylelint-disable-next-line property-no-vendor-prefix */
+                -webkit-backdrop-filter: blur(100px);
                 backdrop-filter: blur(100px);
             }
         }
