@@ -1,3 +1,7 @@
+.chocolatey-zendesk #main-content .article-info .article-body pre { /* stylelint-disable-line */
+    background: var(--choco-theme-elevation-1) !important;
+}
+
 .chocolatey-zendesk {
     // Top header navigation
     header.header {
@@ -277,10 +281,5 @@
 
     .my-activities-header {
         margin-top: 20px;
-    }
-
-    // Code blocks
-    .article-body pre {
-        background: var(--choco-theme-elevation-1);
     }
 }
