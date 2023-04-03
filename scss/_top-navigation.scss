@@ -1,4 +1,4 @@
-header {
+header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
     border-bottom: 1px solid var(--choco-theme-border);
 }
 

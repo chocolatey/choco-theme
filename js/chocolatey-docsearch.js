@@ -1,8 +1,8 @@
-import docsearch from 'docsearch.js';
+import docsearch from '@docsearch/js';
 
 docsearch({
-    apiKey: '8148a7b5d009b8590bb85191c6f1823c',
+    appId: 'S4T2OSB07R',
+    apiKey: 'ea6ae2e0546ad6007f7f464a296b67de',
     indexName: 'chocolatey',
-    inputSelector: '#searchQuery',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    container: '#docsearchResults'
 });

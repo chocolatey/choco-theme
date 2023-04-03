@@ -106,27 +106,6 @@
     }
 }
 
-.chocolatey-docs #topNav.active-search {
-    .navbar-nav,
-    .navbar-brand,
-    .navbar-brand + div,
-    .navbar-toggler {
-        display: none !important;
-    }
-
-    .search-box {
-        display: flex;
-        flex: auto;
-
-        &:focus-within,
-        &:hover {
-            .fa-magnifying-glass {
-                color: var(--bs-primary);
-            }
-        }
-    }
-}
-
 @include media-breakpoint-up(md) {
     .search-box {
         &.search-d-none-submit .search-key-container {
@@ -176,24 +155,9 @@
             width: 58%;
         }
     }
-
-    .chocolatey-docs #topNav.active-search {
-        .navbar-brand,
-        .navbar-brand + div {
-            display: flex !important;
-        }
-
-        .search-box {
-            left: 25%;
-            display: flex;
-            flex: unset;
-            width: 53%;
-        }
-    }
 }
 
 @include media-breakpoint-up(xl) {
-    .chocolatey-docs #topNav.active-search .search-box,
     .chocolatey-org #topNav.active-search .search-box {
         right: 50%;
         left: 50%;
