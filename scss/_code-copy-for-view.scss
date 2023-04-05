@@ -8,4 +8,12 @@
     .btn {
         margin: .25rem .125rem;
     }
+
+    + .border-top + .code-toolbar {
+        padding: 1rem;
+
+        pre {
+            padding-left: 2.8rem;
+        }
+    }
 }

@@ -90,7 +90,8 @@ strong {
     background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb,
+.DocSearch-Dropdown::-webkit-scrollbar-thumb { /* stylelint-disable-line */
     background: $primary-opacity-25;
     border-radius: 10px;
     box-shadow: inset 0 0 6px $primary-opacity-25;

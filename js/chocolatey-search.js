@@ -2,7 +2,6 @@ const Mousetrap = require('mousetrap');
 
 (() => {
     const isMac = navigator.userAgent.indexOf('Mac OS X') != -1;
-    const mediaMd = window.matchMedia('(min-width: 768px)');
     const searchInput = document.querySelector('.search-box .search-input');
     const topNav = document.querySelector('#topNav');
     const searchKey = document.querySelector('.search-key');
@@ -27,17 +26,6 @@ const Mousetrap = require('mousetrap');
             topNavBtnSearchClose.addEventListener('click', searchInactive);
         }
     }
-
-    const searchDocs = () => {
-        if (mediaMd.matches && document.querySelector('.chocolatey-docs')) {
-            topNav.classList.add('active-search');
-        } else if (document.querySelector('.chocolatey-docs')) {
-            topNav.classList.remove('active-search');
-        }
-    };
-
-    searchDocs(mediaMd);
-    mediaMd.addEventListener('change', () => searchDocs(mediaMd));
 
     const searchKeys = () => {
         if (topNav) {
