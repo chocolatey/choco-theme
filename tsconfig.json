@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "moduleResolution":"nodenext",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "target": "ESNext"
+    }
+}
