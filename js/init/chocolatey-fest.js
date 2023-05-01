@@ -6,3 +6,4 @@ import '../chocolatey-lazyload.js';
 import '../chocolatey-org.js';
 import '../chocolatey-sticky-top.js';
 import '../chocolatey-theme-toggle.js';
+import '../ts/hello.js';

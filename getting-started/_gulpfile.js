@@ -17,6 +17,7 @@ const buffer = require('vinyl-buffer');
 const log = require('fancy-log');
 const bundleconfig = require('./bundleconfig.json');
 const fs = require('fs');
+const ts = require('gulp-typescript');
 
 const editFilePartial = 'Edit this file at https://github.com/chocolatey/choco-theme/partials';
 const { series, parallel, src, dest } = require('gulp');
@@ -33,6 +34,8 @@ const paths = {
     node_modules: 'node_modules/',
     theme: 'node_modules/choco-theme/'
 };
+
+const tsProject = ts.createProject(`${paths.theme}tsconfig.json`);
 
 const getBundles = regexPattern => {
     return bundleconfig.filter(bundle => {
@@ -69,7 +72,7 @@ const copyTheme = () => {
         .pipe(rename({ prefix: '_', extname: '.cshtml' }))
         .pipe(dest(paths.partials));
 
-    const copyChocoThemeJs = src(`${paths.theme}js/**/*.js`)
+    const copyChocoThemeJs = src(`${paths.theme}js/**/*.*`)
         .pipe(dest(`${paths.assets}js/temp`));
 
     return merge(copyFontAwesome, copyImages, copyIcons, copyPartials, copyChocoThemeJs);
@@ -79,6 +82,13 @@ const compileSass = () => {
     return src(`${paths.theme}scss/*.scss`)
         .pipe(sass().on('error', sass.logError))
         .pipe(dest(`${paths.assets}css`));
+};
+
+const compileTs = () => {
+    const tsResult = src(`${paths.assets}js/temp/ts/**/*.ts`)
+        .pipe(tsProject());
+
+    return tsResult.js.pipe(dest(`${paths.assets}js/temp/ts`));
 };
 
 const compileJs = () => {
@@ -187,4 +197,4 @@ exports.compileSassJs = parallel(compileSass, compileJs);
 exports.minCssJs = parallel(minCss, minJs);
 
 // Gulp default
-exports.default = series(del, copyTheme, exports.compileSassJs, compileCss, purgeCss, exports.minCssJs, delEnd);
+exports.default = series(del, copyTheme, compileTs, exports.compileSassJs, compileCss, purgeCss, exports.minCssJs, delEnd);

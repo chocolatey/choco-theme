@@ -163,7 +163,7 @@
                         });
                     };
 
-                    // Initilize show/hide buttons
+                    // Initialize show/hide buttons
                     const btnShowHide = diffContent.querySelector('[data-file-path]:last-child .btn-show-hide');
                     let isInitilized = false;
 

@@ -48,7 +48,7 @@ import { DateTime } from 'luxon';
                 } else {
                     // Show time
                     countdownContainer.html(e.strftime(countdownContainerTime));
-                };
+                }
             });
         };
 
