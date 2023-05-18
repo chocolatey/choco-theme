@@ -132,6 +132,10 @@ a.circle.text-bg-theme-contrast:hover {
     background-image: linear-gradient(-180deg, var(--choco-theme-primary-light), var(--choco-theme-background));
 }
 
+.bg-gradient-primary-light-elevation-1 {
+    background-image: linear-gradient(-180deg, var(--choco-theme-primary-light), var(--choco-theme-elevation-1));
+}
+
 /* Background Utilities */
 .bg-img-cover {
     z-index: 1;
@@ -235,6 +239,10 @@ a.circle.text-bg-theme-contrast:hover {
     height: 80%;
     background-color: var(--choco-theme-background);
     background-image: linear-gradient(-180deg, transparent, var(--choco-theme-background)), url("https://img.chocolatey.org/backgrounds/retrowave1.svg");
+}
+
+.chocolatey-docs .bg-retrowave1::before {
+    height: 100%;
 }
 
 .bg-retrowave2 {

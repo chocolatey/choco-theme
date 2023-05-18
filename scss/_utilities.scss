@@ -111,6 +111,11 @@
         min-width: #{$number}px;
     }
 
+    // Min Height in px
+    .min-h-#{$number}-px {
+        min-height: #{$number}px;
+    }
+
     // Height in %
     .h-#{$number} {
         height: #{$number}#{"%"};
