@@ -253,8 +253,15 @@ a.circle.text-bg-theme-contrast:hover {
     background-image: linear-gradient(-180deg, transparent, var(--choco-theme-background)), url("https://img.chocolatey.org/backgrounds/retrowave1.svg");
 }
 
-.chocolatey-docs .bg-retrowave1::before {
-    height: 100%;
+.chocolatey-docs,
+#calculator {
+    .bg-retrowave1::before {
+        height: 100%;
+    }
+}
+
+#calculator .bg-retrowave1 * {
+    z-index: 1;
 }
 
 .bg-retrowave2 {

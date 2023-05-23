@@ -17,6 +17,7 @@ import '../chocolatey-lazyload.js';
 import '../chocolatey-loader.js';
 import '../chocolatey-markdown.js';
 import '../chocolatey-org.js';
+import '../chocolatey-pricing-calculator.js';
 import '../chocolatey-scrollspy.js';
 import '../chocolatey-show-hide.js';
 import '../chocolatey-shuffle.js';
