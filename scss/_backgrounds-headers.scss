@@ -124,6 +124,18 @@ a.circle.text-bg-theme-contrast:hover {
     background: $primary-opacity-90 !important;
 }
 
+.bg-gradient-body-elevation-1 {
+    background-image: linear-gradient(-180deg, var(--choco-theme-background), var(--choco-theme-elevation-1));
+}
+
+.bg-gradient-elevation-1-body {
+    background-image: linear-gradient(-180deg, var(--choco-theme-elevation-1), var(--choco-theme-background));
+}
+
+.bg-gradient-elevation-1-primary-light {
+    background-image: linear-gradient(-180deg, var(--choco-theme-elevation-1), var(--choco-theme-primary-light));
+}
+
 .bg-gradient-body-primary-light {
     background-image: linear-gradient(-180deg, var(--choco-theme-background), var(--choco-theme-primary-light));
 }
