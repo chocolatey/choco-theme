@@ -41,9 +41,16 @@
     }
 }
 
-#headerCarousel .bg-img-cover {
-    border-bottom: 1px solid $gray-300;
-    border-bottom: 1px solid var(--choco-theme-border);
+#headerCarousel {
+    .carousel-caption {
+        left: 0;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .bg-img-cover {
+        border-bottom: 1px solid var(--choco-theme-border);
+    }
 }
 
 @include media-breakpoint-up(xl) {
@@ -57,8 +64,14 @@
         }
     }
 
-    #headerCarousel .bg-img-cover {
-        border: 1px solid $gray-300;
-        border: 1px solid var(--choco-theme-border);
+    #headerCarousel {
+        .carousel-caption {
+            left: 1px;
+        }
+
+        .bg-img-cover {
+            border: 1px solid var(--choco-theme-border);
+            border-radius: 1rem;
+        }
     }
 }
