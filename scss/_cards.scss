@@ -1,9 +1,16 @@
 .card {
+    overflow: hidden;
     background: var(--choco-theme-elevation-1);
+
+    &.card-body,
+    .card-header {
+        overflow: hidden;
+    }
 
     &.card-index {
         height: 100%;
         margin-left: 15px;
+        overflow: visible !important;
 
         .circle {
             position: absolute;
