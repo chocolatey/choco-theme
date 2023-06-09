@@ -1,7 +1,7 @@
-name: ESLint
+name: stylelint
 on: [pull_request]
 jobs:
-  eslint:
+  stylelint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -9,4 +9,4 @@ jobs:
         with:
           node-version: 18
       - run: yarn
-      - run: yarn run eslint js/**/**/*.{js,ts}
+      - run: yarn run stylelint "scss/**/**/*.scss"
