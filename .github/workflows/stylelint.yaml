@@ -1,0 +1,12 @@
+name: stylelint
+on: [pull_request]
+jobs:
+  stylelint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: yarn
+      - run: yarn run stylelint "scss/**/**/*.scss"
