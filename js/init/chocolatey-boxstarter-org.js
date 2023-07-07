@@ -11,5 +11,6 @@ import '../chocolatey-collapse-y-height.js';
 import '../chocolatey-docs.js';
 import '../chocolatey-markdown.js';
 import '../chocolatey-scrollspy.js';
+import '../ts/chocolatey-tab-multiples.js';
 import '../ts/chocolatey-tables.js';
 import '../chocolatey-theme-toggle.js';

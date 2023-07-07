@@ -22,6 +22,7 @@ import '../chocolatey-show-hide.js';
 import '../chocolatey-shuffle.js';
 import '../chocolatey-splide.js';
 import '../chocolatey-sticky-top.js';
+import '../ts/chocolatey-tab-multiples.js';
 import '../chocolatey-terminal.js';
 import '../chocolatey-theme-toggle.js';
 import '../chocolatey-toggle-fade-show.js';
