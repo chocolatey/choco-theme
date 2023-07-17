@@ -1,22 +1,44 @@
-export const c4bNodePurchaseCutoffs = {
+export interface C4bNodePurchaseCutoffs {
+    minNodes: number;
+    maxNodes: number;
+}
+
+export const c4bNodePurchaseCutoffs: C4bNodePurchaseCutoffs = {
     minNodes: 100,
     maxNodes: 1000
 };
 
-export const c4bNodeDefaults = {
+export interface C4bNodeDefaults {
+    minNodes: number;
+    defaultNodes: number;
+    maxNodes: number;
+}
+
+export const c4bNodeDefaults: C4bNodeDefaults = {
     minNodes: 1,
     defaultNodes: 500,
     maxNodes: 50000
 };
 
-export const c4bAddOnPrice = [
+export interface C4bAddOnPrice {
+    packaging: number;
+    standardSupport: number;
+}
+
+export const c4bAddOnPrice: C4bAddOnPrice[] = [
     {
         packaging: 500,
         standardSupport: 1000
     }
 ];
 
-export const c4bSupportNodes = [
+export interface C4bSupportNodes {
+    community: number;
+    standard: number;
+    premium: number;
+}
+
+export const c4bSupportNodes: C4bSupportNodes[] = [
     {
         community: 35,
         standard: 100,
@@ -24,7 +46,24 @@ export const c4bSupportNodes = [
     }
 ];
 
-export const c4bIncludedItems = [
+export interface C4bIncludedItems {
+    minNodes: number;
+    maxNodes: number;
+    casesPerMonth: number;
+    technicalContacts: number;
+    premiumSupportOptional: boolean;
+    standardSupport: boolean;
+    introCallAndDemo: boolean;
+    structuredEvaluation: boolean;
+    support24x7: boolean;
+    responseTimes?: {
+        p1: number;
+        p2: number;
+        p3: number;
+    };
+}
+
+export const c4bIncludedItems: C4bIncludedItems[] = [
     {
         minNodes: 1,
         maxNodes: 99,
@@ -86,7 +125,13 @@ export const c4bIncludedItems = [
     }
 ];
 
-export const c4bStandardSubscription = [
+export interface C4bSubscription {
+    pricePerNode: number;
+    minNodes: number;
+    maxNodes: number;
+}
+
+export const c4bStandardSubscription: C4bSubscription[] = [
     {
         pricePerNode: 650,
         minNodes: 1,
@@ -114,7 +159,7 @@ export const c4bStandardSubscription = [
     }
 ];
 
-export const c4bPremiumSubscription = [
+export const c4bPremiumSubscription: C4bSubscription[] = [
     {
         pricePerNode: 25.76,
         minNodes: 1500,
