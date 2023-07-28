@@ -1,6 +1,6 @@
 {
   "name": "choco-theme",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "description": "The global theme for Chocolatey Software.",
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "@docsearch/css": "^3.3.3",
     "@docsearch/js": "^3.3.3",
     "@fortawesome/fontawesome-free": "^6.1.2",
+    "@playwright/test": "^1.35.1",
     "@popperjs/core": "^2.11.5",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
@@ -46,6 +47,7 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-playwright": "^0.15.3",
     "eslint-plugin-promise": "^6.0.0",
     "fancy-log": "^2.0.0",
     "flatpickr": "^4.6.13",
@@ -68,7 +70,7 @@
     "marked": "^4.0.18",
     "merge-stream": "^2.0.0",
     "mousetrap": "^1.6.5",
-    "nouislider": "^15.6.0",
+    "nouislider": "^15.7.0",
     "rimraf": "^3.0.2",
     "sass": "^1.53.0",
     "stylelint": "^14.14.0",

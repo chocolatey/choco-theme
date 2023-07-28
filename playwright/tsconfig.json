@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "target": "ESNext",
+        "module": "commonjs",
+        "moduleResolution": "Node"
+    }
+}

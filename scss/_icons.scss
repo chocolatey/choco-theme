@@ -233,6 +233,15 @@
     }
 }
 
+.list-circle li.list-circle-fa-plus,
+.list-circle.list-circle-fa-plus li {
+    &::before {
+        @extend %fa-icon;
+        @extend .fa-solid;
+        content: fa-content($fa-var-plus);
+    }
+}
+
 .list-curve p:last-child {
     &::after {
         @extend %fa-icon;

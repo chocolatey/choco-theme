@@ -459,6 +459,13 @@ $dropdown-link-hover-bg:            var(--choco-theme-background);
 // Offcanvas
 $offcanvas-bg-color:                var(--choco-theme-elevation-1);
 
+// Popovers
+$popover-bg:                        var(--choco-theme-elevation-1);
+$popover-border-color:              var(--choco-theme-border);
+$popover-header-bg:                 var(--choco-theme-background);
+$popover-header-color:              var(--choco-theme-text);
+$popover-body-color:                var(--choco-theme-text);
+
 // Tables
 $table-variants: (
     "dark":       $primary-900

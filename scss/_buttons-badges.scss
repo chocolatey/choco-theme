@@ -16,12 +16,6 @@
     }
 }
 
-.btn-check:checked + .btn-outline-primary {
-    color: var(--choco-theme-background);
-    border-top: 1px solid var(--choco-theme-elevation-1);
-    border-bottom: 1px solid var(--choco-theme-elevation-1);
-}
-
 // Navbar toggler
 .navbar-toggler {
     &:hover .fa-solid {

@@ -173,6 +173,73 @@
     }
 }
 
+// Range slider
+/* stylelint-disable-next-line selector-class-pattern */
+.noUi-target {
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    /* stylelint-disable-next-line selector-class-pattern */
+    .noUi-connects {
+        background: var(--choco-theme-primary-light);
+        border-radius: 10px;
+
+        /* stylelint-disable-next-line selector-class-pattern */
+        .noUi-connect {
+            background: $primary;
+        }
+    }
+
+    /* stylelint-disable-next-line selector-class-pattern */
+    .noUi-handle {
+        top: -10px;
+        width: 40px;
+        height: 40px;
+        cursor: grab;
+        background: $primary;
+        border: 3px solid var(--choco-theme-background);
+        border-radius: 100%;
+        box-shadow: none;
+
+        /* stylelint-disable-next-line selector-class-pattern */
+        &.noUi-active {
+            cursor: grabbing;
+            /* stylelint-disable-next-line property-no-vendor-prefix */
+            -moz-box-shadow: 0 0 6px var(--choco-theme-primary-light);
+            /* stylelint-disable-next-line property-no-vendor-prefix */
+            -webkit-box-shadow: 0 0 6px var(--choco-theme-primary-light);
+            box-shadow: 0 0 6px var(--choco-theme-primary-light);
+        }
+
+        &::after,
+        &::before {
+            top: 10px;
+            background: $black;
+        }
+
+        &::before {
+            left: 15px;
+        }
+
+        &::after {
+            left: 18px;
+        }
+    }
+
+    /* stylelint-disable-next-line selector-class-pattern */
+    .noUi-tooltip {
+        color: $black;
+        background: $primary;
+        border-color: $primary;
+    }
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.noUi-horizontal .noUi-tooltip {
+    bottom: -120%;
+}
+
 // Markdown task lists
 .task-list-item {
     .form-check {

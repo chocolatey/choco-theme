@@ -14,7 +14,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['js/ts/**/*.ts'],
+            files: ['js/ts/**/*.ts', 'playwright/**/*.ts'],
             extends: [
                 'standard',
                 'eslint:recommended',
@@ -30,7 +30,19 @@ module.exports = {
             ]
         },
         {
-            files: ['.eslintrc.js', 'js/**/**/*.*', 'getting-started/*.js'],
+            files: ['playwright/**/*.ts'],
+            extends: [
+                'plugin:playwright/recommended'
+            ],
+            parserOptions: {
+                project: 'playwright/tsconfig.json'
+            },
+            rules: {
+                'playwright/no-conditional-in-test': 0
+            }
+        },
+        {
+            files: ['.eslintrc.js', 'js/**/*.*', 'getting-started/*.js', 'playwright/**/*.ts'],
             rules: {
                 semi: ['error', 'always'],
                 quotes: ['error', 'single'],
