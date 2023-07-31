@@ -5,6 +5,11 @@ import jQuery from 'jquery';
         const scrollHash = jQuery(element).attr('href');
 
         const findActiveRightNavLink = scrollHash => {
+            if (scrollHash === '#') {
+                jQuery(element).parent().remove();
+                return;
+            }
+
             // Enable selecting ID's with "." in them
             if (~scrollHash.indexOf('.')) {
                 scrollHash = scrollHash.replace(/\./g, '\\.');
