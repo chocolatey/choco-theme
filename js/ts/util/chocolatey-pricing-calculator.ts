@@ -54,7 +54,6 @@ export interface C4bIncludedItems {
     premiumSupportOptional: boolean;
     standardSupport: boolean;
     introCallAndDemo: boolean;
-    structuredEvaluation: boolean;
     support24x7: boolean;
     responseTimes?: {
         p1: number;
@@ -72,7 +71,6 @@ export const c4bIncludedItems: C4bIncludedItems[] = [
         premiumSupportOptional: false,
         standardSupport: false,
         introCallAndDemo: false,
-        structuredEvaluation: false,
         support24x7: false
     },
     {
@@ -83,7 +81,6 @@ export const c4bIncludedItems: C4bIncludedItems[] = [
         premiumSupportOptional: false,
         standardSupport: true,
         introCallAndDemo: true,
-        structuredEvaluation: false,
         support24x7: false,
         responseTimes: {
             p1: 4,
@@ -99,7 +96,6 @@ export const c4bIncludedItems: C4bIncludedItems[] = [
         premiumSupportOptional: true,
         standardSupport: true,
         introCallAndDemo: true,
-        structuredEvaluation: false,
         support24x7: false,
         responseTimes: {
             p1: 3,
@@ -115,7 +111,6 @@ export const c4bIncludedItems: C4bIncludedItems[] = [
         premiumSupportOptional: true,
         standardSupport: true,
         introCallAndDemo: true,
-        structuredEvaluation: true,
         support24x7: true,
         responseTimes: {
             p1: 2,

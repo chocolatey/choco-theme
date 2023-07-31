@@ -10,7 +10,6 @@ test('test-included-items', async ({ page }) => {
     const nodeCounts = [35, 100, 500, 1500, 50000];
     const itemSupportType = '#c4bIncludedSupportType';
     const itemIntroCallAndDemo = '#c4bIncludedIntroCallAndDemo';
-    const itemStructuredEvaluation = '#c4bIncludedStructuredEvaluation';
     const itemCasesPerMonth = '#c4bIncludedCasesPerMonth';
     const itemTechnicalContacts = '#c4bIncludedTechnicalContacts';
     const itemSupport24x7 = '#c4bIncludedSupport24x7';
@@ -49,7 +48,6 @@ test('test-included-items', async ({ page }) => {
                 };
 
                 await showHideIncludedItems(itemIntroCallAndDemo, level.introCallAndDemo);
-                await showHideIncludedItems(itemStructuredEvaluation, level.structuredEvaluation);
                 await showHideIncludedItems(itemSupport24x7, level.support24x7);
                 await showHideIncludedItems(itemCasesPerMonth, level.casesPerMonth);
                 await showHideIncludedItems(itemTechnicalContacts, level.technicalContacts);

@@ -185,7 +185,6 @@ window.addEventListener('DOMContentLoaded', () => {
             // Append Included Items and Included Per Node
             const c4bIncludedSupportType = document.getElementById('c4bIncludedSupportType');
             const c4bIncludedIntroCallAndDemo = document.getElementById('c4bIncludedIntroCallAndDemo');
-            const c4bIncludedStructuredEvaluation = document.getElementById('c4bIncludedStructuredEvaluation');
             const c4bIncludedCasesPerMonth = document.getElementById('c4bIncludedCasesPerMonth');
             const c4bIncludedTechnicalContacts = document.getElementById('c4bIncludedTechnicalContacts');
             const c4bIncludedNodeRange = document.getElementById('c4bIncludedNodeRange');
@@ -212,7 +211,6 @@ window.addEventListener('DOMContentLoaded', () => {
                         };
 
                         showHideIncludedItems(c4bIncludedIntroCallAndDemo, level.introCallAndDemo);
-                        showHideIncludedItems(c4bIncludedStructuredEvaluation, level.structuredEvaluation);
                         showHideIncludedItems(c4bIncludedSupport24x7, level.support24x7);
                         showHideIncludedItems(c4bIncludedCasesPerMonth.parentNode, level.casesPerMonth);
                         showHideIncludedItems(c4bIncludedTechnicalContacts, level.technicalContacts);
