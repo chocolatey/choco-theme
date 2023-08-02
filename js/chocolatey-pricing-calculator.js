@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let c4bPackagingCalculatedPrice = 0;
 
             // Find Standard Support Add-On Price
-            if (c4bSliderNumberOfNodes >= c4bSupportNodes[0].community && c4bSliderNumberOfNodes < c4bSupportNodes[0].standard && c4bStandardSupport.checked) {
+            if (c4bSliderNumberOfNodes < c4bSupportNodes[0].standard && c4bStandardSupport.checked) {
                 c4bStandardSupportCalculatedPrice = c4bAddOnPrice[0].standardSupport;
             }
 
@@ -312,10 +312,10 @@ window.addEventListener('DOMContentLoaded', () => {
             // Update the previous value
             c4bPreviousNodes = values[handle];
 
-            if (values[handle] < c4bSupportNodes[0].community || (values[handle] < c4bSupportNodes[0].standard && !c4bStandardSupport.classList.contains('active'))) {
+            if (values[handle] < c4bSupportNodes[0].standard && !c4bStandardSupport.classList.contains('active')) {
                 c4bCommunitySupport.checked = true;
             } else if ((values[handle] >= c4bSupportNodes[0].standard && values[handle] < c4bSupportNodes[0].premium) ||
-                ((values[handle] >= c4bSupportNodes[0].community && values[handle] < c4bSupportNodes[0].standard) && c4bStandardSupport.classList.contains('active')) ||
+                (values[handle] < c4bSupportNodes[0].standard && c4bStandardSupport.classList.contains('active')) ||
                 (values[handle] >= c4bSupportNodes[0].premium && !c4bPremiumSupport.classList.contains('active'))) {
                 c4bStandardSupport.checked = true;
             } else if (values[handle] >= c4bSupportNodes[0].premium && c4bPremiumSupport.classList.contains('active')) {
@@ -323,12 +323,6 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             // Enable/Disable toggling of support type
-            if (values[handle] < c4bSupportNodes[0].community) {
-                c4bStandardSupport.disabled = true;
-            } else {
-                c4bStandardSupport.disabled = false;
-            }
-
             if (values[handle] >= c4bSupportNodes[0].standard) {
                 c4bCommunitySupport.disabled = true;
             } else {
