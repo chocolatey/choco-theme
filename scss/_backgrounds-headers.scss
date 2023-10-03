@@ -124,6 +124,14 @@ a.circle.text-bg-theme-contrast:hover {
     background: $primary-opacity-90 !important;
 }
 
+.bg-danger-opacity {
+    background: var(--choco-theme-red-light) !important;
+}
+
+.bg-success-opacity {
+    background: var(--choco-theme-green-light) !important;
+}
+
 .bg-gradient-body-elevation-1 {
     background-image: linear-gradient(-180deg, var(--choco-theme-background), var(--choco-theme-elevation-1));
 }
