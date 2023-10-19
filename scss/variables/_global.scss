@@ -15,6 +15,7 @@ $chat:      #5865f2; // No automatic contrasting color
 $google:    #4285f4;
 $website:   $gray-600;
 $mastodon:  #6364ff;
+$bluesky:   #0085ff;
 
 // Palette
 $primary-50:   tint-color($primary, 90%);
@@ -214,7 +215,8 @@ $socialmedia-colors: (
     chat:     $chat,
     google:   $google,
     website:  $website,
-    mastodon: $mastodon
+    mastodon: $mastodon,
+    bluesky:  $bluesky
 );
 
 $palette-colors: (

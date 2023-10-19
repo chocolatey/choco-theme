@@ -62,4 +62,11 @@
             </div>
         </a>
     </li>
+    <li class="list-inline-item">
+        <a href="https://bsky.app/profile/chocolatey.org" target="_blank" rel="me" aria-label="Connect with Chocolatey on Bluesky" title="Connect with Chocolatey on Bluesky">
+            <div class="text-bg-bluesky circle" aria-hidden="true">
+                <i class="fa-solid fa-cubes"></i>
+            </div>
+        </a>
+    </li>
 </ul>
