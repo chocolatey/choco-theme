@@ -1,6 +1,6 @@
 {
   "name": "choco-theme",
-  "version": "0.5.13",
+  "version": "0.5.14",
   "description": "The global theme for Chocolatey Software.",
   "repository": {
     "type": "git",
