@@ -53,6 +53,11 @@
     word-break: keep-all;
 }
 
+/* Plugin looks for elements with class named "balance-text" */
+.balance-text {
+    text-wrap: balance;  /* Apply (proposed) CSS style */
+}
+
 .text-shiny {
     --text-shiny-shine: #{$primary};
     --text-shiny-color: var(--choco-theme-text);
@@ -64,11 +69,28 @@
     background-clip: text;
     background-size: 260% auto;
     -webkit-text-fill-color: transparent;
-    animation: text-shine 2.5s ease-out;
+    animation: text-shine 3s ease-out .5s;
 }
 
 @keyframes text-shine {
     to {
         background-position: -200%;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: .25s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

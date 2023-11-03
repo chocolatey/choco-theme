@@ -19,7 +19,7 @@
             font-size: calc(1.325rem + .9vw);
         }
 
-        .terminal-cursor {
+        .terminal-cursor:not(.terminal-sm-cursor) {
             height: calc(1.325rem + .9vw);
         }
     }
@@ -31,7 +31,7 @@
             font-size: calc(1.375rem + 1.5vw);
         }
 
-        .terminal-cursor {
+        .terminal-cursor:not(.terminal-sm-cursor) {
             height: calc(1.375rem + 1.5vw);
         }
     }
@@ -43,7 +43,7 @@
             font-size: 3.4rem;
         }
 
-        .terminal-cursor {
+        .terminal-cursor:not(.terminal-sm-cursor) {
             height: 3.4rem;
         }
     }
@@ -55,7 +55,7 @@
             font-size: 4rem;
         }
 
-        .terminal-cursor {
+        .terminal-cursor:not(.terminal-sm-cursor) {
             height: 4rem;
         }
     }

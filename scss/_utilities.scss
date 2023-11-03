@@ -138,14 +138,6 @@
 }
 
 /* Borders */
-.border:not(.border-primary),
-.border-bottom,
-.border-top,
-.border-start,
-.border-end {
-    border-color: var(--choco-theme-border) !important;
-}
-
 hr {
     color: var(--choco-theme-border);
     opacity: 1;

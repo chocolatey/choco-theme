@@ -1,5 +1,6 @@
 import { Alert, Button, Carousel, Collapse, Modal, Offcanvas, Tab } from 'bootstrap';
 import { atcb_init } from 'add-to-calendar-button'; // eslint-disable-line camelcase
+import balanceText from 'balance-text';
 import '../lib/prism.min.js';
 import '../chocolatey-alerts.js';
 import '../chocolatey-announcements.js';
@@ -28,3 +29,4 @@ import '../chocolatey-terminal.js';
 import '../chocolatey-theme-toggle.js';
 import '../chocolatey-toggle-fade-show.js';
 atcb_init();
+balanceText();
