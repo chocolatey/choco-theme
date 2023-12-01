@@ -37,6 +37,16 @@
 </div>
 <hr />
 <div class="text-center">
+    <a href="https://chocolatey.org/events/whipping-up-windows-automation-with-chocolatey-central-management" rel="noreferrer" target="_blank">
+        <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-24.png" alt="Calling All Chocolatiers! Whipping Up Windows Automation with Chocolatey Central Management" />
+    </a>
+    <span class="convert-utc-to-local" data-event-utc="2024-01-17T17:00:00.0000000Z" data-event-include-break="true"></span>
+    <p class="text-start">We are delighted to announce the release of Chocolatey Central Management v0.12.0, featuring seamless Deployment Plan creation, time-saving duplications, insightful Group Details, an upgraded Dashboard, bug fixes, user interface polishing, and refined documentation. As an added bonus we'll have members of our Solutions Engineering team on-hand to dive into some interesting ways you can leverage the new features available!</p>
+    <a href="https://chocolatey.org/events/whipping-up-windows-automation-with-chocolatey-central-management" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
+    <a href="https://chocolatey.zoom.us/webinar/register/1617012772529/WN_CR32j2T-Tme0pfn5YjMUXw" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Register Now</a>
+</div>
+<hr />
+<div class="text-center">
     <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
         <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
     </a>
