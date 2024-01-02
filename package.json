@@ -22,7 +22,7 @@
     "@docsearch/css": "^3.3.3",
     "@docsearch/js": "^3.3.3",
     "@fortawesome/fontawesome-free": "^6.1.2",
-    "@playwright/test": "^1.35.1",
+    "@playwright/test": "1.35.1",
     "@popperjs/core": "^2.11.5",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
