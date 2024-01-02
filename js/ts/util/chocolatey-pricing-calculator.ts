@@ -133,22 +133,22 @@ export const c4bStandardSubscription: C4bSubscription[] = [
         maxNodes: 35
     },
     {
-        pricePerNode: 16.50,
+        pricePerNode: 17,
         minNodes: 40,
         maxNodes: 499
     },
     {
-        pricePerNode: 16.10,
+        pricePerNode: 16.60,
         minNodes: 500,
         maxNodes: 1999
     },
     {
-        pricePerNode: 15.50,
+        pricePerNode: 16,
         minNodes: 2000,
         maxNodes: 9999
     },
     {
-        pricePerNode: 15,
+        pricePerNode: 15.50,
         minNodes: 10000,
         maxNodes: 50000
     }
@@ -156,17 +156,17 @@ export const c4bStandardSubscription: C4bSubscription[] = [
 
 export const c4bPremiumSubscription: C4bSubscription[] = [
     {
-        pricePerNode: 25.76,
+        pricePerNode: 27.38,
         minNodes: 1500,
         maxNodes: 1999
     },
     {
-        pricePerNode: 24.80,
+        pricePerNode: 26.40,
         minNodes: 2000,
         maxNodes: 9999
     },
     {
-        pricePerNode: 24,
+        pricePerNode: 25.57,
         minNodes: 10000,
         maxNodes: 50000
     }

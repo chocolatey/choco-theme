@@ -1,1 +1,1 @@
-<a href='https://blog.chocolatey.org/tags/packaging'>Looking to master Chocolatey Packaging? Check the 12 Days of Chocolatey Packaging going on right now!</a>
+<a href='https://chocolatey.org/events/whipping-up-windows-automation-with-chocolatey-central-management'>WEBINAR - Calling All Chocolatiers! Whipping Up Windows Automation with Chocolatey Central Management - 17 January - 5 PM UTC</a>
