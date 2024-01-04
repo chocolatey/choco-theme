@@ -28,7 +28,7 @@
         margin-right: 1rem !important;
     }
 
-    $ct-series-colors: $purple-500, $green-500, $yellow-500, $red-500;
+    $ct-series-colors: $purple-500, $green-500, $yellow-500, $red-500, $orange-500;
 
     @for $i from 0 to length($ct-series-colors) {
         .ct-series-#{$i}:before {
