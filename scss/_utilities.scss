@@ -235,11 +235,6 @@ hr {
 }
 
 @include media-breakpoint-up(md) {
-    .sticky-md-top {
-        max-height: 100vh;
-        overflow: auto;
-    }
-
     .h-md-400-px {
         height: 400px !important;
     }
