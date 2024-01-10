@@ -52,3 +52,19 @@ $alert-color-scale: 0%;
 $nav-tabs-link-active-bg: $white;
 $nav-pills-link-active-color: $black;
 
+// Pagination
+$pagination-bg:                     unset;
+$pagination-border-color:           $primary;
+
+$pagination-focus-color:            $black;
+$pagination-focus-bg:               $primary;
+
+$pagination-hover-color:            $black;
+$pagination-hover-bg:               $primary;
+$pagination-hover-border-color:     $primary;
+
+$pagination-active-color:           $black;
+
+$pagination-disabled-color:         $primary;
+$pagination-disabled-bg:            unset;
+$pagination-disabled-border-color:  $primary;
