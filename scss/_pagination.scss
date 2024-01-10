@@ -1,15 +1,4 @@
-.page-link {
-    background-color: unset;
-    border: 1px solid var(--choco-theme-border);
-
-    &:hover,
-    &:focus {
-        background-color: var(--choco-theme-neutral);
-        border-color: var(--choco-theme-neutral);
-    }
-}
-
-.page-item.disabled .page-link {
-    background: unset;
-    border-color: var(--choco-theme-border);
+.disabled > .page-link,
+.page-link.disabled {
+    opacity: .5;
 }

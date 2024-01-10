@@ -145,6 +145,11 @@
     #leftSidebarNav {
         top: 0;
 
+        &.sticky-md-top {
+            height: 100vh;
+            overflow: auto;
+        }
+
         .navbar > .navbar-collapse {
             border-bottom: 0;
         }

@@ -1,11 +1,25 @@
 /* stylelint-disable selector-class-pattern */
 
-.flatpickr .form-control[readonly]:not([disabled]) {
-    background: var(--choco-theme-elevation-1);
-}
+.flatpickr {
+    &.input-group {
+        .form-control.input {
+            border-top-left-radius: $border-radius !important;
+            border-bottom-left-radius: $border-radius !important;
+        }
 
-.flatpickr .flatpickr-input[disabled] {
-    cursor: default;
+        button[data-clear] {
+            border-top-right-radius: $border-radius !important;
+            border-bottom-right-radius: $border-radius !important;
+        }
+    }
+
+    .form-control[readonly]:not([disabled]) {
+        background: var(--choco-theme-elevation-1);
+    }
+
+    .flatpickr-input[disabled] {
+        cursor: default;
+    }
 }
 
 .flatpickr-calendar {

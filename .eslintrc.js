@@ -42,7 +42,7 @@ module.exports = {
             }
         },
         {
-            files: ['.eslintrc.js', 'js/**/*.*', 'getting-started/*.js', 'playwright/**/*.ts'],
+            files: ['.eslintrc.js', 'js/**/*.*', 'getting-started/*.js', 'playwright/**/*.ts', 'wwwroot/js/src/**/*.js', 'gulpfile.js'],
             rules: {
                 semi: ['error', 'always'],
                 quotes: ['error', 'single'],
