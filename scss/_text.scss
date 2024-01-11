@@ -58,6 +58,11 @@
     text-wrap: balance;  /* Apply (proposed) CSS style */
 }
 
+kbd {
+    color: var(--bs-dark);
+    background: var(--bs-primary);
+}
+
 .text-shiny {
     --text-shiny-shine: #{$primary};
     --text-shiny-color: var(--choco-theme-text);

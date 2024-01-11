@@ -74,57 +74,6 @@ import { getCookie, setCookieExpirationNever, truncateResults } from './util/cho
         }, false);
     }
 
-    // Set tag links on list page
-    const packageTags = document.querySelectorAll('.package-tag');
-    packageTags.forEach(el => {
-        const tag = el.getAttribute('data-package-tag');
-        let query;
-
-        if (window.location.search) {
-            // Only search in approved packages
-            if (window.location.search.includes('moderatorQueue=true')) {
-                query = window.location.search.replace('moderatorQueue=true', 'moderatorQueue=false');
-            } else {
-                query = window.location.search;
-            }
-        } else {
-            query = '?';
-        }
-
-        // Only append tag to query if it doesn't already exist
-        if (query.includes(`tags=${tag}&`)) {
-            el.href = `/packages${query}`;
-        } else if (query.endsWith(`tags=${tag}`)) {
-            el.href = `/packages${query}`;
-        } else {
-            el.href = `/packages${query}&tags=${tag}`;
-        }
-    });
-
-    // Package Filtering
-    /* const packageFilters = document.querySelectorAll('.package-filter'),
-        packageSearchTerms = document.querySelectorAll('.selected-search-term');
-
-    if (packageFilters) {
-        for (const i of packageFilters) {
-            i.onchange = function() {submitPackageFilterForm(i)};
-        }
-    }
-
-    if (packageSearchTerms) {
-        for (const i of packageSearchTerms) {
-            i.onchange = function() {submitPackageFilterForm(i)};
-        }
-    }
-
-    function submitPackageFilterForm(filter) {
-        filter.closest('form').submit();
-    } */
-
-    jQuery('#sortOrder,#prerelease,#moderatorQueue,#moderationStatus,.selected-search-term').change(e => {
-        jQuery(e.currentTarget).closest('form').submit();
-    });
-
     // Prism for Description section
     const descriptionCode = document.querySelectorAll('#description pre');
     if (descriptionCode) {

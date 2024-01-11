@@ -118,13 +118,37 @@
 }
 
 // Search selected tags/authors/query
-.selected-search-term-label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 0;
-    border-bottom: 1px solid var(--choco-theme-border);
-    border-radius: 0;
+.btn-check.selected-search-term {
+    &:checked + .btn-primary.selected-search-term-label,
+    + .btn-outline-primary.selected-search-term-label:hover {
+        color: var(--bs-dark);
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
+    }
+
+    &:active + .btn-primary.selected-search-term-label,
+    &:focus + .btn-primary.selected-search-term-label,
+    + .btn-primary.selected-search-term-label:hover {
+        background-color: var(--bs-btn-hover-bg);
+        border-color: var(--bs-btn-hover-border-color);
+    }
+
+    + .selected-search-term-label:not(.btn-primary) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 0;
+        border-bottom: 1px solid var(--choco-theme-border);
+        border-radius: 0;
+
+        .badge {
+            top: 0;
+        }
+    }
+
+    + .selected-search-term-label.btn-primary {
+        --bs-btn-padding-y: 2px;
+    }
 }
 
 @include media-breakpoint-up(md) {
