@@ -58,82 +58,76 @@
                 box-shadow: none !important;
             }
 
-            &::after,
-            &::before {
+            &::before,
+            &::after {
                 position: absolute;
-                top: 0;
+                top: 50%;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
                 font: var(--fa-font-solid);
                 font-size: .875em;
-                font-style: normal;
-                font-variant: normal;
-                line-height: 1.9;
-                content: "\f054";
+                line-height: 1.7;
+                text-align: center;
+                content: "";
+                border-radius: 100%;
+                transform: translateY(-50%);
                 text-rendering: auto;
                 -webkit-font-smoothing: antialiased;
             }
 
-            &::before {
-                left: -5px;
-                width: 25px;
-                height: 25px;
-                content: "";
-                border-radius: 100%;
+            &:checked::before,
+            &:checked::after {
+                right: -1px;
             }
 
-            &:checked::before {
-                left: 1.8rem;
+            &:not(:checked)::before,
+            &:not(:checked)::after {
+                left: -1px;
             }
         }
     }
 
     &.form-switch-active .form-check-input {
         &::after {
-            left: .1rem;
             color: $black;
             content: "\f00c";
-        }
-
-        &:checked,
-        &::before {
-            background: var(--bs-success);
         }
 
         &::before {
             border: 1px solid $green-300;
         }
 
-        &:checked::after {
-            left: 2.2rem;
+        &:checked,
+        &::before {
+            background: var(--bs-success);
         }
     }
 
     &.form-switch-expired .form-check-input {
         &::after {
-            left: .35rem;
             color: $black;
             content: "\21";
-        }
-
-        &:checked,
-        &::before {
-            background: var(--bs-danger);
         }
 
         &::before {
             border: 1px solid $red-300;
         }
 
-        &:checked::after {
-            left: 2.45rem;
+        &:checked,
+        &::before {
+            background: var(--bs-danger);
         }
     }
 
     &.form-switch-deactivated .form-check-input {
         &::after {
-            top: -.03rem;
-            left: .04rem;
             color: $white;
             content: "\f05e";
+        }
+
+        &::before {
+            border: 1px solid $gray-300;
         }
 
         &:checked,
@@ -141,25 +135,19 @@
             background: $secondary;
         }
 
-        &::before {
-            border: 1px solid $gray-300;
+        &:not(:checked)::after {
+            left: -.5px;
         }
 
         &:checked::after {
-            left: 2.15rem;
+            right: -1.5px;
         }
     }
 
     &.form-switch-latest .form-check-input {
         &::after {
-            top: -.03rem;
-            left: -.04rem;
             color: var(--bs-warning);
             content: "\f005";
-        }
-
-        &:checked {
-            background: var(--bs-warning);
         }
 
         &::before {
@@ -167,8 +155,16 @@
             border: 1px solid var(--bs-warning);
         }
 
+        &:checked {
+            background: var(--bs-warning);
+        }
+
+        &:not(:checked)::after {
+            left: -1.5px;
+        }
+
         &:checked::after {
-            left: 2.09rem;
+            right: -.5px;
         }
     }
 }
