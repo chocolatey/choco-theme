@@ -1,1 +1,0 @@
-<a href='https://chocolatey.org/events/whipping-up-windows-automation-with-chocolatey-central-management'>WEBINAR - Calling All Chocolatiers! Whipping Up Windows Automation with Chocolatey Central Management - 17 January - 5 PM UTC</a>
