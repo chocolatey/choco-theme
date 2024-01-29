@@ -37,25 +37,15 @@
 </div>
 <hr />
 <div class="text-center">
-    <a href="https://chocolatey.org/events/whipping-up-windows-automation-with-chocolatey-central-management" rel="noreferrer" target="_blank">
-        <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-24.png" alt="Calling All Chocolatiers! Whipping Up Windows Automation with Chocolatey Central Management" />
+    <a href="https://chocolatey.org/events/unpacking-software" rel="noreferrer" target="_blank">
+        <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-25.jpg" alt="Unpacking Software Livestream" />
     </a>
-    <span class="convert-utc-to-local" data-event-utc="2024-01-17T17:00:00.0000000Z" data-event-include-break="true"></span>
-    <p class="text-start">We are delighted to announce the release of Chocolatey Central Management v0.12.0, featuring seamless Deployment Plan creation, time-saving duplications, insightful Group Details, an upgraded Dashboard, bug fixes, user interface polishing, and refined documentation. As an added bonus we'll have members of our Solutions Engineering team on-hand to dive into some interesting ways you can leverage the new features available!</p>
-    <a href="https://chocolatey.org/events/whipping-up-windows-automation-with-chocolatey-central-management" rel="noreferrer" target="_blank" class="btn btn-outline-primary mt-2 mx-1">Learn More</a>
-    <a href="https://chocolatey.zoom.us/webinar/register/1617012772529/WN_CR32j2T-Tme0pfn5YjMUXw" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Register Now</a>
-</div>
-<hr />
-<div class="text-center">
-    <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
-        <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
-    </a>
-    <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.</p>
+    <p class="text-start">Join our monthly Unpacking Software livestream to hear about the latest news, chat and opinion on packaging, software deployment and lifecycle management!</p>
     <div class="d-flex justify-content-center flex-wrap">
         <div class="btn-add-to-calendar mt-2 mx-1">
-            <span id="FlyoutCalendarButtonCoffeeBreak"></span>
+            <span id="FlyoutCalendarButtonUnpackingSoftware"></span>
         </div>
-        <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
+        <a href="https://chocolatey.org/events/unpacking-software" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
     </div>
 </div>
 <hr />
@@ -74,12 +64,20 @@
 <hr />
 <div class="shuffle">
     <div class="text-center">
-        <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" rel="noreferrer" target="_blank">
-            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-18.jpg" alt="Announcing Chocolatey Central Management 0.10.0" />
+        <a href="https://chocolatey.org/events/whipping-up-windows-automation-with-chocolatey-central-management" rel="noreferrer" target="_blank">
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-24.png" alt="Calling All Chocolatiers! Whipping Up Windows Automation with Chocolatey Central Management" />
         </a>
-        <p><strong>Livestream from<br />Thursday, 06 October 2022</strong></p>
-        <p class="text-start">We recently released our largest update to Chocolatey Central Management so far. Join Gary and Steph to find out more about Chocolatey Central Management and the new features and fixes we've added to this release.</p>
-        <a href="https://chocolatey.org/events/announcing-chocolatey-central-management-0-10-0" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
+        <p><strong>Webinar from<br />Wednesday, 17 January 2024</strong></p>
+        <p class="text-start">We are delighted to announce the release of Chocolatey Central Management v0.12.0, featuring seamless Deployment Plan creation, time-saving duplications, insightful Group Details, an upgraded Dashboard, bug fixes, user interface polishing, and refined documentation. As an added bonus we'll have members of our Solutions Engineering team on-hand to dive into some interesting ways you can leverage the new features available!</p>
+        <a href="https://chocolatey.org/events/whipping-up-windows-automation-with-chocolatey-central-management" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
+        <hr />
+    </div>
+    <div class="text-center">
+        <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" rel="noreferrer" target="_blank">
+            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-15-2.jpg" alt="Chocolatey Community Coffee Break" />
+        </a>
+        <p class="text-start">Join the Chocolatey Team as we discuss all things Community, what we do, how you can get involved and answer your Chocolatey questions.</p>
+        <a href="https://chocolatey.org/events/chocolatey-community-coffee-break" class="btn btn-primary mt-2 mx-1">Watch The Replays</a>
         <hr />
     </div>
     <div class="text-center">
@@ -116,33 +114,6 @@
         <p><strong>Livestreams from<br />October 2022</strong></p>
         <p class="text-start">For Hacktoberfest, Chocolatey ran a livestream every Tuesday! Re-watch Cory, James, Gary, and Rain as they share knowledge on how to contribute to open-source projects such as Chocolatey CLI.</p>
         <a href="https://chocolatey.org/events/hacktoberfest-tuesdays-2022" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-november" rel="noreferrer" target="_blank">
-            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-20.jpg" alt="Chocolatey Product Spotlight: Chocolatey 1.2.0 and Chocolatey Licensed Extension 5.0.0" />
-        </a>
-        <p><strong>Livestream from<br />Thursday, 03 November 2022</strong></p>
-        <p class="text-start">Join Paul and Gary for this months Chocolatey product livestream where we look at the latest release of Chocolatey 1.2.0, Chocolatey Licensed Extension 5.0.0 and shine a spotlight on the new hook scripts functionality. This opens up so many possibilities for Chocolatey CLI users!</p>
-        <a href="https://chocolatey.org/events/chocolatey-spotlight-2022-november" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank">
-            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-21.jpg" alt="Chocolatey Coding Livestream" />
-        </a>
-        <p><strong>Livestream from<br />Tuesday, 29 November 2022</strong></p>
-        <p class="text-start">Join Josh as he adds the ability to manage Chocolatey GUI config and features with the Chocolatey Ansible Collection.</p>
-        <a href="https://chocolatey.org/events/chocolatey-coding-livestream" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
-        <hr />
-    </div>
-    <div class="text-center">
-        <a href="https://www.youtube.com/watch?v=Kr3gGdOTsbA" rel="noreferrer" target="_blank">
-            <img class="border rounded mb-3" src="https://img.chocolatey.org/events/02-03.jpg" alt="Introduction into Chocolatey with Veeam" />
-        </a>
-        <p><strong>Webinar from<br />Tuesday, 13 December 2022</strong></p>
-        <p class="text-start">Join Gary, Paul, and Maurice as they introduce and demonstrate how to use Chocolatey! Questions will be answered live in an Ask Me Anything format.</p>
-        <a href="https://www.youtube.com/watch?v=Kr3gGdOTsbA" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Watch On-Demand</a>
         <hr />
     </div>
 </div>

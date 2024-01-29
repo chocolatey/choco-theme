@@ -35,6 +35,11 @@
     background: var(--choco-theme-elevation-1) !important;
 }
 
+.text-bg-elevation-1 {
+    color: $gray-100 !important;
+    background: $primary-900 !important;
+}
+
 .text-bg-theme-elevation-2 {
     color: var(--choco-theme-contrast) !important;
     background: var(--choco-theme-elevation-2) !important;
