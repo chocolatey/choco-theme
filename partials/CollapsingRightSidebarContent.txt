@@ -41,12 +41,7 @@
         <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-25.jpg" alt="Unpacking Software Livestream" />
     </a>
     <p class="text-start">Join our monthly Unpacking Software livestream to hear about the latest news, chat and opinion on packaging, software deployment and lifecycle management!</p>
-    <div class="d-flex justify-content-center flex-wrap">
-        <div class="btn-add-to-calendar mt-2 mx-1">
-            <span id="FlyoutCalendarButtonUnpackingSoftware"></span>
-        </div>
-        <a href="https://chocolatey.org/events/unpacking-software" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
-    </div>
+    <a href="https://chocolatey.org/events/unpacking-software" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
 </div>
 <hr />
 <div class="text-center">
@@ -54,12 +49,7 @@
         <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-23.jpg" alt="Chocolatey Product Spotlight" />
     </a>
     <p class="text-start">Join the Chocolatey Team on our regular monthly stream where we put a spotlight on the most recent Chocolatey product releases. You'll have a chance to have your questions answered in a live Ask Me Anything format.</p>
-    <div class="d-flex justify-content-center flex-wrap">
-        <div class="btn-add-to-calendar mt-2 mx-1">
-            <span id="FlyoutCalendarButtonProductSpotlight"></span>
-        </div>
-        <a href="https://chocolatey.org/events/chocolatey-product-spotlight" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
-    </div>
+    <a href="https://chocolatey.org/events/chocolatey-product-spotlight" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
 </div>
 <hr />
 <div class="shuffle">
