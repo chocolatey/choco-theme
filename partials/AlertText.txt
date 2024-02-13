@@ -1,0 +1,1 @@
+<a href='https://chocolatey.org/events/chocolatey-coding-livestream'>Join us at the Chocolatey Coding Livestream - 7 March - 5PM UTC</a>

@@ -52,6 +52,14 @@
     <a href="https://chocolatey.org/events/chocolatey-product-spotlight" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
 </div>
 <hr />
+<div class="text-center">
+    <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank">
+        <img class="border rounded mb-3" src="https://img.chocolatey.org/events/01-21-2.jpg" alt="Chocolatey Coding Livestream" />
+    </a>
+    <p class="text-start">Join us for the Chocolatey Coding Livestream, where members of our team dive into the heart of open source development by coding live on various Chocolatey projects. Tune in to witness real-time coding, ask questions, and gain insights into the world of package management. Don't miss this opportunity to engage with our team and contribute to the future of Chocolatey!</p>
+    <a href="https://chocolatey.org/events/chocolatey-coding-livestream" rel="noreferrer" target="_blank" class="btn btn-primary mt-2 mx-1">Learn More</a>
+</div>
+<hr />
 <div class="shuffle">
     <div class="text-center">
         <a href="https://chocolatey.org/events/whipping-up-windows-automation-with-chocolatey-central-management" rel="noreferrer" target="_blank">
