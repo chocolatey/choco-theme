@@ -4,8 +4,8 @@
 
     if (!string.IsNullOrEmpty(topNoticeText))
     {
-        <div id="topNoticeAlert" class="alert alert-warning alert-dismissible alert-dismissible-center fade show d-none" role="alert">
-            <p class="mb-0 me-3 me-xl-0">@Html.Raw(topNoticeText)</p>
+        <div id="topNoticeAlert" class="alert alert-success alert-dismissible alert-dismissible-center fade show d-none" role="alert">
+            <p class="mb-0 me-3 me-xl-0 text-dark">@Html.Raw(topNoticeText)</p>
             <button type="button" class="btn-close text-dark" data-bs-dismiss="alert" aria-label="Close">
                 <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
