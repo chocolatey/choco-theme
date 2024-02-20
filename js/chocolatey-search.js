@@ -87,10 +87,8 @@ const Mousetrap = require('mousetrap');
     </a>
     <div class="collapse ${templateHelpContainerClass}" id="collapseTemplateHelp">
         <div class="card card-body text-bg-theme-background mt-2 rounded">
-           <ul class="list-style-type-disc mb-3">
-                <li><strong>Search for multiple tags:</strong> tag:searchValue tag:searchValue</li>
-                <li><strong>Combine prefixes:</strong> tag:searchValue author:searchValue</li>
-           </ul>
+           <p class="mb-0">&bull; <strong>Search for multiple tags:</strong> tag:searchValue tag:searchValue</p>
+           <p>&bull; <strong>Combine prefixes:</strong> tag:searchValue author:searchValue</p>
            <p class="mb-1"><strong>Example:</strong></p>
 <pre><code class="search-help-example-1 language-markup">author:Chocolatey tag:admin tag:foss</code></pre>
         </div>
