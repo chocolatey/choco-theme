@@ -1,7 +1,12 @@
+@import "mixins/banner";
+@include ctBanner("zendesk");
+
 @import "variables/chocolatey";
 @import "variables/global";
+@import "bootstrap/scss/bootstrap";
+
+// Root Variables
 @import "variables/chocolatey-root";
-@import "node_modules/bootstrap/scss/bootstrap";
 
 // Custom Styles
 @import "styles";

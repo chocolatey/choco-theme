@@ -64,10 +64,10 @@
         font-weight: 400;
         line-height: 1.5;
         color: var(--choco-theme-text);
+        appearance: none;
         background-color: var(--choco-theme-elevation-1);
         background-clip: padding-box;
         border: 1px solid var(--bs-primary);
-        appearance: none;
         border-radius: .375rem;
         transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 

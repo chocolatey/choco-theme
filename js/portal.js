@@ -1,0 +1,12 @@
+import './src/lib/prism.min.js';
+import './src/chocolatey-callouts.js';
+import './src/ts/chocolatey-code.ts';
+import './src/chocolatey-collapse-nested.js';
+import './src/chocolatey-collapse-responsive.js';
+import './src/chocolatey-collapse-y-height.js';
+import './src/chocolatey-markdown.js';
+import './src/chocolatey-scrollspy.js';
+import './src/chocolatey-theme-toggle.js';
+import './src/reset-modal.js';
+import './src/reset-toast.js';
+import './src/status-modal.js';

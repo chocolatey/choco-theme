@@ -12,11 +12,6 @@
   },
   "homepage": "https://github.com/chocolatey/chocolatey.org#readme",
   "devDependencies": {
-    "choco-theme": "0.5.27"
-  },
-  "resolutions": {
-    "glob-parent": "^6.0.2",
-    "nth-check": "^2.1.1",
-    "terser": "^5.14.2"
+    "choco-theme": "0.9.0"
   }
 }

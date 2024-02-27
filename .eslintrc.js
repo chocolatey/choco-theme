@@ -3,7 +3,7 @@ module.exports = {
         browser: true,
         es2021: true
     },
-    ignorePatterns: ['js/lib', 'node_modules', 'wwwroot/js/*.min.js', 'input/assets/js/*.min.js', 'Scripts/*.min.js'],
+    ignorePatterns: ['js/src/lib', 'node_modules', 'wwwroot/js/*.min.js', 'input/assets/js/*.min.js', 'Scripts/*.min.js'],
     globals: {
         Prism: 'readonly'
     },
@@ -14,7 +14,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['js/ts/**/*.ts', 'playwright/**/*.ts'],
+            files: ['js/src/ts/**/*.ts', 'playwright/**/*.ts', 'build/**/*.ts'],
             extends: [
                 'standard',
                 'eslint:recommended',
@@ -42,7 +42,7 @@ module.exports = {
             }
         },
         {
-            files: ['.eslintrc.js', 'js/**/*.*', 'getting-started/*.js', 'playwright/**/*.ts', 'wwwroot/js/src/**/*.js', 'gulpfile.js'],
+            files: ['.eslintrc.js', 'postcss.config.js', 'js/**/**/*.*', 'getting-started/*.js', 'playwright/**/*.ts', 'wwwroot/js/src/**/*.js', 'build/**/*.*'],
             rules: {
                 semi: ['error', 'always'],
                 quotes: ['error', 'single'],
@@ -55,6 +55,7 @@ module.exports = {
                 'prefer-arrow-callback': ['error'],
                 'func-style': ['error', 'expression'],
                 'arrow-parens': ['error', 'as-needed'],
+                'object-shorthand': ['error', 'consistent-as-needed'],
                 eqeqeq: 0
             }
         }

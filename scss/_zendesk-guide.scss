@@ -79,11 +79,11 @@
     }
 
     .sun-icon::before {
-        background-image: url("$sun_solid");
+        background-image: url("https://img.chocolatey.org/icons/sun-solid.png");
     }
 
     .moon-icon::before {
-        background-image: url("$moon_solid");
+        background-image: url("https://img.chocolatey.org/icons/moon-solid.png");
     }
 
     // General links
@@ -163,7 +163,7 @@
         color: var(--bs-gray-900);
     }
 
-    // Seach input
+    // Search input
     .search input[type="search"],
     .search {
         color: var(--choco-theme-text);

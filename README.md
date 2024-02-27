@@ -1,8 +1,14 @@
-# Chocolatey choco-theme
+# Chocolatey choco-theme 0.9.0
 
 **NOTE: This project is used on Chocolatey websites and is being released for the benefit of the community. While we endeavour to help and fix issues, it will be limited to GitHub issues, discussions and pull requests when we are able to.**
 
 This repository holds all of the CSS, JS, images, and shared partial files that are used across many Chocolatey projects. 
+
+## Commands
+
+| Action                       | Command                                                                      |
+|------------------------------|------------------------------------------------------------------------------|
+| Release new version          | OLD_VERSION=${oldVersion} NEW_VERSION=${newVersion} npm run release          |
 
 ## Getting Started
 
@@ -114,13 +120,6 @@ Directly before the closing `</head>` tag in your HTML document, include the fol
 ```
 <link rel="stylesheet" href="/assets/css/chocolatey.bundle.min.css">
 <script type="text/javascript" src="/assets/js/chocolatey-head.bundle.min.js"></script>
-```
-
-Directly before the closing `</body>` tag in your HTML document, include the following lines:
-
-```
-<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find,Number.parseFloat%2CNumber.parse%2CNodeList.prototype.forEach%2CNumber.parseInt"></script>
-<script type="text/javascript" src="/assets/js/chocolatey.bundle.min.js"></script>
 ```
 
 File paths may need to be updated based on your project structure.
