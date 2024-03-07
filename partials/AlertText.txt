@@ -1,1 +1,1 @@
-<a href='https://chocolatey.org/events/chocolatey-coding-livestream'>Join us at the Chocolatey Coding Livestream - 7 March - 5PM UTC</a>
+<a href='https://docs.google.com/forms/d/e/1FAIpQLSejFh4PTDnC_RKw2wdONnj-Kuz9bgxDLQe2Ldv6BIaPvK7qvg/viewform' target='blank'>Fill out our survey for a chance to win &#x1F36B; Chocolatey goodies &#x1F36B;</a>
