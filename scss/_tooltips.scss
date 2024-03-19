@@ -7,7 +7,7 @@
         width: 60px;
         padding: 5px;
         font-size: $small-font-size;
-        color: var(--choco-theme-background);
+        color: var(--bs-body-bg);
         text-align: center;
         word-break: normal;
         content: attr(data-tooltip-text);

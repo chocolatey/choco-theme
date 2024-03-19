@@ -1,39 +1,9 @@
-@each $color, $value in $colors {
-    .text-#{$color} {
-        color: var(--bs-#{$color}) !important;
-    }
-}
-
-.text-theme-background {
-    color: var(--choco-theme-background) !important;
-}
-
-.text-theme-contrast {
-    color: var(--choco-theme-contrast) !important;
-}
-
-.text-theme-neutral {
-    color: var(--choco-theme-neutral) !important;
-}
-
-.text-theme-elevation-1 {
-    color: var(--choco-theme-elevation-1) !important;
-}
-
-.text-theme-elevation-2 {
-    color: var(--choco-theme-elevation-2) !important;
-}
-
-.text-theme-elevation-3 {
-    color: var(--choco-theme-elevation-3) !important;
-}
-
-.text-theme-primary-light {
-    color: var(--choco-theme-primary-light) !important;
+.text-adaptive {
+    color: var(--choco-adaptive) !important;
 }
 
 .link-theme {
-    color: var(--choco-theme-text) !important;
+    color: var(--bs-body-color) !important;
 
     &:hover {
         color: $primary-500 !important;
@@ -41,8 +11,8 @@
 }
 
 .ct-label {
-    color: var(--choco-theme-text);
-    fill: var(--choco-theme-text);
+    color: var(--bs-body-color);
+    fill: var(--bs-body-color);
 }
 
 .text-transform-none {
@@ -65,7 +35,7 @@ kbd {
 
 .text-shiny {
     --text-shiny-shine: #{$primary};
-    --text-shiny-color: var(--choco-theme-text);
+    --text-shiny-color: var(--bs-body-color);
 
     display: inline-block;
     background: linear-gradient(110deg, var(--text-shiny-color), 45%, var(--text-shiny-shine), 55%, var(--text-shiny-color));

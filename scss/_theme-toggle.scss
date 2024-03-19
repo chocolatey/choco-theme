@@ -17,7 +17,7 @@ label[for="themeToggle"] {
         height: 1.75rem;
         background: var(--choco-theme-toggle-background);
         border: 1px solid $gray-300;
-        border: 1px solid var(--choco-theme-border-secondary);
+        border: 1px solid var(--choco-border-color-adaptive);
         border-radius: 1em;
 
         .fa-solid {

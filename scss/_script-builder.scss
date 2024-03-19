@@ -55,27 +55,27 @@
                 margin-right: 30px;
                 margin-left: -30px;
                 font-weight: 400;
-                color: var(--choco-theme-text);
+                color: var(--bs-body-color);
                 text-align: center;
                 text-decoration: none;
                 cursor: pointer;
-                background: var(--choco-theme-neutral);
-                border-color: var(--choco-theme-border);
+                background: var(--bs-tertiary-bg);
+                border-color: var(--bs-border-color);
                 border-radius: unset;
 
                 &.disabled {
                     color: $secondary;
-                    background: var(--choco-theme-primary-light) !important;
-                    border-color: var(--choco-theme-primary-light) !important;
+                    background: var(--choco-adaptive) !important;
+                    border-color: var(--choco-adaptive) !important;
 
                     &::after,
                     &.active::after {
-                        border-left-color: var(--choco-theme-primary-light) !important;
+                        border-left-color: var(--choco-adaptive) !important;
                     }
                 }
 
                 &.done {
-                    color: var(--choco-theme-background);
+                    color: var(--bs-body-bg);
                     background: var(--bs-success);
                     border-color: var(--bs-success);
 
@@ -85,7 +85,7 @@
                 }
 
                 &.active {
-                    color: var(--choco-theme-background);
+                    color: var(--bs-body-bg);
                     background: var(--bs-primary);
                     border-color: var(--bs-primary);
 
@@ -106,7 +106,7 @@
                     content: " ";
                     border-top: 50px solid transparent;
                     border-bottom: 50px solid transparent;
-                    border-left: 30px solid var(--choco-theme-neutral);
+                    border-left: 30px solid var(--bs-tertiary-bg);
                 }
 
                 &::before {
@@ -133,7 +133,7 @@
         width: 100%;
         padding: 10px;
         margin: 1%;
-        border: 1px solid var(--choco-theme-border);
+        border: 1px solid var(--bs-border-color);
     }
 }
 

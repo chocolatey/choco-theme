@@ -24,6 +24,7 @@
         "livestream",
         "Livestreams",
         "Luxon",
+        "Navbars",
         "navigations",
         "nouislider",
         "offcanvas",
@@ -43,6 +44,7 @@
         "topnav",
         "typeahead",
         "webfonts",
-        "xmark"
+        "xmark",
+        "zindex"
     ]
 }

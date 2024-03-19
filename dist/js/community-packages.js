@@ -20665,13 +20665,13 @@
                 }
                 if (data.results.length !== 0) {
                   templateEnter = `
-<div class="d-flex align-items-center justify-content-sm-center text-bg-theme-elevation-1 px-3 py-2 small border-bottom">
+<div class="d-flex align-items-center justify-content-sm-center text-bg-body-secondary px-3 py-2 small border-bottom">
     <p class="mb-0">Press <kbd>Enter</kbd> to do a full search or select a suggestion below.</p>
 </div>
 <p class="text-primary ps-4 pe-3 mt-4 mb-2"><strong>Suggestions</strong></p>`;
                 }
                 templateHeader.innerHTML = `
-<div class="d-flex justify-content-between align-items-center text-center text-bg-theme-neutral p-3 small border-bottom">
+<div class="d-flex justify-content-between align-items-center text-center text-bg-body-tertiary p-3 small border-bottom">
     <p class="mb-0"><strong>id:searchValue</strong><br />search by id</p>
     <p class="mb-0 mx-3"><strong>tag:searchValue</strong><br />search by tag</p>
     <p class="mb-0"><strong>author:searchValue</strong><br />search by author</p>
@@ -20681,7 +20681,7 @@
         <i class="fa-solid fa-circle-question text-primary me-1"></i>Click to <span id="collapseTemplateHelpTextContainer">${templateHelpText}</span> search help and examples.
     </a>
     <div class="collapse ${templateHelpContainerClass}" id="collapseTemplateHelp">
-        <div class="card card-body text-bg-theme-background mt-2 rounded">
+        <div class="card card-body text-bg-body mt-2 rounded">
            <p class="mb-0">&bull; <strong>Search for multiple tags:</strong> tag:searchValue tag:searchValue</p>
            <p>&bull; <strong>Combine prefixes:</strong> tag:searchValue author:searchValue</p>
            <p class="mb-1"><strong>Example:</strong></p>
@@ -39578,7 +39578,7 @@ ${templateEnter}`;
           if (calloutHeaderText.includes(":choco-")) {
             calloutHeaderText = calloutHeaderText.replace(/:.+?:/, "").trim();
           }
-          const calloutHeaderContainer = `<div class="callout-header d-flex align-items-center"><span class="flex-shrink-0 text-bg-${calloutIconColor} h-30-px w-30-px d-flex align-items-center justify-content-center rounded me-3"><span class="fa-solid fa-${calloutIcon}"></span></span><p class="lead"><strong>${calloutHeaderText}</strong></p></div>`;
+          const calloutHeaderContainer = `<div class="callout-header d-flex align-items-center"><span class="flex-shrink-0 text-bg-${calloutIconColor} h-px-30 w-px-30 d-flex align-items-center justify-content-center rounded me-3"><span class="fa-solid fa-${calloutIcon}"></span></span><p class="lead"><strong>${calloutHeaderText}</strong></p></div>`;
           calloutHeader.outerHTML = calloutHeaderContainer;
         }
       });
@@ -40358,7 +40358,7 @@ ${templateEnter}`;
           }
           setAdditionalClasses(themePrefers);
         };
-        setToggle(htmlRoot.getAttribute("data-user-color-scheme"));
+        setToggle(htmlRoot.getAttribute("data-bs-theme"));
         const setTheme = () => {
           const themePrefers = el.checked ? "dark" : "light";
           if (el.checked) {
@@ -40368,7 +40368,7 @@ ${templateEnter}`;
             htmlRoot.classList.add("light-theme");
             htmlRoot.classList.remove("dark-theme");
           }
-          htmlRoot.setAttribute("data-user-color-scheme", themePrefers);
+          htmlRoot.setAttribute("data-bs-theme", themePrefers);
           setAdditionalClasses(themePrefers);
         };
         el.addEventListener("change", setTheme);

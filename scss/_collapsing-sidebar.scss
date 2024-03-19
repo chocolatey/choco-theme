@@ -1,7 +1,7 @@
 .notification-badge {
     position: absolute;
     font-weight: 700;
-    color: var(--choco-theme-background);
+    color: var(--bs-body-bg);
     background: var(--bs-danger);
     border: 1px solid $red-300;
     border-radius: 100%;

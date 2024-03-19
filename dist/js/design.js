@@ -18752,7 +18752,7 @@
           if (calloutHeaderText.includes(":choco-")) {
             calloutHeaderText = calloutHeaderText.replace(/:.+?:/, "").trim();
           }
-          const calloutHeaderContainer = `<div class="callout-header d-flex align-items-center"><span class="flex-shrink-0 text-bg-${calloutIconColor} h-30-px w-30-px d-flex align-items-center justify-content-center rounded me-3"><span class="fa-solid fa-${calloutIcon}"></span></span><p class="lead"><strong>${calloutHeaderText}</strong></p></div>`;
+          const calloutHeaderContainer = `<div class="callout-header d-flex align-items-center"><span class="flex-shrink-0 text-bg-${calloutIconColor} h-px-30 w-px-30 d-flex align-items-center justify-content-center rounded me-3"><span class="fa-solid fa-${calloutIcon}"></span></span><p class="lead"><strong>${calloutHeaderText}</strong></p></div>`;
           calloutHeader.outerHTML = calloutHeaderContainer;
         }
       });
@@ -19140,7 +19140,7 @@
           }
           setAdditionalClasses(themePrefers);
         };
-        setToggle(htmlRoot.getAttribute("data-user-color-scheme"));
+        setToggle(htmlRoot.getAttribute("data-bs-theme"));
         const setTheme = () => {
           const themePrefers = el.checked ? "dark" : "light";
           if (el.checked) {
@@ -19150,7 +19150,7 @@
             htmlRoot.classList.add("light-theme");
             htmlRoot.classList.remove("dark-theme");
           }
-          htmlRoot.setAttribute("data-user-color-scheme", themePrefers);
+          htmlRoot.setAttribute("data-bs-theme", themePrefers);
           setAdditionalClasses(themePrefers);
         };
         el.addEventListener("change", setTheme);

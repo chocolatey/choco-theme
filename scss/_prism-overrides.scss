@@ -6,6 +6,26 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 * Based on dabblet (http://dabblet.com)
 * @author Lea Verou
 */
+// $success-text-emphasis-dark
+
+:root,
+:root[data-bs-theme="light"] {
+    code {
+        --bs-prism-red: #{$red};
+        --bs-prism-green: #{$green};
+        --bs-prism-orange: #{$orange};
+        --bs-prism-purple: #{$purple};
+    }
+}
+
+:root[data-bs-theme="dark"] {
+    code {
+        --bs-prism-red: #{$red-text-emphasis-dark};
+        --bs-prism-green: #{$green-text-emphasis-dark};
+        --bs-prism-orange: #{$orange-text-emphasis-dark};
+        --bs-prism-purple: #{$purple-text-emphasis-dark};
+    }
+}
 
 code {
     font-weight: 700;
@@ -21,7 +41,7 @@ pre[class*="language-"] {
     font-family: var(--bs-font-monospace);
     font-size: .85rem;
     font-weight: 700;
-    color: var(--choco-theme-text-code);
+    color: var(--bs-body-color);
     text-shadow: none;
 }
 
@@ -39,8 +59,8 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-    background: var(--choco-theme-elevation-1);
-    border: 1px solid var(--choco-theme-border);
+    background: var(--bs-secondary-bg);
+    border: 1px solid var(--bs-border-color);
     border-radius: .25rem;
 }
 
@@ -49,15 +69,15 @@ pre[class*="language-"] {
 .token.doctype,
 .token.cdata {
     font-weight: 400;
-    color: var(--choco-theme-text-code);
+    color: var(--bs-secondary-color);
 }
 
 .token.punctuation {
-    color: #999;
+    color: var(--bs-body-color);
 }
 
 .token.namespace {
-    opacity: .7;
+    opacity: 1;
 }
 
 .token.property,
@@ -67,7 +87,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-    color: var(--choco-theme-red);
+    color: var(--bs-prism-red);
 }
 
 .token.selector,
@@ -85,26 +105,26 @@ pre[class*="language-"] {
 .token.entity,
 .language-css .token.string,
 .style .token.string {
-    color: var(--choco-theme-orange);
+    color: var(--bs-prism-orange);
     background: none;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-    color: var(--choco-theme-orange);
+    color: var(--bs-prism-orange);
 }
 
 .token.function,
 .token.class-name {
-    color: var(--choco-theme-purple);
+    color: var(--bs-prism-purple);
 }
 
 .token.regex,
 .token.important,
 .token.variable,
 .token.inserted {
-    color: var(--bs-green);
+    color: var(--bs-prism-green);
 }
 
 .line-numbers .line-numbers-rows {

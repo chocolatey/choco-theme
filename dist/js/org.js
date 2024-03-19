@@ -23648,7 +23648,7 @@
           if (calloutHeaderText.includes(":choco-")) {
             calloutHeaderText = calloutHeaderText.replace(/:.+?:/, "").trim();
           }
-          const calloutHeaderContainer = `<div class="callout-header d-flex align-items-center"><span class="flex-shrink-0 text-bg-${calloutIconColor} h-30-px w-30-px d-flex align-items-center justify-content-center rounded me-3"><span class="fa-solid fa-${calloutIcon}"></span></span><p class="lead"><strong>${calloutHeaderText}</strong></p></div>`;
+          const calloutHeaderContainer = `<div class="callout-header d-flex align-items-center"><span class="flex-shrink-0 text-bg-${calloutIconColor} h-px-30 w-px-30 d-flex align-items-center justify-content-center rounded me-3"><span class="fa-solid fa-${calloutIcon}"></span></span><p class="lead"><strong>${calloutHeaderText}</strong></p></div>`;
           calloutHeader.outerHTML = calloutHeaderContainer;
         }
       });
@@ -29802,78 +29802,6 @@
         setTimeout(animate, 100);
       };
       animate();
-    }
-  })();
-
-  // js/src/chocolatey-theme-toggle.js
-  (() => {
-    const themeSelectorToggles = document.querySelectorAll(".theme-toggle");
-    if (themeSelectorToggles) {
-      const copyCheckboxValue = (el) => {
-        for (const i of themeSelectorToggles) {
-          if (el.checked) {
-            i.checked = true;
-          } else {
-            i.checked = false;
-          }
-        }
-      };
-      themeSelectorToggles.forEach((el) => {
-        const htmlRoot = document.querySelector("html");
-        const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-        const themeStorage = localStorage.getItem("theme");
-        const tables = document.querySelectorAll("table");
-        const setAdditionalClasses = (themePrefers) => {
-          if (themePrefers == "dark") {
-            for (const i of tables) {
-              i.classList.add("table-dark");
-            }
-          } else {
-            for (const i of tables) {
-              i.classList.remove("table-dark");
-            }
-          }
-        };
-        const setToggle = (themePrefers) => {
-          if (themePrefers == "dark") {
-            el.checked = true;
-          } else {
-            el.checked = false;
-          }
-          setAdditionalClasses(themePrefers);
-        };
-        setToggle(htmlRoot.getAttribute("data-user-color-scheme"));
-        const setTheme = () => {
-          const themePrefers = el.checked ? "dark" : "light";
-          if (el.checked) {
-            htmlRoot.classList.add("dark-theme");
-            htmlRoot.classList.remove("light-theme");
-          } else {
-            htmlRoot.classList.add("light-theme");
-            htmlRoot.classList.remove("dark-theme");
-          }
-          htmlRoot.setAttribute("data-user-color-scheme", themePrefers);
-          setAdditionalClasses(themePrefers);
-        };
-        el.addEventListener("change", setTheme);
-        const setSystemTheme = (e) => {
-          const themeSystem = e.matches ? "dark" : "light";
-          if (!themeStorage) {
-            setToggle(themeSystem);
-            setTheme();
-          }
-        };
-        themeQuery.addEventListener("change", setSystemTheme);
-        el.addEventListener("click", () => {
-          themeQuery.removeEventListener("change", setSystemTheme);
-          if (el.checked) {
-            localStorage.setItem("theme", "dark");
-          } else {
-            localStorage.setItem("theme", "light");
-          }
-          copyCheckboxValue(el);
-        }, false);
-      });
     }
   })();
 

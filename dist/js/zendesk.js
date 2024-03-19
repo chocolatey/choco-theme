@@ -60,7 +60,7 @@
           }
           setAdditionalClasses(themePrefers);
         };
-        setToggle(htmlRoot.getAttribute("data-user-color-scheme"));
+        setToggle(htmlRoot.getAttribute("data-bs-theme"));
         const setTheme = () => {
           const themePrefers = el.checked ? "dark" : "light";
           if (el.checked) {
@@ -70,7 +70,7 @@
             htmlRoot.classList.add("light-theme");
             htmlRoot.classList.remove("dark-theme");
           }
-          htmlRoot.setAttribute("data-user-color-scheme", themePrefers);
+          htmlRoot.setAttribute("data-bs-theme", themePrefers);
           setAdditionalClasses(themePrefers);
         };
         el.addEventListener("change", setTheme);

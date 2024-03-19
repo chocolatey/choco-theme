@@ -25,7 +25,6 @@ import './src/chocolatey-splide.js';
 import './src/chocolatey-sticky-top.js';
 import './src/ts/chocolatey-tab-multiples.ts';
 import './src/chocolatey-terminal.js';
-import './src/chocolatey-theme-toggle.js';
 import './src/chocolatey-toggle-fade-show.js';
 atcb_init();
 balanceText();

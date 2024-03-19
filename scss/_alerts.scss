@@ -27,6 +27,10 @@
     }
 }
 
+[data-bs-theme="dark"] .alert-dismissible .btn-close {
+    filter: unset;
+}
+
 .alert-dismissible-center {
     display: block;
     padding: .5rem 2.5rem .5rem 15px;

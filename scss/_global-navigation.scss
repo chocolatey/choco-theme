@@ -1,7 +1,7 @@
 .global-nav {
     position: relative;
     z-index: 1;
-    background: var(--choco-theme-primary-light);
+    background: var(--choco-adaptive);
     border-bottom: 1px solid var(--bs-primary);
 
     .nav-item {
@@ -9,7 +9,7 @@
 
         .nav-link {
             font-size: .9rem;
-            color: var(--choco-theme-text);
+            color: var(--bs-body-color);
 
             &:hover {
                 text-decoration: underline;
@@ -20,7 +20,7 @@
 
 @include media-breakpoint-up(sm) {
     .global-nav {
-        border-color: var(--choco-theme-border);
+        border-color: var(--bs-border-color);
 
         .nav-item {
             flex-basis: unset;

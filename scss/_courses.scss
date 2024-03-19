@@ -10,13 +10,13 @@
     li {
         padding: 0 0 20px 23px;
         border-left: 3px solid $gray-300;
-        border-left: 3px solid var(--choco-theme-border);
+        border-left: 3px solid var(--bs-border-color);
 
         a {
             padding-bottom: 20px;
             font-size: .9rem;
             font-weight: 400;
-            color: var(--choco-theme-text);
+            color: var(--bs-body-color);
             transition: all .3s ease;
         }
     }
@@ -40,9 +40,9 @@
         margin: 0 1rem 0 -35px;
         line-height: 20px;
         content: "";
-        background-color: var(--choco-theme-background);
+        background-color: var(--bs-body-bg);
         border: 3px solid $gray-300;
-        border: 3px solid var(--choco-theme-border);
+        border: 3px solid var(--bs-border-color);
         border-radius: 50%;
         transition: all .3s ease;
     }
@@ -52,7 +52,7 @@
         &::before,
         &::after {
             padding-left: 1px;
-            color: var(--choco-theme-elevation-1);
+            color: var(--bs-secondary-bg);
         }
 
         &::before {

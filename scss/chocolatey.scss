@@ -1,11 +1,27 @@
 @import "mixins/banner";
 @include ctBanner("chocolatey");
 
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// Include any default variable overrides here
 @import "variables/chocolatey";
 @import "variables/global";
-@import "bootstrap/scss/bootstrap";
 
-// FontAwesome Free
+// Include remainder of required Bootstrap variables
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// Include any default map overrides here
+@import "variables/maps";
+
+// Include any default root overrides here
+@import "variables/chocolatey-root";
+
+// Include remainder of required parts
+@import "bootstrap-required";
+
+// Font Awesome Free
 @import "fontawesome";
 
 // External Libraries
@@ -28,9 +44,6 @@
 // community only
 @import "easymde/dist/easymde.min";
 @import "@tarekraafat/autocomplete.js/dist/css/autoComplete.02";
-
-// Root Variables
-@import "variables/chocolatey-root";
 
 // Custom Styles
 @import "styles";

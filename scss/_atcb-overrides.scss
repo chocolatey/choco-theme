@@ -1,24 +1,24 @@
 :root {
     --font: var(--bs-body-font-family);
-    --atcb-text: var(--choco-theme-text);
-    --atcb-text-2: var(--choco-theme-text);
-    --atcb-background: var(--choco-theme-elevation-1);
-    --atcb-background-hover: var(--choco-theme-background);
-    --atcb-border: var(--choco-theme-border);
-    --atcb-modal-background: var(--choco-theme-elevation-1);
-    --atcb-modal-buttons-bar: var(--choco-theme-elevation-1);
+    --atcb-text: var(--bs-body-color);
+    --atcb-text-2: var(--bs-body-color);
+    --atcb-background: var(--bs-secondary-bg);
+    --atcb-background-hover: var(--bs-body-bg);
+    --atcb-border: var(--bs-border-color);
+    --atcb-modal-background: var(--bs-secondary-bg);
+    --atcb-modal-buttons-bar: var(--bs-secondary-bg);
     --atcb-modal-btn-sec-background: transparent;
     --atcb-modal-btn-background-hover: var(--bs-primary);
     --atcb-modal-btn-text: var(--bs-primary);
     --atcb-modal-btn-text-hover: var(--bs-dark);
-    --atcb-modal-btn-sec-text: var(--choco-theme-text);
-    --atcb-modal-date-btn-text: var(--choco-theme-text);
-    --atcb-modal-date-btn-text-2: var(--choco-theme-text);
+    --atcb-modal-btn-sec-text: var(--bs-body-color);
+    --atcb-modal-date-btn-text: var(--bs-body-color);
+    --atcb-modal-date-btn-text-2: var(--bs-body-color);
     --atcb-modal-date-btn-cal-text: var(--bs-dark);
     --atcb-modal-date-btn-cal-text-2: var(--bs-dark);
     --atcb-modal-date-btn-cal-background: var(--bs-primary);
-    --atcb-modal-date-btn-background: var(--choco-theme-elevation-1);
-    --atcb-modal-date-btn-background-hover: var(--choco-theme-elevation-1);
+    --atcb-modal-date-btn-background: var(--bs-secondary-bg);
+    --atcb-modal-date-btn-background-hover: var(--bs-secondary-bg);
     --atcb-shadow-button: none;
     --atcb-shadow-button-hover: none;
     --atcb-shadow-button-active: none;
@@ -33,7 +33,7 @@
 .atcb-modal-content,
 .atcb-modal-headline,
 .atcb-text {
-    color: var(--choco-theme-text);
+    color: var(--bs-body-color);
     text-transform: none;
 }
 
@@ -48,7 +48,7 @@
     }
 
     svg {
-        color: var(--choco-theme-text);
+        color: var(--bs-body-color);
     }
 
     .atcb-icon-ms365 svg {
@@ -61,7 +61,7 @@
 }
 
 .atcb-subevent-btn {
-    border: 1px solid var(--choco-theme-border);
+    border: 1px solid var(--bs-border-color);
     transition: .3s;
 
     &:hover {
@@ -178,7 +178,7 @@ button.atcb-button {
 }
 
 .atcb-list {
-    border: 1px solid var(--choco-theme-border);
+    border: 1px solid var(--bs-border-color);
     border-radius: .25rem;
 
     &.atcb-generated-button:not(.atcb-modal) .atcb-list-item:first-child {

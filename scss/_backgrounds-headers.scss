@@ -15,71 +15,32 @@
     }
 }
 
-.text-bg-theme-background {
-    color: var(--choco-theme-contrast) !important;
-    background: var(--choco-theme-background) !important;
+.text-bg-body {
+    color: var(--bs-body-color) !important;
+    background-color: var(--bs-body-bg) !important;
 }
 
-.text-bg-theme-contrast {
-    color: var(--choco-theme-background) !important;
-    background: var(--choco-theme-contrast) !important;
+.text-bg-body-secondary {
+    color: var(--bs-body-color) !important;
+    background: var(--bs-secondary-bg) !important;
 }
 
-.text-bg-theme-neutral {
-    color: var(--choco-theme-contrast) !important;
-    background: var(--choco-theme-neutral) !important;
+.text-bg-body-tertiary {
+    color: var(--bs-body-color) !important;
+    background: var(--bs-tertiary-bg) !important;
 }
 
-.text-bg-theme-elevation-1 {
-    color: var(--choco-theme-contrast) !important;
-    background: var(--choco-theme-elevation-1) !important;
+.text-bg-body-contrast {
+    color: var(--bs-body-bg) !important;
+    background: var(--bs-body-color) !important;
 }
 
-.text-bg-elevation-1 {
-    color: $gray-100 !important;
-    background: $primary-900 !important;
-}
-
-.text-bg-theme-elevation-2 {
-    color: var(--choco-theme-contrast) !important;
-    background: var(--choco-theme-elevation-2) !important;
-}
-
-.text-bg-theme-elevation-3 {
-    color: var(--choco-theme-contrast) !important;
-    background: var(--choco-theme-elevation-3) !important;
-}
-
-.text-bg-theme-primary-light {
-    color: var(--choco-theme-contrast) !important;
-    background: var(--choco-theme-primary-light) !important;
+.text-bg-adaptive {
+    color: var(--bs-body-color) !important;
+    background: var(--choco-adaptive) !important;
 }
 
 /* Background Colors */
-@each $color, $value in $colors {
-    .bg-#{$color} {
-        background: $value;
-    }
-}
-
-@each $color, $value in $palette-colors {
-    .bg-#{$color} {
-        background: $value;
-    }
-}
-
-@each $color, $value in $palette-colors {
-    .fill-#{$color} {
-        fill: $value;
-    }
-}
-
-@each $color, $value in $socialmedia-colors {
-    .bg-#{$color} {
-        background: $value;
-    }
-}
-
 @each $color, $value in $socialmedia-colors {
     .text-bg-#{$color} {
         color: color-contrast($value) if($enable-important-utilities, !important, null);
@@ -91,74 +52,41 @@
     }
 }
 
-a.circle.text-bg-theme-contrast:hover {
-    background: var(--choco-theme-contrast-hover);
+a.circle.text-bg-body-contrast:hover {
+    background: rgba(var(--bs-body-color-rgb), .9);
 }
 
-@each $color, $value in $theme-colors {
-    .bg-outline-#{$color} {
-        border: 1px solid $value;
-    }
-}
-
-.fill-theme-neutral {
-    fill: var(--choco-theme-neutral) !important;
-}
-
-.bg-github {
-    background: var(--choco-theme-contrast);
-
-    &:hover {
-        background: var(--choco-theme-contrast-hover);
-    }
-}
-
-.bg-theme-elevation-2 {
-    background: var(--choco-theme-elevation-2) !important;
-}
-
-.bg-theme-elevation-3 {
-    background: var(--choco-theme-elevation-3) !important;
+.fill-bg-body-tertiary {
+    fill: var(--bs-tertiary-bg) !important;
 }
 
 .bg-primary-opacity-25 {
     background: $primary-opacity-25 !important;
 }
 
-.bg-primary-opacity-90 {
-    background: $primary-opacity-90 !important;
+
+.bg-gradient-body-secondary {
+    background-image: linear-gradient(-180deg, var(--bs-body-bg), var(--bs-secondary-bg));
 }
 
-.bg-danger-opacity {
-    background: var(--choco-theme-red-light) !important;
+.bg-gradient-secondary-body {
+    background-image: linear-gradient(-180deg, var(--bs-secondary-bg), var(--bs-body-bg));
 }
 
-.bg-success-opacity {
-    background: var(--choco-theme-green-light) !important;
+.bg-gradient-secondary-adaptive {
+    background-image: linear-gradient(-180deg, var(--bs-secondary-bg), var(--choco-adaptive));
 }
 
-.bg-gradient-body-elevation-1 {
-    background-image: linear-gradient(-180deg, var(--choco-theme-background), var(--choco-theme-elevation-1));
+.bg-gradient-body-adaptive {
+    background-image: linear-gradient(-180deg, var(--bs-body-bg), var(--choco-adaptive));
 }
 
-.bg-gradient-elevation-1-body {
-    background-image: linear-gradient(-180deg, var(--choco-theme-elevation-1), var(--choco-theme-background));
+.bg-gradient-adaptive-body {
+    background-image: linear-gradient(-180deg, var(--choco-adaptive), var(--bs-body-bg));
 }
 
-.bg-gradient-elevation-1-primary-light {
-    background-image: linear-gradient(-180deg, var(--choco-theme-elevation-1), var(--choco-theme-primary-light));
-}
-
-.bg-gradient-body-primary-light {
-    background-image: linear-gradient(-180deg, var(--choco-theme-background), var(--choco-theme-primary-light));
-}
-
-.bg-gradient-primary-light-body {
-    background-image: linear-gradient(-180deg, var(--choco-theme-primary-light), var(--choco-theme-background));
-}
-
-.bg-gradient-primary-light-elevation-1 {
-    background-image: linear-gradient(-180deg, var(--choco-theme-primary-light), var(--choco-theme-elevation-1));
+.bg-gradient-adaptive-secondary {
+    background-image: linear-gradient(-180deg, var(--choco-adaptive), var(--bs-secondary-bg));
 }
 
 /* Background Utilities */
@@ -230,15 +158,15 @@ a.circle.text-bg-theme-contrast:hover {
 }
 
 .bg-architect-factory {
-    background-image: radial-gradient(circle, rgba(var(--choco-theme-background-rgb), 0) 0%, rgba(var(--choco-theme-background-rgb), 1) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 1) 0%, rgba(var(--choco-theme-background-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 0) 85%, rgba(var(--choco-theme-background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+    background-image: radial-gradient(circle, rgba(var(--bs-body-bg-rgb), 0) 0%, rgba(var(--bs-body-bg-rgb), 1) 100%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 1) 0%, rgba(var(--bs-body-bg-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 0) 85%, rgba(var(--bs-body-bg-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
 }
 
 .bg-architect-factory-top {
-    background-image: linear-gradient(to right, rgba(var(--choco-theme-background-rgb), .4) 0%, rgba(var(--choco-theme-background-rgb), 1) 30%, rgba(var(--choco-theme-background-rgb), 1) 70%, rgba(var(--choco-theme-background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 0) 85%, rgba(var(--choco-theme-background-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+    background-image: linear-gradient(to right, rgba(var(--bs-body-bg-rgb), .4) 0%, rgba(var(--bs-body-bg-rgb), 1) 30%, rgba(var(--bs-body-bg-rgb), 1) 70%, rgba(var(--bs-body-bg-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 0) 85%, rgba(var(--bs-body-bg-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
 }
 
 .bg-architect-factory-bottom-primary {
-    background-image: linear-gradient(to right, rgba(var(--choco-theme-background-rgb), .4) 0%, rgba(var(--choco-theme-background-rgb), 1) 30%, rgba(var(--choco-theme-background-rgb), 1) 70%, rgba(var(--choco-theme-background-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--choco-theme-background-rgb), 1) 0%, rgba(var(--choco-theme-background-rgb), 0) 15%), url("/assets/images/architect-factory-green.svg");
+    background-image: linear-gradient(to right, rgba(var(--bs-body-bg-rgb), .4) 0%, rgba(var(--bs-body-bg-rgb), 1) 30%, rgba(var(--bs-body-bg-rgb), 1) 70%, rgba(var(--bs-body-bg-rgb), .4) 100%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 1) 0%, rgba(var(--bs-body-bg-rgb), 0) 15%), url("/assets/images/architect-factory-green.svg");
 }
 
 .bg-retrowave1,
@@ -262,8 +190,8 @@ a.circle.text-bg-theme-contrast:hover {
 
 .bg-retrowave1::before {
     height: 80%;
-    background-color: var(--choco-theme-background);
-    background-image: linear-gradient(-180deg, transparent, var(--choco-theme-background)), url("https://img.chocolatey.org/backgrounds/retrowave1.svg");
+    background-color: var(--bs-body-bg);
+    background-image: linear-gradient(-180deg, transparent, var(--bs-body-bg)), url("https://img.chocolatey.org/backgrounds/retrowave1.svg");
 }
 
 .chocolatey-docs,
@@ -279,14 +207,18 @@ a.circle.text-bg-theme-contrast:hover {
 
 .bg-retrowave2 {
     &::before {
-        background-color: var(--choco-theme-primary-light);
-        background-image: linear-gradient(180deg, transparent 80%, var(--choco-theme-primary-light) 100%), linear-gradient(0deg, transparent 80%, var(--choco-theme-primary-light) 100%), url("https://img.chocolatey.org/backgrounds/retrowave2.svg");
+        background-color: var(--choco-adaptive);
+        background-image: linear-gradient(180deg, transparent 80%, var(--choco-adaptive) 100%), linear-gradient(0deg, transparent 80%, var(--choco-adaptive) 100%), url("https://img.chocolatey.org/backgrounds/retrowave2.svg");
 
     }
 
     .card {
-        --bs-card-border-color: var(--choco-theme-blue-light);
+        --bs-card-border-color: #{rgba($primary, .2)};
     }
+}
+
+.slant-top-end {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
 }
 
 @include media-breakpoint-up(md) {
