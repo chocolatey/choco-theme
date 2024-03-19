@@ -9,7 +9,7 @@
             }
 
             .carousel-caption {
-                background: $primary-950-opacity-95;
+                background: rgba($body-bg-dark, .95);
             }
         }
     }
@@ -17,9 +17,7 @@
     .carousel-indicators {
         margin-bottom: 0;
 
-        li {
-            width: 15px;
-            height: 15px;
+        button {
             border-radius: 100%;
         }
     }
@@ -49,7 +47,7 @@
     }
 
     .bg-img-cover {
-        border-bottom: 1px solid var(--choco-theme-border);
+        border-bottom: 1px solid var(--bs-border-color);
     }
 }
 
@@ -70,7 +68,7 @@
         }
 
         .bg-img-cover {
-            border: 1px solid var(--choco-theme-border);
+            border: 1px solid var(--bs-border-color);
             border-radius: 1rem;
         }
     }

@@ -1,5 +1,5 @@
 import { Collapse } from 'bootstrap';
-import { escapeId } from './util/chocolatey-functions';
+import { escapeId } from './util/functions';
 
 (() => {
     const collapseLg = document.querySelector('.collapse-lg');

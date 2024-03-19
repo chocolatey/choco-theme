@@ -1,7 +1,7 @@
 import 'lite-youtube-embed';
-import './src/chocolatey-alerts.js';
-import './src/chocolatey-callouts.js';
-import './src/chocolatey-lazyload.js';
-import './src/chocolatey-org.js';
-import './src/chocolatey-sticky-top.js';
-import './src/chocolatey-theme-toggle.js';
+import './src/alerts.js';
+import './src/callouts.js';
+import './src/lazyload.js';
+import './src/org.js';
+import './src/sticky-top.js';
+import './src/theme-toggle.js';

@@ -1,5 +1,5 @@
 import { Modal } from 'bootstrap';
-import { c4bStandardSubscription, c4bPremiumSubscription, c4bIncludedItems, c4bSupportNodes, c4bAddOnPrice, c4bNodeDefaults, c4bNodePurchaseCutoffs } from './ts/util/chocolatey-pricing-calculator';
+import { c4bStandardSubscription, c4bPremiumSubscription, c4bIncludedItems, c4bSupportNodes, c4bAddOnPrice, c4bNodeDefaults, c4bNodePurchaseCutoffs } from './ts/util/pricing-calculator';
 import noUiSlider from 'nouislider';
 
 window.addEventListener('DOMContentLoaded', () => {

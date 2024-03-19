@@ -1,7 +1,7 @@
 import jQuery from 'jquery';
 import EasyMDE from 'easymde';
 import { Collapse, Modal } from 'bootstrap';
-import { getCookie, setCookieExpirationNever, truncateResults } from './util/chocolatey-functions';
+import { getCookie, setCookieExpirationNever, truncateResults } from './util/functions';
 
 (() => {
     // Community Disclaimer

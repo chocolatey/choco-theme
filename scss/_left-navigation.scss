@@ -1,5 +1,5 @@
 #leftSidebarNav {
-    background: var(--choco-theme-elevation-1);
+    background: var(--bs-secondary-bg);
 
     .navbar {
         .navbar-nav {
@@ -9,12 +9,12 @@
 
         > .navbar-collapse {
             width: 100%;
-            border-bottom: 1px solid var(--choco-theme-border);
+            border-bottom: 1px solid var(--bs-border-color);
 
             .navbar-nav .nav-item {
                 .nav-link {
                     padding: 0;
-                    color: var(--choco-theme-text);
+                    color: var(--bs-body-color);
 
                     &.active {
                         font-weight: 700;
@@ -29,14 +29,14 @@
                     a {
                         width: 100%;
                         padding: calc($spacer / 2) calc($spacer / 4) calc($spacer / 2) 0;
-                        color: var(--choco-theme-text);
+                        color: var(--bs-body-color);
                     }
 
                     .btn-collapse {
                         padding: calc($spacer / 2) 0 calc($spacer / 2) $spacer;
 
                         &::before {
-                            color: var(--choco-theme-text);
+                            color: var(--bs-body-color);
                         }
 
                         &:focus {
@@ -68,20 +68,6 @@
                         &:first-child:hover::before {
                             top: 0;
                             height: calc(100% + 2px);
-                        }
-
-                        .nav-link {
-                            &.active-page,
-                            &:hover {
-                                background: var(--choco-theme-#{$color}-light);
-                            }
-                        }
-
-                        .nav-link-collapse.active {
-                            .collapsed,
-                            .collapsed + a {
-                                background: var(--choco-theme-#{$color}-light);
-                            }
                         }
                     }
                 }
@@ -152,6 +138,51 @@
 
         .navbar > .navbar-collapse {
             border-bottom: 0;
+        }
+    }
+}
+
+:root,
+:root[data-bs-theme="light"] {
+    #leftSidebarNav .navbar > .navbar-collapse .navbar-nav .nav-item {
+        @each $color, $value in $colors {
+            &.nav-item-#{$color} {
+                .nav-link {
+                    &.active-page,
+                    &:hover {
+                        background: rgba($value, .2);
+                    }
+                }
+
+                .nav-link-collapse.active {
+                    .collapsed,
+                    .collapsed + a {
+                        background: rgba($value, .2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+:root[data-bs-theme="dark"] {
+    #leftSidebarNav .navbar > .navbar-collapse .navbar-nav .nav-item {
+        @each $color, $value in $colors {
+            &.nav-item-#{$color} {
+                .nav-link {
+                    &.active-page,
+                    &:hover {
+                        background: rgba($value, .1);
+                    }
+                }
+
+                .nav-link-collapse.active {
+                    .collapsed,
+                    .collapsed + a {
+                        background: rgba($value, .1);
+                    }
+                }
+            }
         }
     }
 }

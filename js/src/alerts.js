@@ -1,4 +1,4 @@
-import { getCookie, setCookieExpirationNever } from './util/chocolatey-functions';
+import { getCookie, setCookieExpirationNever } from './util/functions';
 
 (() => {
     const topNoticeAlert = document.getElementById('topNoticeAlert');

@@ -1,4 +1,4 @@
-import { escapeHTML } from './util/chocolatey-functions';
+import { escapeHTML } from './util/functions';
 
 (() => {
     const codeForView = document.querySelectorAll('.copy-code-for-view');

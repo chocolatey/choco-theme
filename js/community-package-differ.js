@@ -1,1 +1,1 @@
-import './src/chocolatey-package-differ.js';
+import './src/package-differ.js';

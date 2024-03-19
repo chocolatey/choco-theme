@@ -1,0 +1,85 @@
+$utilities: map-merge(
+    $utilities,
+    (
+        "rotate": (
+            property: transform,
+            class: rotate,
+            values: (
+                10: rotate(10deg),
+                20: rotate(20deg),
+                30: rotate(30deg),
+                45: rotate(45deg),
+                90: rotate(90deg),
+                145: rotate(145deg),
+                180: rotate(180deg),
+                360: rotate(360deg)
+            )
+        ),
+        "background-colors": (
+            property: background-color,
+            class: bg,
+            values: $colors
+        ),
+        "background-palette": (
+            property: background-color,
+            class: bg,
+            values: $palette-colors
+        ),
+        "background-socialmedia": (
+            property: background-color,
+            class: bg,
+            values: $socialmedia-colors
+        ),
+        "fill-palette": (
+            property: fill,
+            class: fill,
+            values: $palette-colors
+        ),
+        "min-height-px": (
+            property: min-height,
+            class: min-h-px,
+            values: $sizing-px
+        ),
+        "min-width-px": (
+            property: min-width,
+            class: min-w-px,
+            values: $sizing-px
+        ),
+        "height-px": (
+            property: height,
+            responsive: true,
+            class: h-px,
+            values: $sizing-px
+        ),
+        "width-px": (
+            property: width,
+            class: w-px,
+            values: $sizing-px
+        ),
+        "min-height": (
+            property: min-height,
+            class: min-h,
+            values: $sizing-percent
+        ),
+        "min-width": (
+            property: min-width,
+            class: min-w,
+            values: $sizing-percent
+        ),
+        "height": (
+            property: height,
+            class: h,
+            values: $sizing-percent
+        ),
+        "width": (
+            property: width,
+            class: w,
+            values: $sizing-percent
+        ),
+        "text-colors": (
+            property: color,
+            class: text,
+            values: $colors
+        )
+    )
+);

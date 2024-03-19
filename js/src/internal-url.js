@@ -1,5 +1,5 @@
 import { Tab } from 'bootstrap';
-import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/chocolatey-functions';
+import { copyCodeBlocks, getCookie, selectDeploymentMethodTab } from './util/functions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const defaultUrl = 'http://internal/odata/repo';

@@ -1,5 +1,5 @@
 import { Offcanvas, Modal, Tab } from 'bootstrap';
-import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab } from './util/chocolatey-functions';
+import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab } from './util/functions';
 
 (() => {
     const packages = localStorage.packageList === undefined ? new Array() : JSON.parse(localStorage.packageList); // eslint-disable-line

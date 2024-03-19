@@ -1,4 +1,4 @@
-import { getOffset, outerHeightTrue } from './util/chocolatey-functions';
+import { getOffset, outerHeightTrue } from './util/functions';
 
 (() => {
     const collapseY = document.querySelector('.collapse-y-height');

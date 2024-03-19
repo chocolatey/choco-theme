@@ -1,5 +1,5 @@
 .chocolatey-zendesk #main-content .article-info .article-body pre { /* stylelint-disable-line */
-    background: var(--choco-theme-elevation-1) !important;
+    background: var(--bs-secondary-bg) !important;
 }
 
 .chocolatey-zendesk {
@@ -8,7 +8,7 @@
         width: 100%;
         max-width: unset;
         padding: 0 5%;
-        background: var(--choco-theme-elevation-1);
+        background: var(--bs-secondary-bg);
 
         // Username dropdown
         .user-nav-list {
@@ -23,7 +23,7 @@
         .nav-wrapper-mobile {
             .menu-button-mobile .icon-menu,
             .menu-list-mobile-items a {
-                color: var(--choco-theme-text);
+                color: var(--bs-body-color);
             }
 
             .menu-list-mobile-items a:hover,
@@ -32,12 +32,12 @@
             }
 
             .menu-list-mobile {
-                background: var(--choco-theme-elevation-1);
+                background: var(--bs-secondary-bg);
                 border: 0;
             }
 
             .menu-list-mobile-items .nav-divider {
-                border-color: var(--choco-theme-border);
+                border-color: var(--bs-border-color);
             }
         }
 
@@ -67,23 +67,41 @@
     }
 
     // Theme toggle
-    .sun-icon::before,
-    .moon-icon::before {
+    [class^="fa-"] {
+        position: relative;
+        padding-right: 1rem;
+    }
+
+    .fa-solid.fa-sun::before,
+    .fa-solid.fa-moon::before,
+    .fa-solid.fa-circle-half-stroke::before,
+    .fa-solid.fa-check::before {
         position: absolute;
+        top: 50%;
+        left: 50%;
         width: 15px;
         height: 15px;
         content: "";
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        transform: translate(-50%, -50%);
     }
 
-    .sun-icon::before {
-        background-image: url("$sun_solid");
+    .fa-solid.fa-sun::before {
+        background-image: url("https://img.chocolatey.org/icons/sun-solid.svg");
     }
 
-    .moon-icon::before {
-        background-image: url("$moon_solid");
+    .fa-solid.fa-moon::before {
+        background-image: url("https://img.chocolatey.org/icons/moon-solid.svg");
+    }
+
+    .fa-solid.fa-circle-half-stroke::before {
+        background-image: url("https://img.chocolatey.org/icons/circle-half-stroke-solid.svg");
+    }
+
+    .fa-solid.fa-check::before {
+        background-image: url("https://img.chocolatey.org/icons/check-solid.svg");
     }
 
     // General links
@@ -94,24 +112,24 @@
     // Dropdowns
     .dropdown-menu {
         [role="menuitem"] {
-            color: var(--choco-theme-text);
+            color: var(--bs-body-color);
 
             &:hover {
-                color: var(--choco-theme-text);
-                background: var(--choco-theme-background);
+                color: var(--bs-body-color);
+                background: var(--bs-body-bg);
             }
         }
 
         [role="separator"] {
-            border-bottom: 1px solid var(--choco-theme-border);
+            border-bottom: 1px solid var(--bs-border-color);
         }
     }
 
     // Cards
     .blocks-item,
     .category-content .section {
-        background: var(--choco-theme-elevation-1);
-        border: 1px solid var(--choco-theme-border);
+        background: var(--bs-secondary-bg);
+        border: 1px solid var(--bs-border-color);
         border-radius: .375rem;
     }
 
@@ -133,7 +151,7 @@
     // Override with text color
     .attachments .attachment-item .attachment-icon,
     .recent-activity-item-meta {
-        color: var(--choco-theme-text);
+        color: var(--bs-body-color);
     }
 
     // Buttons
@@ -166,7 +184,7 @@
     // Search input
     .search input[type="search"],
     .search {
-        color: var(--choco-theme-text);
+        color: var(--bs-body-color);
         border-radius: .25rem;
     }
 
@@ -175,7 +193,7 @@
         border: 1px solid transparent;
 
         input[type="search"] {
-            background-color: var(--choco-theme-elevation-1);
+            background-color: var(--bs-secondary-bg);
             border: 1px solid var(--bs-primary);
 
             &:focus {
@@ -200,7 +218,7 @@
         }
     }
 
-    // Catagory & Article pages
+    // Category & Article pages
     .category-container {
         display: block;
 
@@ -217,7 +235,7 @@
                 }
 
                 .section-tree-title a {
-                    color: var(--choco-theme-text);
+                    color: var(--bs-body-color);
                 }
             }
         }
@@ -231,6 +249,7 @@
             }
         }
     }
+
     // Section pages
     .section-container {
         display: block;
@@ -238,7 +257,7 @@
 
     // Footer
     footer.footer {
-        background: var(--choco-theme-elevation-1);
+        background: var(--bs-secondary-bg);
 
         .footer-inner {
             display: inline-block;
@@ -249,7 +268,7 @@
             text-align: center;
 
             a {
-                color: var(--choco-theme-text);
+                color: var(--bs-body-color);
             }
         }
     }
@@ -258,11 +277,11 @@
     .profile-nav,
     .profile-header,
     .my-activities-nav {
-        background: var(--choco-theme-elevation-1);
+        background: var(--bs-secondary-bg);
     }
 
     .collapsible-nav-list li a {
-        color: var(--choco-theme-text);
+        color: var(--bs-body-color);
     }
 
     .collapsible-nav-list li[aria-selected="true"] a,
@@ -281,5 +300,14 @@
 
     .my-activities-header {
         margin-top: 20px;
+    }
+}
+
+:root[data-bs-theme="dark"].chocolatey-zendesk {
+    .fa-solid.fa-sun::before,
+    .fa-solid.fa-moon::before,
+    .fa-solid.fa-circle-half-stroke::before,
+    .fa-solid.fa-check::before {
+        filter: invert(1);
     }
 }

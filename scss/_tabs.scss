@@ -12,8 +12,9 @@
             height: 100px;
             margin: 0 !important;
             font-weight: 700;
+            color: var(--bs-body-color);
             background: $white;
-            border: 5px solid var(--choco-theme-border);
+            border: 5px solid var(--bs-border-color);
             border-radius: .25rem;
             border-radius: unset;
             transition: .5s ease;
@@ -22,7 +23,6 @@
             &.active {
                 color: $dark;
                 border: 5px solid var(--bs-primary);
-                //box-shadow: $box-shadow;
             }
 
             .nav-img {

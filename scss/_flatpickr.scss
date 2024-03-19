@@ -14,7 +14,7 @@
     }
 
     .form-control[readonly]:not([disabled]) {
-        background: var(--choco-theme-elevation-1);
+        background: var(--bs-secondary-bg);
     }
 
     .flatpickr-input[disabled] {
@@ -23,8 +23,8 @@
 }
 
 .flatpickr-calendar {
-    background: var(--choco-theme-elevation-1);
-    border: 1px solid var(--choco-theme-border);
+    background: var(--bs-secondary-bg);
+    border: 1px solid var(--bs-border-color);
     box-shadow: none;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .flatpickr-day {
-    color: var(--choco-theme-text);
+    color: var(--bs-body-color);
 }
 
 .flatpickr-weekday,
@@ -63,17 +63,17 @@
 .flatpickr-current-month .flatpickr-monthDropdown-months,
 .flatpickr-current-month input.cur-year,
 span.flatpickr-weekday {
-    color: var(--choco-theme-background);
+    color: var(--bs-body-bg);
 }
 
 .flatpickr-months .flatpickr-next-month svg,
 .flatpickr-months .flatpickr-prev-month svg {
-    fill: var(--choco-theme-background);
+    fill: var(--bs-body-bg);
 }
 
 .flatpickr-months .flatpickr-next-month:hover svg,
 .flatpickr-months .flatpickr-prev-month:hover svg {
-    fill: var(--choco-theme-primary-light);
+    fill: var(--choco-adaptive);
 }
 
 .flatpickr-day.endRange,
@@ -96,7 +96,7 @@ span.flatpickr-weekday {
 .flatpickr-day.startRange:hover
 {
     font-weight: 700 !important;
-    color: var(--choco-theme-background) !important;
+    color: var(--bs-body-bg) !important;
     background: $primary !important;
     border-color: $primary !important;
 }
@@ -109,7 +109,7 @@ span.flatpickr-weekday {
 .flatpickr-day.notAllowed.prevMonthDay,
 .flatpickr-day.prevMonthDay
 {
-    color: var(--choco-theme-neutral);
+    color: var(--bs-tertiary-bg);
 }
 
 .flatpickr-day.today:not(.selected):hover,
@@ -126,9 +126,9 @@ span.flatpickr-weekday {
 .flatpickr-day:focus,
 .flatpickr-day:hover
 {
-    color: var(--choco-theme-text);
-    background: var(--choco-theme-neutral);
-    border-color: var(--choco-theme-neutral);
+    color: var(--bs-body-color);
+    background: var(--bs-tertiary-bg);
+    border-color: var(--bs-tertiary-bg);
 }
 
 .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
@@ -136,5 +136,5 @@ span.flatpickr-weekday {
 }
 
 .flatpickr-day.inRange {
-    box-shadow: -5px 0 0 var(--choco-theme-neutral), 5px 0 0 var(--choco-theme-neutral);
+    box-shadow: -5px 0 0 var(--bs-tertiary-bg), 5px 0 0 var(--bs-tertiary-bg);
 }

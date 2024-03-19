@@ -17,10 +17,10 @@ import jQuery from 'jquery';
 
             if (jQuery(scrollHash).length) {
                 if (jQuery(window).scrollTop() > jQuery(scrollHash).offset().top - 30 && jQuery(scrollHash).is(':visible')) {
-                    jQuery(`a[href="${scrollHash}"]`).addClass('active active-page');
-                    jQuery(`a[href="${scrollHash}"]`).parent().prev().find('a.active').removeClass('active active-page');
+                    jQuery(`a[href="${scrollHash}"].nav-link`).addClass('active active-page');
+                    jQuery(`a[href="${scrollHash}"].nav-link`).parent().prev().find('a.active').removeClass('active active-page');
                 } else {
-                    jQuery(`a[href="${scrollHash}"]`).removeClass('active active-page');
+                    jQuery(`a[href="${scrollHash}"].nav-link`).removeClass('active active-page');
                 }
             }
         };

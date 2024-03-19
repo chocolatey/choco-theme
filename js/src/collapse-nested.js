@@ -1,5 +1,5 @@
 import { Collapse, Tab } from 'bootstrap';
-import { escapeId, getParents } from './util/chocolatey-functions';
+import { escapeId, getParents } from './util/functions';
 
 (() => {
     const nestedCollapseLocation = () => {
@@ -84,11 +84,7 @@ import { escapeId, getParents } from './util/chocolatey-functions';
 
     const changeHash = el => {
         el.addEventListener('click', e => {
-            if (history.pushState) {
-                history.pushState(null, null, e.target.hash);
-            } else {
-                window.location.hash = e.target.hash; // Polyfill for old browsers
-            }
+            history.pushState(null, null, e.target.hash);
         });
     };
 

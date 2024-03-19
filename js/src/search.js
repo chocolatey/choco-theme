@@ -1,5 +1,5 @@
 import autoComplete from '@tarekraafat/autocomplete.js';
-import { getCookie, setCookieExpirationNever } from './util/chocolatey-functions';
+import { getCookie, setCookieExpirationNever } from './util/functions';
 const Mousetrap = require('mousetrap');
 
 (() => {
@@ -69,14 +69,14 @@ const Mousetrap = require('mousetrap');
 
                     if (data.results.length !== 0) {
                         templateEnter = `
-<div class="d-flex align-items-center justify-content-sm-center text-bg-theme-elevation-1 px-3 py-2 small border-bottom">
+<div class="d-flex align-items-center justify-content-sm-center text-bg-body-secondary px-3 py-2 small border-bottom">
     <p class="mb-0">Press <kbd>Enter</kbd> to do a full search or select a suggestion below.</p>
 </div>
 <p class="text-primary ps-4 pe-3 mt-4 mb-2"><strong>Suggestions</strong></p>`;
                     }
 
                     templateHeader.innerHTML = `
-<div class="d-flex justify-content-between align-items-center text-center text-bg-theme-neutral p-3 small border-bottom">
+<div class="d-flex justify-content-between align-items-center text-center text-bg-body-tertiary p-3 small border-bottom">
     <p class="mb-0"><strong>id:searchValue</strong><br />search by id</p>
     <p class="mb-0 mx-3"><strong>tag:searchValue</strong><br />search by tag</p>
     <p class="mb-0"><strong>author:searchValue</strong><br />search by author</p>
@@ -86,7 +86,7 @@ const Mousetrap = require('mousetrap');
         <i class="fa-solid fa-circle-question text-primary me-1"></i>Click to <span id="collapseTemplateHelpTextContainer">${templateHelpText}</span> search help and examples.
     </a>
     <div class="collapse ${templateHelpContainerClass}" id="collapseTemplateHelp">
-        <div class="card card-body text-bg-theme-background mt-2 rounded">
+        <div class="card card-body text-bg-body mt-2 rounded">
            <p class="mb-0">&bull; <strong>Search for multiple tags:</strong> tag:searchValue tag:searchValue</p>
            <p>&bull; <strong>Combine prefixes:</strong> tag:searchValue author:searchValue</p>
            <p class="mb-1"><strong>Example:</strong></p>

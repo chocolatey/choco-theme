@@ -1,12 +1,25 @@
 @import "mixins/banner";
 @include ctBanner("zendesk");
 
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// Include any default variable overrides here
 @import "variables/chocolatey";
 @import "variables/global";
-@import "bootstrap/scss/bootstrap";
 
-// Root Variables
+// Include remainder of required Bootstrap variables
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// Include any default map overrides here
+@import "variables/maps";
+
+// Include any default root overrides here
 @import "variables/chocolatey-root";
+
+// Include remainder of required parts
+@import "bootstrap-required";
 
 // Custom Styles
 @import "styles";

@@ -1,4 +1,4 @@
-import { syncScroll } from './util/chocolatey-functions';
+import { syncScroll } from './util/functions';
 
 (() => {
     const scrollStickyTable = document.querySelector('.table-sticky');

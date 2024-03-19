@@ -1,102 +1,43 @@
 :root {
-    --choco-theme-primary-opacity-10: #{$primary-opacity-10};
-    --choco-theme-primary-opacity-15: #{$primary-opacity-15};
-    --choco-theme-primary-opacity-40: #{$primary-opacity-40};
-    --choco-theme-primary-opacity-90: #{$primary-opacity-90};
     @each $color, $value in $colors-rgb {
         --#{$variable-prefix}#{$color}-rgb: #{$value};
     }
 
-    --docsearch-primary-color: var(--bs-primary);
-    --docsearch-spacing: 12px;
-    --docsearch-icon-stroke-width: 1.4;
-    --docsearch-highlight-color: var(--docsearch-primary-color);
-    --docsearch-modal-width: 560px;
-    --docsearch-modal-height: 600px;
-    --docsearch-searchbox-height: 56px;
-    --docsearch-hit-height: 56px;
-    --docsearch-footer-height: 44px;
-    --docsearch-text-color: var(--choco-theme-text);
-    --docsearch-muted-color: var(--bs-secondary);
-    --docsearch-logo-color: var(--choco-theme-text);
-    --docsearch-searchbox-background: var(--choco-theme-elevation-1);
-    --docsearch-searchbox-focus-background: var(--choco-theme-elevation-1);
-    --docsearch-searchbox-shadow: 0 0 0 .2rem rgba(var(--bs-primary-rgb), .25);
-    --docsearch-modal-background: var(--choco-theme-elevation-1);
-    --docsearch-modal-shadow: 0 .5rem 1rem rgba(var(--bs-primary-rgb), 20%);
-    --docsearch-hit-background: var(--choco-theme-background);
-    --docsearch-hit-color: var(--choco-theme-text);
-    --docsearch-hit-active-color: var(--bs-dark);
-    --docsearch-hit-shadow: none;
-    --docsearch-footer-background: var(--choco-theme-neutral);
-    --docsearch-footer-shadow: none;
-    --docsearch-key-shadow: none;
-    --docsearch-key-gradient: var(--bs-primary);
-    --docsearch-container-background: rgba(0, 0, 0, var(--modal-backdrop));
+    // --docsearch-primary-color: var(--bs-primary);
+    // --docsearch-spacing: 12px;
+    // --docsearch-icon-stroke-width: 1.4;
+    // --docsearch-highlight-color: var(--docsearch-primary-color);
+    // --docsearch-modal-width: 560px;
+    // --docsearch-modal-height: 600px;
+    // --docsearch-searchbox-height: 56px;
+    // --docsearch-hit-height: 56px;
+    // --docsearch-footer-height: 44px;
+    // --docsearch-text-color: var(--bs-body-color);
+    // --docsearch-muted-color: var(--bs-secondary);
+    // --docsearch-logo-color: var(--bs-body-color);
+    // --docsearch-searchbox-background: var(--bs-secondary-bg);
+    // --docsearch-searchbox-focus-background: var(--bs-secondary-bg);
+    // --docsearch-searchbox-shadow: 0 0 0 .2rem rgba(var(--bs-primary-rgb), .25);
+    // --docsearch-modal-background: var(--bs-secondary-bg);
+    // --docsearch-modal-shadow: 0 .5rem 1rem rgba(var(--bs-primary-rgb), 20%);
+    // --docsearch-hit-background: var(--bs-body-bg);
+    // --docsearch-hit-color: var(--bs-body-color);
+    // --docsearch-hit-active-color: var(--bs-dark);
+    // --docsearch-hit-shadow: none;
+    // --docsearch-footer-background: var(--bs-tertiary-bg);
+    // --docsearch-footer-shadow: none;
+    // --docsearch-key-shadow: none;
+    // --docsearch-key-gradient: var(--bs-primary);
+    // --docsearch-container-background: rgba(0, 0, 0, .5);
 }
 
-:root[data-user-color-scheme="light"] {
-    --color-mode: "light";
-    --choco-theme-background: #{$gray-100};
-    --choco-theme-background-rgb: #{to-rgb($gray-100)};
-    --choco-theme-background-hover: #{$gray-400};
-    --choco-theme-contrast: #{$primary-950};
-    --choco-theme-contrast-hover: #{$gray-700};
-    --choco-theme-neutral: #{$gray-300};
-    --choco-theme-neutral-hover: #{$gray-400};
-    --choco-theme-elevation-1: #{$white};
-    --choco-theme-elevation-2: #{$white};
-    --choco-theme-elevation-3: #{$gray-200};
-    --choco-theme-primary-light: #{$primary-150};
-    --choco-theme-text: #{$gray-900};
-    --choco-theme-text-code: #{$gray-800};
-    --choco-theme-border: #{$gray-300};
-    --choco-theme-border-secondary: #{$gray-300};
-    --choco-theme-purple: #{$purple};
-    --choco-theme-orange: #{$orange};
-    --choco-theme-red: #{$red};
-    --choco-theme-toggle-opacity: #{$yellow-opacity-25};
-    --choco-theme-toggle-background: #{$white};
-    --choco-theme-toggle-btn-background: #{$yellow-opacity-25};
-    --choco-theme-blue-light: #{rgba($blue, .2)};
-    --choco-theme-green-light: #{rgba($green, .2)};
-    --choco-theme-yellow-light: #{rgba($yellow, .2)};
-    --choco-theme-orange-light: #{rgba($orange, .2)};
-    --choco-theme-red-light: #{rgba($red, .2)};
-    --choco-theme-pink-light: #{rgba($pink, .2)};
-    --choco-theme-purple-light: #{rgba($purple, .2)};
-    --modal-backdrop: .5;
+:root,
+:root[data-bs-theme="light"] {
+    --choco-adaptive: #{$adaptive}; // Primary in chocolatey.org // Gray in boxstarter.org
+    --choco-border-color-adaptive: #{$border-color-adaptive}; // Gray in light mode // Primary in dark mode
 }
 
-:root[data-user-color-scheme="dark"] {
-    --color-mode: "dark";
-    --choco-theme-background: #{$primary-950};
-    --choco-theme-background-rgb: #{to-rgb($primary-950)};
-    --choco-theme-background-hover: #{$gray-700};
-    --choco-theme-contrast: #{$gray-100};
-    --choco-theme-contrast-hover: #{$gray-400};
-    --choco-theme-neutral: #{$primary-800};
-    --choco-theme-neutral-hover: #{$primary-700};
-    --choco-theme-elevation-1: #{$primary-900};
-    --choco-theme-elevation-2: #{$primary-800};
-    --choco-theme-elevation-3: #{$primary-850};
-    --choco-theme-primary-light: #{$primary-850};
-    --choco-theme-text: #{$gray-400};
-    --choco-theme-text-code: #{$gray-500};
-    --choco-theme-border: #{$primary-800};
-    --choco-theme-border-secondary: #{$primary-opacity-50};
-    --choco-theme-purple: #{$purple-300};
-    --choco-theme-orange: #{$orange-300};
-    --choco-theme-red: #{$red-300};
-    --choco-theme-toggle-opacity: #{$primary-opacity-50};
-    --choco-theme-toggle-background: #{$primary-opacity-25};
-    --choco-theme-toggle-btn-background: #{$primary-opacity-25};
-    --choco-theme-blue-light: #{rgba($blue, .1)};
-    --choco-theme-green-light: #{rgba($green, .1)};
-    --choco-theme-yellow-light: #{rgba($yellow, .1)};
-    --choco-theme-orange-light: #{rgba($orange, .1)};
-    --choco-theme-red-light: #{rgba($red, .1)};
-    --choco-theme-pink-light: #{rgba($pink, .1)};
-    --choco-theme-purple-light: #{rgba($purple, .1)};
-    --modal-backdrop: .9;
+:root[data-bs-theme="dark"] {
+    --choco-adaptive: #{$adaptive-dark};
+    --choco-border-color-adaptive: #{$border-color-adaptive-dark};
 }

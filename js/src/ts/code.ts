@@ -1,4 +1,4 @@
-import { trimString } from './util/chocolatey-functions';
+import { trimString } from './util/functions';
 declare const Prism: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 (() => {

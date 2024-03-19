@@ -5,7 +5,7 @@
 
         button {
             margin: 0 .25rem;
-            color: var(--choco-theme-text);
+            color: var(--bs-body-color);
 
             &.active,
             &:hover {
@@ -15,11 +15,11 @@
         }
 
         i.separator {
-            border-color: var(--choco-theme-border);
+            border-color: var(--bs-border-color);
         }
 
         &.fullscreen {
-            background: var(--choco-theme-elevation-1);
+            background: var(--bs-secondary-bg);
 
             &::before,
             &::after {
@@ -29,16 +29,16 @@
     }
 
     .CodeMirror {
-        color: var(--choco-theme-text);
-        background: var(--choco-theme-elevation-1);
+        color: var(--bs-body-color);
+        background: var(--bs-secondary-bg);
         border-color: var(--bs-primary);
 
         span.CodeMirror-selectedtext {
-            background: var(--choco-theme-neutral);
+            background: var(--bs-tertiary-bg);
         }
 
         .CodeMirror-cursor {
-            border-left: 1px solid var(--choco-theme-text);
+            border-left: 1px solid var(--bs-body-color);
         }
 
         .CodeMirror-placeholder.CodeMirror-line-like {
@@ -48,15 +48,15 @@
 
     .CodeMirror-wrap pre.CodeMirror-line,
     .CodeMirror-wrap pre.CodeMirror-line-like {
-        background: var(--choco-theme-elevation-1);
+        background: var(--bs-secondary-bg);
     }
 
     .editor-preview {
-        background: var(--choco-theme-background);
+        background: var(--bs-body-bg);
 
         pre {
-            background: var(--choco-theme-elevation-1);
-            border: 1px solid var(--choco-theme-border);
+            background: var(--bs-secondary-bg);
+            border: 1px solid var(--bs-border-color);
         }
     }
 

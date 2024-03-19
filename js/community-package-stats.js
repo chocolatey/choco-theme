@@ -1,1 +1,1 @@
-import './src/chocolatey-stats.js';
+import './src/package-stats.js';

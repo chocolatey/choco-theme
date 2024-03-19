@@ -1,15 +1,15 @@
 import './src/lib/prism.min.js';
-import './src/chocolatey-alerts.js';
-import './src/chocolatey-clipboard.js';
-import './src/chocolatey-callouts.js';
-import './src/ts/chocolatey-code.ts';
-import './src/chocolatey-collapse-nested.js';
-import './src/chocolatey-collapse-responsive.js';
-import './src/chocolatey-collapse-y-height.js';
-import './src/chocolatey-docs.js';
-import './src/chocolatey-markdown.js';
-import './src/chocolatey-anchors.js'; // This is dependent on the markdown script above
-import './src/chocolatey-scrollspy.js';
-import './src/ts/chocolatey-tab-multiples.ts';
-import './src/ts/chocolatey-tables.ts';
-import './src/chocolatey-theme-toggle.js';
+import './src/alerts.js';
+import './src/clipboard.js';
+import './src/callouts.js';
+import './src/ts/code.ts';
+import './src/collapse-nested.js';
+import './src/collapse-responsive.js';
+import './src/collapse-y-height.js';
+import './src/docs.js';
+import './src/markdown.js';
+import './src/anchors.js'; // This is dependent on the markdown script above
+import './src/scrollspy.js';
+import './src/ts/tab-multiples.ts';
+import './src/ts/tables.ts';
+import './src/theme-toggle.js';

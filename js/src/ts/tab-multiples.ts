@@ -1,5 +1,5 @@
 import { Tab } from 'bootstrap';
-import { getCookie, setCookieExpirationNever } from './util/chocolatey-functions';
+import { getCookie, setCookieExpirationNever } from './util/functions';
 
 window.addEventListener('DOMContentLoaded', () => {
     const tabMultiAttribute = 'data-choco-tab-multi';

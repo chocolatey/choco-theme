@@ -1,94 +1,9 @@
-label[for="themeToggle"] {
-    &:focus-within {
-        border-radius: 1rem;
-        box-shadow: 0 0 0 .2rem var(--choco-theme-toggle-opacity);
-    }
-}
-
-.theme-toggle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    opacity: 0;
-
-    + .toggle-slot {
-        position: relative;
-        width: 4rem;
-        height: 1.75rem;
-        background: var(--choco-theme-toggle-background);
-        border: 1px solid $gray-300;
-        border: 1px solid var(--choco-theme-border-secondary);
-        border-radius: 1em;
-
-        .fa-solid {
-            position: absolute;
-            color: var(--bs-yellow);
-        }
-
-        .sun-icon-wrapper {
-            position: absolute;
-            top: -1px;
-            opacity: 1;
-            transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
-            transform: translate(.55rem, .47rem);
-            transform-origin: 50% 50%;
-
-            .sun-icon {
-                font-size: .9rem;
+.dropdown-theme {
+    .dropdown-item {
+        &.active {
+            i.d-none {
+                display: block !important;
             }
         }
-
-        .toggle-button {
-            position: absolute;
-            top: -2px;
-            width: .75rem;
-            height: .75rem;
-            background-color: var(--choco-theme-toggle-btn-background);
-            border: 1px solid var(--bs-yellow);
-            border-radius: 50%;
-            transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
-            transform: translate(2.35rem, .62rem);
-        }
-
-        .moon-icon-wrapper {
-            position: absolute;
-            top: -3px;
-            left: -4px;
-            opacity: 0;
-            transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2.5, .46, .71);
-            transform: translate(2rem, .25rem) rotate(0deg);
-            transform-origin: 50% 50%;
-
-            .moon-icon {
-                font-size: .9rem;
-            }
-        }
-
-        &:not(.disabled):active,
-        &:not(.disabled):focus {
-            box-shadow: 0 0 0 .2rem var(--choco-theme-toggle-opacity);
-        }
-
-        &:not(.disabled):hover {
-            cursor: pointer;
-        }
-
-        &.disabled:hover {
-            cursor: not-allowed;
-        }
-    }
-
-    &:checked ~ .toggle-slot .toggle-button {
-        transform: translate(.7rem, .65em);
-    }
-
-    &:checked ~ .toggle-slot .sun-icon-wrapper {
-        opacity: 0;
-        transform: translate(3em, 2em) rotate(0deg);
-    }
-
-    &:checked ~ .toggle-slot .moon-icon-wrapper {
-        opacity: 1;
-        transform: translate(2.45rem, .85em) rotate(-25deg);
     }
 }

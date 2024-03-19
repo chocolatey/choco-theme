@@ -1,3 +1,3 @@
-import './src/chocolatey-inputs.js';
-import './src/ts/chocolatey-tables.ts';
-import './src/chocolatey-theme-toggle.js';
+import './src/inputs.js';
+import './src/ts/tables.ts';
+import './src/theme-toggle.js';
