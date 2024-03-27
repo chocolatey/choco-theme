@@ -84,11 +84,8 @@ import { escapeId, getParents } from './util/chocolatey-functions';
 
     const changeHash = el => {
         el.addEventListener('click', e => {
-            if (history.pushState) {
-                history.pushState(null, null, e.target.hash);
-            } else {
-                window.location.hash = e.target.hash; // Polyfill for old browsers
-            }
+            console.log('click');
+            history.pushState(null, null, e.target.hash);
         });
     };
 

@@ -12438,11 +12438,8 @@
     }
     const changeHash = (el) => {
       el.addEventListener("click", (e) => {
-        if (history.pushState) {
-          history.pushState(null, null, e.target.hash);
-        } else {
-          window.location.hash = e.target.hash;
-        }
+        console.log("click");
+        history.pushState(null, null, e.target.hash);
       });
     };
     document.querySelectorAll('[data-bs-toggle="tab"]:not(.d-hash-none)').forEach((el) => changeHash(el));

@@ -39686,11 +39686,8 @@ ${templateEnter}`;
     }
     const changeHash = (el) => {
       el.addEventListener("click", (e) => {
-        if (history.pushState) {
-          history.pushState(null, null, e.target.hash);
-        } else {
-          window.location.hash = e.target.hash;
-        }
+        console.log("click");
+        history.pushState(null, null, e.target.hash);
       });
     };
     document.querySelectorAll('[data-bs-toggle="tab"]:not(.d-hash-none)').forEach((el) => changeHash(el));
@@ -40187,10 +40184,10 @@ ${templateEnter}`;
         }
         if ((0, import_jquery2.default)(scrollHash2).length) {
           if ((0, import_jquery2.default)(window).scrollTop() > (0, import_jquery2.default)(scrollHash2).offset().top - 30 && (0, import_jquery2.default)(scrollHash2).is(":visible")) {
-            (0, import_jquery2.default)(`a[href="${scrollHash2}"]`).addClass("active active-page");
-            (0, import_jquery2.default)(`a[href="${scrollHash2}"]`).parent().prev().find("a.active").removeClass("active active-page");
+            (0, import_jquery2.default)(`a[href="${scrollHash2}"].nav-link`).addClass("active active-page");
+            (0, import_jquery2.default)(`a[href="${scrollHash2}"].nav-link`).parent().prev().find("a.active").removeClass("active active-page");
           } else {
-            (0, import_jquery2.default)(`a[href="${scrollHash2}"]`).removeClass("active active-page");
+            (0, import_jquery2.default)(`a[href="${scrollHash2}"].nav-link`).removeClass("active active-page");
           }
         }
       };

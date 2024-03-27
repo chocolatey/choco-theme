@@ -9043,7 +9043,7 @@ textarea.form-control-lg {
   left: 5%;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  color: #000f07;
+  color: #cccac0;
   text-align: center;
 }
 
@@ -9055,7 +9055,7 @@ textarea.form-control-lg {
   background-color: #019a4a;
 }
 .carousel-dark .carousel-caption {
-  color: #000f07;
+  color: #cccac0;
 }
 
 [data-bs-theme=dark] .carousel .carousel-control-prev-icon,
@@ -9067,7 +9067,7 @@ textarea.form-control-lg {
   background-color: #019a4a;
 }
 [data-bs-theme=dark] .carousel .carousel-caption, [data-bs-theme=dark].carousel .carousel-caption {
-  color: #000f07;
+  color: #cccac0;
 }
 
 .spinner-grow,
