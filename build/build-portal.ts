@@ -24,7 +24,7 @@ const init = async () => {
     }).then(async () => {
         console.log('✅ Portal JS compiled and minified');
 
-        // Purge CSS
+        // PurgeCSS
         await purgeCss({
             source: `${repository.css}${repository.name}.min.css`,
             repository: repository

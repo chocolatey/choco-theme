@@ -18,7 +18,6 @@
   "style": "dist/css/choco-theme.css",
   "scripts": {
     "build": "npm run --silent clean && npm-run-all --parallel --silent css js partials && echo 🎉 Build complete",
-    "build-css-js": "npm-run-all --parallel --silent css js",
     "css": "npm-run-all --sequential --silent css-compile css-minify",
     "css-compile": "echo 🚀 Compiling SASS... && sass --load-path=node_modules --style=expanded --no-source-map --stop-on-error --quiet scss/:dist/css/ && echo ✅ SASS compiled",
     "css-minify": "echo 🚀 Minifying CSS... && npm-run-all --parallel --silent css-minify-* && echo ✅ CSS minified",

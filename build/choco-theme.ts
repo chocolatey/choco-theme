@@ -42,12 +42,14 @@ switch (repository.name) {
 }
 
 interface CopyTheme {
+    task: string;
     source: string;
     destination: string;
     isFolder?: boolean;
 }
 
 const copyTheme = async ({
+    task,
     source,
     destination,
     isFolder = true
@@ -59,6 +61,8 @@ const copyTheme = async ({
 
     // Copy theme
     await fs.cp(source, destination, { recursive: isFolder });
+
+    console.log(`✅ ${task} copied`);
 };
 
 const init = async () => {
@@ -68,24 +72,24 @@ const init = async () => {
         // Define arrays for parallel tasks
         const parallelTasksInitial = [
             {
-                task: 'Copying head JS',
+                task: 'theme-toggle.min.js',
                 source: `${repositoryConfig.theme.js}theme-toggle.min.js`,
                 destination: `${repository.js}theme-toggle.min.js`,
                 isFolder: false
             },
             {
-                task: 'Copying JS',
+                task: `${repository.name}.min.js`,
                 source: `${repositoryConfig.theme.js}${repository.name}.min.js`,
                 destination: `${repository.js}${repository.name}.min.js`,
                 isFolder: false
             },
             {
-                task: 'Copying Partials',
+                task: 'Partials',
                 source: `${repositoryConfig.theme.partials}${repository.language}/`,
                 destination: repository.partials
             },
             {
-                task: 'Copying CSS',
+                task: `${repository.name}.min.css`,
                 source: `${repositoryConfig.theme.css}${sourceCss}.min.css`,
                 destination: `${repository.css}${repository.name}.min.css`,
                 isFolder: false
@@ -97,19 +101,19 @@ const init = async () => {
         if (repository.name === repositoryConfig.community.name) {
             parallelTasksInitial.push(
                 {
-                    task: 'Copying community-packages.min.js',
+                    task: 'community-packages.min.js',
                     source: `${repositoryConfig.theme.js}community-packages.min.js`,
                     destination: `${repository.js}community-packages.min.js`,
                     isFolder: false
                 },
                 {
-                    task: 'Copying community-package-differ.min.js',
+                    task: 'community-package-differ.min.js',
                     source: `${repositoryConfig.theme.js}community-package-differ.js`,
                     destination: `${repository.js}community-package-differ.min.js`,
                     isFolder: false
                 },
                 {
-                    task: 'Copying community-package-stats.min.js',
+                    task: 'community-package-stats.min.js',
                     source: `${repositoryConfig.theme.js}community-package-stats.js`,
                     destination: `${repository.js}community-package-stats.min.js`,
                     isFolder: false
@@ -121,7 +125,7 @@ const init = async () => {
         if (repository.playwright) {
             parallelTasksInitial.push(
                 {
-                    task: 'Copying playwright.config.ts',
+                    task: 'playwright.config.ts',
                     source: `${repositoryConfig.theme.root}playwright.config.ts`,
                     destination: `${repository.root}playwright.config.ts`,
                     isFolder: false
@@ -131,7 +135,7 @@ const init = async () => {
             if (repository.name === repositoryConfig.org.name) {
                 parallelTasksInitial.push(
                     {
-                        task: 'Copying Playwright Tests',
+                        task: 'Playwright tests',
                         source: `${repositoryConfig.theme.playwright}tests/pricing-calculator/`,
                         destination: `${repository.playwright}pricing-calculator/`
                     }
@@ -143,7 +147,7 @@ const init = async () => {
         if (repository.name !== repositoryConfig.boxstarter.name) {
             parallelTasksInitial.push(
                 {
-                    task: 'Copying Favicons',
+                    task: 'Favicons',
                     source: repositoryConfig.theme.favicons,
                     destination: repository.favicons
                 }
@@ -154,7 +158,7 @@ const init = async () => {
         if (repository.name !== repositoryConfig.zendesk.name) {
             parallelTasksInitial.push(
                 {
-                    task: 'Copying Font Awesome',
+                    task: 'Font Awesome',
                     source: repositoryConfig.theme.fontAwesome,
                     destination: repository.fontAwesome
                 }
@@ -165,7 +169,7 @@ const init = async () => {
         if (repository.name !== repositoryConfig.zendesk.name) {
             parallelTasksInitial.push(
                 {
-                    task: 'Copying Images',
+                    task: 'Images',
                     source: repositoryConfig.theme.images,
                     destination: repository.images
                 }
@@ -176,13 +180,13 @@ const init = async () => {
         if (repository.playwright || repository.name === repositoryConfig.portal.name) {
             parallelTasksInitial.push(
                 {
-                    task: 'Copying .eslintrc.js',
+                    task: '.eslintrc.js',
                     source: `${repositoryConfig.theme.root}.eslintrc.js`,
                     destination: `${repository.root}.eslintrc.js`,
                     isFolder: false
                 },
                 {
-                    task: 'Copying tsconfig.json',
+                    task: 'tsconfig.json',
                     source: `${repositoryConfig.theme.root}tsconfig.json`,
                     destination: `${repository.root}tsconfig.json`,
                     isFolder: false
@@ -194,7 +198,7 @@ const init = async () => {
         if (containsValidation) {
             parallelTasksInitial.push(
                 {
-                    task: 'Copying validation.min.js',
+                    task: 'validation.min.js',
                     source: `${repositoryConfig.theme.js}validation.min.js`,
                     destination: `${repository.js}validation.min.js`,
                     isFolder: false
@@ -203,12 +207,16 @@ const init = async () => {
         }
 
         // Execute initial tasks in parallel
+        console.log('🚀 Starting choco-theme...');
+        console.log('🚀 Copying choco-theme...');
         await Promise.all(parallelTasksInitial.map(({ task, source, destination, isFolder }) => {
-            return copyTheme({ source, destination, isFolder }).then(() => console.log(`✅ Task for ${task} complete`));
+            return copyTheme({ task, source, destination, isFolder });
         }));
+        console.log('✅ Copying of choco-theme complete');
 
         // If blog repository, update Program.cs
         if (repository.name === repositoryConfig.blog.name) {
+            console.log('🚀 Updating Program.cs with AlertText.html...');
             await updateContent({
                 destination: `${repositoryConfig.theme.root}partials/`,
                 targetFile: 'Program.cs',
@@ -218,11 +226,13 @@ const init = async () => {
                 replacementContentIsFile: true,
                 replacementTemplate: '"TopNoticeText", "{0}"'
             });
+            console.log('✅ Program.cs updated');
         }
 
         // Change CSS content
         // Font Awesome
         if (repository.name === repositoryConfig.portal.name) {
+            console.log('🚀 Updating Font Awesome font path...');
             await updateContent({
                 destination: repository.css,
                 targetFile: `${repository.name}.min.css`,
@@ -231,10 +241,12 @@ const init = async () => {
                 replaceWithContent: '/fonts/fontawesome-free',
                 replacementContentIsFile: false
             });
+            console.log('✅ Font Awesome font path updated');
         }
 
         if (repository.name === repositoryConfig.community.name) {
             // Font Awesome
+            console.log('🚀 Updating Font Awesome font path...');
             await updateContent({
                 destination: repository.css,
                 targetFile: `${repository.name}.min.css`,
@@ -243,8 +255,10 @@ const init = async () => {
                 replaceWithContent: '/Content/fonts/fontawesome-free',
                 replacementContentIsFile: false
             });
+            console.log('✅ Font Awesome font path updated');
 
             // Images for headers
+            console.log('🚀 Updating image paths for headers...');
             await updateContent({
                 destination: repository.css,
                 targetFile: `${repository.name}.min.css`,
@@ -253,15 +267,18 @@ const init = async () => {
                 replaceWithContent: '/Content/images',
                 replacementContentIsFile: false
             });
+            console.log('✅ Image paths for headers updated');
         }
 
-        // Purge CSS
+        // PurgeCSS
         if (repository.name !== repositoryConfig.portal.name) {
             await purgeCss({
                 source: `${repository.css}${repository.name}.min.css`,
                 repository: repository
             });
         }
+
+        console.log('🎉 choco-theme complete');
     } catch (error) {
         console.error(error);
     }
