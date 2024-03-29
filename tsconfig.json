@@ -1,9 +1,12 @@
 {
     "compilerOptions": {
-        "moduleResolution":"nodenext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "target": "ESNext"
-    }
+        "lib": [
+            "ES2021.String"
+        ]
+    },
 }

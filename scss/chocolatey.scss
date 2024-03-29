@@ -1,10 +1,36 @@
+@import "mixins/banner";
+@include ctBanner("chocolatey");
+
 @import "variables/chocolatey";
 @import "variables/global";
-@import "variables/chocolatey-root";
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 // FontAwesome Free
 @import "fontawesome";
+
+// External Libraries
+@import "add-to-calendar-button/assets/css/atcb";
+
+// docs only
+@import "@docsearch/css/dist/style";
+
+// fest only
+@import "lite-youtube-embed/src/lite-yt-embed";
+
+// org only
+@import "@splidejs/splide/dist/css/splide-core.min";
+@import "nouislider/dist/nouislider.min";
+
+// portal only
+@import "flatpickr/dist/flatpickr";
+@import "chartist/dist/chartist";
+
+// community only
+@import "easymde/dist/easymde.min";
+@import "@tarekraafat/autocomplete.js/dist/css/autoComplete.02";
+
+// Root Variables
+@import "variables/chocolatey-root";
 
 // Custom Styles
 @import "styles";

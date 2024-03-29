@@ -4,7 +4,7 @@
     ],
     "rules": {
         "scss/selector-no-union-class-name": true,
-        "indentation": 4,
+        "@stylistic/indentation": 4,
         "selector-max-id" : 20,
         "selector-max-class" : 20,
         "selector-max-compound-selectors": 20,

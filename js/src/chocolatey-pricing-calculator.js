@@ -29,6 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 '50%': [2000],
                 max: [c4bNodeDefaults.maxNodes]
             },
+            // eslint-disable-next-line object-shorthand
             format: {
                 to: function (value) {
                     // Must return a string
