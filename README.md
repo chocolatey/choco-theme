@@ -10,14 +10,11 @@ Before running any commands below, ensure you have ran `yarn` in the root of thi
 
 | Script                                  | Action                                                                                 |
 |-----------------------------------------|----------------------------------------------------------------------------------------|
-| build                                   | Builds CSS, JS, and Partials.                                                          |
-| lint                                    | Runs Stylelint and ESLint to determine code style errors.                              |
-| release OLD_VERSION NEW_VERSION         | Runs all build steps and updates choco-theme to the version specified.                 |
-| watch                                   | Watches for changes in CSS, JS, and Partials, and rebuilds them automatically.         |
 | npm run build                           | Builds CSS, JS, and Partials.                                                          |
 | npm run lint                            | Runs Stylelint and ESLint to determine code style errors.                              |
 | npm release OLD_VERSION NEW_VERSION     | Runs all build steps and updates choco-theme to the version specified.                 |
 | npm run watch                           | Watches for changes in CSS, JS, and Partials, and rebuilds them automatically.         |
+| yarn npm audit                          | Audits packages and reports vulnerabilities.                                           |
 
 ## Install ESLint Extension
 
