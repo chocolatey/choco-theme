@@ -174,7 +174,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
                 &::after {
                     top: 72px;
                     left: calc(1rem + 13px);
-                    z-index: 1022;
+                    z-index: 9999;
                     border-right: 17px solid transparent;
                     border-bottom: 17px solid var(--bs-secondary-bg);
                     border-left: 17px solid transparent;

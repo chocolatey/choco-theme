@@ -1,4 +1,4 @@
-import { atcb_init } from 'add-to-calendar-button'; // eslint-disable-line camelcase
+import 'add-to-calendar-button';
 import balanceText from 'balance-text';
 import './src/lib/prism.min.js';
 import './src/alerts.js';
@@ -27,5 +27,4 @@ import './src/ts/tab-multiples.ts';
 import './src/terminal.js';
 import './src/toggle-fade-show.js';
 import './src/theme-toggle.js';
-atcb_init();
 balanceText();

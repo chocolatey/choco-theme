@@ -1449,12 +1449,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"add-to-calendar-button@npm:^1.18.8":
-  version: 1.18.8
-  resolution: "add-to-calendar-button@npm:1.18.8"
+"add-to-calendar-button@npm:^2.6.9":
+  version: 2.6.9
+  resolution: "add-to-calendar-button@npm:2.6.9"
   dependencies:
-    timezones-ical-library: "npm:^1.4.2"
-  checksum: 10/d2cafb7dce12eec99288bbbba0c730b39bef9f8eba3a8fc781ccddcff09ea036d1c7a95a3cab228f92c291a019f6b2cc82575ae7d41ecfe37a0afef61ead0777
+    timezones-ical-library: "npm:^1.8.2"
+  checksum: 10/e3d7269a23e80db2fc4c61106fbf7943802bce6c862ba9ab8e817d10ed4f84fdb595883b19d2c83276178dcf8b03a3455863a55b352f1fbcc27fd0963a214979
   languageName: node
   linkType: hard
 
@@ -1935,7 +1935,7 @@ __metadata:
     "@types/prismjs": "npm:^1.26.0"
     "@typescript-eslint/eslint-plugin": "npm:^7.2.0"
     "@typescript-eslint/parser": "npm:^7.2.0"
-    add-to-calendar-button: "npm:^1.18.8"
+    add-to-calendar-button: "npm:^2.6.9"
     anchor-js: "npm:^5.0.0"
     balance-text: "npm:^3.3.1"
     bootstrap: "npm:5.3.3"
@@ -6395,7 +6395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"timezones-ical-library@npm:^1.4.2":
+"timezones-ical-library@npm:^1.8.2":
   version: 1.8.2
   resolution: "timezones-ical-library@npm:1.8.2"
   checksum: 10/42975b9873c6b7db719df70edb0925011dee0bfaaecfaf84863840c2d6448d4e45730a8696f64446205dfca4d2e690392cfa9ae61cd76dbc1b9eefb8f260fa40

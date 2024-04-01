@@ -121,6 +121,18 @@ const init = async () => {
             );
         }
 
+        // atcb-override css
+        if (repository.name === repositoryConfig.org.name) {
+            parallelTasksInitial.push(
+                {
+                    task: 'atcb-overrides.min.css',
+                    source: `${repositoryConfig.theme.css}atcb-overrides.min.css`,
+                    destination: `${repository.css}atcb-overrides.min.css`,
+                    isFolder: false
+                }
+            );
+        }
+
         // Playwright
         if (repository.playwright) {
             parallelTasksInitial.push(

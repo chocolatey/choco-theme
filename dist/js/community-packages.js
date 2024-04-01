@@ -40317,6 +40317,25 @@ ${templateEnter}`;
     const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl));
   })();
 
+  // js/src/theme-toggle.js
+  (() => {
+    const themeDropdownContainers = document.querySelectorAll(".dropdown-theme");
+    themeDropdownContainers.forEach((dropdownContainer) => {
+      dropdownContainer.querySelectorAll(".dropdown-toggle").forEach((el) => {
+        el.addEventListener("hide.bs.dropdown", () => {
+          document.querySelectorAll("main").forEach((main2) => {
+            main2.classList.remove("z-0");
+          });
+        });
+        el.addEventListener("show.bs.dropdown", () => {
+          document.querySelectorAll("main").forEach((main2) => {
+            main2.classList.add("z-0");
+          });
+        });
+      });
+    });
+  })();
+
   // js/src/packages.js
   var import_jquery4 = __toESM(require_jquery());
   var import_easymde = __toESM(require_easymde());
