@@ -134,24 +134,6 @@ $enable-responsive-font-sizes:      true;
 $enable-negative-margins:           true;
 $font-size-base:                    1rem;
 
-// Body
-$body-color:                        $primary-950;
-$body-bg:                           $gray-100;
-
-$body-color-dark:                   $gray-200;
-$body-bg-dark:                      $primary-950;
-
-$body-secondary-bg:                 $white;
-
-$body-secondary-bg-dark:            $primary-900;
-
-$body-tertiary-bg:                  $gray-300;
-
-$body-tertiary-bg-dark:             $primary-800;
-
-$adaptive:                          $primary-150;
-$adaptive-dark:                     $primary-850;
-
 // Links
 $link-decoration: none;
 
@@ -160,12 +142,10 @@ $badge-color: var(--bs-body-color);
 
 // Borders
 $border-color:                      $gray-300;
+$border-color-adaptive-dark:        rgba($primary, .5);
+
 $border-color-translucent:          $gray-300;
 $border-color-adaptive:             $gray-300;
-
-$border-color-dark:                 $primary-800;
-$border-color-translucent-dark:     $primary-800;
-$border-color-adaptive-dark:        rgba($primary, .5);
 
 // Buttons
 $input-btn-padding-y-sm: 0;
@@ -187,9 +167,6 @@ $carousel-indicator-height:         15px;
 $carousel-control-icon-width:       1.5rem;
 $carousel-control-width:            3.5%;
 $carousel-caption-width:            90%;
-
-$carousel-caption-color:            $body-color-dark;
-$carousel-dark-caption-color:       $body-color-dark;
 
 // Breadcrumbs
 $breadcrumb-padding-y: 0;

@@ -40737,9 +40737,9 @@ textarea.form-control-lg {
   }
 }
 /*!
- * Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2023 Fonticons, Inc.
+ * Copyright 2024 Fonticons, Inc.
  */
 .fa {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
@@ -41154,7 +41154,7 @@ textarea.form-control-lg {
 }
 
 .fa-rotate-by {
-  transform: rotate(var(--fa-rotate-angle, none));
+  transform: rotate(var(--fa-rotate-angle, 0));
 }
 
 .fa-stack {
@@ -44221,6 +44221,10 @@ readers do not read off random characters that represent icons */
   content: "\f033";
 }
 
+.fa-table-cells-column-lock::before {
+  content: "\e678";
+}
+
 .fa-church::before {
   content: "\f51d";
 }
@@ -47117,6 +47121,10 @@ readers do not read off random characters that represent icons */
   content: "\f031";
 }
 
+.fa-table-cells-row-lock::before {
+  content: "\e67a";
+}
+
 .fa-rupiah-sign::before {
   content: "\e23d";
 }
@@ -49016,9 +49024,9 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2023 Fonticons, Inc.
+ * Copyright 2024 Fonticons, Inc.
  */
 :root, :host {
   --fa-style-family-classic: "Font Awesome 6 Free";
@@ -49057,9 +49065,9 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2023 Fonticons, Inc.
+ * Copyright 2024 Fonticons, Inc.
  */
 :root, :host {
   --fa-style-family-classic: "Font Awesome 6 Free";
@@ -49079,9 +49087,9 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2023 Fonticons, Inc.
+ * Copyright 2024 Fonticons, Inc.
  */
 :root, :host {
   --fa-style-family-brands: "Font Awesome 6 Brands";
@@ -49230,6 +49238,10 @@ readers do not read off random characters that represent icons */
 
 .fa-drupal:before {
   content: "\f1a9";
+}
+
+.fa-jxl:before {
+  content: "\e67b";
 }
 
 .fa-hire-a-helper:before {
@@ -49633,6 +49645,10 @@ readers do not read off random characters that represent icons */
 }
 
 .fa-kickstarter:before {
+  content: "\f3bb";
+}
+
+.fa-square-kickstarter:before {
   content: "\f3bb";
 }
 
@@ -50212,6 +50228,10 @@ readers do not read off random characters that represent icons */
   content: "\f0d4";
 }
 
+.fa-web-awesome:before {
+  content: "\e682";
+}
+
 .fa-mandalorian:before {
   content: "\f50f";
 }
@@ -50428,6 +50448,10 @@ readers do not read off random characters that represent icons */
   content: "\f412";
 }
 
+.fa-square-web-awesome-stroke:before {
+  content: "\e684";
+}
+
 .fa-searchengin:before {
   content: "\f3eb";
 }
@@ -50572,6 +50596,10 @@ readers do not read off random characters that represent icons */
   content: "\f232";
 }
 
+.fa-square-upwork:before {
+  content: "\e67c";
+}
+
 .fa-slideshare:before {
   content: "\f1e7";
 }
@@ -50676,6 +50704,10 @@ readers do not read off random characters that represent icons */
   content: "\f213";
 }
 
+.fa-square-web-awesome:before {
+  content: "\e683";
+}
+
 .fa-sass:before {
   content: "\f41e";
 }
@@ -50722,6 +50754,10 @@ readers do not read off random characters that represent icons */
 
 .fa-waze:before {
   content: "\f83f";
+}
+
+.fa-bluesky:before {
+  content: "\e671";
 }
 
 .fa-cc-jcb:before {
@@ -58066,12 +58102,12 @@ kbd {
 }
 
 .alert-primary {
-  color: #000;
-  background: var(--bs-primary);
+  color: #000 !important;
+  background: var(--bs-primary) !important;
 }
 .alert-primary a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-primary a:hover {
   text-decoration: underline;
@@ -58081,12 +58117,12 @@ kbd {
 }
 
 .alert-secondary {
-  color: #fff;
-  background: var(--bs-secondary);
+  color: #fff !important;
+  background: var(--bs-secondary) !important;
 }
 .alert-secondary a {
   font-weight: 700;
-  color: #fff;
+  color: #fff !important;
 }
 .alert-secondary a:hover {
   text-decoration: underline;
@@ -58096,12 +58132,12 @@ kbd {
 }
 
 .alert-success {
-  color: #000;
-  background: var(--bs-success);
+  color: #000 !important;
+  background: var(--bs-success) !important;
 }
 .alert-success a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-success a:hover {
   text-decoration: underline;
@@ -58111,12 +58147,12 @@ kbd {
 }
 
 .alert-info {
-  color: #000;
-  background: var(--bs-info);
+  color: #000 !important;
+  background: var(--bs-info) !important;
 }
 .alert-info a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-info a:hover {
   text-decoration: underline;
@@ -58126,12 +58162,12 @@ kbd {
 }
 
 .alert-warning {
-  color: #000;
-  background: var(--bs-warning);
+  color: #000 !important;
+  background: var(--bs-warning) !important;
 }
 .alert-warning a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-warning a:hover {
   text-decoration: underline;
@@ -58141,12 +58177,12 @@ kbd {
 }
 
 .alert-danger {
-  color: #000;
-  background: var(--bs-danger);
+  color: #000 !important;
+  background: var(--bs-danger) !important;
 }
 .alert-danger a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-danger a:hover {
   text-decoration: underline;
@@ -58156,12 +58192,12 @@ kbd {
 }
 
 .alert-light {
-  color: #000;
-  background: var(--bs-light);
+  color: #000 !important;
+  background: var(--bs-light) !important;
 }
 .alert-light a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-light a:hover {
   text-decoration: underline;
@@ -58171,17 +58207,227 @@ kbd {
 }
 
 .alert-dark {
-  color: #fff;
-  background: var(--bs-dark);
+  color: #fff !important;
+  background: var(--bs-dark) !important;
 }
 .alert-dark a {
   font-weight: 700;
-  color: #fff;
+  color: #fff !important;
 }
 .alert-dark a:hover {
   text-decoration: underline;
 }
 .alert-dark .btn-close {
+  text-shadow: none;
+}
+
+.alert-blue {
+  color: #000 !important;
+  background: var(--bs-blue) !important;
+}
+.alert-blue a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-blue a:hover {
+  text-decoration: underline;
+}
+.alert-blue .btn-close {
+  text-shadow: none;
+}
+
+.alert-indigo {
+  color: #fff !important;
+  background: var(--bs-indigo) !important;
+}
+.alert-indigo a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-indigo a:hover {
+  text-decoration: underline;
+}
+.alert-indigo .btn-close {
+  text-shadow: none;
+}
+
+.alert-purple {
+  color: #fff !important;
+  background: var(--bs-purple) !important;
+}
+.alert-purple a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-purple a:hover {
+  text-decoration: underline;
+}
+.alert-purple .btn-close {
+  text-shadow: none;
+}
+
+.alert-pink {
+  color: #fff !important;
+  background: var(--bs-pink) !important;
+}
+.alert-pink a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-pink a:hover {
+  text-decoration: underline;
+}
+.alert-pink .btn-close {
+  text-shadow: none;
+}
+
+.alert-red {
+  color: #000 !important;
+  background: var(--bs-red) !important;
+}
+.alert-red a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-red a:hover {
+  text-decoration: underline;
+}
+.alert-red .btn-close {
+  text-shadow: none;
+}
+
+.alert-orange {
+  color: #000 !important;
+  background: var(--bs-orange) !important;
+}
+.alert-orange a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-orange a:hover {
+  text-decoration: underline;
+}
+.alert-orange .btn-close {
+  text-shadow: none;
+}
+
+.alert-yellow {
+  color: #000 !important;
+  background: var(--bs-yellow) !important;
+}
+.alert-yellow a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-yellow a:hover {
+  text-decoration: underline;
+}
+.alert-yellow .btn-close {
+  text-shadow: none;
+}
+
+.alert-green {
+  color: #000 !important;
+  background: var(--bs-green) !important;
+}
+.alert-green a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-green a:hover {
+  text-decoration: underline;
+}
+.alert-green .btn-close {
+  text-shadow: none;
+}
+
+.alert-teal {
+  color: #000 !important;
+  background: var(--bs-teal) !important;
+}
+.alert-teal a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-teal a:hover {
+  text-decoration: underline;
+}
+.alert-teal .btn-close {
+  text-shadow: none;
+}
+
+.alert-cyan {
+  color: #000 !important;
+  background: var(--bs-cyan) !important;
+}
+.alert-cyan a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-cyan a:hover {
+  text-decoration: underline;
+}
+.alert-cyan .btn-close {
+  text-shadow: none;
+}
+
+.alert-black {
+  color: #fff !important;
+  background: var(--bs-black) !important;
+}
+.alert-black a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-black a:hover {
+  text-decoration: underline;
+}
+.alert-black .btn-close {
+  text-shadow: none;
+}
+
+.alert-white {
+  color: #000 !important;
+  background: var(--bs-white) !important;
+}
+.alert-white a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-white a:hover {
+  text-decoration: underline;
+}
+.alert-white .btn-close {
+  text-shadow: none;
+}
+
+.alert-gray {
+  color: #fff !important;
+  background: var(--bs-gray) !important;
+}
+.alert-gray a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-gray a:hover {
+  text-decoration: underline;
+}
+.alert-gray .btn-close {
+  text-shadow: none;
+}
+
+.alert-gray-dark {
+  color: #fff !important;
+  background: var(--bs-gray-dark) !important;
+}
+.alert-gray-dark a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-gray-dark a:hover {
+  text-decoration: underline;
+}
+.alert-gray-dark .btn-close {
   text-shadow: none;
 }
 

@@ -43738,12 +43738,12 @@ kbd {
 }
 
 .alert-primary {
-  color: #000;
-  background: var(--bs-primary);
+  color: #000 !important;
+  background: var(--bs-primary) !important;
 }
 .alert-primary a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-primary a:hover {
   text-decoration: underline;
@@ -43753,12 +43753,12 @@ kbd {
 }
 
 .alert-secondary {
-  color: #fff;
-  background: var(--bs-secondary);
+  color: #fff !important;
+  background: var(--bs-secondary) !important;
 }
 .alert-secondary a {
   font-weight: 700;
-  color: #fff;
+  color: #fff !important;
 }
 .alert-secondary a:hover {
   text-decoration: underline;
@@ -43768,12 +43768,12 @@ kbd {
 }
 
 .alert-success {
-  color: #000;
-  background: var(--bs-success);
+  color: #000 !important;
+  background: var(--bs-success) !important;
 }
 .alert-success a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-success a:hover {
   text-decoration: underline;
@@ -43783,12 +43783,12 @@ kbd {
 }
 
 .alert-info {
-  color: #000;
-  background: var(--bs-info);
+  color: #000 !important;
+  background: var(--bs-info) !important;
 }
 .alert-info a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-info a:hover {
   text-decoration: underline;
@@ -43798,12 +43798,12 @@ kbd {
 }
 
 .alert-warning {
-  color: #000;
-  background: var(--bs-warning);
+  color: #000 !important;
+  background: var(--bs-warning) !important;
 }
 .alert-warning a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-warning a:hover {
   text-decoration: underline;
@@ -43813,12 +43813,12 @@ kbd {
 }
 
 .alert-danger {
-  color: #000;
-  background: var(--bs-danger);
+  color: #000 !important;
+  background: var(--bs-danger) !important;
 }
 .alert-danger a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-danger a:hover {
   text-decoration: underline;
@@ -43828,12 +43828,12 @@ kbd {
 }
 
 .alert-light {
-  color: #000;
-  background: var(--bs-light);
+  color: #000 !important;
+  background: var(--bs-light) !important;
 }
 .alert-light a {
   font-weight: 700;
-  color: #000;
+  color: #000 !important;
 }
 .alert-light a:hover {
   text-decoration: underline;
@@ -43843,17 +43843,227 @@ kbd {
 }
 
 .alert-dark {
-  color: #fff;
-  background: var(--bs-dark);
+  color: #fff !important;
+  background: var(--bs-dark) !important;
 }
 .alert-dark a {
   font-weight: 700;
-  color: #fff;
+  color: #fff !important;
 }
 .alert-dark a:hover {
   text-decoration: underline;
 }
 .alert-dark .btn-close {
+  text-shadow: none;
+}
+
+.alert-blue {
+  color: #000 !important;
+  background: var(--bs-blue) !important;
+}
+.alert-blue a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-blue a:hover {
+  text-decoration: underline;
+}
+.alert-blue .btn-close {
+  text-shadow: none;
+}
+
+.alert-indigo {
+  color: #fff !important;
+  background: var(--bs-indigo) !important;
+}
+.alert-indigo a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-indigo a:hover {
+  text-decoration: underline;
+}
+.alert-indigo .btn-close {
+  text-shadow: none;
+}
+
+.alert-purple {
+  color: #fff !important;
+  background: var(--bs-purple) !important;
+}
+.alert-purple a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-purple a:hover {
+  text-decoration: underline;
+}
+.alert-purple .btn-close {
+  text-shadow: none;
+}
+
+.alert-pink {
+  color: #fff !important;
+  background: var(--bs-pink) !important;
+}
+.alert-pink a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-pink a:hover {
+  text-decoration: underline;
+}
+.alert-pink .btn-close {
+  text-shadow: none;
+}
+
+.alert-red {
+  color: #000 !important;
+  background: var(--bs-red) !important;
+}
+.alert-red a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-red a:hover {
+  text-decoration: underline;
+}
+.alert-red .btn-close {
+  text-shadow: none;
+}
+
+.alert-orange {
+  color: #000 !important;
+  background: var(--bs-orange) !important;
+}
+.alert-orange a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-orange a:hover {
+  text-decoration: underline;
+}
+.alert-orange .btn-close {
+  text-shadow: none;
+}
+
+.alert-yellow {
+  color: #000 !important;
+  background: var(--bs-yellow) !important;
+}
+.alert-yellow a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-yellow a:hover {
+  text-decoration: underline;
+}
+.alert-yellow .btn-close {
+  text-shadow: none;
+}
+
+.alert-green {
+  color: #000 !important;
+  background: var(--bs-green) !important;
+}
+.alert-green a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-green a:hover {
+  text-decoration: underline;
+}
+.alert-green .btn-close {
+  text-shadow: none;
+}
+
+.alert-teal {
+  color: #000 !important;
+  background: var(--bs-teal) !important;
+}
+.alert-teal a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-teal a:hover {
+  text-decoration: underline;
+}
+.alert-teal .btn-close {
+  text-shadow: none;
+}
+
+.alert-cyan {
+  color: #000 !important;
+  background: var(--bs-cyan) !important;
+}
+.alert-cyan a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-cyan a:hover {
+  text-decoration: underline;
+}
+.alert-cyan .btn-close {
+  text-shadow: none;
+}
+
+.alert-black {
+  color: #fff !important;
+  background: var(--bs-black) !important;
+}
+.alert-black a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-black a:hover {
+  text-decoration: underline;
+}
+.alert-black .btn-close {
+  text-shadow: none;
+}
+
+.alert-white {
+  color: #000 !important;
+  background: var(--bs-white) !important;
+}
+.alert-white a {
+  font-weight: 700;
+  color: #000 !important;
+}
+.alert-white a:hover {
+  text-decoration: underline;
+}
+.alert-white .btn-close {
+  text-shadow: none;
+}
+
+.alert-gray {
+  color: #fff !important;
+  background: var(--bs-gray) !important;
+}
+.alert-gray a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-gray a:hover {
+  text-decoration: underline;
+}
+.alert-gray .btn-close {
+  text-shadow: none;
+}
+
+.alert-gray-dark {
+  color: #fff !important;
+  background: var(--bs-gray-dark) !important;
+}
+.alert-gray-dark a {
+  font-weight: 700;
+  color: #fff !important;
+}
+.alert-gray-dark a:hover {
+  text-decoration: underline;
+}
+.alert-gray-dark .btn-close {
   text-shadow: none;
 }
 
