@@ -151,14 +151,14 @@ repositoryConfig.community.purgeCss = {
 // Merge purgeCss section into the org configuration
 repositoryConfig.org.purgeCss = {
     content: [
-        ...defaultRepositoryConfig.purgeCss.content,
-        'node_modules/@splidejs/splide/dist/css/splide-core.min.css',
-        'node_modules/nouislider/dist/nouislider.min.css'
+        ...defaultRepositoryConfig.purgeCss.content
     ],
     safelist: [
         ...defaultRepositoryConfig.purgeCss.safelist,
-        /^splide-/,
-        /^splide__/
+        'is-initialized',
+        'is-rendered',
+        /^splide/,
+        /^noUi-/
     ]
 };
 
