@@ -1,4 +1,8 @@
 .dropdown-theme {
+    .dropdown-toggle {
+        text-decoration: none !important;
+    }
+
     .dropdown-item {
         &.active {
             i.d-none {

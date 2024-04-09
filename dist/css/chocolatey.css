@@ -55263,6 +55263,9 @@ main {
     margin-bottom: 2rem;
   }
 }
+.dropdown-theme .dropdown-toggle {
+  text-decoration: none !important;
+}
 .dropdown-theme .dropdown-item.active i.d-none {
   display: block !important;
 }
