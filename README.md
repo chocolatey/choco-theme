@@ -8,13 +8,51 @@ This repository holds all of the CSS, JS, images, and shared partial files that 
 
 Before running any commands below, ensure you have ran `yarn` in the root of this repository, and have enabled corepack by running `corepack enable`.
 
-| Script                                          | Action                                                                                 |
-|-------------------------------------------------|----------------------------------------------------------------------------------------|
-| yarn build                                  | Builds CSS, JS, and Partials.                                                          |
-| yarn lint                                   | Runs Stylelint and ESLint to determine code style errors.                              |
-| yarn change-version OLD_VERSION NEW_VERSION     | Runs all build steps and updates choco-theme to the version specified.                 |
-| yarn watch                                  | Watches for changes in CSS, JS, and Partials, and rebuilds them automatically.         |
-| yarn npm audit                                  | Audits packages and reports vulnerabilities.                                           |
+| Script                                          | Action                                                                                        |
+|-------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| yarn build                                      | Builds CSS, JS, and Partials.                                                                 |
+| yarn change-version OLD_VERSION NEW_VERSION     | Runs all build steps and updates choco-theme to the version specified.                        |
+| yarn lint                                       | Runs Stylelint and ESLint to determine code style errors.                                     |
+| yarn monitor-ports                              | Opens a page to monitor preview ports and report their status.                                |
+| yarn npm audit                                  | Audits packages and reports vulnerabilities.                                                  |
+| yarn preview --PROJECT_NAME                     | Runs the preview script in desired repositories all at once for easy testing and development. |
+| yarn preview-link --PROJECT_NAME                | Links choco-theme locally to desired repositories for local development.                      |
+| yarn preview-unlink --PROJECT_NAME              | Unlinks choco-theme and restores the packages.json and yarn.lock files.                       |
+| yarn preview-upgrade NEW_VERSION --PROJECT_NAME | Updates choco-theme to the specified version in desired repositories.                         |
+| yarn preview-watch --PROJECT_NAME               | Runs `yarn build` and `yarn-choco-theme` on desired repositories.                             |
+| yarn watch                                      | Watches for changes in CSS, JS, and Partials, and rebuilds them automatically.                |
+
+## Repository Project Names for Previewing 
+
+The below options are used in the commands above that contain a `preview` keyword, and require a `--PROJECT NAME`. 
+
+| --PROJECT_NAME | Suggested Cloned Folder Name |
+|----------------|------------------------------|
+| --blog         | blog                         |
+| --boxstarter   | boxstarter.org               |
+| --community    | community.chocolatey.org     |
+| --design       | choco-design-system          |
+| --docs         | docs                         |
+| --fest         | chocolateyfest               |
+| --org          | chocolatey.org               |
+| --portal       | licensing-services           |
+| --zendesk      | copenhagen_theme             |
+| --all          | Runs all above               |
+
+## Previewing Repositories for Local Development
+
+When developing choco-them locally, there is a need to run multiple websites at once that live in different repositories. Follow the steps below to bring them up all at once, and enable live updating of choco-theme:
+
+1. Ensure you have the repositories cloned down to your local machine and at the same root level as the choco-theme repository. 
+2. On each repository, it is a good idea to checkout a new branch with the same branch name, to keep track of progress easier.
+3. To link each repository to your local instance of choco-theme, run `yarn preview-link --PROJECT_NAME`, for example `yarn preview-link --org --blog`.
+    1. Before doing this, ensure that your cloned folder names match that in the file located at `choco-theme/build/data/preview-config.ts`. If they do not, you will need to either:
+        1. Change the names of your folders or,
+        2. Update the `preview-config.ts` file to your folder names, but do not commit the file. 
+3. To enable choco-theme to build on demand and place files in repositories, run the command `yarn preview-watch --PROJECT_NAME`, for example `yarn preview-watch --org --blog`. 
+4. To bring up each website, in a new command window, run the command `yarn preview --PROJECT_NAME`, for example `yarn preview --org --blog`. This will bring up a directory webpage where you can easily monitor each port and navigate to them.
+
+With the steps above done, any changes you make to your local instance of choco-theme, or the linked repositories, will trigger choco-theme to rebuild, and then rebuild the repositories automatically.
 
 ## Install ESLint Extension
 
