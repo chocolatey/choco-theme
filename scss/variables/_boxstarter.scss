@@ -1,4 +1,3 @@
-@import "node_modules/bootstrap/scss/functions";
 // Variables
 $white:    #fffcf0;
 $gray-100: #e5e2d8;
@@ -27,17 +26,8 @@ $green:         #019a4a;
 $primary:        $green;
 $info:           $green;
 
-// Body & Font
-$body-bg:                 $gray-100;
-$font-family-sans-serif: "Inter", sans-serif;
-$font-size-base:          1rem;
-$text-muted:              var(--choco-theme-text-code);
-
-// Links
-$link-decoration: none;
-
-// Code
-$code-color: var(--choco-theme-text);
+// Font
+$font-family-sans-serif:            "Inter", sans-serif;
 
 // Tooltips
 $tooltip-border-radius:               0;
@@ -48,9 +38,8 @@ $popover-border-radius:             0;
 $popover-inner-border-radius:       0;
 
 // Cards
-$card-border-radius: 0;
-$card-inner-border-radius: 0;
-$card-border-color: var(--choco-theme-border);
+$card-border-radius:                0;
+$card-inner-border-radius:          0;
 
 // Alerts
 $alert-border-radius:               0;
@@ -61,7 +50,6 @@ $alert-bg-scale:                    0%;
 $alert-color-scale:                 0%;
 
 // Tabs
-$nav-tabs-link-active-bg:           $white;
 $nav-tabs-border-radius:            0;
 $nav-pills-border-radius:           0;
 
@@ -102,4 +90,4 @@ $modal-content-inner-border-radius: 0;
 $toast-border-radius:               0;
 
 // Navigation
-$nav-link-color:                    var(--choco-theme-text);
+$nav-link-color:                    var(--bs-body-color);

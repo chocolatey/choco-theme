@@ -7,7 +7,7 @@
     z-index: 9999;
     display: flex;
     visibility: hidden;
-    background: var(--choco-theme-background);
+    background: var(--bs-body-bg);
     animation: loader-fade 2s;
 
     > div {
@@ -28,7 +28,7 @@
             width: 50px;
             height: 5px;
             margin: auto;
-            background: $primary-950;
+            background: $body-bg-dark;
             border-radius: 50%;
             opacity: .2;
             animation: loader-shadow .5s linear infinite;

@@ -1,12 +1,10 @@
-@import "node_modules/bootstrap/scss/functions";
-
-// FontAwesome Free
+// Font Awesome Free
 $fa-font-path: "/assets/fonts/fontawesome-free";
 
 // Social Media Colors
 $twitch:    #9147ff; // No automatic contrasting color
 $youtube:   #f00;
-$twitter:   #00aced;
+$twitter:   #000;
 $linkedin:  #0073b1;
 $github:    $gray-900;
 $facebook:  #1877f2;
@@ -15,9 +13,10 @@ $chat:      #5865f2; // No automatic contrasting color
 $google:    #4285f4;
 $website:   $gray-600;
 $mastodon:  #6364ff;
-$bluesky:   #0085ff;
+$bluesky:   #1184fe;
+$podcast:   #92b944;
 
-// Palette
+// $palette-colors
 $primary-50:   tint-color($primary, 90%);
 $primary-100:  tint-color($primary, 80%);
 $primary-150:  tint-color($primary, 70%);
@@ -39,388 +38,135 @@ $primary-900:  shade-color($primary, 80%);
 $primary-950:  shade-color($primary, 90%);
 
 $blue-50:   tint-color($blue, 90%);
-$blue-100:  tint-color($blue, 80%);
 $blue-150:  tint-color($blue, 70%);
-$blue-200:  tint-color($blue, 60%);
 $blue-250:  tint-color($blue, 50%);
-$blue-300:  tint-color($blue, 40%);
 $blue-350:  tint-color($blue, 30%);
-$blue-400:  tint-color($blue, 20%);
 $blue-450:  tint-color($blue, 10%);
-$blue-500:  $blue;
 $blue-550:  shade-color($blue, 10%);
-$blue-600:  shade-color($blue, 20%);
 $blue-650:  shade-color($blue, 30%);
-$blue-700:  shade-color($blue, 40%);
 $blue-750:  shade-color($blue, 50%);
-$blue-800:  shade-color($blue, 60%);
 $blue-850:  shade-color($blue, 70%);
-$blue-900:  shade-color($blue, 80%);
 $blue-950:  shade-color($blue, 90%);
 
 $red-50:   tint-color($red, 90%);
-$red-100:  tint-color($red, 80%);
 $red-150:  tint-color($red, 70%);
-$red-200:  tint-color($red, 60%);
 $red-250:  tint-color($red, 50%);
-$red-300:  tint-color($red, 40%);
 $red-350:  tint-color($red, 30%);
-$red-400:  tint-color($red, 20%);
 $red-450:  tint-color($red, 10%);
-$red-500:  $red;
 $red-550:  shade-color($red, 10%);
-$red-600:  shade-color($red, 20%);
 $red-650:  shade-color($red, 30%);
-$red-700:  shade-color($red, 40%);
 $red-750:  shade-color($red, 50%);
-$red-800:  shade-color($red, 60%);
 $red-850:  shade-color($red, 70%);
-$red-900:  shade-color($red, 80%);
 $red-950:  shade-color($red, 90%);
 
 $pink-50:   tint-color($pink, 90%);
-$pink-100:  tint-color($pink, 80%);
 $pink-150:  tint-color($pink, 70%);
-$pink-200:  tint-color($pink, 60%);
 $pink-250:  tint-color($pink, 50%);
-$pink-300:  tint-color($pink, 40%);
 $pink-350:  tint-color($pink, 30%);
-$pink-400:  tint-color($pink, 20%);
 $pink-450:  tint-color($pink, 10%);
-$pink-500:  $pink;
 $pink-550:  shade-color($pink, 10%);
-$pink-600:  shade-color($pink, 20%);
 $pink-650:  shade-color($pink, 30%);
-$pink-700:  shade-color($pink, 40%);
 $pink-750:  shade-color($pink, 50%);
-$pink-800:  shade-color($pink, 60%);
 $pink-850:  shade-color($pink, 70%);
-$pink-900:  shade-color($pink, 80%);
 $pink-950:  shade-color($pink, 90%);
 
 $yellow-50:   tint-color($yellow, 90%);
-$yellow-100:  tint-color($yellow, 80%);
 $yellow-150:  tint-color($yellow, 70%);
-$yellow-200:  tint-color($yellow, 60%);
 $yellow-250:  tint-color($yellow, 50%);
-$yellow-300:  tint-color($yellow, 40%);
 $yellow-350:  tint-color($yellow, 30%);
-$yellow-400:  tint-color($yellow, 20%);
 $yellow-450:  tint-color($yellow, 10%);
-$yellow-500:  $yellow;
 $yellow-550:  shade-color($yellow, 10%);
-$yellow-600:  shade-color($yellow, 20%);
 $yellow-650:  shade-color($yellow, 30%);
-$yellow-700:  shade-color($yellow, 40%);
 $yellow-750:  shade-color($yellow, 50%);
-$yellow-800:  shade-color($yellow, 60%);
 $yellow-850:  shade-color($yellow, 70%);
-$yellow-900:  shade-color($yellow, 80%);
 $yellow-950:  shade-color($yellow, 90%);
 
 $green-50:   tint-color($green, 90%);
-$green-100:  tint-color($green, 80%);
 $green-150:  tint-color($green, 70%);
-$green-200:  tint-color($green, 60%);
 $green-250:  tint-color($green, 50%);
-$green-300:  tint-color($green, 40%);
 $green-350:  tint-color($green, 30%);
-$green-400:  tint-color($green, 20%);
 $green-450:  tint-color($green, 10%);
-$green-500:  $green;
 $green-550:  shade-color($green, 10%);
-$green-600:  shade-color($green, 20%);
 $green-650:  shade-color($green, 30%);
-$green-700:  shade-color($green, 40%);
 $green-750:  shade-color($green, 50%);
-$green-800:  shade-color($green, 60%);
 $green-850:  shade-color($green, 70%);
-$green-900:  shade-color($green, 80%);
 $green-950:  shade-color($green, 90%);
 
 $purple-50:   tint-color($purple, 90%);
-$purple-100:  tint-color($purple, 80%);
 $purple-150:  tint-color($purple, 70%);
-$purple-200:  tint-color($purple, 60%);
 $purple-250:  tint-color($purple, 50%);
-$purple-300:  tint-color($purple, 40%);
 $purple-350:  tint-color($purple, 30%);
-$purple-400:  tint-color($purple, 20%);
 $purple-450:  tint-color($purple, 10%);
-$purple-500:  $purple;
 $purple-550:  shade-color($purple, 10%);
-$purple-600:  shade-color($purple, 20%);
 $purple-650:  shade-color($purple, 30%);
-$purple-700:  shade-color($purple, 40%);
 $purple-750:  shade-color($purple, 50%);
-$purple-800:  shade-color($purple, 60%);
 $purple-850:  shade-color($purple, 70%);
-$purple-900:  shade-color($purple, 80%);
 $purple-950:  shade-color($purple, 90%);
 
 $orange-50:   tint-color($orange, 90%);
-$orange-100:  tint-color($orange, 80%);
 $orange-150:  tint-color($orange, 70%);
-$orange-200:  tint-color($orange, 60%);
 $orange-250:  tint-color($orange, 50%);
-$orange-300:  tint-color($orange, 40%);
 $orange-350:  tint-color($orange, 30%);
-$orange-400:  tint-color($orange, 20%);
 $orange-450:  tint-color($orange, 10%);
-$orange-500:  $orange;
 $orange-550:  shade-color($orange, 10%);
-$orange-600:  shade-color($orange, 20%);
 $orange-650:  shade-color($orange, 30%);
-$orange-700:  shade-color($orange, 40%);
 $orange-750:  shade-color($orange, 50%);
-$orange-800:  shade-color($orange, 60%);
 $orange-850:  shade-color($orange, 70%);
-$orange-900:  shade-color($orange, 80%);
 $orange-950:  shade-color($orange, 90%);
 
 // Additional Theme
 $dark:         $primary-950;
 
+// Dark Emphasis Colors
+$green-text-emphasis-dark:        tint-color($green, 40%);
+$blue-text-emphasis-dark:         tint-color($blue, 40%);
+$red-text-emphasis-dark:          tint-color($red, 40%);
+$yellow-text-emphasis-dark:       tint-color($yellow, 40%);
+$purple-text-emphasis-dark:       tint-color($purple, 40%);
+$orange-text-emphasis-dark:       tint-color($orange, 40%);
+$pink-text-emphasis-dark:         tint-color($pink, 40%);
+
 // Custom Colors
-$primary-opacity-10:        rgba($primary, .1);
-$primary-opacity-15:        rgba($primary, .15);
-$primary-opacity-25:        rgba($primary, .25);
-$primary-opacity-40:        rgba($primary, .4);
-$primary-opacity-50:        rgba($primary, .5);
-$primary-opacity-90:        rgba($primary, .9);
-$primary-950-opacity-95:    rgba($primary-950, .95);
-$yellow-opacity-25:         rgba($yellow, .25);
+$primary-opacity-25:              rgba($primary, .25);
 
-$colors: (
-    "blue":       $blue,
-    "purple":     $purple,
-    "pink":       $pink,
-    "red":        $red,
-    "orange":     $orange,
-    "yellow":     $yellow,
-    "green":      $green,
-    "white":      $white,
-    "gray":       $gray-600,
-    "gray-dark":  $gray-800
-);
-
-$socialmedia-colors: (
-    twitch:   $twitch,
-    youtube:  $youtube,
-    twitter:  $twitter,
-    linkedin: $linkedin,
-    github:   $github,
-    facebook: $facebook,
-    rss:      $rss,
-    chat:     $chat,
-    google:   $google,
-    website:  $website,
-    mastodon: $mastodon,
-    bluesky:  $bluesky
-);
-
-$palette-colors: (
-    primary-50:   $primary-50,
-    primary-100:  $primary-100,
-    primary-150:  $primary-150,
-    primary-200:  $primary-200,
-    primary-250:  $primary-250,
-    primary-300:  $primary-300,
-    primary-350:  $primary-350,
-    primary-400:  $primary-400,
-    primary-450:  $primary-450,
-    primary-500:  $primary-500,
-    primary-550:  $primary-550,
-    primary-600:  $primary-600,
-    primary-650:  $primary-650,
-    primary-700:  $primary-700,
-    primary-750:  $primary-750,
-    primary-800:  $primary-800,
-    primary-850:  $primary-850,
-    primary-900:  $primary-900,
-    primary-950:  $primary-950,
-    red-50:   $red-50,
-    red-100:  $red-100,
-    red-150:  $red-150,
-    red-200:  $red-200,
-    red-250:  $red-250,
-    red-300:  $red-300,
-    red-350:  $red-350,
-    red-400:  $red-400,
-    red-450:  $red-450,
-    red-500:  $red-500,
-    red-550:  $red-550,
-    red-600:  $red-600,
-    red-650:  $red-650,
-    red-700:  $red-700,
-    red-750:  $red-750,
-    red-800:  $red-800,
-    red-850:  $red-850,
-    red-900:  $red-900,
-    red-950:  $red-950,
-    pink-50:   $pink-50,
-    pink-100:  $pink-100,
-    pink-150:  $pink-150,
-    pink-200:  $pink-200,
-    pink-250:  $pink-250,
-    pink-300:  $pink-300,
-    pink-350:  $pink-350,
-    pink-400:  $pink-400,
-    pink-450:  $pink-450,
-    pink-500:  $pink-500,
-    pink-550:  $pink-550,
-    pink-600:  $pink-600,
-    pink-650:  $pink-650,
-    pink-700:  $pink-700,
-    pink-750:  $pink-750,
-    pink-800:  $pink-800,
-    pink-850:  $pink-850,
-    pink-900:  $pink-900,
-    pink-950:  $pink-950,
-    blue-50:   $blue-50,
-    blue-100:  $blue-100,
-    blue-150:  $blue-150,
-    blue-200:  $blue-200,
-    blue-250:  $blue-250,
-    blue-300:  $blue-300,
-    blue-350:  $blue-350,
-    blue-400:  $blue-400,
-    blue-450:  $blue-450,
-    blue-500:  $blue-500,
-    blue-550:  $blue-550,
-    blue-600:  $blue-600,
-    blue-650:  $blue-650,
-    blue-700:  $blue-700,
-    blue-750:  $blue-750,
-    blue-800:  $blue-800,
-    blue-850:  $blue-850,
-    blue-900:  $blue-900,
-    blue-950:  $blue-950,
-    yellow-50:   $yellow-50,
-    yellow-100:  $yellow-100,
-    yellow-150:  $yellow-150,
-    yellow-200:  $yellow-200,
-    yellow-250:  $yellow-250,
-    yellow-300:  $yellow-300,
-    yellow-350:  $yellow-350,
-    yellow-400:  $yellow-400,
-    yellow-450:  $yellow-450,
-    yellow-500:  $yellow-500,
-    yellow-550:  $yellow-550,
-    yellow-600:  $yellow-600,
-    yellow-650:  $yellow-650,
-    yellow-700:  $yellow-700,
-    yellow-750:  $yellow-750,
-    yellow-800:  $yellow-800,
-    yellow-850:  $yellow-850,
-    yellow-900:  $yellow-900,
-    yellow-950:  $yellow-950,
-    green-50:   $green-50,
-    green-100:  $green-100,
-    green-150:  $green-150,
-    green-200:  $green-200,
-    green-250:  $green-250,
-    green-300:  $green-300,
-    green-350:  $green-350,
-    green-400:  $green-400,
-    green-450:  $green-450,
-    green-500:  $green-500,
-    green-550:  $green-550,
-    green-600:  $green-600,
-    green-650:  $green-650,
-    green-700:  $green-700,
-    green-750:  $green-750,
-    green-800:  $green-800,
-    green-850:  $green-850,
-    green-900:  $green-900,
-    green-950:  $green-950,
-    purple-50:   $purple-50,
-    purple-100:  $purple-100,
-    purple-150:  $purple-150,
-    purple-200:  $purple-200,
-    purple-250:  $purple-250,
-    purple-300:  $purple-300,
-    purple-350:  $purple-350,
-    purple-400:  $purple-400,
-    purple-450:  $purple-450,
-    purple-500:  $purple-500,
-    purple-550:  $purple-550,
-    purple-600:  $purple-600,
-    purple-650:  $purple-650,
-    purple-700:  $purple-700,
-    purple-750:  $purple-750,
-    purple-800:  $purple-800,
-    purple-850:  $purple-850,
-    purple-900:  $purple-900,
-    purple-950:  $purple-950,
-    orange-50:   $orange-50,
-    orange-100:  $orange-100,
-    orange-150:  $orange-150,
-    orange-200:  $orange-200,
-    orange-250:  $orange-250,
-    orange-300:  $orange-300,
-    orange-350:  $orange-350,
-    orange-400:  $orange-400,
-    orange-450:  $orange-450,
-    orange-500:  $orange-500,
-    orange-550:  $orange-550,
-    orange-600:  $orange-600,
-    orange-650:  $orange-650,
-    orange-700:  $orange-700,
-    orange-750:  $orange-750,
-    orange-800:  $orange-800,
-    orange-850:  $orange-850,
-    orange-900:  $orange-900,
-    orange-950:  $orange-950
-);
-
-$variable-prefix:       bs-;
-
-// Border radius
-// $border-radius:               .25rem;
-// $border-radius-sm:            .2rem;
-// $border-radius-lg:            .3rem;
-
-// Create rgb colors for :root
-$colors-rgb: map-loop($colors, to-rgb, "$value");
-
-// Transition
-$theme-transition: .5s;
-
-// Body & Font
-$enable-responsive-font-sizes: true;
-$body-bg: $gray-100;
-
-// Margin
-$enable-negative-margins: true;
+// Config
+$enable-responsive-font-sizes:      true;
+$enable-negative-margins:           true;
+$font-size-base:                    1rem;
 
 // Links
 $link-decoration: none;
 
-// Code
-$code-color: $green;
-
 // Badges
-$badge-color: var(--choco-theme-contrast);
+$badge-color: var(--bs-body-color);
+
+// Borders
+$border-color:                      $gray-300;
+$border-color-adaptive-dark:        rgba($primary, .5);
+
+$border-color-translucent:          $gray-300;
+$border-color-adaptive:             $gray-300;
 
 // Buttons
 $input-btn-padding-y-sm: 0;
 $input-btn-padding-x-sm: 6px;
 $btn-font-weight: 700;
 
-// Borders
-$border-color:                var(--choco-theme-border);
-
 // Close Button
 $btn-close-bg: none;
-$btn-close-color: var(--choco-theme-contrast);
+
+// Cards
+$card-bg:                           var(--bs-secondary-bg);
 
 // Carousel
-$carousel-indicator-active-bg: $primary;
-$carousel-control-color: $primary;
-$carousel-control-icon-width: 1.5rem;
-$carousel-control-width: 3.5%;
-$carousel-caption-width: 90%;
+$carousel-indicator-active-bg:      $primary;
+$carousel-dark-indicator-active-bg: $primary;
+$carousel-indicator-width:          15px;
+$carousel-indicator-height:         15px;
+
+$carousel-control-icon-width:       1.5rem;
+$carousel-control-width:            3.5%;
+$carousel-caption-width:            90%;
 
 // Breadcrumbs
 $breadcrumb-padding-y: 0;
@@ -430,130 +176,47 @@ $breadcrumb-margin-bottom: 0;
 $breadcrumb-bg: transparent;
 
 // Inputs
-$form-check-input-bg: $white;
+$form-check-input-bg: $dark;
 $form-check-input-border: $primary;
-$form-select-disabled-bg: $gray-300;
 $form-select-border-color: $primary;
+
 $input-border-color: $primary;
 $input-focus-border-color: $primary;
 $input-disabled-bg: $gray-300;
-$form-select-indicator-color: $primary;
-$form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$primary}'/></svg>") !default;
 
-// Tabs
-$nav-tabs-link-active-bg: $white;
+$form-select-indicator-color: $primary;
+$form-select-indicator-color-dark: $primary;
+
+$form-switch-color: $primary;
+$form-switch-color-dark: $primary;
+
+// Tables
+$table-striped-bg:            var(--bs-secondary-bg);
 
 // Tooltips
 $tooltip-bg: $primary;
 $tooltip-color: $dark;
 $tooltip-opacity: 1;
 
+// Modals
+$modal-content-bg:                  var(--bs-secondary-bg);
+
 // Navbars
 $navbar-toggler-padding-y: .375rem;
 $navbar-toggler-font-size: $font-size-base;
-$navbar-light-toggler-border-color: var(--choco-theme-border-secondary);
+$navbar-light-toggler-border-color: var(--choco-border-color-adaptive);
 
 // Dropdowns
-$dropdown-color:                    var(--choco-theme-text);
-$dropdown-bg:                       var(--choco-theme-elevation-1);
-$dropdown-border-color:             var(--choco-theme-border);
-$dropdown-link-color:               var(--choco-theme-text);
-$dropdown-link-hover-color:         var(--choco-theme-text);
-$dropdown-link-hover-bg:            var(--choco-theme-background);
-$dropdown-link-active-color:        var(--choco-theme-text);
-$dropdown-link-active-bg:           var(--choco-theme-background);
+$dropdown-bg:                       var(--bs-secondary-bg);
+$dropdown-link-hover-bg:            var(--bs-tertiary-bg);
+$dropdown-link-active-color:        var(--bs-body-color);
+$dropdown-link-active-bg:           var(--bs-tertiary-bg);
 
 // Offcanvas
-$offcanvas-bg-color:                var(--choco-theme-elevation-1);
+$offcanvas-bg-color:                var(--bs-secondary-bg);
 
 // Popovers
-$popover-bg:                        var(--choco-theme-elevation-1);
-$popover-border-color:              var(--choco-theme-border);
-$popover-header-bg:                 var(--choco-theme-background);
-$popover-header-color:              var(--choco-theme-text);
-$popover-body-color:                var(--choco-theme-text);
+$popover-bg:                        var(--bs-secondary-bg);
 
-// Tables
-$table-variants: (
-    "dark":       $primary-900
-);
-
-// Embed Ratios
-$aspect-ratios: (
-    "1x1": 100%,
-    "4x3": calc(3 / 4 * 100%),
-    "16x9": calc(9 / 16 * 100%),
-    "21x9": calc(9 / 21 * 100%),
-    "700x506": calc(506 / 700 * 100%),
-    "1200x630": calc(630 / 1200 * 100%)
-);
-
-// Rotations
-$rotations: (
-    "10":   10deg,
-    "20":   20deg,
-    "30":   30deg,
-    "45":   45deg,
-    "90":   90deg,
-    "145":  145deg,
-    "180":  180deg,
-    "360":  360deg
-);
-
-// Numbers
-$general-numbers: 5, 10, 15, 20, 30, 35, 40, 50, 60, 65, 70, 75, 80, 90, 100, 125, 130, 200, 250, 300, 400, 500;
-
-// Padding and Margin in rem
-$spaces: (
-    "45":     .45,
-    "75":     .75,
-    "1-25":   1.25,
-    "1-75":   1.75,
-    "2":      2,
-    "2-25":   2.25,
-    "2-75":   2.75,
-    "3-75":   3.75,
-    "4":      4,
-    "4-5":    4.5,
-    "4-75":   4.75,
-    "5":      5,
-    "6":      6,
-    "7":      7,
-);
-
-$spacer: 1rem;
-$spacers: (
-    0: 0,
-    1: $spacer * .25,
-    2: $spacer * .5,
-    3: $spacer,
-    4: $spacer * 1.5,
-    5: $spacer * 3,
-    6: $spacer * 6,
-    7: $spacer * 12,
-    8: $spacer * 20
-);
-
-$grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1400px,
-    xxxl: 1600px
-);
-
-@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
-@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
-
-$container-max-widths: (
-    sm: 540px,
-    md: 720px,
-    lg: 960px,
-    xl: 1140px,
-    xxl: 1320px,
-    xxxl: 1536px
-);
-
-@include _assert-ascending($container-max-widths, "$container-max-widths");
+// Z-index
+$zindex-dropdown:                   1060;

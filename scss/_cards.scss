@@ -1,6 +1,5 @@
 .card {
     overflow: hidden;
-    background: var(--choco-theme-elevation-1);
 
     &.card-body,
     .card-header {
@@ -16,7 +15,7 @@
             position: absolute;
             top: 15px;
             left: -15px;
-            background: var(--choco-theme-primary-light);
+            background: var(--choco-adaptive);
 
             i {
                 color: var(--bs-primary);
@@ -24,7 +23,7 @@
         }
 
         .card-content {
-            color: var(--choco-theme-text);
+            color: var(--bs-body-color);
         }
 
         :last-child {
@@ -51,13 +50,13 @@
         }
 
         a {
-            color: var(--choco-theme-text);
+            color: var(--bs-body-color);
         }
     }
 
     &.card-blur,
     &.card-blur .card-footer {
-        background: rgba(var(--choco-theme-background-rgb), .1);
+        background: rgba(var(--bs-body-bg-rgb), .1);
         /* stylelint-disable-next-line property-no-vendor-prefix */
         -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
@@ -83,8 +82,8 @@
         }
 
         &.card-overlay-theme-bottom::before {
-            background-image: -webkit-gradient(linear, right top, right bottom, from(transparent), to(var(--choco-theme-elevation-1)));
-            background-image: linear-gradient(-180deg, transparent, var(--choco-theme-elevation-1));
+            background-image: -webkit-gradient(linear, right top, right bottom, from(transparent), to(var(--bs-secondary-bg)));
+            background-image: linear-gradient(-180deg, transparent, var(--bs-secondary-bg));
         }
     }
 

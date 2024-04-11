@@ -1,0 +1,44 @@
+@import "add-to-calendar-button/assets/css/atcb";
+
+:host {
+    --font: var(--bs-font-sans-serif);
+    --base-font-size-l: 1rem;
+    --base-font-size-m: 1rem;
+    --base-font-size-s: .85rem;
+    --wrapper-padding: 0;
+    --btn-background: transparent;
+    --btn-hover-background: var(--bs-primary);
+    --btn-border: var(--bs-primary);
+    --btn-text: var(--bs-primary);
+    --btn-hover-text: var(--bs-black);
+    --btn-shadow: none;
+    --btn-hover-shadow: none;
+    --btn-active-shadow: none;
+    --btn-border-radius: var(--bs-border-radius);
+    --btn-padding-x: .75rem;
+    --btn-padding-y: .375rem;
+    --list-background: var(--bs-secondary-bg);
+    --list-hover-background: var(--bs-tertiary-bg);
+    --list-text: var(--bs-body-color);
+    --list-hover-text: var(--bs-body-color);
+    --list-close-background: #000;
+    --list-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    --list-modal-shadow: none;
+}
+
+.atcb-button {
+    &:not(.atcb-no-text):not(.atcb-modal-style):not(.atcb-dropoverlay):not(.atcb-single) {
+        min-width: auto;
+    }
+
+    &:not([disabled]),
+    &.atcb-active:not(.atcb-modal-style):not(.atcb-dropoverlay) {
+        padding: var(--btn-padding-y) var(--btn-padding-x) !important;
+        margin: 0 !important;
+
+        &:focus,
+        &:hover {
+            padding: var(--btn-padding-y) var(--btn-padding-x) !important;
+        }
+    }
+}

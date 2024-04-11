@@ -7,24 +7,38 @@
     width: 100%;
 }
 
-@each $color, $value in $theme-colors {
-    .alert-#{$color} {
-        color: color-contrast($value);
-        background: var(--bs-#{$color});
+@mixin alert-style($color, $value) {
+    color: color-contrast($value) !important;
+    background: var(--bs-#{$color}) !important;
 
-        a {
-            font-weight: 700;
-            color: color-contrast($value);
+    a {
+        font-weight: 700;
+        color: color-contrast($value) !important;
 
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-        .btn-close {
-            text-shadow: none;
+        &:hover {
+            text-decoration: underline;
         }
     }
+
+    .btn-close {
+        text-shadow: none;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .alert-#{$color} {
+        @include alert-style($color, $value);
+    }
+}
+
+@each $color, $value in $colors {
+    .alert-#{$color} {
+        @include alert-style($color, $value);
+    }
+}
+
+[data-bs-theme="dark"] .alert-dismissible .btn-close {
+    filter: unset;
 }
 
 .alert-dismissible-center {

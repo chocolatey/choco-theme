@@ -1,0 +1,12 @@
+import './src/lib/prism.min.js';
+import './src/callouts.js';
+import './src/ts/code.ts';
+import './src/collapse-nested.js';
+import './src/collapse-responsive.js';
+import './src/collapse-y-height.js';
+import './src/markdown.js';
+import './src/scrollspy.js';
+import './src/reset-modal.js';
+import './src/reset-toast.js';
+import './src/status-modal.js';
+import './src/theme-toggle.js';
