@@ -136,7 +136,6 @@ repositoryConfig.community.purgeCss = {
     content: [
         `${repositoryConfig.community.js}*.js`,
         `${repositoryConfig.community.partials}*.cshtml`,
-        'node_modules/@tarekraafat/autocomplete.js/dist/css/autoComplete.02.css',
         'App_Code/**/*.cshtml',
         'Errors/**/*.*',
         'Views/**/*.*'
@@ -144,7 +143,11 @@ repositoryConfig.community.purgeCss = {
     safelist: [
         ...defaultRepositoryConfig.purgeCss.safelist,
         /^status-/,
-        'tt-dataset-0'
+        'tt-dataset-0',
+        /^autoComplete/,
+        /^EasyMDEContainer/,
+        /^CodeMirror/,
+        /^cm-spell-error/
     ]
 };
 
