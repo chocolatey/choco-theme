@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* choco-theme boxstarter v0.6.1 (https://github.com/chocolatey/choco-theme#readme)
+* choco-theme boxstarter v0.6.2 (https://github.com/chocolatey/choco-theme#readme)
 * Copyright 2020-2024 Chocolatey Software
 * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -57617,7 +57617,7 @@ div.dataTables_wrapper div.dataTables_info {
   height: 100px;
   margin: 0 !important;
   font-weight: 700;
-  color: var(--bs-body-color);
+  color: var(--bs-black);
   background: #fffcf0;
   border: 5px solid var(--bs-border-color);
   border-radius: 0.25rem;
