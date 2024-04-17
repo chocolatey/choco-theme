@@ -121,6 +121,18 @@ const init = async () => {
             );
         }
 
+        // Disqus
+        if (repository.name === repositoryConfig.community.name || repository.name === repositoryConfig.blog.name) {
+            parallelTasksInitial.push(
+                {
+                    task: 'disqus.min.js',
+                    source: `${repositoryConfig.theme.js}disqus.min.js`,
+                    destination: `${repository.js}disqus.min.js`,
+                    isFolder: false
+                }
+            );
+        }
+
         // atcb-override css
         if (repository.name === repositoryConfig.org.name) {
             parallelTasksInitial.push(

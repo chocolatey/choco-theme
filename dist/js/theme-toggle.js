@@ -61,6 +61,8 @@
           setStoredTheme(theme);
           setTheme(theme);
           showActiveTheme(theme, true);
+          const event = new Event("themeChanged");
+          document.dispatchEvent(event);
         });
       });
     });
