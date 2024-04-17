@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.6.2 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.6.3 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
