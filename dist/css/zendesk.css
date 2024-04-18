@@ -1,10 +1,11 @@
 @charset "UTF-8";
 /*!
-* choco-theme zendesk v0.6.2 (https://github.com/chocolatey/choco-theme#readme)
+* choco-theme zendesk v0.6.3 (https://github.com/chocolatey/choco-theme#readme)
 * Copyright 2020-2024 Chocolatey Software
 * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
 :root {
+  color-scheme: unset !important;
   --bs-blue-rgb: 92, 159, 216;
   --bs-indigo-rgb: 102, 16, 242;
   --bs-purple-rgb: 111, 66, 193;

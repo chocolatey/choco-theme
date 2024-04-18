@@ -71,6 +71,10 @@
                 setStoredTheme(theme);
                 setTheme(theme);
                 showActiveTheme(theme, true);
+
+                // Create and send event for Disqus to reload
+                const event = new Event('themeChanged');
+                document.dispatchEvent(event);
             });
         });
     });
