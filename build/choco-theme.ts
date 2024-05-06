@@ -149,17 +149,16 @@ const init = async () => {
         if (repository.playwright) {
             parallelTasksInitial.push(
                 {
-                    task: 'playwright.config.ts',
-                    source: `${repositoryConfig.theme.root}playwright.config.ts`,
-                    destination: `${repository.root}playwright.config.ts`,
-                    isFolder: false
+                    task: 'Playwright tests - general',
+                    source: `${repositoryConfig.theme.playwright}tests/general/`,
+                    destination: `${repository.playwright}general/`
                 }
             );
 
             if (repository.name === repositoryConfig.org.name) {
                 parallelTasksInitial.push(
                     {
-                        task: 'Playwright tests',
+                        task: 'Playwright tests - pricing calculator',
                         source: `${repositoryConfig.theme.playwright}tests/pricing-calculator/`,
                         destination: `${repository.playwright}pricing-calculator/`
                     }
@@ -201,7 +200,7 @@ const init = async () => {
         }
 
         // ESLint and tsconfig - needed if repository contains it's own assets along with choco-theme
-        if (repository.playwright || repository.name === repositoryConfig.portal.name) {
+        if (repository.name === repositoryConfig.portal.name) {
             parallelTasksInitial.push(
                 {
                     task: '.eslintrc.js',
@@ -255,7 +254,7 @@ const init = async () => {
 
         // Change CSS content
         // Font Awesome
-        if (repository.name === repositoryConfig.portal.name) {
+        if (repository.name === repositoryConfig.portal.name || repository.language === 'astro') {
             console.log('🚀 Updating Font Awesome font path...');
             await updateContent({
                 destination: repository.css,

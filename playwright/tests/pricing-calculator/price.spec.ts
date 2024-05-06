@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { c4bStandardSubscription, c4bPremiumSubscription, c4bAddOnPrice, C4bSubscription } from './chocolatey-pricing-calculator'; // This is ignored since this is the correct location after it is imported into the repository by gulp
+import { c4bStandardSubscription, c4bPremiumSubscription, c4bAddOnPrice, C4bSubscription } from 'choco-theme/js/src/ts/util/pricing-calculator'; // This is ignored since this is the correct location after it is imported into the repository by gulp
 import { numberInput, packageCounts, packagingSelect, premiumSupportCheckboxBtn, standardSupportCheckboxBtn } from './util';
 
 test('test-price', async ({ page }) => {
-    await page.goto('http://localhost:5080/');
+    await page.goto('./');
 
     const priceNodeRange = '#c4bNodeRange';
     const price = '#c4bPrice';

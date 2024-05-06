@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.7.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.7.1 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -19410,10 +19410,33 @@
     const codeBlocks = document.querySelectorAll("code");
     const codePre = document.querySelectorAll("pre");
     codeBlocks.forEach(trimString);
+    const trimCodeBlocks = () => {
+      const currentURL = window.location.href;
+      const targetURLs = ["en-us/choco/commands/", "en-us/create/commands/"];
+      if (targetURLs.some((url) => currentURL.includes(url))) {
+        const headings = document.querySelectorAll("h2");
+        for (const heading of headings) {
+          const text = heading.textContent.trim();
+          if (text === "Examples" || text === "Usage") {
+            let nextSibling = heading.nextElementSibling;
+            while (nextSibling && nextSibling.tagName !== "H2") {
+              if (nextSibling.tagName === "PRE" && nextSibling.firstElementChild && nextSibling.firstElementChild.tagName === "CODE") {
+                const codeBlock = nextSibling.firstElementChild;
+                const lines = codeBlock.textContent.split("\n");
+                const trimmedLines = lines.map((line) => line.trim());
+                codeBlock.textContent = trimmedLines.join("\n");
+              }
+              nextSibling = nextSibling.nextElementSibling;
+            }
+          }
+        }
+      }
+    };
+    trimCodeBlocks();
     for (const i of codePre) {
       if (!i.classList.contains("highlight-delay") && !i.classList.contains("d-format-none")) {
         const codeElement = i;
-        codeElement.classList.add("line-numbers", "language-none", "py-2");
+        codeElement.classList.add("line-numbers", "language-none");
         Prism.highlightAll();
       }
     }
@@ -19566,18 +19589,6 @@
       taskListItems.forEach((el) => {
         el.classList.add("form-check-input");
         el.outerHTML = `<div class="form-check">${el.outerHTML}<label class="form-check-label"></label></div>`;
-      });
-    }
-    const calloutBlockquotes = document.querySelectorAll("blockquote");
-    if (calloutBlockquotes) {
-      calloutBlockquotes.forEach((el) => {
-        const warningEmoji = "\u26A0\uFE0F";
-        const exclamationEmoji = "\u2757";
-        if (el.innerText.includes(warningEmoji)) {
-          el.classList.add("blockquote-warning");
-        } else if (el.innerText.includes(exclamationEmoji)) {
-          el.classList.add("blockquote-danger");
-        }
       });
     }
   })();

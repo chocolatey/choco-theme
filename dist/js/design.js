@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.7.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.7.1 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -18694,9 +18694,11 @@
     codeForView.forEach((el) => {
       const codeOriginal = el;
       const codeLanguage = codeOriginal.getAttribute("data-language");
+      const codeReplace = codeOriginal.getAttribute("data-replace");
       let codeHighlight = "";
       switch (codeLanguage) {
         case "HTML":
+        case "Astro":
           codeHighlight = "markup";
           break;
         case "Markdown":
@@ -18711,8 +18713,27 @@
         default:
           codeHighlight = "none";
       }
-      const codeContainer = `<p class="border-top border-bottom py-2 px-3 mb-0">${codeLanguage}</p><pre class="border-0 my-0 code-static-toolbar"><code class="language-${codeHighlight} line-numbers">${escapeHTML(codeOriginal.innerHTML.trim())}</code></pre>`;
-      codeOriginal.insertAdjacentHTML("afterend", codeContainer);
+      let codeEscaped = escapeHTML(codeOriginal.innerHTML.trim());
+      const start2 = "&lt;";
+      const startSlash = `${start2}/`;
+      const end2 = "&gt;";
+      const endSlash = `/${end2}`;
+      const contentQuotes = /content=&quot;([^&]*)&quot;/g;
+      codeEscaped = codeEscaped.replaceAll(`${start2}callout`, `${start2}Callout`).replaceAll(`${startSlash}callout`, `${startSlash}Callout`).replaceAll(`${start2}collapsebutton`, `${start2}CollapseButton`).replaceAll(`${startSlash}collapsebutton`, `${startSlash}CollapseButton`).replaceAll(`${start2}iframe ratio`, `${start2}Iframe ratio`).replaceAll(`${start2}tabspanecontainer`, `${start2}TabsPaneContainer`).replaceAll(`${startSlash}tabspanecontainer`, `${startSlash}TabsPaneContainer`).replaceAll(`${start2}tabstabcontainer`, `${start2}TabsTabContainer`).replaceAll(`${start2}tabspane`, `${start2}TabsPane`).replaceAll(`${start2}xref`, `${start2}Xref`).replaceAll(`value=&quot;example-define&quot;${end2}`, `value=&quot;example-define&quot; ${endSlash}`).replaceAll(`anchor=&quot;why&quot;${end2}`, `anchor=&quot;why&quot; ${endSlash}`).replaceAll(`${startSlash}tabspane`, `${startSlash}TabsPane`).replaceAll(`content=&quot;{tabs1}&quot;${end2}`, `content=&quot;{tabs1}&quot; ${endSlash}`).replaceAll(`content=&quot;{tabs2}&quot;${end2}`, `content=&quot;{tabs2}&quot; ${endSlash}`).replaceAll(`content=&quot;{tabs3}&quot;${end2}`, `content=&quot;{tabs3}&quot; ${endSlash}`).replaceAll(`multi=&quot;version&quot;${end2}`, `multi=&quot;version&quot; ${endSlash}`).replaceAll(`${startSlash}tabstabcontainer${end2}`, "").replaceAll(`${startSlash}xref${end2}`, "").replaceAll(`${startSlash}iframe${end2}`, "").replace(contentQuotes, (match2, p1) => `content=${p1}`);
+      if (codeReplace !== "true") {
+        if (codeLanguage === "Astro") {
+          const codeContainer = `<p class="border-top border-bottom py-2 px-3 mb-0">${codeLanguage}</p><pre class="border-0 mx-3 mb-3 mt-0 code-static-toolbar"><code class="language-${codeHighlight} line-numbers">${codeEscaped}</code></pre>`;
+          console.log("Astro");
+          codeOriginal.innerHTML = codeContainer;
+        } else {
+          const codeContainer = `<p class="border-top border-bottom py-2 px-3 mb-0">${codeLanguage}</p><pre class="border-0 my-0 code-static-toolbar"><code class="language-${codeHighlight} line-numbers">${codeEscaped}</code></pre>`;
+          console.log("Not Astro");
+          codeOriginal.insertAdjacentHTML("afterend", codeContainer);
+        }
+      } else {
+        const codeContainer = `<pre><code class="language-${codeHighlight} line-numbers">${codeEscaped}</code></pre>`;
+        codeOriginal.innerHTML = codeContainer;
+      }
     });
   })();
 
@@ -18785,10 +18806,33 @@
     const codeBlocks = document.querySelectorAll("code");
     const codePre = document.querySelectorAll("pre");
     codeBlocks.forEach(trimString);
+    const trimCodeBlocks = () => {
+      const currentURL = window.location.href;
+      const targetURLs = ["en-us/choco/commands/", "en-us/create/commands/"];
+      if (targetURLs.some((url) => currentURL.includes(url))) {
+        const headings = document.querySelectorAll("h2");
+        for (const heading of headings) {
+          const text = heading.textContent.trim();
+          if (text === "Examples" || text === "Usage") {
+            let nextSibling = heading.nextElementSibling;
+            while (nextSibling && nextSibling.tagName !== "H2") {
+              if (nextSibling.tagName === "PRE" && nextSibling.firstElementChild && nextSibling.firstElementChild.tagName === "CODE") {
+                const codeBlock = nextSibling.firstElementChild;
+                const lines = codeBlock.textContent.split("\n");
+                const trimmedLines = lines.map((line) => line.trim());
+                codeBlock.textContent = trimmedLines.join("\n");
+              }
+              nextSibling = nextSibling.nextElementSibling;
+            }
+          }
+        }
+      }
+    };
+    trimCodeBlocks();
     for (const i of codePre) {
       if (!i.classList.contains("highlight-delay") && !i.classList.contains("d-format-none")) {
         const codeElement = i;
-        codeElement.classList.add("line-numbers", "language-none", "py-2");
+        codeElement.classList.add("line-numbers", "language-none");
         Prism.highlightAll();
       }
     }
@@ -18966,18 +19010,6 @@
       taskListItems.forEach((el) => {
         el.classList.add("form-check-input");
         el.outerHTML = `<div class="form-check">${el.outerHTML}<label class="form-check-label"></label></div>`;
-      });
-    }
-    const calloutBlockquotes = document.querySelectorAll("blockquote");
-    if (calloutBlockquotes) {
-      calloutBlockquotes.forEach((el) => {
-        const warningEmoji = "\u26A0\uFE0F";
-        const exclamationEmoji = "\u2757";
-        if (el.innerText.includes(warningEmoji)) {
-          el.classList.add("blockquote-warning");
-        } else if (el.innerText.includes(exclamationEmoji)) {
-          el.classList.add("blockquote-danger");
-        }
       });
     }
   })();

@@ -46,7 +46,38 @@ export const defaultRepositoryConfig = {
             /^fa-(check|triangle-exclamation|info|xmark)/,
             /^text-bg-(info|warning|danger|success)/,
             /^data-bs-popper/
+        ]
+    },
+    root: './'
+};
 
+export const astroRepositoryConfig = {
+    css: 'public/styles/',
+    js: 'public/scripts/',
+    favicons: 'public/',
+    fontAwesome: 'public/fonts/fontawesome-free/',
+    images: 'public/images/global-shared/',
+    partials: 'src/components/global/',
+    language: 'astro',
+    purgeCss: {
+        content: [
+            'src/**/*.astro',
+            'src/**/*.html',
+            'src/**/*.txt',
+            'src/**/*.md',
+            'src/**/*.mdx',
+            'src/**/*.js',
+            'src/**/*.ts',
+            'public/**/*.js'
+        ],
+        safelist: [
+            '::-webkit-scrollbar',
+            '::-webkit-scrollbar-thumb',
+            /^fa-(check|triangle-exclamation|info|xmark)/,
+            /^text-bg-(info|warning|danger|success)/,
+            /^data-bs-popper/,
+            /^ratio-/,
+            /^callout-/
         ]
     },
     root: './'
@@ -77,8 +108,9 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
         name: 'design'
     },
     docs: {
-        ...defaultRepositoryConfig,
-        name: 'docs'
+        ...astroRepositoryConfig,
+        name: 'docs',
+        playwright: 'src/tests/'
     },
     fest: {
         ...defaultRepositoryConfig,

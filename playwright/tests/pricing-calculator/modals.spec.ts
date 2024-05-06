@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test-modals', async ({ page }) => {
-    await page.goto('http://localhost:5080/');
+    await page.goto('./');
 
     const perpetualModal = '#c4bModalPerpetualPricing';
     const nonProfitModal = '#c4bModalNonProfitPricing';

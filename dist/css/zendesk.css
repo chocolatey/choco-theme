@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* choco-theme zendesk v0.7.0 (https://github.com/chocolatey/choco-theme#readme)
+* choco-theme zendesk v0.7.1 (https://github.com/chocolatey/choco-theme#readme)
 * Copyright 2020-2024 Chocolatey Software
 * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -45187,6 +45187,7 @@ pre.d-format-none {
 
 code[class*=language-],
 pre[class*=language-] {
+  margin-bottom: 1rem;
   font-family: var(--bs-font-monospace);
   font-size: 0.85rem;
   font-weight: 700;
@@ -47300,6 +47301,44 @@ li.task-list-item .anchorjs-link {
   overflow: hidden;
 }
 
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable selector-id-pattern */
+/*! purgecss start ignore */
+[id^=mermaid-] {
+  background-color: var(--bs-body-bg) !important;
+  fill: var(--bs-body-color) !important;
+}
+[id^=mermaid-] .edgeLabel {
+  color: var(--bs-body-color) !important;
+  background-color: var(--bs-body-bg) !important;
+}
+[id^=mermaid-] .marker.cross,
+[id^=mermaid-] .edgePath .path,
+[id^=mermaid-] .flowchart-link,
+[id^=mermaid-] .marker,
+[id^=mermaid-] [class^=messageLine] {
+  stroke: var(--bs-body-color) !important;
+}
+[id^=mermaid-] .pieTitleText,
+[id^=mermaid-] .legend text,
+[id^=mermaid-] .loopText,
+[id^=mermaid-] .loopText > tspan,
+[id^=mermaid-] .messageText,
+[id^=mermaid-] .marker {
+  fill: var(--bs-body-color) !important;
+}
+[id^=mermaid-] .pieCircle {
+  stroke: #091016;
+}
+[id^=mermaid-] .slice:nth-child(3n) {
+  fill: #fff !important;
+}
+
+:root[data-bs-theme=dark] [id^=mermaid-] .pieOuterCircle {
+  stroke: #fff !important;
+}
+
+/*! purgecss end ignore */
 .dropdown-theme .dropdown-toggle {
   text-decoration: none !important;
 }

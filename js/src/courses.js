@@ -222,7 +222,7 @@ import { Modal } from 'bootstrap';
         const codeBlocks = document.querySelectorAll('pre');
 
         for (const i of codeBlocks) {
-            i.classList.add('line-numbers', 'py-2', 'm-0');
+            i.classList.add('line-numbers');
         }
 
         Prism.highlightAll();
