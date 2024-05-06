@@ -1,0 +1,14 @@
+name: yarn npm audit
+on: [pull_request]
+jobs:
+  yarn-npm-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: yarn install --immutable
+      - name: Run yarn npm audit
+        run: yarn npm audit --severity moderate
+        continue-on-error: false
