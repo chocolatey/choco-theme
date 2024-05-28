@@ -45,6 +45,8 @@ export const defaultRepositoryConfig = {
             '::-webkit-scrollbar-thumb',
             /^fa-(check|triangle-exclamation|info|xmark)/,
             /^text-bg-(info|warning|danger|success)/,
+            /^text-bg-(blue|pink|purple|green|red|yellow|orange)/,
+            /^alert-(blue|pink|purple|green|red|yellow|orange)/,
             /^data-bs-popper/
         ]
     },
@@ -119,6 +121,16 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
         ...defaultRepositoryConfig,
         name: 'fest'
     },
+    hub: {
+        ...defaultRepositoryConfig,
+        name: 'hub',
+        favicons: 'wwwroot/',
+        css: 'wwwroot/css/',
+        js: 'wwwroot/js/',
+        fontAwesome: 'wwwroot/fonts/fontawesome-free/',
+        images: 'wwwroot/images/global-shared/',
+        partials: 'Pages/Global/'
+    },
     org: {
         ...defaultRepositoryConfig,
         name: 'org',
@@ -183,6 +195,22 @@ repositoryConfig.community.purgeCss = {
         /^EasyMDEContainer/,
         /^CodeMirror/,
         /^cm-spell-error/
+    ]
+};
+
+// Merge purgeCss section into the hub configuration
+repositoryConfig.hub.purgeCss = {
+    content: [
+        `${repositoryConfig.hub.js}*.js`,
+        'Areas/**/*.cshtml',
+        'Pages/**/*.cshtml'
+    ],
+    safelist: [
+        ...defaultRepositoryConfig.purgeCss.safelist,
+        /^bg-(secondary|danger|success)/,
+        /^callout-(danger|success)/,
+        /^form-check-input-(blue|pink|purple|green|red|yellow|orange)/,
+        /^spinner-grow/
     ]
 };
 

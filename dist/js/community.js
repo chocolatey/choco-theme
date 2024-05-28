@@ -20837,18 +20837,8 @@ ${templateEnter}`;
   // js/src/alerts.js
   init_functions();
   (() => {
-    const topNoticeAlert = document.getElementById("topNoticeAlert");
-    const topNotice = window.sessionStorage.getItem("notice");
     const cookieNoticeAlert = document.getElementById("cookieNoticeAlert");
     const cookieNoticeName = "chocolatey_hide_cookies_notice";
-    if (topNoticeAlert) {
-      if (topNotice) {
-        topNoticeAlert.remove();
-      } else {
-        topNoticeAlert.classList.remove("d-none");
-      }
-      topNoticeAlert.querySelector("button").addEventListener("click", () => sessionStorage.setItem("notice", "true"), false);
-    }
     if (cookieNoticeAlert) {
       if (getCookie(cookieNoticeName)) {
         cookieNoticeAlert.remove();

@@ -1,21 +1,8 @@
 import { getCookie, setCookieExpirationNever } from './util/functions';
 
 (() => {
-    const topNoticeAlert = document.getElementById('topNoticeAlert');
-    const topNotice = window.sessionStorage.getItem('notice');
     const cookieNoticeAlert = document.getElementById('cookieNoticeAlert');
     const cookieNoticeName = 'chocolatey_hide_cookies_notice';
-
-    // Top notice alert
-    if (topNoticeAlert) {
-        if (topNotice) {
-            topNoticeAlert.remove();
-        } else {
-            topNoticeAlert.classList.remove('d-none');
-        }
-
-        topNoticeAlert.querySelector('button').addEventListener('click', () => sessionStorage.setItem('notice', 'true'), false);
-    }
 
     // Bottom cookie notice
     if (cookieNoticeAlert) {

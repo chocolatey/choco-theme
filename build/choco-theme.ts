@@ -7,27 +7,12 @@
  */
 
 import * as fs from 'fs/promises';
-import * as process from 'process';
+import { repository } from './functions/determine-repository';
 import { repositoryConfig } from './data/repository-config';
 import { purgeCss } from './functions/purge-css';
 import { updateContent } from './functions/update-content';
 
-// Process args
-const params: Record<string, string> = {};
-process.argv.slice(2).forEach(val => {
-    const [key, value] = val.split('=');
-
-    if (key.startsWith('--')) {
-        params[key.slice(2)] = value;
-    }
-});
-
-// Determine repository information
-let repository = repositoryConfig.default;
-if (params.repository && repositoryConfig[params.repository]) {
-    repository = repositoryConfig[params.repository];
-    console.log('Using repository information:', repository);
-}
+console.log('Using repository information:', repository);
 
 // Determine source CSS name
 let sourceCss: string;
@@ -67,7 +52,7 @@ const copyTheme = async ({
 
 const init = async () => {
     try {
-        const containsValidation = repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.community.name;
+        const containsValidation = repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.community.name || repository.name === repositoryConfig.hub.name;
 
         // Define arrays for parallel tasks
         const parallelTasksInitial = [
@@ -200,7 +185,7 @@ const init = async () => {
         }
 
         // ESLint and tsconfig - needed if repository contains it's own assets along with choco-theme
-        if (repository.name === repositoryConfig.portal.name) {
+        if (repository.playwright || repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.hub.name) {
             parallelTasksInitial.push(
                 {
                     task: '.eslintrc.js',
@@ -254,7 +239,7 @@ const init = async () => {
 
         // Change CSS content
         // Font Awesome
-        if (repository.name === repositoryConfig.portal.name || repository.language === 'astro') {
+        if (repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.hub.name || repository.language === 'astro') {
             console.log('🚀 Updating Font Awesome font path...');
             await updateContent({
                 destination: repository.css,
@@ -294,7 +279,7 @@ const init = async () => {
         }
 
         // PurgeCSS
-        if (repository.name !== repositoryConfig.portal.name) {
+        if (repository.name !== repositoryConfig.portal.name && repository.name !== repositoryConfig.hub.name) {
             await purgeCss({
                 source: `${repository.css}${repository.name}.min.css`,
                 repository: repository

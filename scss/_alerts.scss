@@ -7,6 +7,12 @@
     width: 100%;
 }
 
+#topNoticeAlert {
+    p {
+        margin-bottom: 0;
+    }
+}
+
 @mixin alert-style($color, $value) {
     color: color-contrast($value) !important;
     background: var(--bs-#{$color}) !important;
@@ -90,3 +96,16 @@
         }
     }
 }
+
+/*! purgecss start ignore */
+@keyframes spinner-grow {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/*! purgecss end ignore */

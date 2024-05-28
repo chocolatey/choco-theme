@@ -21,8 +21,6 @@
 // Checkboxes
 .form-check {
     .form-check-input {
-        border: 1px solid var(--bs-primary);
-
         &:not(:checked) {
             background-color: var(--bs-secondary-bg);
 
@@ -35,6 +33,21 @@
 
         &.is-invalid {
             border-color: var(--bs-danger);
+        }
+
+        @each $color, $value in $colors {
+            &.form-check-input-#{$color} {
+                border: 2px solid $value;
+
+                &:checked {
+                    background-color: $value;
+                }
+
+
+                &:focus {
+                    box-shadow: 0 0 0 .25rem rgba($value, .25);
+                }
+            }
         }
     }
 }

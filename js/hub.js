@@ -1,6 +1,7 @@
+import './src/banner-get.js';
 import './src/lib/prism.min.js';
 import './src/callouts.js';
-import './src/ts/code.ts';
+import './src/ts/code.js';
 import './src/collapse-nested.js';
 import './src/collapse-responsive.js';
 import './src/collapse-y-height.js';

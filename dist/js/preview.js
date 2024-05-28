@@ -5225,6 +5225,14 @@
       isStatiq: true,
       isAstro: false
     },
+    "--hub": {
+      folder: "admin-portal",
+      protocol: "https",
+      port: 44362,
+      isStatiq: false,
+      isAstro: false,
+      root: "/source/AdminPortal"
+    },
     "--org": {
       folder: "chocolatey.org",
       port: 5081,
