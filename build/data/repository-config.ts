@@ -68,7 +68,9 @@ export const astroRepositoryConfig = {
             'src/**/*.mdx',
             'src/**/*.js',
             'src/**/*.ts',
-            'public/**/*.js'
+            'public/**/*.js',
+            'node_modules/choco-astro/src/**/*.astro',
+            'node_modules/choco-astro/src/**/*.ts'
         ],
         safelist: [
             '::-webkit-scrollbar',
