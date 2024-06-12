@@ -1,4 +1,5 @@
 :root {
+    color-scheme: unset !important; // https://disqus.com/home/discussion/channel-discussdisqus/embed_disqus_comments_not_changing_background_color_with_bootstrap_53_color_mode/
     @each $color, $value in $colors-rgb {
         --#{$variable-prefix}#{$color}-rgb: #{$value};
     }

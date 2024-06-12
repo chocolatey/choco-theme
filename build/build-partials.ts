@@ -58,6 +58,7 @@ const init = async () => {
         const destinationTemp = './dist/partials/temp';
         const destinationCshtml = './dist/partials/cshtml';
         const destinationHbs = './dist/partials/hbs';
+        const destinationAstro = './dist/partials/astro';
 
         await fs.cp('./partials/', destinationTemp, { recursive: true });
 
@@ -73,6 +74,7 @@ const init = async () => {
 
         await fs.cp(destinationTemp, destinationCshtml, { recursive: true });
         await fs.cp(destinationTemp, destinationHbs, { recursive: true });
+        await fs.cp(destinationTemp, destinationAstro, { recursive: true });
         await fs.rm(destinationTemp, { recursive: true });
 
         // hbs files
@@ -87,6 +89,7 @@ const init = async () => {
 
         // Delete TopAlertBanner.html
         await fs.rm(path.join(destinationHbs, 'TopAlertBanner.html'));
+        await fs.rm(path.join(destinationAstro, 'TopAlertBanner.html'));
 
         // cshtml files
         await updateContent({
@@ -102,10 +105,12 @@ const init = async () => {
         // Delete AlertText.html
         await fs.rm(path.join(destinationHbs, 'AlertText.html'));
         await fs.rm(path.join(destinationCshtml, 'AlertText.html'));
+        await fs.rm(path.join(destinationAstro, 'AlertText.html'));
 
         // Update file extensions and casing of names
         const filesHbs = await fs.readdir(destinationHbs);
         const filesCshtml = await fs.readdir(destinationCshtml);
+        const filesAstro = await fs.readdir(destinationAstro);
 
         await updateLanguageAttributes({
             files: filesHbs,
@@ -117,6 +122,12 @@ const init = async () => {
             files: filesCshtml,
             destination: destinationCshtml,
             newExt: '.cshtml'
+        });
+
+        await updateLanguageAttributes({
+            files: filesAstro,
+            destination: destinationAstro,
+            newExt: '.astro'
         });
 
         console.log('✅ Partials built');

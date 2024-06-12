@@ -11,7 +11,8 @@ export interface FolderMapping {
         folder: string;
         protocol?: string;
         port?: null | number;
-        isStatic: boolean;
+        isStatiq: boolean;
+        isAstro: boolean;
         root?: string
     };
 }
@@ -20,48 +21,57 @@ export const folderMapping: FolderMapping = {
     '--blog': {
         folder: 'blog',
         port: 5082,
-        isStatic: true
+        isStatiq: true,
+        isAstro: false
     },
     '--boxstarter': {
         folder: 'boxstarter.org',
         port: 5083,
-        isStatic: true
+        isStatiq: true,
+        isAstro: false
     },
     '--community': {
         folder: 'community.chocolatey.org',
         port: 55881,
-        isStatic: false,
+        isStatiq: false,
+        isAstro: false,
         root: '/chocolatey/Website'
     },
     '--design': {
         folder: 'choco-design-system',
         port: 5085,
-        isStatic: true
+        isStatiq: true,
+        isAstro: false
     },
     '--docs': {
         folder: 'docs',
         port: 5086,
-        isStatic: true
+        isStatiq: false,
+        isAstro: true
     },
     '--fest': {
         folder: 'chocolateyfest',
         port: 5084,
-        isStatic: true
+        isStatiq: true,
+        isAstro: false
     },
     '--org': {
         folder: 'chocolatey.org',
         port: 5081,
-        isStatic: true
+        isStatiq: true,
+        isAstro: false
     },
     '--portal': {
         folder: 'licensing-services',
         protocol: 'https',
         port: 44362,
-        isStatic: false,
+        isStatiq: false,
+        isAstro: false,
         root: '/source/LicensingServices'
     },
     '--zendesk': {
         folder: 'copenhagen_theme',
-        isStatic: false
+        isStatiq: false,
+        isAstro: false
     }
 };

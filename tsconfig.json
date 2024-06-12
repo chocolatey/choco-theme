@@ -1,4 +1,5 @@
 {
+    "allowImportingTsExtensions": true, // Needed for playwright.config.ts
     "compilerOptions": {
         "module": "NodeNext",
         "moduleResolution": "NodeNext",

@@ -60,76 +60,105 @@ const init = async () => {
         await Promise.all(foldersToRun.map(async (option, index) => {
             const folderConfig = folderMapping[option];
             const folderName = folderConfig.folder;
+            const folderIsAstro = folderConfig.isAstro;
             const folderPath = path.join(__dirname, '../../', folderName);
             const port = folderConfig.port;
 
-            // Determine platform specific information
-            let command;
-            let previewScript;
+            if (folderIsAstro) {
+                const childProcessTwo = spawn('yarn dev', [], {
+                    shell: true,
+                    cwd: folderPath
+                });
 
-            if (isWindows) {
-                previewScript = 'preview.ps1';
-                command = `powershell.exe -File ./${previewScript} ${port}`;
+                childProcessTwo.stdout.on('data', data => {
+                    const output = data.toString().trim();
+
+                    if (output.includes(`http://localhost:${port}`)) {
+                        // Stop loading animation for this script
+                        clearInterval(loadingIntervals[index]);
+                        process.stdout.write('\r✅ ');
+                        console.log(`Preview for ${folderName} is running on ${consoleColors.green}http://localhost:${port}${consoleColors.revert}. Changes will be automatically reloaded. Keep this terminal open.`);
+                        console.log(`🤖 Listening on ${consoleColors.green}http://localhost:${port}${consoleColors.revert}...`);
+                    }
+                });
+
+                // Handle exit event
+                childProcessTwo.on('exit', code => {
+                    if (code !== 0) {
+                        clearInterval(loadingIntervals[index]);
+                        process.stdout.write('\r⛔ ');
+                        console.error(`Astro in ${folderPath} exited with code ${code}`);
+                    }
+                });
             } else {
-                previewScript = 'preview.sh';
-                command = `./${previewScript} ${port}`;
-            }
+                // Determine platform specific information
+                let command;
+                let previewScript;
 
-            const scriptPath = path.join(folderPath, previewScript);
+                if (isWindows) {
+                    previewScript = 'preview.ps1';
+                    command = `powershell.exe -File ./${previewScript} ${port}`;
+                } else {
+                    previewScript = 'preview.sh';
+                    command = `./${previewScript} ${port}`;
+                }
 
-            // Check if preview script exists
-            try {
-                await fs.access(scriptPath);
-            } catch (error) {
-                clearInterval(loadingIntervals[index]);
-                process.stdout.write('\r🟨 ');
-                console.log(`${folderName} does not contain a ${previewScript} file. Skipping...`);
-                return; // Skip to the next folder
-            }
+                const scriptPath = path.join(folderPath, previewScript);
 
-            const childProcessTwo = spawn(command, [], {
-                shell: true, // Needed for Windows to execute .sh files
-                cwd: folderPath // Specify the working directory for the child process
-                // stdio: 'pipe', // Default value - Works on Mac, but on Windows. On Windows, the .preview.ps1 file gives the error `Error: The handle is invalid.` and closes the running port that was just opened by the script
-            });
-
-            let scriptStarted = false;
-
-            childProcessTwo.stdout.on('data', data => {
-                const output = data.toString().trim();
-
-                if (output.includes(`[INFO] Preview server listening at http://localhost:${port}`)) {
-                    // Stop loading animation for this script
+                // Check if preview script exists
+                try {
+                    await fs.access(scriptPath);
+                } catch (error) {
                     clearInterval(loadingIntervals[index]);
-                    process.stdout.write('\r✅ ');
-                    console.log(`Preview for ${folderName} is running on ${consoleColors.green}http://localhost:${port}${consoleColors.revert}`);
-                    console.log(`🤖 Listening on ${consoleColors.green}http://localhost:${port}${consoleColors.revert}...`);
+                    process.stdout.write('\r🟨 ');
+                    console.log(`${folderName} does not contain a ${previewScript} file. Skipping...`);
+                    return; // Skip to the next folder
                 }
 
-                if (output.includes('Error: The handle is invalid.')) {
-                    console.log('⛔ Error: The handle is invalid.');
-                }
+                const childProcessTwo = spawn(command, [], {
+                    shell: true, // Needed for Windows to execute .sh files
+                    cwd: folderPath // Specify the working directory for the child process
+                    // stdio: 'pipe', // Default value - Works on Mac, but on Windows. On Windows, the .preview.ps1 file gives the error `Error: The handle is invalid.` and closes the running port that was just opened by the script
+                });
 
-                if (output.includes('files have changed, re-executing')) {
-                    console.log(`🚀 Rebuilding ${folderName}...`);
-                    scriptStarted = true;
-                }
+                let scriptStarted = false;
 
-                // Check if the output contains the completion message
-                if (scriptStarted && output.includes('[INFO] ========== Completed')) {
-                    console.log(`✅ ${folderName} rebuilt`);
-                    console.log(`🤖 Listening on ${consoleColors.green}http://localhost:${port}${consoleColors.revert}...`);
-                }
-            });
+                childProcessTwo.stdout.on('data', data => {
+                    const output = data.toString().trim();
 
-            // Handle exit event
-            childProcessTwo.on('exit', code => {
-                if (code !== 0) {
-                    clearInterval(loadingIntervals[index]);
-                    process.stdout.write('\r⛔ ');
-                    console.error(`Preview script in ${folderPath} exited with code ${code}`);
-                }
-            });
+                    if (output.includes(`[INFO] Preview server listening at http://localhost:${port}`)) {
+                        // Stop loading animation for this script
+                        clearInterval(loadingIntervals[index]);
+                        process.stdout.write('\r✅ ');
+                        console.log(`Preview for ${folderName} is running on ${consoleColors.green}http://localhost:${port}${consoleColors.revert}`);
+                        console.log(`🤖 Listening on ${consoleColors.green}http://localhost:${port}${consoleColors.revert}...`);
+                    }
+
+                    if (output.includes('Error: The handle is invalid.')) {
+                        console.log('⛔ Error: The handle is invalid.');
+                    }
+
+                    if (output.includes('files have changed, re-executing')) {
+                        console.log(`🚀 Rebuilding ${folderName}...`);
+                        scriptStarted = true;
+                    }
+
+                    // Check if the output contains the completion message
+                    if (scriptStarted && output.includes('[INFO] ========== Completed')) {
+                        console.log(`✅ ${folderName} rebuilt`);
+                        console.log(`🤖 Listening on ${consoleColors.green}http://localhost:${port}${consoleColors.revert}...`);
+                    }
+                });
+
+                // Handle exit event
+                childProcessTwo.on('exit', code => {
+                    if (code !== 0) {
+                        clearInterval(loadingIntervals[index]);
+                        process.stdout.write('\r⛔ ');
+                        console.error(`Preview script in ${folderPath} exited with code ${code}`);
+                    }
+                });
+            }
         }));
     } catch (error) {
         console.error(`⛔ Error: ${error}`);

@@ -38,6 +38,7 @@ pre.d-format-none {
 
 code[class*="language-"],
 pre[class*="language-"] {
+    margin-bottom: 1rem;
     font-family: var(--bs-font-monospace);
     font-size: .85rem;
     font-weight: 700;
