@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.7.1 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.7.2 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -19655,44 +19655,46 @@
     const tabMultiAttribute = "data-choco-tab-multi";
     const tabMultiElements = document.querySelectorAll(`[${tabMultiAttribute}]`);
     const tabCookies = /* @__PURE__ */ new Set();
-    for (const tabElement of tabMultiElements) {
-      const tabMultiConfigAttribute = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, "");
-      let tabMultiConfig = null;
-      try {
-        tabMultiConfig = JSON.parse(tabMultiConfigAttribute != null ? tabMultiConfigAttribute : "");
-      } catch (error) {
-        console.error(`Invalid JSON: ${tabMultiConfigAttribute}`);
-        return;
-      }
-      for (const key in tabMultiConfig) {
-        if (Object.prototype.hasOwnProperty.call(tabMultiConfig, key)) {
-          tabCookies.add(key);
+    if (tabMultiElements.value) {
+      for (const tabElement of tabMultiElements) {
+        const tabMultiConfigAttribute = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, "");
+        let tabMultiConfig = null;
+        try {
+          tabMultiConfig = JSON.parse(tabMultiConfigAttribute != null ? tabMultiConfigAttribute : "");
+        } catch (error) {
+          console.error(`Invalid JSON: ${tabMultiConfigAttribute}`);
+          return;
         }
-      }
-      tabElement.addEventListener("click", () => {
-        const tabMultiValue = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, "");
-        for (const otherTab of tabMultiElements) {
-          const otherTabMultiValue = otherTab.getAttribute(tabMultiAttribute).replace(/\s/g, "");
-          if (otherTabMultiValue == null ? void 0 : otherTabMultiValue.includes(tabMultiValue != null ? tabMultiValue : "")) {
-            Tab.getOrCreateInstance(otherTab).show();
-          }
-        }
-        const cookieDomain = ~location.hostname.indexOf("chocolatey.org") ? "domain=chocolatey.org;" : "";
         for (const key in tabMultiConfig) {
           if (Object.prototype.hasOwnProperty.call(tabMultiConfig, key)) {
-            const value = tabMultiConfig[key];
-            document.cookie = `${key}=${value}; ${setCookieExpirationNever2()}path=/; ${cookieDomain}`;
+            tabCookies.add(key);
           }
         }
-      });
-    }
-    for (const cookieName of tabCookies) {
-      const cookieValue = getCookie2(cookieName);
-      if (cookieValue) {
-        for (const tabElement of tabMultiElements) {
+        tabElement.addEventListener("click", () => {
           const tabMultiValue = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, "");
-          if ((tabMultiValue == null ? void 0 : tabMultiValue.includes(cookieName)) && (tabMultiValue == null ? void 0 : tabMultiValue.includes(cookieValue))) {
-            Tab.getOrCreateInstance(tabElement).show();
+          for (const otherTab of tabMultiElements) {
+            const otherTabMultiValue = otherTab.getAttribute(tabMultiAttribute).replace(/\s/g, "");
+            if (otherTabMultiValue == null ? void 0 : otherTabMultiValue.includes(tabMultiValue != null ? tabMultiValue : "")) {
+              Tab.getOrCreateInstance(otherTab).show();
+            }
+          }
+          const cookieDomain = ~location.hostname.indexOf("chocolatey.org") ? "domain=chocolatey.org;" : "";
+          for (const key in tabMultiConfig) {
+            if (Object.prototype.hasOwnProperty.call(tabMultiConfig, key)) {
+              const value = tabMultiConfig[key];
+              document.cookie = `${key}=${value}; ${setCookieExpirationNever2()}path=/; ${cookieDomain}`;
+            }
+          }
+        });
+      }
+      for (const cookieName of tabCookies) {
+        const cookieValue = getCookie2(cookieName);
+        if (cookieValue) {
+          for (const tabElement of tabMultiElements) {
+            const tabMultiValue = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, "");
+            if ((tabMultiValue == null ? void 0 : tabMultiValue.includes(cookieName)) && (tabMultiValue == null ? void 0 : tabMultiValue.includes(cookieValue))) {
+              Tab.getOrCreateInstance(tabElement).show();
+            }
           }
         }
       }
