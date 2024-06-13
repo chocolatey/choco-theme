@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.7.2 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.7.3 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -26971,6 +26971,7 @@
     var snap = entry.indexOf("snap") >= 0;
     var hover = entry.indexOf("hover") >= 0;
     var unconstrained = entry.indexOf("unconstrained") >= 0;
+    var invertConnects = entry.indexOf("invert-connects") >= 0;
     var dragAll = entry.indexOf("drag-all") >= 0;
     var smoothSteps = entry.indexOf("smooth-steps") >= 0;
     if (fixed) {
@@ -26978,6 +26979,9 @@
         throw new Error("noUiSlider: 'fixed' behaviour must be used with 2 handles");
       }
       testMargin(parsed, parsed.start[1] - parsed.start[0]);
+    }
+    if (invertConnects && parsed.handles !== 2) {
+      throw new Error("noUiSlider: 'invert-connects' behaviour must be used with 2 handles");
     }
     if (unconstrained && (parsed.margin || parsed.limit)) {
       throw new Error("noUiSlider: 'unconstrained' behaviour cannot be used with margin or limit");
@@ -26990,7 +26994,8 @@
       fixed,
       snap,
       hover,
-      unconstrained
+      unconstrained,
+      invertConnects
     };
   }
   function testTooltips(parsed, entry) {
@@ -27139,6 +27144,7 @@
     var supportsPassive = supportsTouchActionNone && getSupportsPassive();
     var scope_Target = target;
     var scope_Base;
+    var scope_ConnectBase;
     var scope_Handles;
     var scope_Connects;
     var scope_Pips;
@@ -27149,6 +27155,7 @@
     var scope_HandleNumbers = [];
     var scope_ActiveHandlesCount = 0;
     var scope_Events = {};
+    var scope_ConnectsInverted = false;
     var scope_Document = target.ownerDocument;
     var scope_DocumentElement = options.documentElement || scope_Document.documentElement;
     var scope_Body = scope_Document.body;
@@ -27195,14 +27202,14 @@
       return addNodeTo(base, options.cssClasses.connect);
     }
     function addElements(connectOptions, base) {
-      var connectBase = addNodeTo(base, options.cssClasses.connects);
+      scope_ConnectBase = addNodeTo(base, options.cssClasses.connects);
       scope_Handles = [];
       scope_Connects = [];
-      scope_Connects.push(addConnect(connectBase, connectOptions[0]));
+      scope_Connects.push(addConnect(scope_ConnectBase, connectOptions[0]));
       for (var i = 0; i < options.handles; i++) {
         scope_Handles.push(addOrigin(base, i));
         scope_HandleNumbers[i] = i;
-        scope_Connects.push(addConnect(connectBase, connectOptions[i + 1]));
+        scope_Connects.push(addConnect(scope_ConnectBase, connectOptions[i + 1]));
       }
     }
     function addSlider(addTarget) {
@@ -27941,8 +27948,21 @@
       var translation = transformDirection(to, 0) - scope_DirOffset;
       var translateRule = "translate(" + inRuleOrder(translation + "%", "0") + ")";
       scope_Handles[handleNumber].style[options.transformRule] = translateRule;
+      if (options.events.invertConnects && scope_Locations.length > 1) {
+        var handlesAreInOrder = scope_Locations.every(function(position, index, locations) {
+          return index === 0 || position >= locations[index - 1];
+        });
+        if (scope_ConnectsInverted !== !handlesAreInOrder) {
+          invertConnects();
+          return;
+        }
+      }
       updateConnect(handleNumber);
       updateConnect(handleNumber + 1);
+      if (scope_ConnectsInverted) {
+        updateConnect(handleNumber - 1);
+        updateConnect(handleNumber + 2);
+      }
     }
     function setZindex() {
       scope_HandleNumbers.forEach(function(handleNumber) {
@@ -27965,13 +27985,19 @@
       if (!scope_Connects[index]) {
         return;
       }
+      var locations = scope_Locations.slice();
+      if (scope_ConnectsInverted) {
+        locations.sort(function(a, b) {
+          return a - b;
+        });
+      }
       var l2 = 0;
       var h = 100;
       if (index !== 0) {
-        l2 = scope_Locations[index - 1];
+        l2 = locations[index - 1];
       }
       if (index !== scope_Connects.length - 1) {
-        h = scope_Locations[index];
+        h = locations[index];
       }
       var connectWidth = h - l2;
       var translateRule = "translate(" + inRuleOrder(transformDirection(l2, connectWidth) + "%", "0") + ")";
@@ -28119,7 +28145,8 @@
         "step",
         "format",
         "pips",
-        "tooltips"
+        "tooltips",
+        "connect"
       ];
       updateAble.forEach(function(name) {
         if (optionsToUpdate[name] !== void 0) {
@@ -28148,6 +28175,30 @@
       }
       scope_Locations = [];
       valueSet(isSet(optionsToUpdate.start) ? optionsToUpdate.start : v, fireSetEvent);
+      if (optionsToUpdate.connect) {
+        updateConnectOption();
+      }
+    }
+    function updateConnectOption() {
+      while (scope_ConnectBase.firstChild) {
+        scope_ConnectBase.removeChild(scope_ConnectBase.firstChild);
+      }
+      for (var i = 0; i <= options.handles; i++) {
+        scope_Connects[i] = addConnect(scope_ConnectBase, options.connect[i]);
+        updateConnect(i);
+      }
+      bindSliderEvents({ drag: options.events.drag, fixed: true });
+    }
+    function invertConnects() {
+      scope_ConnectsInverted = !scope_ConnectsInverted;
+      testConnect(
+        options,
+        // inverse the connect boolean array
+        options.connect.map(function(b) {
+          return !b;
+        })
+      );
+      updateConnectOption();
     }
     function setupSlider() {
       scope_Base = addSlider(scope_Target);

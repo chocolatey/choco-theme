@@ -79,7 +79,8 @@ export const astroRepositoryConfig = {
             /^text-bg-(info|warning|danger|success)/,
             /^data-bs-popper/,
             /^ratio-/,
-            /^callout-/
+            /^callout-/,
+            /^btn-(primary|danger|success)/
         ]
     },
     root: './'
