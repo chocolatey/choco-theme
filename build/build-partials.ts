@@ -87,26 +87,6 @@ const init = async () => {
             replacementContentIsFile: false
         });
 
-        // Delete TopAlertBanner.html
-        await fs.rm(path.join(destinationHbs, 'TopAlertBanner.html'));
-        await fs.rm(path.join(destinationAstro, 'TopAlertBanner.html'));
-
-        // cshtml files
-        await updateContent({
-            destination: destinationCshtml,
-            targetFile: 'TopAlertBanner.html',
-            targetFileDestination: destinationCshtml,
-            targetFileContentToReplace: 'topNoticeText = ""',
-            replaceWithContent: 'AlertText.html',
-            replacementContentIsFile: true,
-            replacementTemplate: 'topNoticeText = "{0}"'
-        });
-
-        // Delete AlertText.html
-        await fs.rm(path.join(destinationHbs, 'AlertText.html'));
-        await fs.rm(path.join(destinationCshtml, 'AlertText.html'));
-        await fs.rm(path.join(destinationAstro, 'AlertText.html'));
-
         // Update file extensions and casing of names
         const filesHbs = await fs.readdir(destinationHbs);
         const filesCshtml = await fs.readdir(destinationCshtml);
