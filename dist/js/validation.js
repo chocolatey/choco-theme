@@ -7547,10 +7547,11 @@
               this.settings.messages[element.name][method] = previous.message;
               param = typeof param === "string" && { url: param } || param;
               optionDataString = $2.param($2.extend({ data: value }, param.data));
-              if (previous.old === optionDataString) {
+              if (previous.valid !== null && previous.old === optionDataString) {
                 return previous.valid;
               }
               previous.old = optionDataString;
+              previous.valid = null;
               validator = this;
               this.startRequest(element);
               data = {};
@@ -7915,11 +7916,11 @@ jquery/dist/jquery.js:
 
 jquery-validation/dist/jquery.validate.js:
   (*!
-   * jQuery Validation Plugin v1.20.0
+   * jQuery Validation Plugin v1.20.1
    *
    * https://jqueryvalidation.org/
    *
-   * Copyright (c) 2023 Jörn Zaefferer
+   * Copyright (c) 2024 Jörn Zaefferer
    * Released under the MIT license
    *)
 

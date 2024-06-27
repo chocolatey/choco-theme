@@ -4,7 +4,6 @@ import './src/ts/code.ts';
 import './src/collapse-nested.js';
 import './src/collapse-responsive.js';
 import './src/collapse-y-height.js';
-import './src/markdown.js';
 import './src/scrollspy.js';
 import './src/reset-modal.js';
 import './src/reset-toast.js';

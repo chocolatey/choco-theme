@@ -207,12 +207,6 @@ const init = async () => {
                     source: `${repositoryConfig.theme.root}.eslintrc.js`,
                     destination: `${repository.root}.eslintrc.js`,
                     isFolder: false
-                },
-                {
-                    task: 'tsconfig.json',
-                    source: `${repositoryConfig.theme.root}tsconfig.json`,
-                    destination: `${repository.root}tsconfig.json`,
-                    isFolder: false
                 }
             );
         }

@@ -18661,17 +18661,6 @@
     }
   })();
 
-  // js/src/markdown.js
-  (() => {
-    const taskListItems = document.querySelectorAll('.task-list-item [type="checkbox"]');
-    if (taskListItems) {
-      taskListItems.forEach((el) => {
-        el.classList.add("form-check-input");
-        el.outerHTML = `<div class="form-check">${el.outerHTML}<label class="form-check-label"></label></div>`;
-      });
-    }
-  })();
-
   // js/src/scrollspy.js
   var import_jquery = __toESM(require_jquery());
   (() => {
