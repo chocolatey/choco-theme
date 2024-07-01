@@ -1,6 +1,6 @@
 {
   "name": "choco-theme",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "packageManager": "yarn@4.1.1",
   "description": "The global theme for Chocolatey Software.",
   "repository": {
