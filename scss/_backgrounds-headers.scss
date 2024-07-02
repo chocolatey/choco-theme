@@ -5,6 +5,16 @@
         color: color-contrast($value) if($enable-important-utilities, !important, null);
         background-color: rgba($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
     }
+
+    .fill-#{$color} {
+        fill: $value;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .fill-#{$color} {
+        fill: $value;
+    }
 }
 
 @each $color, $value in $palette-colors {
@@ -13,6 +23,10 @@
         color: color-contrast($value) if($enable-important-utilities, !important, null);
         background-color: rgba($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
     }
+}
+
+.fill-bg-body-contrast {
+    fill: var(--bs-body-color);
 }
 
 .text-bg-body {

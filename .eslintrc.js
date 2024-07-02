@@ -3,9 +3,10 @@ module.exports = {
         browser: true,
         es2021: true
     },
-    ignorePatterns: ['js/src/lib', 'node_modules', 'wwwroot/js/*.min.js', 'input/assets/js/*.min.js', 'Scripts/*.min.js'],
+    ignorePatterns: ['js/src/lib', 'node_modules', 'wwwroot/js/**/*.min.js', 'input/assets/js/*.min.js', 'Scripts/*.min.js'],
     globals: {
-        Prism: 'readonly'
+        Prism: 'readonly',
+        bootstrap: 'readonly'
     },
     extends: 'standard',
     parserOptions: {

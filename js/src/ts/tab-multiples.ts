@@ -1,12 +1,12 @@
-import { Tab } from 'bootstrap';
-import { getCookie, setCookieExpirationNever } from './util/functions';
+import { setCookieExpirationNever } from './util/set-cookie-expiration-never';
+import { getCookie } from './util/get-cookie';
 
 window.addEventListener('DOMContentLoaded', () => {
     const tabMultiAttribute = 'data-choco-tab-multi';
     const tabMultiElements = document.querySelectorAll<HTMLElement>(`[${tabMultiAttribute}]`);
     const tabCookies = new Set<string>(); // Use a Set to store unique cookie names
 
-    if (tabMultiElements.value) {
+    if (tabMultiElements && tabMultiElements.value) {
         for (const tabElement of tabMultiElements) {
             const tabMultiConfigAttribute = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, '');
             let tabMultiConfig: { [key: string]: string } | null = null;
@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     const otherTabMultiValue = otherTab.getAttribute(tabMultiAttribute).replace(/\s/g, '');
 
                     if (otherTabMultiValue?.includes(tabMultiValue ?? '')) {
-                        Tab.getOrCreateInstance(otherTab).show();
+                        bootstrap.Tab.getOrCreateInstance(otherTab).show();
                     }
                 }
 
@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     const tabMultiValue = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, '');
 
                     if (tabMultiValue?.includes(cookieName) && tabMultiValue?.includes(cookieValue)) {
-                        Tab.getOrCreateInstance(tabElement).show();
+                        bootstrap.Tab.getOrCreateInstance(tabElement).show();
                     }
                 }
             }

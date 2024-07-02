@@ -1,4 +1,3 @@
-import { Modal } from 'bootstrap';
 import { c4bStandardSubscription, c4bPremiumSubscription, c4bIncludedItems, c4bSupportNodes, c4bAddOnPrice, c4bNodeDefaults, c4bNodePurchaseCutoffs } from './ts/util/pricing-calculator';
 import noUiSlider from 'nouislider';
 
@@ -380,7 +379,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // Trigger information modal when clicking on a disabled support type option
         c4bSupportTypesContainer.addEventListener('click', event => {
             if (event.target.id === c4bSupportTypesContainer.id) {
-                const c4bSupportTypesModal = Modal.getOrCreateInstance(document.querySelector('#c4bModalSupportType'), { backdrop: 'static' });
+                const c4bSupportTypesModal = bootstrap.Modal.getOrCreateInstance(document.querySelector('#c4bModalSupportType'), { backdrop: 'static' });
 
                 c4bSupportTypesModal.show();
             }

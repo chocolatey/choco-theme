@@ -1,10 +1,10 @@
-import { Offcanvas, Modal, Tab } from 'bootstrap';
-import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab } from './util/functions';
+import { copyCodeBlocks, removeLineBreaks, selectDeploymentMethodTab } from './util/functions';
+import { getCookie } from './util/get-cookie';
 
 (() => {
     const packages = localStorage.packageList === undefined ? new Array() : JSON.parse(localStorage.packageList); // eslint-disable-line
     const modalBuilder = document.getElementById('modalScriptBuilder');
-    const modalBuilderInstance = Modal.getOrCreateInstance(modalBuilder, { keyboard: false, backdrop: 'static' });
+    const modalBuilderInstance = bootstrap.Modal.getOrCreateInstance(modalBuilder, { keyboard: false, backdrop: 'static' });
     const deploymentMethods = document.querySelectorAll('[data-deployment-method]');
     const builderStep3 = document.querySelector('#builder-step-3-tab');
     const builderStep4 = document.querySelector('#builder-step-4-tab');
@@ -91,7 +91,7 @@ import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab 
             builderViewBtn.classList.remove('d-none');
         } else {
             const offcanvasBuilder = document.getElementById('navScriptBuilder');
-            const offcanvasBuilderInstance = Offcanvas.getOrCreateInstance(offcanvasBuilder, { toggle: false });
+            const offcanvasBuilderInstance = bootstrap.Offcanvas.getOrCreateInstance(offcanvasBuilder, { toggle: false });
 
             modalBuilderInstance.hide();
             offcanvasBuilderInstance.hide();
@@ -192,7 +192,7 @@ import { copyCodeBlocks, getCookie, removeLineBreaks, selectDeploymentMethodTab 
                             if (findScriptValue(storageValue) == findScriptValue(packageValue)) {
                                 // Show modal
                                 const modalBuilderVersionWarning = document.getElementById('modalScriptBuilderVersionWarning');
-                                const modalBuilderVersionWarningInstance = Modal.getOrCreateInstance(modalBuilderVersionWarning, { keyboard: false, backdrop: 'static' });
+                                const modalBuilderVersionWarningInstance = bootstrap.getOrCreateInstance(modalBuilderVersionWarning, { keyboard: false, backdrop: 'static' });
 
                                 modalBuilderVersionWarning.addEventListener('show.bs.modal', () => {
                                     const btnBuilderVersion = document.querySelector('.btn-builder-version');
@@ -506,7 +506,7 @@ package { '${storageValue}':
         const builderNextStep = document.querySelector('#builder-steps .active').closest('li').nextElementSibling;
         const builderPrevStep = document.querySelector('#builder-steps .active').closest('li').previousElementSibling;
         const internalRepoUrl = document.querySelector('.internal-repo-url-input');
-        const builderStep3Tab = Tab.getOrCreateInstance(builderStep3, { toggle: false });
+        const builderStep3Tab = bootstrap.Tab.getOrCreateInstance(builderStep3, { toggle: false });
 
         // Next Button
         if (builderNextStep) {
@@ -609,7 +609,7 @@ package { '${storageValue}':
             if (builderNextStep) {
                 if (!builderStep3.classList.contains('active') || !builderIndividual.classList.contains('active')) {
                     const builderNextStepTab = builderNextStep.firstElementChild;
-                    const builderNextStepTabInstance = Tab.getOrCreateInstance(builderNextStepTab, { toggle: false });
+                    const builderNextStepTabInstance = bootstrap.Tab.getOrCreateInstance(builderNextStepTab, { toggle: false });
 
                     builderNextStepTabInstance.show();
                 }
@@ -623,7 +623,7 @@ package { '${storageValue}':
 
             if (builderPrevStep) {
                 const builderPrevStepTab = builderPrevStep.firstElementChild;
-                const builderPrevStepTabInstance = Tab.getOrCreateInstance(builderPrevStepTab, { toggle: false });
+                const builderPrevStepTabInstance = bootstrap.Tab.getOrCreateInstance(builderPrevStepTab, { toggle: false });
 
                 builderPrevStepTabInstance.show();
             }

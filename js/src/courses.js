@@ -1,5 +1,3 @@
-import { Modal } from 'bootstrap';
-
 (() => {
     if (window.location.pathname.includes('courses')) {
         const setNavigation = () => {
@@ -84,7 +82,7 @@ import { Modal } from 'bootstrap';
         const quiz = document.getElementById('quiz-modal');
 
         if (quiz && window.location.search.includes('quiz=true')) {
-            const quizModal = Modal.getOrCreateInstance(quiz, { keyboard: false, backdrop: 'static' });
+            const quizModal = bootstrap.Modal.getOrCreateInstance(quiz, { keyboard: false, backdrop: 'static' });
 
             quizModal.show();
         }
@@ -178,7 +176,7 @@ import { Modal } from 'bootstrap';
             const method = window.localStorage.getItem('method');
             const select = document.querySelector('#select-method');
             const reselect = document.querySelector('#reselect-method');
-            const installModalInstance = Modal.getOrCreateInstance(installModal, { keyboard: false, backdrop: 'static' });
+            const installModalInstance = bootstrap.Modal.getOrCreateInstance(installModal, { keyboard: false, backdrop: 'static' });
 
             const showInstallMethod = method => {
                 document.querySelector(`#${method}`).style.display = 'block';

@@ -1,5 +1,3 @@
-import { Collapse } from 'bootstrap';
-
 (() => {
     document.addEventListener('click', e => {
         const header = document.querySelector('header');
@@ -7,7 +5,7 @@ import { Collapse } from 'bootstrap';
 
         if (!isClickInside && document.querySelector('.navbar-nested-collapse .collapse.show')) {
             const collapseHeader = document.querySelector('.navbar-nested-collapse .collapse.show');
-            const collapseHeaderNav = Collapse.getOrCreateInstance(collapseHeader, { toggle: false });
+            const collapseHeaderNav = bootstrap.Collapse.getOrCreateInstance(collapseHeader, { toggle: false });
 
             collapseHeaderNav.hide();
         }

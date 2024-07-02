@@ -1,0 +1,48 @@
+@import "@eonasdan/tempus-dominus/dist/css/tempus-dominus";
+
+:root,
+:root[data-bs-theme="light"] {
+    --td-active-bg: var(--bs-primary);
+    --td-active-border-color: var(--bs-black);
+    --td-btn-hover-bg: #74adde;
+    --td-widget-background: var(--bs-secondary-bg);
+    --td-font-color: var(--bs-body-color);
+    --td-active-color: var(--bs-black);
+    --td-dow-color: var(--bs-secondary-color);
+    --td-disabled-color: var(--bs-secondary-color);
+    --td-alternate-color: var(--bs-secondary-color);
+}
+
+.form-control[readonly].form-control-tempus-dominus {
+    background: var(--bs-secondary-bg);
+}
+
+.tempus-dominus-widget {
+    padding-top: 1rem;
+    margin-top: .5rem !important;
+    border: 1px solid var(--bs-border-color);
+    box-shadow: unset;
+
+    .time-container-clock,
+    .time-container-minute {
+        margin-top: 100px;
+    }
+
+    .time-container-hour {
+        margin-top: 40px;
+    }
+
+    .date-container-days,
+    .date-container-decades,
+    .date-container-months,
+    .date-container-years,
+    .time-container-clock,
+    .time-container-hour,
+    .time-container-minute,
+    .time-container-second
+     {
+        div:not(.no-highlight):hover:hover {
+            color: var(--bs-black) !important;
+        }
+    }
+}

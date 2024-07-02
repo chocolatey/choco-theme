@@ -1,4 +1,3 @@
-import { Collapse, Tab } from 'bootstrap';
 import { escapeId, getParents } from './util/functions';
 
 (() => {
@@ -17,7 +16,7 @@ import { escapeId, getParents } from './util/functions';
                 collapseParents.reverse().forEach((el, idx, array) => {
                     el = document.getElementById(escapeId(el.id));
 
-                    const collapseParentContainer = Collapse.getOrCreateInstance(el, { toggle: false });
+                    const collapseParentContainer = bootstrap.Collapse.getOrCreateInstance(el, { toggle: false });
 
                     collapseParentContainer.show();
 
@@ -48,7 +47,7 @@ import { escapeId, getParents } from './util/functions';
                         el = document.getElementById(`${escapeId(el.id)}-tab`);
                     }
 
-                    const tabParentContainer = Tab.getOrCreateInstance(el, { toggle: false });
+                    const tabParentContainer = bootstrap.Tab.getOrCreateInstance(el, { toggle: false });
 
                     tabParentContainer.show();
 
@@ -75,7 +74,7 @@ import { escapeId, getParents } from './util/functions';
         btnCollapseTarget.forEach(el => {
             el.addEventListener('click', () => {
                 const collapseTarget = document.querySelector(el.getAttribute('data-collapse-target'));
-                const collapseTargetContainer = Collapse.getOrCreateInstance(collapseTarget, { toggle: false });
+                const collapseTargetContainer = bootstrap.Collapse.getOrCreateInstance(collapseTarget, { toggle: false });
 
                 collapseTargetContainer.show();
             }, false);

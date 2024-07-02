@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.7.4 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -6602,6 +6602,7 @@
             onsubmit: true,
             ignore: ":hidden",
             ignoreTitle: false,
+            customElements: [],
             onfocusin: function(element) {
               this.lastActive = element;
               if (this.settings.focusCleanup) {
@@ -6721,11 +6722,32 @@
                   settings[eventType].call(validator, this, event);
                 }
               }
-              $2(this.currentForm).on(
-                "focusin.validate focusout.validate keyup.validate",
-                ":text, [type='password'], [type='file'], select, textarea, [type='number'], [type='search'], [type='tel'], [type='url'], [type='email'], [type='datetime'], [type='date'], [type='month'], [type='week'], [type='time'], [type='datetime-local'], [type='range'], [type='color'], [type='radio'], [type='checkbox'], [contenteditable], [type='button']",
-                delegate
-              ).on("click.validate", "select, option, [type='radio'], [type='checkbox']", delegate);
+              var focusListeners = [
+                ":text",
+                "[type='password']",
+                "[type='file']",
+                "select",
+                "textarea",
+                "[type='number']",
+                "[type='search']",
+                "[type='tel']",
+                "[type='url']",
+                "[type='email']",
+                "[type='datetime']",
+                "[type='date']",
+                "[type='month']",
+                "[type='week']",
+                "[type='time']",
+                "[type='datetime-local']",
+                "[type='range']",
+                "[type='color']",
+                "[type='radio']",
+                "[type='checkbox']",
+                "[contenteditable]",
+                "[type='button']"
+              ];
+              var clickListeners = ["select", "option", "[type='radio']", "[type='checkbox']"];
+              $2(this.currentForm).on("focusin.validate focusout.validate keyup.validate", focusListeners.concat(this.settings.customElements).join(", "), delegate).on("click.validate", clickListeners.concat(this.settings.customElements).join(", "), delegate);
               if (this.settings.invalidHandler) {
                 $2(this.currentForm).on("invalid-form.validate", this.settings.invalidHandler);
               }
@@ -6872,8 +6894,8 @@
               }).length === 1 && lastActive;
             },
             elements: function() {
-              var validator = this, rulesCache = {};
-              return $2(this.currentForm).find("input, select, textarea, [contenteditable]").not(":submit, :reset, :image, :disabled").not(this.settings.ignore).filter(function() {
+              var validator = this, rulesCache = {}, selectors = ["input", "select", "textarea", "[contenteditable]"];
+              return $2(this.currentForm).find(selectors.concat(this.settings.customElements).join(", ")).not(":submit, :reset, :image, :disabled").not(this.settings.ignore).filter(function() {
                 var name = this.name || $2(this).attr("name");
                 var isContentEditable = typeof $2(this).attr("contenteditable") !== "undefined" && $2(this).attr("contenteditable") !== "false";
                 if (!name && validator.settings.debug && window.console) {
@@ -7470,7 +7492,7 @@
             },
             // https://jqueryvalidation.org/number-method/
             number: function(value, element) {
-              return this.optional(element) || /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test(value);
+              return this.optional(element) || /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:-?\.\d+)?$/.test(value);
             },
             // https://jqueryvalidation.org/digits-method/
             digits: function(value, element) {
@@ -7916,7 +7938,7 @@ jquery/dist/jquery.js:
 
 jquery-validation/dist/jquery.validate.js:
   (*!
-   * jQuery Validation Plugin v1.20.1
+   * jQuery Validation Plugin v1.21.0
    *
    * https://jqueryvalidation.org/
    *

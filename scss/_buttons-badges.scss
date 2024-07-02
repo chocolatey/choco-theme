@@ -16,6 +16,12 @@
     }
 }
 
+.btn-link:focus-visible {
+    outline: 1px auto var(--bs-body-color);
+    outline-offset: 1px;
+    box-shadow: unset;
+}
+
 // Navbar toggler
 .navbar-toggler {
     &:hover .fa-solid {
@@ -30,6 +36,14 @@
 // Custom buttons
 .btn-link:hover {
     text-decoration: underline;
+}
+
+button.btn-grab:not(:disabled) {
+    cursor: grab;
+}
+
+.sortable-chosen button.btn-grab:not(:disabled) {
+    cursor: grabbing;
 }
 
 .btn-bg-body,
@@ -59,7 +73,7 @@
     --bs-btn-active-color: var(--bs-dark);
     --bs-btn-active-bg: var(--bs-primary);
     --bs-btn-active-border-color: var(--bs-primary);
-    --bs-btn-disabled-color: var(--bs-secondary);
+    --bs-btn-disabled-color: var(--bs-secondary-color);
     --bs-btn-disabled-border-color: var(--choco-border-color-adaptive);
 }
 

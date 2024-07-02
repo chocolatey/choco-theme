@@ -10,12 +10,14 @@ $body-color-dark:                   $gray-200;
 $body-bg-dark:                      $primary-950;
 
 $body-secondary-bg:                 $white;
-
 $body-secondary-bg-dark:            $primary-900;
 
 $body-tertiary-bg:                  $gray-300;
-
 $body-tertiary-bg-dark:             $primary-800;
+
+// Links
+$link-color:                        shade-color($primary, 40%); // shade this so it's accessible
+$link-hover-color:                  shift-color($link-color, -20%);
 
 // Borders
 $border-color-dark:                 $primary-800;

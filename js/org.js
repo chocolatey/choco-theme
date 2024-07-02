@@ -1,6 +1,7 @@
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'add-to-calendar-button';
 import balanceText from 'balance-text';
-import './src/lib/prism.min.js';
+import './src/lib/prism.js';
 import './src/alerts.js';
 import './src/announcements.js';
 import './src/carousels.js';

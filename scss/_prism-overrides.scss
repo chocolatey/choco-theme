@@ -183,3 +183,62 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
     top: -2.2rem !important;
     opacity: 1 !important;
 }
+
+// Chocolatey log language specific
+.language-log {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+
+    .token {
+        position: relative;
+
+        &.debug,
+        &.constant {
+            color: var(--bs-primary);
+        }
+
+        &.info,
+        &.verbose,
+        &.date {
+            color: var(--bs-prism-green);
+        }
+
+        &.warning,
+        &.string,
+        &.exceptiontype {
+            color: var(--bs-prism-orange);
+        }
+
+        &.error {
+            font-weight: 700;
+            color: var(--bs-prism-red);
+        }
+
+        &.exceptiontype {
+            font-style: italic;
+        }
+    }
+
+    .log-error-highlight {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: -3px;
+        background: rgba($red, .25);
+        border-top: 2px solid rgba($red, .25);
+        border-bottom: 1px solid rgba($red, .25);
+
+        i {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+// Custom Global Tokens
+.token.sensitive-variable,
+.token.string .token.sensitive-variable {
+    font-weight: 400;
+    color: var(--bs-body-color);
+    background: var(--bs-tertiary-bg);
+}
+

@@ -1,4 +1,3 @@
-import { Dropdown } from 'bootstrap';
 import './src/theme-toggle.js';
 import { folderMapping } from '../build/data/preview-config.js';
 

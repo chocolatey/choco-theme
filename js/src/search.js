@@ -1,5 +1,6 @@
 import autoComplete from '@tarekraafat/autocomplete.js';
-import { getCookie, setCookieExpirationNever } from './util/functions';
+import { setCookieExpirationNever } from './util/set-cookie-expiration-never';
+import { getCookie } from './util/get-cookie';
 const Mousetrap = require('mousetrap');
 
 (() => {

@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/*
+ *  Bootstrap Duallistbox - v4.0.2
+ *  A responsive dual listbox widget optimized for Twitter Bootstrap. It works on all modern browsers and on touch devices.
+ *  http://www.virtuosoft.eu/code/bootstrap-duallistbox/
+ *
+ *  Made by István Ujj-Mészáros
+ *  Under Apache License v2.0 License
+ */
+.bootstrap-duallistbox-container .buttons {
+  width: 100%;
+  margin-bottom: -1px;
+}
+
+.bootstrap-duallistbox-container label {
+  display: block;
+}
+
+.bootstrap-duallistbox-container .info {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.bootstrap-duallistbox-container .clear1,
+.bootstrap-duallistbox-container .clear2 {
+  display: none;
+}
+
+.bootstrap-duallistbox-container .box1.filtered .clear1,
+.bootstrap-duallistbox-container .box2.filtered .clear2 {
+  display: inline-block;
+}
+
+.bootstrap-duallistbox-container .move,
+.bootstrap-duallistbox-container .remove {
+  box-sizing: content-box;
+  width: 50%;
+}
+
+.bootstrap-duallistbox-container .btn-group .btn {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.bootstrap-duallistbox-container:not(.moveonselect) select {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.bootstrap-duallistbox-container .moveall,
+.bootstrap-duallistbox-container .removeall {
+  box-sizing: content-box;
+  width: 50%;
+}
+
+.bootstrap-duallistbox-container.bs2compatible .btn-group > .btn + .btn {
+  margin-left: 0;
+}
+
+.bootstrap-duallistbox-container select {
+  width: 100%;
+  height: 300px;
+  padding: 0;
+}
+
+.bootstrap-duallistbox-container .filter {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  height: 31px;
+  margin: 0 0 5px;
+}
+
+.bootstrap-duallistbox-container .filter.placeholder {
+  color: #aaa;
+}
+
+.bootstrap-duallistbox-container.moveonselect .move,
+.bootstrap-duallistbox-container.moveonselect .remove {
+  display: none;
+}
+
+.bootstrap-duallistbox-container.moveonselect .moveall,
+.bootstrap-duallistbox-container.moveonselect .removeall {
+  width: 100%;
+}
+
+/* Chocolatey Modified Below */
+.bootstrap-duallistbox-container {
+  /* stylelint-disable-next-line no-duplicate-selectors */
+  /* stylelint-disable-next-line no-duplicate-selectors */
+}
+.bootstrap-duallistbox-container .info-container {
+  display: inherit;
+}
+.bootstrap-duallistbox-container .info-container .btn {
+  display: none;
+}
+.bootstrap-duallistbox-container .filter {
+  margin: 0.5rem 0;
+}
+.bootstrap-duallistbox-container .btn-group {
+  width: 100%;
+}
+.bootstrap-duallistbox-container select {
+  background: var(--bs-secondary-bg);
+  border-color: var(--bs-primary);
+}
+.bootstrap-duallistbox-container select:focus-visible {
+  outline: var(--bs-primary);
+}
+.bootstrap-duallistbox-container select option {
+  color: var(--bs-body-color);
+}
+.bootstrap-duallistbox-container select option:not([class*=list-group-item-]):hover, .bootstrap-duallistbox-container select option:not([class*=list-group-item-]):focus, .bootstrap-duallistbox-container select option:not([class*=list-group-item-]):checked {
+  color: var(--bs-body-color) !important;
+  background: linear-gradient(var(--bs-tertiary-bg), var(--bs-tertiary-bg)) !important;
+  background-color: var(--bs-tertiary-bg) !important;
+}
+.bootstrap-duallistbox-container select option.list-group-item-warning.selected, .bootstrap-duallistbox-container select option.list-group-item-warning:hover, .bootstrap-duallistbox-container select option.list-group-item-warning:focus, .bootstrap-duallistbox-container select option.list-group-item-warning:checked {
+  color: var(--bs-black) !important;
+  background: linear-gradient(var(--bs-warning), var(--bs-warning)) !important;
+  background-color: var(--bs-warning) !important;
+}
+.bootstrap-duallistbox-container select option.list-group-item-danger.selected, .bootstrap-duallistbox-container select option.list-group-item-danger:hover, .bootstrap-duallistbox-container select option.list-group-item-danger:focus, .bootstrap-duallistbox-container select option.list-group-item-danger:checked {
+  color: var(--bs-black) !important;
+  background: linear-gradient(var(--bs-danger), var(--bs-danger)) !important;
+  background-color: var(--bs-danger) !important;
+}
+.bootstrap-duallistbox-container select option.list-group-item-orange {
+  color: var(--bs-black) !important;
+  background: linear-gradient(var(--bs-orange), var(--bs-orange)) !important;
+  background-color: var(--bs-orange) !important;
+}
+
+.groups-warning [class^=callout] ul li::before {
+  position: absolute;
+  top: 5px;
+  left: -1.5rem;
+  width: 15px;
+  height: 15px;
+  content: "";
+  border-radius: var(--bs-border-radius-sm);
+}
+.groups-warning [class^=callout] ul li.group-warning-three::before {
+  background: var(--bs-danger) !important;
+}
+.groups-warning [class^=callout] ul li.group-warning-one::before {
+  background: var(--bs-warning) !important;
+}
+.groups-warning [class^=callout] ul li.group-warning-two::before {
+  background: var(--bs-orange) !important;
+}

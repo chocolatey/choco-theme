@@ -1,0 +1,75 @@
+#!/usr/bin/env ts-node
+
+/*!
+ * Script to build additional assets for portal.
+ * Copyright 2020-2024 Chocolatey Software
+ * Licensed under Apache License (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
+ */
+
+import * as esbuild from 'esbuild';
+import * as fs from 'fs/promises';
+import { purgeCss } from './functions/purge-css';
+import { repository } from './functions/determine-repository';
+import { repositoryConfig } from './data/repository-config';
+
+const init = async () => {
+    console.log('🚀 Compiling and minifying repository JS...');
+
+    if (repository.name === repositoryConfig.ccm.name) {
+        await fs.rm(`${repository.js}dist`, { force: true, recursive: true });
+    }
+
+    let esbuildOptions: esbuild.BuildOptions = {
+        entryPoints: [''],
+        target: 'es2015',
+        bundle: true,
+        outdir: '',
+        minify: true,
+        outExtension: { '.js': '.min.js' }
+    }
+
+    switch (repository.name) {
+        case repositoryConfig.ccm.name:
+            esbuildOptions = {
+                ...esbuildOptions,
+                external: ['popper.js'],
+                banner: {
+                    js: `
+                        if (typeof window !== 'undefined') {
+                            window.require = function(module) {
+                                if (module === 'popper.js') return window.Popper;
+                                throw new Error('Cannot find module ' + module);
+                            };
+                        }
+                    `,
+                },
+                entryPoints: [
+                    `${repository.js}src/views/**/*.js`,
+                    `${repository.js}src/account.js`
+                ],
+                outdir: `${repository.js}dist/`
+            };
+            break;
+        case repositoryConfig.portal.name:
+            esbuildOptions = {
+                ...esbuildOptions,
+                entryPoints: [`${repository.js}src/*.js`],
+                outdir: repository.js
+            };
+            break;
+    }
+
+    await esbuild.build({
+        ...esbuildOptions
+    }).then(async () => {
+        console.log('✅ Repository JS compiled and minified');
+
+        // PurgeCSS
+        await purgeCss({
+            source: `${repository.css}${repository.name}.min.css`,
+            repository: repository
+        });
+    });
+};
+
+init();
