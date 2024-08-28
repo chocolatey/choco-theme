@@ -54,6 +54,16 @@
     main #appSidebar {
         max-width: 300px;
 
+        /* stylelint-disable-next-line selector-id-pattern */
+        &[data-icon-menu="false"] #appSidebar_offcanvas {
+            --bs-offcanvas-width: 300px;
+        }
+
+        /* stylelint-disable-next-line selector-id-pattern */
+        &[data-icon-menu="true"] #appSidebar_offcanvas {
+            --bs-offcanvas-width: 50px;
+        }
+
         &.disabled li {
             &:not(.active-parent):hover {
                 &::before {
@@ -115,6 +125,11 @@
 
     .card {
         overflow: visible !important;
+    }
+
+    /* stylelint-disable selector-class-pattern */
+    .actionButton-cell {
+        width: 129px;
     }
 }
 

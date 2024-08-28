@@ -39,7 +39,8 @@ module.exports = {
                 project: 'playwright/tsconfig.json'
             },
             rules: {
-                'playwright/no-conditional-in-test': 0
+                'playwright/no-conditional-in-test': 0,
+                'playwright/expect-expect': 0
             }
         },
         {

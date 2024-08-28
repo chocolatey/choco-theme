@@ -55350,8 +55350,19 @@ main {
   background: rgba(92, 159, 216, 0.1);
 }
 
+.chocolatey-ccm {
+  /* stylelint-disable selector-class-pattern */
+}
 .chocolatey-ccm main #appSidebar {
   max-width: 300px;
+  /* stylelint-disable-next-line selector-id-pattern */
+  /* stylelint-disable-next-line selector-id-pattern */
+}
+.chocolatey-ccm main #appSidebar[data-icon-menu=false] #appSidebar_offcanvas {
+  --bs-offcanvas-width: 300px;
+}
+.chocolatey-ccm main #appSidebar[data-icon-menu=true] #appSidebar_offcanvas {
+  --bs-offcanvas-width: 50px;
 }
 .chocolatey-ccm main #appSidebar.disabled li:not(.active-parent):hover::before {
   background: none !important;
@@ -55393,6 +55404,9 @@ main {
 }
 .chocolatey-ccm .card {
   overflow: visible !important;
+}
+.chocolatey-ccm .actionButton-cell {
+  width: 129px;
 }
 
 @media (min-width: 992px) {
@@ -60558,6 +60572,10 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 .form-check .form-check-input.is-invalid {
   border-color: var(--bs-danger);
 }
+.form-check .form-text,
+.form-check .invalid-feedback {
+  margin-top: 0;
+}
 
 .form-switch.form-switch-active .form-check-input, .form-switch.form-switch-expired .form-check-input, .form-switch.form-switch-deactivated .form-check-input, .form-switch.form-switch-latest .form-check-input {
   width: 3rem;
@@ -62768,6 +62786,10 @@ table.table.dataTable tr {
   opacity: 1;
 }
 
+.tab-content > .active:focus-visible {
+  outline: 1px solid var(--bs-body-color);
+}
+
 body:not(.boxstarter-org) code:not([class*=language-]) {
   padding: 0.125rem 0.375rem;
   background: var(--bs-secondary-bg);
@@ -62943,19 +62965,19 @@ html:not(.chocolatey-ccm) body:not(.boxstarter-org) .btn-link:focus {
 .playwright .playwright-arrow-bottom-tilt-left,
 .playwright .playwright-arrow-end-left,
 .playwright .playwright-arrow-start-right {
-  z-index: 99999;
   position: relative;
+  z-index: 99999;
 }
-.playwright .playwright-box:after {
+.playwright .playwright-box::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
   content: "";
   border: 3px solid #f4516c;
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  padding: 10px;
   transform: translate(-50%, -50%);
-  height: 100%;
-  width: 100%;
 }
 .playwright .playwright-arrow-top,
 .playwright .playwright-arrow-bottom,
@@ -62966,46 +62988,46 @@ html:not(.chocolatey-ccm) body:not(.boxstarter-org) .btn-link:focus {
   --playwright-arrow-width: 100px;
   --playwright-arrow-height: 24px;
 }
-.playwright .playwright-arrow-top:before,
-.playwright .playwright-arrow-bottom:before,
-.playwright .playwright-arrow-bottom-tilt-right:before,
-.playwright .playwright-arrow-bottom-tilt-left:before,
-.playwright .playwright-arrow-end-left:before,
-.playwright .playwright-arrow-start-right:before {
-  content: "";
+.playwright .playwright-arrow-top::before,
+.playwright .playwright-arrow-bottom::before,
+.playwright .playwright-arrow-bottom-tilt-right::before,
+.playwright .playwright-arrow-bottom-tilt-left::before,
+.playwright .playwright-arrow-end-left::before,
+.playwright .playwright-arrow-start-right::before {
+  position: absolute;
+  z-index: 999999;
   display: block;
   width: 100px;
   height: 24px;
+  content: "";
   background: url("../Common/Images/playwright/arrow-left.svg") no-repeat center center;
-  position: absolute;
-  z-index: 999999;
 }
-.playwright .playwright-arrow-top:before {
+.playwright .playwright-arrow-top::before {
   top: calc(-50px - 1rem);
   left: 50%;
   transform: translateX(-50%) rotate(-90deg);
 }
-.playwright .playwright-arrow-bottom:before {
+.playwright .playwright-arrow-bottom::before {
   bottom: calc(-50px - 1rem);
   left: 50%;
   transform: translateX(-50%) rotate(90deg);
 }
-.playwright .playwright-arrow-bottom-tilt-right:before {
+.playwright .playwright-arrow-bottom-tilt-right::before {
   bottom: calc(-50px - 0.25rem);
   left: 20%;
   transform: translateX(-50%) rotate(135deg);
 }
-.playwright .playwright-arrow-bottom-tilt-left:before {
+.playwright .playwright-arrow-bottom-tilt-left::before {
   bottom: calc(-50px - 0.25rem);
   left: 80%;
   transform: translateX(-50%) rotate(45deg);
 }
-.playwright .playwright-arrow-end-left:before {
+.playwright .playwright-arrow-end-left::before {
   top: 50%;
   left: 100%;
   transform: translate(10%, -50%);
 }
-.playwright .playwright-arrow-start-right:before {
+.playwright .playwright-arrow-start-right::before {
   top: 50%;
   right: 100%;
   transform: translate(-10%, -50%) rotate(180deg);
