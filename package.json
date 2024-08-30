@@ -70,6 +70,7 @@
     "easymde": "^2.16.1",
     "http-server": "^14.1.1",
     "jquery-validation-unobtrusive": "^4.0.0",
+    "license-report": "^6.5.0",
     "lite-youtube-embed": "^0.3.0",
     "mousetrap": "^1.6.5",
     "nodemon": "^3.1.0",
