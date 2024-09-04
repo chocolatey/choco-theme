@@ -1,4 +1,3 @@
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './src/lib/prism.js';
 import './src/callouts.js';
 import './src/ts/code.ts';

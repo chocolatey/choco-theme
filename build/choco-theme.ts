@@ -80,6 +80,12 @@ const init = async () => {
                     isFolder: false
                 },
                 {
+                    task: 'bootstrap.bundle.min.js',
+                    source: 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+                    destination: `${repository.js}bootstrap.bundle.min.js`,
+                    isFolder: false
+                },
+                {
                     task: `${repository.name}.min.js`,
                     source: `${repositoryConfig.theme.js}${repository.name}.min.js`,
                     destination: `${repository.js}${repository.name}.min.js`,

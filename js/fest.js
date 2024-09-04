@@ -1,4 +1,3 @@
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'lite-youtube-embed';
 import './src/alerts.js';
 import './src/callouts.js';

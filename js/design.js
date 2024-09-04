@@ -1,4 +1,3 @@
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './src/lib/prism.js';
 import './src/alerts.js';
 import './src/code-copy-for-view.js'; // Purposely put before callouts.js because this script needs to execute first
