@@ -6,7 +6,6 @@ export const setCookie = (name, value, expirationDays, domainName) => {
     if (expirationDays === 'never') {
         expires = setCookieExpirationNever();
     } else if (expirationDays === 'expired') {
-        console.log('expired');
         expires = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
     } else {
         const d = new Date();

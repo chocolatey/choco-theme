@@ -15,10 +15,6 @@ import { repositoryConfig } from './data/repository-config';
 const init = async () => {
     console.log('🚀 Compiling and minifying repository JS...');
 
-    if (repository.name === repositoryConfig.ccm.name) {
-        await fs.rm(`${repository.js}dist`, { force: true, recursive: true });
-    }
-
     let esbuildOptions: esbuild.BuildOptions = {
         entryPoints: [''],
         target: 'es2015',

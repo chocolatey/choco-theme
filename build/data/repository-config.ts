@@ -191,6 +191,7 @@ repositoryConfig.ccm.purgeCss = {
         /^playwright-/,
         'tooltip',
         /^tooltip-/,
+        /^code-toolbar/,
         /^text-bg-(blue|pink|purple|green|red|yellow|orange)/,
         /^fill-(blue|pink|purple|green|red|yellow|orange|success|danger|info|primary)/
     ]

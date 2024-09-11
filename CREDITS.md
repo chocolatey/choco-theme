@@ -95,16 +95,16 @@ limitations under the License.
 
 ```
 
-#### [@playwright/test@1.46.1](https://github.com/microsoft/playwright)
+#### [@playwright/test@1.47.0](https://github.com/microsoft/playwright)
 
 [Repository Link](https://github.com/microsoft/playwright)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [Apache License 2.0](#apache-license-20).
 
-#### [typescript@5.5.4](https://github.com/Microsoft/TypeScript)
+#### [typescript@5.6.2](https://github.com/microsoft/TypeScript)
 
-[Repository Link](https://github.com/Microsoft/TypeScript)
+[Repository Link](https://github.com/microsoft/TypeScript)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [Apache License 2.0](#apache-license-20).
@@ -683,7 +683,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ```
 
-#### [@eonasdan/tempus-dominus@6.9.10](https://github.com/Eonasdan/tempus-dominus)
+#### [@eonasdan/tempus-dominus@6.9.11](https://github.com/Eonasdan/tempus-dominus)
 
 [Repository Link](https://github.com/Eonasdan/tempus-dominus)
 
@@ -711,7 +711,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@types/node@20.16.2](https://github.com/DefinitelyTyped/DefinitelyTyped)
+#### [@types/node@20.16.5](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
 [Repository Link](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
@@ -767,14 +767,14 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [datatables.net-bs5@2.1.4](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
+#### [datatables.net-bs5@2.1.6](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
 
 [Repository Link](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [datatables.net-dt@2.1.4](https://github.com/DataTables/Dist-DataTables-DataTables)
+#### [datatables.net-dt@2.1.6](https://github.com/DataTables/Dist-DataTables-DataTables)
 
 [Repository Link](https://github.com/DataTables/Dist-DataTables-DataTables)
 
@@ -802,7 +802,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [eslint-plugin-import@2.29.1](https://github.com/import-js/eslint-plugin-import)
+#### [eslint-plugin-import@2.30.0](https://github.com/import-js/eslint-plugin-import)
 
 [Repository Link](https://github.com/import-js/eslint-plugin-import)
 
@@ -851,7 +851,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [jstree@3.3.16](https://github.com/vakata/jstree)
+#### [jstree@3.3.17](https://github.com/vakata/jstree)
 
 [Repository Link](https://github.com/vakata/jstree)
 
@@ -900,7 +900,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [postcss@8.4.41](https://github.com/postcss/postcss)
+#### [postcss@8.4.45](https://github.com/postcss/postcss)
 
 [Repository Link](https://github.com/postcss/postcss)
 
@@ -921,7 +921,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [sortablejs@1.15.2](https://github.com/SortableJS/Sortable)
+#### [sortablejs@1.15.3](https://github.com/SortableJS/Sortable)
 
 [Repository Link](https://github.com/SortableJS/Sortable)
 
@@ -963,7 +963,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [sweetalert2@11.12.4](https://github.com/sweetalert2/sweetalert2)
+#### [sweetalert2@11.14.0](https://github.com/sweetalert2/sweetalert2)
 
 [Repository Link](https://github.com/sweetalert2/sweetalert2)
 
