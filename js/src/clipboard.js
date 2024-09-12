@@ -1,4 +1,3 @@
-import { Button } from 'bootstrap';
 import ClipboardJS from 'clipboard';
 
 (() => {
@@ -6,7 +5,7 @@ import ClipboardJS from 'clipboard';
     const userSelectAllInput = document.querySelectorAll('.user-select-all');
 
     clipboard.on('success', e => {
-        const button = new Button(e.trigger);
+        const button = new bootstrap.Button(e.trigger);
 
         setTimeout(() => { button.toggle(); }, 2000);
         e.clearSelection();

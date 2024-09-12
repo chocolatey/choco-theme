@@ -7,27 +7,12 @@
  */
 
 import * as fs from 'fs/promises';
-import * as process from 'process';
+import { repository } from './functions/determine-repository';
 import { repositoryConfig } from './data/repository-config';
 import { purgeCss } from './functions/purge-css';
 import { updateContent } from './functions/update-content';
 
-// Process args
-const params: Record<string, string> = {};
-process.argv.slice(2).forEach(val => {
-    const [key, value] = val.split('=');
-
-    if (key.startsWith('--')) {
-        params[key.slice(2)] = value;
-    }
-});
-
-// Determine repository information
-let repository = repositoryConfig.default;
-if (params.repository && repositoryConfig[params.repository]) {
-    repository = repositoryConfig[params.repository];
-    console.log('Using repository information:', repository);
-}
+console.log('Using repository information:', repository);
 
 // Determine source CSS name
 let sourceCss: string;
@@ -69,34 +54,52 @@ const init = async () => {
     try {
         const containsValidation = repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.community.name;
 
-        // Define arrays for parallel tasks
+        // Define array for parallel tasks
         const parallelTasksInitial = [
-            {
-                task: 'theme-toggle.min.js',
-                source: `${repositoryConfig.theme.js}theme-toggle.min.js`,
-                destination: `${repository.js}theme-toggle.min.js`,
-                isFolder: false
-            },
-            {
-                task: `${repository.name}.min.js`,
-                source: `${repositoryConfig.theme.js}${repository.name}.min.js`,
-                destination: `${repository.js}${repository.name}.min.js`,
-                isFolder: false
-            },
-            {
-                task: 'Partials',
-                source: `${repositoryConfig.theme.partials}${repository.language}/`,
-                destination: repository.partials
-            },
             {
                 task: `${repository.name}.min.css`,
                 source: `${repositoryConfig.theme.css}${sourceCss}.min.css`,
                 destination: `${repository.css}${repository.name}.min.css`,
                 isFolder: false
+            },
+            {
+                task: 'PT Sans',
+                source: repositoryConfig.theme.ptSans,
+                destination: repository.ptSans,
+                isFolder: true
             }
         ];
 
-        // Conditional tasks
+        // Not CCM scripts
+        if (repository.name !== repositoryConfig.ccm.name) {
+            parallelTasksInitial.push(
+                {
+                    task: 'theme-toggle.min.js',
+                    source: `${repositoryConfig.theme.js}theme-toggle.min.js`,
+                    destination: `${repository.js}theme-toggle.min.js`,
+                    isFolder: false
+                },
+                {
+                    task: 'bootstrap.bundle.min.js',
+                    source: 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+                    destination: `${repository.js}bootstrap.bundle.min.js`,
+                    isFolder: false
+                },
+                {
+                    task: `${repository.name}.min.js`,
+                    source: `${repositoryConfig.theme.js}${repository.name}.min.js`,
+                    destination: `${repository.js}${repository.name}.min.js`,
+                    isFolder: false
+                },
+                {
+                    task: 'Partials',
+                    source: `${repositoryConfig.theme.partials}${repository.language}/`,
+                    destination: repository.partials,
+                    isFolder: true
+                }
+            );
+        }
+
         // Community only scripts
         if (repository.name === repositoryConfig.community.name) {
             parallelTasksInitial.push(
@@ -145,13 +148,62 @@ const init = async () => {
             );
         }
 
+        // bootstrap-duallistbox css
+        if (repository.name === repositoryConfig.ccm.name) {
+            parallelTasksInitial.push(
+                {
+                    task: 'bootstrap-duallistbox.min.css',
+                    source: `${repositoryConfig.theme.css}bootstrap-duallistbox.min.css`,
+                    destination: `${repository.css}bootstrap-duallistbox.min.css`,
+                    isFolder: false
+                }
+            );
+        }
+
+        // jstree css
+        if (repository.name === repositoryConfig.ccm.name) {
+            parallelTasksInitial.push(
+                {
+                    task: 'jstree.min.css',
+                    source: `${repositoryConfig.theme.css}jstree.min.css`,
+                    destination: `${repository.css}jstree.min.css`,
+                    isFolder: false
+                }
+            );
+        }
+
+        // vendors css
+        if (repository.name === repositoryConfig.ccm.name) {
+            parallelTasksInitial.push(
+                {
+                    task: 'vendors.min.css',
+                    source: `${repositoryConfig.theme.css}vendors.min.css`,
+                    destination: `${repository.css}vendors.min.css`,
+                    isFolder: false
+                }
+            );
+        }
+
+        // tempus-dominus css
+        if (repository.name === repositoryConfig.ccm.name) {
+            parallelTasksInitial.push(
+                {
+                    task: 'tempus-dominus.min.css',
+                    source: `${repositoryConfig.theme.css}tempus-dominus.min.css`,
+                    destination: `${repository.css}tempus-dominus.min.css`,
+                    isFolder: false
+                }
+            );
+        }
+
         // Playwright
         if (repository.playwright) {
             parallelTasksInitial.push(
                 {
                     task: 'Playwright tests - general',
                     source: `${repositoryConfig.theme.playwright}tests/general/`,
-                    destination: `${repository.playwright}general/`
+                    destination: `${repository.playwright}general/`,
+                    isFolder: true
                 }
             );
 
@@ -160,7 +212,8 @@ const init = async () => {
                     {
                         task: 'Playwright tests - pricing calculator',
                         source: `${repositoryConfig.theme.playwright}tests/pricing-calculator/`,
-                        destination: `${repository.playwright}pricing-calculator/`
+                        destination: `${repository.playwright}pricing-calculator/`,
+                        isFolder: true
                     }
                 );
             }
@@ -172,7 +225,8 @@ const init = async () => {
                 {
                     task: 'Favicons',
                     source: repositoryConfig.theme.favicons,
-                    destination: repository.favicons
+                    destination: repository.favicons,
+                    isFolder: true
                 }
             );
         }
@@ -183,24 +237,26 @@ const init = async () => {
                 {
                     task: 'Font Awesome',
                     source: repositoryConfig.theme.fontAwesome,
-                    destination: repository.fontAwesome
+                    destination: repository.fontAwesome,
+                    isFolder: true
                 }
             );
         }
 
         // Images
-        if (repository.name !== repositoryConfig.zendesk.name) {
+        if (repository.name !== repositoryConfig.zendesk.name && repository.name !== repositoryConfig.ccm.name) {
             parallelTasksInitial.push(
                 {
                     task: 'Images',
                     source: repositoryConfig.theme.images,
-                    destination: repository.images
+                    destination: repository.images,
+                    isFolder: true
                 }
             );
         }
 
         // ESLint and tsconfig - needed if repository contains it's own assets along with choco-theme
-        if (repository.name === repositoryConfig.portal.name) {
+        if (repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.ccm.name) {
             parallelTasksInitial.push(
                 {
                     task: '.eslintrc.js',
@@ -248,7 +304,7 @@ const init = async () => {
 
         // Change CSS content
         // Font Awesome
-        if (repository.name === repositoryConfig.portal.name || repository.language === 'astro') {
+        if (repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.ccm.name ||  repository.language === 'astro') {
             console.log('🚀 Updating Font Awesome font path...');
             await updateContent({
                 destination: repository.css,
@@ -287,8 +343,21 @@ const init = async () => {
             console.log('✅ Image paths for headers updated');
         }
 
+        if (repository.name === repositoryConfig.ccm.name) {
+            console.log('🚀 Updating jstree image paths...');
+            await updateContent({
+                destination: repository.css,
+                targetFile: 'jstree.min.css',
+                targetFileDestination: repository.css,
+                targetFileContentToReplace: 'url(32px.png)',
+                replaceWithContent: 'var(--jstree-image-checkbox-path)',
+                replacementContentIsFile: false
+            });
+            console.log('✅ jstree image paths updated');
+        }
+
         // PurgeCSS
-        if (repository.name !== repositoryConfig.portal.name) {
+        if (repository.name !== repositoryConfig.portal.name && repository.name !== repositoryConfig.ccm.name) {
             await purgeCss({
                 source: `${repository.css}${repository.name}.min.css`,
                 repository: repository

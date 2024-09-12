@@ -1,5 +1,5 @@
-import { Tab } from 'bootstrap';
 import { DateTime } from 'luxon';
+import { getCookie } from './get-cookie';
 
 // Replaces jQuery outerHeight(true)
 export const outerHeightTrue = el => {
@@ -31,27 +31,6 @@ const getElementHeight = () => {
 
 getElementHeight();
 window.onresize = getElementHeight;
-
-// Set a cookie value that never expires based on current date
-export const setCookieExpirationNever = () => {
-    const d = new Date();
-    // 100 years in milliseconds: 100 years * 365 days * 24 hours * 60 minutes * 60 seconds * 1000ms
-    d.setTime(d.getTime() + (100 * 365 * 24 * 60 * 60 * 1000));
-    return `expires=${d.toUTCString()};`;
-};
-
-// Get cookies
-export const getCookie = name => {
-    const pattern = RegExp(`${name}=.[^;]*`);
-    const matched = document.cookie.match(pattern);
-
-    if (matched) {
-        const cookie = matched[0].split('=');
-        return cookie[1];
-    }
-
-    return false;
-};
 
 // Get parents of an element and push to array
 export const getParents = el => {
@@ -138,7 +117,7 @@ export const selectDeploymentMethodTab = () => {
     const selectedDeploymentMethod = getCookie('deployment_method') ? document.querySelectorAll(`[data-deployment-method="${getCookie('deployment_method')}"]`) : document.querySelectorAll('[data-deployment-method="individual"]');
 
     for (const i of selectedDeploymentMethod) {
-        const selectedMethodTab = Tab.getOrCreateInstance(i, { toggle: false });
+        const selectedMethodTab = bootstrap.Tab.getOrCreateInstance(i, { toggle: false });
         selectedMethodTab.show();
     }
 };

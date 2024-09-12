@@ -190,20 +190,24 @@ $form-select-indicator-color-dark: $primary;
 $form-switch-color: $primary;
 $form-switch-color-dark: $primary;
 
+// Tabs
+$nav-tabs-link-active-bg:           transparent;
+$nav-tabs-link-active-border-color: var(--bs-border-color) var(--bs-border-color) transparent;
+
 // Tables
-$table-striped-bg:            var(--bs-secondary-bg);
+$table-striped-bg:                  var(--bs-secondary-bg);
 
 // Tooltips
-$tooltip-bg: $primary;
-$tooltip-color: $dark;
-$tooltip-opacity: 1;
+$tooltip-bg:                        $primary;
+$tooltip-color:                     $dark;
+$tooltip-opacity:                   1;
 
 // Modals
 $modal-content-bg:                  var(--bs-secondary-bg);
 
 // Navbars
-$navbar-toggler-padding-y: .375rem;
-$navbar-toggler-font-size: $font-size-base;
+$navbar-toggler-padding-y:          .375rem;
+$navbar-toggler-font-size:          $font-size-base;
 $navbar-light-toggler-border-color: var(--choco-border-color-adaptive);
 
 // Dropdowns
@@ -217,6 +221,10 @@ $offcanvas-bg-color:                var(--bs-secondary-bg);
 
 // Popovers
 $popover-bg:                        var(--bs-secondary-bg);
+$popover-header-bg:                 var(--bs-tertiary-bg);
+
+// Progress bars
+$progress-bg:                       var(--bs-tertiary-bg);
 
 // Z-index
 $zindex-dropdown:                   1060;

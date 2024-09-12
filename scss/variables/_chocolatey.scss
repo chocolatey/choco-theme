@@ -22,14 +22,18 @@ $green:   #36bc98;
 
 // Theme
 $primary:      $blue;
+$success:      $green;
+$warning:      $yellow;
+$danger:       $red;
 $info:         $blue;
+$secondary:    $gray-600;
 
 // Font
 $font-family-sans-serif: "PT Sans", sans-serif;
 
 // Code
-$code-color:                        $green;
-$code-color-dark:                   $green;
+$code-color:                        var(--bs-body-color);
+$code-color-dark:                   var(--bs-body-color);
 
 // Cards
 $card-border-radius:                1rem;
@@ -44,6 +48,9 @@ $alert-color-scale:                 0%;
 
 // Tabs
 $nav-pills-link-active-color: $black;
+
+// List Group
+$list-group-active-color:           $black;
 
 // Pagination
 $pagination-bg:                     unset;

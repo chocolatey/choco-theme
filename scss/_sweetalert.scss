@@ -1,0 +1,51 @@
+@import "variables/chocolatey";
+
+$swal2-outline-color: var(--bs-border-color);
+
+// POPUP
+$swal2-border: 1px solid var(--bs-border-color);
+$swal2-color: var(--bs-body-color);
+$swal2-border-radius: var(--bs-border-radius-lg);
+$swal2-box-shadow: unset;
+
+// BACKGROUND
+$swal2-background: var(--bs-secondary-bg);
+
+// ICONS
+$swal2-icon-border-color: #000 !default;
+$swal2-success: $success;
+$swal2-error: $danger;
+$swal2-warning: $warning;
+$swal2-info: $primary;
+$swal2-question: $secondary;
+
+// CONFIRM BUTTON
+$swal2-confirm-button-border-radius: var(--bs-border-radius);
+$swal2-confirm-button-background-color: var(--bs-primary);
+$swal2-confirm-button-color: var(--bs-black);
+$swal2-confirm-button-focus-box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), .5);
+
+// DENY BUTTON
+$swal2-deny-button-border-radius: var(--bs-border-radius);
+$swal2-deny-button-background-color: var(--bs-danger);
+$swal2-deny-button-color: var(--bs-black);
+$swal2-deny-button-focus-box-shadow: 0 0 0 3px rgba(var(--bs-danger-rgb), .5);
+
+// CANCEL BUTTON
+$swal2-cancel-button-border-radius: var(--bs-border-radius);
+$swal2-cancel-button-background-color: var(--bs-tertiary-bg);
+$swal2-cancel-button-color: var(--bs-body-color);
+$swal2-cancel-button-focus-box-shadow: 0 0 0 3px rgba(var(--bs-tertiary-bg-rgb), .5);
+
+// LOADER
+$swal2-loader-border-color: var(--bs-primary) transparent var(--bs-primary) transparent;
+
+@import "sweetalert2/src/sweetalert2";
+
+.swal2-container {
+    z-index: 1070;
+
+    button {
+        font-weight: 700;
+    }
+}

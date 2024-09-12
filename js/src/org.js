@@ -1,11 +1,9 @@
-import { Modal } from 'bootstrap';
-
 (() => {
     // JS to be only used on chocolatey.org
     // Show modal on tempdata "message"
     const tempData = document.getElementById('tempdata-message');
     if (tempData) {
-        const tempDataModal = Modal.getOrCreateInstance(tempData, { keyboard: false });
+        const tempDataModal = bootstrap.Modal.getOrCreateInstance(tempData, { keyboard: false });
 
         tempDataModal.show();
     }
@@ -31,7 +29,7 @@ import { Modal } from 'bootstrap';
     // Email Sent Success Modal
     const emailSuccess = document.getElementById('Modal_EmailSuccess');
     if (emailSuccess && window.location.search.includes('emailsuccess=true')) {
-        const emailSuccessModal = Modal.getOrCreateInstance(emailSuccess, { keyboard: false, backdrop: 'static' });
+        const emailSuccessModal = bootstrap.Modal.getOrCreateInstance(emailSuccess, { keyboard: false, backdrop: 'static' });
 
         emailSuccessModal.show();
 

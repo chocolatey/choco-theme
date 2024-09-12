@@ -1,19 +1,42 @@
 import { choco } from './defaults';
+import { getCookie } from './get-cookie';
 import { params } from './params';
 
-const defaultPageLength = params.pageSize ? params.pageSize : choco.tablePageSize;
-const defaultPageNumber = params.pageNumber ? parseInt(defaultPageLength) * (parseInt(params.pageNumber) - choco.tablePageNumber) : choco.tableIndexPageNumber;
+export const dataTableDefaults = (table = 'table') => {
+    let defaultPageLength;
+    let defaultDisplayStart;
+    const defaultLengthMenu = [5, 10, 25, 50, 100, 250, 500];
+    const lengthMenuCookie = getCookie(`${table}_PageLength`);
+    const lengthMenuCookiePlaywright = getCookie('Playwright_PageLength');
 
-export const dataTableDefaults = {
-    serverSide: true,
-    autoWidth: false,
-    processing: true,
-    layout: {
-        topEnd: null,
-        topStart: null,
-        bottomStart: ['info', 'pageLength']
-    },
-    order: [],
-    pageLength: defaultPageLength,
-    displayStart: defaultPageNumber
+    if (lengthMenuCookiePlaywright) {
+        defaultPageLength = lengthMenuCookiePlaywright;
+    } else if (params.pageSize) {
+        defaultPageLength = params.pageSize;
+    } else if (lengthMenuCookie && defaultLengthMenu.includes(parseInt(lengthMenuCookie))) {
+        defaultPageLength = lengthMenuCookie;
+    } else {
+        defaultPageLength = choco.tablePageSize;
+    }
+
+    if (params.pageNumber) {
+        defaultDisplayStart = parseInt(defaultPageLength) * (parseInt(params.pageNumber) - choco.tablePageNumber);
+    } else {
+        defaultDisplayStart = choco.tableIndexPageNumber;
+    }
+
+    return {
+        serverSide: true,
+        autoWidth: false,
+        processing: true,
+        layout: {
+            topEnd: null,
+            topStart: null,
+            bottomStart: ['info', 'pageLength']
+        },
+        order: [],
+        lengthMenu: defaultLengthMenu,
+        pageLength: +defaultPageLength,
+        displayStart: +defaultDisplayStart
+    };
 };

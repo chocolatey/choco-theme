@@ -1,0 +1,21 @@
+@import "jstree/dist/themes/default/style";
+
+:root,
+:root[data-bs-theme="light"] {
+    --jstree-image-checkbox-path: url("/Common/Images/32px-light.png");
+}
+
+:root[data-bs-theme="dark"] {
+    --jstree-image-checkbox-path: url("/Common/Images/32px-dark.png");
+}
+
+.jstree-default {
+    .jstree-clicked.jstree-hovered,
+    .jstree-hovered {
+        background: var(--bs-tertiary-bg) !important;
+    }
+
+    .jstree-search {
+        color: rgba(var(--bs-link-color-rgb));
+    }
+}

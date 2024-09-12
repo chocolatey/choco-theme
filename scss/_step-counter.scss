@@ -1,0 +1,8 @@
+.step-counter::before {
+    content: counter(section) ": ";
+    counter-increment: section;
+}
+
+.step-counter-reset {
+    counter-reset: section;
+}

@@ -1,4 +1,4 @@
-import './src/lib/prism.min.js';
+import './src/lib/prism.js';
 import './src/callouts.js';
 import './src/ts/code.ts';
 import './src/collapse-nested.js';

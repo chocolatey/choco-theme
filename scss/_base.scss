@@ -1,3 +1,24 @@
+@font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("PT Sans"), local("PTSans-Regular"), url("../fonts/PT_Sans/PTSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "PT Sans";
+    font-style: italic;
+    font-weight: 400;
+    src: local("PT Sans Italic"), local("PTSans-Italic"), url("../fonts/PT_Sans/PTSans-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("PT Sans Bold"), local("PTSans-Bold"), url("../fonts/PT_Sans/PTSans-Bold.ttf") format("truetype");
+}
+
 html,
 body {
     display: flex;
@@ -19,7 +40,7 @@ h3,
 .display-2,
 .display-3,
 .display-4 {
-    &:not(:first-child) {
+    &:not(:first-child):not(.popover-header) {
         margin-top: calc($spacer * 2);
     }
 }

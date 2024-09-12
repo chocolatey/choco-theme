@@ -1,4 +1,5 @@
-import { getCookie, setCookieExpirationNever } from './util/functions';
+import { setCookieExpirationNever } from './util/set-cookie-expiration-never';
+import { getCookie } from './util/get-cookie';
 
 (() => {
     // Show/Hide right side announcement bar notification badge

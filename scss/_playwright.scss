@@ -1,0 +1,98 @@
+.playwright {
+    .playwright-box,
+    .playwright-arrow-top,
+    .playwright-arrow-bottom,
+    .playwright-arrow-bottom-tilt-right,
+    .playwright-arrow-bottom-tilt-left,
+    .playwright-arrow-end-left,
+    .playwright-arrow-start-right {
+        position: relative;
+        z-index: 99999;
+    }
+
+    .playwright-box {
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            content: "";
+            border: 3px solid #f4516c;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .playwright-arrow-top,
+    .playwright-arrow-bottom,
+    .playwright-arrow-bottom-tilt-right,
+    .playwright-arrow-bottom-tilt-left,
+    .playwright-arrow-end-left,
+    .playwright-arrow-start-right {
+        --playwright-arrow-width: 100px;
+        --playwright-arrow-height: 24px;
+
+        &::before {
+            position: absolute;
+            z-index: 999999;
+            display: block;
+            width: 100px;
+            height: 24px;
+            content: "";
+            background: url("../Common/Images/playwright/arrow-left.svg") no-repeat center center;
+        }
+    }
+
+    .playwright-arrow-top {
+        &::before {
+            top: calc(-50px - 1rem);
+            left: 50%;
+            transform: translateX(-50%) rotate(-90deg);
+        }
+    }
+
+    .playwright-arrow-bottom {
+        &::before {
+            bottom: calc(-50px - 1rem);
+            left: 50%;
+            transform: translateX(-50%) rotate(90deg);
+        }
+    }
+
+    .playwright-arrow-bottom-tilt-right {
+        &::before {
+            bottom: calc(-50px - .25rem);
+            left: 20%;
+            transform: translateX(-50%) rotate(135deg);
+        }
+    }
+
+    .playwright-arrow-bottom-tilt-left {
+        &::before {
+            bottom: calc(-50px - .25rem);
+            left: 80%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+    }
+
+    .playwright-arrow-end-left {
+        &::before {
+            top: 50%;
+            left: 100%;
+            transform: translate(10%, -50%);
+        }
+    }
+
+    .playwright-arrow-start-right {
+        &::before {
+            top: 50%;
+            right: 100%;
+            transform: translate(-10%, -50%) rotate(180deg);
+        }
+    }
+
+    .overflow-visible {
+        overflow: visible !important;
+    }
+}

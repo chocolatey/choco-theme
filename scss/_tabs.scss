@@ -69,3 +69,7 @@
         }
     }
 }
+
+.tab-content > .active:focus-visible {
+    outline: 1px solid var(--bs-body-color);
+}

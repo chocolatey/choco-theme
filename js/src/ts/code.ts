@@ -1,4 +1,4 @@
-import { trimString } from './util/functions';
+import { trimString } from './util/trim-string';
 declare const Prism: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 (() => {

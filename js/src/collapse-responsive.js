@@ -1,4 +1,3 @@
-import { Collapse } from 'bootstrap';
 import { escapeId } from './util/functions';
 
 (() => {
@@ -6,7 +5,7 @@ import { escapeId } from './util/functions';
 
     if (collapseLg) {
         const mediaLg = window.matchMedia('(max-width: 1199px)');
-        const collapseLgCollapse = Collapse.getOrCreateInstance(collapseLg, { toggle: false });
+        const collapseLgCollapse = bootstrap.Collapse.getOrCreateInstance(collapseLg, { toggle: false });
 
         collapseLg.querySelectorAll('a').forEach(el => {
             el.addEventListener('click', () => {

@@ -37,6 +37,11 @@
             border-color: var(--bs-danger);
         }
     }
+
+    .form-text,
+    .invalid-feedback {
+        margin-top: 0;
+    }
 }
 
 // Custom Switches

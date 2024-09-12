@@ -1,5 +1,3 @@
-import { Carousel } from 'bootstrap';
-
 (() => {
     // Prevent carousels from autoplaying on mobile that have a fixed height on desktop
     const carouselH = document.querySelectorAll('.carousel-h');
@@ -9,7 +7,7 @@ import { Carousel } from 'bootstrap';
 
         const autoplayCarousels = mediaSm => {
             carouselH.forEach(el => {
-                const carouselHCarousel = Carousel.getOrCreateInstance(el, { interval: 20000 });
+                const carouselHCarousel = bootstrap.Carousel.getOrCreateInstance(el, { interval: 20000 });
 
                 if (mediaSm.matches) {
                     carouselHCarousel.pause();

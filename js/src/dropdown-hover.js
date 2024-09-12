@@ -1,11 +1,9 @@
-import { Dropdown } from 'bootstrap';
-
 (() => {
     const enableDropdownHover = () => {
         const dropdownHoverList = document.querySelectorAll('.dropdown-hover .dropdown-toggle');
 
         dropdownHoverList.forEach(el => {
-            const dropdownHoverEl = Dropdown.getOrCreateInstance(el);
+            const dropdownHoverEl = bootstrap.Dropdown.getOrCreateInstance(el);
 
             el.parentElement.addEventListener('mouseover', () => {
                 if (!el.nextElementSibling.classList.contains('show')) {

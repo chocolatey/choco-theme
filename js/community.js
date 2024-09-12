@@ -1,4 +1,4 @@
-import './src/lib/prism.min.js';
+import './src/lib/prism.js';
 import './src/alerts.js';
 import './src/announcements.js';
 import './src/authentication.js';

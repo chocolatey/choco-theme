@@ -1,5 +1,3 @@
-import { Modal } from 'bootstrap';
-
 (() => {
     const autoCloseModal = document.querySelectorAll('.modal-auto-close');
 
@@ -7,7 +5,7 @@ import { Modal } from 'bootstrap';
         const autoCloseModalTrigger = el.querySelector('.modal-auto-close-btn');
 
         autoCloseModalTrigger.addEventListener('click', () => {
-            const autoCloseModalInstance = Modal.getOrCreateInstance(el, { keyboard: false, backdrop: 'static' });
+            const autoCloseModalInstance = bootstrap.Modal.getOrCreateInstance(el, { keyboard: false, backdrop: 'static' });
 
             autoCloseModalInstance.hide();
         });

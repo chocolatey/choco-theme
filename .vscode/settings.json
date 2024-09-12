@@ -14,6 +14,7 @@
         "combinators",
         "corepack",
         "cssnano",
+        "datatable",
         "datatables",
         "Disqus",
         "DOCSEARCH",

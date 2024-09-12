@@ -1,5 +1,6 @@
 import confetti from 'canvas-confetti';
-import { getCookie, setCookieExpirationNever } from './util/functions';
+import { setCookieExpirationNever } from './util/set-cookie-expiration-never';
+import { getCookie } from './util/get-cookie';
 
 (() => {
     const searchParams = new URLSearchParams(window.location.search.toLowerCase());

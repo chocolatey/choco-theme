@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.7.4 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -43,10 +43,6 @@
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
-  var __export = (target, all) => {
-    for (var name in all)
-      __defProp(target, name, { get: all[name], enumerable: true });
-  };
   var __copyProps = (to, from, except, desc) => {
     if (from && typeof from === "object" || typeof from === "function") {
       for (let key of __getOwnPropNames(from))
@@ -64,592 +60,3199 @@
     mod
   ));
 
-  // js/src/lib/prism.min.js
-  var require_prism_min = __commonJS({
-    "js/src/lib/prism.min.js"(exports, module) {
-      var _self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {};
-      var Prism2 = function(e) {
-        var n2 = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i, t = 0, r = {}, a = { manual: e.Prism && e.Prism.manual, disableWorkerMessageHandler: e.Prism && e.Prism.disableWorkerMessageHandler, util: { encode: function e2(n3) {
-          return n3 instanceof i ? new i(n3.type, e2(n3.content), n3.alias) : Array.isArray(n3) ? n3.map(e2) : n3.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
-        }, type: function(e2) {
-          return Object.prototype.toString.call(e2).slice(8, -1);
-        }, objId: function(e2) {
-          return e2.__id || Object.defineProperty(e2, "__id", { value: ++t }), e2.__id;
-        }, clone: function e2(n3, t2) {
-          var r2, i2;
-          switch (t2 = t2 || {}, a.util.type(n3)) {
-            case "Object":
-              if (i2 = a.util.objId(n3), t2[i2])
-                return t2[i2];
-              for (var l3 in r2 = {}, t2[i2] = r2, n3)
-                n3.hasOwnProperty(l3) && (r2[l3] = e2(n3[l3], t2));
-              return r2;
-            case "Array":
-              return i2 = a.util.objId(n3), t2[i2] ? t2[i2] : (r2 = [], t2[i2] = r2, n3.forEach(function(n4, a2) {
-                r2[a2] = e2(n4, t2);
-              }), r2);
-            default:
-              return n3;
-          }
-        }, getLanguage: function(e2) {
-          for (; e2; ) {
-            var t2 = n2.exec(e2.className);
-            if (t2)
-              return t2[1].toLowerCase();
-            e2 = e2.parentElement;
-          }
-          return "none";
-        }, setLanguage: function(e2, t2) {
-          e2.className = e2.className.replace(RegExp(n2, "gi"), ""), e2.classList.add("language-" + t2);
-        }, currentScript: function() {
-          if ("undefined" == typeof document)
-            return null;
-          if ("currentScript" in document)
-            return document.currentScript;
-          try {
-            throw new Error();
-          } catch (r2) {
-            var e2 = (/at [^(\r\n]*\((.*):[^:]+:[^:]+\)$/i.exec(r2.stack) || [])[1];
-            if (e2) {
-              var n3 = document.getElementsByTagName("script");
-              for (var t2 in n3)
-                if (n3[t2].src == e2)
-                  return n3[t2];
-            }
-            return null;
-          }
-        }, isActive: function(e2, n3, t2) {
-          for (var r2 = "no-" + n3; e2; ) {
-            var a2 = e2.classList;
-            if (a2.contains(n3))
-              return true;
-            if (a2.contains(r2))
-              return false;
-            e2 = e2.parentElement;
-          }
-          return !!t2;
-        } }, languages: { plain: r, plaintext: r, text: r, txt: r, extend: function(e2, n3) {
-          var t2 = a.util.clone(a.languages[e2]);
-          for (var r2 in n3)
-            t2[r2] = n3[r2];
-          return t2;
-        }, insertBefore: function(e2, n3, t2, r2) {
-          var i2 = (r2 = r2 || a.languages)[e2], l3 = {};
-          for (var o2 in i2)
-            if (i2.hasOwnProperty(o2)) {
-              if (o2 == n3)
-                for (var s3 in t2)
-                  t2.hasOwnProperty(s3) && (l3[s3] = t2[s3]);
-              t2.hasOwnProperty(o2) || (l3[o2] = i2[o2]);
-            }
-          var u2 = r2[e2];
-          return r2[e2] = l3, a.languages.DFS(a.languages, function(n4, t3) {
-            t3 === u2 && n4 != e2 && (this[n4] = l3);
-          }), l3;
-        }, DFS: function e2(n3, t2, r2, i2) {
-          i2 = i2 || {};
-          var l3 = a.util.objId;
-          for (var o2 in n3)
-            if (n3.hasOwnProperty(o2)) {
-              t2.call(n3, o2, n3[o2], r2 || o2);
-              var s3 = n3[o2], u2 = a.util.type(s3);
-              "Object" !== u2 || i2[l3(s3)] ? "Array" !== u2 || i2[l3(s3)] || (i2[l3(s3)] = true, e2(s3, t2, o2, i2)) : (i2[l3(s3)] = true, e2(s3, t2, null, i2));
-            }
-        } }, plugins: {}, highlightAll: function(e2, n3) {
-          a.highlightAllUnder(document, e2, n3);
-        }, highlightAllUnder: function(e2, n3, t2) {
-          var r2 = { callback: t2, container: e2, selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code' };
-          a.hooks.run("before-highlightall", r2), r2.elements = Array.prototype.slice.apply(r2.container.querySelectorAll(r2.selector)), a.hooks.run("before-all-elements-highlight", r2);
-          for (var i2, l3 = 0; i2 = r2.elements[l3++]; )
-            a.highlightElement(i2, true === n3, r2.callback);
-        }, highlightElement: function(n3, t2, r2) {
-          var i2 = a.util.getLanguage(n3), l3 = a.languages[i2];
-          a.util.setLanguage(n3, i2);
-          var o2 = n3.parentElement;
-          o2 && "pre" === o2.nodeName.toLowerCase() && a.util.setLanguage(o2, i2);
-          var s3 = { element: n3, language: i2, grammar: l3, code: n3.textContent };
-          function u2(e2) {
-            s3.highlightedCode = e2, a.hooks.run("before-insert", s3), s3.element.innerHTML = s3.highlightedCode, a.hooks.run("after-highlight", s3), a.hooks.run("complete", s3), r2 && r2.call(s3.element);
-          }
-          if (a.hooks.run("before-sanity-check", s3), (o2 = s3.element.parentElement) && "pre" === o2.nodeName.toLowerCase() && !o2.hasAttribute("tabindex") && o2.setAttribute("tabindex", "0"), !s3.code)
-            return a.hooks.run("complete", s3), void (r2 && r2.call(s3.element));
-          if (a.hooks.run("before-highlight", s3), s3.grammar)
-            if (t2 && e.Worker) {
-              var c2 = new Worker(a.filename);
-              c2.onmessage = function(e2) {
-                u2(e2.data);
-              }, c2.postMessage(JSON.stringify({ language: s3.language, code: s3.code, immediateClose: true }));
-            } else
-              u2(a.highlight(s3.code, s3.grammar, s3.language));
-          else
-            u2(a.util.encode(s3.code));
-        }, highlight: function(e2, n3, t2) {
-          var r2 = { code: e2, grammar: n3, language: t2 };
-          if (a.hooks.run("before-tokenize", r2), !r2.grammar)
-            throw new Error('The language "' + r2.language + '" has no grammar.');
-          return r2.tokens = a.tokenize(r2.code, r2.grammar), a.hooks.run("after-tokenize", r2), i.stringify(a.util.encode(r2.tokens), r2.language);
-        }, tokenize: function(e2, n3) {
-          var t2 = n3.rest;
-          if (t2) {
-            for (var r2 in t2)
-              n3[r2] = t2[r2];
-            delete n3.rest;
-          }
-          var a2 = new s2();
-          return u(a2, a2.head, e2), o(e2, a2, n3, a2.head, 0), function(e3) {
-            for (var n4 = [], t3 = e3.head.next; t3 !== e3.tail; )
-              n4.push(t3.value), t3 = t3.next;
-            return n4;
-          }(a2);
-        }, hooks: { all: {}, add: function(e2, n3) {
-          var t2 = a.hooks.all;
-          t2[e2] = t2[e2] || [], t2[e2].push(n3);
-        }, run: function(e2, n3) {
-          var t2 = a.hooks.all[e2];
-          if (t2 && t2.length)
-            for (var r2, i2 = 0; r2 = t2[i2++]; )
-              r2(n3);
-        } }, Token: i };
-        function i(e2, n3, t2, r2) {
-          this.type = e2, this.content = n3, this.alias = t2, this.length = 0 | (r2 || "").length;
-        }
-        function l2(e2, n3, t2, r2) {
-          e2.lastIndex = n3;
-          var a2 = e2.exec(t2);
-          if (a2 && r2 && a2[1]) {
-            var i2 = a2[1].length;
-            a2.index += i2, a2[0] = a2[0].slice(i2);
-          }
-          return a2;
-        }
-        function o(e2, n3, t2, r2, s3, g2) {
-          for (var f2 in t2)
-            if (t2.hasOwnProperty(f2) && t2[f2]) {
-              var h2 = t2[f2];
-              h2 = Array.isArray(h2) ? h2 : [h2];
-              for (var d = 0; d < h2.length; ++d) {
-                if (g2 && g2.cause == f2 + "," + d)
-                  return;
-                var v = h2[d], p = v.inside, m = !!v.lookbehind, y = !!v.greedy, k = v.alias;
-                if (y && !v.pattern.global) {
-                  var x = v.pattern.toString().match(/[imsuy]*$/)[0];
-                  v.pattern = RegExp(v.pattern.source, x + "g");
-                }
-                for (var b = v.pattern || v, w = r2.next, A = s3; w !== n3.tail && !(g2 && A >= g2.reach); A += w.value.length, w = w.next) {
-                  var E = w.value;
-                  if (n3.length > e2.length)
-                    return;
-                  if (!(E instanceof i)) {
-                    var P, L = 1;
-                    if (y) {
-                      if (!(P = l2(b, A, e2, m)) || P.index >= e2.length)
-                        break;
-                      var S = P.index, O = P.index + P[0].length, j = A;
-                      for (j += w.value.length; S >= j; )
-                        j += (w = w.next).value.length;
-                      if (A = j -= w.value.length, w.value instanceof i)
-                        continue;
-                      for (var C = w; C !== n3.tail && (j < O || "string" == typeof C.value); C = C.next)
-                        L++, j += C.value.length;
-                      L--, E = e2.slice(A, j), P.index -= A;
-                    } else if (!(P = l2(b, 0, E, m)))
-                      continue;
-                    S = P.index;
-                    var N = P[0], _ = E.slice(0, S), M = E.slice(S + N.length), W = A + E.length;
-                    g2 && W > g2.reach && (g2.reach = W);
-                    var z = w.prev;
-                    if (_ && (z = u(n3, z, _), A += _.length), c(n3, z, L), w = u(n3, z, new i(f2, p ? a.tokenize(N, p) : N, k, N)), M && u(n3, w, M), L > 1) {
-                      var I = { cause: f2 + "," + d, reach: W };
-                      o(e2, n3, t2, w.prev, A, I), g2 && I.reach > g2.reach && (g2.reach = I.reach);
+  // js/src/lib/prism.js
+  var require_prism = __commonJS({
+    "js/src/lib/prism.js"(exports, module) {
+      var _self = typeof window !== "undefined" ? window : typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope ? self : {};
+      var Prism2 = function(_self2) {
+        var lang = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i;
+        var uniqueId = 0;
+        var plainTextGrammar = {};
+        var _ = {
+          /**
+           * By default, Prism will attempt to highlight all code elements (by calling {@link Prism.highlightAll}) on the
+           * current page after the page finished loading. This might be a problem if e.g. you wanted to asynchronously load
+           * additional languages or plugins yourself.
+           *
+           * By setting this value to `true`, Prism will not automatically highlight all code elements on the page.
+           *
+           * You obviously have to change this value before the automatic highlighting started. To do this, you can add an
+           * empty Prism object into the global scope before loading the Prism script like this:
+           *
+           * ```js
+           * window.Prism = window.Prism || {};
+           * Prism.manual = true;
+           * // add a new <script> to load Prism's script
+           * ```
+           *
+           * @default false
+           * @type {boolean}
+           * @memberof Prism
+           * @public
+           */
+          manual: _self2.Prism && _self2.Prism.manual,
+          /**
+           * By default, if Prism is in a web worker, it assumes that it is in a worker it created itself, so it uses
+           * `addEventListener` to communicate with its parent instance. However, if you're using Prism manually in your
+           * own worker, you don't want it to do this.
+           *
+           * By setting this value to `true`, Prism will not add its own listeners to the worker.
+           *
+           * You obviously have to change this value before Prism executes. To do this, you can add an
+           * empty Prism object into the global scope before loading the Prism script like this:
+           *
+           * ```js
+           * window.Prism = window.Prism || {};
+           * Prism.disableWorkerMessageHandler = true;
+           * // Load Prism's script
+           * ```
+           *
+           * @default false
+           * @type {boolean}
+           * @memberof Prism
+           * @public
+           */
+          disableWorkerMessageHandler: _self2.Prism && _self2.Prism.disableWorkerMessageHandler,
+          /**
+           * A namespace for utility methods.
+           *
+           * All function in this namespace that are not explicitly marked as _public_ are for __internal use only__ and may
+           * change or disappear at any time.
+           *
+           * @namespace
+           * @memberof Prism
+           */
+          util: {
+            encode: function encode(tokens) {
+              if (tokens instanceof Token) {
+                return new Token(tokens.type, encode(tokens.content), tokens.alias);
+              } else if (Array.isArray(tokens)) {
+                return tokens.map(encode);
+              } else {
+                return tokens.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
+              }
+            },
+            /**
+             * Returns the name of the type of the given value.
+             *
+             * @param {any} o
+             * @returns {string}
+             * @example
+             * type(null)      === 'Null'
+             * type(undefined) === 'Undefined'
+             * type(123)       === 'Number'
+             * type('foo')     === 'String'
+             * type(true)      === 'Boolean'
+             * type([1, 2])    === 'Array'
+             * type({})        === 'Object'
+             * type(String)    === 'Function'
+             * type(/abc+/)    === 'RegExp'
+             */
+            type: function(o) {
+              return Object.prototype.toString.call(o).slice(8, -1);
+            },
+            /**
+             * Returns a unique number for the given object. Later calls will still return the same number.
+             *
+             * @param {Object} obj
+             * @returns {number}
+             */
+            objId: function(obj) {
+              if (!obj["__id"]) {
+                Object.defineProperty(obj, "__id", { value: ++uniqueId });
+              }
+              return obj["__id"];
+            },
+            /**
+             * Creates a deep clone of the given object.
+             *
+             * The main intended use of this function is to clone language definitions.
+             *
+             * @param {T} o
+             * @param {Record<number, any>} [visited]
+             * @returns {T}
+             * @template T
+             */
+            clone: function deepClone(o, visited) {
+              visited = visited || {};
+              var clone3;
+              var id;
+              switch (_.util.type(o)) {
+                case "Object":
+                  id = _.util.objId(o);
+                  if (visited[id]) {
+                    return visited[id];
+                  }
+                  clone3 = /** @type {Record<string, any>} */
+                  {};
+                  visited[id] = clone3;
+                  for (var key in o) {
+                    if (o.hasOwnProperty(key)) {
+                      clone3[key] = deepClone(o[key], visited);
                     }
+                  }
+                  return (
+                    /** @type {any} */
+                    clone3
+                  );
+                case "Array":
+                  id = _.util.objId(o);
+                  if (visited[id]) {
+                    return visited[id];
+                  }
+                  clone3 = [];
+                  visited[id] = clone3;
+                  /** @type {Array} */
+                  /** @type {any} */
+                  o.forEach(function(v, i) {
+                    clone3[i] = deepClone(v, visited);
+                  });
+                  return (
+                    /** @type {any} */
+                    clone3
+                  );
+                default:
+                  return o;
+              }
+            },
+            /**
+             * Returns the Prism language of the given element set by a `language-xxxx` or `lang-xxxx` class.
+             *
+             * If no language is set for the element or the element is `null` or `undefined`, `none` will be returned.
+             *
+             * @param {Element} element
+             * @returns {string}
+             */
+            getLanguage: function(element) {
+              while (element) {
+                var m = lang.exec(element.className);
+                if (m) {
+                  return m[1].toLowerCase();
+                }
+                element = element.parentElement;
+              }
+              return "none";
+            },
+            /**
+             * Sets the Prism `language-xxxx` class of the given element.
+             *
+             * @param {Element} element
+             * @param {string} language
+             * @returns {void}
+             */
+            setLanguage: function(element, language) {
+              element.className = element.className.replace(RegExp(lang, "gi"), "");
+              element.classList.add("language-" + language);
+            },
+            /**
+             * Returns the script element that is currently executing.
+             *
+             * This does __not__ work for line script element.
+             *
+             * @returns {HTMLScriptElement | null}
+             */
+            currentScript: function() {
+              if (typeof document === "undefined") {
+                return null;
+              }
+              if ("currentScript" in document && 1 < 2) {
+                return (
+                  /** @type {any} */
+                  document.currentScript
+                );
+              }
+              try {
+                throw new Error();
+              } catch (err) {
+                var src = (/at [^(\r\n]*\((.*):[^:]+:[^:]+\)$/i.exec(err.stack) || [])[1];
+                if (src) {
+                  var scripts = document.getElementsByTagName("script");
+                  for (var i in scripts) {
+                    if (scripts[i].src == src) {
+                      return scripts[i];
+                    }
+                  }
+                }
+                return null;
+              }
+            },
+            /**
+             * Returns whether a given class is active for `element`.
+             *
+             * The class can be activated if `element` or one of its ancestors has the given class and it can be deactivated
+             * if `element` or one of its ancestors has the negated version of the given class. The _negated version_ of the
+             * given class is just the given class with a `no-` prefix.
+             *
+             * Whether the class is active is determined by the closest ancestor of `element` (where `element` itself is
+             * closest ancestor) that has the given class or the negated version of it. If neither `element` nor any of its
+             * ancestors have the given class or the negated version of it, then the default activation will be returned.
+             *
+             * In the paradoxical situation where the closest ancestor contains __both__ the given class and the negated
+             * version of it, the class is considered active.
+             *
+             * @param {Element} element
+             * @param {string} className
+             * @param {boolean} [defaultActivation=false]
+             * @returns {boolean}
+             */
+            isActive: function(element, className, defaultActivation) {
+              var no = "no-" + className;
+              while (element) {
+                var classList = element.classList;
+                if (classList.contains(className)) {
+                  return true;
+                }
+                if (classList.contains(no)) {
+                  return false;
+                }
+                element = element.parentElement;
+              }
+              return !!defaultActivation;
+            }
+          },
+          /**
+           * This namespace contains all currently loaded languages and the some helper functions to create and modify languages.
+           *
+           * @namespace
+           * @memberof Prism
+           * @public
+           */
+          languages: {
+            /**
+             * The grammar for plain, unformatted text.
+             */
+            plain: plainTextGrammar,
+            plaintext: plainTextGrammar,
+            text: plainTextGrammar,
+            txt: plainTextGrammar,
+            /**
+             * Creates a deep copy of the language with the given id and appends the given tokens.
+             *
+             * If a token in `redef` also appears in the copied language, then the existing token in the copied language
+             * will be overwritten at its original position.
+             *
+             * ## Best practices
+             *
+             * Since the position of overwriting tokens (token in `redef` that overwrite tokens in the copied language)
+             * doesn't matter, they can technically be in any order. However, this can be confusing to others that trying to
+             * understand the language definition because, normally, the order of tokens matters in Prism grammars.
+             *
+             * Therefore, it is encouraged to order overwriting tokens according to the positions of the overwritten tokens.
+             * Furthermore, all non-overwriting tokens should be placed after the overwriting ones.
+             *
+             * @param {string} id The id of the language to extend. This has to be a key in `Prism.languages`.
+             * @param {Grammar} redef The new tokens to append.
+             * @returns {Grammar} The new language created.
+             * @public
+             * @example
+             * Prism.languages['css-with-colors'] = Prism.languages.extend('css', {
+             *     // Prism.languages.css already has a 'comment' token, so this token will overwrite CSS' 'comment' token
+             *     // at its original position
+             *     'comment': { ... },
+             *     // CSS doesn't have a 'color' token, so this token will be appended
+             *     'color': /\b(?:red|green|blue)\b/
+             * });
+             */
+            extend: function(id, redef) {
+              var lang2 = _.util.clone(_.languages[id]);
+              for (var key in redef) {
+                lang2[key] = redef[key];
+              }
+              return lang2;
+            },
+            /**
+             * Inserts tokens _before_ another token in a language definition or any other grammar.
+             *
+             * ## Usage
+             *
+             * This helper method makes it easy to modify existing languages. For example, the CSS language definition
+             * not only defines CSS highlighting for CSS documents, but also needs to define highlighting for CSS embedded
+             * in HTML through `<style>` elements. To do this, it needs to modify `Prism.languages.markup` and add the
+             * appropriate tokens. However, `Prism.languages.markup` is a regular JavaScript object literal, so if you do
+             * this:
+             *
+             * ```js
+             * Prism.languages.markup.style = {
+             *     // token
+             * };
+             * ```
+             *
+             * then the `style` token will be added (and processed) at the end. `insertBefore` allows you to insert tokens
+             * before existing tokens. For the CSS example above, you would use it like this:
+             *
+             * ```js
+             * Prism.languages.insertBefore('markup', 'cdata', {
+             *     'style': {
+             *         // token
+             *     }
+             * });
+             * ```
+             *
+             * ## Special cases
+             *
+             * If the grammars of `inside` and `insert` have tokens with the same name, the tokens in `inside`'s grammar
+             * will be ignored.
+             *
+             * This behavior can be used to insert tokens after `before`:
+             *
+             * ```js
+             * Prism.languages.insertBefore('markup', 'comment', {
+             *     'comment': Prism.languages.markup.comment,
+             *     // tokens after 'comment'
+             * });
+             * ```
+             *
+             * ## Limitations
+             *
+             * The main problem `insertBefore` has to solve is iteration order. Since ES2015, the iteration order for object
+             * properties is guaranteed to be the insertion order (except for integer keys) but some browsers behave
+             * differently when keys are deleted and re-inserted. So `insertBefore` can't be implemented by temporarily
+             * deleting properties which is necessary to insert at arbitrary positions.
+             *
+             * To solve this problem, `insertBefore` doesn't actually insert the given tokens into the target object.
+             * Instead, it will create a new object and replace all references to the target object with the new one. This
+             * can be done without temporarily deleting properties, so the iteration order is well-defined.
+             *
+             * However, only references that can be reached from `Prism.languages` or `insert` will be replaced. I.e. if
+             * you hold the target object in a variable, then the value of the variable will not change.
+             *
+             * ```js
+             * var oldMarkup = Prism.languages.markup;
+             * var newMarkup = Prism.languages.insertBefore('markup', 'comment', { ... });
+             *
+             * assert(oldMarkup !== Prism.languages.markup);
+             * assert(newMarkup === Prism.languages.markup);
+             * ```
+             *
+             * @param {string} inside The property of `root` (e.g. a language id in `Prism.languages`) that contains the
+             * object to be modified.
+             * @param {string} before The key to insert before.
+             * @param {Grammar} insert An object containing the key-value pairs to be inserted.
+             * @param {Object<string, any>} [root] The object containing `inside`, i.e. the object that contains the
+             * object to be modified.
+             *
+             * Defaults to `Prism.languages`.
+             * @returns {Grammar} The new grammar object.
+             * @public
+             */
+            insertBefore: function(inside, before, insert, root) {
+              root = root || /** @type {any} */
+              _.languages;
+              var grammar = root[inside];
+              var ret = {};
+              for (var token in grammar) {
+                if (grammar.hasOwnProperty(token)) {
+                  if (token == before) {
+                    for (var newToken in insert) {
+                      if (insert.hasOwnProperty(newToken)) {
+                        ret[newToken] = insert[newToken];
+                      }
+                    }
+                  }
+                  if (!insert.hasOwnProperty(token)) {
+                    ret[token] = grammar[token];
+                  }
+                }
+              }
+              var old = root[inside];
+              root[inside] = ret;
+              _.languages.DFS(_.languages, function(key, value) {
+                if (value === old && key != inside) {
+                  this[key] = ret;
+                }
+              });
+              return ret;
+            },
+            // Traverse a language definition with Depth First Search
+            DFS: function DFS(o, callback, type, visited) {
+              visited = visited || {};
+              var objId = _.util.objId;
+              for (var i in o) {
+                if (o.hasOwnProperty(i)) {
+                  callback.call(o, i, o[i], type || i);
+                  var property = o[i];
+                  var propertyType = _.util.type(property);
+                  if (propertyType === "Object" && !visited[objId(property)]) {
+                    visited[objId(property)] = true;
+                    DFS(property, callback, null, visited);
+                  } else if (propertyType === "Array" && !visited[objId(property)]) {
+                    visited[objId(property)] = true;
+                    DFS(property, callback, i, visited);
                   }
                 }
               }
             }
-        }
-        function s2() {
-          var e2 = { value: null, prev: null, next: null }, n3 = { value: null, prev: e2, next: null };
-          e2.next = n3, this.head = e2, this.tail = n3, this.length = 0;
-        }
-        function u(e2, n3, t2) {
-          var r2 = n3.next, a2 = { value: t2, prev: n3, next: r2 };
-          return n3.next = a2, r2.prev = a2, e2.length++, a2;
-        }
-        function c(e2, n3, t2) {
-          for (var r2 = n3.next, a2 = 0; a2 < t2 && r2 !== e2.tail; a2++)
-            r2 = r2.next;
-          n3.next = r2, r2.prev = n3, e2.length -= a2;
-        }
-        if (e.Prism = a, i.stringify = function e2(n3, t2) {
-          if ("string" == typeof n3)
-            return n3;
-          if (Array.isArray(n3)) {
-            var r2 = "";
-            return n3.forEach(function(n4) {
-              r2 += e2(n4, t2);
-            }), r2;
-          }
-          var i2 = { type: n3.type, content: e2(n3.content, t2), tag: "span", classes: ["token", n3.type], attributes: {}, language: t2 }, l3 = n3.alias;
-          l3 && (Array.isArray(l3) ? Array.prototype.push.apply(i2.classes, l3) : i2.classes.push(l3)), a.hooks.run("wrap", i2);
-          var o2 = "";
-          for (var s3 in i2.attributes)
-            o2 += " " + s3 + '="' + (i2.attributes[s3] || "").replace(/"/g, "&quot;") + '"';
-          return "<" + i2.tag + ' class="' + i2.classes.join(" ") + '"' + o2 + ">" + i2.content + "</" + i2.tag + ">";
-        }, !e.document)
-          return e.addEventListener ? (a.disableWorkerMessageHandler || e.addEventListener("message", function(n3) {
-            var t2 = JSON.parse(n3.data), r2 = t2.language, i2 = t2.code, l3 = t2.immediateClose;
-            e.postMessage(a.highlight(i2, a.languages[r2], r2)), l3 && e.close();
-          }, false), a) : a;
-        var g = a.util.currentScript();
-        function f() {
-          a.manual || a.highlightAll();
-        }
-        if (g && (a.filename = g.src, g.hasAttribute("data-manual") && (a.manual = true)), !a.manual) {
-          var h = document.readyState;
-          "loading" === h || "interactive" === h && g && g.defer ? document.addEventListener("DOMContentLoaded", f) : window.requestAnimationFrame ? window.requestAnimationFrame(f) : window.setTimeout(f, 16);
-        }
-        return a;
-      }(_self);
-      "undefined" != typeof module && module.exports && (module.exports = Prism2), "undefined" != typeof global && (global.Prism = Prism2);
-      Prism2.languages.markup = { comment: { pattern: /<!--(?:(?!<!--)[\s\S])*?-->/, greedy: true }, prolog: { pattern: /<\?[\s\S]+?\?>/, greedy: true }, doctype: { pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i, greedy: true, inside: { "internal-subset": { pattern: /(^[^\[]*\[)[\s\S]+(?=\]>$)/, lookbehind: true, greedy: true, inside: null }, string: { pattern: /"[^"]*"|'[^']*'/, greedy: true }, punctuation: /^<!|>$|[[\]]/, "doctype-tag": /^DOCTYPE/i, name: /[^\s<>'"]+/ } }, cdata: { pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i, greedy: true }, tag: { pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/, greedy: true, inside: { tag: { pattern: /^<\/?[^\s>\/]+/, inside: { punctuation: /^<\/?/, namespace: /^[^\s>\/:]+:/ } }, "special-attr": [], "attr-value": { pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/, inside: { punctuation: [{ pattern: /^=/, alias: "attr-equals" }, { pattern: /^(\s*)["']|["']$/, lookbehind: true }] } }, punctuation: /\/?>/, "attr-name": { pattern: /[^\s>\/]+/, inside: { namespace: /^[^\s>\/:]+:/ } } } }, entity: [{ pattern: /&[\da-z]{1,8};/i, alias: "named-entity" }, /&#x?[\da-f]{1,8};/i] }, Prism2.languages.markup.tag.inside["attr-value"].inside.entity = Prism2.languages.markup.entity, Prism2.languages.markup.doctype.inside["internal-subset"].inside = Prism2.languages.markup, Prism2.hooks.add("wrap", function(a) {
-        "entity" === a.type && (a.attributes.title = a.content.replace(/&amp;/, "&"));
-      }), Object.defineProperty(Prism2.languages.markup.tag, "addInlined", { value: function(a, e) {
-        var s2 = {};
-        s2["language-" + e] = { pattern: /(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i, lookbehind: true, inside: Prism2.languages[e] }, s2.cdata = /^<!\[CDATA\[|\]\]>$/i;
-        var t = { "included-cdata": { pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i, inside: s2 } };
-        t["language-" + e] = { pattern: /[\s\S]+/, inside: Prism2.languages[e] };
-        var n2 = {};
-        n2[a] = { pattern: RegExp("(<__[^>]*>)(?:<!\\[CDATA\\[(?:[^\\]]|\\](?!\\]>))*\\]\\]>|(?!<!\\[CDATA\\[)[^])*?(?=</__>)".replace(/__/g, function() {
-          return a;
-        }), "i"), lookbehind: true, greedy: true, inside: t }, Prism2.languages.insertBefore("markup", "cdata", n2);
-      } }), Object.defineProperty(Prism2.languages.markup.tag, "addAttribute", { value: function(a, e) {
-        Prism2.languages.markup.tag.inside["special-attr"].push({ pattern: RegExp(`(^|["'\\s])(?:` + a + `)\\s*=\\s*(?:"[^"]*"|'[^']*'|[^\\s'">=]+(?=[\\s>]))`, "i"), lookbehind: true, inside: { "attr-name": /^[^\s=]+/, "attr-value": { pattern: /=[\s\S]+/, inside: { value: { pattern: /(^=\s*(["']|(?!["'])))\S[\s\S]*(?=\2$)/, lookbehind: true, alias: [e, "language-" + e], inside: Prism2.languages[e] }, punctuation: [{ pattern: /^=/, alias: "attr-equals" }, /"|'/] } } } });
-      } }), Prism2.languages.html = Prism2.languages.markup, Prism2.languages.mathml = Prism2.languages.markup, Prism2.languages.svg = Prism2.languages.markup, Prism2.languages.xml = Prism2.languages.extend("markup", {}), Prism2.languages.ssml = Prism2.languages.xml, Prism2.languages.atom = Prism2.languages.xml, Prism2.languages.rss = Prism2.languages.xml;
-      !function(s2) {
-        var e = /(?:"(?:\\(?:\r\n|[\s\S])|[^"\\\r\n])*"|'(?:\\(?:\r\n|[\s\S])|[^'\\\r\n])*')/;
-        s2.languages.css = { comment: /\/\*[\s\S]*?\*\//, atrule: { pattern: RegExp(`@[\\w-](?:[^;{\\s"']|\\s+(?!\\s)|` + e.source + ")*?(?:;|(?=\\s*\\{))"), inside: { rule: /^@[\w-]+/, "selector-function-argument": { pattern: /(\bselector\s*\(\s*(?![\s)]))(?:[^()\s]|\s+(?![\s)])|\((?:[^()]|\([^()]*\))*\))+(?=\s*\))/, lookbehind: true, alias: "selector" }, keyword: { pattern: /(^|[^\w-])(?:and|not|only|or)(?![\w-])/, lookbehind: true } } }, url: { pattern: RegExp("\\burl\\((?:" + e.source + `|(?:[^\\\\\r
-()"']|\\\\[^])*)\\)`, "i"), greedy: true, inside: { function: /^url/i, punctuation: /^\(|\)$/, string: { pattern: RegExp("^" + e.source + "$"), alias: "url" } } }, selector: { pattern: RegExp(`(^|[{}\\s])[^{}\\s](?:[^{};"'\\s]|\\s+(?![\\s{])|` + e.source + ")*(?=\\s*\\{)"), lookbehind: true }, string: { pattern: e, greedy: true }, property: { pattern: /(^|[^-\w\xA0-\uFFFF])(?!\s)[-_a-z\xA0-\uFFFF](?:(?!\s)[-\w\xA0-\uFFFF])*(?=\s*:)/i, lookbehind: true }, important: /!important\b/i, function: { pattern: /(^|[^-a-z0-9])[-a-z0-9]+(?=\()/i, lookbehind: true }, punctuation: /[(){};:,]/ }, s2.languages.css.atrule.inside.rest = s2.languages.css;
-        var t = s2.languages.markup;
-        t && (t.tag.addInlined("style", "css"), t.tag.addAttribute("style", "css"));
-      }(Prism2);
-      Prism2.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/, lookbehind: true, greedy: true }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: true, greedy: true }], string: { pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, greedy: true }, "class-name": { pattern: /(\b(?:class|extends|implements|instanceof|interface|new|trait)\s+|\bcatch\s+\()[\w.\\]+/i, lookbehind: true, inside: { punctuation: /[.\\]/ } }, keyword: /\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while)\b/, boolean: /\b(?:false|true)\b/, function: /\b\w+(?=\()/, number: /\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i, operator: /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/, punctuation: /[{}[\];(),.:]/ };
-      Prism2.languages.javascript = Prism2.languages.extend("clike", { "class-name": [Prism2.languages.clike["class-name"], { pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$A-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\.(?:constructor|prototype))/, lookbehind: true }], keyword: [{ pattern: /((?:^|\})\s*)catch\b/, lookbehind: true }, { pattern: /(^|[^.]|\.\.\.\s*)\b(?:as|assert(?=\s*\{)|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally(?=\s*(?:\{|$))|for|from(?=\s*(?:['"]|$))|function|(?:get|set)(?=\s*(?:[#\[$\w\xA0-\uFFFF]|$))|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/, lookbehind: true }], function: /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/, number: { pattern: RegExp("(^|[^\\w$])(?:NaN|Infinity|0[bB][01]+(?:_[01]+)*n?|0[oO][0-7]+(?:_[0-7]+)*n?|0[xX][\\dA-Fa-f]+(?:_[\\dA-Fa-f]+)*n?|\\d+(?:_\\d+)*n|(?:\\d+(?:_\\d+)*(?:\\.(?:\\d+(?:_\\d+)*)?)?|\\.\\d+(?:_\\d+)*)(?:[Ee][+-]?\\d+(?:_\\d+)*)?)(?![\\w$])"), lookbehind: true }, operator: /--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/ }), Prism2.languages.javascript["class-name"][0].pattern = /(\b(?:class|extends|implements|instanceof|interface|new)\s+)[\w.\\]+/, Prism2.languages.insertBefore("javascript", "keyword", { regex: { pattern: RegExp(`((?:^|[^$\\w\\xA0-\\uFFFF."'\\])\\s]|\\b(?:return|yield))\\s*)/(?:(?:\\[(?:[^\\]\\\\\r
-]|\\\\.)*\\]|\\\\.|[^/\\\\\\[\r
-])+/[dgimyus]{0,7}|(?:\\[(?:[^[\\]\\\\\r
-]|\\\\.|\\[(?:[^[\\]\\\\\r
-]|\\\\.|\\[(?:[^[\\]\\\\\r
-]|\\\\.)*\\])*\\])*\\]|\\\\.|[^/\\\\\\[\r
-])+/[dgimyus]{0,7}v[dgimyus]{0,7})(?=(?:\\s|/\\*(?:[^*]|\\*(?!/))*\\*/)*(?:$|[\r
-,.;:})\\]]|//))`), lookbehind: true, greedy: true, inside: { "regex-source": { pattern: /^(\/)[\s\S]+(?=\/[a-z]*$)/, lookbehind: true, alias: "language-regex", inside: Prism2.languages.regex }, "regex-delimiter": /^\/|\/$/, "regex-flags": /^[a-z]+$/ } }, "function-variable": { pattern: /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)\s*=>))/, alias: "function" }, parameter: [{ pattern: /(function(?:\s+(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)?\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\))/, lookbehind: true, inside: Prism2.languages.javascript }, { pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$a-z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*=>)/i, lookbehind: true, inside: Prism2.languages.javascript }, { pattern: /(\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*=>)/, lookbehind: true, inside: Prism2.languages.javascript }, { pattern: /((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*\{)/, lookbehind: true, inside: Prism2.languages.javascript }], constant: /\b[A-Z](?:[A-Z_]|\dx?)*\b/ }), Prism2.languages.insertBefore("javascript", "string", { hashbang: { pattern: /^#!.*/, greedy: true, alias: "comment" }, "template-string": { pattern: /`(?:\\[\s\S]|\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}|(?!\$\{)[^\\`])*`/, greedy: true, inside: { "template-punctuation": { pattern: /^`|`$/, alias: "string" }, interpolation: { pattern: /((?:^|[^\\])(?:\\{2})*)\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}/, lookbehind: true, inside: { "interpolation-punctuation": { pattern: /^\$\{|\}$/, alias: "punctuation" }, rest: Prism2.languages.javascript } }, string: /[\s\S]+/ } }, "string-property": { pattern: /((?:^|[,{])[ \t]*)(["'])(?:\\(?:\r\n|[\s\S])|(?!\2)[^\\\r\n])*\2(?=\s*:)/m, lookbehind: true, greedy: true, alias: "property" } }), Prism2.languages.insertBefore("javascript", "operator", { "literal-property": { pattern: /((?:^|[,{])[ \t]*)(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*:)/m, lookbehind: true, alias: "property" } }), Prism2.languages.markup && (Prism2.languages.markup.tag.addInlined("script", "javascript"), Prism2.languages.markup.tag.addAttribute("on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)", "javascript")), Prism2.languages.js = Prism2.languages.javascript;
-      !function(e) {
-        var t = "\\b(?:BASH|BASHOPTS|BASH_ALIASES|BASH_ARGC|BASH_ARGV|BASH_CMDS|BASH_COMPLETION_COMPAT_DIR|BASH_LINENO|BASH_REMATCH|BASH_SOURCE|BASH_VERSINFO|BASH_VERSION|COLORTERM|COLUMNS|COMP_WORDBREAKS|DBUS_SESSION_BUS_ADDRESS|DEFAULTS_PATH|DESKTOP_SESSION|DIRSTACK|DISPLAY|EUID|GDMSESSION|GDM_LANG|GNOME_KEYRING_CONTROL|GNOME_KEYRING_PID|GPG_AGENT_INFO|GROUPS|HISTCONTROL|HISTFILE|HISTFILESIZE|HISTSIZE|HOME|HOSTNAME|HOSTTYPE|IFS|INSTANCE|JOB|LANG|LANGUAGE|LC_ADDRESS|LC_ALL|LC_IDENTIFICATION|LC_MEASUREMENT|LC_MONETARY|LC_NAME|LC_NUMERIC|LC_PAPER|LC_TELEPHONE|LC_TIME|LESSCLOSE|LESSOPEN|LINES|LOGNAME|LS_COLORS|MACHTYPE|MAILCHECK|MANDATORY_PATH|NO_AT_BRIDGE|OLDPWD|OPTERR|OPTIND|ORBIT_SOCKETDIR|OSTYPE|PAPERSIZE|PATH|PIPESTATUS|PPID|PS1|PS2|PS3|PS4|PWD|RANDOM|REPLY|SECONDS|SELINUX_INIT|SESSION|SESSIONTYPE|SESSION_MANAGER|SHELL|SHELLOPTS|SHLVL|SSH_AUTH_SOCK|TERM|UID|UPSTART_EVENTS|UPSTART_INSTANCE|UPSTART_JOB|UPSTART_SESSION|USER|WINDOWID|XAUTHORITY|XDG_CONFIG_DIRS|XDG_CURRENT_DESKTOP|XDG_DATA_DIRS|XDG_GREETER_DATA_DIR|XDG_MENU_PREFIX|XDG_RUNTIME_DIR|XDG_SEAT|XDG_SEAT_PATH|XDG_SESSION_DESKTOP|XDG_SESSION_ID|XDG_SESSION_PATH|XDG_SESSION_TYPE|XDG_VTNR|XMODIFIERS)\\b", a = { pattern: /(^(["']?)\w+\2)[ \t]+\S.*/, lookbehind: true, alias: "punctuation", inside: null }, n2 = { bash: a, environment: { pattern: RegExp("\\$" + t), alias: "constant" }, variable: [{ pattern: /\$?\(\([\s\S]+?\)\)/, greedy: true, inside: { variable: [{ pattern: /(^\$\(\([\s\S]+)\)\)/, lookbehind: true }, /^\$\(\(/], number: /\b0x[\dA-Fa-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:[Ee]-?\d+)?/, operator: /--|\+\+|\*\*=?|<<=?|>>=?|&&|\|\||[=!+\-*/%<>^&|]=?|[?~:]/, punctuation: /\(\(?|\)\)?|,|;/ } }, { pattern: /\$\((?:\([^)]+\)|[^()])+\)|`[^`]+`/, greedy: true, inside: { variable: /^\$\(|^`|\)$|`$/ } }, { pattern: /\$\{[^}]+\}/, greedy: true, inside: { operator: /:[-=?+]?|[!\/]|##?|%%?|\^\^?|,,?/, punctuation: /[\[\]]/, environment: { pattern: RegExp("(\\{)" + t), lookbehind: true, alias: "constant" } } }, /\$(?:\w+|[#?*!@$])/], entity: /\\(?:[abceEfnrtv\\"]|O?[0-7]{1,3}|U[0-9a-fA-F]{8}|u[0-9a-fA-F]{4}|x[0-9a-fA-F]{1,2})/ };
-        e.languages.bash = { shebang: { pattern: /^#!\s*\/.*/, alias: "important" }, comment: { pattern: /(^|[^"{\\$])#.*/, lookbehind: true }, "function-name": [{ pattern: /(\bfunction\s+)[\w-]+(?=(?:\s*\(?:\s*\))?\s*\{)/, lookbehind: true, alias: "function" }, { pattern: /\b[\w-]+(?=\s*\(\s*\)\s*\{)/, alias: "function" }], "for-or-select": { pattern: /(\b(?:for|select)\s+)\w+(?=\s+in\s)/, alias: "variable", lookbehind: true }, "assign-left": { pattern: /(^|[\s;|&]|[<>]\()\w+(?:\.\w+)*(?=\+?=)/, inside: { environment: { pattern: RegExp("(^|[\\s;|&]|[<>]\\()" + t), lookbehind: true, alias: "constant" } }, alias: "variable", lookbehind: true }, parameter: { pattern: /(^|\s)-{1,2}(?:\w+:[+-]?)?\w+(?:\.\w+)*(?=[=\s]|$)/, alias: "variable", lookbehind: true }, string: [{ pattern: /((?:^|[^<])<<-?\s*)(\w+)\s[\s\S]*?(?:\r?\n|\r)\2/, lookbehind: true, greedy: true, inside: n2 }, { pattern: /((?:^|[^<])<<-?\s*)(["'])(\w+)\2\s[\s\S]*?(?:\r?\n|\r)\3/, lookbehind: true, greedy: true, inside: { bash: a } }, { pattern: /(^|[^\\](?:\\\\)*)"(?:\\[\s\S]|\$\([^)]+\)|\$(?!\()|`[^`]+`|[^"\\`$])*"/, lookbehind: true, greedy: true, inside: n2 }, { pattern: /(^|[^$\\])'[^']*'/, lookbehind: true, greedy: true }, { pattern: /\$'(?:[^'\\]|\\[\s\S])*'/, greedy: true, inside: { entity: n2.entity } }], environment: { pattern: RegExp("\\$?" + t), alias: "constant" }, variable: n2.variable, function: { pattern: /(^|[\s;|&]|[<>]\()(?:add|apropos|apt|apt-cache|apt-get|aptitude|aspell|automysqlbackup|awk|basename|bash|bc|bconsole|bg|bzip2|cal|cargo|cat|cfdisk|chgrp|chkconfig|chmod|chown|chroot|cksum|clear|cmp|column|comm|composer|cp|cron|crontab|csplit|curl|cut|date|dc|dd|ddrescue|debootstrap|df|diff|diff3|dig|dir|dircolors|dirname|dirs|dmesg|docker|docker-compose|du|egrep|eject|env|ethtool|expand|expect|expr|fdformat|fdisk|fg|fgrep|file|find|fmt|fold|format|free|fsck|ftp|fuser|gawk|git|gparted|grep|groupadd|groupdel|groupmod|groups|grub-mkconfig|gzip|halt|head|hg|history|host|hostname|htop|iconv|id|ifconfig|ifdown|ifup|import|install|ip|java|jobs|join|kill|killall|less|link|ln|locate|logname|logrotate|look|lpc|lpr|lprint|lprintd|lprintq|lprm|ls|lsof|lynx|make|man|mc|mdadm|mkconfig|mkdir|mke2fs|mkfifo|mkfs|mkisofs|mknod|mkswap|mmv|more|most|mount|mtools|mtr|mutt|mv|nano|nc|netstat|nice|nl|node|nohup|notify-send|npm|nslookup|op|open|parted|passwd|paste|pathchk|ping|pkill|pnpm|podman|podman-compose|popd|pr|printcap|printenv|ps|pushd|pv|quota|quotacheck|quotactl|ram|rar|rcp|reboot|remsync|rename|renice|rev|rm|rmdir|rpm|rsync|scp|screen|sdiff|sed|sendmail|seq|service|sftp|sh|shellcheck|shuf|shutdown|sleep|slocate|sort|split|ssh|stat|strace|su|sudo|sum|suspend|swapon|sync|sysctl|tac|tail|tar|tee|time|timeout|top|touch|tr|traceroute|tsort|tty|umount|uname|unexpand|uniq|units|unrar|unshar|unzip|update-grub|uptime|useradd|userdel|usermod|users|uudecode|uuencode|v|vcpkg|vdir|vi|vim|virsh|vmstat|wait|watch|wc|wget|whereis|which|who|whoami|write|xargs|xdg-open|yarn|yes|zenity|zip|zsh|zypper)(?=$|[)\s;|&])/, lookbehind: true }, keyword: { pattern: /(^|[\s;|&]|[<>]\()(?:case|do|done|elif|else|esac|fi|for|function|if|in|select|then|until|while)(?=$|[)\s;|&])/, lookbehind: true }, builtin: { pattern: /(^|[\s;|&]|[<>]\()(?:\.|:|alias|bind|break|builtin|caller|cd|command|continue|declare|echo|enable|eval|exec|exit|export|getopts|hash|help|let|local|logout|mapfile|printf|pwd|read|readarray|readonly|return|set|shift|shopt|source|test|times|trap|type|typeset|ulimit|umask|unalias|unset)(?=$|[)\s;|&])/, lookbehind: true, alias: "class-name" }, boolean: { pattern: /(^|[\s;|&]|[<>]\()(?:false|true)(?=$|[)\s;|&])/, lookbehind: true }, "file-descriptor": { pattern: /\B&\d\b/, alias: "important" }, operator: { pattern: /\d?<>|>\||\+=|=[=~]?|!=?|<<[<-]?|[&\d]?>>|\d[<>]&?|[<>][&=]?|&[>&]?|\|[&|]?/, inside: { "file-descriptor": { pattern: /^\d/, alias: "important" } } }, punctuation: /\$?\(\(?|\)\)?|\.\.|[{}[\];\\]/, number: { pattern: /(^|\s)(?:[1-9]\d*|0)(?:[.,]\d+)?\b/, lookbehind: true } }, a.inside = e.languages.bash;
-        for (var s2 = ["comment", "function-name", "for-or-select", "assign-left", "parameter", "string", "environment", "function", "keyword", "builtin", "boolean", "file-descriptor", "operator", "punctuation", "number"], o = n2.variable[1].inside, i = 0; i < s2.length; i++)
-          o[s2[i]] = e.languages.bash[s2[i]];
-        e.languages.sh = e.languages.bash, e.languages.shell = e.languages.bash;
-      }(Prism2);
-      !function(e) {
-        function n2(e2, n3) {
-          return e2.replace(/<<(\d+)>>/g, function(e3, s3) {
-            return "(?:" + n3[+s3] + ")";
-          });
-        }
-        function s2(e2, s3, a2) {
-          return RegExp(n2(e2, s3), a2 || "");
-        }
-        function a(e2, n3) {
-          for (var s3 = 0; s3 < n3; s3++)
-            e2 = e2.replace(/<<self>>/g, function() {
-              return "(?:" + e2 + ")";
-            });
-          return e2.replace(/<<self>>/g, "[^\\s\\S]");
-        }
-        var t = "bool byte char decimal double dynamic float int long object sbyte short string uint ulong ushort var void", r = "class enum interface record struct", i = "add alias and ascending async await by descending from(?=\\s*(?:\\w|$)) get global group into init(?=\\s*;) join let nameof not notnull on or orderby partial remove select set unmanaged value when where with(?=\\s*{)", o = "abstract as base break case catch checked const continue default delegate do else event explicit extern finally fixed for foreach goto if implicit in internal is lock namespace new null operator out override params private protected public readonly ref return sealed sizeof stackalloc static switch this throw try typeof unchecked unsafe using virtual volatile while yield";
-        function l2(e2) {
-          return "\\b(?:" + e2.trim().replace(/ /g, "|") + ")\\b";
-        }
-        var d = l2(r), p = RegExp(l2(t + " " + r + " " + i + " " + o)), c = l2(r + " " + i + " " + o), u = l2(t + " " + r + " " + o), g = a("<(?:[^<>;=+\\-*/%&|^]|<<self>>)*>", 2), b = a("\\((?:[^()]|<<self>>)*\\)", 2), h = "@?\\b[A-Za-z_]\\w*\\b", f = n2("<<0>>(?:\\s*<<1>>)?", [h, g]), m = n2("(?!<<0>>)<<1>>(?:\\s*\\.\\s*<<1>>)*", [c, f]), k = "\\[\\s*(?:,\\s*)*\\]", y = n2("<<0>>(?:\\s*(?:\\?\\s*)?<<1>>)*(?:\\s*\\?)?", [m, k]), w = n2("[^,()<>[\\];=+\\-*/%&|^]|<<0>>|<<1>>|<<2>>", [g, b, k]), v = n2("\\(<<0>>+(?:,<<0>>+)+\\)", [w]), x = n2("(?:<<0>>|<<1>>)(?:\\s*(?:\\?\\s*)?<<2>>)*(?:\\s*\\?)?", [v, m, k]), $ = { keyword: p, punctuation: /[<>()?,.:[\]]/ }, _ = "'(?:[^\r\n'\\\\]|\\\\.|\\\\[Uux][\\da-fA-F]{1,8})'", B = '"(?:\\\\.|[^\\\\"\r\n])*"';
-        e.languages.csharp = e.languages.extend("clike", { string: [{ pattern: s2("(^|[^$\\\\])<<0>>", ['@"(?:""|\\\\[^]|[^\\\\"])*"(?!")']), lookbehind: true, greedy: true }, { pattern: s2("(^|[^@$\\\\])<<0>>", [B]), lookbehind: true, greedy: true }], "class-name": [{ pattern: s2("(\\busing\\s+static\\s+)<<0>>(?=\\s*;)", [m]), lookbehind: true, inside: $ }, { pattern: s2("(\\busing\\s+<<0>>\\s*=\\s*)<<1>>(?=\\s*;)", [h, x]), lookbehind: true, inside: $ }, { pattern: s2("(\\busing\\s+)<<0>>(?=\\s*=)", [h]), lookbehind: true }, { pattern: s2("(\\b<<0>>\\s+)<<1>>", [d, f]), lookbehind: true, inside: $ }, { pattern: s2("(\\bcatch\\s*\\(\\s*)<<0>>", [m]), lookbehind: true, inside: $ }, { pattern: s2("(\\bwhere\\s+)<<0>>", [h]), lookbehind: true }, { pattern: s2("(\\b(?:is(?:\\s+not)?|as)\\s+)<<0>>", [y]), lookbehind: true, inside: $ }, { pattern: s2("\\b<<0>>(?=\\s+(?!<<1>>|with\\s*\\{)<<2>>(?:\\s*[=,;:{)\\]]|\\s+(?:in|when)\\b))", [x, u, h]), inside: $ }], keyword: p, number: /(?:\b0(?:x[\da-f_]*[\da-f]|b[01_]*[01])|(?:\B\.\d+(?:_+\d+)*|\b\d+(?:_+\d+)*(?:\.\d+(?:_+\d+)*)?)(?:e[-+]?\d+(?:_+\d+)*)?)(?:[dflmu]|lu|ul)?\b/i, operator: />>=?|<<=?|[-=]>|([-+&|])\1|~|\?\?=?|[-+*/%&|^!=<>]=?/, punctuation: /\?\.?|::|[{}[\];(),.:]/ }), e.languages.insertBefore("csharp", "number", { range: { pattern: /\.\./, alias: "operator" } }), e.languages.insertBefore("csharp", "punctuation", { "named-parameter": { pattern: s2("([(,]\\s*)<<0>>(?=\\s*:)", [h]), lookbehind: true, alias: "punctuation" } }), e.languages.insertBefore("csharp", "class-name", { namespace: { pattern: s2("(\\b(?:namespace|using)\\s+)<<0>>(?:\\s*\\.\\s*<<0>>)*(?=\\s*[;{])", [h]), lookbehind: true, inside: { punctuation: /\./ } }, "type-expression": { pattern: s2("(\\b(?:default|sizeof|typeof)\\s*\\(\\s*(?!\\s))(?:[^()\\s]|\\s(?!\\s)|<<0>>)*(?=\\s*\\))", [b]), lookbehind: true, alias: "class-name", inside: $ }, "return-type": { pattern: s2("<<0>>(?=\\s+(?:<<1>>\\s*(?:=>|[({]|\\.\\s*this\\s*\\[)|this\\s*\\[))", [x, m]), inside: $, alias: "class-name" }, "constructor-invocation": { pattern: s2("(\\bnew\\s+)<<0>>(?=\\s*[[({])", [x]), lookbehind: true, inside: $, alias: "class-name" }, "generic-method": { pattern: s2("<<0>>\\s*<<1>>(?=\\s*\\()", [h, g]), inside: { function: s2("^<<0>>", [h]), generic: { pattern: RegExp(g), alias: "class-name", inside: $ } } }, "type-list": { pattern: s2("\\b((?:<<0>>\\s+<<1>>|record\\s+<<1>>\\s*<<5>>|where\\s+<<2>>)\\s*:\\s*)(?:<<3>>|<<4>>|<<1>>\\s*<<5>>|<<6>>)(?:\\s*,\\s*(?:<<3>>|<<4>>|<<6>>))*(?=\\s*(?:where|[{;]|=>|$))", [d, f, h, x, p.source, b, "\\bnew\\s*\\(\\s*\\)"]), lookbehind: true, inside: { "record-arguments": { pattern: s2("(^(?!new\\s*\\()<<0>>\\s*)<<1>>", [f, b]), lookbehind: true, greedy: true, inside: e.languages.csharp }, keyword: p, "class-name": { pattern: RegExp(x), greedy: true, inside: $ }, punctuation: /[,()]/ } }, preprocessor: { pattern: /(^[\t ]*)#.*/m, lookbehind: true, alias: "property", inside: { directive: { pattern: /(#)\b(?:define|elif|else|endif|endregion|error|if|line|nullable|pragma|region|undef|warning)\b/, lookbehind: true, alias: "keyword" } } } });
-        var E = B + "|" + _, R = n2("/(?![*/])|//[^\r\n]*[\r\n]|/\\*(?:[^*]|\\*(?!/))*\\*/|<<0>>", [E]), z = a(n2(`[^"'/()]|<<0>>|\\(<<self>>*\\)`, [R]), 2), S = "\\b(?:assembly|event|field|method|module|param|property|return|type)\\b", j = n2("<<0>>(?:\\s*\\(<<1>>*\\))?", [m, z]);
-        e.languages.insertBefore("csharp", "class-name", { attribute: { pattern: s2("((?:^|[^\\s\\w>)?])\\s*\\[\\s*)(?:<<0>>\\s*:\\s*)?<<1>>(?:\\s*,\\s*<<1>>)*(?=\\s*\\])", [S, j]), lookbehind: true, greedy: true, inside: { target: { pattern: s2("^<<0>>(?=\\s*:)", [S]), alias: "keyword" }, "attribute-arguments": { pattern: s2("\\(<<0>>*\\)", [z]), inside: e.languages.csharp }, "class-name": { pattern: RegExp(m), inside: { punctuation: /\./ } }, punctuation: /[:,]/ } } });
-        var A = ":[^}\r\n]+", F = a(n2(`[^"'/()]|<<0>>|\\(<<self>>*\\)`, [R]), 2), P = n2("\\{(?!\\{)(?:(?![}:])<<0>>)*<<1>>?\\}", [F, A]), U = a(n2(`[^"'/()]|/(?!\\*)|/\\*(?:[^*]|\\*(?!/))*\\*/|<<0>>|\\(<<self>>*\\)`, [E]), 2), Z = n2("\\{(?!\\{)(?:(?![}:])<<0>>)*<<1>>?\\}", [U, A]);
-        function q(n3, a2) {
-          return { interpolation: { pattern: s2("((?:^|[^{])(?:\\{\\{)*)<<0>>", [n3]), lookbehind: true, inside: { "format-string": { pattern: s2("(^\\{(?:(?![}:])<<0>>)*)<<1>>(?=\\}$)", [a2, A]), lookbehind: true, inside: { punctuation: /^:/ } }, punctuation: /^\{|\}$/, expression: { pattern: /[\s\S]+/, alias: "language-csharp", inside: e.languages.csharp } } }, string: /[\s\S]+/ };
-        }
-        e.languages.insertBefore("csharp", "string", { "interpolation-string": [{ pattern: s2('(^|[^\\\\])(?:\\$@|@\\$)"(?:""|\\\\[^]|\\{\\{|<<0>>|[^\\\\{"])*"', [P]), lookbehind: true, greedy: true, inside: q(P, F) }, { pattern: s2('(^|[^@\\\\])\\$"(?:\\\\.|\\{\\{|<<0>>|[^\\\\"{])*"', [Z]), lookbehind: true, greedy: true, inside: q(Z, U) }], char: { pattern: RegExp(_), greedy: true } }), e.languages.dotnet = e.languages.cs = e.languages.csharp;
-      }(Prism2);
-      !function(e) {
-        e.languages.diff = { coord: [/^(?:\*{3}|-{3}|\+{3}).*$/m, /^@@.*@@$/m, /^\d.*$/m] };
-        var n2 = { "deleted-sign": "-", "deleted-arrow": "<", "inserted-sign": "+", "inserted-arrow": ">", unchanged: " ", diff: "!" };
-        Object.keys(n2).forEach(function(a) {
-          var i = n2[a], r = [];
-          /^\w+$/.test(a) || r.push(/\w+/.exec(a)[0]), "diff" === a && r.push("bold"), e.languages.diff[a] = { pattern: RegExp("^(?:[" + i + "].*(?:\r\n?|\n|(?![\\s\\S])))+", "m"), alias: r, inside: { line: { pattern: /(.)(?=[\s\S]).*(?:\r\n?|\n)?/, lookbehind: true }, prefix: { pattern: /[\s\S]/, alias: /\w+/.exec(a)[0] } } };
-        }), Object.defineProperty(e.languages.diff, "PREFIXES", { value: n2 });
-      }(Prism2);
-      Prism2.languages.json = { property: { pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?=\s*:)/, lookbehind: true, greedy: true }, string: { pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?!\s*:)/, lookbehind: true, greedy: true }, comment: { pattern: /\/\/.*|\/\*[\s\S]*?(?:\*\/|$)/, greedy: true }, number: /-?\b\d+(?:\.\d+)?(?:e[+-]?\d+)?\b/i, punctuation: /[{}[\],]/, operator: /:/, boolean: /\b(?:false|true)\b/, null: { pattern: /\bnull\b/, alias: "keyword" } }, Prism2.languages.webmanifest = Prism2.languages.json;
-      !function(e) {
-        var i = e.languages.powershell = { comment: [{ pattern: /(^|[^`])<#[\s\S]*?#>/, lookbehind: true }, { pattern: /(^|[^`])#.*/, lookbehind: true }], string: [{ pattern: /"(?:`[\s\S]|[^`"])*"/, greedy: true, inside: null }, { pattern: /'(?:[^']|'')*'/, greedy: true }], namespace: /\[[a-z](?:\[(?:\[[^\]]*\]|[^\[\]])*\]|[^\[\]])*\]/i, boolean: /\$(?:false|true)\b/i, variable: /\$\w+\b/, function: [/\b(?:Add|Approve|Assert|Backup|Block|Checkpoint|Clear|Close|Compare|Complete|Compress|Confirm|Connect|Convert|ConvertFrom|ConvertTo|Copy|Debug|Deny|Disable|Disconnect|Dismount|Edit|Enable|Enter|Exit|Expand|Export|Find|ForEach|Format|Get|Grant|Group|Hide|Import|Initialize|Install|Invoke|Join|Limit|Lock|Measure|Merge|Move|New|Open|Optimize|Out|Ping|Pop|Protect|Publish|Push|Read|Receive|Redo|Register|Remove|Rename|Repair|Request|Reset|Resize|Resolve|Restart|Restore|Resume|Revoke|Save|Search|Select|Send|Set|Show|Skip|Sort|Split|Start|Step|Stop|Submit|Suspend|Switch|Sync|Tee|Test|Trace|Unblock|Undo|Uninstall|Unlock|Unprotect|Unpublish|Unregister|Update|Use|Wait|Watch|Where|Write)-[a-z]+\b/i, /\b(?:ac|cat|chdir|clc|cli|clp|clv|compare|copy|cp|cpi|cpp|cvpa|dbp|del|diff|dir|ebp|echo|epal|epcsv|epsn|erase|fc|fl|ft|fw|gal|gbp|gc|gci|gcs|gdr|gi|gl|gm|gp|gps|group|gsv|gu|gv|gwmi|iex|ii|ipal|ipcsv|ipsn|irm|iwmi|iwr|kill|lp|ls|measure|mi|mount|move|mp|mv|nal|ndr|ni|nv|ogv|popd|ps|pushd|pwd|rbp|rd|rdr|ren|ri|rm|rmdir|rni|rnp|rp|rv|rvpa|rwmi|sal|saps|sasv|sbp|sc|select|set|shcm|si|sl|sleep|sls|sort|sp|spps|spsv|start|sv|swmi|tee|trcm|type|write)\b/i], keyword: /\b(?:Begin|Break|Catch|Class|Continue|Data|Define|Do|DynamicParam|Else|ElseIf|End|Exit|Filter|Finally|For|ForEach|From|Function|If|InlineScript|Parallel|Param|Process|Return|Sequence|Switch|Throw|Trap|Try|Until|Using|Var|While|Workflow)\b/i, operator: { pattern: /(^|\W)(?:!|-(?:b?(?:and|x?or)|as|(?:Not)?(?:Contains|In|Like|Match)|eq|ge|gt|is(?:Not)?|Join|le|lt|ne|not|Replace|sh[lr])\b|-[-=]?|\+[+=]?|[*\/%]=?)/i, lookbehind: true }, punctuation: /[|{}[\];(),.]/ };
-        i.string[0].inside = { function: { pattern: /(^|[^`])\$\((?:\$\([^\r\n()]*\)|(?!\$\()[^\r\n)])*\)/, lookbehind: true, inside: i }, boolean: i.boolean, variable: i.variable };
-      }(Prism2);
-      !function(e) {
-        e.languages.puppet = { heredoc: [{ pattern: /(@\("([^"\r\n\/):]+)"(?:\/[nrts$uL]*)?\).*(?:\r?\n|\r))(?:.*(?:\r?\n|\r(?!\n)))*?[ \t]*(?:\|[ \t]*)?(?:-[ \t]*)?\2/, lookbehind: true, alias: "string", inside: { punctuation: /(?=\S).*\S(?= *$)/ } }, { pattern: /(@\(([^"\r\n\/):]+)(?:\/[nrts$uL]*)?\).*(?:\r?\n|\r))(?:.*(?:\r?\n|\r(?!\n)))*?[ \t]*(?:\|[ \t]*)?(?:-[ \t]*)?\2/, lookbehind: true, greedy: true, alias: "string", inside: { punctuation: /(?=\S).*\S(?= *$)/ } }, { pattern: /@\("?(?:[^"\r\n\/):]+)"?(?:\/[nrts$uL]*)?\)/, alias: "string", inside: { punctuation: { pattern: /(\().+?(?=\))/, lookbehind: true } } }], "multiline-comment": { pattern: /(^|[^\\])\/\*[\s\S]*?\*\//, lookbehind: true, greedy: true, alias: "comment" }, regex: { pattern: /((?:\bnode\s+|[~=\(\[\{,]\s*|[=+]>\s*|^\s*))\/(?:[^\/\\]|\\[\s\S])+\/(?:[imx]+\b|\B)/, lookbehind: true, greedy: true, inside: { "extended-regex": { pattern: /^\/(?:[^\/\\]|\\[\s\S])+\/[im]*x[im]*$/, inside: { comment: /#.*/ } } } }, comment: { pattern: /(^|[^\\])#.*/, lookbehind: true, greedy: true }, string: { pattern: /(["'])(?:\$\{(?:[^'"}]|(["'])(?:(?!\2)[^\\]|\\[\s\S])*\2)+\}|\$(?!\{)|(?!\1)[^\\$]|\\[\s\S])*\1/, greedy: true, inside: { "double-quoted": { pattern: /^"[\s\S]*"$/, inside: {} } } }, variable: { pattern: /\$(?:::)?\w+(?:::\w+)*/, inside: { punctuation: /::/ } }, "attr-name": /(?:\b\w+|\*)(?=\s*=>)/, function: [{ pattern: /(\.)(?!\d)\w+/, lookbehind: true }, /\b(?:contain|debug|err|fail|include|info|notice|realize|require|tag|warning)\b|\b(?!\d)\w+(?=\()/], number: /\b(?:0x[a-f\d]+|\d+(?:\.\d+)?(?:e-?\d+)?)\b/i, boolean: /\b(?:false|true)\b/, keyword: /\b(?:application|attr|case|class|consumes|default|define|else|elsif|function|if|import|inherits|node|private|produces|type|undef|unless)\b/, datatype: { pattern: /\b(?:Any|Array|Boolean|Callable|Catalogentry|Class|Collection|Data|Default|Enum|Float|Hash|Integer|NotUndef|Numeric|Optional|Pattern|Regexp|Resource|Runtime|Scalar|String|Struct|Tuple|Type|Undef|Variant)\b/, alias: "symbol" }, operator: /=[=~>]?|![=~]?|<(?:<\|?|[=~|-])?|>[>=]?|->?|~>|\|>?>?|[*\/%+?]|\b(?:and|in|or)\b/, punctuation: /[\[\]{}().,;]|:+/ };
-        var n2 = [{ pattern: /(^|[^\\])\$\{(?:[^'"{}]|\{[^}]*\}|(["'])(?:(?!\2)[^\\]|\\[\s\S])*\2)+\}/, lookbehind: true, inside: { "short-variable": { pattern: /(^\$\{)(?!\w+\()(?:::)?\w+(?:::\w+)*/, lookbehind: true, alias: "variable", inside: { punctuation: /::/ } }, delimiter: { pattern: /^\$/, alias: "variable" }, rest: e.languages.puppet } }, { pattern: /(^|[^\\])\$(?:::)?\w+(?:::\w+)*/, lookbehind: true, alias: "variable", inside: { punctuation: /::/ } }];
-        e.languages.puppet.heredoc[0].inside.interpolation = n2, e.languages.puppet.string.inside["double-quoted"].inside.interpolation = n2;
-      }(Prism2);
-      Prism2.languages.python = { comment: { pattern: /(^|[^\\])#.*/, lookbehind: true, greedy: true }, "string-interpolation": { pattern: /(?:f|fr|rf)(?:("""|''')[\s\S]*?\1|("|')(?:\\.|(?!\2)[^\\\r\n])*\2)/i, greedy: true, inside: { interpolation: { pattern: /((?:^|[^{])(?:\{\{)*)\{(?!\{)(?:[^{}]|\{(?!\{)(?:[^{}]|\{(?!\{)(?:[^{}])+\})+\})+\}/, lookbehind: true, inside: { "format-spec": { pattern: /(:)[^:(){}]+(?=\}$)/, lookbehind: true }, "conversion-option": { pattern: /![sra](?=[:}]$)/, alias: "punctuation" }, rest: null } }, string: /[\s\S]+/ } }, "triple-quoted-string": { pattern: /(?:[rub]|br|rb)?("""|''')[\s\S]*?\1/i, greedy: true, alias: "string" }, string: { pattern: /(?:[rub]|br|rb)?("|')(?:\\.|(?!\1)[^\\\r\n])*\1/i, greedy: true }, function: { pattern: /((?:^|\s)def[ \t]+)[a-zA-Z_]\w*(?=\s*\()/g, lookbehind: true }, "class-name": { pattern: /(\bclass\s+)\w+/i, lookbehind: true }, decorator: { pattern: /(^[\t ]*)@\w+(?:\.\w+)*/m, lookbehind: true, alias: ["annotation", "punctuation"], inside: { punctuation: /\./ } }, keyword: /\b(?:_(?=\s*:)|and|as|assert|async|await|break|case|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|match|nonlocal|not|or|pass|print|raise|return|try|while|with|yield)\b/, builtin: /\b(?:__import__|abs|all|any|apply|ascii|basestring|bin|bool|buffer|bytearray|bytes|callable|chr|classmethod|cmp|coerce|compile|complex|delattr|dict|dir|divmod|enumerate|eval|execfile|file|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|intern|isinstance|issubclass|iter|len|list|locals|long|map|max|memoryview|min|next|object|oct|open|ord|pow|property|range|raw_input|reduce|reload|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|unichr|unicode|vars|xrange|zip)\b/, boolean: /\b(?:False|None|True)\b/, number: /\b0(?:b(?:_?[01])+|o(?:_?[0-7])+|x(?:_?[a-f0-9])+)\b|(?:\b\d+(?:_\d+)*(?:\.(?:\d+(?:_\d+)*)?)?|\B\.\d+(?:_\d+)*)(?:e[+-]?\d+(?:_\d+)*)?j?(?!\w)/i, operator: /[-+%=]=?|!=|:=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]/, punctuation: /[{}[\];(),.:]/ }, Prism2.languages.python["string-interpolation"].inside.interpolation.inside.rest = Prism2.languages.python, Prism2.languages.py = Prism2.languages.python;
-      !function(e) {
-        e.languages.ruby = e.languages.extend("clike", { comment: { pattern: /#.*|^=begin\s[\s\S]*?^=end/m, greedy: true }, "class-name": { pattern: /(\b(?:class|module)\s+|\bcatch\s+\()[\w.\\]+|\b[A-Z_]\w*(?=\s*\.\s*new\b)/, lookbehind: true, inside: { punctuation: /[.\\]/ } }, keyword: /\b(?:BEGIN|END|alias|and|begin|break|case|class|def|define_method|defined|do|each|else|elsif|end|ensure|extend|for|if|in|include|module|new|next|nil|not|or|prepend|private|protected|public|raise|redo|require|rescue|retry|return|self|super|then|throw|undef|unless|until|when|while|yield)\b/, operator: /\.{2,3}|&\.|===|<?=>|[!=]?~|(?:&&|\|\||<<|>>|\*\*|[+\-*/%<>!^&|=])=?|[?:]/, punctuation: /[(){}[\].,;]/ }), e.languages.insertBefore("ruby", "operator", { "double-colon": { pattern: /::/, alias: "punctuation" } });
-        var n2 = { pattern: /((?:^|[^\\])(?:\\{2})*)#\{(?:[^{}]|\{[^{}]*\})*\}/, lookbehind: true, inside: { content: { pattern: /^(#\{)[\s\S]+(?=\}$)/, lookbehind: true, inside: e.languages.ruby }, delimiter: { pattern: /^#\{|\}$/, alias: "punctuation" } } };
-        delete e.languages.ruby.function;
-        var t = "(?:" + ["([^a-zA-Z0-9\\s{(\\[<=])(?:(?!\\1)[^\\\\]|\\\\[^])*\\1", "\\((?:[^()\\\\]|\\\\[^]|\\((?:[^()\\\\]|\\\\[^])*\\))*\\)", "\\{(?:[^{}\\\\]|\\\\[^]|\\{(?:[^{}\\\\]|\\\\[^])*\\})*\\}", "\\[(?:[^\\[\\]\\\\]|\\\\[^]|\\[(?:[^\\[\\]\\\\]|\\\\[^])*\\])*\\]", "<(?:[^<>\\\\]|\\\\[^]|<(?:[^<>\\\\]|\\\\[^])*>)*>"].join("|") + ")", i = '(?:"(?:\\\\.|[^"\\\\\r\n])*"|(?:\\b[a-zA-Z_]\\w*|[^\\s\0-\\x7F]+)[?!]?|\\$.)';
-        e.languages.insertBefore("ruby", "keyword", { "regex-literal": [{ pattern: RegExp("%r" + t + "[egimnosux]{0,6}"), greedy: true, inside: { interpolation: n2, regex: /[\s\S]+/ } }, { pattern: /(^|[^/])\/(?!\/)(?:\[[^\r\n\]]+\]|\\.|[^[/\\\r\n])+\/[egimnosux]{0,6}(?=\s*(?:$|[\r\n,.;})#]))/, lookbehind: true, greedy: true, inside: { interpolation: n2, regex: /[\s\S]+/ } }], variable: /[@$]+[a-zA-Z_]\w*(?:[?!]|\b)/, symbol: [{ pattern: RegExp("(^|[^:]):" + i), lookbehind: true, greedy: true }, { pattern: RegExp("([\r\n{(,][ 	]*)" + i + "(?=:(?!:))"), lookbehind: true, greedy: true }], "method-definition": { pattern: /(\bdef\s+)\w+(?:\s*\.\s*\w+)?/, lookbehind: true, inside: { function: /\b\w+$/, keyword: /^self\b/, "class-name": /^\w+/, punctuation: /\./ } } }), e.languages.insertBefore("ruby", "string", { "string-literal": [{ pattern: RegExp("%[qQiIwWs]?" + t), greedy: true, inside: { interpolation: n2, string: /[\s\S]+/ } }, { pattern: /("|')(?:#\{[^}]+\}|#(?!\{)|\\(?:\r\n|[\s\S])|(?!\1)[^\\#\r\n])*\1/, greedy: true, inside: { interpolation: n2, string: /[\s\S]+/ } }, { pattern: /<<[-~]?([a-z_]\w*)[\r\n](?:.*[\r\n])*?[\t ]*\1/i, alias: "heredoc-string", greedy: true, inside: { delimiter: { pattern: /^<<[-~]?[a-z_]\w*|\b[a-z_]\w*$/i, inside: { symbol: /\b\w+/, punctuation: /^<<[-~]?/ } }, interpolation: n2, string: /[\s\S]+/ } }, { pattern: /<<[-~]?'([a-z_]\w*)'[\r\n](?:.*[\r\n])*?[\t ]*\1/i, alias: "heredoc-string", greedy: true, inside: { delimiter: { pattern: /^<<[-~]?'[a-z_]\w*'|\b[a-z_]\w*$/i, inside: { symbol: /\b\w+/, punctuation: /^<<[-~]?'|'$/ } }, string: /[\s\S]+/ } }], "command-literal": [{ pattern: RegExp("%x" + t), greedy: true, inside: { interpolation: n2, command: { pattern: /[\s\S]+/, alias: "string" } } }, { pattern: /`(?:#\{[^}]+\}|#(?!\{)|\\(?:\r\n|[\s\S])|[^\\`#\r\n])*`/, greedy: true, inside: { interpolation: n2, command: { pattern: /[\s\S]+/, alias: "string" } } }] }), delete e.languages.ruby.string, e.languages.insertBefore("ruby", "number", { builtin: /\b(?:Array|Bignum|Binding|Class|Continuation|Dir|Exception|FalseClass|File|Fixnum|Float|Hash|IO|Integer|MatchData|Method|Module|NilClass|Numeric|Object|Proc|Range|Regexp|Stat|String|Struct|Symbol|TMS|Thread|ThreadGroup|Time|TrueClass)\b/, constant: /\b[A-Z][A-Z0-9_]*(?:[?!]|\b)/ }), e.languages.rb = e.languages.ruby;
-      }(Prism2);
-      Prism2.languages.scss = Prism2.languages.extend("css", { comment: { pattern: /(^|[^\\])(?:\/\*[\s\S]*?\*\/|\/\/.*)/, lookbehind: true }, atrule: { pattern: /@[\w-](?:\([^()]+\)|[^()\s]|\s+(?!\s))*?(?=\s+[{;])/, inside: { rule: /@[\w-]+/ } }, url: /(?:[-a-z]+-)?url(?=\()/i, selector: { pattern: /(?=\S)[^@;{}()]?(?:[^@;{}()\s]|\s+(?!\s)|#\{\$[-\w]+\})+(?=\s*\{(?:\}|\s|[^}][^:{}]*[:{][^}]))/, inside: { parent: { pattern: /&/, alias: "important" }, placeholder: /%[-\w]+/, variable: /\$[-\w]+|#\{\$[-\w]+\}/ } }, property: { pattern: /(?:[-\w]|\$[-\w]|#\{\$[-\w]+\})+(?=\s*:)/, inside: { variable: /\$[-\w]+|#\{\$[-\w]+\}/ } } }), Prism2.languages.insertBefore("scss", "atrule", { keyword: [/@(?:content|debug|each|else(?: if)?|extend|for|forward|function|if|import|include|mixin|return|use|warn|while)\b/i, { pattern: /( )(?:from|through)(?= )/, lookbehind: true }] }), Prism2.languages.insertBefore("scss", "important", { variable: /\$[-\w]+|#\{\$[-\w]+\}/ }), Prism2.languages.insertBefore("scss", "function", { "module-modifier": { pattern: /\b(?:as|hide|show|with)\b/i, alias: "keyword" }, placeholder: { pattern: /%[-\w]+/, alias: "selector" }, statement: { pattern: /\B!(?:default|optional)\b/i, alias: "keyword" }, boolean: /\b(?:false|true)\b/, null: { pattern: /\bnull\b/, alias: "keyword" }, operator: { pattern: /(\s)(?:[-+*\/%]|[=!]=|<=?|>=?|and|not|or)(?=\s)/, lookbehind: true } }), Prism2.languages.scss.atrule.inside.rest = Prism2.languages.scss;
-      !function(s2) {
-        var n2 = ['"(?:\\\\[^]|\\$\\([^)]+\\)|\\$(?!\\()|`[^`]+`|[^"\\\\`$])*"', "'[^']*'", "\\$'(?:[^'\\\\]|\\\\[^])*'", `<<-?\\s*(["']?)(\\w+)\\1\\s[^]*?[\r
-]\\2`].join("|");
-        s2.languages["shell-session"] = { command: { pattern: RegExp('^(?:[^\\s@:$#%*!/\\\\]+@[^\r\n@:$#%*!/\\\\]+(?::[^\0-\\x1F$#%*?"<>:;|]+)?|[/~.][^\0-\\x1F$#%*?"<>@:;|]*)?[$#%](?=\\s)' + `(?:[^\\\\\r
- 	'"<$]|[ 	](?:(?!#)|#.*$)|\\\\(?:[^\r]|\r
-?)|\\$(?!')|<(?!<)|<<str>>)+`.replace(/<<str>>/g, function() {
-          return n2;
-        }), "m"), greedy: true, inside: { info: { pattern: /^[^#$%]+/, alias: "punctuation", inside: { user: /^[^\s@:$#%*!/\\]+@[^\r\n@:$#%*!/\\]+/, punctuation: /:/, path: /[\s\S]+/ } }, bash: { pattern: /(^[$#%]\s*)\S[\s\S]*/, lookbehind: true, alias: "language-bash", inside: s2.languages.bash }, "shell-symbol": { pattern: /^[$#%]/, alias: "important" } } }, output: /.(?:.*(?:[\r\n]|.$))*/ }, s2.languages["sh-session"] = s2.languages.shellsession = s2.languages["shell-session"];
-      }(Prism2);
-      !function(a) {
-        function e(e2, n3) {
-          a.languages[e2] && a.languages.insertBefore(e2, "comment", { "doc-comment": n3 });
-        }
-        var n2 = a.languages.markup.tag, t = { pattern: /\/\/\/.*/, greedy: true, alias: "comment", inside: { tag: n2 } }, g = { pattern: /'''.*/, greedy: true, alias: "comment", inside: { tag: n2 } };
-        e("csharp", t), e("fsharp", t), e("vbnet", g);
-      }(Prism2);
-      !function(e) {
-        var n2 = /[*&][^\s[\]{},]+/, r = /!(?:<[\w\-%#;/?:@&=+$,.!~*'()[\]]+>|(?:[a-zA-Z\d-]*!)?[\w\-%#;/?:@&=+$.~*'()]+)?/, t = "(?:" + r.source + "(?:[ 	]+" + n2.source + ")?|" + n2.source + "(?:[ 	]+" + r.source + ")?)", a = "(?:[^\\s\\x00-\\x08\\x0e-\\x1f!\"#%&'*,\\-:>?@[\\]`{|}\\x7f-\\x84\\x86-\\x9f\\ud800-\\udfff\\ufffe\\uffff]|[?:-]<PLAIN>)(?:[ 	]*(?:(?![#:])<PLAIN>|:<PLAIN>))*".replace(/<PLAIN>/g, function() {
-          return "[^\\s\\x00-\\x08\\x0e-\\x1f,[\\]{}\\x7f-\\x84\\x86-\\x9f\\ud800-\\udfff\\ufffe\\uffff]";
-        }), d = `"(?:[^"\\\\\r
-]|\\\\.)*"|'(?:[^'\\\\\r
-]|\\\\.)*'`;
-        function o(e2, n3) {
-          n3 = (n3 || "").replace(/m/g, "") + "m";
-          var r2 = "([:\\-,[{]\\s*(?:\\s<<prop>>[ 	]+)?)(?:<<value>>)(?=[ 	]*(?:$|,|\\]|\\}|(?:[\r\n]\\s*)?#))".replace(/<<prop>>/g, function() {
-            return t;
-          }).replace(/<<value>>/g, function() {
-            return e2;
-          });
-          return RegExp(r2, n3);
-        }
-        e.languages.yaml = { scalar: { pattern: RegExp("([\\-:]\\s*(?:\\s<<prop>>[ 	]+)?[|>])[ 	]*(?:((?:\r?\n|\r)[ 	]+)\\S[^\r\n]*(?:\\2[^\r\n]+)*)".replace(/<<prop>>/g, function() {
-          return t;
-        })), lookbehind: true, alias: "string" }, comment: /#.*/, key: { pattern: RegExp("((?:^|[:\\-,[{\r\n?])[ 	]*(?:<<prop>>[ 	]+)?)<<key>>(?=\\s*:\\s)".replace(/<<prop>>/g, function() {
-          return t;
-        }).replace(/<<key>>/g, function() {
-          return "(?:" + a + "|" + d + ")";
-        })), lookbehind: true, greedy: true, alias: "atrule" }, directive: { pattern: /(^[ \t]*)%.+/m, lookbehind: true, alias: "important" }, datetime: { pattern: o("\\d{4}-\\d\\d?-\\d\\d?(?:[tT]|[ 	]+)\\d\\d?:\\d{2}:\\d{2}(?:\\.\\d*)?(?:[ 	]*(?:Z|[-+]\\d\\d?(?::\\d{2})?))?|\\d{4}-\\d{2}-\\d{2}|\\d\\d?:\\d{2}(?::\\d{2}(?:\\.\\d*)?)?"), lookbehind: true, alias: "number" }, boolean: { pattern: o("false|true", "i"), lookbehind: true, alias: "important" }, null: { pattern: o("null|~", "i"), lookbehind: true, alias: "important" }, string: { pattern: o(d), lookbehind: true, greedy: true }, number: { pattern: o("[+-]?(?:0x[\\da-f]+|0o[0-7]+|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:e[+-]?\\d+)?|\\.inf|\\.nan)", "i"), lookbehind: true }, tag: r, important: n2, punctuation: /---|[:[\]{}\-,|>?]|\.\.\./ }, e.languages.yml = e.languages.yaml;
-      }(Prism2);
-      !function() {
-        if ("undefined" != typeof Prism2 && "undefined" != typeof document) {
-          var e = "line-numbers", n2 = /\n(?!$)/g, t = Prism2.plugins.lineNumbers = { getLine: function(n3, t2) {
-            if ("PRE" === n3.tagName && n3.classList.contains(e)) {
-              var i2 = n3.querySelector(".line-numbers-rows");
-              if (i2) {
-                var r2 = parseInt(n3.getAttribute("data-start"), 10) || 1, s2 = r2 + (i2.children.length - 1);
-                t2 < r2 && (t2 = r2), t2 > s2 && (t2 = s2);
-                var l2 = t2 - r2;
-                return i2.children[l2];
+          },
+          plugins: {},
+          /**
+           * This is the most high-level function in Prism’s API.
+           * It fetches all the elements that have a `.language-xxxx` class and then calls {@link Prism.highlightElement} on
+           * each one of them.
+           *
+           * This is equivalent to `Prism.highlightAllUnder(document, async, callback)`.
+           *
+           * @param {boolean} [async=false] Same as in {@link Prism.highlightAllUnder}.
+           * @param {HighlightCallback} [callback] Same as in {@link Prism.highlightAllUnder}.
+           * @memberof Prism
+           * @public
+           */
+          highlightAll: function(async, callback) {
+            _.highlightAllUnder(document, async, callback);
+          },
+          /**
+           * Fetches all the descendants of `container` that have a `.language-xxxx` class and then calls
+           * {@link Prism.highlightElement} on each one of them.
+           *
+           * The following hooks will be run:
+           * 1. `before-highlightall`
+           * 2. `before-all-elements-highlight`
+           * 3. All hooks of {@link Prism.highlightElement} for each element.
+           *
+           * @param {ParentNode} container The root element, whose descendants that have a `.language-xxxx` class will be highlighted.
+           * @param {boolean} [async=false] Whether each element is to be highlighted asynchronously using Web Workers.
+           * @param {HighlightCallback} [callback] An optional callback to be invoked on each element after its highlighting is done.
+           * @memberof Prism
+           * @public
+           */
+          highlightAllUnder: function(container, async, callback) {
+            var env = {
+              callback,
+              container,
+              selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+            };
+            _.hooks.run("before-highlightall", env);
+            env.elements = Array.prototype.slice.apply(env.container.querySelectorAll(env.selector));
+            _.hooks.run("before-all-elements-highlight", env);
+            for (var i = 0, element; element = env.elements[i++]; ) {
+              _.highlightElement(element, async === true, env.callback);
+            }
+          },
+          /**
+           * Highlights the code inside a single element.
+           *
+           * The following hooks will be run:
+           * 1. `before-sanity-check`
+           * 2. `before-highlight`
+           * 3. All hooks of {@link Prism.highlight}. These hooks will be run by an asynchronous worker if `async` is `true`.
+           * 4. `before-insert`
+           * 5. `after-highlight`
+           * 6. `complete`
+           *
+           * Some the above hooks will be skipped if the element doesn't contain any text or there is no grammar loaded for
+           * the element's language.
+           *
+           * @param {Element} element The element containing the code.
+           * It must have a class of `language-xxxx` to be processed, where `xxxx` is a valid language identifier.
+           * @param {boolean} [async=false] Whether the element is to be highlighted asynchronously using Web Workers
+           * to improve performance and avoid blocking the UI when highlighting very large chunks of code. This option is
+           * [disabled by default](https://prismjs.com/faq.html#why-is-asynchronous-highlighting-disabled-by-default).
+           *
+           * Note: All language definitions required to highlight the code must be included in the main `prism.js` file for
+           * asynchronous highlighting to work. You can build your own bundle on the
+           * [Download page](https://prismjs.com/download.html).
+           * @param {HighlightCallback} [callback] An optional callback to be invoked after the highlighting is done.
+           * Mostly useful when `async` is `true`, since in that case, the highlighting is done asynchronously.
+           * @memberof Prism
+           * @public
+           */
+          highlightElement: function(element, async, callback) {
+            var language = _.util.getLanguage(element);
+            var grammar = _.languages[language];
+            _.util.setLanguage(element, language);
+            var parent = element.parentElement;
+            if (parent && parent.nodeName.toLowerCase() === "pre") {
+              _.util.setLanguage(parent, language);
+            }
+            var code = element.textContent;
+            var env = {
+              element,
+              language,
+              grammar,
+              code
+            };
+            function insertHighlightedCode(highlightedCode) {
+              env.highlightedCode = highlightedCode;
+              _.hooks.run("before-insert", env);
+              env.element.innerHTML = env.highlightedCode;
+              _.hooks.run("after-highlight", env);
+              _.hooks.run("complete", env);
+              callback && callback.call(env.element);
+            }
+            _.hooks.run("before-sanity-check", env);
+            parent = env.element.parentElement;
+            if (parent && parent.nodeName.toLowerCase() === "pre" && !parent.hasAttribute("tabindex")) {
+              parent.setAttribute("tabindex", "0");
+            }
+            if (!env.code) {
+              _.hooks.run("complete", env);
+              callback && callback.call(env.element);
+              return;
+            }
+            _.hooks.run("before-highlight", env);
+            if (!env.grammar) {
+              insertHighlightedCode(_.util.encode(env.code));
+              return;
+            }
+            if (async && _self2.Worker) {
+              var worker = new Worker(_.filename);
+              worker.onmessage = function(evt) {
+                insertHighlightedCode(evt.data);
+              };
+              worker.postMessage(JSON.stringify({
+                language: env.language,
+                code: env.code,
+                immediateClose: true
+              }));
+            } else {
+              insertHighlightedCode(_.highlight(env.code, env.grammar, env.language));
+            }
+          },
+          /**
+           * Low-level function, only use if you know what you’re doing. It accepts a string of text as input
+           * and the language definitions to use, and returns a string with the HTML produced.
+           *
+           * The following hooks will be run:
+           * 1. `before-tokenize`
+           * 2. `after-tokenize`
+           * 3. `wrap`: On each {@link Token}.
+           *
+           * @param {string} text A string with the code to be highlighted.
+           * @param {Grammar} grammar An object containing the tokens to use.
+           *
+           * Usually a language definition like `Prism.languages.markup`.
+           * @param {string} language The name of the language definition passed to `grammar`.
+           * @returns {string} The highlighted HTML.
+           * @memberof Prism
+           * @public
+           * @example
+           * Prism.highlight('var foo = true;', Prism.languages.javascript, 'javascript');
+           */
+          highlight: function(text, grammar, language) {
+            var env = {
+              code: text,
+              grammar,
+              language
+            };
+            _.hooks.run("before-tokenize", env);
+            if (!env.grammar) {
+              throw new Error('The language "' + env.language + '" has no grammar.');
+            }
+            env.tokens = _.tokenize(env.code, env.grammar);
+            _.hooks.run("after-tokenize", env);
+            return Token.stringify(_.util.encode(env.tokens), env.language);
+          },
+          /**
+           * This is the heart of Prism, and the most low-level function you can use. It accepts a string of text as input
+           * and the language definitions to use, and returns an array with the tokenized code.
+           *
+           * When the language definition includes nested tokens, the function is called recursively on each of these tokens.
+           *
+           * This method could be useful in other contexts as well, as a very crude parser.
+           *
+           * @param {string} text A string with the code to be highlighted.
+           * @param {Grammar} grammar An object containing the tokens to use.
+           *
+           * Usually a language definition like `Prism.languages.markup`.
+           * @returns {TokenStream} An array of strings and tokens, a token stream.
+           * @memberof Prism
+           * @public
+           * @example
+           * let code = `var foo = 0;`;
+           * let tokens = Prism.tokenize(code, Prism.languages.javascript);
+           * tokens.forEach(token => {
+           *     if (token instanceof Prism.Token && token.type === 'number') {
+           *         console.log(`Found numeric literal: ${token.content}`);
+           *     }
+           * });
+           */
+          tokenize: function(text, grammar) {
+            var rest = grammar.rest;
+            if (rest) {
+              for (var token in rest) {
+                grammar[token] = rest[token];
               }
+              delete grammar.rest;
             }
-          }, resize: function(e2) {
-            r([e2]);
-          }, assumeViewportIndependence: true }, i = void 0;
-          window.addEventListener("resize", function() {
-            t.assumeViewportIndependence && i === window.innerWidth || (i = window.innerWidth, r(Array.prototype.slice.call(document.querySelectorAll("pre.line-numbers"))));
-          }), Prism2.hooks.add("complete", function(t2) {
-            if (t2.code) {
-              var i2 = t2.element, s2 = i2.parentNode;
-              if (s2 && /pre/i.test(s2.nodeName) && !i2.querySelector(".line-numbers-rows") && Prism2.util.isActive(i2, e)) {
-                i2.classList.remove(e), s2.classList.add(e);
-                var l2, o = t2.code.match(n2), a = o ? o.length + 1 : 1, u = new Array(a + 1).join("<span></span>");
-                (l2 = document.createElement("span")).setAttribute("aria-hidden", "true"), l2.className = "line-numbers-rows", l2.innerHTML = u, s2.hasAttribute("data-start") && (s2.style.counterReset = "linenumber " + (parseInt(s2.getAttribute("data-start"), 10) - 1)), t2.element.appendChild(l2), r([s2]), Prism2.hooks.run("line-numbers", t2);
-              }
-            }
-          }), Prism2.hooks.add("line-numbers", function(e2) {
-            e2.plugins = e2.plugins || {}, e2.plugins.lineNumbers = true;
-          });
-        }
-        function r(e2) {
-          if (0 != (e2 = e2.filter(function(e3) {
-            var n3, t3 = (n3 = e3, n3 ? window.getComputedStyle ? getComputedStyle(n3) : n3.currentStyle || null : null)["white-space"];
-            return "pre-wrap" === t3 || "pre-line" === t3;
-          })).length) {
-            var t2 = e2.map(function(e3) {
-              var t3 = e3.querySelector("code"), i2 = e3.querySelector(".line-numbers-rows");
-              if (t3 && i2) {
-                var r2 = e3.querySelector(".line-numbers-sizer"), s2 = t3.textContent.split(n2);
-                r2 || ((r2 = document.createElement("span")).className = "line-numbers-sizer", t3.appendChild(r2)), r2.innerHTML = "0", r2.style.display = "block";
-                var l2 = r2.getBoundingClientRect().height;
-                return r2.innerHTML = "", { element: e3, lines: s2, lineHeights: [], oneLinerHeight: l2, sizer: r2 };
-              }
-            }).filter(Boolean);
-            t2.forEach(function(e3) {
-              var n3 = e3.sizer, t3 = e3.lines, i2 = e3.lineHeights, r2 = e3.oneLinerHeight;
-              i2[t3.length - 1] = void 0, t3.forEach(function(e4, t4) {
-                if (e4 && e4.length > 1) {
-                  var s2 = n3.appendChild(document.createElement("span"));
-                  s2.style.display = "block", s2.textContent = e4;
-                } else
-                  i2[t4] = r2;
-              });
-            }), t2.forEach(function(e3) {
-              for (var n3 = e3.sizer, t3 = e3.lineHeights, i2 = 0, r2 = 0; r2 < t3.length; r2++)
-                void 0 === t3[r2] && (t3[r2] = n3.children[i2++].getBoundingClientRect().height);
-            }), t2.forEach(function(e3) {
-              var n3 = e3.sizer, t3 = e3.element.querySelector(".line-numbers-rows");
-              n3.style.display = "none", n3.innerHTML = "", e3.lineHeights.forEach(function(e4, n4) {
-                t3.children[n4].style.height = e4 + "px";
-              });
-            });
-          }
-        }
-      }();
-      !function() {
-        if ("undefined" != typeof Prism2 && "undefined" != typeof document) {
-          var e = [], t = {}, n2 = function() {
-          };
-          Prism2.plugins.toolbar = {};
-          var a = Prism2.plugins.toolbar.registerButton = function(n3, a2) {
-            var r2;
-            r2 = "function" == typeof a2 ? a2 : function(e2) {
-              var t2;
-              return "function" == typeof a2.onClick ? ((t2 = document.createElement("button")).type = "button", t2.addEventListener("click", function() {
-                a2.onClick.call(this, e2);
-              })) : "string" == typeof a2.url ? (t2 = document.createElement("a")).href = a2.url : t2 = document.createElement("span"), a2.className && t2.classList.add(a2.className), t2.textContent = a2.text, t2;
-            }, n3 in t ? console.warn('There is a button with the key "' + n3 + '" registered already.') : e.push(t[n3] = r2);
-          }, r = Prism2.plugins.toolbar.hook = function(a2) {
-            var r2 = a2.element.parentNode;
-            if (r2 && /pre/i.test(r2.nodeName) && !r2.parentNode.classList.contains("code-toolbar")) {
-              var o = document.createElement("div");
-              o.classList.add("code-toolbar"), r2.parentNode.insertBefore(o, r2), o.appendChild(r2);
-              var i = document.createElement("div");
-              i.classList.add("toolbar");
-              var l2 = e, d = function(e2) {
-                for (; e2; ) {
-                  var t2 = e2.getAttribute("data-toolbar-order");
-                  if (null != t2)
-                    return (t2 = t2.trim()).length ? t2.split(/\s*,\s*/g) : [];
-                  e2 = e2.parentElement;
-                }
-              }(a2.element);
-              d && (l2 = d.map(function(e2) {
-                return t[e2] || n2;
-              })), l2.forEach(function(e2) {
-                var t2 = e2(a2);
-                if (t2) {
-                  var n3 = document.createElement("div");
-                  n3.classList.add("toolbar-item"), n3.appendChild(t2), i.appendChild(n3);
-                }
-              }), o.appendChild(i);
-            }
-          };
-          a("label", function(e2) {
-            var t2 = e2.element.parentNode;
-            if (t2 && /pre/i.test(t2.nodeName) && t2.hasAttribute("data-label")) {
-              var n3, a2, r2 = t2.getAttribute("data-label");
-              try {
-                a2 = document.querySelector("template#" + r2);
-              } catch (e3) {
-              }
-              return a2 ? n3 = a2.content : (t2.hasAttribute("data-url") ? (n3 = document.createElement("a")).href = t2.getAttribute("data-url") : n3 = document.createElement("span"), n3.textContent = r2), n3;
-            }
-          }), Prism2.hooks.add("complete", r);
-        }
-      }();
-      !function() {
-        function t(t2) {
-          var e = document.createElement("textarea");
-          e.value = t2.getText(), e.style.top = "0", e.style.left = "0", e.style.position = "fixed", document.body.appendChild(e), e.focus(), e.select();
-          try {
-            var o = document.execCommand("copy");
-            setTimeout(function() {
-              o ? t2.success() : t2.error();
-            }, 1);
-          } catch (e2) {
-            setTimeout(function() {
-              t2.error(e2);
-            }, 1);
-          }
-          document.body.removeChild(e);
-        }
-        "undefined" != typeof Prism2 && "undefined" != typeof document && (Prism2.plugins.toolbar ? Prism2.plugins.toolbar.registerButton("copy-to-clipboard", function(e) {
-          var o = e.element, n2 = function(t2) {
-            var e2 = { copy: "Copy", "copy-error": "Press Ctrl+C to copy", "copy-success": "Copied!", "copy-timeout": 5e3 };
-            for (var o2 in e2) {
-              for (var n3 = "data-prismjs-" + o2, c2 = t2; c2 && !c2.hasAttribute(n3); )
-                c2 = c2.parentElement;
-              c2 && (e2[o2] = c2.getAttribute(n3));
-            }
-            return e2;
-          }(o), c = document.createElement("button");
-          c.className = "copy-to-clipboard-button", c.setAttribute("type", "button");
-          var r = document.createElement("span");
-          return c.appendChild(r), u("copy"), function(e2, o2) {
-            e2.addEventListener("click", function() {
-              !function(e3) {
-                navigator.clipboard ? navigator.clipboard.writeText(e3.getText()).then(e3.success, function() {
-                  t(e3);
-                }) : t(e3);
-              }(o2);
-            });
-          }(c, { getText: function() {
-            return o.textContent;
-          }, success: function() {
-            u("copy-success"), i();
-          }, error: function() {
-            u("copy-error"), setTimeout(function() {
-              !function(t2) {
-                window.getSelection().selectAllChildren(t2);
-              }(o);
-            }, 1), i();
-          } }), c;
-          function i() {
-            setTimeout(function() {
-              u("copy");
-            }, n2["copy-timeout"]);
-          }
-          function u(t2) {
-            r.textContent = n2[t2], c.setAttribute("data-copy-state", t2);
-          }
-        }) : console.warn("Copy to Clipboard plugin loaded before Toolbar plugin."));
-      }();
-      !function() {
-        if ("undefined" != typeof Prism2) {
-          var e = /^diff-([\w-]+)/i, i = /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/g, a = RegExp("(?:__|[^\r\n<])*(?:\r\n?|\n|(?:__|[^\r\n<])(?![^\r\n]))".replace(/__/g, function() {
-            return i.source;
-          }), "gi"), s2 = false;
-          Prism2.hooks.add("before-sanity-check", function(i2) {
-            var a2 = i2.language;
-            e.test(a2) && !i2.grammar && (i2.grammar = Prism2.languages[a2] = Prism2.languages.diff);
-          }), Prism2.hooks.add("before-tokenize", function(i2) {
-            s2 || Prism2.languages.diff || Prism2.plugins.autoloader || (s2 = true, console.warn("Prism's Diff Highlight plugin requires the Diff language definition (prism-diff.js).Make sure the language definition is loaded or use Prism's Autoloader plugin."));
-            var a2 = i2.language;
-            e.test(a2) && !Prism2.languages[a2] && (Prism2.languages[a2] = Prism2.languages.diff);
-          }), Prism2.hooks.add("wrap", function(s3) {
-            var r, n2;
-            if ("diff" !== s3.language) {
-              var g = e.exec(s3.language);
-              if (!g)
+            var tokenList = new LinkedList();
+            addAfter(tokenList, tokenList.head, text);
+            matchGrammar(text, tokenList, grammar, tokenList.head, 0);
+            return toArray(tokenList);
+          },
+          /**
+           * @namespace
+           * @memberof Prism
+           * @public
+           */
+          hooks: {
+            all: {},
+            /**
+             * Adds the given callback to the list of callbacks for the given hook.
+             *
+             * The callback will be invoked when the hook it is registered for is run.
+             * Hooks are usually directly run by a highlight function but you can also run hooks yourself.
+             *
+             * One callback function can be registered to multiple hooks and the same hook multiple times.
+             *
+             * @param {string} name The name of the hook.
+             * @param {HookCallback} callback The callback function which is given environment variables.
+             * @public
+             */
+            add: function(name, callback) {
+              var hooks = _.hooks.all;
+              hooks[name] = hooks[name] || [];
+              hooks[name].push(callback);
+            },
+            /**
+             * Runs a hook invoking all registered callbacks with the given environment variables.
+             *
+             * Callbacks will be invoked synchronously and in the order in which they were registered.
+             *
+             * @param {string} name The name of the hook.
+             * @param {Object<string, any>} env The environment variables of the hook passed to all callbacks registered.
+             * @public
+             */
+            run: function(name, env) {
+              var callbacks = _.hooks.all[name];
+              if (!callbacks || !callbacks.length) {
                 return;
-              r = g[1], n2 = Prism2.languages[r];
+              }
+              for (var i = 0, callback; callback = callbacks[i++]; ) {
+                callback(env);
+              }
             }
-            var f = Prism2.languages.diff && Prism2.languages.diff.PREFIXES;
-            if (f && s3.type in f) {
-              var u, l2 = s3.content.replace(i, "").replace(/&lt;/g, "<").replace(/&amp;/g, "&"), t = l2.replace(/(^|[\r\n])./g, "$1");
-              u = n2 ? Prism2.highlight(t, n2, r) : Prism2.util.encode(t);
-              var o, m = new Prism2.Token("prefix", f[s3.type], [/\w+/.exec(s3.type)[0]]), d = Prism2.Token.stringify(m, s3.language), c = [];
-              for (a.lastIndex = 0; o = a.exec(u); )
-                c.push(d + o[0]);
-              /(?:^|[\r\n]).$/.test(l2) && c.push(d), s3.content = c.join(""), n2 && s3.classes.push("language-" + r);
+          },
+          Token
+        };
+        _self2.Prism = _;
+        function Token(type, content, alias, matchedStr) {
+          this.type = type;
+          this.content = content;
+          this.alias = alias;
+          this.length = (matchedStr || "").length | 0;
+        }
+        Token.stringify = function stringify(o, language) {
+          if (typeof o == "string") {
+            return o;
+          }
+          if (Array.isArray(o)) {
+            var s2 = "";
+            o.forEach(function(e) {
+              s2 += stringify(e, language);
+            });
+            return s2;
+          }
+          var env = {
+            type: o.type,
+            content: stringify(o.content, language),
+            tag: "span",
+            classes: ["token", o.type],
+            attributes: {},
+            language
+          };
+          var aliases = o.alias;
+          if (aliases) {
+            if (Array.isArray(aliases)) {
+              Array.prototype.push.apply(env.classes, aliases);
+            } else {
+              env.classes.push(aliases);
+            }
+          }
+          _.hooks.run("wrap", env);
+          var attributes = "";
+          for (var name in env.attributes) {
+            attributes += " " + name + '="' + (env.attributes[name] || "").replace(/"/g, "&quot;") + '"';
+          }
+          return "<" + env.tag + ' class="' + env.classes.join(" ") + '"' + attributes + ">" + env.content + "</" + env.tag + ">";
+        };
+        function matchPattern(pattern, pos, text, lookbehind) {
+          pattern.lastIndex = pos;
+          var match2 = pattern.exec(text);
+          if (match2 && lookbehind && match2[1]) {
+            var lookbehindLength = match2[1].length;
+            match2.index += lookbehindLength;
+            match2[0] = match2[0].slice(lookbehindLength);
+          }
+          return match2;
+        }
+        function matchGrammar(text, tokenList, grammar, startNode, startPos, rematch) {
+          for (var token in grammar) {
+            if (!grammar.hasOwnProperty(token) || !grammar[token]) {
+              continue;
+            }
+            var patterns = grammar[token];
+            patterns = Array.isArray(patterns) ? patterns : [patterns];
+            for (var j = 0; j < patterns.length; ++j) {
+              if (rematch && rematch.cause == token + "," + j) {
+                return;
+              }
+              var patternObj = patterns[j];
+              var inside = patternObj.inside;
+              var lookbehind = !!patternObj.lookbehind;
+              var greedy = !!patternObj.greedy;
+              var alias = patternObj.alias;
+              if (greedy && !patternObj.pattern.global) {
+                var flags = patternObj.pattern.toString().match(/[imsuy]*$/)[0];
+                patternObj.pattern = RegExp(patternObj.pattern.source, flags + "g");
+              }
+              var pattern = patternObj.pattern || patternObj;
+              for (var currentNode = startNode.next, pos = startPos; currentNode !== tokenList.tail; pos += currentNode.value.length, currentNode = currentNode.next) {
+                if (rematch && pos >= rematch.reach) {
+                  break;
+                }
+                var str = currentNode.value;
+                if (tokenList.length > text.length) {
+                  return;
+                }
+                if (str instanceof Token) {
+                  continue;
+                }
+                var removeCount = 1;
+                var match2;
+                if (greedy) {
+                  match2 = matchPattern(pattern, pos, text, lookbehind);
+                  if (!match2 || match2.index >= text.length) {
+                    break;
+                  }
+                  var from = match2.index;
+                  var to = match2.index + match2[0].length;
+                  var p = pos;
+                  p += currentNode.value.length;
+                  while (from >= p) {
+                    currentNode = currentNode.next;
+                    p += currentNode.value.length;
+                  }
+                  p -= currentNode.value.length;
+                  pos = p;
+                  if (currentNode.value instanceof Token) {
+                    continue;
+                  }
+                  for (var k = currentNode; k !== tokenList.tail && (p < to || typeof k.value === "string"); k = k.next) {
+                    removeCount++;
+                    p += k.value.length;
+                  }
+                  removeCount--;
+                  str = text.slice(pos, p);
+                  match2.index -= pos;
+                } else {
+                  match2 = matchPattern(pattern, 0, str, lookbehind);
+                  if (!match2) {
+                    continue;
+                  }
+                }
+                var from = match2.index;
+                var matchStr = match2[0];
+                var before = str.slice(0, from);
+                var after = str.slice(from + matchStr.length);
+                var reach = pos + str.length;
+                if (rematch && reach > rematch.reach) {
+                  rematch.reach = reach;
+                }
+                var removeFrom = currentNode.prev;
+                if (before) {
+                  removeFrom = addAfter(tokenList, removeFrom, before);
+                  pos += before.length;
+                }
+                removeRange(tokenList, removeFrom, removeCount);
+                var wrapped = new Token(token, inside ? _.tokenize(matchStr, inside) : matchStr, alias, matchStr);
+                currentNode = addAfter(tokenList, removeFrom, wrapped);
+                if (after) {
+                  addAfter(tokenList, currentNode, after);
+                }
+                if (removeCount > 1) {
+                  var nestedRematch = {
+                    cause: token + "," + j,
+                    reach
+                  };
+                  matchGrammar(text, tokenList, grammar, currentNode.prev, pos, nestedRematch);
+                  if (rematch && nestedRematch.reach > rematch.reach) {
+                    rematch.reach = nestedRematch.reach;
+                  }
+                }
+              }
+            }
+          }
+        }
+        function LinkedList() {
+          var head = { value: null, prev: null, next: null };
+          var tail = { value: null, prev: head, next: null };
+          head.next = tail;
+          this.head = head;
+          this.tail = tail;
+          this.length = 0;
+        }
+        function addAfter(list, node, value) {
+          var next = node.next;
+          var newNode = { value, prev: node, next };
+          node.next = newNode;
+          next.prev = newNode;
+          list.length++;
+          return newNode;
+        }
+        function removeRange(list, node, count) {
+          var next = node.next;
+          for (var i = 0; i < count && next !== list.tail; i++) {
+            next = next.next;
+          }
+          node.next = next;
+          next.prev = node;
+          list.length -= i;
+        }
+        function toArray(list) {
+          var array = [];
+          var node = list.head.next;
+          while (node !== list.tail) {
+            array.push(node.value);
+            node = node.next;
+          }
+          return array;
+        }
+        if (!_self2.document) {
+          if (!_self2.addEventListener) {
+            return _;
+          }
+          if (!_.disableWorkerMessageHandler) {
+            _self2.addEventListener("message", function(evt) {
+              var message = JSON.parse(evt.data);
+              var lang2 = message.language;
+              var code = message.code;
+              var immediateClose = message.immediateClose;
+              _self2.postMessage(_.highlight(code, _.languages[lang2], lang2));
+              if (immediateClose) {
+                _self2.close();
+              }
+            }, false);
+          }
+          return _;
+        }
+        var script = _.util.currentScript();
+        if (script) {
+          _.filename = script.src;
+          if (script.hasAttribute("data-manual")) {
+            _.manual = true;
+          }
+        }
+        function highlightAutomaticallyCallback() {
+          if (!_.manual) {
+            _.highlightAll();
+          }
+        }
+        if (!_.manual) {
+          var readyState = document.readyState;
+          if (readyState === "loading" || readyState === "interactive" && script && script.defer) {
+            document.addEventListener("DOMContentLoaded", highlightAutomaticallyCallback);
+          } else {
+            if (window.requestAnimationFrame) {
+              window.requestAnimationFrame(highlightAutomaticallyCallback);
+            } else {
+              window.setTimeout(highlightAutomaticallyCallback, 16);
+            }
+          }
+        }
+        return _;
+      }(_self);
+      if (typeof module !== "undefined" && module.exports) {
+        module.exports = Prism2;
+      }
+      if (typeof global !== "undefined") {
+        global.Prism = Prism2;
+      }
+      Prism2.languages.markup = {
+        "comment": {
+          pattern: /<!--(?:(?!<!--)[\s\S])*?-->/,
+          greedy: true
+        },
+        "prolog": {
+          pattern: /<\?[\s\S]+?\?>/,
+          greedy: true
+        },
+        "doctype": {
+          // https://www.w3.org/TR/xml/#NT-doctypedecl
+          pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,
+          greedy: true,
+          inside: {
+            "internal-subset": {
+              pattern: /(^[^\[]*\[)[\s\S]+(?=\]>$)/,
+              lookbehind: true,
+              greedy: true,
+              inside: null
+              // see below
+            },
+            "string": {
+              pattern: /"[^"]*"|'[^']*'/,
+              greedy: true
+            },
+            "punctuation": /^<!|>$|[[\]]/,
+            "doctype-tag": /^DOCTYPE/i,
+            "name": /[^\s<>'"]+/
+          }
+        },
+        "cdata": {
+          pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
+          greedy: true
+        },
+        "tag": {
+          pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,
+          greedy: true,
+          inside: {
+            "tag": {
+              pattern: /^<\/?[^\s>\/]+/,
+              inside: {
+                "punctuation": /^<\/?/,
+                "namespace": /^[^\s>\/:]+:/
+              }
+            },
+            "special-attr": [],
+            "attr-value": {
+              pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
+              inside: {
+                "punctuation": [
+                  {
+                    pattern: /^=/,
+                    alias: "attr-equals"
+                  },
+                  {
+                    pattern: /^(\s*)["']|["']$/,
+                    lookbehind: true
+                  }
+                ]
+              }
+            },
+            "punctuation": /\/?>/,
+            "attr-name": {
+              pattern: /[^\s>\/]+/,
+              inside: {
+                "namespace": /^[^\s>\/:]+:/
+              }
+            }
+          }
+        },
+        "entity": [
+          {
+            pattern: /&[\da-z]{1,8};/i,
+            alias: "named-entity"
+          },
+          /&#x?[\da-f]{1,8};/i
+        ]
+      };
+      Prism2.languages.markup["tag"].inside["attr-value"].inside["entity"] = Prism2.languages.markup["entity"];
+      Prism2.languages.markup["doctype"].inside["internal-subset"].inside = Prism2.languages.markup;
+      Prism2.hooks.add("wrap", function(env) {
+        if (env.type === "entity") {
+          env.attributes["title"] = env.content.replace(/&amp;/, "&");
+        }
+      });
+      Object.defineProperty(Prism2.languages.markup.tag, "addInlined", {
+        /**
+         * Adds an inlined language to markup.
+         *
+         * An example of an inlined language is CSS with `<style>` tags.
+         *
+         * @param {string} tagName The name of the tag that contains the inlined language. This name will be treated as
+         * case insensitive.
+         * @param {string} lang The language key.
+         * @example
+         * addInlined('style', 'css');
+         */
+        value: function addInlined(tagName, lang) {
+          var includedCdataInside = {};
+          includedCdataInside["language-" + lang] = {
+            pattern: /(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,
+            lookbehind: true,
+            inside: Prism2.languages[lang]
+          };
+          includedCdataInside["cdata"] = /^<!\[CDATA\[|\]\]>$/i;
+          var inside = {
+            "included-cdata": {
+              pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
+              inside: includedCdataInside
+            }
+          };
+          inside["language-" + lang] = {
+            pattern: /[\s\S]+/,
+            inside: Prism2.languages[lang]
+          };
+          var def = {};
+          def[tagName] = {
+            pattern: RegExp(/(<__[^>]*>)(?:<!\[CDATA\[(?:[^\]]|\](?!\]>))*\]\]>|(?!<!\[CDATA\[)[\s\S])*?(?=<\/__>)/.source.replace(/__/g, function() {
+              return tagName;
+            }), "i"),
+            lookbehind: true,
+            greedy: true,
+            inside
+          };
+          Prism2.languages.insertBefore("markup", "cdata", def);
+        }
+      });
+      Object.defineProperty(Prism2.languages.markup.tag, "addAttribute", {
+        /**
+         * Adds an pattern to highlight languages embedded in HTML attributes.
+         *
+         * An example of an inlined language is CSS with `style` attributes.
+         *
+         * @param {string} attrName The name of the tag that contains the inlined language. This name will be treated as
+         * case insensitive.
+         * @param {string} lang The language key.
+         * @example
+         * addAttribute('style', 'css');
+         */
+        value: function(attrName, lang) {
+          Prism2.languages.markup.tag.inside["special-attr"].push({
+            pattern: RegExp(
+              /(^|["'\s])/.source + "(?:" + attrName + ")" + /\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))/.source,
+              "i"
+            ),
+            lookbehind: true,
+            inside: {
+              "attr-name": /^[^\s=]+/,
+              "attr-value": {
+                pattern: /=[\s\S]+/,
+                inside: {
+                  "value": {
+                    pattern: /(^=\s*(["']|(?!["'])))\S[\s\S]*(?=\2$)/,
+                    lookbehind: true,
+                    alias: [lang, "language-" + lang],
+                    inside: Prism2.languages[lang]
+                  },
+                  "punctuation": [
+                    {
+                      pattern: /^=/,
+                      alias: "attr-equals"
+                    },
+                    /"|'/
+                  ]
+                }
+              }
             }
           });
         }
-      }();
+      });
+      Prism2.languages.html = Prism2.languages.markup;
+      Prism2.languages.mathml = Prism2.languages.markup;
+      Prism2.languages.svg = Prism2.languages.markup;
+      Prism2.languages.xml = Prism2.languages.extend("markup", {});
+      Prism2.languages.ssml = Prism2.languages.xml;
+      Prism2.languages.atom = Prism2.languages.xml;
+      Prism2.languages.rss = Prism2.languages.xml;
+      (function(Prism3) {
+        var string = /(?:"(?:\\(?:\r\n|[\s\S])|[^"\\\r\n])*"|'(?:\\(?:\r\n|[\s\S])|[^'\\\r\n])*')/;
+        Prism3.languages.css = {
+          "comment": /\/\*[\s\S]*?\*\//,
+          "atrule": {
+            pattern: RegExp("@[\\w-](?:" + /[^;{\s"']|\s+(?!\s)/.source + "|" + string.source + ")*?" + /(?:;|(?=\s*\{))/.source),
+            inside: {
+              "rule": /^@[\w-]+/,
+              "selector-function-argument": {
+                pattern: /(\bselector\s*\(\s*(?![\s)]))(?:[^()\s]|\s+(?![\s)])|\((?:[^()]|\([^()]*\))*\))+(?=\s*\))/,
+                lookbehind: true,
+                alias: "selector"
+              },
+              "keyword": {
+                pattern: /(^|[^\w-])(?:and|not|only|or)(?![\w-])/,
+                lookbehind: true
+              }
+              // See rest below
+            }
+          },
+          "url": {
+            // https://drafts.csswg.org/css-values-3/#urls
+            pattern: RegExp("\\burl\\((?:" + string.source + "|" + /(?:[^\\\r\n()"']|\\[\s\S])*/.source + ")\\)", "i"),
+            greedy: true,
+            inside: {
+              "function": /^url/i,
+              "punctuation": /^\(|\)$/,
+              "string": {
+                pattern: RegExp("^" + string.source + "$"),
+                alias: "url"
+              }
+            }
+          },
+          "selector": {
+            pattern: RegExp(`(^|[{}\\s])[^{}\\s](?:[^{};"'\\s]|\\s+(?![\\s{])|` + string.source + ")*(?=\\s*\\{)"),
+            lookbehind: true
+          },
+          "string": {
+            pattern: string,
+            greedy: true
+          },
+          "property": {
+            pattern: /(^|[^-\w\xA0-\uFFFF])(?!\s)[-_a-z\xA0-\uFFFF](?:(?!\s)[-\w\xA0-\uFFFF])*(?=\s*:)/i,
+            lookbehind: true
+          },
+          "important": /!important\b/i,
+          "function": {
+            pattern: /(^|[^-a-z0-9])[-a-z0-9]+(?=\()/i,
+            lookbehind: true
+          },
+          "punctuation": /[(){};:,]/
+        };
+        Prism3.languages.css["atrule"].inside.rest = Prism3.languages.css;
+        var markup = Prism3.languages.markup;
+        if (markup) {
+          markup.tag.addInlined("style", "css");
+          markup.tag.addAttribute("style", "css");
+        }
+      })(Prism2);
+      Prism2.languages.clike = {
+        "comment": [
+          {
+            pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,
+            lookbehind: true,
+            greedy: true
+          },
+          {
+            pattern: /(^|[^\\:])\/\/.*/,
+            lookbehind: true,
+            greedy: true
+          }
+        ],
+        "string": {
+          pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+          greedy: true
+        },
+        "class-name": {
+          pattern: /(\b(?:class|extends|implements|instanceof|interface|new|trait)\s+|\bcatch\s+\()[\w.\\]+/i,
+          lookbehind: true,
+          inside: {
+            "punctuation": /[.\\]/
+          }
+        },
+        "keyword": /\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while)\b/,
+        "boolean": /\b(?:false|true)\b/,
+        "function": /\b\w+(?=\()/,
+        "number": /\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,
+        "operator": /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
+        "punctuation": /[{}[\];(),.:]/
+      };
+      Prism2.languages.javascript = Prism2.languages.extend("clike", {
+        "class-name": [
+          Prism2.languages.clike["class-name"],
+          {
+            pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$A-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\.(?:constructor|prototype))/,
+            lookbehind: true
+          }
+        ],
+        "keyword": [
+          {
+            pattern: /((?:^|\})\s*)catch\b/,
+            lookbehind: true
+          },
+          {
+            pattern: /(^|[^.]|\.\.\.\s*)\b(?:as|assert(?=\s*\{)|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally(?=\s*(?:\{|$))|for|from(?=\s*(?:['"]|$))|function|(?:get|set)(?=\s*(?:[#\[$\w\xA0-\uFFFF]|$))|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,
+            lookbehind: true
+          }
+        ],
+        // Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
+        "function": /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/,
+        "number": {
+          pattern: RegExp(
+            /(^|[^\w$])/.source + "(?:" + // constant
+            (/NaN|Infinity/.source + "|" + // binary integer
+            /0[bB][01]+(?:_[01]+)*n?/.source + "|" + // octal integer
+            /0[oO][0-7]+(?:_[0-7]+)*n?/.source + "|" + // hexadecimal integer
+            /0[xX][\dA-Fa-f]+(?:_[\dA-Fa-f]+)*n?/.source + "|" + // decimal bigint
+            /\d+(?:_\d+)*n/.source + "|" + // decimal number (integer or float) but no bigint
+            /(?:\d+(?:_\d+)*(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:[Ee][+-]?\d+(?:_\d+)*)?/.source) + ")" + /(?![\w$])/.source
+          ),
+          lookbehind: true
+        },
+        "operator": /--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/
+      });
+      Prism2.languages.javascript["class-name"][0].pattern = /(\b(?:class|extends|implements|instanceof|interface|new)\s+)[\w.\\]+/;
+      Prism2.languages.insertBefore("javascript", "keyword", {
+        "regex": {
+          pattern: RegExp(
+            // lookbehind
+            // eslint-disable-next-line regexp/no-dupe-characters-character-class
+            /((?:^|[^$\w\xA0-\uFFFF."'\])\s]|\b(?:return|yield))\s*)/.source + // Regex pattern:
+            // There are 2 regex patterns here. The RegExp set notation proposal added support for nested character
+            // classes if the `v` flag is present. Unfortunately, nested CCs are both context-free and incompatible
+            // with the only syntax, so we have to define 2 different regex patterns.
+            /\//.source + "(?:" + /(?:\[(?:[^\]\\\r\n]|\\.)*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}/.source + "|" + // `v` flag syntax. This supports 3 levels of nested character classes.
+            /(?:\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.)*\])*\])*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}v[dgimyus]{0,7}/.source + ")" + // lookahead
+            /(?=(?:\s|\/\*(?:[^*]|\*(?!\/))*\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/.source
+          ),
+          lookbehind: true,
+          greedy: true,
+          inside: {
+            "regex-source": {
+              pattern: /^(\/)[\s\S]+(?=\/[a-z]*$)/,
+              lookbehind: true,
+              alias: "language-regex",
+              inside: Prism2.languages.regex
+            },
+            "regex-delimiter": /^\/|\/$/,
+            "regex-flags": /^[a-z]+$/
+          }
+        },
+        // This must be declared before keyword because we use "function" inside the look-forward
+        "function-variable": {
+          pattern: /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)\s*=>))/,
+          alias: "function"
+        },
+        "parameter": [
+          {
+            pattern: /(function(?:\s+(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)?\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\))/,
+            lookbehind: true,
+            inside: Prism2.languages.javascript
+          },
+          {
+            pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$a-z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*=>)/i,
+            lookbehind: true,
+            inside: Prism2.languages.javascript
+          },
+          {
+            pattern: /(\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*=>)/,
+            lookbehind: true,
+            inside: Prism2.languages.javascript
+          },
+          {
+            pattern: /((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*\{)/,
+            lookbehind: true,
+            inside: Prism2.languages.javascript
+          }
+        ],
+        "constant": /\b[A-Z](?:[A-Z_]|\dx?)*\b/
+      });
+      Prism2.languages.insertBefore("javascript", "string", {
+        "hashbang": {
+          pattern: /^#!.*/,
+          greedy: true,
+          alias: "comment"
+        },
+        "template-string": {
+          pattern: /`(?:\\[\s\S]|\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}|(?!\$\{)[^\\`])*`/,
+          greedy: true,
+          inside: {
+            "template-punctuation": {
+              pattern: /^`|`$/,
+              alias: "string"
+            },
+            "interpolation": {
+              pattern: /((?:^|[^\\])(?:\\{2})*)\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}/,
+              lookbehind: true,
+              inside: {
+                "interpolation-punctuation": {
+                  pattern: /^\$\{|\}$/,
+                  alias: "punctuation"
+                },
+                rest: Prism2.languages.javascript
+              }
+            },
+            "string": /[\s\S]+/
+          }
+        },
+        "string-property": {
+          pattern: /((?:^|[,{])[ \t]*)(["'])(?:\\(?:\r\n|[\s\S])|(?!\2)[^\\\r\n])*\2(?=\s*:)/m,
+          lookbehind: true,
+          greedy: true,
+          alias: "property"
+        }
+      });
+      Prism2.languages.insertBefore("javascript", "operator", {
+        "literal-property": {
+          pattern: /((?:^|[,{])[ \t]*)(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*:)/m,
+          lookbehind: true,
+          alias: "property"
+        }
+      });
+      if (Prism2.languages.markup) {
+        Prism2.languages.markup.tag.addInlined("script", "javascript");
+        Prism2.languages.markup.tag.addAttribute(
+          /on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)/.source,
+          "javascript"
+        );
+      }
+      Prism2.languages.js = Prism2.languages.javascript;
+      (function(Prism3) {
+        var envVars = "\\b(?:BASH|BASHOPTS|BASH_ALIASES|BASH_ARGC|BASH_ARGV|BASH_CMDS|BASH_COMPLETION_COMPAT_DIR|BASH_LINENO|BASH_REMATCH|BASH_SOURCE|BASH_VERSINFO|BASH_VERSION|COLORTERM|COLUMNS|COMP_WORDBREAKS|DBUS_SESSION_BUS_ADDRESS|DEFAULTS_PATH|DESKTOP_SESSION|DIRSTACK|DISPLAY|EUID|GDMSESSION|GDM_LANG|GNOME_KEYRING_CONTROL|GNOME_KEYRING_PID|GPG_AGENT_INFO|GROUPS|HISTCONTROL|HISTFILE|HISTFILESIZE|HISTSIZE|HOME|HOSTNAME|HOSTTYPE|IFS|INSTANCE|JOB|LANG|LANGUAGE|LC_ADDRESS|LC_ALL|LC_IDENTIFICATION|LC_MEASUREMENT|LC_MONETARY|LC_NAME|LC_NUMERIC|LC_PAPER|LC_TELEPHONE|LC_TIME|LESSCLOSE|LESSOPEN|LINES|LOGNAME|LS_COLORS|MACHTYPE|MAILCHECK|MANDATORY_PATH|NO_AT_BRIDGE|OLDPWD|OPTERR|OPTIND|ORBIT_SOCKETDIR|OSTYPE|PAPERSIZE|PATH|PIPESTATUS|PPID|PS1|PS2|PS3|PS4|PWD|RANDOM|REPLY|SECONDS|SELINUX_INIT|SESSION|SESSIONTYPE|SESSION_MANAGER|SHELL|SHELLOPTS|SHLVL|SSH_AUTH_SOCK|TERM|UID|UPSTART_EVENTS|UPSTART_INSTANCE|UPSTART_JOB|UPSTART_SESSION|USER|WINDOWID|XAUTHORITY|XDG_CONFIG_DIRS|XDG_CURRENT_DESKTOP|XDG_DATA_DIRS|XDG_GREETER_DATA_DIR|XDG_MENU_PREFIX|XDG_RUNTIME_DIR|XDG_SEAT|XDG_SEAT_PATH|XDG_SESSION_DESKTOP|XDG_SESSION_ID|XDG_SESSION_PATH|XDG_SESSION_TYPE|XDG_VTNR|XMODIFIERS)\\b";
+        var commandAfterHeredoc = {
+          pattern: /(^(["']?)\w+\2)[ \t]+\S.*/,
+          lookbehind: true,
+          alias: "punctuation",
+          // this looks reasonably well in all themes
+          inside: null
+          // see below
+        };
+        var insideString = {
+          "bash": commandAfterHeredoc,
+          "environment": {
+            pattern: RegExp("\\$" + envVars),
+            alias: "constant"
+          },
+          "variable": [
+            // [0]: Arithmetic Environment
+            {
+              pattern: /\$?\(\([\s\S]+?\)\)/,
+              greedy: true,
+              inside: {
+                // If there is a $ sign at the beginning highlight $(( and )) as variable
+                "variable": [
+                  {
+                    pattern: /(^\$\(\([\s\S]+)\)\)/,
+                    lookbehind: true
+                  },
+                  /^\$\(\(/
+                ],
+                "number": /\b0x[\dA-Fa-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:[Ee]-?\d+)?/,
+                // Operators according to https://www.gnu.org/software/bash/manual/bashref.html#Shell-Arithmetic
+                "operator": /--|\+\+|\*\*=?|<<=?|>>=?|&&|\|\||[=!+\-*/%<>^&|]=?|[?~:]/,
+                // If there is no $ sign at the beginning highlight (( and )) as punctuation
+                "punctuation": /\(\(?|\)\)?|,|;/
+              }
+            },
+            // [1]: Command Substitution
+            {
+              pattern: /\$\((?:\([^)]+\)|[^()])+\)|`[^`]+`/,
+              greedy: true,
+              inside: {
+                "variable": /^\$\(|^`|\)$|`$/
+              }
+            },
+            // [2]: Brace expansion
+            {
+              pattern: /\$\{[^}]+\}/,
+              greedy: true,
+              inside: {
+                "operator": /:[-=?+]?|[!\/]|##?|%%?|\^\^?|,,?/,
+                "punctuation": /[\[\]]/,
+                "environment": {
+                  pattern: RegExp("(\\{)" + envVars),
+                  lookbehind: true,
+                  alias: "constant"
+                }
+              }
+            },
+            /\$(?:\w+|[#?*!@$])/
+          ],
+          // Escape sequences from echo and printf's manuals, and escaped quotes.
+          "entity": /\\(?:[abceEfnrtv\\"]|O?[0-7]{1,3}|U[0-9a-fA-F]{8}|u[0-9a-fA-F]{4}|x[0-9a-fA-F]{1,2})/
+        };
+        Prism3.languages.bash = {
+          "shebang": {
+            pattern: /^#!\s*\/.*/,
+            alias: "important"
+          },
+          "comment": {
+            pattern: /(^|[^"{\\$])#.*/,
+            lookbehind: true
+          },
+          "function-name": [
+            // a) function foo {
+            // b) foo() {
+            // c) function foo() {
+            // but not “foo {”
+            {
+              // a) and c)
+              pattern: /(\bfunction\s+)[\w-]+(?=(?:\s*\(?:\s*\))?\s*\{)/,
+              lookbehind: true,
+              alias: "function"
+            },
+            {
+              // b)
+              pattern: /\b[\w-]+(?=\s*\(\s*\)\s*\{)/,
+              alias: "function"
+            }
+          ],
+          // Highlight variable names as variables in for and select beginnings.
+          "for-or-select": {
+            pattern: /(\b(?:for|select)\s+)\w+(?=\s+in\s)/,
+            alias: "variable",
+            lookbehind: true
+          },
+          // Highlight variable names as variables in the left-hand part
+          // of assignments (“=” and “+=”).
+          "assign-left": {
+            pattern: /(^|[\s;|&]|[<>]\()\w+(?:\.\w+)*(?=\+?=)/,
+            inside: {
+              "environment": {
+                pattern: RegExp("(^|[\\s;|&]|[<>]\\()" + envVars),
+                lookbehind: true,
+                alias: "constant"
+              }
+            },
+            alias: "variable",
+            lookbehind: true
+          },
+          // Highlight parameter names as variables
+          "parameter": {
+            pattern: /(^|\s)-{1,2}(?:\w+:[+-]?)?\w+(?:\.\w+)*(?=[=\s]|$)/,
+            alias: "variable",
+            lookbehind: true
+          },
+          "string": [
+            // Support for Here-documents https://en.wikipedia.org/wiki/Here_document
+            {
+              pattern: /((?:^|[^<])<<-?\s*)(\w+)\s[\s\S]*?(?:\r?\n|\r)\2/,
+              lookbehind: true,
+              greedy: true,
+              inside: insideString
+            },
+            // Here-document with quotes around the tag
+            // → No expansion (so no “inside”).
+            {
+              pattern: /((?:^|[^<])<<-?\s*)(["'])(\w+)\2\s[\s\S]*?(?:\r?\n|\r)\3/,
+              lookbehind: true,
+              greedy: true,
+              inside: {
+                "bash": commandAfterHeredoc
+              }
+            },
+            // “Normal” string
+            {
+              // https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html
+              pattern: /(^|[^\\](?:\\\\)*)"(?:\\[\s\S]|\$\([^)]+\)|\$(?!\()|`[^`]+`|[^"\\`$])*"/,
+              lookbehind: true,
+              greedy: true,
+              inside: insideString
+            },
+            {
+              // https://www.gnu.org/software/bash/manual/html_node/Single-Quotes.html
+              pattern: /(^|[^$\\])'[^']*'/,
+              lookbehind: true,
+              greedy: true
+            },
+            {
+              // https://www.gnu.org/software/bash/manual/html_node/ANSI_002dC-Quoting.html
+              pattern: /\$'(?:[^'\\]|\\[\s\S])*'/,
+              greedy: true,
+              inside: {
+                "entity": insideString.entity
+              }
+            }
+          ],
+          "environment": {
+            pattern: RegExp("\\$?" + envVars),
+            alias: "constant"
+          },
+          "variable": insideString.variable,
+          "function": {
+            pattern: /(^|[\s;|&]|[<>]\()(?:add|apropos|apt|apt-cache|apt-get|aptitude|aspell|automysqlbackup|awk|basename|bash|bc|bconsole|bg|bzip2|cal|cargo|cat|cfdisk|chgrp|chkconfig|chmod|chown|chroot|cksum|clear|cmp|column|comm|composer|cp|cron|crontab|csplit|curl|cut|date|dc|dd|ddrescue|debootstrap|df|diff|diff3|dig|dir|dircolors|dirname|dirs|dmesg|docker|docker-compose|du|egrep|eject|env|ethtool|expand|expect|expr|fdformat|fdisk|fg|fgrep|file|find|fmt|fold|format|free|fsck|ftp|fuser|gawk|git|gparted|grep|groupadd|groupdel|groupmod|groups|grub-mkconfig|gzip|halt|head|hg|history|host|hostname|htop|iconv|id|ifconfig|ifdown|ifup|import|install|ip|java|jobs|join|kill|killall|less|link|ln|locate|logname|logrotate|look|lpc|lpr|lprint|lprintd|lprintq|lprm|ls|lsof|lynx|make|man|mc|mdadm|mkconfig|mkdir|mke2fs|mkfifo|mkfs|mkisofs|mknod|mkswap|mmv|more|most|mount|mtools|mtr|mutt|mv|nano|nc|netstat|nice|nl|node|nohup|notify-send|npm|nslookup|op|open|parted|passwd|paste|pathchk|ping|pkill|pnpm|podman|podman-compose|popd|pr|printcap|printenv|ps|pushd|pv|quota|quotacheck|quotactl|ram|rar|rcp|reboot|remsync|rename|renice|rev|rm|rmdir|rpm|rsync|scp|screen|sdiff|sed|sendmail|seq|service|sftp|sh|shellcheck|shuf|shutdown|sleep|slocate|sort|split|ssh|stat|strace|su|sudo|sum|suspend|swapon|sync|sysctl|tac|tail|tar|tee|time|timeout|top|touch|tr|traceroute|tsort|tty|umount|uname|unexpand|uniq|units|unrar|unshar|unzip|update-grub|uptime|useradd|userdel|usermod|users|uudecode|uuencode|v|vcpkg|vdir|vi|vim|virsh|vmstat|wait|watch|wc|wget|whereis|which|who|whoami|write|xargs|xdg-open|yarn|yes|zenity|zip|zsh|zypper)(?=$|[)\s;|&])/,
+            lookbehind: true
+          },
+          "keyword": {
+            pattern: /(^|[\s;|&]|[<>]\()(?:case|do|done|elif|else|esac|fi|for|function|if|in|select|then|until|while)(?=$|[)\s;|&])/,
+            lookbehind: true
+          },
+          // https://www.gnu.org/software/bash/manual/html_node/Shell-Builtin-Commands.html
+          "builtin": {
+            pattern: /(^|[\s;|&]|[<>]\()(?:\.|:|alias|bind|break|builtin|caller|cd|command|continue|declare|echo|enable|eval|exec|exit|export|getopts|hash|help|let|local|logout|mapfile|printf|pwd|read|readarray|readonly|return|set|shift|shopt|source|test|times|trap|type|typeset|ulimit|umask|unalias|unset)(?=$|[)\s;|&])/,
+            lookbehind: true,
+            // Alias added to make those easier to distinguish from strings.
+            alias: "class-name"
+          },
+          "boolean": {
+            pattern: /(^|[\s;|&]|[<>]\()(?:false|true)(?=$|[)\s;|&])/,
+            lookbehind: true
+          },
+          "file-descriptor": {
+            pattern: /\B&\d\b/,
+            alias: "important"
+          },
+          "operator": {
+            // Lots of redirections here, but not just that.
+            pattern: /\d?<>|>\||\+=|=[=~]?|!=?|<<[<-]?|[&\d]?>>|\d[<>]&?|[<>][&=]?|&[>&]?|\|[&|]?/,
+            inside: {
+              "file-descriptor": {
+                pattern: /^\d/,
+                alias: "important"
+              }
+            }
+          },
+          "punctuation": /\$?\(\(?|\)\)?|\.\.|[{}[\];\\]/,
+          "number": {
+            pattern: /(^|\s)(?:[1-9]\d*|0)(?:[.,]\d+)?\b/,
+            lookbehind: true
+          }
+        };
+        commandAfterHeredoc.inside = Prism3.languages.bash;
+        var toBeCopied = [
+          "comment",
+          "function-name",
+          "for-or-select",
+          "assign-left",
+          "parameter",
+          "string",
+          "environment",
+          "function",
+          "keyword",
+          "builtin",
+          "boolean",
+          "file-descriptor",
+          "operator",
+          "punctuation",
+          "number"
+        ];
+        var inside = insideString.variable[1].inside;
+        for (var i = 0; i < toBeCopied.length; i++) {
+          inside[toBeCopied[i]] = Prism3.languages.bash[toBeCopied[i]];
+        }
+        Prism3.languages.sh = Prism3.languages.bash;
+        Prism3.languages.shell = Prism3.languages.bash;
+      })(Prism2);
+      (function(Prism3) {
+        function replace(pattern, replacements) {
+          return pattern.replace(/<<(\d+)>>/g, function(m, index) {
+            return "(?:" + replacements[+index] + ")";
+          });
+        }
+        function re(pattern, replacements, flags) {
+          return RegExp(replace(pattern, replacements), flags || "");
+        }
+        function nested(pattern, depthLog2) {
+          for (var i = 0; i < depthLog2; i++) {
+            pattern = pattern.replace(/<<self>>/g, function() {
+              return "(?:" + pattern + ")";
+            });
+          }
+          return pattern.replace(/<<self>>/g, "[^\\s\\S]");
+        }
+        var keywordKinds = {
+          // keywords which represent a return or variable type
+          type: "bool byte char decimal double dynamic float int long object sbyte short string uint ulong ushort var void",
+          // keywords which are used to declare a type
+          typeDeclaration: "class enum interface record struct",
+          // contextual keywords
+          // ("var" and "dynamic" are missing because they are used like types)
+          contextual: "add alias and ascending async await by descending from(?=\\s*(?:\\w|$)) get global group into init(?=\\s*;) join let nameof not notnull on or orderby partial remove select set unmanaged value when where with(?=\\s*{)",
+          // all other keywords
+          other: "abstract as base break case catch checked const continue default delegate do else event explicit extern finally fixed for foreach goto if implicit in internal is lock namespace new null operator out override params private protected public readonly ref return sealed sizeof stackalloc static switch this throw try typeof unchecked unsafe using virtual volatile while yield"
+        };
+        function keywordsToPattern(words) {
+          return "\\b(?:" + words.trim().replace(/ /g, "|") + ")\\b";
+        }
+        var typeDeclarationKeywords = keywordsToPattern(keywordKinds.typeDeclaration);
+        var keywords = RegExp(keywordsToPattern(keywordKinds.type + " " + keywordKinds.typeDeclaration + " " + keywordKinds.contextual + " " + keywordKinds.other));
+        var nonTypeKeywords = keywordsToPattern(keywordKinds.typeDeclaration + " " + keywordKinds.contextual + " " + keywordKinds.other);
+        var nonContextualKeywords = keywordsToPattern(keywordKinds.type + " " + keywordKinds.typeDeclaration + " " + keywordKinds.other);
+        var generic = nested(/<(?:[^<>;=+\-*/%&|^]|<<self>>)*>/.source, 2);
+        var nestedRound = nested(/\((?:[^()]|<<self>>)*\)/.source, 2);
+        var name = /@?\b[A-Za-z_]\w*\b/.source;
+        var genericName = replace(/<<0>>(?:\s*<<1>>)?/.source, [name, generic]);
+        var identifier = replace(/(?!<<0>>)<<1>>(?:\s*\.\s*<<1>>)*/.source, [nonTypeKeywords, genericName]);
+        var array = /\[\s*(?:,\s*)*\]/.source;
+        var typeExpressionWithoutTuple = replace(/<<0>>(?:\s*(?:\?\s*)?<<1>>)*(?:\s*\?)?/.source, [identifier, array]);
+        var tupleElement = replace(/[^,()<>[\];=+\-*/%&|^]|<<0>>|<<1>>|<<2>>/.source, [generic, nestedRound, array]);
+        var tuple = replace(/\(<<0>>+(?:,<<0>>+)+\)/.source, [tupleElement]);
+        var typeExpression = replace(/(?:<<0>>|<<1>>)(?:\s*(?:\?\s*)?<<2>>)*(?:\s*\?)?/.source, [tuple, identifier, array]);
+        var typeInside = {
+          "keyword": keywords,
+          "punctuation": /[<>()?,.:[\]]/
+        };
+        var character = /'(?:[^\r\n'\\]|\\.|\\[Uux][\da-fA-F]{1,8})'/.source;
+        var regularString = /"(?:\\.|[^\\"\r\n])*"/.source;
+        var verbatimString = /@"(?:""|\\[\s\S]|[^\\"])*"(?!")/.source;
+        Prism3.languages.csharp = Prism3.languages.extend("clike", {
+          "string": [
+            {
+              pattern: re(/(^|[^$\\])<<0>>/.source, [verbatimString]),
+              lookbehind: true,
+              greedy: true
+            },
+            {
+              pattern: re(/(^|[^@$\\])<<0>>/.source, [regularString]),
+              lookbehind: true,
+              greedy: true
+            }
+          ],
+          "class-name": [
+            {
+              // Using static
+              // using static System.Math;
+              pattern: re(/(\busing\s+static\s+)<<0>>(?=\s*;)/.source, [identifier]),
+              lookbehind: true,
+              inside: typeInside
+            },
+            {
+              // Using alias (type)
+              // using Project = PC.MyCompany.Project;
+              pattern: re(/(\busing\s+<<0>>\s*=\s*)<<1>>(?=\s*;)/.source, [name, typeExpression]),
+              lookbehind: true,
+              inside: typeInside
+            },
+            {
+              // Using alias (alias)
+              // using Project = PC.MyCompany.Project;
+              pattern: re(/(\busing\s+)<<0>>(?=\s*=)/.source, [name]),
+              lookbehind: true
+            },
+            {
+              // Type declarations
+              // class Foo<A, B>
+              // interface Foo<out A, B>
+              pattern: re(/(\b<<0>>\s+)<<1>>/.source, [typeDeclarationKeywords, genericName]),
+              lookbehind: true,
+              inside: typeInside
+            },
+            {
+              // Single catch exception declaration
+              // catch(Foo)
+              // (things like catch(Foo e) is covered by variable declaration)
+              pattern: re(/(\bcatch\s*\(\s*)<<0>>/.source, [identifier]),
+              lookbehind: true,
+              inside: typeInside
+            },
+            {
+              // Name of the type parameter of generic constraints
+              // where Foo : class
+              pattern: re(/(\bwhere\s+)<<0>>/.source, [name]),
+              lookbehind: true
+            },
+            {
+              // Casts and checks via as and is.
+              // as Foo<A>, is Bar<B>
+              // (things like if(a is Foo b) is covered by variable declaration)
+              pattern: re(/(\b(?:is(?:\s+not)?|as)\s+)<<0>>/.source, [typeExpressionWithoutTuple]),
+              lookbehind: true,
+              inside: typeInside
+            },
+            {
+              // Variable, field and parameter declaration
+              // (Foo bar, Bar baz, Foo[,,] bay, Foo<Bar, FooBar<Bar>> bax)
+              pattern: re(/\b<<0>>(?=\s+(?!<<1>>|with\s*\{)<<2>>(?:\s*[=,;:{)\]]|\s+(?:in|when)\b))/.source, [typeExpression, nonContextualKeywords, name]),
+              inside: typeInside
+            }
+          ],
+          "keyword": keywords,
+          // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/lexical-structure#literals
+          "number": /(?:\b0(?:x[\da-f_]*[\da-f]|b[01_]*[01])|(?:\B\.\d+(?:_+\d+)*|\b\d+(?:_+\d+)*(?:\.\d+(?:_+\d+)*)?)(?:e[-+]?\d+(?:_+\d+)*)?)(?:[dflmu]|lu|ul)?\b/i,
+          "operator": />>=?|<<=?|[-=]>|([-+&|])\1|~|\?\?=?|[-+*/%&|^!=<>]=?/,
+          "punctuation": /\?\.?|::|[{}[\];(),.:]/
+        });
+        Prism3.languages.insertBefore("csharp", "number", {
+          "range": {
+            pattern: /\.\./,
+            alias: "operator"
+          }
+        });
+        Prism3.languages.insertBefore("csharp", "punctuation", {
+          "named-parameter": {
+            pattern: re(/([(,]\s*)<<0>>(?=\s*:)/.source, [name]),
+            lookbehind: true,
+            alias: "punctuation"
+          }
+        });
+        Prism3.languages.insertBefore("csharp", "class-name", {
+          "namespace": {
+            // namespace Foo.Bar {}
+            // using Foo.Bar;
+            pattern: re(/(\b(?:namespace|using)\s+)<<0>>(?:\s*\.\s*<<0>>)*(?=\s*[;{])/.source, [name]),
+            lookbehind: true,
+            inside: {
+              "punctuation": /\./
+            }
+          },
+          "type-expression": {
+            // default(Foo), typeof(Foo<Bar>), sizeof(int)
+            pattern: re(/(\b(?:default|sizeof|typeof)\s*\(\s*(?!\s))(?:[^()\s]|\s(?!\s)|<<0>>)*(?=\s*\))/.source, [nestedRound]),
+            lookbehind: true,
+            alias: "class-name",
+            inside: typeInside
+          },
+          "return-type": {
+            // Foo<Bar> ForBar(); Foo IFoo.Bar() => 0
+            // int this[int index] => 0; T IReadOnlyList<T>.this[int index] => this[index];
+            // int Foo => 0; int Foo { get; set } = 0;
+            pattern: re(/<<0>>(?=\s+(?:<<1>>\s*(?:=>|[({]|\.\s*this\s*\[)|this\s*\[))/.source, [typeExpression, identifier]),
+            inside: typeInside,
+            alias: "class-name"
+          },
+          "constructor-invocation": {
+            // new List<Foo<Bar[]>> { }
+            pattern: re(/(\bnew\s+)<<0>>(?=\s*[[({])/.source, [typeExpression]),
+            lookbehind: true,
+            inside: typeInside,
+            alias: "class-name"
+          },
+          /*'explicit-implementation': {
+          	// int IFoo<Foo>.Bar => 0; void IFoo<Foo<Foo>>.Foo<T>();
+          	pattern: replace(/\b<<0>>(?=\.<<1>>)/, className, methodOrPropertyDeclaration),
+          	inside: classNameInside,
+          	alias: 'class-name'
+          },*/
+          "generic-method": {
+            // foo<Bar>()
+            pattern: re(/<<0>>\s*<<1>>(?=\s*\()/.source, [name, generic]),
+            inside: {
+              "function": re(/^<<0>>/.source, [name]),
+              "generic": {
+                pattern: RegExp(generic),
+                alias: "class-name",
+                inside: typeInside
+              }
+            }
+          },
+          "type-list": {
+            // The list of types inherited or of generic constraints
+            // class Foo<F> : Bar, IList<FooBar>
+            // where F : Bar, IList<int>
+            pattern: re(
+              /\b((?:<<0>>\s+<<1>>|record\s+<<1>>\s*<<5>>|where\s+<<2>>)\s*:\s*)(?:<<3>>|<<4>>|<<1>>\s*<<5>>|<<6>>)(?:\s*,\s*(?:<<3>>|<<4>>|<<6>>))*(?=\s*(?:where|[{;]|=>|$))/.source,
+              [typeDeclarationKeywords, genericName, name, typeExpression, keywords.source, nestedRound, /\bnew\s*\(\s*\)/.source]
+            ),
+            lookbehind: true,
+            inside: {
+              "record-arguments": {
+                pattern: re(/(^(?!new\s*\()<<0>>\s*)<<1>>/.source, [genericName, nestedRound]),
+                lookbehind: true,
+                greedy: true,
+                inside: Prism3.languages.csharp
+              },
+              "keyword": keywords,
+              "class-name": {
+                pattern: RegExp(typeExpression),
+                greedy: true,
+                inside: typeInside
+              },
+              "punctuation": /[,()]/
+            }
+          },
+          "preprocessor": {
+            pattern: /(^[\t ]*)#.*/m,
+            lookbehind: true,
+            alias: "property",
+            inside: {
+              // highlight preprocessor directives as keywords
+              "directive": {
+                pattern: /(#)\b(?:define|elif|else|endif|endregion|error|if|line|nullable|pragma|region|undef|warning)\b/,
+                lookbehind: true,
+                alias: "keyword"
+              }
+            }
+          }
+        });
+        var regularStringOrCharacter = regularString + "|" + character;
+        var regularStringCharacterOrComment = replace(/\/(?![*/])|\/\/[^\r\n]*[\r\n]|\/\*(?:[^*]|\*(?!\/))*\*\/|<<0>>/.source, [regularStringOrCharacter]);
+        var roundExpression = nested(replace(/[^"'/()]|<<0>>|\(<<self>>*\)/.source, [regularStringCharacterOrComment]), 2);
+        var attrTarget = /\b(?:assembly|event|field|method|module|param|property|return|type)\b/.source;
+        var attr = replace(/<<0>>(?:\s*\(<<1>>*\))?/.source, [identifier, roundExpression]);
+        Prism3.languages.insertBefore("csharp", "class-name", {
+          "attribute": {
+            // Attributes
+            // [Foo], [Foo(1), Bar(2, Prop = "foo")], [return: Foo(1), Bar(2)], [assembly: Foo(Bar)]
+            pattern: re(/((?:^|[^\s\w>)?])\s*\[\s*)(?:<<0>>\s*:\s*)?<<1>>(?:\s*,\s*<<1>>)*(?=\s*\])/.source, [attrTarget, attr]),
+            lookbehind: true,
+            greedy: true,
+            inside: {
+              "target": {
+                pattern: re(/^<<0>>(?=\s*:)/.source, [attrTarget]),
+                alias: "keyword"
+              },
+              "attribute-arguments": {
+                pattern: re(/\(<<0>>*\)/.source, [roundExpression]),
+                inside: Prism3.languages.csharp
+              },
+              "class-name": {
+                pattern: RegExp(identifier),
+                inside: {
+                  "punctuation": /\./
+                }
+              },
+              "punctuation": /[:,]/
+            }
+          }
+        });
+        var formatString = /:[^}\r\n]+/.source;
+        var mInterpolationRound = nested(replace(/[^"'/()]|<<0>>|\(<<self>>*\)/.source, [regularStringCharacterOrComment]), 2);
+        var mInterpolation = replace(/\{(?!\{)(?:(?![}:])<<0>>)*<<1>>?\}/.source, [mInterpolationRound, formatString]);
+        var sInterpolationRound = nested(replace(/[^"'/()]|\/(?!\*)|\/\*(?:[^*]|\*(?!\/))*\*\/|<<0>>|\(<<self>>*\)/.source, [regularStringOrCharacter]), 2);
+        var sInterpolation = replace(/\{(?!\{)(?:(?![}:])<<0>>)*<<1>>?\}/.source, [sInterpolationRound, formatString]);
+        function createInterpolationInside(interpolation, interpolationRound) {
+          return {
+            "interpolation": {
+              pattern: re(/((?:^|[^{])(?:\{\{)*)<<0>>/.source, [interpolation]),
+              lookbehind: true,
+              inside: {
+                "format-string": {
+                  pattern: re(/(^\{(?:(?![}:])<<0>>)*)<<1>>(?=\}$)/.source, [interpolationRound, formatString]),
+                  lookbehind: true,
+                  inside: {
+                    "punctuation": /^:/
+                  }
+                },
+                "punctuation": /^\{|\}$/,
+                "expression": {
+                  pattern: /[\s\S]+/,
+                  alias: "language-csharp",
+                  inside: Prism3.languages.csharp
+                }
+              }
+            },
+            "string": /[\s\S]+/
+          };
+        }
+        Prism3.languages.insertBefore("csharp", "string", {
+          "interpolation-string": [
+            {
+              pattern: re(/(^|[^\\])(?:\$@|@\$)"(?:""|\\[\s\S]|\{\{|<<0>>|[^\\{"])*"/.source, [mInterpolation]),
+              lookbehind: true,
+              greedy: true,
+              inside: createInterpolationInside(mInterpolation, mInterpolationRound)
+            },
+            {
+              pattern: re(/(^|[^@\\])\$"(?:\\.|\{\{|<<0>>|[^\\"{])*"/.source, [sInterpolation]),
+              lookbehind: true,
+              greedy: true,
+              inside: createInterpolationInside(sInterpolation, sInterpolationRound)
+            }
+          ],
+          "char": {
+            pattern: RegExp(character),
+            greedy: true
+          }
+        });
+        Prism3.languages.dotnet = Prism3.languages.cs = Prism3.languages.csharp;
+      })(Prism2);
+      (function(Prism3) {
+        Prism3.languages.diff = {
+          "coord": [
+            // Match all kinds of coord lines (prefixed by "+++", "---" or "***").
+            /^(?:\*{3}|-{3}|\+{3}).*$/m,
+            // Match "@@ ... @@" coord lines in unified diff.
+            /^@@.*@@$/m,
+            // Match coord lines in normal diff (starts with a number).
+            /^\d.*$/m
+          ]
+          // deleted, inserted, unchanged, diff
+        };
+        var PREFIXES = {
+          "deleted-sign": "-",
+          "deleted-arrow": "<",
+          "inserted-sign": "+",
+          "inserted-arrow": ">",
+          "unchanged": " ",
+          "diff": "!"
+        };
+        Object.keys(PREFIXES).forEach(function(name) {
+          var prefix = PREFIXES[name];
+          var alias = [];
+          if (!/^\w+$/.test(name)) {
+            alias.push(/\w+/.exec(name)[0]);
+          }
+          if (name === "diff") {
+            alias.push("bold");
+          }
+          Prism3.languages.diff[name] = {
+            pattern: RegExp("^(?:[" + prefix + "].*(?:\r\n?|\n|(?![\\s\\S])))+", "m"),
+            alias,
+            inside: {
+              "line": {
+                pattern: /(.)(?=[\s\S]).*(?:\r\n?|\n)?/,
+                lookbehind: true
+              },
+              "prefix": {
+                pattern: /[\s\S]/,
+                alias: /\w+/.exec(name)[0]
+              }
+            }
+          };
+        });
+        Object.defineProperty(Prism3.languages.diff, "PREFIXES", {
+          value: PREFIXES
+        });
+      })(Prism2);
+      Prism2.languages.json = {
+        "property": {
+          pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?=\s*:)/,
+          lookbehind: true,
+          greedy: true
+        },
+        "string": {
+          pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?!\s*:)/,
+          lookbehind: true,
+          greedy: true
+        },
+        "comment": {
+          pattern: /\/\/.*|\/\*[\s\S]*?(?:\*\/|$)/,
+          greedy: true
+        },
+        "number": /-?\b\d+(?:\.\d+)?(?:e[+-]?\d+)?\b/i,
+        "punctuation": /[{}[\],]/,
+        "operator": /:/,
+        "boolean": /\b(?:false|true)\b/,
+        "null": {
+          pattern: /\bnull\b/,
+          alias: "keyword"
+        }
+      };
+      Prism2.languages.webmanifest = Prism2.languages.json;
+      (function(Prism3) {
+        var powershell = Prism3.languages.powershell = {
+          "sensitive-variable": {
+            pattern: /(\[\[.*?\]\])/i,
+            greedy: true
+          },
+          "comment": [
+            {
+              pattern: /(^|[^`])<#[\s\S]*?#>/,
+              lookbehind: true
+            },
+            {
+              pattern: /(^|[^`])#.*/,
+              lookbehind: true
+            }
+          ],
+          "string": [
+            {
+              pattern: /"(?:`[\s\S]|[^`"])*"/,
+              greedy: true,
+              inside: {
+                "function": {
+                  // Allow for one level of nesting
+                  pattern: /(^|[^`])\$\((?:\$\(.*?\)|(?!\$\()[^\r\n)])*\)/,
+                  lookbehind: true,
+                  // Populated at end of file
+                  inside: {}
+                },
+                "sensitive-variable": {
+                  pattern: /(\[\[.*?\]\])/i,
+                  greedy: true
+                }
+              }
+            },
+            {
+              pattern: /'(?:[^']|'')*'/,
+              greedy: true
+            }
+          ],
+          // Matches name spaces as well as casts, attribute decorators. Force starting with letter to avoid matching array indices
+          // Supports two levels of nested brackets (e.g. `[OutputType([System.Collections.Generic.List[int]])]`)
+          "namespace": /\[[a-z](?:\[(?:\[[^\]]*\]|[^\[\]])*\]|[^\[\]])*\]/i,
+          "boolean": /\$(?:false|true)\b/i,
+          "variable": /\$\w+\b/,
+          // Cmdlets and aliases. Aliases should come last, otherwise "write" gets preferred over "write-host" for example
+          // Get-Command | ?{ $_.ModuleName -match "Microsoft.PowerShell.(Util|Core|Management)" }
+          // Get-Alias | ?{ $_.ReferencedCommand.Module.Name -match "Microsoft.PowerShell.(Util|Core|Management)" }
+          "function": [
+            /\b(?:Add|Approve|Assert|Backup|Block|Checkpoint|Clear|Close|Compare|Complete|Compress|Confirm|Connect|Convert|ConvertFrom|ConvertTo|Copy|Debug|Deny|Disable|Disconnect|Dismount|Edit|Enable|Enter|Exit|Expand|Export|Find|ForEach|Format|Get|Grant|Group|Hide|Import|Initialize|Install|Invoke|Join|Limit|Lock|Measure|Merge|Move|New|Open|Optimize|Out|Ping|Pop|Protect|Publish|Push|Read|Receive|Redo|Register|Remove|Rename|Repair|Request|Reset|Resize|Resolve|Restart|Restore|Resume|Revoke|Save|Search|Select|Send|Set|Show|Skip|Sort|Split|Start|Step|Stop|Submit|Suspend|Switch|Sync|Tee|Test|Trace|Unblock|Undo|Uninstall|Unlock|Unprotect|Unpublish|Unregister|Update|Use|Wait|Watch|Where|Write)-[a-z]+\b/i,
+            /\b(?:ac|cat|chdir|clc|cli|clp|clv|compare|copy|cp|cpi|cpp|cvpa|dbp|del|diff|dir|ebp|echo|epal|epcsv|epsn|erase|fc|fl|ft|fw|gal|gbp|gc|gci|gcs|gdr|gi|gl|gm|gp|gps|group|gsv|gu|gv|gwmi|iex|ii|ipal|ipcsv|ipsn|irm|iwmi|iwr|kill|lp|ls|measure|mi|mount|move|mp|mv|nal|ndr|ni|nv|ogv|popd|ps|pushd|pwd|rbp|rd|rdr|ren|ri|rm|rmdir|rni|rnp|rp|rv|rvpa|rwmi|sal|saps|sasv|sbp|sc|select|set|shcm|si|sl|sleep|sls|sort|sp|spps|spsv|start|sv|swmi|tee|trcm|type|write)\b/i
+          ],
+          // per http://technet.microsoft.com/en-us/library/hh847744.aspx
+          "keyword": /\b(?:Begin|Break|Catch|Class|Continue|Data|Define|Do|DynamicParam|Else|ElseIf|End|Exit|Filter|Finally|For|ForEach|From|Function|If|InlineScript|Parallel|Param|Process|Return|Sequence|Switch|Throw|Trap|Try|Until|Using|Var|While|Workflow)\b/i,
+          "operator": {
+            pattern: /(^|\W)(?:!|-(?:b?(?:and|x?or)|as|(?:Not)?(?:Contains|In|Like|Match)|eq|ge|gt|is(?:Not)?|Join|le|lt|ne|not|Replace|sh[lr])\b|-[-=]?|\+[+=]?|[*\/%]=?)/i,
+            lookbehind: true
+          },
+          "punctuation": /[|{}[\];(),.]/
+        };
+        powershell.string[0].inside = {
+          "function": {
+            // Allow for one level of nesting
+            pattern: /(^|[^`])\$\((?:\$\([^\r\n()]*\)|(?!\$\()[^\r\n)])*\)/,
+            lookbehind: true,
+            inside: powershell
+          },
+          "boolean": powershell.boolean,
+          "variable": powershell.variable
+        };
+      })(Prism2);
+      (function(Prism3) {
+        Prism3.languages.puppet = {
+          "heredoc": [
+            // Matches the content of a quoted heredoc string (subject to interpolation)
+            {
+              pattern: /(@\("([^"\r\n\/):]+)"(?:\/[nrts$uL]*)?\).*(?:\r?\n|\r))(?:.*(?:\r?\n|\r(?!\n)))*?[ \t]*(?:\|[ \t]*)?(?:-[ \t]*)?\2/,
+              lookbehind: true,
+              alias: "string",
+              inside: {
+                // Matches the end tag
+                "punctuation": /(?=\S).*\S(?= *$)/
+                // See interpolation below
+              }
+            },
+            // Matches the content of an unquoted heredoc string (no interpolation)
+            {
+              pattern: /(@\(([^"\r\n\/):]+)(?:\/[nrts$uL]*)?\).*(?:\r?\n|\r))(?:.*(?:\r?\n|\r(?!\n)))*?[ \t]*(?:\|[ \t]*)?(?:-[ \t]*)?\2/,
+              lookbehind: true,
+              greedy: true,
+              alias: "string",
+              inside: {
+                // Matches the end tag
+                "punctuation": /(?=\S).*\S(?= *$)/
+              }
+            },
+            // Matches the start tag of heredoc strings
+            {
+              pattern: /@\("?(?:[^"\r\n\/):]+)"?(?:\/[nrts$uL]*)?\)/,
+              alias: "string",
+              inside: {
+                "punctuation": {
+                  pattern: /(\().+?(?=\))/,
+                  lookbehind: true
+                }
+              }
+            }
+          ],
+          "multiline-comment": {
+            pattern: /(^|[^\\])\/\*[\s\S]*?\*\//,
+            lookbehind: true,
+            greedy: true,
+            alias: "comment"
+          },
+          "regex": {
+            // Must be prefixed with the keyword "node" or a non-word char
+            pattern: /((?:\bnode\s+|[~=\(\[\{,]\s*|[=+]>\s*|^\s*))\/(?:[^\/\\]|\\[\s\S])+\/(?:[imx]+\b|\B)/,
+            lookbehind: true,
+            greedy: true,
+            inside: {
+              // Extended regexes must have the x flag. They can contain single-line comments.
+              "extended-regex": {
+                pattern: /^\/(?:[^\/\\]|\\[\s\S])+\/[im]*x[im]*$/,
+                inside: {
+                  "comment": /#.*/
+                }
+              }
+            }
+          },
+          "comment": {
+            pattern: /(^|[^\\])#.*/,
+            lookbehind: true,
+            greedy: true
+          },
+          "string": {
+            // Allow for one nested level of double quotes inside interpolation
+            pattern: /(["'])(?:\$\{(?:[^'"}]|(["'])(?:(?!\2)[^\\]|\\[\s\S])*\2)+\}|\$(?!\{)|(?!\1)[^\\$]|\\[\s\S])*\1/,
+            greedy: true,
+            inside: {
+              "double-quoted": {
+                pattern: /^"[\s\S]*"$/,
+                inside: {
+                  // See interpolation below
+                }
+              }
+            }
+          },
+          "variable": {
+            pattern: /\$(?:::)?\w+(?:::\w+)*/,
+            inside: {
+              "punctuation": /::/
+            }
+          },
+          "attr-name": /(?:\b\w+|\*)(?=\s*=>)/,
+          "function": [
+            {
+              pattern: /(\.)(?!\d)\w+/,
+              lookbehind: true
+            },
+            /\b(?:contain|debug|err|fail|include|info|notice|realize|require|tag|warning)\b|\b(?!\d)\w+(?=\()/
+          ],
+          "number": /\b(?:0x[a-f\d]+|\d+(?:\.\d+)?(?:e-?\d+)?)\b/i,
+          "boolean": /\b(?:false|true)\b/,
+          // Includes words reserved for future use
+          "keyword": /\b(?:application|attr|case|class|consumes|default|define|else|elsif|function|if|import|inherits|node|private|produces|type|undef|unless)\b/,
+          "datatype": {
+            pattern: /\b(?:Any|Array|Boolean|Callable|Catalogentry|Class|Collection|Data|Default|Enum|Float|Hash|Integer|NotUndef|Numeric|Optional|Pattern|Regexp|Resource|Runtime|Scalar|String|Struct|Tuple|Type|Undef|Variant)\b/,
+            alias: "symbol"
+          },
+          "operator": /=[=~>]?|![=~]?|<(?:<\|?|[=~|-])?|>[>=]?|->?|~>|\|>?>?|[*\/%+?]|\b(?:and|in|or)\b/,
+          "punctuation": /[\[\]{}().,;]|:+/
+        };
+        var interpolation = [
+          {
+            // Allow for one nested level of braces inside interpolation
+            pattern: /(^|[^\\])\$\{(?:[^'"{}]|\{[^}]*\}|(["'])(?:(?!\2)[^\\]|\\[\s\S])*\2)+\}/,
+            lookbehind: true,
+            inside: {
+              "short-variable": {
+                // Negative look-ahead prevent wrong highlighting of functions
+                pattern: /(^\$\{)(?!\w+\()(?:::)?\w+(?:::\w+)*/,
+                lookbehind: true,
+                alias: "variable",
+                inside: {
+                  "punctuation": /::/
+                }
+              },
+              "delimiter": {
+                pattern: /^\$/,
+                alias: "variable"
+              },
+              rest: Prism3.languages.puppet
+            }
+          },
+          {
+            pattern: /(^|[^\\])\$(?:::)?\w+(?:::\w+)*/,
+            lookbehind: true,
+            alias: "variable",
+            inside: {
+              "punctuation": /::/
+            }
+          }
+        ];
+        Prism3.languages.puppet["heredoc"][0].inside.interpolation = interpolation;
+        Prism3.languages.puppet["string"].inside["double-quoted"].inside.interpolation = interpolation;
+      })(Prism2);
+      Prism2.languages.python = {
+        "comment": {
+          pattern: /(^|[^\\])#.*/,
+          lookbehind: true,
+          greedy: true
+        },
+        "string-interpolation": {
+          pattern: /(?:f|fr|rf)(?:("""|''')[\s\S]*?\1|("|')(?:\\.|(?!\2)[^\\\r\n])*\2)/i,
+          greedy: true,
+          inside: {
+            "interpolation": {
+              // "{" <expression> <optional "!s", "!r", or "!a"> <optional ":" format specifier> "}"
+              pattern: /((?:^|[^{])(?:\{\{)*)\{(?!\{)(?:[^{}]|\{(?!\{)(?:[^{}]|\{(?!\{)(?:[^{}])+\})+\})+\}/,
+              lookbehind: true,
+              inside: {
+                "format-spec": {
+                  pattern: /(:)[^:(){}]+(?=\}$)/,
+                  lookbehind: true
+                },
+                "conversion-option": {
+                  pattern: /![sra](?=[:}]$)/,
+                  alias: "punctuation"
+                },
+                rest: null
+              }
+            },
+            "string": /[\s\S]+/
+          }
+        },
+        "triple-quoted-string": {
+          pattern: /(?:[rub]|br|rb)?("""|''')[\s\S]*?\1/i,
+          greedy: true,
+          alias: "string"
+        },
+        "string": {
+          pattern: /(?:[rub]|br|rb)?("|')(?:\\.|(?!\1)[^\\\r\n])*\1/i,
+          greedy: true
+        },
+        "function": {
+          pattern: /((?:^|\s)def[ \t]+)[a-zA-Z_]\w*(?=\s*\()/g,
+          lookbehind: true
+        },
+        "class-name": {
+          pattern: /(\bclass\s+)\w+/i,
+          lookbehind: true
+        },
+        "decorator": {
+          pattern: /(^[\t ]*)@\w+(?:\.\w+)*/m,
+          lookbehind: true,
+          alias: ["annotation", "punctuation"],
+          inside: {
+            "punctuation": /\./
+          }
+        },
+        "keyword": /\b(?:_(?=\s*:)|and|as|assert|async|await|break|case|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|match|nonlocal|not|or|pass|print|raise|return|try|while|with|yield)\b/,
+        "builtin": /\b(?:__import__|abs|all|any|apply|ascii|basestring|bin|bool|buffer|bytearray|bytes|callable|chr|classmethod|cmp|coerce|compile|complex|delattr|dict|dir|divmod|enumerate|eval|execfile|file|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|intern|isinstance|issubclass|iter|len|list|locals|long|map|max|memoryview|min|next|object|oct|open|ord|pow|property|range|raw_input|reduce|reload|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|unichr|unicode|vars|xrange|zip)\b/,
+        "boolean": /\b(?:False|None|True)\b/,
+        "number": /\b0(?:b(?:_?[01])+|o(?:_?[0-7])+|x(?:_?[a-f0-9])+)\b|(?:\b\d+(?:_\d+)*(?:\.(?:\d+(?:_\d+)*)?)?|\B\.\d+(?:_\d+)*)(?:e[+-]?\d+(?:_\d+)*)?j?(?!\w)/i,
+        "operator": /[-+%=]=?|!=|:=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]/,
+        "punctuation": /[{}[\];(),.:]/
+      };
+      Prism2.languages.python["string-interpolation"].inside["interpolation"].inside.rest = Prism2.languages.python;
+      Prism2.languages.py = Prism2.languages.python;
+      (function(Prism3) {
+        Prism3.languages.ruby = Prism3.languages.extend("clike", {
+          "comment": {
+            pattern: /#.*|^=begin\s[\s\S]*?^=end/m,
+            greedy: true
+          },
+          "class-name": {
+            pattern: /(\b(?:class|module)\s+|\bcatch\s+\()[\w.\\]+|\b[A-Z_]\w*(?=\s*\.\s*new\b)/,
+            lookbehind: true,
+            inside: {
+              "punctuation": /[.\\]/
+            }
+          },
+          "keyword": /\b(?:BEGIN|END|alias|and|begin|break|case|class|def|define_method|defined|do|each|else|elsif|end|ensure|extend|for|if|in|include|module|new|next|nil|not|or|prepend|private|protected|public|raise|redo|require|rescue|retry|return|self|super|then|throw|undef|unless|until|when|while|yield)\b/,
+          "operator": /\.{2,3}|&\.|===|<?=>|[!=]?~|(?:&&|\|\||<<|>>|\*\*|[+\-*/%<>!^&|=])=?|[?:]/,
+          "punctuation": /[(){}[\].,;]/
+        });
+        Prism3.languages.insertBefore("ruby", "operator", {
+          "double-colon": {
+            pattern: /::/,
+            alias: "punctuation"
+          }
+        });
+        var interpolation = {
+          pattern: /((?:^|[^\\])(?:\\{2})*)#\{(?:[^{}]|\{[^{}]*\})*\}/,
+          lookbehind: true,
+          inside: {
+            "content": {
+              pattern: /^(#\{)[\s\S]+(?=\}$)/,
+              lookbehind: true,
+              inside: Prism3.languages.ruby
+            },
+            "delimiter": {
+              pattern: /^#\{|\}$/,
+              alias: "punctuation"
+            }
+          }
+        };
+        delete Prism3.languages.ruby.function;
+        var percentExpression = "(?:" + [
+          /([^a-zA-Z0-9\s{(\[<=])(?:(?!\1)[^\\]|\\[\s\S])*\1/.source,
+          /\((?:[^()\\]|\\[\s\S]|\((?:[^()\\]|\\[\s\S])*\))*\)/.source,
+          /\{(?:[^{}\\]|\\[\s\S]|\{(?:[^{}\\]|\\[\s\S])*\})*\}/.source,
+          /\[(?:[^\[\]\\]|\\[\s\S]|\[(?:[^\[\]\\]|\\[\s\S])*\])*\]/.source,
+          /<(?:[^<>\\]|\\[\s\S]|<(?:[^<>\\]|\\[\s\S])*>)*>/.source
+        ].join("|") + ")";
+        var symbolName = /(?:"(?:\\.|[^"\\\r\n])*"|(?:\b[a-zA-Z_]\w*|[^\s\0-\x7F]+)[?!]?|\$.)/.source;
+        Prism3.languages.insertBefore("ruby", "keyword", {
+          "regex-literal": [
+            {
+              pattern: RegExp(/%r/.source + percentExpression + /[egimnosux]{0,6}/.source),
+              greedy: true,
+              inside: {
+                "interpolation": interpolation,
+                "regex": /[\s\S]+/
+              }
+            },
+            {
+              pattern: /(^|[^/])\/(?!\/)(?:\[[^\r\n\]]+\]|\\.|[^[/\\\r\n])+\/[egimnosux]{0,6}(?=\s*(?:$|[\r\n,.;})#]))/,
+              lookbehind: true,
+              greedy: true,
+              inside: {
+                "interpolation": interpolation,
+                "regex": /[\s\S]+/
+              }
+            }
+          ],
+          "variable": /[@$]+[a-zA-Z_]\w*(?:[?!]|\b)/,
+          "symbol": [
+            {
+              pattern: RegExp(/(^|[^:]):/.source + symbolName),
+              lookbehind: true,
+              greedy: true
+            },
+            {
+              pattern: RegExp(/([\r\n{(,][ \t]*)/.source + symbolName + /(?=:(?!:))/.source),
+              lookbehind: true,
+              greedy: true
+            }
+          ],
+          "method-definition": {
+            pattern: /(\bdef\s+)\w+(?:\s*\.\s*\w+)?/,
+            lookbehind: true,
+            inside: {
+              "function": /\b\w+$/,
+              "keyword": /^self\b/,
+              "class-name": /^\w+/,
+              "punctuation": /\./
+            }
+          }
+        });
+        Prism3.languages.insertBefore("ruby", "string", {
+          "string-literal": [
+            {
+              pattern: RegExp(/%[qQiIwWs]?/.source + percentExpression),
+              greedy: true,
+              inside: {
+                "interpolation": interpolation,
+                "string": /[\s\S]+/
+              }
+            },
+            {
+              pattern: /("|')(?:#\{[^}]+\}|#(?!\{)|\\(?:\r\n|[\s\S])|(?!\1)[^\\#\r\n])*\1/,
+              greedy: true,
+              inside: {
+                "interpolation": interpolation,
+                "string": /[\s\S]+/
+              }
+            },
+            {
+              pattern: /<<[-~]?([a-z_]\w*)[\r\n](?:.*[\r\n])*?[\t ]*\1/i,
+              alias: "heredoc-string",
+              greedy: true,
+              inside: {
+                "delimiter": {
+                  pattern: /^<<[-~]?[a-z_]\w*|\b[a-z_]\w*$/i,
+                  inside: {
+                    "symbol": /\b\w+/,
+                    "punctuation": /^<<[-~]?/
+                  }
+                },
+                "interpolation": interpolation,
+                "string": /[\s\S]+/
+              }
+            },
+            {
+              pattern: /<<[-~]?'([a-z_]\w*)'[\r\n](?:.*[\r\n])*?[\t ]*\1/i,
+              alias: "heredoc-string",
+              greedy: true,
+              inside: {
+                "delimiter": {
+                  pattern: /^<<[-~]?'[a-z_]\w*'|\b[a-z_]\w*$/i,
+                  inside: {
+                    "symbol": /\b\w+/,
+                    "punctuation": /^<<[-~]?'|'$/
+                  }
+                },
+                "string": /[\s\S]+/
+              }
+            }
+          ],
+          "command-literal": [
+            {
+              pattern: RegExp(/%x/.source + percentExpression),
+              greedy: true,
+              inside: {
+                "interpolation": interpolation,
+                "command": {
+                  pattern: /[\s\S]+/,
+                  alias: "string"
+                }
+              }
+            },
+            {
+              pattern: /`(?:#\{[^}]+\}|#(?!\{)|\\(?:\r\n|[\s\S])|[^\\`#\r\n])*`/,
+              greedy: true,
+              inside: {
+                "interpolation": interpolation,
+                "command": {
+                  pattern: /[\s\S]+/,
+                  alias: "string"
+                }
+              }
+            }
+          ]
+        });
+        delete Prism3.languages.ruby.string;
+        Prism3.languages.insertBefore("ruby", "number", {
+          "builtin": /\b(?:Array|Bignum|Binding|Class|Continuation|Dir|Exception|FalseClass|File|Fixnum|Float|Hash|IO|Integer|MatchData|Method|Module|NilClass|Numeric|Object|Proc|Range|Regexp|Stat|String|Struct|Symbol|TMS|Thread|ThreadGroup|Time|TrueClass)\b/,
+          "constant": /\b[A-Z][A-Z0-9_]*(?:[?!]|\b)/
+        });
+        Prism3.languages.rb = Prism3.languages.ruby;
+      })(Prism2);
+      Prism2.languages.scss = Prism2.languages.extend("css", {
+        "comment": {
+          pattern: /(^|[^\\])(?:\/\*[\s\S]*?\*\/|\/\/.*)/,
+          lookbehind: true
+        },
+        "atrule": {
+          pattern: /@[\w-](?:\([^()]+\)|[^()\s]|\s+(?!\s))*?(?=\s+[{;])/,
+          inside: {
+            "rule": /@[\w-]+/
+            // See rest below
+          }
+        },
+        // url, compassified
+        "url": /(?:[-a-z]+-)?url(?=\()/i,
+        // CSS selector regex is not appropriate for Sass
+        // since there can be lot more things (var, @ directive, nesting..)
+        // a selector must start at the end of a property or after a brace (end of other rules or nesting)
+        // it can contain some characters that aren't used for defining rules or end of selector, & (parent selector), or interpolated variable
+        // the end of a selector is found when there is no rules in it ( {} or {\s}) or if there is a property (because an interpolated var
+        // can "pass" as a selector- e.g: proper#{$erty})
+        // this one was hard to do, so please be careful if you edit this one :)
+        "selector": {
+          // Initial look-ahead is used to prevent matching of blank selectors
+          pattern: /(?=\S)[^@;{}()]?(?:[^@;{}()\s]|\s+(?!\s)|#\{\$[-\w]+\})+(?=\s*\{(?:\}|\s|[^}][^:{}]*[:{][^}]))/,
+          inside: {
+            "parent": {
+              pattern: /&/,
+              alias: "important"
+            },
+            "placeholder": /%[-\w]+/,
+            "variable": /\$[-\w]+|#\{\$[-\w]+\}/
+          }
+        },
+        "property": {
+          pattern: /(?:[-\w]|\$[-\w]|#\{\$[-\w]+\})+(?=\s*:)/,
+          inside: {
+            "variable": /\$[-\w]+|#\{\$[-\w]+\}/
+          }
+        }
+      });
+      Prism2.languages.insertBefore("scss", "atrule", {
+        "keyword": [
+          /@(?:content|debug|each|else(?: if)?|extend|for|forward|function|if|import|include|mixin|return|use|warn|while)\b/i,
+          {
+            pattern: /( )(?:from|through)(?= )/,
+            lookbehind: true
+          }
+        ]
+      });
+      Prism2.languages.insertBefore("scss", "important", {
+        // var and interpolated vars
+        "variable": /\$[-\w]+|#\{\$[-\w]+\}/
+      });
+      Prism2.languages.insertBefore("scss", "function", {
+        "module-modifier": {
+          pattern: /\b(?:as|hide|show|with)\b/i,
+          alias: "keyword"
+        },
+        "placeholder": {
+          pattern: /%[-\w]+/,
+          alias: "selector"
+        },
+        "statement": {
+          pattern: /\B!(?:default|optional)\b/i,
+          alias: "keyword"
+        },
+        "boolean": /\b(?:false|true)\b/,
+        "null": {
+          pattern: /\bnull\b/,
+          alias: "keyword"
+        },
+        "operator": {
+          pattern: /(\s)(?:[-+*\/%]|[=!]=|<=?|>=?|and|not|or)(?=\s)/,
+          lookbehind: true
+        }
+      });
+      Prism2.languages.scss["atrule"].inside.rest = Prism2.languages.scss;
+      (function(Prism3) {
+        var strings = [
+          // normal string
+          /"(?:\\[\s\S]|\$\([^)]+\)|\$(?!\()|`[^`]+`|[^"\\`$])*"/.source,
+          /'[^']*'/.source,
+          /\$'(?:[^'\\]|\\[\s\S])*'/.source,
+          // here doc
+          // 2 capturing groups
+          /<<-?\s*(["']?)(\w+)\1\s[\s\S]*?[\r\n]\2/.source
+        ].join("|");
+        Prism3.languages["shell-session"] = {
+          "command": {
+            pattern: RegExp(
+              // user info
+              /^/.source + "(?:" + // <user> ":" ( <path> )?
+              (/[^\s@:$#%*!/\\]+@[^\r\n@:$#%*!/\\]+(?::[^\0-\x1F$#%*?"<>:;|]+)?/.source + "|" + // <path>
+              // Since the path pattern is quite general, we will require it to start with a special character to
+              // prevent false positives.
+              /[/~.][^\0-\x1F$#%*?"<>@:;|]*/.source) + ")?" + // shell symbol
+              /[$#%](?=\s)/.source + // bash command
+              /(?:[^\\\r\n \t'"<$]|[ \t](?:(?!#)|#.*$)|\\(?:[^\r]|\r\n?)|\$(?!')|<(?!<)|<<str>>)+/.source.replace(/<<str>>/g, function() {
+                return strings;
+              }),
+              "m"
+            ),
+            greedy: true,
+            inside: {
+              "info": {
+                // foo@bar:~/files$ exit
+                // foo@bar$ exit
+                // ~/files$ exit
+                pattern: /^[^#$%]+/,
+                alias: "punctuation",
+                inside: {
+                  "user": /^[^\s@:$#%*!/\\]+@[^\r\n@:$#%*!/\\]+/,
+                  "punctuation": /:/,
+                  "path": /[\s\S]+/
+                }
+              },
+              "bash": {
+                pattern: /(^[$#%]\s*)\S[\s\S]*/,
+                lookbehind: true,
+                alias: "language-bash",
+                inside: Prism3.languages.bash
+              },
+              "shell-symbol": {
+                pattern: /^[$#%]/,
+                alias: "important"
+              }
+            }
+          },
+          "output": /.(?:.*(?:[\r\n]|.$))*/
+        };
+        Prism3.languages["sh-session"] = Prism3.languages["shellsession"] = Prism3.languages["shell-session"];
+      })(Prism2);
+      (function(Prism3) {
+        function insertDocComment(lang, docComment) {
+          if (Prism3.languages[lang]) {
+            Prism3.languages.insertBefore(lang, "comment", {
+              "doc-comment": docComment
+            });
+          }
+        }
+        var tag = Prism3.languages.markup.tag;
+        var slashDocComment = {
+          pattern: /\/\/\/.*/,
+          greedy: true,
+          alias: "comment",
+          inside: {
+            "tag": tag
+          }
+        };
+        var tickDocComment = {
+          pattern: /'''.*/,
+          greedy: true,
+          alias: "comment",
+          inside: {
+            "tag": tag
+          }
+        };
+        insertDocComment("csharp", slashDocComment);
+        insertDocComment("fsharp", slashDocComment);
+        insertDocComment("vbnet", tickDocComment);
+      })(Prism2);
+      (function(Prism3) {
+        var anchorOrAlias = /[*&][^\s[\]{},]+/;
+        var tag = /!(?:<[\w\-%#;/?:@&=+$,.!~*'()[\]]+>|(?:[a-zA-Z\d-]*!)?[\w\-%#;/?:@&=+$.~*'()]+)?/;
+        var properties = "(?:" + tag.source + "(?:[ 	]+" + anchorOrAlias.source + ")?|" + anchorOrAlias.source + "(?:[ 	]+" + tag.source + ")?)";
+        var plainKey = /(?:[^\s\x00-\x08\x0e-\x1f!"#%&'*,\-:>?@[\]`{|}\x7f-\x84\x86-\x9f\ud800-\udfff\ufffe\uffff]|[?:-]<PLAIN>)(?:[ \t]*(?:(?![#:])<PLAIN>|:<PLAIN>))*/.source.replace(/<PLAIN>/g, function() {
+          return /[^\s\x00-\x08\x0e-\x1f,[\]{}\x7f-\x84\x86-\x9f\ud800-\udfff\ufffe\uffff]/.source;
+        });
+        var string = /"(?:[^"\\\r\n]|\\.)*"|'(?:[^'\\\r\n]|\\.)*'/.source;
+        function createValuePattern(value, flags) {
+          flags = (flags || "").replace(/m/g, "") + "m";
+          var pattern = /([:\-,[{]\s*(?:\s<<prop>>[ \t]+)?)(?:<<value>>)(?=[ \t]*(?:$|,|\]|\}|(?:[\r\n]\s*)?#))/.source.replace(/<<prop>>/g, function() {
+            return properties;
+          }).replace(/<<value>>/g, function() {
+            return value;
+          });
+          return RegExp(pattern, flags);
+        }
+        Prism3.languages.yaml = {
+          "scalar": {
+            pattern: RegExp(/([\-:]\s*(?:\s<<prop>>[ \t]+)?[|>])[ \t]*(?:((?:\r?\n|\r)[ \t]+)\S[^\r\n]*(?:\2[^\r\n]+)*)/.source.replace(/<<prop>>/g, function() {
+              return properties;
+            })),
+            lookbehind: true,
+            alias: "string"
+          },
+          "comment": /#.*/,
+          "key": {
+            pattern: RegExp(/((?:^|[:\-,[{\r\n?])[ \t]*(?:<<prop>>[ \t]+)?)<<key>>(?=\s*:\s)/.source.replace(/<<prop>>/g, function() {
+              return properties;
+            }).replace(/<<key>>/g, function() {
+              return "(?:" + plainKey + "|" + string + ")";
+            })),
+            lookbehind: true,
+            greedy: true,
+            alias: "atrule"
+          },
+          "directive": {
+            pattern: /(^[ \t]*)%.+/m,
+            lookbehind: true,
+            alias: "important"
+          },
+          "datetime": {
+            pattern: createValuePattern(/\d{4}-\d\d?-\d\d?(?:[tT]|[ \t]+)\d\d?:\d{2}:\d{2}(?:\.\d*)?(?:[ \t]*(?:Z|[-+]\d\d?(?::\d{2})?))?|\d{4}-\d{2}-\d{2}|\d\d?:\d{2}(?::\d{2}(?:\.\d*)?)?/.source),
+            lookbehind: true,
+            alias: "number"
+          },
+          "boolean": {
+            pattern: createValuePattern(/false|true/.source, "i"),
+            lookbehind: true,
+            alias: "important"
+          },
+          "null": {
+            pattern: createValuePattern(/null|~/.source, "i"),
+            lookbehind: true,
+            alias: "important"
+          },
+          "string": {
+            pattern: createValuePattern(string),
+            lookbehind: true,
+            greedy: true
+          },
+          "number": {
+            pattern: createValuePattern(/[+-]?(?:0x[\da-f]+|0o[0-7]+|(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?|\.inf|\.nan)/.source, "i"),
+            lookbehind: true
+          },
+          "tag": tag,
+          "important": anchorOrAlias,
+          "punctuation": /---|[:[\]{}\-,|>?]|\.\.\./
+        };
+        Prism3.languages.yml = Prism3.languages.yaml;
+      })(Prism2);
+      (function(Prism3) {
+        var guid = {
+          // https://en.wikipedia.org/wiki/Universally_unique_identifier#Format
+          pattern: /[0-9a-fA-F]{8}[-]?([0-9a-fA-F]{4}[-]?){3}[0-9a-fA-F]{12}/i,
+          alias: "constant"
+        };
+        Prism3.languages["log-file"] = {
+          "sensitive-variable": {
+            pattern: /(\[\[.*?\]\])/i,
+            greedy: true
+          },
+          "verbose": [
+            {
+              pattern: /\b(Trace)\b:/i,
+              greedy: true
+            },
+            {
+              pattern: /\[(verbose|verb|vrb|vb|v)\]/i,
+              greedy: true
+            }
+          ],
+          "debug": [
+            {
+              pattern: /\b(DEBUG|Debug)\b|\b(debug)\:/i,
+              greedy: true
+            },
+            {
+              pattern: /\[(debug|dbug|dbg|de|d)\]/i,
+              greedy: true
+            }
+          ],
+          "info": [
+            {
+              pattern: /\b(HINT|INFO|INFORMATION|Info|NOTICE|II)\b | \b(^[^\.\.]+$)\b | \b(info|information)\:/,
+              greedy: true
+            },
+            {
+              pattern: /\[(information|info|inf|in|i)\]/i,
+              greedy: true
+            }
+          ],
+          "warning": [
+            {
+              pattern: /\b(WARNING|WARN|Warn|WW)\b|\b(warning)\:/i,
+              greedy: true
+            },
+            {
+              pattern: /\[(warning|warn|wrn|wn|w)\]/i,
+              greedy: true
+            }
+          ],
+          "error": [
+            {
+              pattern: /\b(ALERT|CRITICAL|EMERGENCY|ERROR|FAILURE|FAIL|Fatal|FATAL|Error|EE)\b|\b(error)\:/i,
+              greedy: true
+            },
+            {
+              pattern: /\[(error|eror|err|er|e|fatal|fatl|ftl|fa|f)\]/i,
+              greedy: true
+            }
+          ],
+          "date": [
+            {
+              pattern: /\b\d{4}-\d{2}-\d{2}(T|\b)/i,
+              greedy: true
+            },
+            {
+              pattern: /\b\d{2}[^\w\s]\d{2}[^\w\s]\d{4}\b/i,
+              greedy: true
+            },
+            {
+              pattern: /\d{1,2}:\d{2}(:\d{2}([.,]\d{1,})?)?(Z| ?[+-]\d{1,2}:\d{2})?\b/i,
+              greedy: true
+            }
+          ],
+          // Add Git Commit Hash possibly
+          "guid": guid,
+          "text-string": [
+            {
+              pattern: /[a-zA-Z]'[a-zA-Z]/i,
+              greedy: true
+            },
+            {
+              pattern: /[a-zA-Z]\('[a-zA-Z]/i,
+              greedy: true
+            }
+          ],
+          "string": [
+            {
+              pattern: /"[^"]*"/i,
+              greedy: true,
+              inside: {
+                "sensitive-variable": {
+                  pattern: /(\[\[.*?\]\])/i,
+                  greedy: true
+                }
+              }
+            },
+            {
+              pattern: /'[^']*'/i,
+              greedy: true
+            }
+          ],
+          "exceptiontype": {
+            pattern: /\b([a-zA-Z.]*Exception)\b/i,
+            greedy: true
+          },
+          // Add Exception Call Stacks possibly
+          "text-constant": {
+            pattern: /(\\[\w-]+.\w+)/i,
+            greedy: true
+          },
+          "constant": [
+            {
+              pattern: /\b([0-9]+|true|false|null)\b/i,
+              // bools and numbers
+              greedy: true
+            },
+            {
+              pattern: /\b(http|https|ftp|file):\/\S+\b\/?/i,
+              greedy: true
+            },
+            {
+              pattern: /([\w-]+\.)+([\w-])+(?![\w/\\])/i,
+              // Match character and . sequences (such as namespaces) as well as file names and extensions (e.g. bar.txt)
+              greedy: true
+            }
+          ]
+        };
+        Prism3.languages["log"] = Prism3.languages["log-file"];
+      })(Prism2);
+      (function() {
+        if (typeof Prism2 === "undefined" || typeof document === "undefined") {
+          return;
+        }
+        var PLUGIN_NAME = "line-numbers";
+        var NEW_LINE_EXP = /\n(?!$)/g;
+        var config = Prism2.plugins.lineNumbers = {
+          /**
+           * Get node for provided line number
+           *
+           * @param {Element} element pre element
+           * @param {number} number line number
+           * @returns {Element|undefined}
+           */
+          getLine: function(element, number) {
+            if (element.tagName !== "PRE" || !element.classList.contains(PLUGIN_NAME)) {
+              return;
+            }
+            var lineNumberRows = element.querySelector(".line-numbers-rows");
+            if (!lineNumberRows) {
+              return;
+            }
+            var lineNumberStart = parseInt(element.getAttribute("data-start"), 10) || 1;
+            var lineNumberEnd = lineNumberStart + (lineNumberRows.children.length - 1);
+            if (number < lineNumberStart) {
+              number = lineNumberStart;
+            }
+            if (number > lineNumberEnd) {
+              number = lineNumberEnd;
+            }
+            var lineIndex = number - lineNumberStart;
+            return lineNumberRows.children[lineIndex];
+          },
+          /**
+           * Resizes the line numbers of the given element.
+           *
+           * This function will not add line numbers. It will only resize existing ones.
+           *
+           * @param {HTMLElement} element A `<pre>` element with line numbers.
+           * @returns {void}
+           */
+          resize: function(element) {
+            resizeElements([element]);
+          },
+          /**
+           * Whether the plugin can assume that the units font sizes and margins are not depended on the size of
+           * the current viewport.
+           *
+           * Setting this to `true` will allow the plugin to do certain optimizations for better performance.
+           *
+           * Set this to `false` if you use any of the following CSS units: `vh`, `vw`, `vmin`, `vmax`.
+           *
+           * @type {boolean}
+           */
+          assumeViewportIndependence: true
+        };
+        function resizeElements(elements) {
+          elements = elements.filter(function(e) {
+            var codeStyles = getStyles(e);
+            var whiteSpace = codeStyles["white-space"];
+            return whiteSpace === "pre-wrap" || whiteSpace === "pre-line";
+          });
+          if (elements.length == 0) {
+            return;
+          }
+          var infos = elements.map(function(element) {
+            var codeElement = element.querySelector("code");
+            var lineNumbersWrapper = element.querySelector(".line-numbers-rows");
+            if (!codeElement || !lineNumbersWrapper) {
+              return void 0;
+            }
+            var lineNumberSizer = element.querySelector(".line-numbers-sizer");
+            var codeLines = codeElement.textContent.split(NEW_LINE_EXP);
+            if (!lineNumberSizer) {
+              lineNumberSizer = document.createElement("span");
+              lineNumberSizer.className = "line-numbers-sizer";
+              codeElement.appendChild(lineNumberSizer);
+            }
+            lineNumberSizer.innerHTML = "0";
+            lineNumberSizer.style.display = "block";
+            var oneLinerHeight = lineNumberSizer.getBoundingClientRect().height;
+            lineNumberSizer.innerHTML = "";
+            return {
+              element,
+              lines: codeLines,
+              lineHeights: [],
+              oneLinerHeight,
+              sizer: lineNumberSizer
+            };
+          }).filter(Boolean);
+          infos.forEach(function(info) {
+            var lineNumberSizer = info.sizer;
+            var lines = info.lines;
+            var lineHeights = info.lineHeights;
+            var oneLinerHeight = info.oneLinerHeight;
+            lineHeights[lines.length - 1] = void 0;
+            lines.forEach(function(line, index) {
+              if (line && line.length > 1) {
+                var e = lineNumberSizer.appendChild(document.createElement("span"));
+                e.style.display = "block";
+                e.textContent = line;
+              } else {
+                lineHeights[index] = oneLinerHeight;
+              }
+            });
+          });
+          infos.forEach(function(info) {
+            var lineNumberSizer = info.sizer;
+            var lineHeights = info.lineHeights;
+            var childIndex = 0;
+            for (var i = 0; i < lineHeights.length; i++) {
+              if (lineHeights[i] === void 0) {
+                lineHeights[i] = lineNumberSizer.children[childIndex++].getBoundingClientRect().height;
+              }
+            }
+          });
+          infos.forEach(function(info) {
+            var lineNumberSizer = info.sizer;
+            var wrapper = info.element.querySelector(".line-numbers-rows");
+            lineNumberSizer.style.display = "none";
+            lineNumberSizer.innerHTML = "";
+            info.lineHeights.forEach(function(height, lineNumber) {
+              wrapper.children[lineNumber].style.height = height + "px";
+            });
+          });
+        }
+        function getStyles(element) {
+          if (!element) {
+            return null;
+          }
+          return window.getComputedStyle ? getComputedStyle(element) : element.currentStyle || null;
+        }
+        var lastWidth = void 0;
+        window.addEventListener("resize", function() {
+          if (config.assumeViewportIndependence && lastWidth === window.innerWidth) {
+            return;
+          }
+          lastWidth = window.innerWidth;
+          resizeElements(Array.prototype.slice.call(document.querySelectorAll("pre." + PLUGIN_NAME)));
+        });
+        Prism2.hooks.add("complete", function(env) {
+          if (!env.code) {
+            return;
+          }
+          var code = (
+            /** @type {Element} */
+            env.element
+          );
+          var pre = (
+            /** @type {HTMLElement} */
+            code.parentNode
+          );
+          if (!pre || !/pre/i.test(pre.nodeName)) {
+            return;
+          }
+          if (code.querySelector(".line-numbers-rows")) {
+            return;
+          }
+          if (!Prism2.util.isActive(code, PLUGIN_NAME)) {
+            return;
+          }
+          code.classList.remove(PLUGIN_NAME);
+          pre.classList.add(PLUGIN_NAME);
+          var match2 = env.code.match(NEW_LINE_EXP);
+          var linesNum = match2 ? match2.length + 1 : 1;
+          var lineNumbersWrapper;
+          var lines = new Array(linesNum + 1).join("<span></span>");
+          lineNumbersWrapper = document.createElement("span");
+          lineNumbersWrapper.setAttribute("aria-hidden", "true");
+          lineNumbersWrapper.className = "line-numbers-rows";
+          lineNumbersWrapper.innerHTML = lines;
+          if (pre.hasAttribute("data-start")) {
+            pre.style.counterReset = "linenumber " + (parseInt(pre.getAttribute("data-start"), 10) - 1);
+          }
+          env.element.appendChild(lineNumbersWrapper);
+          resizeElements([pre]);
+          Prism2.hooks.run("line-numbers", env);
+        });
+        Prism2.hooks.add("line-numbers", function(env) {
+          env.plugins = env.plugins || {};
+          env.plugins.lineNumbers = true;
+        });
+      })();
+      (function() {
+        if (typeof Prism2 === "undefined" || typeof document === "undefined") {
+          return;
+        }
+        var callbacks = [];
+        var map = {};
+        var noop = function() {
+        };
+        Prism2.plugins.toolbar = {};
+        var registerButton = Prism2.plugins.toolbar.registerButton = function(key, opts) {
+          var callback;
+          if (typeof opts === "function") {
+            callback = opts;
+          } else {
+            callback = function(env) {
+              var element;
+              if (typeof opts.onClick === "function") {
+                element = document.createElement("button");
+                element.type = "button";
+                element.addEventListener("click", function() {
+                  opts.onClick.call(this, env);
+                });
+              } else if (typeof opts.url === "string") {
+                element = document.createElement("a");
+                element.href = opts.url;
+              } else {
+                element = document.createElement("span");
+              }
+              if (opts.className) {
+                element.classList.add(opts.className);
+              }
+              element.textContent = opts.text;
+              return element;
+            };
+          }
+          if (key in map) {
+            console.warn('There is a button with the key "' + key + '" registered already.');
+            return;
+          }
+          callbacks.push(map[key] = callback);
+        };
+        function getOrder(element) {
+          while (element) {
+            var order = element.getAttribute("data-toolbar-order");
+            if (order != null) {
+              order = order.trim();
+              if (order.length) {
+                return order.split(/\s*,\s*/g);
+              } else {
+                return [];
+              }
+            }
+            element = element.parentElement;
+          }
+        }
+        var hook = Prism2.plugins.toolbar.hook = function(env) {
+          var pre = env.element.parentNode;
+          if (!pre || !/pre/i.test(pre.nodeName)) {
+            return;
+          }
+          if (pre.parentNode.classList.contains("code-toolbar")) {
+            return;
+          }
+          var wrapper = document.createElement("div");
+          wrapper.classList.add("code-toolbar");
+          pre.parentNode.insertBefore(wrapper, pre);
+          wrapper.appendChild(pre);
+          var toolbar = document.createElement("div");
+          toolbar.classList.add("toolbar");
+          var elementCallbacks = callbacks;
+          var order = getOrder(env.element);
+          if (order) {
+            elementCallbacks = order.map(function(key) {
+              return map[key] || noop;
+            });
+          }
+          elementCallbacks.forEach(function(callback) {
+            var element = callback(env);
+            if (!element) {
+              return;
+            }
+            var item = document.createElement("div");
+            item.classList.add("toolbar-item");
+            item.appendChild(element);
+            toolbar.appendChild(item);
+          });
+          wrapper.appendChild(toolbar);
+        };
+        registerButton("label", function(env) {
+          var pre = env.element.parentNode;
+          if (!pre || !/pre/i.test(pre.nodeName)) {
+            return;
+          }
+          if (!pre.hasAttribute("data-label")) {
+            return;
+          }
+          var element;
+          var template;
+          var text = pre.getAttribute("data-label");
+          try {
+            template = document.querySelector("template#" + text);
+          } catch (e) {
+          }
+          if (template) {
+            element = template.content;
+          } else {
+            if (pre.hasAttribute("data-url")) {
+              element = document.createElement("a");
+              element.href = pre.getAttribute("data-url");
+            } else {
+              element = document.createElement("span");
+            }
+            element.textContent = text;
+          }
+          return element;
+        });
+        Prism2.hooks.add("complete", hook);
+      })();
+      (function() {
+        if (typeof Prism2 === "undefined" || typeof document === "undefined") {
+          return;
+        }
+        if (!Prism2.plugins.toolbar) {
+          console.warn("Copy to Clipboard plugin loaded before Toolbar plugin.");
+          return;
+        }
+        function registerClipboard(element, copyInfo) {
+          element.addEventListener("click", function() {
+            copyTextToClipboard(copyInfo);
+          });
+        }
+        function fallbackCopyTextToClipboard(copyInfo) {
+          var textArea = document.createElement("textarea");
+          textArea.value = copyInfo.getText();
+          textArea.style.top = "0";
+          textArea.style.left = "0";
+          textArea.style.position = "fixed";
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          try {
+            var successful = document.execCommand("copy");
+            setTimeout(function() {
+              if (successful) {
+                copyInfo.success();
+              } else {
+                copyInfo.error();
+              }
+            }, 1);
+          } catch (err) {
+            setTimeout(function() {
+              copyInfo.error(err);
+            }, 1);
+          }
+          document.body.removeChild(textArea);
+        }
+        function copyTextToClipboard(copyInfo) {
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(copyInfo.getText()).then(copyInfo.success, function() {
+              fallbackCopyTextToClipboard(copyInfo);
+            });
+          } else {
+            fallbackCopyTextToClipboard(copyInfo);
+          }
+        }
+        function selectElementText(element) {
+          window.getSelection().selectAllChildren(element);
+        }
+        function getSettings(startElement) {
+          var settings = {
+            "copy": "Copy",
+            "copy-error": "Press Ctrl+C to copy",
+            "copy-success": "Copied!",
+            "copy-timeout": 5e3
+          };
+          var prefix = "data-prismjs-";
+          for (var key in settings) {
+            var attr = prefix + key;
+            var element = startElement;
+            while (element && !element.hasAttribute(attr)) {
+              element = element.parentElement;
+            }
+            if (element) {
+              settings[key] = element.getAttribute(attr);
+            }
+          }
+          return settings;
+        }
+        Prism2.plugins.toolbar.registerButton("copy-to-clipboard", function(env) {
+          var element = env.element;
+          var settings = getSettings(element);
+          var linkCopy = document.createElement("button");
+          linkCopy.className = "copy-to-clipboard-button";
+          linkCopy.setAttribute("type", "button");
+          var linkSpan = document.createElement("span");
+          linkCopy.appendChild(linkSpan);
+          setState("copy");
+          registerClipboard(linkCopy, {
+            getText: function() {
+              return element.textContent;
+            },
+            success: function() {
+              setState("copy-success");
+              resetText();
+            },
+            error: function() {
+              setState("copy-error");
+              setTimeout(function() {
+                selectElementText(element);
+              }, 1);
+              resetText();
+            }
+          });
+          return linkCopy;
+          function resetText() {
+            setTimeout(function() {
+              setState("copy");
+            }, settings["copy-timeout"]);
+          }
+          function setState(state) {
+            linkSpan.textContent = settings[state];
+            linkCopy.setAttribute("data-copy-state", state);
+          }
+        });
+      })();
+      (function() {
+        if (typeof Prism2 === "undefined") {
+          return;
+        }
+        var LANGUAGE_REGEX = /^diff-([\w-]+)/i;
+        var HTML_TAG = /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/g;
+        var HTML_LINE = RegExp(/(?:__|[^\r\n<])*(?:\r\n?|\n|(?:__|[^\r\n<])(?![^\r\n]))/.source.replace(/__/g, function() {
+          return HTML_TAG.source;
+        }), "gi");
+        var warningLogged = false;
+        Prism2.hooks.add("before-sanity-check", function(env) {
+          var lang = env.language;
+          if (LANGUAGE_REGEX.test(lang) && !env.grammar) {
+            env.grammar = Prism2.languages[lang] = Prism2.languages.diff;
+          }
+        });
+        Prism2.hooks.add("before-tokenize", function(env) {
+          if (!warningLogged && !Prism2.languages.diff && !Prism2.plugins.autoloader) {
+            warningLogged = true;
+            console.warn("Prism's Diff Highlight plugin requires the Diff language definition (prism-diff.js).Make sure the language definition is loaded or use Prism's Autoloader plugin.");
+          }
+          var lang = env.language;
+          if (LANGUAGE_REGEX.test(lang) && !Prism2.languages[lang]) {
+            Prism2.languages[lang] = Prism2.languages.diff;
+          }
+        });
+        Prism2.hooks.add("wrap", function(env) {
+          var diffLanguage;
+          var diffGrammar;
+          if (env.language !== "diff") {
+            var langMatch = LANGUAGE_REGEX.exec(env.language);
+            if (!langMatch) {
+              return;
+            }
+            diffLanguage = langMatch[1];
+            diffGrammar = Prism2.languages[diffLanguage];
+          }
+          var PREFIXES = Prism2.languages.diff && Prism2.languages.diff.PREFIXES;
+          if (PREFIXES && env.type in PREFIXES) {
+            var content = env.content.replace(HTML_TAG, "");
+            var decoded = content.replace(/&lt;/g, "<").replace(/&amp;/g, "&");
+            var code = decoded.replace(/(^|[\r\n])./g, "$1");
+            var highlighted;
+            if (diffGrammar) {
+              highlighted = Prism2.highlight(code, diffGrammar, diffLanguage);
+            } else {
+              highlighted = Prism2.util.encode(code);
+            }
+            var prefixToken = new Prism2.Token("prefix", PREFIXES[env.type], [/\w+/.exec(env.type)[0]]);
+            var prefix = Prism2.Token.stringify(prefixToken, env.language);
+            var lines = [];
+            var m;
+            HTML_LINE.lastIndex = 0;
+            while (m = HTML_LINE.exec(highlighted)) {
+              lines.push(prefix + m[0]);
+            }
+            if (/(?:^|[\r\n]).$/.test(decoded)) {
+              lines.push(prefix);
+            }
+            env.content = lines.join("");
+            if (diffGrammar) {
+              env.classes.push("language-" + diffLanguage);
+            }
+          }
+        });
+      })();
     }
   });
 
@@ -886,7 +3489,7 @@
           }
           doc.head.appendChild(script).parentNode.removeChild(script);
         }
-        function toType2(obj) {
+        function toType(obj) {
           if (obj == null) {
             return obj + "";
           }
@@ -1150,7 +3753,7 @@
           }
         );
         function isArrayLike(obj) {
-          var length = !!obj && "length" in obj && obj.length, type = toType2(obj);
+          var length = !!obj && "length" in obj && obj.length, type = toType(obj);
           if (isFunction(obj) || isWindow(obj)) {
             return false;
           }
@@ -1327,14 +3930,14 @@
             }
             return cache;
           }
-          function markFunction(fn2) {
-            fn2[expando] = true;
-            return fn2;
+          function markFunction(fn) {
+            fn[expando] = true;
+            return fn;
           }
-          function assert(fn2) {
+          function assert(fn) {
             var el = document3.createElement("fieldset");
             try {
-              return !!fn2(el);
+              return !!fn(el);
             } catch (e) {
               return false;
             } finally {
@@ -1375,11 +3978,11 @@
               return false;
             };
           }
-          function createPositionalPseudo(fn2) {
+          function createPositionalPseudo(fn) {
             return markFunction(function(argument) {
               argument = +argument;
               return markFunction(function(seed, matches2) {
-                var j, matchIndexes = fn2([], seed.length, argument), i2 = matchIndexes.length;
+                var j, matchIndexes = fn([], seed.length, argument), i2 = matchIndexes.length;
                 while (i2--) {
                   if (seed[j = matchIndexes[i2]]) {
                     seed[j] = !(matches2[j] = seed[j]);
@@ -1568,7 +4171,7 @@
             if ((elem.ownerDocument || elem) != document3) {
               setDocument(elem);
             }
-            var fn2 = Expr.attrHandle[name.toLowerCase()], val = fn2 && hasOwn.call(Expr.attrHandle, name.toLowerCase()) ? fn2(elem, name, !documentIsHTML) : void 0;
+            var fn = Expr.attrHandle[name.toLowerCase()], val = fn && hasOwn.call(Expr.attrHandle, name.toLowerCase()) ? fn(elem, name, !documentIsHTML) : void 0;
             if (val !== void 0) {
               return val;
             }
@@ -1708,7 +4311,7 @@
                     return !!elem.parentNode;
                   }
                 ) : function(elem, _context, xml) {
-                  var cache, outerCache, node, nodeIndex, start2, dir2 = simple2 !== forward ? "nextSibling" : "previousSibling", parent = elem.parentNode, name = ofType && elem.nodeName.toLowerCase(), useCache = !xml && !ofType, diff = false;
+                  var cache, outerCache, node, nodeIndex, start, dir2 = simple2 !== forward ? "nextSibling" : "previousSibling", parent = elem.parentNode, name = ofType && elem.nodeName.toLowerCase(), useCache = !xml && !ofType, diff = false;
                   if (parent) {
                     if (simple2) {
                       while (dir2) {
@@ -1718,11 +4321,11 @@
                             return false;
                           }
                         }
-                        start2 = dir2 = type === "only" && !start2 && "nextSibling";
+                        start = dir2 = type === "only" && !start && "nextSibling";
                       }
                       return true;
                     }
-                    start2 = [forward ? parent.firstChild : parent.lastChild];
+                    start = [forward ? parent.firstChild : parent.lastChild];
                     if (forward && useCache) {
                       outerCache = parent[expando] || (parent[expando] = {});
                       cache = outerCache[type] || [];
@@ -1730,7 +4333,7 @@
                       diff = nodeIndex && cache[2];
                       node = nodeIndex && parent.childNodes[nodeIndex];
                       while (node = ++nodeIndex && node && node[dir2] || // Fallback to seeking `elem` from the start
-                      (diff = nodeIndex = 0) || start2.pop()) {
+                      (diff = nodeIndex = 0) || start.pop()) {
                         if (node.nodeType === 1 && ++diff && node === elem) {
                           outerCache[type] = [dirruns, nodeIndex, diff];
                           break;
@@ -1744,7 +4347,7 @@
                         diff = nodeIndex;
                       }
                       if (diff === false) {
-                        while (node = ++nodeIndex && node && node[dir2] || (diff = nodeIndex = 0) || start2.pop()) {
+                        while (node = ++nodeIndex && node && node[dir2] || (diff = nodeIndex = 0) || start.pop()) {
                           if ((ofType ? nodeName(node, name) : node.nodeType === 1) && ++diff) {
                             if (useCache) {
                               outerCache = node[expando] || (node[expando] = {});
@@ -1763,23 +4366,23 @@
                 };
               },
               PSEUDO: function(pseudo, argument) {
-                var args, fn2 = Expr.pseudos[pseudo] || Expr.setFilters[pseudo.toLowerCase()] || find.error("unsupported pseudo: " + pseudo);
-                if (fn2[expando]) {
-                  return fn2(argument);
+                var args, fn = Expr.pseudos[pseudo] || Expr.setFilters[pseudo.toLowerCase()] || find.error("unsupported pseudo: " + pseudo);
+                if (fn[expando]) {
+                  return fn(argument);
                 }
-                if (fn2.length > 1) {
+                if (fn.length > 1) {
                   args = [pseudo, pseudo, "", argument];
                   return Expr.setFilters.hasOwnProperty(pseudo.toLowerCase()) ? markFunction(function(seed, matches2) {
-                    var idx, matched = fn2(seed, argument), i2 = matched.length;
+                    var idx, matched = fn(seed, argument), i2 = matched.length;
                     while (i2--) {
                       idx = indexOf.call(seed, matched[i2]);
                       seed[idx] = !(matches2[idx] = matched[i2]);
                     }
                   }) : function(elem) {
-                    return fn2(elem, 0, args);
+                    return fn(elem, 0, args);
                   };
                 }
-                return fn2;
+                return fn;
               }
             },
             pseudos: {
@@ -1836,8 +4439,8 @@
               }),
               // Miscellaneous
               target: function(elem) {
-                var hash3 = window2.location && window2.location.hash;
-                return hash3 && hash3.slice(1) === elem.id;
+                var hash = window2.location && window2.location.hash;
+                return hash && hash.slice(1) === elem.id;
               },
               root: function(elem) {
                 return elem === documentElement2;
@@ -2590,9 +5193,9 @@
             }
             return jQuery2.merge([], elem.childNodes);
           }
-        }, function(name, fn2) {
+        }, function(name, fn) {
           jQuery2.fn[name] = function(until, selector) {
-            var matched = jQuery2.map(this, fn2, until);
+            var matched = jQuery2.map(this, fn, until);
             if (name.slice(-5) !== "Until") {
               selector = until;
             }
@@ -2657,7 +5260,7 @@
                       if (!options.unique || !self2.has(arg)) {
                         list.push(arg);
                       }
-                    } else if (arg && arg.length && toType2(arg) !== "string") {
+                    } else if (arg && arg.length && toType(arg) !== "string") {
                       add(arg);
                     }
                   });
@@ -2683,8 +5286,8 @@
             },
             // Check if a given callback is in the list.
             // If no argument is given, return whether or not list has callbacks attached.
-            has: function(fn2) {
-              return fn2 ? jQuery2.inArray(fn2, list) > -1 : list.length > 0;
+            has: function(fn) {
+              return fn ? jQuery2.inArray(fn, list) > -1 : list.length > 0;
             },
             // Remove all callbacks from the list
             empty: function() {
@@ -2797,23 +5400,23 @@
                 deferred.done(arguments).fail(arguments);
                 return this;
               },
-              "catch": function(fn2) {
-                return promise.then(null, fn2);
+              "catch": function(fn) {
+                return promise.then(null, fn);
               },
               // Keep pipe for back-compat
               pipe: function() {
                 var fns = arguments;
                 return jQuery2.Deferred(function(newDefer) {
                   jQuery2.each(tuples, function(_i, tuple) {
-                    var fn2 = isFunction(fns[tuple[4]]) && fns[tuple[4]];
+                    var fn = isFunction(fns[tuple[4]]) && fns[tuple[4]];
                     deferred[tuple[1]](function() {
-                      var returned = fn2 && fn2.apply(this, arguments);
+                      var returned = fn && fn.apply(this, arguments);
                       if (returned && isFunction(returned.promise)) {
                         returned.promise().progress(newDefer.notify).done(newDefer.resolve).fail(newDefer.reject);
                       } else {
                         newDefer[tuple[0] + "With"](
                           this,
-                          fn2 ? [returned] : arguments
+                          fn ? [returned] : arguments
                         );
                       }
                     });
@@ -3005,8 +5608,8 @@
           });
         };
         var readyList = jQuery2.Deferred();
-        jQuery2.fn.ready = function(fn2) {
-          readyList.then(fn2).catch(function(error) {
+        jQuery2.fn.ready = function(fn) {
+          readyList.then(fn).catch(function(error) {
             jQuery2.readyException(error);
           });
           return this;
@@ -3041,12 +5644,12 @@
           document2.addEventListener("DOMContentLoaded", completed);
           window2.addEventListener("load", completed);
         }
-        var access = function(elems, fn2, key, value, chainable, emptyGet, raw) {
+        var access = function(elems, fn, key, value, chainable, emptyGet, raw) {
           var i = 0, len = elems.length, bulk = key == null;
-          if (toType2(key) === "object") {
+          if (toType(key) === "object") {
             chainable = true;
             for (i in key) {
-              access(elems, fn2, i, key[i], true, emptyGet, raw);
+              access(elems, fn, i, key[i], true, emptyGet, raw);
             }
           } else if (value !== void 0) {
             chainable = true;
@@ -3055,21 +5658,21 @@
             }
             if (bulk) {
               if (raw) {
-                fn2.call(elems, value);
-                fn2 = null;
+                fn.call(elems, value);
+                fn = null;
               } else {
-                bulk = fn2;
-                fn2 = function(elem, _key, value2) {
+                bulk = fn;
+                fn = function(elem, _key, value2) {
                   return bulk.call(jQuery2(elem), value2);
                 };
               }
             }
-            if (fn2) {
+            if (fn) {
               for (; i < len; i++) {
-                fn2(
+                fn(
                   elems[i],
                   key,
-                  raw ? value : value.call(elems[i], i, fn2(elems[i], key))
+                  raw ? value : value.call(elems[i], i, fn(elems[i], key))
                 );
               }
             }
@@ -3078,9 +5681,9 @@
             return elems;
           }
           if (bulk) {
-            return fn2.call(elems);
+            return fn.call(elems);
           }
-          return len ? fn2(elems[0], key) : emptyGet;
+          return len ? fn(elems[0], key) : emptyGet;
         };
         var rmsPrefix = /^-ms-/, rdashAlpha = /-([a-z])/g;
         function fcamelCase(_all, letter) {
@@ -3092,11 +5695,11 @@
         var acceptData = function(owner) {
           return owner.nodeType === 1 || owner.nodeType === 9 || !+owner.nodeType;
         };
-        function Data2() {
-          this.expando = jQuery2.expando + Data2.uid++;
+        function Data() {
+          this.expando = jQuery2.expando + Data.uid++;
         }
-        Data2.uid = 1;
-        Data2.prototype = {
+        Data.uid = 1;
+        Data.prototype = {
           cache: function(owner) {
             var value = owner[this.expando];
             if (!value) {
@@ -3168,8 +5771,8 @@
             return cache !== void 0 && !jQuery2.isEmptyObject(cache);
           }
         };
-        var dataPriv = new Data2();
-        var dataUser = new Data2();
+        var dataPriv = new Data();
+        var dataUser = new Data();
         var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/, rmultiDash = /[A-Z]/g;
         function getData(data) {
           if (data === "true") {
@@ -3294,19 +5897,19 @@
           },
           dequeue: function(elem, type) {
             type = type || "fx";
-            var queue = jQuery2.queue(elem, type), startLength = queue.length, fn2 = queue.shift(), hooks = jQuery2._queueHooks(elem, type), next = function() {
+            var queue = jQuery2.queue(elem, type), startLength = queue.length, fn = queue.shift(), hooks = jQuery2._queueHooks(elem, type), next = function() {
               jQuery2.dequeue(elem, type);
             };
-            if (fn2 === "inprogress") {
-              fn2 = queue.shift();
+            if (fn === "inprogress") {
+              fn = queue.shift();
               startLength--;
             }
-            if (fn2) {
+            if (fn) {
               if (type === "fx") {
                 queue.unshift("inprogress");
               }
               delete hooks.stop;
-              fn2.call(elem, next, hooks);
+              fn.call(elem, next, hooks);
             }
             if (!startLength && hooks) {
               hooks.empty.fire();
@@ -3552,7 +6155,7 @@
           for (; i < l2; i++) {
             elem = elems[i];
             if (elem || elem === 0) {
-              if (toType2(elem) === "object") {
+              if (toType(elem) === "object") {
                 jQuery2.merge(nodes, elem.nodeType ? [elem] : elem);
               } else if (!rhtml.test(elem)) {
                 nodes.push(context.createTextNode(elem));
@@ -3603,7 +6206,7 @@
         function returnFalse() {
           return false;
         }
-        function on(elem, types, selector, data, fn2, one) {
+        function on(elem, types, selector, data, fn, one) {
           var origFn, type;
           if (typeof types === "object") {
             if (typeof selector !== "string") {
@@ -3615,34 +6218,34 @@
             }
             return elem;
           }
-          if (data == null && fn2 == null) {
-            fn2 = selector;
+          if (data == null && fn == null) {
+            fn = selector;
             data = selector = void 0;
-          } else if (fn2 == null) {
+          } else if (fn == null) {
             if (typeof selector === "string") {
-              fn2 = data;
+              fn = data;
               data = void 0;
             } else {
-              fn2 = data;
+              fn = data;
               data = selector;
               selector = void 0;
             }
           }
-          if (fn2 === false) {
-            fn2 = returnFalse;
-          } else if (!fn2) {
+          if (fn === false) {
+            fn = returnFalse;
+          } else if (!fn) {
             return elem;
           }
           if (one === 1) {
-            origFn = fn2;
-            fn2 = function(event) {
+            origFn = fn;
+            fn = function(event) {
               jQuery2().off(event);
               return origFn.apply(this, arguments);
             };
-            fn2.guid = origFn.guid || (origFn.guid = jQuery2.guid++);
+            fn.guid = origFn.guid || (origFn.guid = jQuery2.guid++);
           }
           return elem.each(function() {
-            jQuery2.event.add(this, types, fn2, data, selector);
+            jQuery2.event.add(this, types, fn, data, selector);
           });
         }
         jQuery2.event = {
@@ -4128,13 +6731,13 @@
           };
         });
         jQuery2.fn.extend({
-          on: function(types, selector, data, fn2) {
-            return on(this, types, selector, data, fn2);
+          on: function(types, selector, data, fn) {
+            return on(this, types, selector, data, fn);
           },
-          one: function(types, selector, data, fn2) {
-            return on(this, types, selector, data, fn2, 1);
+          one: function(types, selector, data, fn) {
+            return on(this, types, selector, data, fn, 1);
           },
-          off: function(types, selector, fn2) {
+          off: function(types, selector, fn) {
             var handleObj, type;
             if (types && types.preventDefault && types.handleObj) {
               handleObj = types.handleObj;
@@ -4152,14 +6755,14 @@
               return this;
             }
             if (selector === false || typeof selector === "function") {
-              fn2 = selector;
+              fn = selector;
               selector = void 0;
             }
-            if (fn2 === false) {
-              fn2 = returnFalse;
+            if (fn === false) {
+              fn = returnFalse;
             }
             return this.each(function() {
-              jQuery2.event.remove(this, types, fn2, selector);
+              jQuery2.event.remove(this, types, fn, selector);
             });
           }
         });
@@ -4880,19 +7483,19 @@
             }, name, value, arguments.length > 1);
           }
         });
-        function Tween(elem, options, prop, end2, easing) {
-          return new Tween.prototype.init(elem, options, prop, end2, easing);
+        function Tween(elem, options, prop, end, easing) {
+          return new Tween.prototype.init(elem, options, prop, end, easing);
         }
         jQuery2.Tween = Tween;
         Tween.prototype = {
           constructor: Tween,
-          init: function(elem, options, prop, end2, easing, unit) {
+          init: function(elem, options, prop, end, easing, unit) {
             this.elem = elem;
             this.prop = prop;
             this.easing = easing || jQuery2.easing._default;
             this.options = options;
             this.start = this.now = this.cur();
-            this.end = end2;
+            this.end = end;
             this.unit = unit || (jQuery2.cssNumber[prop] ? "" : "px");
           },
           cur: function() {
@@ -5180,12 +7783,12 @@
             startTime: fxNow || createFxNow(),
             duration: options.duration,
             tweens: [],
-            createTween: function(prop, end2) {
+            createTween: function(prop, end) {
               var tween = jQuery2.Tween(
                 elem,
                 animation.opts,
                 prop,
-                end2,
+                end,
                 animation.opts.specialEasing[prop] || animation.opts.easing
               );
               animation.tweens.push(tween);
@@ -5264,11 +7867,11 @@
             }
           }
         });
-        jQuery2.speed = function(speed, easing, fn2) {
+        jQuery2.speed = function(speed, easing, fn) {
           var opt = speed && typeof speed === "object" ? jQuery2.extend({}, speed) : {
-            complete: fn2 || !fn2 && easing || isFunction(speed) && speed,
+            complete: fn || !fn && easing || isFunction(speed) && speed,
             duration: speed,
-            easing: fn2 && easing || easing && !isFunction(easing) && easing
+            easing: fn && easing || easing && !isFunction(easing) && easing
           };
           if (jQuery2.fx.off) {
             opt.duration = 0;
@@ -5806,13 +8409,13 @@
             },
             select: {
               get: function(elem) {
-                var value, option, i, options = elem.options, index = elem.selectedIndex, one = elem.type === "select-one", values = one ? null : [], max2 = one ? index + 1 : options.length;
+                var value, option, i, options = elem.options, index = elem.selectedIndex, one = elem.type === "select-one", values = one ? null : [], max = one ? index + 1 : options.length;
                 if (index < 0) {
-                  i = max2;
+                  i = max;
                 } else {
                   i = one ? index : 0;
                 }
-                for (; i < max2; i++) {
+                for (; i < max; i++) {
                   option = options[i];
                   if ((option.selected || i === index) && // Don't return options that are disabled or in a disabled optgroup
                   !option.disabled && (!option.parentNode.disabled || !nodeName(option.parentNode, "optgroup"))) {
@@ -6004,7 +8607,7 @@
                 );
               }
             });
-          } else if (!traditional && toType2(obj) === "object") {
+          } else if (!traditional && toType(obj) === "object") {
             for (name in obj) {
               buildParams(prefix + "[" + name + "]", obj[name], traditional, add);
             }
@@ -6897,8 +9500,8 @@
           return this;
         };
         jQuery2.expr.pseudos.animated = function(elem) {
-          return jQuery2.grep(jQuery2.timers, function(fn2) {
-            return elem === fn2.elem;
+          return jQuery2.grep(jQuery2.timers, function(fn) {
+            return elem === fn.elem;
           }).length;
         };
         jQuery2.offset = {
@@ -6963,11 +9566,11 @@
             if (!this[0]) {
               return;
             }
-            var offsetParent, offset3, doc, elem = this[0], parentOffset = { top: 0, left: 0 };
+            var offsetParent, offset2, doc, elem = this[0], parentOffset = { top: 0, left: 0 };
             if (jQuery2.css(elem, "position") === "fixed") {
-              offset3 = elem.getBoundingClientRect();
+              offset2 = elem.getBoundingClientRect();
             } else {
-              offset3 = this.offset();
+              offset2 = this.offset();
               doc = elem.ownerDocument;
               offsetParent = elem.offsetParent || doc.documentElement;
               while (offsetParent && (offsetParent === doc.body || offsetParent === doc.documentElement) && jQuery2.css(offsetParent, "position") === "static") {
@@ -6980,8 +9583,8 @@
               }
             }
             return {
-              top: offset3.top - parentOffset.top - jQuery2.css(elem, "marginTop", true),
-              left: offset3.left - parentOffset.left - jQuery2.css(elem, "marginLeft", true)
+              top: offset2.top - parentOffset.top - jQuery2.css(elem, "marginTop", true),
+              left: offset2.left - parentOffset.left - jQuery2.css(elem, "marginLeft", true)
             };
           },
           // This method will return documentElement in the following cases:
@@ -7005,7 +9608,7 @@
           }
         });
         jQuery2.each({ scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function(method, prop) {
-          var top2 = "pageYOffset" === prop;
+          var top = "pageYOffset" === prop;
           jQuery2.fn[method] = function(val) {
             return access(this, function(elem, method2, val2) {
               var win;
@@ -7019,8 +9622,8 @@
               }
               if (win) {
                 win.scrollTo(
-                  !top2 ? val2 : win.pageXOffset,
-                  top2 ? val2 : win.pageYOffset
+                  !top ? val2 : win.pageXOffset,
+                  top ? val2 : win.pageYOffset
                 );
               } else {
                 elem[method2] = val2;
@@ -7081,22 +9684,22 @@
           "ajaxSuccess",
           "ajaxSend"
         ], function(_i, type) {
-          jQuery2.fn[type] = function(fn2) {
-            return this.on(type, fn2);
+          jQuery2.fn[type] = function(fn) {
+            return this.on(type, fn);
           };
         });
         jQuery2.fn.extend({
-          bind: function(types, data, fn2) {
-            return this.on(types, null, data, fn2);
+          bind: function(types, data, fn) {
+            return this.on(types, null, data, fn);
           },
-          unbind: function(types, fn2) {
-            return this.off(types, null, fn2);
+          unbind: function(types, fn) {
+            return this.off(types, null, fn);
           },
-          delegate: function(selector, types, data, fn2) {
-            return this.on(types, selector, data, fn2);
+          delegate: function(selector, types, data, fn) {
+            return this.on(types, selector, data, fn);
           },
-          undelegate: function(selector, types, fn2) {
-            return arguments.length === 1 ? this.off(selector, "**") : this.off(types, selector || "**", fn2);
+          undelegate: function(selector, types, fn) {
+            return arguments.length === 1 ? this.off(selector, "**") : this.off(types, selector || "**", fn);
           },
           hover: function(fnOver, fnOut) {
             return this.on("mouseenter", fnOver).on("mouseleave", fnOut || fnOver);
@@ -7105,27 +9708,27 @@
         jQuery2.each(
           "blur focus focusin focusout resize scroll click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup contextmenu".split(" "),
           function(_i, name) {
-            jQuery2.fn[name] = function(data, fn2) {
-              return arguments.length > 0 ? this.on(name, null, data, fn2) : this.trigger(name);
+            jQuery2.fn[name] = function(data, fn) {
+              return arguments.length > 0 ? this.on(name, null, data, fn) : this.trigger(name);
             };
           }
         );
         var rtrim = /^[\s\uFEFF\xA0]+|([^\s\uFEFF\xA0])[\s\uFEFF\xA0]+$/g;
-        jQuery2.proxy = function(fn2, context) {
+        jQuery2.proxy = function(fn, context) {
           var tmp, args, proxy;
           if (typeof context === "string") {
-            tmp = fn2[context];
-            context = fn2;
-            fn2 = tmp;
+            tmp = fn[context];
+            context = fn;
+            fn = tmp;
           }
-          if (!isFunction(fn2)) {
+          if (!isFunction(fn)) {
             return void 0;
           }
           args = slice.call(arguments, 2);
           proxy = function() {
-            return fn2.apply(context || this, args.concat(slice.call(arguments)));
+            return fn.apply(context || this, args.concat(slice.call(arguments)));
           };
-          proxy.guid = fn2.guid = fn2.guid || jQuery2.guid++;
+          proxy.guid = fn.guid = fn.guid || jQuery2.guid++;
           return proxy;
         };
         jQuery2.holdReady = function(hold) {
@@ -7141,7 +9744,7 @@
         jQuery2.isFunction = isFunction;
         jQuery2.isWindow = isWindow;
         jQuery2.camelCase = camelCase;
-        jQuery2.type = toType2;
+        jQuery2.type = toType;
         jQuery2.now = Date.now;
         jQuery2.isNumeric = function(obj) {
           var type = jQuery2.type(obj);
@@ -7177,5146 +9780,57 @@
   });
 
   // js/design.js
-  var import_prism_min = __toESM(require_prism_min());
+  var import_prism = __toESM(require_prism());
 
-  // node_modules/@popperjs/core/lib/index.js
-  var lib_exports = {};
-  __export(lib_exports, {
-    afterMain: () => afterMain,
-    afterRead: () => afterRead,
-    afterWrite: () => afterWrite,
-    applyStyles: () => applyStyles_default,
-    arrow: () => arrow_default,
-    auto: () => auto,
-    basePlacements: () => basePlacements,
-    beforeMain: () => beforeMain,
-    beforeRead: () => beforeRead,
-    beforeWrite: () => beforeWrite,
-    bottom: () => bottom,
-    clippingParents: () => clippingParents,
-    computeStyles: () => computeStyles_default,
-    createPopper: () => createPopper3,
-    createPopperBase: () => createPopper,
-    createPopperLite: () => createPopper2,
-    detectOverflow: () => detectOverflow,
-    end: () => end,
-    eventListeners: () => eventListeners_default,
-    flip: () => flip_default,
-    hide: () => hide_default,
-    left: () => left,
-    main: () => main,
-    modifierPhases: () => modifierPhases,
-    offset: () => offset_default,
-    placements: () => placements,
-    popper: () => popper,
-    popperGenerator: () => popperGenerator,
-    popperOffsets: () => popperOffsets_default,
-    preventOverflow: () => preventOverflow_default,
-    read: () => read,
-    reference: () => reference,
-    right: () => right,
-    start: () => start,
-    top: () => top,
-    variationPlacements: () => variationPlacements,
-    viewport: () => viewport,
-    write: () => write
-  });
-
-  // node_modules/@popperjs/core/lib/enums.js
-  var top = "top";
-  var bottom = "bottom";
-  var right = "right";
-  var left = "left";
-  var auto = "auto";
-  var basePlacements = [top, bottom, right, left];
-  var start = "start";
-  var end = "end";
-  var clippingParents = "clippingParents";
-  var viewport = "viewport";
-  var popper = "popper";
-  var reference = "reference";
-  var variationPlacements = /* @__PURE__ */ basePlacements.reduce(function(acc, placement) {
-    return acc.concat([placement + "-" + start, placement + "-" + end]);
-  }, []);
-  var placements = /* @__PURE__ */ [].concat(basePlacements, [auto]).reduce(function(acc, placement) {
-    return acc.concat([placement, placement + "-" + start, placement + "-" + end]);
-  }, []);
-  var beforeRead = "beforeRead";
-  var read = "read";
-  var afterRead = "afterRead";
-  var beforeMain = "beforeMain";
-  var main = "main";
-  var afterMain = "afterMain";
-  var beforeWrite = "beforeWrite";
-  var write = "write";
-  var afterWrite = "afterWrite";
-  var modifierPhases = [beforeRead, read, afterRead, beforeMain, main, afterMain, beforeWrite, write, afterWrite];
-
-  // node_modules/@popperjs/core/lib/dom-utils/getNodeName.js
-  function getNodeName(element) {
-    return element ? (element.nodeName || "").toLowerCase() : null;
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getWindow.js
-  function getWindow(node) {
-    if (node == null) {
-      return window;
-    }
-    if (node.toString() !== "[object Window]") {
-      var ownerDocument = node.ownerDocument;
-      return ownerDocument ? ownerDocument.defaultView || window : window;
-    }
-    return node;
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/instanceOf.js
-  function isElement(node) {
-    var OwnElement = getWindow(node).Element;
-    return node instanceof OwnElement || node instanceof Element;
-  }
-  function isHTMLElement(node) {
-    var OwnElement = getWindow(node).HTMLElement;
-    return node instanceof OwnElement || node instanceof HTMLElement;
-  }
-  function isShadowRoot(node) {
-    if (typeof ShadowRoot === "undefined") {
-      return false;
-    }
-    var OwnElement = getWindow(node).ShadowRoot;
-    return node instanceof OwnElement || node instanceof ShadowRoot;
-  }
-
-  // node_modules/@popperjs/core/lib/modifiers/applyStyles.js
-  function applyStyles(_ref) {
-    var state = _ref.state;
-    Object.keys(state.elements).forEach(function(name) {
-      var style = state.styles[name] || {};
-      var attributes = state.attributes[name] || {};
-      var element = state.elements[name];
-      if (!isHTMLElement(element) || !getNodeName(element)) {
-        return;
-      }
-      Object.assign(element.style, style);
-      Object.keys(attributes).forEach(function(name2) {
-        var value = attributes[name2];
-        if (value === false) {
-          element.removeAttribute(name2);
-        } else {
-          element.setAttribute(name2, value === true ? "" : value);
-        }
-      });
-    });
-  }
-  function effect(_ref2) {
-    var state = _ref2.state;
-    var initialStyles = {
-      popper: {
-        position: state.options.strategy,
-        left: "0",
-        top: "0",
-        margin: "0"
-      },
-      arrow: {
-        position: "absolute"
-      },
-      reference: {}
-    };
-    Object.assign(state.elements.popper.style, initialStyles.popper);
-    state.styles = initialStyles;
-    if (state.elements.arrow) {
-      Object.assign(state.elements.arrow.style, initialStyles.arrow);
-    }
-    return function() {
-      Object.keys(state.elements).forEach(function(name) {
-        var element = state.elements[name];
-        var attributes = state.attributes[name] || {};
-        var styleProperties = Object.keys(state.styles.hasOwnProperty(name) ? state.styles[name] : initialStyles[name]);
-        var style = styleProperties.reduce(function(style2, property) {
-          style2[property] = "";
-          return style2;
-        }, {});
-        if (!isHTMLElement(element) || !getNodeName(element)) {
-          return;
-        }
-        Object.assign(element.style, style);
-        Object.keys(attributes).forEach(function(attribute) {
-          element.removeAttribute(attribute);
-        });
-      });
-    };
-  }
-  var applyStyles_default = {
-    name: "applyStyles",
-    enabled: true,
-    phase: "write",
-    fn: applyStyles,
-    effect,
-    requires: ["computeStyles"]
+  // js/src/util/set-cookie-expiration-never.js
+  var setCookieExpirationNever = () => {
+    const d = /* @__PURE__ */ new Date();
+    d.setTime(d.getTime() + 100 * 365 * 24 * 60 * 60 * 1e3);
+    return `expires=${d.toUTCString()};`;
   };
 
-  // node_modules/@popperjs/core/lib/utils/getBasePlacement.js
-  function getBasePlacement(placement) {
-    return placement.split("-")[0];
-  }
-
-  // node_modules/@popperjs/core/lib/utils/math.js
-  var max = Math.max;
-  var min = Math.min;
-  var round = Math.round;
-
-  // node_modules/@popperjs/core/lib/utils/userAgent.js
-  function getUAString() {
-    var uaData = navigator.userAgentData;
-    if (uaData != null && uaData.brands && Array.isArray(uaData.brands)) {
-      return uaData.brands.map(function(item) {
-        return item.brand + "/" + item.version;
-      }).join(" ");
-    }
-    return navigator.userAgent;
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/isLayoutViewport.js
-  function isLayoutViewport() {
-    return !/^((?!chrome|android).)*safari/i.test(getUAString());
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getBoundingClientRect.js
-  function getBoundingClientRect(element, includeScale, isFixedStrategy) {
-    if (includeScale === void 0) {
-      includeScale = false;
-    }
-    if (isFixedStrategy === void 0) {
-      isFixedStrategy = false;
-    }
-    var clientRect = element.getBoundingClientRect();
-    var scaleX = 1;
-    var scaleY = 1;
-    if (includeScale && isHTMLElement(element)) {
-      scaleX = element.offsetWidth > 0 ? round(clientRect.width) / element.offsetWidth || 1 : 1;
-      scaleY = element.offsetHeight > 0 ? round(clientRect.height) / element.offsetHeight || 1 : 1;
-    }
-    var _ref = isElement(element) ? getWindow(element) : window, visualViewport = _ref.visualViewport;
-    var addVisualOffsets = !isLayoutViewport() && isFixedStrategy;
-    var x = (clientRect.left + (addVisualOffsets && visualViewport ? visualViewport.offsetLeft : 0)) / scaleX;
-    var y = (clientRect.top + (addVisualOffsets && visualViewport ? visualViewport.offsetTop : 0)) / scaleY;
-    var width = clientRect.width / scaleX;
-    var height = clientRect.height / scaleY;
-    return {
-      width,
-      height,
-      top: y,
-      right: x + width,
-      bottom: y + height,
-      left: x,
-      x,
-      y
-    };
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getLayoutRect.js
-  function getLayoutRect(element) {
-    var clientRect = getBoundingClientRect(element);
-    var width = element.offsetWidth;
-    var height = element.offsetHeight;
-    if (Math.abs(clientRect.width - width) <= 1) {
-      width = clientRect.width;
-    }
-    if (Math.abs(clientRect.height - height) <= 1) {
-      height = clientRect.height;
-    }
-    return {
-      x: element.offsetLeft,
-      y: element.offsetTop,
-      width,
-      height
-    };
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/contains.js
-  function contains(parent, child) {
-    var rootNode = child.getRootNode && child.getRootNode();
-    if (parent.contains(child)) {
-      return true;
-    } else if (rootNode && isShadowRoot(rootNode)) {
-      var next = child;
-      do {
-        if (next && parent.isSameNode(next)) {
-          return true;
-        }
-        next = next.parentNode || next.host;
-      } while (next);
+  // js/src/util/get-cookie.js
+  var getCookie = (name) => {
+    const pattern = RegExp(`${name}=.[^;]*`);
+    const matched = document.cookie.match(pattern);
+    if (matched) {
+      const cookie = matched[0].split("=");
+      return cookie[1];
     }
     return false;
-  }
+  };
 
-  // node_modules/@popperjs/core/lib/dom-utils/getComputedStyle.js
-  function getComputedStyle2(element) {
-    return getWindow(element).getComputedStyle(element);
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/isTableElement.js
-  function isTableElement(element) {
-    return ["table", "td", "th"].indexOf(getNodeName(element)) >= 0;
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getDocumentElement.js
-  function getDocumentElement(element) {
-    return ((isElement(element) ? element.ownerDocument : (
-      // $FlowFixMe[prop-missing]
-      element.document
-    )) || window.document).documentElement;
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getParentNode.js
-  function getParentNode(element) {
-    if (getNodeName(element) === "html") {
-      return element;
-    }
-    return (
-      // this is a quicker (but less type safe) way to save quite some bytes from the bundle
-      // $FlowFixMe[incompatible-return]
-      // $FlowFixMe[prop-missing]
-      element.assignedSlot || // step into the shadow DOM of the parent of a slotted node
-      element.parentNode || // DOM Element detected
-      (isShadowRoot(element) ? element.host : null) || // ShadowRoot detected
-      // $FlowFixMe[incompatible-call]: HTMLElement is a Node
-      getDocumentElement(element)
-    );
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getOffsetParent.js
-  function getTrueOffsetParent(element) {
-    if (!isHTMLElement(element) || // https://github.com/popperjs/popper-core/issues/837
-    getComputedStyle2(element).position === "fixed") {
-      return null;
-    }
-    return element.offsetParent;
-  }
-  function getContainingBlock(element) {
-    var isFirefox = /firefox/i.test(getUAString());
-    var isIE = /Trident/i.test(getUAString());
-    if (isIE && isHTMLElement(element)) {
-      var elementCss = getComputedStyle2(element);
-      if (elementCss.position === "fixed") {
-        return null;
-      }
-    }
-    var currentNode = getParentNode(element);
-    if (isShadowRoot(currentNode)) {
-      currentNode = currentNode.host;
-    }
-    while (isHTMLElement(currentNode) && ["html", "body"].indexOf(getNodeName(currentNode)) < 0) {
-      var css = getComputedStyle2(currentNode);
-      if (css.transform !== "none" || css.perspective !== "none" || css.contain === "paint" || ["transform", "perspective"].indexOf(css.willChange) !== -1 || isFirefox && css.willChange === "filter" || isFirefox && css.filter && css.filter !== "none") {
-        return currentNode;
+  // js/src/alerts.js
+  (() => {
+    const topNoticeAlert = document.getElementById("topNoticeAlert");
+    const topNotice = window.sessionStorage.getItem("notice");
+    const cookieNoticeAlert = document.getElementById("cookieNoticeAlert");
+    const cookieNoticeName = "chocolatey_hide_cookies_notice";
+    if (topNoticeAlert) {
+      if (topNotice) {
+        topNoticeAlert.remove();
       } else {
-        currentNode = currentNode.parentNode;
+        topNoticeAlert.classList.remove("d-none");
       }
+      topNoticeAlert.querySelector("button").addEventListener("click", () => sessionStorage.setItem("notice", "true"), false);
     }
-    return null;
-  }
-  function getOffsetParent(element) {
-    var window2 = getWindow(element);
-    var offsetParent = getTrueOffsetParent(element);
-    while (offsetParent && isTableElement(offsetParent) && getComputedStyle2(offsetParent).position === "static") {
-      offsetParent = getTrueOffsetParent(offsetParent);
-    }
-    if (offsetParent && (getNodeName(offsetParent) === "html" || getNodeName(offsetParent) === "body" && getComputedStyle2(offsetParent).position === "static")) {
-      return window2;
-    }
-    return offsetParent || getContainingBlock(element) || window2;
-  }
-
-  // node_modules/@popperjs/core/lib/utils/getMainAxisFromPlacement.js
-  function getMainAxisFromPlacement(placement) {
-    return ["top", "bottom"].indexOf(placement) >= 0 ? "x" : "y";
-  }
-
-  // node_modules/@popperjs/core/lib/utils/within.js
-  function within(min2, value, max2) {
-    return max(min2, min(value, max2));
-  }
-  function withinMaxClamp(min2, value, max2) {
-    var v = within(min2, value, max2);
-    return v > max2 ? max2 : v;
-  }
-
-  // node_modules/@popperjs/core/lib/utils/getFreshSideObject.js
-  function getFreshSideObject() {
-    return {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0
-    };
-  }
-
-  // node_modules/@popperjs/core/lib/utils/mergePaddingObject.js
-  function mergePaddingObject(paddingObject) {
-    return Object.assign({}, getFreshSideObject(), paddingObject);
-  }
-
-  // node_modules/@popperjs/core/lib/utils/expandToHashMap.js
-  function expandToHashMap(value, keys) {
-    return keys.reduce(function(hashMap, key) {
-      hashMap[key] = value;
-      return hashMap;
-    }, {});
-  }
-
-  // node_modules/@popperjs/core/lib/modifiers/arrow.js
-  var toPaddingObject = function toPaddingObject2(padding, state) {
-    padding = typeof padding === "function" ? padding(Object.assign({}, state.rects, {
-      placement: state.placement
-    })) : padding;
-    return mergePaddingObject(typeof padding !== "number" ? padding : expandToHashMap(padding, basePlacements));
-  };
-  function arrow(_ref) {
-    var _state$modifiersData$;
-    var state = _ref.state, name = _ref.name, options = _ref.options;
-    var arrowElement = state.elements.arrow;
-    var popperOffsets2 = state.modifiersData.popperOffsets;
-    var basePlacement = getBasePlacement(state.placement);
-    var axis = getMainAxisFromPlacement(basePlacement);
-    var isVertical = [left, right].indexOf(basePlacement) >= 0;
-    var len = isVertical ? "height" : "width";
-    if (!arrowElement || !popperOffsets2) {
-      return;
-    }
-    var paddingObject = toPaddingObject(options.padding, state);
-    var arrowRect = getLayoutRect(arrowElement);
-    var minProp = axis === "y" ? top : left;
-    var maxProp = axis === "y" ? bottom : right;
-    var endDiff = state.rects.reference[len] + state.rects.reference[axis] - popperOffsets2[axis] - state.rects.popper[len];
-    var startDiff = popperOffsets2[axis] - state.rects.reference[axis];
-    var arrowOffsetParent = getOffsetParent(arrowElement);
-    var clientSize = arrowOffsetParent ? axis === "y" ? arrowOffsetParent.clientHeight || 0 : arrowOffsetParent.clientWidth || 0 : 0;
-    var centerToReference = endDiff / 2 - startDiff / 2;
-    var min2 = paddingObject[minProp];
-    var max2 = clientSize - arrowRect[len] - paddingObject[maxProp];
-    var center = clientSize / 2 - arrowRect[len] / 2 + centerToReference;
-    var offset3 = within(min2, center, max2);
-    var axisProp = axis;
-    state.modifiersData[name] = (_state$modifiersData$ = {}, _state$modifiersData$[axisProp] = offset3, _state$modifiersData$.centerOffset = offset3 - center, _state$modifiersData$);
-  }
-  function effect2(_ref2) {
-    var state = _ref2.state, options = _ref2.options;
-    var _options$element = options.element, arrowElement = _options$element === void 0 ? "[data-popper-arrow]" : _options$element;
-    if (arrowElement == null) {
-      return;
-    }
-    if (typeof arrowElement === "string") {
-      arrowElement = state.elements.popper.querySelector(arrowElement);
-      if (!arrowElement) {
-        return;
-      }
-    }
-    if (!contains(state.elements.popper, arrowElement)) {
-      return;
-    }
-    state.elements.arrow = arrowElement;
-  }
-  var arrow_default = {
-    name: "arrow",
-    enabled: true,
-    phase: "main",
-    fn: arrow,
-    effect: effect2,
-    requires: ["popperOffsets"],
-    requiresIfExists: ["preventOverflow"]
-  };
-
-  // node_modules/@popperjs/core/lib/utils/getVariation.js
-  function getVariation(placement) {
-    return placement.split("-")[1];
-  }
-
-  // node_modules/@popperjs/core/lib/modifiers/computeStyles.js
-  var unsetSides = {
-    top: "auto",
-    right: "auto",
-    bottom: "auto",
-    left: "auto"
-  };
-  function roundOffsetsByDPR(_ref, win) {
-    var x = _ref.x, y = _ref.y;
-    var dpr = win.devicePixelRatio || 1;
-    return {
-      x: round(x * dpr) / dpr || 0,
-      y: round(y * dpr) / dpr || 0
-    };
-  }
-  function mapToStyles(_ref2) {
-    var _Object$assign2;
-    var popper2 = _ref2.popper, popperRect = _ref2.popperRect, placement = _ref2.placement, variation = _ref2.variation, offsets = _ref2.offsets, position = _ref2.position, gpuAcceleration = _ref2.gpuAcceleration, adaptive = _ref2.adaptive, roundOffsets = _ref2.roundOffsets, isFixed = _ref2.isFixed;
-    var _offsets$x = offsets.x, x = _offsets$x === void 0 ? 0 : _offsets$x, _offsets$y = offsets.y, y = _offsets$y === void 0 ? 0 : _offsets$y;
-    var _ref3 = typeof roundOffsets === "function" ? roundOffsets({
-      x,
-      y
-    }) : {
-      x,
-      y
-    };
-    x = _ref3.x;
-    y = _ref3.y;
-    var hasX = offsets.hasOwnProperty("x");
-    var hasY = offsets.hasOwnProperty("y");
-    var sideX = left;
-    var sideY = top;
-    var win = window;
-    if (adaptive) {
-      var offsetParent = getOffsetParent(popper2);
-      var heightProp = "clientHeight";
-      var widthProp = "clientWidth";
-      if (offsetParent === getWindow(popper2)) {
-        offsetParent = getDocumentElement(popper2);
-        if (getComputedStyle2(offsetParent).position !== "static" && position === "absolute") {
-          heightProp = "scrollHeight";
-          widthProp = "scrollWidth";
-        }
-      }
-      offsetParent = offsetParent;
-      if (placement === top || (placement === left || placement === right) && variation === end) {
-        sideY = bottom;
-        var offsetY = isFixed && offsetParent === win && win.visualViewport ? win.visualViewport.height : (
-          // $FlowFixMe[prop-missing]
-          offsetParent[heightProp]
-        );
-        y -= offsetY - popperRect.height;
-        y *= gpuAcceleration ? 1 : -1;
-      }
-      if (placement === left || (placement === top || placement === bottom) && variation === end) {
-        sideX = right;
-        var offsetX = isFixed && offsetParent === win && win.visualViewport ? win.visualViewport.width : (
-          // $FlowFixMe[prop-missing]
-          offsetParent[widthProp]
-        );
-        x -= offsetX - popperRect.width;
-        x *= gpuAcceleration ? 1 : -1;
-      }
-    }
-    var commonStyles = Object.assign({
-      position
-    }, adaptive && unsetSides);
-    var _ref4 = roundOffsets === true ? roundOffsetsByDPR({
-      x,
-      y
-    }, getWindow(popper2)) : {
-      x,
-      y
-    };
-    x = _ref4.x;
-    y = _ref4.y;
-    if (gpuAcceleration) {
-      var _Object$assign;
-      return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? "0" : "", _Object$assign[sideX] = hasX ? "0" : "", _Object$assign.transform = (win.devicePixelRatio || 1) <= 1 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
-    }
-    return Object.assign({}, commonStyles, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : "", _Object$assign2[sideX] = hasX ? x + "px" : "", _Object$assign2.transform = "", _Object$assign2));
-  }
-  function computeStyles(_ref5) {
-    var state = _ref5.state, options = _ref5.options;
-    var _options$gpuAccelerat = options.gpuAcceleration, gpuAcceleration = _options$gpuAccelerat === void 0 ? true : _options$gpuAccelerat, _options$adaptive = options.adaptive, adaptive = _options$adaptive === void 0 ? true : _options$adaptive, _options$roundOffsets = options.roundOffsets, roundOffsets = _options$roundOffsets === void 0 ? true : _options$roundOffsets;
-    var commonStyles = {
-      placement: getBasePlacement(state.placement),
-      variation: getVariation(state.placement),
-      popper: state.elements.popper,
-      popperRect: state.rects.popper,
-      gpuAcceleration,
-      isFixed: state.options.strategy === "fixed"
-    };
-    if (state.modifiersData.popperOffsets != null) {
-      state.styles.popper = Object.assign({}, state.styles.popper, mapToStyles(Object.assign({}, commonStyles, {
-        offsets: state.modifiersData.popperOffsets,
-        position: state.options.strategy,
-        adaptive,
-        roundOffsets
-      })));
-    }
-    if (state.modifiersData.arrow != null) {
-      state.styles.arrow = Object.assign({}, state.styles.arrow, mapToStyles(Object.assign({}, commonStyles, {
-        offsets: state.modifiersData.arrow,
-        position: "absolute",
-        adaptive: false,
-        roundOffsets
-      })));
-    }
-    state.attributes.popper = Object.assign({}, state.attributes.popper, {
-      "data-popper-placement": state.placement
-    });
-  }
-  var computeStyles_default = {
-    name: "computeStyles",
-    enabled: true,
-    phase: "beforeWrite",
-    fn: computeStyles,
-    data: {}
-  };
-
-  // node_modules/@popperjs/core/lib/modifiers/eventListeners.js
-  var passive = {
-    passive: true
-  };
-  function effect3(_ref) {
-    var state = _ref.state, instance = _ref.instance, options = _ref.options;
-    var _options$scroll = options.scroll, scroll = _options$scroll === void 0 ? true : _options$scroll, _options$resize = options.resize, resize = _options$resize === void 0 ? true : _options$resize;
-    var window2 = getWindow(state.elements.popper);
-    var scrollParents = [].concat(state.scrollParents.reference, state.scrollParents.popper);
-    if (scroll) {
-      scrollParents.forEach(function(scrollParent) {
-        scrollParent.addEventListener("scroll", instance.update, passive);
-      });
-    }
-    if (resize) {
-      window2.addEventListener("resize", instance.update, passive);
-    }
-    return function() {
-      if (scroll) {
-        scrollParents.forEach(function(scrollParent) {
-          scrollParent.removeEventListener("scroll", instance.update, passive);
-        });
-      }
-      if (resize) {
-        window2.removeEventListener("resize", instance.update, passive);
-      }
-    };
-  }
-  var eventListeners_default = {
-    name: "eventListeners",
-    enabled: true,
-    phase: "write",
-    fn: function fn() {
-    },
-    effect: effect3,
-    data: {}
-  };
-
-  // node_modules/@popperjs/core/lib/utils/getOppositePlacement.js
-  var hash = {
-    left: "right",
-    right: "left",
-    bottom: "top",
-    top: "bottom"
-  };
-  function getOppositePlacement(placement) {
-    return placement.replace(/left|right|bottom|top/g, function(matched) {
-      return hash[matched];
-    });
-  }
-
-  // node_modules/@popperjs/core/lib/utils/getOppositeVariationPlacement.js
-  var hash2 = {
-    start: "end",
-    end: "start"
-  };
-  function getOppositeVariationPlacement(placement) {
-    return placement.replace(/start|end/g, function(matched) {
-      return hash2[matched];
-    });
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getWindowScroll.js
-  function getWindowScroll(node) {
-    var win = getWindow(node);
-    var scrollLeft = win.pageXOffset;
-    var scrollTop = win.pageYOffset;
-    return {
-      scrollLeft,
-      scrollTop
-    };
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getWindowScrollBarX.js
-  function getWindowScrollBarX(element) {
-    return getBoundingClientRect(getDocumentElement(element)).left + getWindowScroll(element).scrollLeft;
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getViewportRect.js
-  function getViewportRect(element, strategy) {
-    var win = getWindow(element);
-    var html = getDocumentElement(element);
-    var visualViewport = win.visualViewport;
-    var width = html.clientWidth;
-    var height = html.clientHeight;
-    var x = 0;
-    var y = 0;
-    if (visualViewport) {
-      width = visualViewport.width;
-      height = visualViewport.height;
-      var layoutViewport = isLayoutViewport();
-      if (layoutViewport || !layoutViewport && strategy === "fixed") {
-        x = visualViewport.offsetLeft;
-        y = visualViewport.offsetTop;
-      }
-    }
-    return {
-      width,
-      height,
-      x: x + getWindowScrollBarX(element),
-      y
-    };
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getDocumentRect.js
-  function getDocumentRect(element) {
-    var _element$ownerDocumen;
-    var html = getDocumentElement(element);
-    var winScroll = getWindowScroll(element);
-    var body = (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body;
-    var width = max(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
-    var height = max(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
-    var x = -winScroll.scrollLeft + getWindowScrollBarX(element);
-    var y = -winScroll.scrollTop;
-    if (getComputedStyle2(body || html).direction === "rtl") {
-      x += max(html.clientWidth, body ? body.clientWidth : 0) - width;
-    }
-    return {
-      width,
-      height,
-      x,
-      y
-    };
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/isScrollParent.js
-  function isScrollParent(element) {
-    var _getComputedStyle = getComputedStyle2(element), overflow = _getComputedStyle.overflow, overflowX = _getComputedStyle.overflowX, overflowY = _getComputedStyle.overflowY;
-    return /auto|scroll|overlay|hidden/.test(overflow + overflowY + overflowX);
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getScrollParent.js
-  function getScrollParent(node) {
-    if (["html", "body", "#document"].indexOf(getNodeName(node)) >= 0) {
-      return node.ownerDocument.body;
-    }
-    if (isHTMLElement(node) && isScrollParent(node)) {
-      return node;
-    }
-    return getScrollParent(getParentNode(node));
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/listScrollParents.js
-  function listScrollParents(element, list) {
-    var _element$ownerDocumen;
-    if (list === void 0) {
-      list = [];
-    }
-    var scrollParent = getScrollParent(element);
-    var isBody = scrollParent === ((_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body);
-    var win = getWindow(scrollParent);
-    var target = isBody ? [win].concat(win.visualViewport || [], isScrollParent(scrollParent) ? scrollParent : []) : scrollParent;
-    var updatedList = list.concat(target);
-    return isBody ? updatedList : (
-      // $FlowFixMe[incompatible-call]: isBody tells us target will be an HTMLElement here
-      updatedList.concat(listScrollParents(getParentNode(target)))
-    );
-  }
-
-  // node_modules/@popperjs/core/lib/utils/rectToClientRect.js
-  function rectToClientRect(rect) {
-    return Object.assign({}, rect, {
-      left: rect.x,
-      top: rect.y,
-      right: rect.x + rect.width,
-      bottom: rect.y + rect.height
-    });
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getClippingRect.js
-  function getInnerBoundingClientRect(element, strategy) {
-    var rect = getBoundingClientRect(element, false, strategy === "fixed");
-    rect.top = rect.top + element.clientTop;
-    rect.left = rect.left + element.clientLeft;
-    rect.bottom = rect.top + element.clientHeight;
-    rect.right = rect.left + element.clientWidth;
-    rect.width = element.clientWidth;
-    rect.height = element.clientHeight;
-    rect.x = rect.left;
-    rect.y = rect.top;
-    return rect;
-  }
-  function getClientRectFromMixedType(element, clippingParent, strategy) {
-    return clippingParent === viewport ? rectToClientRect(getViewportRect(element, strategy)) : isElement(clippingParent) ? getInnerBoundingClientRect(clippingParent, strategy) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
-  }
-  function getClippingParents(element) {
-    var clippingParents2 = listScrollParents(getParentNode(element));
-    var canEscapeClipping = ["absolute", "fixed"].indexOf(getComputedStyle2(element).position) >= 0;
-    var clipperElement = canEscapeClipping && isHTMLElement(element) ? getOffsetParent(element) : element;
-    if (!isElement(clipperElement)) {
-      return [];
-    }
-    return clippingParents2.filter(function(clippingParent) {
-      return isElement(clippingParent) && contains(clippingParent, clipperElement) && getNodeName(clippingParent) !== "body";
-    });
-  }
-  function getClippingRect(element, boundary, rootBoundary, strategy) {
-    var mainClippingParents = boundary === "clippingParents" ? getClippingParents(element) : [].concat(boundary);
-    var clippingParents2 = [].concat(mainClippingParents, [rootBoundary]);
-    var firstClippingParent = clippingParents2[0];
-    var clippingRect = clippingParents2.reduce(function(accRect, clippingParent) {
-      var rect = getClientRectFromMixedType(element, clippingParent, strategy);
-      accRect.top = max(rect.top, accRect.top);
-      accRect.right = min(rect.right, accRect.right);
-      accRect.bottom = min(rect.bottom, accRect.bottom);
-      accRect.left = max(rect.left, accRect.left);
-      return accRect;
-    }, getClientRectFromMixedType(element, firstClippingParent, strategy));
-    clippingRect.width = clippingRect.right - clippingRect.left;
-    clippingRect.height = clippingRect.bottom - clippingRect.top;
-    clippingRect.x = clippingRect.left;
-    clippingRect.y = clippingRect.top;
-    return clippingRect;
-  }
-
-  // node_modules/@popperjs/core/lib/utils/computeOffsets.js
-  function computeOffsets(_ref) {
-    var reference2 = _ref.reference, element = _ref.element, placement = _ref.placement;
-    var basePlacement = placement ? getBasePlacement(placement) : null;
-    var variation = placement ? getVariation(placement) : null;
-    var commonX = reference2.x + reference2.width / 2 - element.width / 2;
-    var commonY = reference2.y + reference2.height / 2 - element.height / 2;
-    var offsets;
-    switch (basePlacement) {
-      case top:
-        offsets = {
-          x: commonX,
-          y: reference2.y - element.height
-        };
-        break;
-      case bottom:
-        offsets = {
-          x: commonX,
-          y: reference2.y + reference2.height
-        };
-        break;
-      case right:
-        offsets = {
-          x: reference2.x + reference2.width,
-          y: commonY
-        };
-        break;
-      case left:
-        offsets = {
-          x: reference2.x - element.width,
-          y: commonY
-        };
-        break;
-      default:
-        offsets = {
-          x: reference2.x,
-          y: reference2.y
-        };
-    }
-    var mainAxis = basePlacement ? getMainAxisFromPlacement(basePlacement) : null;
-    if (mainAxis != null) {
-      var len = mainAxis === "y" ? "height" : "width";
-      switch (variation) {
-        case start:
-          offsets[mainAxis] = offsets[mainAxis] - (reference2[len] / 2 - element[len] / 2);
-          break;
-        case end:
-          offsets[mainAxis] = offsets[mainAxis] + (reference2[len] / 2 - element[len] / 2);
-          break;
-        default:
-      }
-    }
-    return offsets;
-  }
-
-  // node_modules/@popperjs/core/lib/utils/detectOverflow.js
-  function detectOverflow(state, options) {
-    if (options === void 0) {
-      options = {};
-    }
-    var _options = options, _options$placement = _options.placement, placement = _options$placement === void 0 ? state.placement : _options$placement, _options$strategy = _options.strategy, strategy = _options$strategy === void 0 ? state.strategy : _options$strategy, _options$boundary = _options.boundary, boundary = _options$boundary === void 0 ? clippingParents : _options$boundary, _options$rootBoundary = _options.rootBoundary, rootBoundary = _options$rootBoundary === void 0 ? viewport : _options$rootBoundary, _options$elementConte = _options.elementContext, elementContext = _options$elementConte === void 0 ? popper : _options$elementConte, _options$altBoundary = _options.altBoundary, altBoundary = _options$altBoundary === void 0 ? false : _options$altBoundary, _options$padding = _options.padding, padding = _options$padding === void 0 ? 0 : _options$padding;
-    var paddingObject = mergePaddingObject(typeof padding !== "number" ? padding : expandToHashMap(padding, basePlacements));
-    var altContext = elementContext === popper ? reference : popper;
-    var popperRect = state.rects.popper;
-    var element = state.elements[altBoundary ? altContext : elementContext];
-    var clippingClientRect = getClippingRect(isElement(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary, strategy);
-    var referenceClientRect = getBoundingClientRect(state.elements.reference);
-    var popperOffsets2 = computeOffsets({
-      reference: referenceClientRect,
-      element: popperRect,
-      strategy: "absolute",
-      placement
-    });
-    var popperClientRect = rectToClientRect(Object.assign({}, popperRect, popperOffsets2));
-    var elementClientRect = elementContext === popper ? popperClientRect : referenceClientRect;
-    var overflowOffsets = {
-      top: clippingClientRect.top - elementClientRect.top + paddingObject.top,
-      bottom: elementClientRect.bottom - clippingClientRect.bottom + paddingObject.bottom,
-      left: clippingClientRect.left - elementClientRect.left + paddingObject.left,
-      right: elementClientRect.right - clippingClientRect.right + paddingObject.right
-    };
-    var offsetData = state.modifiersData.offset;
-    if (elementContext === popper && offsetData) {
-      var offset3 = offsetData[placement];
-      Object.keys(overflowOffsets).forEach(function(key) {
-        var multiply = [right, bottom].indexOf(key) >= 0 ? 1 : -1;
-        var axis = [top, bottom].indexOf(key) >= 0 ? "y" : "x";
-        overflowOffsets[key] += offset3[axis] * multiply;
-      });
-    }
-    return overflowOffsets;
-  }
-
-  // node_modules/@popperjs/core/lib/utils/computeAutoPlacement.js
-  function computeAutoPlacement(state, options) {
-    if (options === void 0) {
-      options = {};
-    }
-    var _options = options, placement = _options.placement, boundary = _options.boundary, rootBoundary = _options.rootBoundary, padding = _options.padding, flipVariations = _options.flipVariations, _options$allowedAutoP = _options.allowedAutoPlacements, allowedAutoPlacements = _options$allowedAutoP === void 0 ? placements : _options$allowedAutoP;
-    var variation = getVariation(placement);
-    var placements2 = variation ? flipVariations ? variationPlacements : variationPlacements.filter(function(placement2) {
-      return getVariation(placement2) === variation;
-    }) : basePlacements;
-    var allowedPlacements = placements2.filter(function(placement2) {
-      return allowedAutoPlacements.indexOf(placement2) >= 0;
-    });
-    if (allowedPlacements.length === 0) {
-      allowedPlacements = placements2;
-    }
-    var overflows = allowedPlacements.reduce(function(acc, placement2) {
-      acc[placement2] = detectOverflow(state, {
-        placement: placement2,
-        boundary,
-        rootBoundary,
-        padding
-      })[getBasePlacement(placement2)];
-      return acc;
-    }, {});
-    return Object.keys(overflows).sort(function(a, b) {
-      return overflows[a] - overflows[b];
-    });
-  }
-
-  // node_modules/@popperjs/core/lib/modifiers/flip.js
-  function getExpandedFallbackPlacements(placement) {
-    if (getBasePlacement(placement) === auto) {
-      return [];
-    }
-    var oppositePlacement = getOppositePlacement(placement);
-    return [getOppositeVariationPlacement(placement), oppositePlacement, getOppositeVariationPlacement(oppositePlacement)];
-  }
-  function flip(_ref) {
-    var state = _ref.state, options = _ref.options, name = _ref.name;
-    if (state.modifiersData[name]._skip) {
-      return;
-    }
-    var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? true : _options$altAxis, specifiedFallbackPlacements = options.fallbackPlacements, padding = options.padding, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, _options$flipVariatio = options.flipVariations, flipVariations = _options$flipVariatio === void 0 ? true : _options$flipVariatio, allowedAutoPlacements = options.allowedAutoPlacements;
-    var preferredPlacement = state.options.placement;
-    var basePlacement = getBasePlacement(preferredPlacement);
-    var isBasePlacement = basePlacement === preferredPlacement;
-    var fallbackPlacements = specifiedFallbackPlacements || (isBasePlacement || !flipVariations ? [getOppositePlacement(preferredPlacement)] : getExpandedFallbackPlacements(preferredPlacement));
-    var placements2 = [preferredPlacement].concat(fallbackPlacements).reduce(function(acc, placement2) {
-      return acc.concat(getBasePlacement(placement2) === auto ? computeAutoPlacement(state, {
-        placement: placement2,
-        boundary,
-        rootBoundary,
-        padding,
-        flipVariations,
-        allowedAutoPlacements
-      }) : placement2);
-    }, []);
-    var referenceRect = state.rects.reference;
-    var popperRect = state.rects.popper;
-    var checksMap = /* @__PURE__ */ new Map();
-    var makeFallbackChecks = true;
-    var firstFittingPlacement = placements2[0];
-    for (var i = 0; i < placements2.length; i++) {
-      var placement = placements2[i];
-      var _basePlacement = getBasePlacement(placement);
-      var isStartVariation = getVariation(placement) === start;
-      var isVertical = [top, bottom].indexOf(_basePlacement) >= 0;
-      var len = isVertical ? "width" : "height";
-      var overflow = detectOverflow(state, {
-        placement,
-        boundary,
-        rootBoundary,
-        altBoundary,
-        padding
-      });
-      var mainVariationSide = isVertical ? isStartVariation ? right : left : isStartVariation ? bottom : top;
-      if (referenceRect[len] > popperRect[len]) {
-        mainVariationSide = getOppositePlacement(mainVariationSide);
-      }
-      var altVariationSide = getOppositePlacement(mainVariationSide);
-      var checks = [];
-      if (checkMainAxis) {
-        checks.push(overflow[_basePlacement] <= 0);
-      }
-      if (checkAltAxis) {
-        checks.push(overflow[mainVariationSide] <= 0, overflow[altVariationSide] <= 0);
-      }
-      if (checks.every(function(check) {
-        return check;
-      })) {
-        firstFittingPlacement = placement;
-        makeFallbackChecks = false;
-        break;
-      }
-      checksMap.set(placement, checks);
-    }
-    if (makeFallbackChecks) {
-      var numberOfChecks = flipVariations ? 3 : 1;
-      var _loop = function _loop2(_i2) {
-        var fittingPlacement = placements2.find(function(placement2) {
-          var checks2 = checksMap.get(placement2);
-          if (checks2) {
-            return checks2.slice(0, _i2).every(function(check) {
-              return check;
-            });
-          }
-        });
-        if (fittingPlacement) {
-          firstFittingPlacement = fittingPlacement;
-          return "break";
-        }
-      };
-      for (var _i = numberOfChecks; _i > 0; _i--) {
-        var _ret = _loop(_i);
-        if (_ret === "break")
-          break;
-      }
-    }
-    if (state.placement !== firstFittingPlacement) {
-      state.modifiersData[name]._skip = true;
-      state.placement = firstFittingPlacement;
-      state.reset = true;
-    }
-  }
-  var flip_default = {
-    name: "flip",
-    enabled: true,
-    phase: "main",
-    fn: flip,
-    requiresIfExists: ["offset"],
-    data: {
-      _skip: false
-    }
-  };
-
-  // node_modules/@popperjs/core/lib/modifiers/hide.js
-  function getSideOffsets(overflow, rect, preventedOffsets) {
-    if (preventedOffsets === void 0) {
-      preventedOffsets = {
-        x: 0,
-        y: 0
-      };
-    }
-    return {
-      top: overflow.top - rect.height - preventedOffsets.y,
-      right: overflow.right - rect.width + preventedOffsets.x,
-      bottom: overflow.bottom - rect.height + preventedOffsets.y,
-      left: overflow.left - rect.width - preventedOffsets.x
-    };
-  }
-  function isAnySideFullyClipped(overflow) {
-    return [top, right, bottom, left].some(function(side) {
-      return overflow[side] >= 0;
-    });
-  }
-  function hide(_ref) {
-    var state = _ref.state, name = _ref.name;
-    var referenceRect = state.rects.reference;
-    var popperRect = state.rects.popper;
-    var preventedOffsets = state.modifiersData.preventOverflow;
-    var referenceOverflow = detectOverflow(state, {
-      elementContext: "reference"
-    });
-    var popperAltOverflow = detectOverflow(state, {
-      altBoundary: true
-    });
-    var referenceClippingOffsets = getSideOffsets(referenceOverflow, referenceRect);
-    var popperEscapeOffsets = getSideOffsets(popperAltOverflow, popperRect, preventedOffsets);
-    var isReferenceHidden = isAnySideFullyClipped(referenceClippingOffsets);
-    var hasPopperEscaped = isAnySideFullyClipped(popperEscapeOffsets);
-    state.modifiersData[name] = {
-      referenceClippingOffsets,
-      popperEscapeOffsets,
-      isReferenceHidden,
-      hasPopperEscaped
-    };
-    state.attributes.popper = Object.assign({}, state.attributes.popper, {
-      "data-popper-reference-hidden": isReferenceHidden,
-      "data-popper-escaped": hasPopperEscaped
-    });
-  }
-  var hide_default = {
-    name: "hide",
-    enabled: true,
-    phase: "main",
-    requiresIfExists: ["preventOverflow"],
-    fn: hide
-  };
-
-  // node_modules/@popperjs/core/lib/modifiers/offset.js
-  function distanceAndSkiddingToXY(placement, rects, offset3) {
-    var basePlacement = getBasePlacement(placement);
-    var invertDistance = [left, top].indexOf(basePlacement) >= 0 ? -1 : 1;
-    var _ref = typeof offset3 === "function" ? offset3(Object.assign({}, rects, {
-      placement
-    })) : offset3, skidding = _ref[0], distance = _ref[1];
-    skidding = skidding || 0;
-    distance = (distance || 0) * invertDistance;
-    return [left, right].indexOf(basePlacement) >= 0 ? {
-      x: distance,
-      y: skidding
-    } : {
-      x: skidding,
-      y: distance
-    };
-  }
-  function offset(_ref2) {
-    var state = _ref2.state, options = _ref2.options, name = _ref2.name;
-    var _options$offset = options.offset, offset3 = _options$offset === void 0 ? [0, 0] : _options$offset;
-    var data = placements.reduce(function(acc, placement) {
-      acc[placement] = distanceAndSkiddingToXY(placement, state.rects, offset3);
-      return acc;
-    }, {});
-    var _data$state$placement = data[state.placement], x = _data$state$placement.x, y = _data$state$placement.y;
-    if (state.modifiersData.popperOffsets != null) {
-      state.modifiersData.popperOffsets.x += x;
-      state.modifiersData.popperOffsets.y += y;
-    }
-    state.modifiersData[name] = data;
-  }
-  var offset_default = {
-    name: "offset",
-    enabled: true,
-    phase: "main",
-    requires: ["popperOffsets"],
-    fn: offset
-  };
-
-  // node_modules/@popperjs/core/lib/modifiers/popperOffsets.js
-  function popperOffsets(_ref) {
-    var state = _ref.state, name = _ref.name;
-    state.modifiersData[name] = computeOffsets({
-      reference: state.rects.reference,
-      element: state.rects.popper,
-      strategy: "absolute",
-      placement: state.placement
-    });
-  }
-  var popperOffsets_default = {
-    name: "popperOffsets",
-    enabled: true,
-    phase: "read",
-    fn: popperOffsets,
-    data: {}
-  };
-
-  // node_modules/@popperjs/core/lib/utils/getAltAxis.js
-  function getAltAxis(axis) {
-    return axis === "x" ? "y" : "x";
-  }
-
-  // node_modules/@popperjs/core/lib/modifiers/preventOverflow.js
-  function preventOverflow(_ref) {
-    var state = _ref.state, options = _ref.options, name = _ref.name;
-    var _options$mainAxis = options.mainAxis, checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis, _options$altAxis = options.altAxis, checkAltAxis = _options$altAxis === void 0 ? false : _options$altAxis, boundary = options.boundary, rootBoundary = options.rootBoundary, altBoundary = options.altBoundary, padding = options.padding, _options$tether = options.tether, tether = _options$tether === void 0 ? true : _options$tether, _options$tetherOffset = options.tetherOffset, tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset;
-    var overflow = detectOverflow(state, {
-      boundary,
-      rootBoundary,
-      padding,
-      altBoundary
-    });
-    var basePlacement = getBasePlacement(state.placement);
-    var variation = getVariation(state.placement);
-    var isBasePlacement = !variation;
-    var mainAxis = getMainAxisFromPlacement(basePlacement);
-    var altAxis = getAltAxis(mainAxis);
-    var popperOffsets2 = state.modifiersData.popperOffsets;
-    var referenceRect = state.rects.reference;
-    var popperRect = state.rects.popper;
-    var tetherOffsetValue = typeof tetherOffset === "function" ? tetherOffset(Object.assign({}, state.rects, {
-      placement: state.placement
-    })) : tetherOffset;
-    var normalizedTetherOffsetValue = typeof tetherOffsetValue === "number" ? {
-      mainAxis: tetherOffsetValue,
-      altAxis: tetherOffsetValue
-    } : Object.assign({
-      mainAxis: 0,
-      altAxis: 0
-    }, tetherOffsetValue);
-    var offsetModifierState = state.modifiersData.offset ? state.modifiersData.offset[state.placement] : null;
-    var data = {
-      x: 0,
-      y: 0
-    };
-    if (!popperOffsets2) {
-      return;
-    }
-    if (checkMainAxis) {
-      var _offsetModifierState$;
-      var mainSide = mainAxis === "y" ? top : left;
-      var altSide = mainAxis === "y" ? bottom : right;
-      var len = mainAxis === "y" ? "height" : "width";
-      var offset3 = popperOffsets2[mainAxis];
-      var min2 = offset3 + overflow[mainSide];
-      var max2 = offset3 - overflow[altSide];
-      var additive = tether ? -popperRect[len] / 2 : 0;
-      var minLen = variation === start ? referenceRect[len] : popperRect[len];
-      var maxLen = variation === start ? -popperRect[len] : -referenceRect[len];
-      var arrowElement = state.elements.arrow;
-      var arrowRect = tether && arrowElement ? getLayoutRect(arrowElement) : {
-        width: 0,
-        height: 0
-      };
-      var arrowPaddingObject = state.modifiersData["arrow#persistent"] ? state.modifiersData["arrow#persistent"].padding : getFreshSideObject();
-      var arrowPaddingMin = arrowPaddingObject[mainSide];
-      var arrowPaddingMax = arrowPaddingObject[altSide];
-      var arrowLen = within(0, referenceRect[len], arrowRect[len]);
-      var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis : minLen - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis;
-      var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis : maxLen + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis;
-      var arrowOffsetParent = state.elements.arrow && getOffsetParent(state.elements.arrow);
-      var clientOffset = arrowOffsetParent ? mainAxis === "y" ? arrowOffsetParent.clientTop || 0 : arrowOffsetParent.clientLeft || 0 : 0;
-      var offsetModifierValue = (_offsetModifierState$ = offsetModifierState == null ? void 0 : offsetModifierState[mainAxis]) != null ? _offsetModifierState$ : 0;
-      var tetherMin = offset3 + minOffset - offsetModifierValue - clientOffset;
-      var tetherMax = offset3 + maxOffset - offsetModifierValue;
-      var preventedOffset = within(tether ? min(min2, tetherMin) : min2, offset3, tether ? max(max2, tetherMax) : max2);
-      popperOffsets2[mainAxis] = preventedOffset;
-      data[mainAxis] = preventedOffset - offset3;
-    }
-    if (checkAltAxis) {
-      var _offsetModifierState$2;
-      var _mainSide = mainAxis === "x" ? top : left;
-      var _altSide = mainAxis === "x" ? bottom : right;
-      var _offset = popperOffsets2[altAxis];
-      var _len = altAxis === "y" ? "height" : "width";
-      var _min = _offset + overflow[_mainSide];
-      var _max = _offset - overflow[_altSide];
-      var isOriginSide = [top, left].indexOf(basePlacement) !== -1;
-      var _offsetModifierValue = (_offsetModifierState$2 = offsetModifierState == null ? void 0 : offsetModifierState[altAxis]) != null ? _offsetModifierState$2 : 0;
-      var _tetherMin = isOriginSide ? _min : _offset - referenceRect[_len] - popperRect[_len] - _offsetModifierValue + normalizedTetherOffsetValue.altAxis;
-      var _tetherMax = isOriginSide ? _offset + referenceRect[_len] + popperRect[_len] - _offsetModifierValue - normalizedTetherOffsetValue.altAxis : _max;
-      var _preventedOffset = tether && isOriginSide ? withinMaxClamp(_tetherMin, _offset, _tetherMax) : within(tether ? _tetherMin : _min, _offset, tether ? _tetherMax : _max);
-      popperOffsets2[altAxis] = _preventedOffset;
-      data[altAxis] = _preventedOffset - _offset;
-    }
-    state.modifiersData[name] = data;
-  }
-  var preventOverflow_default = {
-    name: "preventOverflow",
-    enabled: true,
-    phase: "main",
-    fn: preventOverflow,
-    requiresIfExists: ["offset"]
-  };
-
-  // node_modules/@popperjs/core/lib/dom-utils/getHTMLElementScroll.js
-  function getHTMLElementScroll(element) {
-    return {
-      scrollLeft: element.scrollLeft,
-      scrollTop: element.scrollTop
-    };
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getNodeScroll.js
-  function getNodeScroll(node) {
-    if (node === getWindow(node) || !isHTMLElement(node)) {
-      return getWindowScroll(node);
-    } else {
-      return getHTMLElementScroll(node);
-    }
-  }
-
-  // node_modules/@popperjs/core/lib/dom-utils/getCompositeRect.js
-  function isElementScaled(element) {
-    var rect = element.getBoundingClientRect();
-    var scaleX = round(rect.width) / element.offsetWidth || 1;
-    var scaleY = round(rect.height) / element.offsetHeight || 1;
-    return scaleX !== 1 || scaleY !== 1;
-  }
-  function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
-    if (isFixed === void 0) {
-      isFixed = false;
-    }
-    var isOffsetParentAnElement = isHTMLElement(offsetParent);
-    var offsetParentIsScaled = isHTMLElement(offsetParent) && isElementScaled(offsetParent);
-    var documentElement = getDocumentElement(offsetParent);
-    var rect = getBoundingClientRect(elementOrVirtualElement, offsetParentIsScaled, isFixed);
-    var scroll = {
-      scrollLeft: 0,
-      scrollTop: 0
-    };
-    var offsets = {
-      x: 0,
-      y: 0
-    };
-    if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {
-      if (getNodeName(offsetParent) !== "body" || // https://github.com/popperjs/popper-core/issues/1078
-      isScrollParent(documentElement)) {
-        scroll = getNodeScroll(offsetParent);
-      }
-      if (isHTMLElement(offsetParent)) {
-        offsets = getBoundingClientRect(offsetParent, true);
-        offsets.x += offsetParent.clientLeft;
-        offsets.y += offsetParent.clientTop;
-      } else if (documentElement) {
-        offsets.x = getWindowScrollBarX(documentElement);
-      }
-    }
-    return {
-      x: rect.left + scroll.scrollLeft - offsets.x,
-      y: rect.top + scroll.scrollTop - offsets.y,
-      width: rect.width,
-      height: rect.height
-    };
-  }
-
-  // node_modules/@popperjs/core/lib/utils/orderModifiers.js
-  function order(modifiers) {
-    var map = /* @__PURE__ */ new Map();
-    var visited = /* @__PURE__ */ new Set();
-    var result = [];
-    modifiers.forEach(function(modifier) {
-      map.set(modifier.name, modifier);
-    });
-    function sort(modifier) {
-      visited.add(modifier.name);
-      var requires = [].concat(modifier.requires || [], modifier.requiresIfExists || []);
-      requires.forEach(function(dep) {
-        if (!visited.has(dep)) {
-          var depModifier = map.get(dep);
-          if (depModifier) {
-            sort(depModifier);
-          }
-        }
-      });
-      result.push(modifier);
-    }
-    modifiers.forEach(function(modifier) {
-      if (!visited.has(modifier.name)) {
-        sort(modifier);
-      }
-    });
-    return result;
-  }
-  function orderModifiers(modifiers) {
-    var orderedModifiers = order(modifiers);
-    return modifierPhases.reduce(function(acc, phase) {
-      return acc.concat(orderedModifiers.filter(function(modifier) {
-        return modifier.phase === phase;
-      }));
-    }, []);
-  }
-
-  // node_modules/@popperjs/core/lib/utils/debounce.js
-  function debounce(fn2) {
-    var pending;
-    return function() {
-      if (!pending) {
-        pending = new Promise(function(resolve) {
-          Promise.resolve().then(function() {
-            pending = void 0;
-            resolve(fn2());
-          });
-        });
-      }
-      return pending;
-    };
-  }
-
-  // node_modules/@popperjs/core/lib/utils/mergeByName.js
-  function mergeByName(modifiers) {
-    var merged = modifiers.reduce(function(merged2, current) {
-      var existing = merged2[current.name];
-      merged2[current.name] = existing ? Object.assign({}, existing, current, {
-        options: Object.assign({}, existing.options, current.options),
-        data: Object.assign({}, existing.data, current.data)
-      }) : current;
-      return merged2;
-    }, {});
-    return Object.keys(merged).map(function(key) {
-      return merged[key];
-    });
-  }
-
-  // node_modules/@popperjs/core/lib/createPopper.js
-  var DEFAULT_OPTIONS = {
-    placement: "bottom",
-    modifiers: [],
-    strategy: "absolute"
-  };
-  function areValidElements() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    return !args.some(function(element) {
-      return !(element && typeof element.getBoundingClientRect === "function");
-    });
-  }
-  function popperGenerator(generatorOptions) {
-    if (generatorOptions === void 0) {
-      generatorOptions = {};
-    }
-    var _generatorOptions = generatorOptions, _generatorOptions$def = _generatorOptions.defaultModifiers, defaultModifiers3 = _generatorOptions$def === void 0 ? [] : _generatorOptions$def, _generatorOptions$def2 = _generatorOptions.defaultOptions, defaultOptions = _generatorOptions$def2 === void 0 ? DEFAULT_OPTIONS : _generatorOptions$def2;
-    return function createPopper4(reference2, popper2, options) {
-      if (options === void 0) {
-        options = defaultOptions;
-      }
-      var state = {
-        placement: "bottom",
-        orderedModifiers: [],
-        options: Object.assign({}, DEFAULT_OPTIONS, defaultOptions),
-        modifiersData: {},
-        elements: {
-          reference: reference2,
-          popper: popper2
-        },
-        attributes: {},
-        styles: {}
-      };
-      var effectCleanupFns = [];
-      var isDestroyed = false;
-      var instance = {
-        state,
-        setOptions: function setOptions(setOptionsAction) {
-          var options2 = typeof setOptionsAction === "function" ? setOptionsAction(state.options) : setOptionsAction;
-          cleanupModifierEffects();
-          state.options = Object.assign({}, defaultOptions, state.options, options2);
-          state.scrollParents = {
-            reference: isElement(reference2) ? listScrollParents(reference2) : reference2.contextElement ? listScrollParents(reference2.contextElement) : [],
-            popper: listScrollParents(popper2)
-          };
-          var orderedModifiers = orderModifiers(mergeByName([].concat(defaultModifiers3, state.options.modifiers)));
-          state.orderedModifiers = orderedModifiers.filter(function(m) {
-            return m.enabled;
-          });
-          runModifierEffects();
-          return instance.update();
-        },
-        // Sync update – it will always be executed, even if not necessary. This
-        // is useful for low frequency updates where sync behavior simplifies the
-        // logic.
-        // For high frequency updates (e.g. `resize` and `scroll` events), always
-        // prefer the async Popper#update method
-        forceUpdate: function forceUpdate() {
-          if (isDestroyed) {
-            return;
-          }
-          var _state$elements = state.elements, reference3 = _state$elements.reference, popper3 = _state$elements.popper;
-          if (!areValidElements(reference3, popper3)) {
-            return;
-          }
-          state.rects = {
-            reference: getCompositeRect(reference3, getOffsetParent(popper3), state.options.strategy === "fixed"),
-            popper: getLayoutRect(popper3)
-          };
-          state.reset = false;
-          state.placement = state.options.placement;
-          state.orderedModifiers.forEach(function(modifier) {
-            return state.modifiersData[modifier.name] = Object.assign({}, modifier.data);
-          });
-          for (var index = 0; index < state.orderedModifiers.length; index++) {
-            if (state.reset === true) {
-              state.reset = false;
-              index = -1;
-              continue;
-            }
-            var _state$orderedModifie = state.orderedModifiers[index], fn2 = _state$orderedModifie.fn, _state$orderedModifie2 = _state$orderedModifie.options, _options = _state$orderedModifie2 === void 0 ? {} : _state$orderedModifie2, name = _state$orderedModifie.name;
-            if (typeof fn2 === "function") {
-              state = fn2({
-                state,
-                options: _options,
-                name,
-                instance
-              }) || state;
-            }
-          }
-        },
-        // Async and optimistically optimized update – it will not be executed if
-        // not necessary (debounced to run at most once-per-tick)
-        update: debounce(function() {
-          return new Promise(function(resolve) {
-            instance.forceUpdate();
-            resolve(state);
-          });
-        }),
-        destroy: function destroy() {
-          cleanupModifierEffects();
-          isDestroyed = true;
-        }
-      };
-      if (!areValidElements(reference2, popper2)) {
-        return instance;
-      }
-      instance.setOptions(options).then(function(state2) {
-        if (!isDestroyed && options.onFirstUpdate) {
-          options.onFirstUpdate(state2);
-        }
-      });
-      function runModifierEffects() {
-        state.orderedModifiers.forEach(function(_ref) {
-          var name = _ref.name, _ref$options = _ref.options, options2 = _ref$options === void 0 ? {} : _ref$options, effect4 = _ref.effect;
-          if (typeof effect4 === "function") {
-            var cleanupFn = effect4({
-              state,
-              name,
-              instance,
-              options: options2
-            });
-            var noopFn = function noopFn2() {
-            };
-            effectCleanupFns.push(cleanupFn || noopFn);
-          }
-        });
-      }
-      function cleanupModifierEffects() {
-        effectCleanupFns.forEach(function(fn2) {
-          return fn2();
-        });
-        effectCleanupFns = [];
-      }
-      return instance;
-    };
-  }
-  var createPopper = /* @__PURE__ */ popperGenerator();
-
-  // node_modules/@popperjs/core/lib/popper-lite.js
-  var defaultModifiers = [eventListeners_default, popperOffsets_default, computeStyles_default, applyStyles_default];
-  var createPopper2 = /* @__PURE__ */ popperGenerator({
-    defaultModifiers
-  });
-
-  // node_modules/@popperjs/core/lib/popper.js
-  var defaultModifiers2 = [eventListeners_default, popperOffsets_default, computeStyles_default, applyStyles_default, offset_default, flip_default, preventOverflow_default, arrow_default, hide_default];
-  var createPopper3 = /* @__PURE__ */ popperGenerator({
-    defaultModifiers: defaultModifiers2
-  });
-
-  // node_modules/bootstrap/dist/js/bootstrap.esm.js
-  var elementMap = /* @__PURE__ */ new Map();
-  var Data = {
-    set(element, key, instance) {
-      if (!elementMap.has(element)) {
-        elementMap.set(element, /* @__PURE__ */ new Map());
-      }
-      const instanceMap = elementMap.get(element);
-      if (!instanceMap.has(key) && instanceMap.size !== 0) {
-        console.error(`Bootstrap doesn't allow more than one instance per element. Bound instance: ${Array.from(instanceMap.keys())[0]}.`);
-        return;
-      }
-      instanceMap.set(key, instance);
-    },
-    get(element, key) {
-      if (elementMap.has(element)) {
-        return elementMap.get(element).get(key) || null;
-      }
-      return null;
-    },
-    remove(element, key) {
-      if (!elementMap.has(element)) {
-        return;
-      }
-      const instanceMap = elementMap.get(element);
-      instanceMap.delete(key);
-      if (instanceMap.size === 0) {
-        elementMap.delete(element);
-      }
-    }
-  };
-  var MAX_UID = 1e6;
-  var MILLISECONDS_MULTIPLIER = 1e3;
-  var TRANSITION_END = "transitionend";
-  var parseSelector = (selector) => {
-    if (selector && window.CSS && window.CSS.escape) {
-      selector = selector.replace(/#([^\s"#']+)/g, (match2, id) => `#${CSS.escape(id)}`);
-    }
-    return selector;
-  };
-  var toType = (object) => {
-    if (object === null || object === void 0) {
-      return `${object}`;
-    }
-    return Object.prototype.toString.call(object).match(/\s([a-z]+)/i)[1].toLowerCase();
-  };
-  var getUID = (prefix) => {
-    do {
-      prefix += Math.floor(Math.random() * MAX_UID);
-    } while (document.getElementById(prefix));
-    return prefix;
-  };
-  var getTransitionDurationFromElement = (element) => {
-    if (!element) {
-      return 0;
-    }
-    let {
-      transitionDuration,
-      transitionDelay
-    } = window.getComputedStyle(element);
-    const floatTransitionDuration = Number.parseFloat(transitionDuration);
-    const floatTransitionDelay = Number.parseFloat(transitionDelay);
-    if (!floatTransitionDuration && !floatTransitionDelay) {
-      return 0;
-    }
-    transitionDuration = transitionDuration.split(",")[0];
-    transitionDelay = transitionDelay.split(",")[0];
-    return (Number.parseFloat(transitionDuration) + Number.parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
-  };
-  var triggerTransitionEnd = (element) => {
-    element.dispatchEvent(new Event(TRANSITION_END));
-  };
-  var isElement2 = (object) => {
-    if (!object || typeof object !== "object") {
-      return false;
-    }
-    if (typeof object.jquery !== "undefined") {
-      object = object[0];
-    }
-    return typeof object.nodeType !== "undefined";
-  };
-  var getElement = (object) => {
-    if (isElement2(object)) {
-      return object.jquery ? object[0] : object;
-    }
-    if (typeof object === "string" && object.length > 0) {
-      return document.querySelector(parseSelector(object));
-    }
-    return null;
-  };
-  var isVisible = (element) => {
-    if (!isElement2(element) || element.getClientRects().length === 0) {
-      return false;
-    }
-    const elementIsVisible = getComputedStyle(element).getPropertyValue("visibility") === "visible";
-    const closedDetails = element.closest("details:not([open])");
-    if (!closedDetails) {
-      return elementIsVisible;
-    }
-    if (closedDetails !== element) {
-      const summary = element.closest("summary");
-      if (summary && summary.parentNode !== closedDetails) {
-        return false;
-      }
-      if (summary === null) {
-        return false;
-      }
-    }
-    return elementIsVisible;
-  };
-  var isDisabled = (element) => {
-    if (!element || element.nodeType !== Node.ELEMENT_NODE) {
-      return true;
-    }
-    if (element.classList.contains("disabled")) {
-      return true;
-    }
-    if (typeof element.disabled !== "undefined") {
-      return element.disabled;
-    }
-    return element.hasAttribute("disabled") && element.getAttribute("disabled") !== "false";
-  };
-  var findShadowRoot = (element) => {
-    if (!document.documentElement.attachShadow) {
-      return null;
-    }
-    if (typeof element.getRootNode === "function") {
-      const root = element.getRootNode();
-      return root instanceof ShadowRoot ? root : null;
-    }
-    if (element instanceof ShadowRoot) {
-      return element;
-    }
-    if (!element.parentNode) {
-      return null;
-    }
-    return findShadowRoot(element.parentNode);
-  };
-  var noop = () => {
-  };
-  var reflow = (element) => {
-    element.offsetHeight;
-  };
-  var getjQuery = () => {
-    if (window.jQuery && !document.body.hasAttribute("data-bs-no-jquery")) {
-      return window.jQuery;
-    }
-    return null;
-  };
-  var DOMContentLoadedCallbacks = [];
-  var onDOMContentLoaded = (callback) => {
-    if (document.readyState === "loading") {
-      if (!DOMContentLoadedCallbacks.length) {
-        document.addEventListener("DOMContentLoaded", () => {
-          for (const callback2 of DOMContentLoadedCallbacks) {
-            callback2();
-          }
-        });
-      }
-      DOMContentLoadedCallbacks.push(callback);
-    } else {
-      callback();
-    }
-  };
-  var isRTL = () => document.documentElement.dir === "rtl";
-  var defineJQueryPlugin = (plugin) => {
-    onDOMContentLoaded(() => {
-      const $ = getjQuery();
-      if ($) {
-        const name = plugin.NAME;
-        const JQUERY_NO_CONFLICT = $.fn[name];
-        $.fn[name] = plugin.jQueryInterface;
-        $.fn[name].Constructor = plugin;
-        $.fn[name].noConflict = () => {
-          $.fn[name] = JQUERY_NO_CONFLICT;
-          return plugin.jQueryInterface;
-        };
-      }
-    });
-  };
-  var execute = (possibleCallback, args = [], defaultValue = possibleCallback) => {
-    return typeof possibleCallback === "function" ? possibleCallback(...args) : defaultValue;
-  };
-  var executeAfterTransition = (callback, transitionElement, waitForTransition = true) => {
-    if (!waitForTransition) {
-      execute(callback);
-      return;
-    }
-    const durationPadding = 5;
-    const emulatedDuration = getTransitionDurationFromElement(transitionElement) + durationPadding;
-    let called = false;
-    const handler = ({
-      target
-    }) => {
-      if (target !== transitionElement) {
-        return;
-      }
-      called = true;
-      transitionElement.removeEventListener(TRANSITION_END, handler);
-      execute(callback);
-    };
-    transitionElement.addEventListener(TRANSITION_END, handler);
-    setTimeout(() => {
-      if (!called) {
-        triggerTransitionEnd(transitionElement);
-      }
-    }, emulatedDuration);
-  };
-  var getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed) => {
-    const listLength = list.length;
-    let index = list.indexOf(activeElement);
-    if (index === -1) {
-      return !shouldGetNext && isCycleAllowed ? list[listLength - 1] : list[0];
-    }
-    index += shouldGetNext ? 1 : -1;
-    if (isCycleAllowed) {
-      index = (index + listLength) % listLength;
-    }
-    return list[Math.max(0, Math.min(index, listLength - 1))];
-  };
-  var namespaceRegex = /[^.]*(?=\..*)\.|.*/;
-  var stripNameRegex = /\..*/;
-  var stripUidRegex = /::\d+$/;
-  var eventRegistry = {};
-  var uidEvent = 1;
-  var customEvents = {
-    mouseenter: "mouseover",
-    mouseleave: "mouseout"
-  };
-  var nativeEvents = /* @__PURE__ */ new Set(["click", "dblclick", "mouseup", "mousedown", "contextmenu", "mousewheel", "DOMMouseScroll", "mouseover", "mouseout", "mousemove", "selectstart", "selectend", "keydown", "keypress", "keyup", "orientationchange", "touchstart", "touchmove", "touchend", "touchcancel", "pointerdown", "pointermove", "pointerup", "pointerleave", "pointercancel", "gesturestart", "gesturechange", "gestureend", "focus", "blur", "change", "reset", "select", "submit", "focusin", "focusout", "load", "unload", "beforeunload", "resize", "move", "DOMContentLoaded", "readystatechange", "error", "abort", "scroll"]);
-  function makeEventUid(element, uid) {
-    return uid && `${uid}::${uidEvent++}` || element.uidEvent || uidEvent++;
-  }
-  function getElementEvents(element) {
-    const uid = makeEventUid(element);
-    element.uidEvent = uid;
-    eventRegistry[uid] = eventRegistry[uid] || {};
-    return eventRegistry[uid];
-  }
-  function bootstrapHandler(element, fn2) {
-    return function handler(event) {
-      hydrateObj(event, {
-        delegateTarget: element
-      });
-      if (handler.oneOff) {
-        EventHandler.off(element, event.type, fn2);
-      }
-      return fn2.apply(element, [event]);
-    };
-  }
-  function bootstrapDelegationHandler(element, selector, fn2) {
-    return function handler(event) {
-      const domElements = element.querySelectorAll(selector);
-      for (let {
-        target
-      } = event; target && target !== this; target = target.parentNode) {
-        for (const domElement of domElements) {
-          if (domElement !== target) {
-            continue;
-          }
-          hydrateObj(event, {
-            delegateTarget: target
-          });
-          if (handler.oneOff) {
-            EventHandler.off(element, event.type, selector, fn2);
-          }
-          return fn2.apply(target, [event]);
-        }
-      }
-    };
-  }
-  function findHandler(events, callable, delegationSelector = null) {
-    return Object.values(events).find((event) => event.callable === callable && event.delegationSelector === delegationSelector);
-  }
-  function normalizeParameters(originalTypeEvent, handler, delegationFunction) {
-    const isDelegated = typeof handler === "string";
-    const callable = isDelegated ? delegationFunction : handler || delegationFunction;
-    let typeEvent = getTypeEvent(originalTypeEvent);
-    if (!nativeEvents.has(typeEvent)) {
-      typeEvent = originalTypeEvent;
-    }
-    return [isDelegated, callable, typeEvent];
-  }
-  function addHandler(element, originalTypeEvent, handler, delegationFunction, oneOff) {
-    if (typeof originalTypeEvent !== "string" || !element) {
-      return;
-    }
-    let [isDelegated, callable, typeEvent] = normalizeParameters(originalTypeEvent, handler, delegationFunction);
-    if (originalTypeEvent in customEvents) {
-      const wrapFunction = (fn3) => {
-        return function(event) {
-          if (!event.relatedTarget || event.relatedTarget !== event.delegateTarget && !event.delegateTarget.contains(event.relatedTarget)) {
-            return fn3.call(this, event);
-          }
-        };
-      };
-      callable = wrapFunction(callable);
-    }
-    const events = getElementEvents(element);
-    const handlers = events[typeEvent] || (events[typeEvent] = {});
-    const previousFunction = findHandler(handlers, callable, isDelegated ? handler : null);
-    if (previousFunction) {
-      previousFunction.oneOff = previousFunction.oneOff && oneOff;
-      return;
-    }
-    const uid = makeEventUid(callable, originalTypeEvent.replace(namespaceRegex, ""));
-    const fn2 = isDelegated ? bootstrapDelegationHandler(element, handler, callable) : bootstrapHandler(element, callable);
-    fn2.delegationSelector = isDelegated ? handler : null;
-    fn2.callable = callable;
-    fn2.oneOff = oneOff;
-    fn2.uidEvent = uid;
-    handlers[uid] = fn2;
-    element.addEventListener(typeEvent, fn2, isDelegated);
-  }
-  function removeHandler(element, events, typeEvent, handler, delegationSelector) {
-    const fn2 = findHandler(events[typeEvent], handler, delegationSelector);
-    if (!fn2) {
-      return;
-    }
-    element.removeEventListener(typeEvent, fn2, Boolean(delegationSelector));
-    delete events[typeEvent][fn2.uidEvent];
-  }
-  function removeNamespacedHandlers(element, events, typeEvent, namespace) {
-    const storeElementEvent = events[typeEvent] || {};
-    for (const [handlerKey, event] of Object.entries(storeElementEvent)) {
-      if (handlerKey.includes(namespace)) {
-        removeHandler(element, events, typeEvent, event.callable, event.delegationSelector);
-      }
-    }
-  }
-  function getTypeEvent(event) {
-    event = event.replace(stripNameRegex, "");
-    return customEvents[event] || event;
-  }
-  var EventHandler = {
-    on(element, event, handler, delegationFunction) {
-      addHandler(element, event, handler, delegationFunction, false);
-    },
-    one(element, event, handler, delegationFunction) {
-      addHandler(element, event, handler, delegationFunction, true);
-    },
-    off(element, originalTypeEvent, handler, delegationFunction) {
-      if (typeof originalTypeEvent !== "string" || !element) {
-        return;
-      }
-      const [isDelegated, callable, typeEvent] = normalizeParameters(originalTypeEvent, handler, delegationFunction);
-      const inNamespace = typeEvent !== originalTypeEvent;
-      const events = getElementEvents(element);
-      const storeElementEvent = events[typeEvent] || {};
-      const isNamespace = originalTypeEvent.startsWith(".");
-      if (typeof callable !== "undefined") {
-        if (!Object.keys(storeElementEvent).length) {
-          return;
-        }
-        removeHandler(element, events, typeEvent, callable, isDelegated ? handler : null);
-        return;
-      }
-      if (isNamespace) {
-        for (const elementEvent of Object.keys(events)) {
-          removeNamespacedHandlers(element, events, elementEvent, originalTypeEvent.slice(1));
-        }
-      }
-      for (const [keyHandlers, event] of Object.entries(storeElementEvent)) {
-        const handlerKey = keyHandlers.replace(stripUidRegex, "");
-        if (!inNamespace || originalTypeEvent.includes(handlerKey)) {
-          removeHandler(element, events, typeEvent, event.callable, event.delegationSelector);
-        }
-      }
-    },
-    trigger(element, event, args) {
-      if (typeof event !== "string" || !element) {
-        return null;
-      }
-      const $ = getjQuery();
-      const typeEvent = getTypeEvent(event);
-      const inNamespace = event !== typeEvent;
-      let jQueryEvent = null;
-      let bubbles = true;
-      let nativeDispatch = true;
-      let defaultPrevented = false;
-      if (inNamespace && $) {
-        jQueryEvent = $.Event(event, args);
-        $(element).trigger(jQueryEvent);
-        bubbles = !jQueryEvent.isPropagationStopped();
-        nativeDispatch = !jQueryEvent.isImmediatePropagationStopped();
-        defaultPrevented = jQueryEvent.isDefaultPrevented();
-      }
-      const evt = hydrateObj(new Event(event, {
-        bubbles,
-        cancelable: true
-      }), args);
-      if (defaultPrevented) {
-        evt.preventDefault();
-      }
-      if (nativeDispatch) {
-        element.dispatchEvent(evt);
-      }
-      if (evt.defaultPrevented && jQueryEvent) {
-        jQueryEvent.preventDefault();
-      }
-      return evt;
-    }
-  };
-  function hydrateObj(obj, meta = {}) {
-    for (const [key, value] of Object.entries(meta)) {
-      try {
-        obj[key] = value;
-      } catch (_unused) {
-        Object.defineProperty(obj, key, {
-          configurable: true,
-          get() {
-            return value;
-          }
-        });
-      }
-    }
-    return obj;
-  }
-  function normalizeData(value) {
-    if (value === "true") {
-      return true;
-    }
-    if (value === "false") {
-      return false;
-    }
-    if (value === Number(value).toString()) {
-      return Number(value);
-    }
-    if (value === "" || value === "null") {
-      return null;
-    }
-    if (typeof value !== "string") {
-      return value;
-    }
-    try {
-      return JSON.parse(decodeURIComponent(value));
-    } catch (_unused) {
-      return value;
-    }
-  }
-  function normalizeDataKey(key) {
-    return key.replace(/[A-Z]/g, (chr) => `-${chr.toLowerCase()}`);
-  }
-  var Manipulator = {
-    setDataAttribute(element, key, value) {
-      element.setAttribute(`data-bs-${normalizeDataKey(key)}`, value);
-    },
-    removeDataAttribute(element, key) {
-      element.removeAttribute(`data-bs-${normalizeDataKey(key)}`);
-    },
-    getDataAttributes(element) {
-      if (!element) {
-        return {};
-      }
-      const attributes = {};
-      const bsKeys = Object.keys(element.dataset).filter((key) => key.startsWith("bs") && !key.startsWith("bsConfig"));
-      for (const key of bsKeys) {
-        let pureKey = key.replace(/^bs/, "");
-        pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1, pureKey.length);
-        attributes[pureKey] = normalizeData(element.dataset[key]);
-      }
-      return attributes;
-    },
-    getDataAttribute(element, key) {
-      return normalizeData(element.getAttribute(`data-bs-${normalizeDataKey(key)}`));
-    }
-  };
-  var Config = class {
-    // Getters
-    static get Default() {
-      return {};
-    }
-    static get DefaultType() {
-      return {};
-    }
-    static get NAME() {
-      throw new Error('You have to implement the static method "NAME", for each component!');
-    }
-    _getConfig(config) {
-      config = this._mergeConfigObj(config);
-      config = this._configAfterMerge(config);
-      this._typeCheckConfig(config);
-      return config;
-    }
-    _configAfterMerge(config) {
-      return config;
-    }
-    _mergeConfigObj(config, element) {
-      const jsonConfig = isElement2(element) ? Manipulator.getDataAttribute(element, "config") : {};
-      return __spreadValues(__spreadValues(__spreadValues(__spreadValues({}, this.constructor.Default), typeof jsonConfig === "object" ? jsonConfig : {}), isElement2(element) ? Manipulator.getDataAttributes(element) : {}), typeof config === "object" ? config : {});
-    }
-    _typeCheckConfig(config, configTypes = this.constructor.DefaultType) {
-      for (const [property, expectedTypes] of Object.entries(configTypes)) {
-        const value = config[property];
-        const valueType = isElement2(value) ? "element" : toType(value);
-        if (!new RegExp(expectedTypes).test(valueType)) {
-          throw new TypeError(`${this.constructor.NAME.toUpperCase()}: Option "${property}" provided type "${valueType}" but expected type "${expectedTypes}".`);
-        }
-      }
-    }
-  };
-  var VERSION = "5.3.3";
-  var BaseComponent = class extends Config {
-    constructor(element, config) {
-      super();
-      element = getElement(element);
-      if (!element) {
-        return;
-      }
-      this._element = element;
-      this._config = this._getConfig(config);
-      Data.set(this._element, this.constructor.DATA_KEY, this);
-    }
-    // Public
-    dispose() {
-      Data.remove(this._element, this.constructor.DATA_KEY);
-      EventHandler.off(this._element, this.constructor.EVENT_KEY);
-      for (const propertyName of Object.getOwnPropertyNames(this)) {
-        this[propertyName] = null;
-      }
-    }
-    _queueCallback(callback, element, isAnimated = true) {
-      executeAfterTransition(callback, element, isAnimated);
-    }
-    _getConfig(config) {
-      config = this._mergeConfigObj(config, this._element);
-      config = this._configAfterMerge(config);
-      this._typeCheckConfig(config);
-      return config;
-    }
-    // Static
-    static getInstance(element) {
-      return Data.get(getElement(element), this.DATA_KEY);
-    }
-    static getOrCreateInstance(element, config = {}) {
-      return this.getInstance(element) || new this(element, typeof config === "object" ? config : null);
-    }
-    static get VERSION() {
-      return VERSION;
-    }
-    static get DATA_KEY() {
-      return `bs.${this.NAME}`;
-    }
-    static get EVENT_KEY() {
-      return `.${this.DATA_KEY}`;
-    }
-    static eventName(name) {
-      return `${name}${this.EVENT_KEY}`;
-    }
-  };
-  var getSelector = (element) => {
-    let selector = element.getAttribute("data-bs-target");
-    if (!selector || selector === "#") {
-      let hrefAttribute = element.getAttribute("href");
-      if (!hrefAttribute || !hrefAttribute.includes("#") && !hrefAttribute.startsWith(".")) {
-        return null;
-      }
-      if (hrefAttribute.includes("#") && !hrefAttribute.startsWith("#")) {
-        hrefAttribute = `#${hrefAttribute.split("#")[1]}`;
-      }
-      selector = hrefAttribute && hrefAttribute !== "#" ? hrefAttribute.trim() : null;
-    }
-    return selector ? selector.split(",").map((sel) => parseSelector(sel)).join(",") : null;
-  };
-  var SelectorEngine = {
-    find(selector, element = document.documentElement) {
-      return [].concat(...Element.prototype.querySelectorAll.call(element, selector));
-    },
-    findOne(selector, element = document.documentElement) {
-      return Element.prototype.querySelector.call(element, selector);
-    },
-    children(element, selector) {
-      return [].concat(...element.children).filter((child) => child.matches(selector));
-    },
-    parents(element, selector) {
-      const parents = [];
-      let ancestor = element.parentNode.closest(selector);
-      while (ancestor) {
-        parents.push(ancestor);
-        ancestor = ancestor.parentNode.closest(selector);
-      }
-      return parents;
-    },
-    prev(element, selector) {
-      let previous = element.previousElementSibling;
-      while (previous) {
-        if (previous.matches(selector)) {
-          return [previous];
-        }
-        previous = previous.previousElementSibling;
-      }
-      return [];
-    },
-    // TODO: this is now unused; remove later along with prev()
-    next(element, selector) {
-      let next = element.nextElementSibling;
-      while (next) {
-        if (next.matches(selector)) {
-          return [next];
-        }
-        next = next.nextElementSibling;
-      }
-      return [];
-    },
-    focusableChildren(element) {
-      const focusables = ["a", "button", "input", "textarea", "select", "details", "[tabindex]", '[contenteditable="true"]'].map((selector) => `${selector}:not([tabindex^="-"])`).join(",");
-      return this.find(focusables, element).filter((el) => !isDisabled(el) && isVisible(el));
-    },
-    getSelectorFromElement(element) {
-      const selector = getSelector(element);
-      if (selector) {
-        return SelectorEngine.findOne(selector) ? selector : null;
-      }
-      return null;
-    },
-    getElementFromSelector(element) {
-      const selector = getSelector(element);
-      return selector ? SelectorEngine.findOne(selector) : null;
-    },
-    getMultipleElementsFromSelector(element) {
-      const selector = getSelector(element);
-      return selector ? SelectorEngine.find(selector) : [];
-    }
-  };
-  var enableDismissTrigger = (component, method = "hide") => {
-    const clickEvent = `click.dismiss${component.EVENT_KEY}`;
-    const name = component.NAME;
-    EventHandler.on(document, clickEvent, `[data-bs-dismiss="${name}"]`, function(event) {
-      if (["A", "AREA"].includes(this.tagName)) {
-        event.preventDefault();
-      }
-      if (isDisabled(this)) {
-        return;
-      }
-      const target = SelectorEngine.getElementFromSelector(this) || this.closest(`.${name}`);
-      const instance = component.getOrCreateInstance(target);
-      instance[method]();
-    });
-  };
-  var NAME$f = "alert";
-  var DATA_KEY$a = "bs.alert";
-  var EVENT_KEY$b = `.${DATA_KEY$a}`;
-  var EVENT_CLOSE = `close${EVENT_KEY$b}`;
-  var EVENT_CLOSED = `closed${EVENT_KEY$b}`;
-  var CLASS_NAME_FADE$5 = "fade";
-  var CLASS_NAME_SHOW$8 = "show";
-  var Alert = class _Alert extends BaseComponent {
-    // Getters
-    static get NAME() {
-      return NAME$f;
-    }
-    // Public
-    close() {
-      const closeEvent = EventHandler.trigger(this._element, EVENT_CLOSE);
-      if (closeEvent.defaultPrevented) {
-        return;
-      }
-      this._element.classList.remove(CLASS_NAME_SHOW$8);
-      const isAnimated = this._element.classList.contains(CLASS_NAME_FADE$5);
-      this._queueCallback(() => this._destroyElement(), this._element, isAnimated);
-    }
-    // Private
-    _destroyElement() {
-      this._element.remove();
-      EventHandler.trigger(this._element, EVENT_CLOSED);
-      this.dispose();
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _Alert.getOrCreateInstance(this);
-        if (typeof config !== "string") {
-          return;
-        }
-        if (data[config] === void 0 || config.startsWith("_") || config === "constructor") {
-          throw new TypeError(`No method named "${config}"`);
-        }
-        data[config](this);
-      });
-    }
-  };
-  enableDismissTrigger(Alert, "close");
-  defineJQueryPlugin(Alert);
-  var NAME$e = "button";
-  var DATA_KEY$9 = "bs.button";
-  var EVENT_KEY$a = `.${DATA_KEY$9}`;
-  var DATA_API_KEY$6 = ".data-api";
-  var CLASS_NAME_ACTIVE$3 = "active";
-  var SELECTOR_DATA_TOGGLE$5 = '[data-bs-toggle="button"]';
-  var EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
-  var Button = class _Button extends BaseComponent {
-    // Getters
-    static get NAME() {
-      return NAME$e;
-    }
-    // Public
-    toggle() {
-      this._element.setAttribute("aria-pressed", this._element.classList.toggle(CLASS_NAME_ACTIVE$3));
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _Button.getOrCreateInstance(this);
-        if (config === "toggle") {
-          data[config]();
-        }
-      });
-    }
-  };
-  EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$5, (event) => {
-    event.preventDefault();
-    const button = event.target.closest(SELECTOR_DATA_TOGGLE$5);
-    const data = Button.getOrCreateInstance(button);
-    data.toggle();
-  });
-  defineJQueryPlugin(Button);
-  var NAME$d = "swipe";
-  var EVENT_KEY$9 = ".bs.swipe";
-  var EVENT_TOUCHSTART = `touchstart${EVENT_KEY$9}`;
-  var EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$9}`;
-  var EVENT_TOUCHEND = `touchend${EVENT_KEY$9}`;
-  var EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$9}`;
-  var EVENT_POINTERUP = `pointerup${EVENT_KEY$9}`;
-  var POINTER_TYPE_TOUCH = "touch";
-  var POINTER_TYPE_PEN = "pen";
-  var CLASS_NAME_POINTER_EVENT = "pointer-event";
-  var SWIPE_THRESHOLD = 40;
-  var Default$c = {
-    endCallback: null,
-    leftCallback: null,
-    rightCallback: null
-  };
-  var DefaultType$c = {
-    endCallback: "(function|null)",
-    leftCallback: "(function|null)",
-    rightCallback: "(function|null)"
-  };
-  var Swipe = class _Swipe extends Config {
-    constructor(element, config) {
-      super();
-      this._element = element;
-      if (!element || !_Swipe.isSupported()) {
-        return;
-      }
-      this._config = this._getConfig(config);
-      this._deltaX = 0;
-      this._supportPointerEvents = Boolean(window.PointerEvent);
-      this._initEvents();
-    }
-    // Getters
-    static get Default() {
-      return Default$c;
-    }
-    static get DefaultType() {
-      return DefaultType$c;
-    }
-    static get NAME() {
-      return NAME$d;
-    }
-    // Public
-    dispose() {
-      EventHandler.off(this._element, EVENT_KEY$9);
-    }
-    // Private
-    _start(event) {
-      if (!this._supportPointerEvents) {
-        this._deltaX = event.touches[0].clientX;
-        return;
-      }
-      if (this._eventIsPointerPenTouch(event)) {
-        this._deltaX = event.clientX;
-      }
-    }
-    _end(event) {
-      if (this._eventIsPointerPenTouch(event)) {
-        this._deltaX = event.clientX - this._deltaX;
-      }
-      this._handleSwipe();
-      execute(this._config.endCallback);
-    }
-    _move(event) {
-      this._deltaX = event.touches && event.touches.length > 1 ? 0 : event.touches[0].clientX - this._deltaX;
-    }
-    _handleSwipe() {
-      const absDeltaX = Math.abs(this._deltaX);
-      if (absDeltaX <= SWIPE_THRESHOLD) {
-        return;
-      }
-      const direction = absDeltaX / this._deltaX;
-      this._deltaX = 0;
-      if (!direction) {
-        return;
-      }
-      execute(direction > 0 ? this._config.rightCallback : this._config.leftCallback);
-    }
-    _initEvents() {
-      if (this._supportPointerEvents) {
-        EventHandler.on(this._element, EVENT_POINTERDOWN, (event) => this._start(event));
-        EventHandler.on(this._element, EVENT_POINTERUP, (event) => this._end(event));
-        this._element.classList.add(CLASS_NAME_POINTER_EVENT);
+    if (cookieNoticeAlert) {
+      if (getCookie(cookieNoticeName)) {
+        cookieNoticeAlert.remove();
       } else {
-        EventHandler.on(this._element, EVENT_TOUCHSTART, (event) => this._start(event));
-        EventHandler.on(this._element, EVENT_TOUCHMOVE, (event) => this._move(event));
-        EventHandler.on(this._element, EVENT_TOUCHEND, (event) => this._end(event));
+        cookieNoticeAlert.classList.remove("d-none");
       }
-    }
-    _eventIsPointerPenTouch(event) {
-      return this._supportPointerEvents && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH);
-    }
-    // Static
-    static isSupported() {
-      return "ontouchstart" in document.documentElement || navigator.maxTouchPoints > 0;
-    }
-  };
-  var NAME$c = "carousel";
-  var DATA_KEY$8 = "bs.carousel";
-  var EVENT_KEY$8 = `.${DATA_KEY$8}`;
-  var DATA_API_KEY$5 = ".data-api";
-  var ARROW_LEFT_KEY$1 = "ArrowLeft";
-  var ARROW_RIGHT_KEY$1 = "ArrowRight";
-  var TOUCHEVENT_COMPAT_WAIT = 500;
-  var ORDER_NEXT = "next";
-  var ORDER_PREV = "prev";
-  var DIRECTION_LEFT = "left";
-  var DIRECTION_RIGHT = "right";
-  var EVENT_SLIDE = `slide${EVENT_KEY$8}`;
-  var EVENT_SLID = `slid${EVENT_KEY$8}`;
-  var EVENT_KEYDOWN$1 = `keydown${EVENT_KEY$8}`;
-  var EVENT_MOUSEENTER$1 = `mouseenter${EVENT_KEY$8}`;
-  var EVENT_MOUSELEAVE$1 = `mouseleave${EVENT_KEY$8}`;
-  var EVENT_DRAG_START = `dragstart${EVENT_KEY$8}`;
-  var EVENT_LOAD_DATA_API$3 = `load${EVENT_KEY$8}${DATA_API_KEY$5}`;
-  var EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$8}${DATA_API_KEY$5}`;
-  var CLASS_NAME_CAROUSEL = "carousel";
-  var CLASS_NAME_ACTIVE$2 = "active";
-  var CLASS_NAME_SLIDE = "slide";
-  var CLASS_NAME_END = "carousel-item-end";
-  var CLASS_NAME_START = "carousel-item-start";
-  var CLASS_NAME_NEXT = "carousel-item-next";
-  var CLASS_NAME_PREV = "carousel-item-prev";
-  var SELECTOR_ACTIVE = ".active";
-  var SELECTOR_ITEM = ".carousel-item";
-  var SELECTOR_ACTIVE_ITEM = SELECTOR_ACTIVE + SELECTOR_ITEM;
-  var SELECTOR_ITEM_IMG = ".carousel-item img";
-  var SELECTOR_INDICATORS = ".carousel-indicators";
-  var SELECTOR_DATA_SLIDE = "[data-bs-slide], [data-bs-slide-to]";
-  var SELECTOR_DATA_RIDE = '[data-bs-ride="carousel"]';
-  var KEY_TO_DIRECTION = {
-    [ARROW_LEFT_KEY$1]: DIRECTION_RIGHT,
-    [ARROW_RIGHT_KEY$1]: DIRECTION_LEFT
-  };
-  var Default$b = {
-    interval: 5e3,
-    keyboard: true,
-    pause: "hover",
-    ride: false,
-    touch: true,
-    wrap: true
-  };
-  var DefaultType$b = {
-    interval: "(number|boolean)",
-    // TODO:v6 remove boolean support
-    keyboard: "boolean",
-    pause: "(string|boolean)",
-    ride: "(boolean|string)",
-    touch: "boolean",
-    wrap: "boolean"
-  };
-  var Carousel = class _Carousel extends BaseComponent {
-    constructor(element, config) {
-      super(element, config);
-      this._interval = null;
-      this._activeElement = null;
-      this._isSliding = false;
-      this.touchTimeout = null;
-      this._swipeHelper = null;
-      this._indicatorsElement = SelectorEngine.findOne(SELECTOR_INDICATORS, this._element);
-      this._addEventListeners();
-      if (this._config.ride === CLASS_NAME_CAROUSEL) {
-        this.cycle();
-      }
-    }
-    // Getters
-    static get Default() {
-      return Default$b;
-    }
-    static get DefaultType() {
-      return DefaultType$b;
-    }
-    static get NAME() {
-      return NAME$c;
-    }
-    // Public
-    next() {
-      this._slide(ORDER_NEXT);
-    }
-    nextWhenVisible() {
-      if (!document.hidden && isVisible(this._element)) {
-        this.next();
-      }
-    }
-    prev() {
-      this._slide(ORDER_PREV);
-    }
-    pause() {
-      if (this._isSliding) {
-        triggerTransitionEnd(this._element);
-      }
-      this._clearInterval();
-    }
-    cycle() {
-      this._clearInterval();
-      this._updateInterval();
-      this._interval = setInterval(() => this.nextWhenVisible(), this._config.interval);
-    }
-    _maybeEnableCycle() {
-      if (!this._config.ride) {
-        return;
-      }
-      if (this._isSliding) {
-        EventHandler.one(this._element, EVENT_SLID, () => this.cycle());
-        return;
-      }
-      this.cycle();
-    }
-    to(index) {
-      const items = this._getItems();
-      if (index > items.length - 1 || index < 0) {
-        return;
-      }
-      if (this._isSliding) {
-        EventHandler.one(this._element, EVENT_SLID, () => this.to(index));
-        return;
-      }
-      const activeIndex = this._getItemIndex(this._getActive());
-      if (activeIndex === index) {
-        return;
-      }
-      const order2 = index > activeIndex ? ORDER_NEXT : ORDER_PREV;
-      this._slide(order2, items[index]);
-    }
-    dispose() {
-      if (this._swipeHelper) {
-        this._swipeHelper.dispose();
-      }
-      super.dispose();
-    }
-    // Private
-    _configAfterMerge(config) {
-      config.defaultInterval = config.interval;
-      return config;
-    }
-    _addEventListeners() {
-      if (this._config.keyboard) {
-        EventHandler.on(this._element, EVENT_KEYDOWN$1, (event) => this._keydown(event));
-      }
-      if (this._config.pause === "hover") {
-        EventHandler.on(this._element, EVENT_MOUSEENTER$1, () => this.pause());
-        EventHandler.on(this._element, EVENT_MOUSELEAVE$1, () => this._maybeEnableCycle());
-      }
-      if (this._config.touch && Swipe.isSupported()) {
-        this._addTouchEventListeners();
-      }
-    }
-    _addTouchEventListeners() {
-      for (const img of SelectorEngine.find(SELECTOR_ITEM_IMG, this._element)) {
-        EventHandler.on(img, EVENT_DRAG_START, (event) => event.preventDefault());
-      }
-      const endCallBack = () => {
-        if (this._config.pause !== "hover") {
-          return;
-        }
-        this.pause();
-        if (this.touchTimeout) {
-          clearTimeout(this.touchTimeout);
-        }
-        this.touchTimeout = setTimeout(() => this._maybeEnableCycle(), TOUCHEVENT_COMPAT_WAIT + this._config.interval);
-      };
-      const swipeConfig = {
-        leftCallback: () => this._slide(this._directionToOrder(DIRECTION_LEFT)),
-        rightCallback: () => this._slide(this._directionToOrder(DIRECTION_RIGHT)),
-        endCallback: endCallBack
-      };
-      this._swipeHelper = new Swipe(this._element, swipeConfig);
-    }
-    _keydown(event) {
-      if (/input|textarea/i.test(event.target.tagName)) {
-        return;
-      }
-      const direction = KEY_TO_DIRECTION[event.key];
-      if (direction) {
-        event.preventDefault();
-        this._slide(this._directionToOrder(direction));
-      }
-    }
-    _getItemIndex(element) {
-      return this._getItems().indexOf(element);
-    }
-    _setActiveIndicatorElement(index) {
-      if (!this._indicatorsElement) {
-        return;
-      }
-      const activeIndicator = SelectorEngine.findOne(SELECTOR_ACTIVE, this._indicatorsElement);
-      activeIndicator.classList.remove(CLASS_NAME_ACTIVE$2);
-      activeIndicator.removeAttribute("aria-current");
-      const newActiveIndicator = SelectorEngine.findOne(`[data-bs-slide-to="${index}"]`, this._indicatorsElement);
-      if (newActiveIndicator) {
-        newActiveIndicator.classList.add(CLASS_NAME_ACTIVE$2);
-        newActiveIndicator.setAttribute("aria-current", "true");
-      }
-    }
-    _updateInterval() {
-      const element = this._activeElement || this._getActive();
-      if (!element) {
-        return;
-      }
-      const elementInterval = Number.parseInt(element.getAttribute("data-bs-interval"), 10);
-      this._config.interval = elementInterval || this._config.defaultInterval;
-    }
-    _slide(order2, element = null) {
-      if (this._isSliding) {
-        return;
-      }
-      const activeElement = this._getActive();
-      const isNext = order2 === ORDER_NEXT;
-      const nextElement = element || getNextActiveElement(this._getItems(), activeElement, isNext, this._config.wrap);
-      if (nextElement === activeElement) {
-        return;
-      }
-      const nextElementIndex = this._getItemIndex(nextElement);
-      const triggerEvent = (eventName) => {
-        return EventHandler.trigger(this._element, eventName, {
-          relatedTarget: nextElement,
-          direction: this._orderToDirection(order2),
-          from: this._getItemIndex(activeElement),
-          to: nextElementIndex
-        });
-      };
-      const slideEvent = triggerEvent(EVENT_SLIDE);
-      if (slideEvent.defaultPrevented) {
-        return;
-      }
-      if (!activeElement || !nextElement) {
-        return;
-      }
-      const isCycling = Boolean(this._interval);
-      this.pause();
-      this._isSliding = true;
-      this._setActiveIndicatorElement(nextElementIndex);
-      this._activeElement = nextElement;
-      const directionalClassName = isNext ? CLASS_NAME_START : CLASS_NAME_END;
-      const orderClassName = isNext ? CLASS_NAME_NEXT : CLASS_NAME_PREV;
-      nextElement.classList.add(orderClassName);
-      reflow(nextElement);
-      activeElement.classList.add(directionalClassName);
-      nextElement.classList.add(directionalClassName);
-      const completeCallBack = () => {
-        nextElement.classList.remove(directionalClassName, orderClassName);
-        nextElement.classList.add(CLASS_NAME_ACTIVE$2);
-        activeElement.classList.remove(CLASS_NAME_ACTIVE$2, orderClassName, directionalClassName);
-        this._isSliding = false;
-        triggerEvent(EVENT_SLID);
-      };
-      this._queueCallback(completeCallBack, activeElement, this._isAnimated());
-      if (isCycling) {
-        this.cycle();
-      }
-    }
-    _isAnimated() {
-      return this._element.classList.contains(CLASS_NAME_SLIDE);
-    }
-    _getActive() {
-      return SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element);
-    }
-    _getItems() {
-      return SelectorEngine.find(SELECTOR_ITEM, this._element);
-    }
-    _clearInterval() {
-      if (this._interval) {
-        clearInterval(this._interval);
-        this._interval = null;
-      }
-    }
-    _directionToOrder(direction) {
-      if (isRTL()) {
-        return direction === DIRECTION_LEFT ? ORDER_PREV : ORDER_NEXT;
-      }
-      return direction === DIRECTION_LEFT ? ORDER_NEXT : ORDER_PREV;
-    }
-    _orderToDirection(order2) {
-      if (isRTL()) {
-        return order2 === ORDER_PREV ? DIRECTION_LEFT : DIRECTION_RIGHT;
-      }
-      return order2 === ORDER_PREV ? DIRECTION_RIGHT : DIRECTION_LEFT;
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _Carousel.getOrCreateInstance(this, config);
-        if (typeof config === "number") {
-          data.to(config);
-          return;
-        }
-        if (typeof config === "string") {
-          if (data[config] === void 0 || config.startsWith("_") || config === "constructor") {
-            throw new TypeError(`No method named "${config}"`);
+      cookieNoticeAlert.querySelectorAll("button").forEach((el) => {
+        el.addEventListener("click", () => {
+          if (~location.hostname.indexOf("chocolatey.org")) {
+            document.cookie = `${cookieNoticeName}=true; ${setCookieExpirationNever()}path=/; domain=chocolatey.org;`;
+          } else {
+            document.cookie = `${cookieNoticeName}=true; ${setCookieExpirationNever()}path=/;`;
           }
-          data[config]();
-        }
+        }, false);
       });
     }
-  };
-  EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_SLIDE, function(event) {
-    const target = SelectorEngine.getElementFromSelector(this);
-    if (!target || !target.classList.contains(CLASS_NAME_CAROUSEL)) {
-      return;
-    }
-    event.preventDefault();
-    const carousel = Carousel.getOrCreateInstance(target);
-    const slideIndex = this.getAttribute("data-bs-slide-to");
-    if (slideIndex) {
-      carousel.to(slideIndex);
-      carousel._maybeEnableCycle();
-      return;
-    }
-    if (Manipulator.getDataAttribute(this, "slide") === "next") {
-      carousel.next();
-      carousel._maybeEnableCycle();
-      return;
-    }
-    carousel.prev();
-    carousel._maybeEnableCycle();
-  });
-  EventHandler.on(window, EVENT_LOAD_DATA_API$3, () => {
-    const carousels = SelectorEngine.find(SELECTOR_DATA_RIDE);
-    for (const carousel of carousels) {
-      Carousel.getOrCreateInstance(carousel);
-    }
-  });
-  defineJQueryPlugin(Carousel);
-  var NAME$b = "collapse";
-  var DATA_KEY$7 = "bs.collapse";
-  var EVENT_KEY$7 = `.${DATA_KEY$7}`;
-  var DATA_API_KEY$4 = ".data-api";
-  var EVENT_SHOW$6 = `show${EVENT_KEY$7}`;
-  var EVENT_SHOWN$6 = `shown${EVENT_KEY$7}`;
-  var EVENT_HIDE$6 = `hide${EVENT_KEY$7}`;
-  var EVENT_HIDDEN$6 = `hidden${EVENT_KEY$7}`;
-  var EVENT_CLICK_DATA_API$4 = `click${EVENT_KEY$7}${DATA_API_KEY$4}`;
-  var CLASS_NAME_SHOW$7 = "show";
-  var CLASS_NAME_COLLAPSE = "collapse";
-  var CLASS_NAME_COLLAPSING = "collapsing";
-  var CLASS_NAME_COLLAPSED = "collapsed";
-  var CLASS_NAME_DEEPER_CHILDREN = `:scope .${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`;
-  var CLASS_NAME_HORIZONTAL = "collapse-horizontal";
-  var WIDTH = "width";
-  var HEIGHT = "height";
-  var SELECTOR_ACTIVES = ".collapse.show, .collapse.collapsing";
-  var SELECTOR_DATA_TOGGLE$4 = '[data-bs-toggle="collapse"]';
-  var Default$a = {
-    parent: null,
-    toggle: true
-  };
-  var DefaultType$a = {
-    parent: "(null|element)",
-    toggle: "boolean"
-  };
-  var Collapse = class _Collapse extends BaseComponent {
-    constructor(element, config) {
-      super(element, config);
-      this._isTransitioning = false;
-      this._triggerArray = [];
-      const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE$4);
-      for (const elem of toggleList) {
-        const selector = SelectorEngine.getSelectorFromElement(elem);
-        const filterElement = SelectorEngine.find(selector).filter((foundElement) => foundElement === this._element);
-        if (selector !== null && filterElement.length) {
-          this._triggerArray.push(elem);
-        }
-      }
-      this._initializeChildren();
-      if (!this._config.parent) {
-        this._addAriaAndCollapsedClass(this._triggerArray, this._isShown());
-      }
-      if (this._config.toggle) {
-        this.toggle();
-      }
-    }
-    // Getters
-    static get Default() {
-      return Default$a;
-    }
-    static get DefaultType() {
-      return DefaultType$a;
-    }
-    static get NAME() {
-      return NAME$b;
-    }
-    // Public
-    toggle() {
-      if (this._isShown()) {
-        this.hide();
-      } else {
-        this.show();
-      }
-    }
-    show() {
-      if (this._isTransitioning || this._isShown()) {
-        return;
-      }
-      let activeChildren = [];
-      if (this._config.parent) {
-        activeChildren = this._getFirstLevelChildren(SELECTOR_ACTIVES).filter((element) => element !== this._element).map((element) => _Collapse.getOrCreateInstance(element, {
-          toggle: false
-        }));
-      }
-      if (activeChildren.length && activeChildren[0]._isTransitioning) {
-        return;
-      }
-      const startEvent = EventHandler.trigger(this._element, EVENT_SHOW$6);
-      if (startEvent.defaultPrevented) {
-        return;
-      }
-      for (const activeInstance of activeChildren) {
-        activeInstance.hide();
-      }
-      const dimension = this._getDimension();
-      this._element.classList.remove(CLASS_NAME_COLLAPSE);
-      this._element.classList.add(CLASS_NAME_COLLAPSING);
-      this._element.style[dimension] = 0;
-      this._addAriaAndCollapsedClass(this._triggerArray, true);
-      this._isTransitioning = true;
-      const complete = () => {
-        this._isTransitioning = false;
-        this._element.classList.remove(CLASS_NAME_COLLAPSING);
-        this._element.classList.add(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW$7);
-        this._element.style[dimension] = "";
-        EventHandler.trigger(this._element, EVENT_SHOWN$6);
-      };
-      const capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      const scrollSize = `scroll${capitalizedDimension}`;
-      this._queueCallback(complete, this._element, true);
-      this._element.style[dimension] = `${this._element[scrollSize]}px`;
-    }
-    hide() {
-      if (this._isTransitioning || !this._isShown()) {
-        return;
-      }
-      const startEvent = EventHandler.trigger(this._element, EVENT_HIDE$6);
-      if (startEvent.defaultPrevented) {
-        return;
-      }
-      const dimension = this._getDimension();
-      this._element.style[dimension] = `${this._element.getBoundingClientRect()[dimension]}px`;
-      reflow(this._element);
-      this._element.classList.add(CLASS_NAME_COLLAPSING);
-      this._element.classList.remove(CLASS_NAME_COLLAPSE, CLASS_NAME_SHOW$7);
-      for (const trigger of this._triggerArray) {
-        const element = SelectorEngine.getElementFromSelector(trigger);
-        if (element && !this._isShown(element)) {
-          this._addAriaAndCollapsedClass([trigger], false);
-        }
-      }
-      this._isTransitioning = true;
-      const complete = () => {
-        this._isTransitioning = false;
-        this._element.classList.remove(CLASS_NAME_COLLAPSING);
-        this._element.classList.add(CLASS_NAME_COLLAPSE);
-        EventHandler.trigger(this._element, EVENT_HIDDEN$6);
-      };
-      this._element.style[dimension] = "";
-      this._queueCallback(complete, this._element, true);
-    }
-    _isShown(element = this._element) {
-      return element.classList.contains(CLASS_NAME_SHOW$7);
-    }
-    // Private
-    _configAfterMerge(config) {
-      config.toggle = Boolean(config.toggle);
-      config.parent = getElement(config.parent);
-      return config;
-    }
-    _getDimension() {
-      return this._element.classList.contains(CLASS_NAME_HORIZONTAL) ? WIDTH : HEIGHT;
-    }
-    _initializeChildren() {
-      if (!this._config.parent) {
-        return;
-      }
-      const children = this._getFirstLevelChildren(SELECTOR_DATA_TOGGLE$4);
-      for (const element of children) {
-        const selected = SelectorEngine.getElementFromSelector(element);
-        if (selected) {
-          this._addAriaAndCollapsedClass([element], this._isShown(selected));
-        }
-      }
-    }
-    _getFirstLevelChildren(selector) {
-      const children = SelectorEngine.find(CLASS_NAME_DEEPER_CHILDREN, this._config.parent);
-      return SelectorEngine.find(selector, this._config.parent).filter((element) => !children.includes(element));
-    }
-    _addAriaAndCollapsedClass(triggerArray, isOpen) {
-      if (!triggerArray.length) {
-        return;
-      }
-      for (const element of triggerArray) {
-        element.classList.toggle(CLASS_NAME_COLLAPSED, !isOpen);
-        element.setAttribute("aria-expanded", isOpen);
-      }
-    }
-    // Static
-    static jQueryInterface(config) {
-      const _config = {};
-      if (typeof config === "string" && /show|hide/.test(config)) {
-        _config.toggle = false;
-      }
-      return this.each(function() {
-        const data = _Collapse.getOrCreateInstance(this, _config);
-        if (typeof config === "string") {
-          if (typeof data[config] === "undefined") {
-            throw new TypeError(`No method named "${config}"`);
-          }
-          data[config]();
-        }
-      });
-    }
-  };
-  EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, function(event) {
-    if (event.target.tagName === "A" || event.delegateTarget && event.delegateTarget.tagName === "A") {
-      event.preventDefault();
-    }
-    for (const element of SelectorEngine.getMultipleElementsFromSelector(this)) {
-      Collapse.getOrCreateInstance(element, {
-        toggle: false
-      }).toggle();
-    }
-  });
-  defineJQueryPlugin(Collapse);
-  var NAME$a = "dropdown";
-  var DATA_KEY$6 = "bs.dropdown";
-  var EVENT_KEY$6 = `.${DATA_KEY$6}`;
-  var DATA_API_KEY$3 = ".data-api";
-  var ESCAPE_KEY$2 = "Escape";
-  var TAB_KEY$1 = "Tab";
-  var ARROW_UP_KEY$1 = "ArrowUp";
-  var ARROW_DOWN_KEY$1 = "ArrowDown";
-  var RIGHT_MOUSE_BUTTON = 2;
-  var EVENT_HIDE$5 = `hide${EVENT_KEY$6}`;
-  var EVENT_HIDDEN$5 = `hidden${EVENT_KEY$6}`;
-  var EVENT_SHOW$5 = `show${EVENT_KEY$6}`;
-  var EVENT_SHOWN$5 = `shown${EVENT_KEY$6}`;
-  var EVENT_CLICK_DATA_API$3 = `click${EVENT_KEY$6}${DATA_API_KEY$3}`;
-  var EVENT_KEYDOWN_DATA_API = `keydown${EVENT_KEY$6}${DATA_API_KEY$3}`;
-  var EVENT_KEYUP_DATA_API = `keyup${EVENT_KEY$6}${DATA_API_KEY$3}`;
-  var CLASS_NAME_SHOW$6 = "show";
-  var CLASS_NAME_DROPUP = "dropup";
-  var CLASS_NAME_DROPEND = "dropend";
-  var CLASS_NAME_DROPSTART = "dropstart";
-  var CLASS_NAME_DROPUP_CENTER = "dropup-center";
-  var CLASS_NAME_DROPDOWN_CENTER = "dropdown-center";
-  var SELECTOR_DATA_TOGGLE$3 = '[data-bs-toggle="dropdown"]:not(.disabled):not(:disabled)';
-  var SELECTOR_DATA_TOGGLE_SHOWN = `${SELECTOR_DATA_TOGGLE$3}.${CLASS_NAME_SHOW$6}`;
-  var SELECTOR_MENU = ".dropdown-menu";
-  var SELECTOR_NAVBAR = ".navbar";
-  var SELECTOR_NAVBAR_NAV = ".navbar-nav";
-  var SELECTOR_VISIBLE_ITEMS = ".dropdown-menu .dropdown-item:not(.disabled):not(:disabled)";
-  var PLACEMENT_TOP = isRTL() ? "top-end" : "top-start";
-  var PLACEMENT_TOPEND = isRTL() ? "top-start" : "top-end";
-  var PLACEMENT_BOTTOM = isRTL() ? "bottom-end" : "bottom-start";
-  var PLACEMENT_BOTTOMEND = isRTL() ? "bottom-start" : "bottom-end";
-  var PLACEMENT_RIGHT = isRTL() ? "left-start" : "right-start";
-  var PLACEMENT_LEFT = isRTL() ? "right-start" : "left-start";
-  var PLACEMENT_TOPCENTER = "top";
-  var PLACEMENT_BOTTOMCENTER = "bottom";
-  var Default$9 = {
-    autoClose: true,
-    boundary: "clippingParents",
-    display: "dynamic",
-    offset: [0, 2],
-    popperConfig: null,
-    reference: "toggle"
-  };
-  var DefaultType$9 = {
-    autoClose: "(boolean|string)",
-    boundary: "(string|element)",
-    display: "string",
-    offset: "(array|string|function)",
-    popperConfig: "(null|object|function)",
-    reference: "(string|element|object)"
-  };
-  var Dropdown = class _Dropdown extends BaseComponent {
-    constructor(element, config) {
-      super(element, config);
-      this._popper = null;
-      this._parent = this._element.parentNode;
-      this._menu = SelectorEngine.next(this._element, SELECTOR_MENU)[0] || SelectorEngine.prev(this._element, SELECTOR_MENU)[0] || SelectorEngine.findOne(SELECTOR_MENU, this._parent);
-      this._inNavbar = this._detectNavbar();
-    }
-    // Getters
-    static get Default() {
-      return Default$9;
-    }
-    static get DefaultType() {
-      return DefaultType$9;
-    }
-    static get NAME() {
-      return NAME$a;
-    }
-    // Public
-    toggle() {
-      return this._isShown() ? this.hide() : this.show();
-    }
-    show() {
-      if (isDisabled(this._element) || this._isShown()) {
-        return;
-      }
-      const relatedTarget = {
-        relatedTarget: this._element
-      };
-      const showEvent = EventHandler.trigger(this._element, EVENT_SHOW$5, relatedTarget);
-      if (showEvent.defaultPrevented) {
-        return;
-      }
-      this._createPopper();
-      if ("ontouchstart" in document.documentElement && !this._parent.closest(SELECTOR_NAVBAR_NAV)) {
-        for (const element of [].concat(...document.body.children)) {
-          EventHandler.on(element, "mouseover", noop);
-        }
-      }
-      this._element.focus();
-      this._element.setAttribute("aria-expanded", true);
-      this._menu.classList.add(CLASS_NAME_SHOW$6);
-      this._element.classList.add(CLASS_NAME_SHOW$6);
-      EventHandler.trigger(this._element, EVENT_SHOWN$5, relatedTarget);
-    }
-    hide() {
-      if (isDisabled(this._element) || !this._isShown()) {
-        return;
-      }
-      const relatedTarget = {
-        relatedTarget: this._element
-      };
-      this._completeHide(relatedTarget);
-    }
-    dispose() {
-      if (this._popper) {
-        this._popper.destroy();
-      }
-      super.dispose();
-    }
-    update() {
-      this._inNavbar = this._detectNavbar();
-      if (this._popper) {
-        this._popper.update();
-      }
-    }
-    // Private
-    _completeHide(relatedTarget) {
-      const hideEvent = EventHandler.trigger(this._element, EVENT_HIDE$5, relatedTarget);
-      if (hideEvent.defaultPrevented) {
-        return;
-      }
-      if ("ontouchstart" in document.documentElement) {
-        for (const element of [].concat(...document.body.children)) {
-          EventHandler.off(element, "mouseover", noop);
-        }
-      }
-      if (this._popper) {
-        this._popper.destroy();
-      }
-      this._menu.classList.remove(CLASS_NAME_SHOW$6);
-      this._element.classList.remove(CLASS_NAME_SHOW$6);
-      this._element.setAttribute("aria-expanded", "false");
-      Manipulator.removeDataAttribute(this._menu, "popper");
-      EventHandler.trigger(this._element, EVENT_HIDDEN$5, relatedTarget);
-    }
-    _getConfig(config) {
-      config = super._getConfig(config);
-      if (typeof config.reference === "object" && !isElement2(config.reference) && typeof config.reference.getBoundingClientRect !== "function") {
-        throw new TypeError(`${NAME$a.toUpperCase()}: Option "reference" provided type "object" without a required "getBoundingClientRect" method.`);
-      }
-      return config;
-    }
-    _createPopper() {
-      if (typeof lib_exports === "undefined") {
-        throw new TypeError("Bootstrap's dropdowns require Popper (https://popper.js.org)");
-      }
-      let referenceElement = this._element;
-      if (this._config.reference === "parent") {
-        referenceElement = this._parent;
-      } else if (isElement2(this._config.reference)) {
-        referenceElement = getElement(this._config.reference);
-      } else if (typeof this._config.reference === "object") {
-        referenceElement = this._config.reference;
-      }
-      const popperConfig = this._getPopperConfig();
-      this._popper = createPopper3(referenceElement, this._menu, popperConfig);
-    }
-    _isShown() {
-      return this._menu.classList.contains(CLASS_NAME_SHOW$6);
-    }
-    _getPlacement() {
-      const parentDropdown = this._parent;
-      if (parentDropdown.classList.contains(CLASS_NAME_DROPEND)) {
-        return PLACEMENT_RIGHT;
-      }
-      if (parentDropdown.classList.contains(CLASS_NAME_DROPSTART)) {
-        return PLACEMENT_LEFT;
-      }
-      if (parentDropdown.classList.contains(CLASS_NAME_DROPUP_CENTER)) {
-        return PLACEMENT_TOPCENTER;
-      }
-      if (parentDropdown.classList.contains(CLASS_NAME_DROPDOWN_CENTER)) {
-        return PLACEMENT_BOTTOMCENTER;
-      }
-      const isEnd = getComputedStyle(this._menu).getPropertyValue("--bs-position").trim() === "end";
-      if (parentDropdown.classList.contains(CLASS_NAME_DROPUP)) {
-        return isEnd ? PLACEMENT_TOPEND : PLACEMENT_TOP;
-      }
-      return isEnd ? PLACEMENT_BOTTOMEND : PLACEMENT_BOTTOM;
-    }
-    _detectNavbar() {
-      return this._element.closest(SELECTOR_NAVBAR) !== null;
-    }
-    _getOffset() {
-      const {
-        offset: offset3
-      } = this._config;
-      if (typeof offset3 === "string") {
-        return offset3.split(",").map((value) => Number.parseInt(value, 10));
-      }
-      if (typeof offset3 === "function") {
-        return (popperData) => offset3(popperData, this._element);
-      }
-      return offset3;
-    }
-    _getPopperConfig() {
-      const defaultBsPopperConfig = {
-        placement: this._getPlacement(),
-        modifiers: [{
-          name: "preventOverflow",
-          options: {
-            boundary: this._config.boundary
-          }
-        }, {
-          name: "offset",
-          options: {
-            offset: this._getOffset()
-          }
-        }]
-      };
-      if (this._inNavbar || this._config.display === "static") {
-        Manipulator.setDataAttribute(this._menu, "popper", "static");
-        defaultBsPopperConfig.modifiers = [{
-          name: "applyStyles",
-          enabled: false
-        }];
-      }
-      return __spreadValues(__spreadValues({}, defaultBsPopperConfig), execute(this._config.popperConfig, [defaultBsPopperConfig]));
-    }
-    _selectMenuItem({
-      key,
-      target
-    }) {
-      const items = SelectorEngine.find(SELECTOR_VISIBLE_ITEMS, this._menu).filter((element) => isVisible(element));
-      if (!items.length) {
-        return;
-      }
-      getNextActiveElement(items, target, key === ARROW_DOWN_KEY$1, !items.includes(target)).focus();
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _Dropdown.getOrCreateInstance(this, config);
-        if (typeof config !== "string") {
-          return;
-        }
-        if (typeof data[config] === "undefined") {
-          throw new TypeError(`No method named "${config}"`);
-        }
-        data[config]();
-      });
-    }
-    static clearMenus(event) {
-      if (event.button === RIGHT_MOUSE_BUTTON || event.type === "keyup" && event.key !== TAB_KEY$1) {
-        return;
-      }
-      const openToggles = SelectorEngine.find(SELECTOR_DATA_TOGGLE_SHOWN);
-      for (const toggle of openToggles) {
-        const context = _Dropdown.getInstance(toggle);
-        if (!context || context._config.autoClose === false) {
-          continue;
-        }
-        const composedPath = event.composedPath();
-        const isMenuTarget = composedPath.includes(context._menu);
-        if (composedPath.includes(context._element) || context._config.autoClose === "inside" && !isMenuTarget || context._config.autoClose === "outside" && isMenuTarget) {
-          continue;
-        }
-        if (context._menu.contains(event.target) && (event.type === "keyup" && event.key === TAB_KEY$1 || /input|select|option|textarea|form/i.test(event.target.tagName))) {
-          continue;
-        }
-        const relatedTarget = {
-          relatedTarget: context._element
-        };
-        if (event.type === "click") {
-          relatedTarget.clickEvent = event;
-        }
-        context._completeHide(relatedTarget);
-      }
-    }
-    static dataApiKeydownHandler(event) {
-      const isInput = /input|textarea/i.test(event.target.tagName);
-      const isEscapeEvent = event.key === ESCAPE_KEY$2;
-      const isUpOrDownEvent = [ARROW_UP_KEY$1, ARROW_DOWN_KEY$1].includes(event.key);
-      if (!isUpOrDownEvent && !isEscapeEvent) {
-        return;
-      }
-      if (isInput && !isEscapeEvent) {
-        return;
-      }
-      event.preventDefault();
-      const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$3) ? this : SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$3)[0] || SelectorEngine.next(this, SELECTOR_DATA_TOGGLE$3)[0] || SelectorEngine.findOne(SELECTOR_DATA_TOGGLE$3, event.delegateTarget.parentNode);
-      const instance = _Dropdown.getOrCreateInstance(getToggleButton);
-      if (isUpOrDownEvent) {
-        event.stopPropagation();
-        instance.show();
-        instance._selectMenuItem(event);
-        return;
-      }
-      if (instance._isShown()) {
-        event.stopPropagation();
-        instance.hide();
-        getToggleButton.focus();
-      }
-    }
-  };
-  EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$3, Dropdown.dataApiKeydownHandler);
-  EventHandler.on(document, EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown.dataApiKeydownHandler);
-  EventHandler.on(document, EVENT_CLICK_DATA_API$3, Dropdown.clearMenus);
-  EventHandler.on(document, EVENT_KEYUP_DATA_API, Dropdown.clearMenus);
-  EventHandler.on(document, EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$3, function(event) {
-    event.preventDefault();
-    Dropdown.getOrCreateInstance(this).toggle();
-  });
-  defineJQueryPlugin(Dropdown);
-  var NAME$9 = "backdrop";
-  var CLASS_NAME_FADE$4 = "fade";
-  var CLASS_NAME_SHOW$5 = "show";
-  var EVENT_MOUSEDOWN = `mousedown.bs.${NAME$9}`;
-  var Default$8 = {
-    className: "modal-backdrop",
-    clickCallback: null,
-    isAnimated: false,
-    isVisible: true,
-    // if false, we use the backdrop helper without adding any element to the dom
-    rootElement: "body"
-    // give the choice to place backdrop under different elements
-  };
-  var DefaultType$8 = {
-    className: "string",
-    clickCallback: "(function|null)",
-    isAnimated: "boolean",
-    isVisible: "boolean",
-    rootElement: "(element|string)"
-  };
-  var Backdrop = class extends Config {
-    constructor(config) {
-      super();
-      this._config = this._getConfig(config);
-      this._isAppended = false;
-      this._element = null;
-    }
-    // Getters
-    static get Default() {
-      return Default$8;
-    }
-    static get DefaultType() {
-      return DefaultType$8;
-    }
-    static get NAME() {
-      return NAME$9;
-    }
-    // Public
-    show(callback) {
-      if (!this._config.isVisible) {
-        execute(callback);
-        return;
-      }
-      this._append();
-      const element = this._getElement();
-      if (this._config.isAnimated) {
-        reflow(element);
-      }
-      element.classList.add(CLASS_NAME_SHOW$5);
-      this._emulateAnimation(() => {
-        execute(callback);
-      });
-    }
-    hide(callback) {
-      if (!this._config.isVisible) {
-        execute(callback);
-        return;
-      }
-      this._getElement().classList.remove(CLASS_NAME_SHOW$5);
-      this._emulateAnimation(() => {
-        this.dispose();
-        execute(callback);
-      });
-    }
-    dispose() {
-      if (!this._isAppended) {
-        return;
-      }
-      EventHandler.off(this._element, EVENT_MOUSEDOWN);
-      this._element.remove();
-      this._isAppended = false;
-    }
-    // Private
-    _getElement() {
-      if (!this._element) {
-        const backdrop = document.createElement("div");
-        backdrop.className = this._config.className;
-        if (this._config.isAnimated) {
-          backdrop.classList.add(CLASS_NAME_FADE$4);
-        }
-        this._element = backdrop;
-      }
-      return this._element;
-    }
-    _configAfterMerge(config) {
-      config.rootElement = getElement(config.rootElement);
-      return config;
-    }
-    _append() {
-      if (this._isAppended) {
-        return;
-      }
-      const element = this._getElement();
-      this._config.rootElement.append(element);
-      EventHandler.on(element, EVENT_MOUSEDOWN, () => {
-        execute(this._config.clickCallback);
-      });
-      this._isAppended = true;
-    }
-    _emulateAnimation(callback) {
-      executeAfterTransition(callback, this._getElement(), this._config.isAnimated);
-    }
-  };
-  var NAME$8 = "focustrap";
-  var DATA_KEY$5 = "bs.focustrap";
-  var EVENT_KEY$5 = `.${DATA_KEY$5}`;
-  var EVENT_FOCUSIN$2 = `focusin${EVENT_KEY$5}`;
-  var EVENT_KEYDOWN_TAB = `keydown.tab${EVENT_KEY$5}`;
-  var TAB_KEY = "Tab";
-  var TAB_NAV_FORWARD = "forward";
-  var TAB_NAV_BACKWARD = "backward";
-  var Default$7 = {
-    autofocus: true,
-    trapElement: null
-    // The element to trap focus inside of
-  };
-  var DefaultType$7 = {
-    autofocus: "boolean",
-    trapElement: "element"
-  };
-  var FocusTrap = class extends Config {
-    constructor(config) {
-      super();
-      this._config = this._getConfig(config);
-      this._isActive = false;
-      this._lastTabNavDirection = null;
-    }
-    // Getters
-    static get Default() {
-      return Default$7;
-    }
-    static get DefaultType() {
-      return DefaultType$7;
-    }
-    static get NAME() {
-      return NAME$8;
-    }
-    // Public
-    activate() {
-      if (this._isActive) {
-        return;
-      }
-      if (this._config.autofocus) {
-        this._config.trapElement.focus();
-      }
-      EventHandler.off(document, EVENT_KEY$5);
-      EventHandler.on(document, EVENT_FOCUSIN$2, (event) => this._handleFocusin(event));
-      EventHandler.on(document, EVENT_KEYDOWN_TAB, (event) => this._handleKeydown(event));
-      this._isActive = true;
-    }
-    deactivate() {
-      if (!this._isActive) {
-        return;
-      }
-      this._isActive = false;
-      EventHandler.off(document, EVENT_KEY$5);
-    }
-    // Private
-    _handleFocusin(event) {
-      const {
-        trapElement
-      } = this._config;
-      if (event.target === document || event.target === trapElement || trapElement.contains(event.target)) {
-        return;
-      }
-      const elements = SelectorEngine.focusableChildren(trapElement);
-      if (elements.length === 0) {
-        trapElement.focus();
-      } else if (this._lastTabNavDirection === TAB_NAV_BACKWARD) {
-        elements[elements.length - 1].focus();
-      } else {
-        elements[0].focus();
-      }
-    }
-    _handleKeydown(event) {
-      if (event.key !== TAB_KEY) {
-        return;
-      }
-      this._lastTabNavDirection = event.shiftKey ? TAB_NAV_BACKWARD : TAB_NAV_FORWARD;
-    }
-  };
-  var SELECTOR_FIXED_CONTENT = ".fixed-top, .fixed-bottom, .is-fixed, .sticky-top";
-  var SELECTOR_STICKY_CONTENT = ".sticky-top";
-  var PROPERTY_PADDING = "padding-right";
-  var PROPERTY_MARGIN = "margin-right";
-  var ScrollBarHelper = class {
-    constructor() {
-      this._element = document.body;
-    }
-    // Public
-    getWidth() {
-      const documentWidth = document.documentElement.clientWidth;
-      return Math.abs(window.innerWidth - documentWidth);
-    }
-    hide() {
-      const width = this.getWidth();
-      this._disableOverFlow();
-      this._setElementAttributes(this._element, PROPERTY_PADDING, (calculatedValue) => calculatedValue + width);
-      this._setElementAttributes(SELECTOR_FIXED_CONTENT, PROPERTY_PADDING, (calculatedValue) => calculatedValue + width);
-      this._setElementAttributes(SELECTOR_STICKY_CONTENT, PROPERTY_MARGIN, (calculatedValue) => calculatedValue - width);
-    }
-    reset() {
-      this._resetElementAttributes(this._element, "overflow");
-      this._resetElementAttributes(this._element, PROPERTY_PADDING);
-      this._resetElementAttributes(SELECTOR_FIXED_CONTENT, PROPERTY_PADDING);
-      this._resetElementAttributes(SELECTOR_STICKY_CONTENT, PROPERTY_MARGIN);
-    }
-    isOverflowing() {
-      return this.getWidth() > 0;
-    }
-    // Private
-    _disableOverFlow() {
-      this._saveInitialAttribute(this._element, "overflow");
-      this._element.style.overflow = "hidden";
-    }
-    _setElementAttributes(selector, styleProperty, callback) {
-      const scrollbarWidth = this.getWidth();
-      const manipulationCallBack = (element) => {
-        if (element !== this._element && window.innerWidth > element.clientWidth + scrollbarWidth) {
-          return;
-        }
-        this._saveInitialAttribute(element, styleProperty);
-        const calculatedValue = window.getComputedStyle(element).getPropertyValue(styleProperty);
-        element.style.setProperty(styleProperty, `${callback(Number.parseFloat(calculatedValue))}px`);
-      };
-      this._applyManipulationCallback(selector, manipulationCallBack);
-    }
-    _saveInitialAttribute(element, styleProperty) {
-      const actualValue = element.style.getPropertyValue(styleProperty);
-      if (actualValue) {
-        Manipulator.setDataAttribute(element, styleProperty, actualValue);
-      }
-    }
-    _resetElementAttributes(selector, styleProperty) {
-      const manipulationCallBack = (element) => {
-        const value = Manipulator.getDataAttribute(element, styleProperty);
-        if (value === null) {
-          element.style.removeProperty(styleProperty);
-          return;
-        }
-        Manipulator.removeDataAttribute(element, styleProperty);
-        element.style.setProperty(styleProperty, value);
-      };
-      this._applyManipulationCallback(selector, manipulationCallBack);
-    }
-    _applyManipulationCallback(selector, callBack) {
-      if (isElement2(selector)) {
-        callBack(selector);
-        return;
-      }
-      for (const sel of SelectorEngine.find(selector, this._element)) {
-        callBack(sel);
-      }
-    }
-  };
-  var NAME$7 = "modal";
-  var DATA_KEY$4 = "bs.modal";
-  var EVENT_KEY$4 = `.${DATA_KEY$4}`;
-  var DATA_API_KEY$2 = ".data-api";
-  var ESCAPE_KEY$1 = "Escape";
-  var EVENT_HIDE$4 = `hide${EVENT_KEY$4}`;
-  var EVENT_HIDE_PREVENTED$1 = `hidePrevented${EVENT_KEY$4}`;
-  var EVENT_HIDDEN$4 = `hidden${EVENT_KEY$4}`;
-  var EVENT_SHOW$4 = `show${EVENT_KEY$4}`;
-  var EVENT_SHOWN$4 = `shown${EVENT_KEY$4}`;
-  var EVENT_RESIZE$1 = `resize${EVENT_KEY$4}`;
-  var EVENT_CLICK_DISMISS = `click.dismiss${EVENT_KEY$4}`;
-  var EVENT_MOUSEDOWN_DISMISS = `mousedown.dismiss${EVENT_KEY$4}`;
-  var EVENT_KEYDOWN_DISMISS$1 = `keydown.dismiss${EVENT_KEY$4}`;
-  var EVENT_CLICK_DATA_API$2 = `click${EVENT_KEY$4}${DATA_API_KEY$2}`;
-  var CLASS_NAME_OPEN = "modal-open";
-  var CLASS_NAME_FADE$3 = "fade";
-  var CLASS_NAME_SHOW$4 = "show";
-  var CLASS_NAME_STATIC = "modal-static";
-  var OPEN_SELECTOR$1 = ".modal.show";
-  var SELECTOR_DIALOG = ".modal-dialog";
-  var SELECTOR_MODAL_BODY = ".modal-body";
-  var SELECTOR_DATA_TOGGLE$2 = '[data-bs-toggle="modal"]';
-  var Default$6 = {
-    backdrop: true,
-    focus: true,
-    keyboard: true
-  };
-  var DefaultType$6 = {
-    backdrop: "(boolean|string)",
-    focus: "boolean",
-    keyboard: "boolean"
-  };
-  var Modal = class _Modal extends BaseComponent {
-    constructor(element, config) {
-      super(element, config);
-      this._dialog = SelectorEngine.findOne(SELECTOR_DIALOG, this._element);
-      this._backdrop = this._initializeBackDrop();
-      this._focustrap = this._initializeFocusTrap();
-      this._isShown = false;
-      this._isTransitioning = false;
-      this._scrollBar = new ScrollBarHelper();
-      this._addEventListeners();
-    }
-    // Getters
-    static get Default() {
-      return Default$6;
-    }
-    static get DefaultType() {
-      return DefaultType$6;
-    }
-    static get NAME() {
-      return NAME$7;
-    }
-    // Public
-    toggle(relatedTarget) {
-      return this._isShown ? this.hide() : this.show(relatedTarget);
-    }
-    show(relatedTarget) {
-      if (this._isShown || this._isTransitioning) {
-        return;
-      }
-      const showEvent = EventHandler.trigger(this._element, EVENT_SHOW$4, {
-        relatedTarget
-      });
-      if (showEvent.defaultPrevented) {
-        return;
-      }
-      this._isShown = true;
-      this._isTransitioning = true;
-      this._scrollBar.hide();
-      document.body.classList.add(CLASS_NAME_OPEN);
-      this._adjustDialog();
-      this._backdrop.show(() => this._showElement(relatedTarget));
-    }
-    hide() {
-      if (!this._isShown || this._isTransitioning) {
-        return;
-      }
-      const hideEvent = EventHandler.trigger(this._element, EVENT_HIDE$4);
-      if (hideEvent.defaultPrevented) {
-        return;
-      }
-      this._isShown = false;
-      this._isTransitioning = true;
-      this._focustrap.deactivate();
-      this._element.classList.remove(CLASS_NAME_SHOW$4);
-      this._queueCallback(() => this._hideModal(), this._element, this._isAnimated());
-    }
-    dispose() {
-      EventHandler.off(window, EVENT_KEY$4);
-      EventHandler.off(this._dialog, EVENT_KEY$4);
-      this._backdrop.dispose();
-      this._focustrap.deactivate();
-      super.dispose();
-    }
-    handleUpdate() {
-      this._adjustDialog();
-    }
-    // Private
-    _initializeBackDrop() {
-      return new Backdrop({
-        isVisible: Boolean(this._config.backdrop),
-        // 'static' option will be translated to true, and booleans will keep their value,
-        isAnimated: this._isAnimated()
-      });
-    }
-    _initializeFocusTrap() {
-      return new FocusTrap({
-        trapElement: this._element
-      });
-    }
-    _showElement(relatedTarget) {
-      if (!document.body.contains(this._element)) {
-        document.body.append(this._element);
-      }
-      this._element.style.display = "block";
-      this._element.removeAttribute("aria-hidden");
-      this._element.setAttribute("aria-modal", true);
-      this._element.setAttribute("role", "dialog");
-      this._element.scrollTop = 0;
-      const modalBody = SelectorEngine.findOne(SELECTOR_MODAL_BODY, this._dialog);
-      if (modalBody) {
-        modalBody.scrollTop = 0;
-      }
-      reflow(this._element);
-      this._element.classList.add(CLASS_NAME_SHOW$4);
-      const transitionComplete = () => {
-        if (this._config.focus) {
-          this._focustrap.activate();
-        }
-        this._isTransitioning = false;
-        EventHandler.trigger(this._element, EVENT_SHOWN$4, {
-          relatedTarget
-        });
-      };
-      this._queueCallback(transitionComplete, this._dialog, this._isAnimated());
-    }
-    _addEventListeners() {
-      EventHandler.on(this._element, EVENT_KEYDOWN_DISMISS$1, (event) => {
-        if (event.key !== ESCAPE_KEY$1) {
-          return;
-        }
-        if (this._config.keyboard) {
-          this.hide();
-          return;
-        }
-        this._triggerBackdropTransition();
-      });
-      EventHandler.on(window, EVENT_RESIZE$1, () => {
-        if (this._isShown && !this._isTransitioning) {
-          this._adjustDialog();
-        }
-      });
-      EventHandler.on(this._element, EVENT_MOUSEDOWN_DISMISS, (event) => {
-        EventHandler.one(this._element, EVENT_CLICK_DISMISS, (event2) => {
-          if (this._element !== event.target || this._element !== event2.target) {
-            return;
-          }
-          if (this._config.backdrop === "static") {
-            this._triggerBackdropTransition();
-            return;
-          }
-          if (this._config.backdrop) {
-            this.hide();
-          }
-        });
-      });
-    }
-    _hideModal() {
-      this._element.style.display = "none";
-      this._element.setAttribute("aria-hidden", true);
-      this._element.removeAttribute("aria-modal");
-      this._element.removeAttribute("role");
-      this._isTransitioning = false;
-      this._backdrop.hide(() => {
-        document.body.classList.remove(CLASS_NAME_OPEN);
-        this._resetAdjustments();
-        this._scrollBar.reset();
-        EventHandler.trigger(this._element, EVENT_HIDDEN$4);
-      });
-    }
-    _isAnimated() {
-      return this._element.classList.contains(CLASS_NAME_FADE$3);
-    }
-    _triggerBackdropTransition() {
-      const hideEvent = EventHandler.trigger(this._element, EVENT_HIDE_PREVENTED$1);
-      if (hideEvent.defaultPrevented) {
-        return;
-      }
-      const isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
-      const initialOverflowY = this._element.style.overflowY;
-      if (initialOverflowY === "hidden" || this._element.classList.contains(CLASS_NAME_STATIC)) {
-        return;
-      }
-      if (!isModalOverflowing) {
-        this._element.style.overflowY = "hidden";
-      }
-      this._element.classList.add(CLASS_NAME_STATIC);
-      this._queueCallback(() => {
-        this._element.classList.remove(CLASS_NAME_STATIC);
-        this._queueCallback(() => {
-          this._element.style.overflowY = initialOverflowY;
-        }, this._dialog);
-      }, this._dialog);
-      this._element.focus();
-    }
-    /**
-     * The following methods are used to handle overflowing modals
-     */
-    _adjustDialog() {
-      const isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
-      const scrollbarWidth = this._scrollBar.getWidth();
-      const isBodyOverflowing = scrollbarWidth > 0;
-      if (isBodyOverflowing && !isModalOverflowing) {
-        const property = isRTL() ? "paddingLeft" : "paddingRight";
-        this._element.style[property] = `${scrollbarWidth}px`;
-      }
-      if (!isBodyOverflowing && isModalOverflowing) {
-        const property = isRTL() ? "paddingRight" : "paddingLeft";
-        this._element.style[property] = `${scrollbarWidth}px`;
-      }
-    }
-    _resetAdjustments() {
-      this._element.style.paddingLeft = "";
-      this._element.style.paddingRight = "";
-    }
-    // Static
-    static jQueryInterface(config, relatedTarget) {
-      return this.each(function() {
-        const data = _Modal.getOrCreateInstance(this, config);
-        if (typeof config !== "string") {
-          return;
-        }
-        if (typeof data[config] === "undefined") {
-          throw new TypeError(`No method named "${config}"`);
-        }
-        data[config](relatedTarget);
-      });
-    }
-  };
-  EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, function(event) {
-    const target = SelectorEngine.getElementFromSelector(this);
-    if (["A", "AREA"].includes(this.tagName)) {
-      event.preventDefault();
-    }
-    EventHandler.one(target, EVENT_SHOW$4, (showEvent) => {
-      if (showEvent.defaultPrevented) {
-        return;
-      }
-      EventHandler.one(target, EVENT_HIDDEN$4, () => {
-        if (isVisible(this)) {
-          this.focus();
-        }
-      });
-    });
-    const alreadyOpen = SelectorEngine.findOne(OPEN_SELECTOR$1);
-    if (alreadyOpen) {
-      Modal.getInstance(alreadyOpen).hide();
-    }
-    const data = Modal.getOrCreateInstance(target);
-    data.toggle(this);
-  });
-  enableDismissTrigger(Modal);
-  defineJQueryPlugin(Modal);
-  var NAME$6 = "offcanvas";
-  var DATA_KEY$3 = "bs.offcanvas";
-  var EVENT_KEY$3 = `.${DATA_KEY$3}`;
-  var DATA_API_KEY$1 = ".data-api";
-  var EVENT_LOAD_DATA_API$2 = `load${EVENT_KEY$3}${DATA_API_KEY$1}`;
-  var ESCAPE_KEY = "Escape";
-  var CLASS_NAME_SHOW$3 = "show";
-  var CLASS_NAME_SHOWING$1 = "showing";
-  var CLASS_NAME_HIDING = "hiding";
-  var CLASS_NAME_BACKDROP = "offcanvas-backdrop";
-  var OPEN_SELECTOR = ".offcanvas.show";
-  var EVENT_SHOW$3 = `show${EVENT_KEY$3}`;
-  var EVENT_SHOWN$3 = `shown${EVENT_KEY$3}`;
-  var EVENT_HIDE$3 = `hide${EVENT_KEY$3}`;
-  var EVENT_HIDE_PREVENTED = `hidePrevented${EVENT_KEY$3}`;
-  var EVENT_HIDDEN$3 = `hidden${EVENT_KEY$3}`;
-  var EVENT_RESIZE = `resize${EVENT_KEY$3}`;
-  var EVENT_CLICK_DATA_API$1 = `click${EVENT_KEY$3}${DATA_API_KEY$1}`;
-  var EVENT_KEYDOWN_DISMISS = `keydown.dismiss${EVENT_KEY$3}`;
-  var SELECTOR_DATA_TOGGLE$1 = '[data-bs-toggle="offcanvas"]';
-  var Default$5 = {
-    backdrop: true,
-    keyboard: true,
-    scroll: false
-  };
-  var DefaultType$5 = {
-    backdrop: "(boolean|string)",
-    keyboard: "boolean",
-    scroll: "boolean"
-  };
-  var Offcanvas = class _Offcanvas extends BaseComponent {
-    constructor(element, config) {
-      super(element, config);
-      this._isShown = false;
-      this._backdrop = this._initializeBackDrop();
-      this._focustrap = this._initializeFocusTrap();
-      this._addEventListeners();
-    }
-    // Getters
-    static get Default() {
-      return Default$5;
-    }
-    static get DefaultType() {
-      return DefaultType$5;
-    }
-    static get NAME() {
-      return NAME$6;
-    }
-    // Public
-    toggle(relatedTarget) {
-      return this._isShown ? this.hide() : this.show(relatedTarget);
-    }
-    show(relatedTarget) {
-      if (this._isShown) {
-        return;
-      }
-      const showEvent = EventHandler.trigger(this._element, EVENT_SHOW$3, {
-        relatedTarget
-      });
-      if (showEvent.defaultPrevented) {
-        return;
-      }
-      this._isShown = true;
-      this._backdrop.show();
-      if (!this._config.scroll) {
-        new ScrollBarHelper().hide();
-      }
-      this._element.setAttribute("aria-modal", true);
-      this._element.setAttribute("role", "dialog");
-      this._element.classList.add(CLASS_NAME_SHOWING$1);
-      const completeCallBack = () => {
-        if (!this._config.scroll || this._config.backdrop) {
-          this._focustrap.activate();
-        }
-        this._element.classList.add(CLASS_NAME_SHOW$3);
-        this._element.classList.remove(CLASS_NAME_SHOWING$1);
-        EventHandler.trigger(this._element, EVENT_SHOWN$3, {
-          relatedTarget
-        });
-      };
-      this._queueCallback(completeCallBack, this._element, true);
-    }
-    hide() {
-      if (!this._isShown) {
-        return;
-      }
-      const hideEvent = EventHandler.trigger(this._element, EVENT_HIDE$3);
-      if (hideEvent.defaultPrevented) {
-        return;
-      }
-      this._focustrap.deactivate();
-      this._element.blur();
-      this._isShown = false;
-      this._element.classList.add(CLASS_NAME_HIDING);
-      this._backdrop.hide();
-      const completeCallback = () => {
-        this._element.classList.remove(CLASS_NAME_SHOW$3, CLASS_NAME_HIDING);
-        this._element.removeAttribute("aria-modal");
-        this._element.removeAttribute("role");
-        if (!this._config.scroll) {
-          new ScrollBarHelper().reset();
-        }
-        EventHandler.trigger(this._element, EVENT_HIDDEN$3);
-      };
-      this._queueCallback(completeCallback, this._element, true);
-    }
-    dispose() {
-      this._backdrop.dispose();
-      this._focustrap.deactivate();
-      super.dispose();
-    }
-    // Private
-    _initializeBackDrop() {
-      const clickCallback = () => {
-        if (this._config.backdrop === "static") {
-          EventHandler.trigger(this._element, EVENT_HIDE_PREVENTED);
-          return;
-        }
-        this.hide();
-      };
-      const isVisible2 = Boolean(this._config.backdrop);
-      return new Backdrop({
-        className: CLASS_NAME_BACKDROP,
-        isVisible: isVisible2,
-        isAnimated: true,
-        rootElement: this._element.parentNode,
-        clickCallback: isVisible2 ? clickCallback : null
-      });
-    }
-    _initializeFocusTrap() {
-      return new FocusTrap({
-        trapElement: this._element
-      });
-    }
-    _addEventListeners() {
-      EventHandler.on(this._element, EVENT_KEYDOWN_DISMISS, (event) => {
-        if (event.key !== ESCAPE_KEY) {
-          return;
-        }
-        if (this._config.keyboard) {
-          this.hide();
-          return;
-        }
-        EventHandler.trigger(this._element, EVENT_HIDE_PREVENTED);
-      });
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _Offcanvas.getOrCreateInstance(this, config);
-        if (typeof config !== "string") {
-          return;
-        }
-        if (data[config] === void 0 || config.startsWith("_") || config === "constructor") {
-          throw new TypeError(`No method named "${config}"`);
-        }
-        data[config](this);
-      });
-    }
-  };
-  EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function(event) {
-    const target = SelectorEngine.getElementFromSelector(this);
-    if (["A", "AREA"].includes(this.tagName)) {
-      event.preventDefault();
-    }
-    if (isDisabled(this)) {
-      return;
-    }
-    EventHandler.one(target, EVENT_HIDDEN$3, () => {
-      if (isVisible(this)) {
-        this.focus();
-      }
-    });
-    const alreadyOpen = SelectorEngine.findOne(OPEN_SELECTOR);
-    if (alreadyOpen && alreadyOpen !== target) {
-      Offcanvas.getInstance(alreadyOpen).hide();
-    }
-    const data = Offcanvas.getOrCreateInstance(target);
-    data.toggle(this);
-  });
-  EventHandler.on(window, EVENT_LOAD_DATA_API$2, () => {
-    for (const selector of SelectorEngine.find(OPEN_SELECTOR)) {
-      Offcanvas.getOrCreateInstance(selector).show();
-    }
-  });
-  EventHandler.on(window, EVENT_RESIZE, () => {
-    for (const element of SelectorEngine.find("[aria-modal][class*=show][class*=offcanvas-]")) {
-      if (getComputedStyle(element).position !== "fixed") {
-        Offcanvas.getOrCreateInstance(element).hide();
-      }
-    }
-  });
-  enableDismissTrigger(Offcanvas);
-  defineJQueryPlugin(Offcanvas);
-  var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
-  var DefaultAllowlist = {
-    // Global attributes allowed on any supplied element below.
-    "*": ["class", "dir", "id", "lang", "role", ARIA_ATTRIBUTE_PATTERN],
-    a: ["target", "href", "title", "rel"],
-    area: [],
-    b: [],
-    br: [],
-    col: [],
-    code: [],
-    dd: [],
-    div: [],
-    dl: [],
-    dt: [],
-    em: [],
-    hr: [],
-    h1: [],
-    h2: [],
-    h3: [],
-    h4: [],
-    h5: [],
-    h6: [],
-    i: [],
-    img: ["src", "srcset", "alt", "title", "width", "height"],
-    li: [],
-    ol: [],
-    p: [],
-    pre: [],
-    s: [],
-    small: [],
-    span: [],
-    sub: [],
-    sup: [],
-    strong: [],
-    u: [],
-    ul: []
-  };
-  var uriAttributes = /* @__PURE__ */ new Set(["background", "cite", "href", "itemtype", "longdesc", "poster", "src", "xlink:href"]);
-  var SAFE_URL_PATTERN = /^(?!javascript:)(?:[a-z0-9+.-]+:|[^&:/?#]*(?:[/?#]|$))/i;
-  var allowedAttribute = (attribute, allowedAttributeList) => {
-    const attributeName = attribute.nodeName.toLowerCase();
-    if (allowedAttributeList.includes(attributeName)) {
-      if (uriAttributes.has(attributeName)) {
-        return Boolean(SAFE_URL_PATTERN.test(attribute.nodeValue));
-      }
-      return true;
-    }
-    return allowedAttributeList.filter((attributeRegex) => attributeRegex instanceof RegExp).some((regex) => regex.test(attributeName));
-  };
-  function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
-    if (!unsafeHtml.length) {
-      return unsafeHtml;
-    }
-    if (sanitizeFunction && typeof sanitizeFunction === "function") {
-      return sanitizeFunction(unsafeHtml);
-    }
-    const domParser = new window.DOMParser();
-    const createdDocument = domParser.parseFromString(unsafeHtml, "text/html");
-    const elements = [].concat(...createdDocument.body.querySelectorAll("*"));
-    for (const element of elements) {
-      const elementName = element.nodeName.toLowerCase();
-      if (!Object.keys(allowList).includes(elementName)) {
-        element.remove();
-        continue;
-      }
-      const attributeList = [].concat(...element.attributes);
-      const allowedAttributes = [].concat(allowList["*"] || [], allowList[elementName] || []);
-      for (const attribute of attributeList) {
-        if (!allowedAttribute(attribute, allowedAttributes)) {
-          element.removeAttribute(attribute.nodeName);
-        }
-      }
-    }
-    return createdDocument.body.innerHTML;
-  }
-  var NAME$5 = "TemplateFactory";
-  var Default$4 = {
-    allowList: DefaultAllowlist,
-    content: {},
-    // { selector : text ,  selector2 : text2 , }
-    extraClass: "",
-    html: false,
-    sanitize: true,
-    sanitizeFn: null,
-    template: "<div></div>"
-  };
-  var DefaultType$4 = {
-    allowList: "object",
-    content: "object",
-    extraClass: "(string|function)",
-    html: "boolean",
-    sanitize: "boolean",
-    sanitizeFn: "(null|function)",
-    template: "string"
-  };
-  var DefaultContentType = {
-    entry: "(string|element|function|null)",
-    selector: "(string|element)"
-  };
-  var TemplateFactory = class extends Config {
-    constructor(config) {
-      super();
-      this._config = this._getConfig(config);
-    }
-    // Getters
-    static get Default() {
-      return Default$4;
-    }
-    static get DefaultType() {
-      return DefaultType$4;
-    }
-    static get NAME() {
-      return NAME$5;
-    }
-    // Public
-    getContent() {
-      return Object.values(this._config.content).map((config) => this._resolvePossibleFunction(config)).filter(Boolean);
-    }
-    hasContent() {
-      return this.getContent().length > 0;
-    }
-    changeContent(content) {
-      this._checkContent(content);
-      this._config.content = __spreadValues(__spreadValues({}, this._config.content), content);
-      return this;
-    }
-    toHtml() {
-      const templateWrapper = document.createElement("div");
-      templateWrapper.innerHTML = this._maybeSanitize(this._config.template);
-      for (const [selector, text] of Object.entries(this._config.content)) {
-        this._setContent(templateWrapper, text, selector);
-      }
-      const template = templateWrapper.children[0];
-      const extraClass = this._resolvePossibleFunction(this._config.extraClass);
-      if (extraClass) {
-        template.classList.add(...extraClass.split(" "));
-      }
-      return template;
-    }
-    // Private
-    _typeCheckConfig(config) {
-      super._typeCheckConfig(config);
-      this._checkContent(config.content);
-    }
-    _checkContent(arg) {
-      for (const [selector, content] of Object.entries(arg)) {
-        super._typeCheckConfig({
-          selector,
-          entry: content
-        }, DefaultContentType);
-      }
-    }
-    _setContent(template, content, selector) {
-      const templateElement = SelectorEngine.findOne(selector, template);
-      if (!templateElement) {
-        return;
-      }
-      content = this._resolvePossibleFunction(content);
-      if (!content) {
-        templateElement.remove();
-        return;
-      }
-      if (isElement2(content)) {
-        this._putElementInTemplate(getElement(content), templateElement);
-        return;
-      }
-      if (this._config.html) {
-        templateElement.innerHTML = this._maybeSanitize(content);
-        return;
-      }
-      templateElement.textContent = content;
-    }
-    _maybeSanitize(arg) {
-      return this._config.sanitize ? sanitizeHtml(arg, this._config.allowList, this._config.sanitizeFn) : arg;
-    }
-    _resolvePossibleFunction(arg) {
-      return execute(arg, [this]);
-    }
-    _putElementInTemplate(element, templateElement) {
-      if (this._config.html) {
-        templateElement.innerHTML = "";
-        templateElement.append(element);
-        return;
-      }
-      templateElement.textContent = element.textContent;
-    }
-  };
-  var NAME$4 = "tooltip";
-  var DISALLOWED_ATTRIBUTES = /* @__PURE__ */ new Set(["sanitize", "allowList", "sanitizeFn"]);
-  var CLASS_NAME_FADE$2 = "fade";
-  var CLASS_NAME_MODAL = "modal";
-  var CLASS_NAME_SHOW$2 = "show";
-  var SELECTOR_TOOLTIP_INNER = ".tooltip-inner";
-  var SELECTOR_MODAL = `.${CLASS_NAME_MODAL}`;
-  var EVENT_MODAL_HIDE = "hide.bs.modal";
-  var TRIGGER_HOVER = "hover";
-  var TRIGGER_FOCUS = "focus";
-  var TRIGGER_CLICK = "click";
-  var TRIGGER_MANUAL = "manual";
-  var EVENT_HIDE$2 = "hide";
-  var EVENT_HIDDEN$2 = "hidden";
-  var EVENT_SHOW$2 = "show";
-  var EVENT_SHOWN$2 = "shown";
-  var EVENT_INSERTED = "inserted";
-  var EVENT_CLICK$1 = "click";
-  var EVENT_FOCUSIN$1 = "focusin";
-  var EVENT_FOCUSOUT$1 = "focusout";
-  var EVENT_MOUSEENTER = "mouseenter";
-  var EVENT_MOUSELEAVE = "mouseleave";
-  var AttachmentMap = {
-    AUTO: "auto",
-    TOP: "top",
-    RIGHT: isRTL() ? "left" : "right",
-    BOTTOM: "bottom",
-    LEFT: isRTL() ? "right" : "left"
-  };
-  var Default$3 = {
-    allowList: DefaultAllowlist,
-    animation: true,
-    boundary: "clippingParents",
-    container: false,
-    customClass: "",
-    delay: 0,
-    fallbackPlacements: ["top", "right", "bottom", "left"],
-    html: false,
-    offset: [0, 6],
-    placement: "top",
-    popperConfig: null,
-    sanitize: true,
-    sanitizeFn: null,
-    selector: false,
-    template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
-    title: "",
-    trigger: "hover focus"
-  };
-  var DefaultType$3 = {
-    allowList: "object",
-    animation: "boolean",
-    boundary: "(string|element)",
-    container: "(string|element|boolean)",
-    customClass: "(string|function)",
-    delay: "(number|object)",
-    fallbackPlacements: "array",
-    html: "boolean",
-    offset: "(array|string|function)",
-    placement: "(string|function)",
-    popperConfig: "(null|object|function)",
-    sanitize: "boolean",
-    sanitizeFn: "(null|function)",
-    selector: "(string|boolean)",
-    template: "string",
-    title: "(string|element|function)",
-    trigger: "string"
-  };
-  var Tooltip = class _Tooltip extends BaseComponent {
-    constructor(element, config) {
-      if (typeof lib_exports === "undefined") {
-        throw new TypeError("Bootstrap's tooltips require Popper (https://popper.js.org)");
-      }
-      super(element, config);
-      this._isEnabled = true;
-      this._timeout = 0;
-      this._isHovered = null;
-      this._activeTrigger = {};
-      this._popper = null;
-      this._templateFactory = null;
-      this._newContent = null;
-      this.tip = null;
-      this._setListeners();
-      if (!this._config.selector) {
-        this._fixTitle();
-      }
-    }
-    // Getters
-    static get Default() {
-      return Default$3;
-    }
-    static get DefaultType() {
-      return DefaultType$3;
-    }
-    static get NAME() {
-      return NAME$4;
-    }
-    // Public
-    enable() {
-      this._isEnabled = true;
-    }
-    disable() {
-      this._isEnabled = false;
-    }
-    toggleEnabled() {
-      this._isEnabled = !this._isEnabled;
-    }
-    toggle() {
-      if (!this._isEnabled) {
-        return;
-      }
-      this._activeTrigger.click = !this._activeTrigger.click;
-      if (this._isShown()) {
-        this._leave();
-        return;
-      }
-      this._enter();
-    }
-    dispose() {
-      clearTimeout(this._timeout);
-      EventHandler.off(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
-      if (this._element.getAttribute("data-bs-original-title")) {
-        this._element.setAttribute("title", this._element.getAttribute("data-bs-original-title"));
-      }
-      this._disposePopper();
-      super.dispose();
-    }
-    show() {
-      if (this._element.style.display === "none") {
-        throw new Error("Please use show on visible elements");
-      }
-      if (!(this._isWithContent() && this._isEnabled)) {
-        return;
-      }
-      const showEvent = EventHandler.trigger(this._element, this.constructor.eventName(EVENT_SHOW$2));
-      const shadowRoot = findShadowRoot(this._element);
-      const isInTheDom = (shadowRoot || this._element.ownerDocument.documentElement).contains(this._element);
-      if (showEvent.defaultPrevented || !isInTheDom) {
-        return;
-      }
-      this._disposePopper();
-      const tip = this._getTipElement();
-      this._element.setAttribute("aria-describedby", tip.getAttribute("id"));
-      const {
-        container
-      } = this._config;
-      if (!this._element.ownerDocument.documentElement.contains(this.tip)) {
-        container.append(tip);
-        EventHandler.trigger(this._element, this.constructor.eventName(EVENT_INSERTED));
-      }
-      this._popper = this._createPopper(tip);
-      tip.classList.add(CLASS_NAME_SHOW$2);
-      if ("ontouchstart" in document.documentElement) {
-        for (const element of [].concat(...document.body.children)) {
-          EventHandler.on(element, "mouseover", noop);
-        }
-      }
-      const complete = () => {
-        EventHandler.trigger(this._element, this.constructor.eventName(EVENT_SHOWN$2));
-        if (this._isHovered === false) {
-          this._leave();
-        }
-        this._isHovered = false;
-      };
-      this._queueCallback(complete, this.tip, this._isAnimated());
-    }
-    hide() {
-      if (!this._isShown()) {
-        return;
-      }
-      const hideEvent = EventHandler.trigger(this._element, this.constructor.eventName(EVENT_HIDE$2));
-      if (hideEvent.defaultPrevented) {
-        return;
-      }
-      const tip = this._getTipElement();
-      tip.classList.remove(CLASS_NAME_SHOW$2);
-      if ("ontouchstart" in document.documentElement) {
-        for (const element of [].concat(...document.body.children)) {
-          EventHandler.off(element, "mouseover", noop);
-        }
-      }
-      this._activeTrigger[TRIGGER_CLICK] = false;
-      this._activeTrigger[TRIGGER_FOCUS] = false;
-      this._activeTrigger[TRIGGER_HOVER] = false;
-      this._isHovered = null;
-      const complete = () => {
-        if (this._isWithActiveTrigger()) {
-          return;
-        }
-        if (!this._isHovered) {
-          this._disposePopper();
-        }
-        this._element.removeAttribute("aria-describedby");
-        EventHandler.trigger(this._element, this.constructor.eventName(EVENT_HIDDEN$2));
-      };
-      this._queueCallback(complete, this.tip, this._isAnimated());
-    }
-    update() {
-      if (this._popper) {
-        this._popper.update();
-      }
-    }
-    // Protected
-    _isWithContent() {
-      return Boolean(this._getTitle());
-    }
-    _getTipElement() {
-      if (!this.tip) {
-        this.tip = this._createTipElement(this._newContent || this._getContentForTemplate());
-      }
-      return this.tip;
-    }
-    _createTipElement(content) {
-      const tip = this._getTemplateFactory(content).toHtml();
-      if (!tip) {
-        return null;
-      }
-      tip.classList.remove(CLASS_NAME_FADE$2, CLASS_NAME_SHOW$2);
-      tip.classList.add(`bs-${this.constructor.NAME}-auto`);
-      const tipId = getUID(this.constructor.NAME).toString();
-      tip.setAttribute("id", tipId);
-      if (this._isAnimated()) {
-        tip.classList.add(CLASS_NAME_FADE$2);
-      }
-      return tip;
-    }
-    setContent(content) {
-      this._newContent = content;
-      if (this._isShown()) {
-        this._disposePopper();
-        this.show();
-      }
-    }
-    _getTemplateFactory(content) {
-      if (this._templateFactory) {
-        this._templateFactory.changeContent(content);
-      } else {
-        this._templateFactory = new TemplateFactory(__spreadProps(__spreadValues({}, this._config), {
-          // the `content` var has to be after `this._config`
-          // to override config.content in case of popover
-          content,
-          extraClass: this._resolvePossibleFunction(this._config.customClass)
-        }));
-      }
-      return this._templateFactory;
-    }
-    _getContentForTemplate() {
-      return {
-        [SELECTOR_TOOLTIP_INNER]: this._getTitle()
-      };
-    }
-    _getTitle() {
-      return this._resolvePossibleFunction(this._config.title) || this._element.getAttribute("data-bs-original-title");
-    }
-    // Private
-    _initializeOnDelegatedTarget(event) {
-      return this.constructor.getOrCreateInstance(event.delegateTarget, this._getDelegateConfig());
-    }
-    _isAnimated() {
-      return this._config.animation || this.tip && this.tip.classList.contains(CLASS_NAME_FADE$2);
-    }
-    _isShown() {
-      return this.tip && this.tip.classList.contains(CLASS_NAME_SHOW$2);
-    }
-    _createPopper(tip) {
-      const placement = execute(this._config.placement, [this, tip, this._element]);
-      const attachment = AttachmentMap[placement.toUpperCase()];
-      return createPopper3(this._element, tip, this._getPopperConfig(attachment));
-    }
-    _getOffset() {
-      const {
-        offset: offset3
-      } = this._config;
-      if (typeof offset3 === "string") {
-        return offset3.split(",").map((value) => Number.parseInt(value, 10));
-      }
-      if (typeof offset3 === "function") {
-        return (popperData) => offset3(popperData, this._element);
-      }
-      return offset3;
-    }
-    _resolvePossibleFunction(arg) {
-      return execute(arg, [this._element]);
-    }
-    _getPopperConfig(attachment) {
-      const defaultBsPopperConfig = {
-        placement: attachment,
-        modifiers: [{
-          name: "flip",
-          options: {
-            fallbackPlacements: this._config.fallbackPlacements
-          }
-        }, {
-          name: "offset",
-          options: {
-            offset: this._getOffset()
-          }
-        }, {
-          name: "preventOverflow",
-          options: {
-            boundary: this._config.boundary
-          }
-        }, {
-          name: "arrow",
-          options: {
-            element: `.${this.constructor.NAME}-arrow`
-          }
-        }, {
-          name: "preSetPlacement",
-          enabled: true,
-          phase: "beforeMain",
-          fn: (data) => {
-            this._getTipElement().setAttribute("data-popper-placement", data.state.placement);
-          }
-        }]
-      };
-      return __spreadValues(__spreadValues({}, defaultBsPopperConfig), execute(this._config.popperConfig, [defaultBsPopperConfig]));
-    }
-    _setListeners() {
-      const triggers = this._config.trigger.split(" ");
-      for (const trigger of triggers) {
-        if (trigger === "click") {
-          EventHandler.on(this._element, this.constructor.eventName(EVENT_CLICK$1), this._config.selector, (event) => {
-            const context = this._initializeOnDelegatedTarget(event);
-            context.toggle();
-          });
-        } else if (trigger !== TRIGGER_MANUAL) {
-          const eventIn = trigger === TRIGGER_HOVER ? this.constructor.eventName(EVENT_MOUSEENTER) : this.constructor.eventName(EVENT_FOCUSIN$1);
-          const eventOut = trigger === TRIGGER_HOVER ? this.constructor.eventName(EVENT_MOUSELEAVE) : this.constructor.eventName(EVENT_FOCUSOUT$1);
-          EventHandler.on(this._element, eventIn, this._config.selector, (event) => {
-            const context = this._initializeOnDelegatedTarget(event);
-            context._activeTrigger[event.type === "focusin" ? TRIGGER_FOCUS : TRIGGER_HOVER] = true;
-            context._enter();
-          });
-          EventHandler.on(this._element, eventOut, this._config.selector, (event) => {
-            const context = this._initializeOnDelegatedTarget(event);
-            context._activeTrigger[event.type === "focusout" ? TRIGGER_FOCUS : TRIGGER_HOVER] = context._element.contains(event.relatedTarget);
-            context._leave();
-          });
-        }
-      }
-      this._hideModalHandler = () => {
-        if (this._element) {
-          this.hide();
-        }
-      };
-      EventHandler.on(this._element.closest(SELECTOR_MODAL), EVENT_MODAL_HIDE, this._hideModalHandler);
-    }
-    _fixTitle() {
-      const title = this._element.getAttribute("title");
-      if (!title) {
-        return;
-      }
-      if (!this._element.getAttribute("aria-label") && !this._element.textContent.trim()) {
-        this._element.setAttribute("aria-label", title);
-      }
-      this._element.setAttribute("data-bs-original-title", title);
-      this._element.removeAttribute("title");
-    }
-    _enter() {
-      if (this._isShown() || this._isHovered) {
-        this._isHovered = true;
-        return;
-      }
-      this._isHovered = true;
-      this._setTimeout(() => {
-        if (this._isHovered) {
-          this.show();
-        }
-      }, this._config.delay.show);
-    }
-    _leave() {
-      if (this._isWithActiveTrigger()) {
-        return;
-      }
-      this._isHovered = false;
-      this._setTimeout(() => {
-        if (!this._isHovered) {
-          this.hide();
-        }
-      }, this._config.delay.hide);
-    }
-    _setTimeout(handler, timeout) {
-      clearTimeout(this._timeout);
-      this._timeout = setTimeout(handler, timeout);
-    }
-    _isWithActiveTrigger() {
-      return Object.values(this._activeTrigger).includes(true);
-    }
-    _getConfig(config) {
-      const dataAttributes = Manipulator.getDataAttributes(this._element);
-      for (const dataAttribute of Object.keys(dataAttributes)) {
-        if (DISALLOWED_ATTRIBUTES.has(dataAttribute)) {
-          delete dataAttributes[dataAttribute];
-        }
-      }
-      config = __spreadValues(__spreadValues({}, dataAttributes), typeof config === "object" && config ? config : {});
-      config = this._mergeConfigObj(config);
-      config = this._configAfterMerge(config);
-      this._typeCheckConfig(config);
-      return config;
-    }
-    _configAfterMerge(config) {
-      config.container = config.container === false ? document.body : getElement(config.container);
-      if (typeof config.delay === "number") {
-        config.delay = {
-          show: config.delay,
-          hide: config.delay
-        };
-      }
-      if (typeof config.title === "number") {
-        config.title = config.title.toString();
-      }
-      if (typeof config.content === "number") {
-        config.content = config.content.toString();
-      }
-      return config;
-    }
-    _getDelegateConfig() {
-      const config = {};
-      for (const [key, value] of Object.entries(this._config)) {
-        if (this.constructor.Default[key] !== value) {
-          config[key] = value;
-        }
-      }
-      config.selector = false;
-      config.trigger = "manual";
-      return config;
-    }
-    _disposePopper() {
-      if (this._popper) {
-        this._popper.destroy();
-        this._popper = null;
-      }
-      if (this.tip) {
-        this.tip.remove();
-        this.tip = null;
-      }
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _Tooltip.getOrCreateInstance(this, config);
-        if (typeof config !== "string") {
-          return;
-        }
-        if (typeof data[config] === "undefined") {
-          throw new TypeError(`No method named "${config}"`);
-        }
-        data[config]();
-      });
-    }
-  };
-  defineJQueryPlugin(Tooltip);
-  var NAME$3 = "popover";
-  var SELECTOR_TITLE = ".popover-header";
-  var SELECTOR_CONTENT = ".popover-body";
-  var Default$2 = __spreadProps(__spreadValues({}, Tooltip.Default), {
-    content: "",
-    offset: [0, 8],
-    placement: "right",
-    template: '<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>',
-    trigger: "click"
-  });
-  var DefaultType$2 = __spreadProps(__spreadValues({}, Tooltip.DefaultType), {
-    content: "(null|string|element|function)"
-  });
-  var Popover = class _Popover extends Tooltip {
-    // Getters
-    static get Default() {
-      return Default$2;
-    }
-    static get DefaultType() {
-      return DefaultType$2;
-    }
-    static get NAME() {
-      return NAME$3;
-    }
-    // Overrides
-    _isWithContent() {
-      return this._getTitle() || this._getContent();
-    }
-    // Private
-    _getContentForTemplate() {
-      return {
-        [SELECTOR_TITLE]: this._getTitle(),
-        [SELECTOR_CONTENT]: this._getContent()
-      };
-    }
-    _getContent() {
-      return this._resolvePossibleFunction(this._config.content);
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _Popover.getOrCreateInstance(this, config);
-        if (typeof config !== "string") {
-          return;
-        }
-        if (typeof data[config] === "undefined") {
-          throw new TypeError(`No method named "${config}"`);
-        }
-        data[config]();
-      });
-    }
-  };
-  defineJQueryPlugin(Popover);
-  var NAME$2 = "scrollspy";
-  var DATA_KEY$2 = "bs.scrollspy";
-  var EVENT_KEY$2 = `.${DATA_KEY$2}`;
-  var DATA_API_KEY = ".data-api";
-  var EVENT_ACTIVATE = `activate${EVENT_KEY$2}`;
-  var EVENT_CLICK = `click${EVENT_KEY$2}`;
-  var EVENT_LOAD_DATA_API$1 = `load${EVENT_KEY$2}${DATA_API_KEY}`;
-  var CLASS_NAME_DROPDOWN_ITEM = "dropdown-item";
-  var CLASS_NAME_ACTIVE$1 = "active";
-  var SELECTOR_DATA_SPY = '[data-bs-spy="scroll"]';
-  var SELECTOR_TARGET_LINKS = "[href]";
-  var SELECTOR_NAV_LIST_GROUP = ".nav, .list-group";
-  var SELECTOR_NAV_LINKS = ".nav-link";
-  var SELECTOR_NAV_ITEMS = ".nav-item";
-  var SELECTOR_LIST_ITEMS = ".list-group-item";
-  var SELECTOR_LINK_ITEMS = `${SELECTOR_NAV_LINKS}, ${SELECTOR_NAV_ITEMS} > ${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`;
-  var SELECTOR_DROPDOWN = ".dropdown";
-  var SELECTOR_DROPDOWN_TOGGLE$1 = ".dropdown-toggle";
-  var Default$1 = {
-    offset: null,
-    // TODO: v6 @deprecated, keep it for backwards compatibility reasons
-    rootMargin: "0px 0px -25%",
-    smoothScroll: false,
-    target: null,
-    threshold: [0.1, 0.5, 1]
-  };
-  var DefaultType$1 = {
-    offset: "(number|null)",
-    // TODO v6 @deprecated, keep it for backwards compatibility reasons
-    rootMargin: "string",
-    smoothScroll: "boolean",
-    target: "element",
-    threshold: "array"
-  };
-  var ScrollSpy = class _ScrollSpy extends BaseComponent {
-    constructor(element, config) {
-      super(element, config);
-      this._targetLinks = /* @__PURE__ */ new Map();
-      this._observableSections = /* @__PURE__ */ new Map();
-      this._rootElement = getComputedStyle(this._element).overflowY === "visible" ? null : this._element;
-      this._activeTarget = null;
-      this._observer = null;
-      this._previousScrollData = {
-        visibleEntryTop: 0,
-        parentScrollTop: 0
-      };
-      this.refresh();
-    }
-    // Getters
-    static get Default() {
-      return Default$1;
-    }
-    static get DefaultType() {
-      return DefaultType$1;
-    }
-    static get NAME() {
-      return NAME$2;
-    }
-    // Public
-    refresh() {
-      this._initializeTargetsAndObservables();
-      this._maybeEnableSmoothScroll();
-      if (this._observer) {
-        this._observer.disconnect();
-      } else {
-        this._observer = this._getNewObserver();
-      }
-      for (const section of this._observableSections.values()) {
-        this._observer.observe(section);
-      }
-    }
-    dispose() {
-      this._observer.disconnect();
-      super.dispose();
-    }
-    // Private
-    _configAfterMerge(config) {
-      config.target = getElement(config.target) || document.body;
-      config.rootMargin = config.offset ? `${config.offset}px 0px -30%` : config.rootMargin;
-      if (typeof config.threshold === "string") {
-        config.threshold = config.threshold.split(",").map((value) => Number.parseFloat(value));
-      }
-      return config;
-    }
-    _maybeEnableSmoothScroll() {
-      if (!this._config.smoothScroll) {
-        return;
-      }
-      EventHandler.off(this._config.target, EVENT_CLICK);
-      EventHandler.on(this._config.target, EVENT_CLICK, SELECTOR_TARGET_LINKS, (event) => {
-        const observableSection = this._observableSections.get(event.target.hash);
-        if (observableSection) {
-          event.preventDefault();
-          const root = this._rootElement || window;
-          const height = observableSection.offsetTop - this._element.offsetTop;
-          if (root.scrollTo) {
-            root.scrollTo({
-              top: height,
-              behavior: "smooth"
-            });
-            return;
-          }
-          root.scrollTop = height;
-        }
-      });
-    }
-    _getNewObserver() {
-      const options = {
-        root: this._rootElement,
-        threshold: this._config.threshold,
-        rootMargin: this._config.rootMargin
-      };
-      return new IntersectionObserver((entries) => this._observerCallback(entries), options);
-    }
-    // The logic of selection
-    _observerCallback(entries) {
-      const targetElement = (entry) => this._targetLinks.get(`#${entry.target.id}`);
-      const activate = (entry) => {
-        this._previousScrollData.visibleEntryTop = entry.target.offsetTop;
-        this._process(targetElement(entry));
-      };
-      const parentScrollTop = (this._rootElement || document.documentElement).scrollTop;
-      const userScrollsDown = parentScrollTop >= this._previousScrollData.parentScrollTop;
-      this._previousScrollData.parentScrollTop = parentScrollTop;
-      for (const entry of entries) {
-        if (!entry.isIntersecting) {
-          this._activeTarget = null;
-          this._clearActiveClass(targetElement(entry));
-          continue;
-        }
-        const entryIsLowerThanPrevious = entry.target.offsetTop >= this._previousScrollData.visibleEntryTop;
-        if (userScrollsDown && entryIsLowerThanPrevious) {
-          activate(entry);
-          if (!parentScrollTop) {
-            return;
-          }
-          continue;
-        }
-        if (!userScrollsDown && !entryIsLowerThanPrevious) {
-          activate(entry);
-        }
-      }
-    }
-    _initializeTargetsAndObservables() {
-      this._targetLinks = /* @__PURE__ */ new Map();
-      this._observableSections = /* @__PURE__ */ new Map();
-      const targetLinks = SelectorEngine.find(SELECTOR_TARGET_LINKS, this._config.target);
-      for (const anchor of targetLinks) {
-        if (!anchor.hash || isDisabled(anchor)) {
-          continue;
-        }
-        const observableSection = SelectorEngine.findOne(decodeURI(anchor.hash), this._element);
-        if (isVisible(observableSection)) {
-          this._targetLinks.set(decodeURI(anchor.hash), anchor);
-          this._observableSections.set(anchor.hash, observableSection);
-        }
-      }
-    }
-    _process(target) {
-      if (this._activeTarget === target) {
-        return;
-      }
-      this._clearActiveClass(this._config.target);
-      this._activeTarget = target;
-      target.classList.add(CLASS_NAME_ACTIVE$1);
-      this._activateParents(target);
-      EventHandler.trigger(this._element, EVENT_ACTIVATE, {
-        relatedTarget: target
-      });
-    }
-    _activateParents(target) {
-      if (target.classList.contains(CLASS_NAME_DROPDOWN_ITEM)) {
-        SelectorEngine.findOne(SELECTOR_DROPDOWN_TOGGLE$1, target.closest(SELECTOR_DROPDOWN)).classList.add(CLASS_NAME_ACTIVE$1);
-        return;
-      }
-      for (const listGroup of SelectorEngine.parents(target, SELECTOR_NAV_LIST_GROUP)) {
-        for (const item of SelectorEngine.prev(listGroup, SELECTOR_LINK_ITEMS)) {
-          item.classList.add(CLASS_NAME_ACTIVE$1);
-        }
-      }
-    }
-    _clearActiveClass(parent) {
-      parent.classList.remove(CLASS_NAME_ACTIVE$1);
-      const activeNodes = SelectorEngine.find(`${SELECTOR_TARGET_LINKS}.${CLASS_NAME_ACTIVE$1}`, parent);
-      for (const node of activeNodes) {
-        node.classList.remove(CLASS_NAME_ACTIVE$1);
-      }
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _ScrollSpy.getOrCreateInstance(this, config);
-        if (typeof config !== "string") {
-          return;
-        }
-        if (data[config] === void 0 || config.startsWith("_") || config === "constructor") {
-          throw new TypeError(`No method named "${config}"`);
-        }
-        data[config]();
-      });
-    }
-  };
-  EventHandler.on(window, EVENT_LOAD_DATA_API$1, () => {
-    for (const spy of SelectorEngine.find(SELECTOR_DATA_SPY)) {
-      ScrollSpy.getOrCreateInstance(spy);
-    }
-  });
-  defineJQueryPlugin(ScrollSpy);
-  var NAME$1 = "tab";
-  var DATA_KEY$1 = "bs.tab";
-  var EVENT_KEY$1 = `.${DATA_KEY$1}`;
-  var EVENT_HIDE$1 = `hide${EVENT_KEY$1}`;
-  var EVENT_HIDDEN$1 = `hidden${EVENT_KEY$1}`;
-  var EVENT_SHOW$1 = `show${EVENT_KEY$1}`;
-  var EVENT_SHOWN$1 = `shown${EVENT_KEY$1}`;
-  var EVENT_CLICK_DATA_API = `click${EVENT_KEY$1}`;
-  var EVENT_KEYDOWN = `keydown${EVENT_KEY$1}`;
-  var EVENT_LOAD_DATA_API = `load${EVENT_KEY$1}`;
-  var ARROW_LEFT_KEY = "ArrowLeft";
-  var ARROW_RIGHT_KEY = "ArrowRight";
-  var ARROW_UP_KEY = "ArrowUp";
-  var ARROW_DOWN_KEY = "ArrowDown";
-  var HOME_KEY = "Home";
-  var END_KEY = "End";
-  var CLASS_NAME_ACTIVE = "active";
-  var CLASS_NAME_FADE$1 = "fade";
-  var CLASS_NAME_SHOW$1 = "show";
-  var CLASS_DROPDOWN = "dropdown";
-  var SELECTOR_DROPDOWN_TOGGLE = ".dropdown-toggle";
-  var SELECTOR_DROPDOWN_MENU = ".dropdown-menu";
-  var NOT_SELECTOR_DROPDOWN_TOGGLE = `:not(${SELECTOR_DROPDOWN_TOGGLE})`;
-  var SELECTOR_TAB_PANEL = '.list-group, .nav, [role="tablist"]';
-  var SELECTOR_OUTER = ".nav-item, .list-group-item";
-  var SELECTOR_INNER = `.nav-link${NOT_SELECTOR_DROPDOWN_TOGGLE}, .list-group-item${NOT_SELECTOR_DROPDOWN_TOGGLE}, [role="tab"]${NOT_SELECTOR_DROPDOWN_TOGGLE}`;
-  var SELECTOR_DATA_TOGGLE = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]';
-  var SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE}`;
-  var SELECTOR_DATA_TOGGLE_ACTIVE = `.${CLASS_NAME_ACTIVE}[data-bs-toggle="tab"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="pill"], .${CLASS_NAME_ACTIVE}[data-bs-toggle="list"]`;
-  var Tab = class _Tab extends BaseComponent {
-    constructor(element) {
-      super(element);
-      this._parent = this._element.closest(SELECTOR_TAB_PANEL);
-      if (!this._parent) {
-        return;
-      }
-      this._setInitialAttributes(this._parent, this._getChildren());
-      EventHandler.on(this._element, EVENT_KEYDOWN, (event) => this._keydown(event));
-    }
-    // Getters
-    static get NAME() {
-      return NAME$1;
-    }
-    // Public
-    show() {
-      const innerElem = this._element;
-      if (this._elemIsActive(innerElem)) {
-        return;
-      }
-      const active = this._getActiveElem();
-      const hideEvent = active ? EventHandler.trigger(active, EVENT_HIDE$1, {
-        relatedTarget: innerElem
-      }) : null;
-      const showEvent = EventHandler.trigger(innerElem, EVENT_SHOW$1, {
-        relatedTarget: active
-      });
-      if (showEvent.defaultPrevented || hideEvent && hideEvent.defaultPrevented) {
-        return;
-      }
-      this._deactivate(active, innerElem);
-      this._activate(innerElem, active);
-    }
-    // Private
-    _activate(element, relatedElem) {
-      if (!element) {
-        return;
-      }
-      element.classList.add(CLASS_NAME_ACTIVE);
-      this._activate(SelectorEngine.getElementFromSelector(element));
-      const complete = () => {
-        if (element.getAttribute("role") !== "tab") {
-          element.classList.add(CLASS_NAME_SHOW$1);
-          return;
-        }
-        element.removeAttribute("tabindex");
-        element.setAttribute("aria-selected", true);
-        this._toggleDropDown(element, true);
-        EventHandler.trigger(element, EVENT_SHOWN$1, {
-          relatedTarget: relatedElem
-        });
-      };
-      this._queueCallback(complete, element, element.classList.contains(CLASS_NAME_FADE$1));
-    }
-    _deactivate(element, relatedElem) {
-      if (!element) {
-        return;
-      }
-      element.classList.remove(CLASS_NAME_ACTIVE);
-      element.blur();
-      this._deactivate(SelectorEngine.getElementFromSelector(element));
-      const complete = () => {
-        if (element.getAttribute("role") !== "tab") {
-          element.classList.remove(CLASS_NAME_SHOW$1);
-          return;
-        }
-        element.setAttribute("aria-selected", false);
-        element.setAttribute("tabindex", "-1");
-        this._toggleDropDown(element, false);
-        EventHandler.trigger(element, EVENT_HIDDEN$1, {
-          relatedTarget: relatedElem
-        });
-      };
-      this._queueCallback(complete, element, element.classList.contains(CLASS_NAME_FADE$1));
-    }
-    _keydown(event) {
-      if (![ARROW_LEFT_KEY, ARROW_RIGHT_KEY, ARROW_UP_KEY, ARROW_DOWN_KEY, HOME_KEY, END_KEY].includes(event.key)) {
-        return;
-      }
-      event.stopPropagation();
-      event.preventDefault();
-      const children = this._getChildren().filter((element) => !isDisabled(element));
-      let nextActiveElement;
-      if ([HOME_KEY, END_KEY].includes(event.key)) {
-        nextActiveElement = children[event.key === HOME_KEY ? 0 : children.length - 1];
-      } else {
-        const isNext = [ARROW_RIGHT_KEY, ARROW_DOWN_KEY].includes(event.key);
-        nextActiveElement = getNextActiveElement(children, event.target, isNext, true);
-      }
-      if (nextActiveElement) {
-        nextActiveElement.focus({
-          preventScroll: true
-        });
-        _Tab.getOrCreateInstance(nextActiveElement).show();
-      }
-    }
-    _getChildren() {
-      return SelectorEngine.find(SELECTOR_INNER_ELEM, this._parent);
-    }
-    _getActiveElem() {
-      return this._getChildren().find((child) => this._elemIsActive(child)) || null;
-    }
-    _setInitialAttributes(parent, children) {
-      this._setAttributeIfNotExists(parent, "role", "tablist");
-      for (const child of children) {
-        this._setInitialAttributesOnChild(child);
-      }
-    }
-    _setInitialAttributesOnChild(child) {
-      child = this._getInnerElement(child);
-      const isActive = this._elemIsActive(child);
-      const outerElem = this._getOuterElement(child);
-      child.setAttribute("aria-selected", isActive);
-      if (outerElem !== child) {
-        this._setAttributeIfNotExists(outerElem, "role", "presentation");
-      }
-      if (!isActive) {
-        child.setAttribute("tabindex", "-1");
-      }
-      this._setAttributeIfNotExists(child, "role", "tab");
-      this._setInitialAttributesOnTargetPanel(child);
-    }
-    _setInitialAttributesOnTargetPanel(child) {
-      const target = SelectorEngine.getElementFromSelector(child);
-      if (!target) {
-        return;
-      }
-      this._setAttributeIfNotExists(target, "role", "tabpanel");
-      if (child.id) {
-        this._setAttributeIfNotExists(target, "aria-labelledby", `${child.id}`);
-      }
-    }
-    _toggleDropDown(element, open) {
-      const outerElem = this._getOuterElement(element);
-      if (!outerElem.classList.contains(CLASS_DROPDOWN)) {
-        return;
-      }
-      const toggle = (selector, className) => {
-        const element2 = SelectorEngine.findOne(selector, outerElem);
-        if (element2) {
-          element2.classList.toggle(className, open);
-        }
-      };
-      toggle(SELECTOR_DROPDOWN_TOGGLE, CLASS_NAME_ACTIVE);
-      toggle(SELECTOR_DROPDOWN_MENU, CLASS_NAME_SHOW$1);
-      outerElem.setAttribute("aria-expanded", open);
-    }
-    _setAttributeIfNotExists(element, attribute, value) {
-      if (!element.hasAttribute(attribute)) {
-        element.setAttribute(attribute, value);
-      }
-    }
-    _elemIsActive(elem) {
-      return elem.classList.contains(CLASS_NAME_ACTIVE);
-    }
-    // Try to get the inner element (usually the .nav-link)
-    _getInnerElement(elem) {
-      return elem.matches(SELECTOR_INNER_ELEM) ? elem : SelectorEngine.findOne(SELECTOR_INNER_ELEM, elem);
-    }
-    // Try to get the outer element (usually the .nav-item)
-    _getOuterElement(elem) {
-      return elem.closest(SELECTOR_OUTER) || elem;
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _Tab.getOrCreateInstance(this);
-        if (typeof config !== "string") {
-          return;
-        }
-        if (data[config] === void 0 || config.startsWith("_") || config === "constructor") {
-          throw new TypeError(`No method named "${config}"`);
-        }
-        data[config]();
-      });
-    }
-  };
-  EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function(event) {
-    if (["A", "AREA"].includes(this.tagName)) {
-      event.preventDefault();
-    }
-    if (isDisabled(this)) {
-      return;
-    }
-    Tab.getOrCreateInstance(this).show();
-  });
-  EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
-    for (const element of SelectorEngine.find(SELECTOR_DATA_TOGGLE_ACTIVE)) {
-      Tab.getOrCreateInstance(element);
-    }
-  });
-  defineJQueryPlugin(Tab);
-  var NAME = "toast";
-  var DATA_KEY = "bs.toast";
-  var EVENT_KEY = `.${DATA_KEY}`;
-  var EVENT_MOUSEOVER = `mouseover${EVENT_KEY}`;
-  var EVENT_MOUSEOUT = `mouseout${EVENT_KEY}`;
-  var EVENT_FOCUSIN = `focusin${EVENT_KEY}`;
-  var EVENT_FOCUSOUT = `focusout${EVENT_KEY}`;
-  var EVENT_HIDE = `hide${EVENT_KEY}`;
-  var EVENT_HIDDEN = `hidden${EVENT_KEY}`;
-  var EVENT_SHOW = `show${EVENT_KEY}`;
-  var EVENT_SHOWN = `shown${EVENT_KEY}`;
-  var CLASS_NAME_FADE = "fade";
-  var CLASS_NAME_HIDE = "hide";
-  var CLASS_NAME_SHOW = "show";
-  var CLASS_NAME_SHOWING = "showing";
-  var DefaultType = {
-    animation: "boolean",
-    autohide: "boolean",
-    delay: "number"
-  };
-  var Default = {
-    animation: true,
-    autohide: true,
-    delay: 5e3
-  };
-  var Toast = class _Toast extends BaseComponent {
-    constructor(element, config) {
-      super(element, config);
-      this._timeout = null;
-      this._hasMouseInteraction = false;
-      this._hasKeyboardInteraction = false;
-      this._setListeners();
-    }
-    // Getters
-    static get Default() {
-      return Default;
-    }
-    static get DefaultType() {
-      return DefaultType;
-    }
-    static get NAME() {
-      return NAME;
-    }
-    // Public
-    show() {
-      const showEvent = EventHandler.trigger(this._element, EVENT_SHOW);
-      if (showEvent.defaultPrevented) {
-        return;
-      }
-      this._clearTimeout();
-      if (this._config.animation) {
-        this._element.classList.add(CLASS_NAME_FADE);
-      }
-      const complete = () => {
-        this._element.classList.remove(CLASS_NAME_SHOWING);
-        EventHandler.trigger(this._element, EVENT_SHOWN);
-        this._maybeScheduleHide();
-      };
-      this._element.classList.remove(CLASS_NAME_HIDE);
-      reflow(this._element);
-      this._element.classList.add(CLASS_NAME_SHOW, CLASS_NAME_SHOWING);
-      this._queueCallback(complete, this._element, this._config.animation);
-    }
-    hide() {
-      if (!this.isShown()) {
-        return;
-      }
-      const hideEvent = EventHandler.trigger(this._element, EVENT_HIDE);
-      if (hideEvent.defaultPrevented) {
-        return;
-      }
-      const complete = () => {
-        this._element.classList.add(CLASS_NAME_HIDE);
-        this._element.classList.remove(CLASS_NAME_SHOWING, CLASS_NAME_SHOW);
-        EventHandler.trigger(this._element, EVENT_HIDDEN);
-      };
-      this._element.classList.add(CLASS_NAME_SHOWING);
-      this._queueCallback(complete, this._element, this._config.animation);
-    }
-    dispose() {
-      this._clearTimeout();
-      if (this.isShown()) {
-        this._element.classList.remove(CLASS_NAME_SHOW);
-      }
-      super.dispose();
-    }
-    isShown() {
-      return this._element.classList.contains(CLASS_NAME_SHOW);
-    }
-    // Private
-    _maybeScheduleHide() {
-      if (!this._config.autohide) {
-        return;
-      }
-      if (this._hasMouseInteraction || this._hasKeyboardInteraction) {
-        return;
-      }
-      this._timeout = setTimeout(() => {
-        this.hide();
-      }, this._config.delay);
-    }
-    _onInteraction(event, isInteracting) {
-      switch (event.type) {
-        case "mouseover":
-        case "mouseout": {
-          this._hasMouseInteraction = isInteracting;
-          break;
-        }
-        case "focusin":
-        case "focusout": {
-          this._hasKeyboardInteraction = isInteracting;
-          break;
-        }
-      }
-      if (isInteracting) {
-        this._clearTimeout();
-        return;
-      }
-      const nextElement = event.relatedTarget;
-      if (this._element === nextElement || this._element.contains(nextElement)) {
-        return;
-      }
-      this._maybeScheduleHide();
-    }
-    _setListeners() {
-      EventHandler.on(this._element, EVENT_MOUSEOVER, (event) => this._onInteraction(event, true));
-      EventHandler.on(this._element, EVENT_MOUSEOUT, (event) => this._onInteraction(event, false));
-      EventHandler.on(this._element, EVENT_FOCUSIN, (event) => this._onInteraction(event, true));
-      EventHandler.on(this._element, EVENT_FOCUSOUT, (event) => this._onInteraction(event, false));
-    }
-    _clearTimeout() {
-      clearTimeout(this._timeout);
-      this._timeout = null;
-    }
-    // Static
-    static jQueryInterface(config) {
-      return this.each(function() {
-        const data = _Toast.getOrCreateInstance(this, config);
-        if (typeof config === "string") {
-          if (typeof data[config] === "undefined") {
-            throw new TypeError(`No method named "${config}"`);
-          }
-          data[config](this);
-        }
-      });
-    }
-  };
-  enableDismissTrigger(Toast);
-  defineJQueryPlugin(Toast);
+  })();
 
   // node_modules/luxon/src/errors.js
   var LuxonError = class extends Error {
@@ -12521,6 +10035,12 @@
     get name() {
       throw new ZoneIsAbstractError();
     }
+    /**
+     * The IANA name of this zone.
+     * Defaults to `name` if not overwritten by a subclass.
+     * @abstract
+     * @type {string}
+     */
     get ianaName() {
       return this.name;
     }
@@ -12700,7 +10220,7 @@
      * @param {string} s - The string to check validity on
      * @example IANAZone.isValidSpecifier("America/New_York") //=> true
      * @example IANAZone.isValidSpecifier("Sport~~blorp") //=> false
-     * @deprecated This method returns false for some valid IANA names. Use isValidZone instead.
+     * @deprecated For backward compatibility, this forwards to isValidZone, better use `isValidZone()` directly instead.
      * @return {boolean}
      */
     static isValidSpecifier(s2) {
@@ -12730,27 +10250,60 @@
       this.zoneName = name;
       this.valid = _IANAZone.isValidZone(name);
     }
-    /** @override **/
+    /**
+     * The type of zone. `iana` for all instances of `IANAZone`.
+     * @override
+     * @type {string}
+     */
     get type() {
       return "iana";
     }
-    /** @override **/
+    /**
+     * The name of this zone (i.e. the IANA zone name).
+     * @override
+     * @type {string}
+     */
     get name() {
       return this.zoneName;
     }
-    /** @override **/
+    /**
+     * Returns whether the offset is known to be fixed for the whole year:
+     * Always returns false for all IANA zones.
+     * @override
+     * @type {boolean}
+     */
     get isUniversal() {
       return false;
     }
-    /** @override **/
+    /**
+     * Returns the offset's common name (such as EST) at the specified timestamp
+     * @override
+     * @param {number} ts - Epoch milliseconds for which to get the name
+     * @param {Object} opts - Options to affect the format
+     * @param {string} opts.format - What style of offset to return. Accepts 'long' or 'short'.
+     * @param {string} opts.locale - What locale to return the offset name in.
+     * @return {string}
+     */
     offsetName(ts, { format, locale }) {
       return parseZoneInfo(ts, format, locale, this.name);
     }
-    /** @override **/
+    /**
+     * Returns the offset's value as a string
+     * @override
+     * @param {number} ts - Epoch milliseconds for which to get the offset
+     * @param {string} format - What style of offset to return.
+     *                          Accepts 'narrow', 'short', or 'techie'. Returning '+6', '+06:00', or '+0600' respectively
+     * @return {string}
+     */
     formatOffset(ts, format) {
       return formatOffset(this.offset(ts), format);
     }
-    /** @override **/
+    /**
+     * Return the offset in minutes for this zone at the specified timestamp.
+     * @override
+     * @param {number} ts - Epoch milliseconds for which to compute the offset
+     * @return {number}
+     */
     offset(ts) {
       const date = new Date(ts);
       if (isNaN(date))
@@ -12775,11 +10328,20 @@
       asTS -= over >= 0 ? over : 1e3 + over;
       return (asUTC - asTS) / (60 * 1e3);
     }
-    /** @override **/
+    /**
+     * Return whether this Zone is equal to another zone
+     * @override
+     * @param {Zone} otherZone - the zone to compare
+     * @return {boolean}
+     */
     equals(otherZone) {
       return otherZone.type === "iana" && otherZone.name === this.name;
     }
-    /** @override **/
+    /**
+     * Return whether this Zone is valid.
+     * @override
+     * @type {boolean}
+     */
     get isValid() {
       return this.valid;
     }
@@ -13186,6 +10748,9 @@
     equals(other) {
       return this.locale === other.locale && this.numberingSystem === other.numberingSystem && this.outputCalendar === other.outputCalendar;
     }
+    toString() {
+      return `Locale(${this.locale}, ${this.numberingSystem}, ${this.outputCalendar})`;
+    }
   };
 
   // node_modules/luxon/src/zones/fixedOffsetZone.js
@@ -13206,8 +10771,8 @@
      * @param {number} offset - The offset in minutes
      * @return {FixedOffsetZone}
      */
-    static instance(offset3) {
-      return offset3 === 0 ? _FixedOffsetZone.utcInstance : new _FixedOffsetZone(offset3);
+    static instance(offset2) {
+      return offset2 === 0 ? _FixedOffsetZone.utcInstance : new _FixedOffsetZone(offset2);
     }
     /**
      * Get an instance of FixedOffsetZone from a UTC offset string, like "UTC+6"
@@ -13226,18 +10791,33 @@
       }
       return null;
     }
-    constructor(offset3) {
+    constructor(offset2) {
       super();
-      this.fixed = offset3;
+      this.fixed = offset2;
     }
-    /** @override **/
+    /**
+     * The type of zone. `fixed` for all instances of `FixedOffsetZone`.
+     * @override
+     * @type {string}
+     */
     get type() {
       return "fixed";
     }
-    /** @override **/
+    /**
+     * The name of this zone.
+     * All fixed zones' names always start with "UTC" (plus optional offset)
+     * @override
+     * @type {string}
+     */
     get name() {
       return this.fixed === 0 ? "UTC" : `UTC${formatOffset(this.fixed, "narrow")}`;
     }
+    /**
+     * The IANA name of this zone, i.e. `Etc/UTC` or `Etc/GMT+/-nn`
+     *
+     * @override
+     * @type {string}
+     */
     get ianaName() {
       if (this.fixed === 0) {
         return "Etc/UTC";
@@ -13245,27 +10825,60 @@
         return `Etc/GMT${formatOffset(-this.fixed, "narrow")}`;
       }
     }
-    /** @override **/
+    /**
+     * Returns the offset's common name at the specified timestamp.
+     *
+     * For fixed offset zones this equals to the zone name.
+     * @override
+     */
     offsetName() {
       return this.name;
     }
-    /** @override **/
+    /**
+     * Returns the offset's value as a string
+     * @override
+     * @param {number} ts - Epoch milliseconds for which to get the offset
+     * @param {string} format - What style of offset to return.
+     *                          Accepts 'narrow', 'short', or 'techie'. Returning '+6', '+06:00', or '+0600' respectively
+     * @return {string}
+     */
     formatOffset(ts, format) {
       return formatOffset(this.fixed, format);
     }
-    /** @override **/
+    /**
+     * Returns whether the offset is known to be fixed for the whole year:
+     * Always returns true for all fixed offset zones.
+     * @override
+     * @type {boolean}
+     */
     get isUniversal() {
       return true;
     }
-    /** @override **/
+    /**
+     * Return the offset in minutes for this zone at the specified timestamp.
+     *
+     * For fixed offset zones, this is constant and does not depend on a timestamp.
+     * @override
+     * @return {number}
+     */
     offset() {
       return this.fixed;
     }
-    /** @override **/
+    /**
+     * Return whether this Zone is equal to another zone (i.e. also fixed and same offset)
+     * @override
+     * @param {Zone} otherZone - the zone to compare
+     * @return {boolean}
+     */
     equals(otherZone) {
       return otherZone.type === "fixed" && otherZone.fixed === this.fixed;
     }
-    /** @override **/
+    /**
+     * Return whether this Zone is valid:
+     * All fixed offset zones are valid.
+     * @override
+     * @type {boolean}
+     */
     get isValid() {
       return true;
     }
@@ -13313,7 +10926,7 @@
 
   // node_modules/luxon/src/impl/zoneUtil.js
   function normalizeZone(input, defaultZone2) {
-    let offset3;
+    let offset2;
     if (isUndefined(input) || input === null) {
       return defaultZone2;
     } else if (input instanceof Zone) {
@@ -13335,6 +10948,89 @@
     } else {
       return new InvalidZone(input);
     }
+  }
+
+  // node_modules/luxon/src/impl/digits.js
+  var numberingSystems = {
+    arab: "[\u0660-\u0669]",
+    arabext: "[\u06F0-\u06F9]",
+    bali: "[\u1B50-\u1B59]",
+    beng: "[\u09E6-\u09EF]",
+    deva: "[\u0966-\u096F]",
+    fullwide: "[\uFF10-\uFF19]",
+    gujr: "[\u0AE6-\u0AEF]",
+    hanidec: "[\u3007|\u4E00|\u4E8C|\u4E09|\u56DB|\u4E94|\u516D|\u4E03|\u516B|\u4E5D]",
+    khmr: "[\u17E0-\u17E9]",
+    knda: "[\u0CE6-\u0CEF]",
+    laoo: "[\u0ED0-\u0ED9]",
+    limb: "[\u1946-\u194F]",
+    mlym: "[\u0D66-\u0D6F]",
+    mong: "[\u1810-\u1819]",
+    mymr: "[\u1040-\u1049]",
+    orya: "[\u0B66-\u0B6F]",
+    tamldec: "[\u0BE6-\u0BEF]",
+    telu: "[\u0C66-\u0C6F]",
+    thai: "[\u0E50-\u0E59]",
+    tibt: "[\u0F20-\u0F29]",
+    latn: "\\d"
+  };
+  var numberingSystemsUTF16 = {
+    arab: [1632, 1641],
+    arabext: [1776, 1785],
+    bali: [6992, 7001],
+    beng: [2534, 2543],
+    deva: [2406, 2415],
+    fullwide: [65296, 65303],
+    gujr: [2790, 2799],
+    khmr: [6112, 6121],
+    knda: [3302, 3311],
+    laoo: [3792, 3801],
+    limb: [6470, 6479],
+    mlym: [3430, 3439],
+    mong: [6160, 6169],
+    mymr: [4160, 4169],
+    orya: [2918, 2927],
+    tamldec: [3046, 3055],
+    telu: [3174, 3183],
+    thai: [3664, 3673],
+    tibt: [3872, 3881]
+  };
+  var hanidecChars = numberingSystems.hanidec.replace(/[\[|\]]/g, "").split("");
+  function parseDigits(str) {
+    let value = parseInt(str, 10);
+    if (isNaN(value)) {
+      value = "";
+      for (let i = 0; i < str.length; i++) {
+        const code = str.charCodeAt(i);
+        if (str[i].search(numberingSystems.hanidec) !== -1) {
+          value += hanidecChars.indexOf(str[i]);
+        } else {
+          for (const key in numberingSystemsUTF16) {
+            const [min, max] = numberingSystemsUTF16[key];
+            if (code >= min && code <= max) {
+              value += code - min;
+            }
+          }
+        }
+      }
+      return parseInt(value, 10);
+    } else {
+      return value;
+    }
+  }
+  var digitRegexCache = {};
+  function resetDigitRegexCache() {
+    digitRegexCache = {};
+  }
+  function digitRegex({ numberingSystem }, append = "") {
+    const ns = numberingSystem || "latn";
+    if (!digitRegexCache[ns]) {
+      digitRegexCache[ns] = {};
+    }
+    if (!digitRegexCache[ns][append]) {
+      digitRegexCache[ns][append] = new RegExp(`${numberingSystems[ns]}${append}`);
+    }
+    return digitRegexCache[ns][append];
   }
 
   // node_modules/luxon/src/settings.js
@@ -13445,17 +11141,18 @@
       defaultWeekSettings = validateWeekSettings(weekSettings);
     }
     /**
-     * Get the cutoff year after which a string encoding a year as two digits is interpreted to occur in the current century.
+     * Get the cutoff year for whether a 2-digit year string is interpreted in the current or previous century. Numbers higher than the cutoff will be considered to mean 19xx and numbers lower or equal to the cutoff will be considered 20xx.
      * @type {number}
      */
     static get twoDigitCutoffYear() {
       return twoDigitCutoffYear;
     }
     /**
-     * Set the cutoff year after which a string encoding a year as two digits is interpreted to occur in the current century.
+     * Set the cutoff year for whether a 2-digit year string is interpreted in the current or previous century. Numbers higher than the cutoff will be considered to mean 19xx and numbers lower or equal to the cutoff will be considered 20xx.
      * @type {number}
-     * @example Settings.twoDigitCutoffYear = 0 // cut-off year is 0, so all 'yy' are interpreted as current century
-     * @example Settings.twoDigitCutoffYear = 50 // '49' -> 1949; '50' -> 2050
+     * @example Settings.twoDigitCutoffYear = 0 // all 'yy' are interpreted as 20th century
+     * @example Settings.twoDigitCutoffYear = 99 // all 'yy' are interpreted as 21st century
+     * @example Settings.twoDigitCutoffYear = 50 // '49' -> 2049; '50' -> 1950
      * @example Settings.twoDigitCutoffYear = 1950 // interpreted as 50
      * @example Settings.twoDigitCutoffYear = 2050 // ALSO interpreted as 50
      */
@@ -13483,6 +11180,8 @@
     static resetCaches() {
       Locale.resetCache();
       IANAZone.resetCache();
+      DateTime.resetCache();
+      resetDigitRegexCache();
     }
   };
 
@@ -13716,8 +11415,8 @@
       };
     }
   }
-  function integerBetween(thing, bottom2, top2) {
-    return isInteger(thing) && thing >= bottom2 && thing <= top2;
+  function integerBetween(thing, bottom, top) {
+    return isInteger(thing) && thing >= bottom && thing <= top;
   }
   function floorMod(x, n2) {
     return x - n2 * Math.floor(x / n2);
@@ -13845,8 +11544,8 @@
     }
     return normalized;
   }
-  function formatOffset(offset3, format) {
-    const hours = Math.trunc(Math.abs(offset3 / 60)), minutes = Math.trunc(Math.abs(offset3 % 60)), sign = offset3 >= 0 ? "+" : "-";
+  function formatOffset(offset2, format) {
+    const hours = Math.trunc(Math.abs(offset2 / 60)), minutes = Math.trunc(Math.abs(offset2 % 60)), sign = offset2 >= 0 ? "+" : "-";
     switch (format) {
       case "short":
         return `${sign}${padStart(hours, 2)}:${padStart(minutes, 2)}`;
@@ -14422,15 +12121,15 @@
       offHourStr,
       offMinuteStr
     ] = match2, result = fromStrings(weekdayStr, yearStr, monthStr, dayStr, hourStr, minuteStr, secondStr);
-    let offset3;
+    let offset2;
     if (obsOffset) {
-      offset3 = obsOffsets[obsOffset];
+      offset2 = obsOffsets[obsOffset];
     } else if (milOffset) {
-      offset3 = 0;
+      offset2 = 0;
     } else {
-      offset3 = signedOffset(offHourStr, offMinuteStr);
+      offset2 = signedOffset(offHourStr, offMinuteStr);
     }
-    return [result, new FixedOffsetZone(offset3)];
+    return [result, new FixedOffsetZone(offset2)];
   }
   function preprocessRFC2822(s2) {
     return s2.replace(/\([^()]*\)|[\n\t]/g, " ").replace(/(\s\s+)/g, " ").trim();
@@ -15069,12 +12768,12 @@
      * @example Duration.fromObject({ hours: 1, minutes: 30 }).mapUnits((x, u) => u === "hours" ? x * 2 : x) //=> { hours: 2, minutes: 30 }
      * @return {Duration}
      */
-    mapUnits(fn2) {
+    mapUnits(fn) {
       if (!this.isValid)
         return this;
       const result = {};
       for (const k of Object.keys(this.values)) {
-        result[k] = asNumber(fn2(this.values[k], k));
+        result[k] = asNumber(fn(this.values[k], k));
       }
       return clone(this, { values: result }, true);
     }
@@ -15343,15 +13042,15 @@
 
   // node_modules/luxon/src/interval.js
   var INVALID2 = "Invalid Interval";
-  function validateStartEnd(start2, end2) {
-    if (!start2 || !start2.isValid) {
+  function validateStartEnd(start, end) {
+    if (!start || !start.isValid) {
       return Interval.invalid("missing or invalid start");
-    } else if (!end2 || !end2.isValid) {
+    } else if (!end || !end.isValid) {
       return Interval.invalid("missing or invalid end");
-    } else if (end2 < start2) {
+    } else if (end < start) {
       return Interval.invalid(
         "end before start",
-        `The end of an interval must be after its start, but you had start=${start2.toISO()} and end=${end2.toISO()}`
+        `The end of an interval must be after its start, but you had start=${start.toISO()} and end=${end.toISO()}`
       );
     } else {
       return null;
@@ -15390,8 +13089,8 @@
      * @param {DateTime|Date|Object} end
      * @return {Interval}
      */
-    static fromDateTimes(start2, end2) {
-      const builtStart = friendlyDateTime(start2), builtEnd = friendlyDateTime(end2);
+    static fromDateTimes(start, end) {
+      const builtStart = friendlyDateTime(start), builtEnd = friendlyDateTime(end);
       const validateError = validateStartEnd(builtStart, builtEnd);
       if (validateError == null) {
         return new _Interval({
@@ -15408,8 +13107,8 @@
      * @param {Duration|Object|number} duration - the length of the Interval.
      * @return {Interval}
      */
-    static after(start2, duration) {
-      const dur = Duration.fromDurationLike(duration), dt = friendlyDateTime(start2);
+    static after(start, duration) {
+      const dur = Duration.fromDurationLike(duration), dt = friendlyDateTime(start);
       return _Interval.fromDateTimes(dt, dt.plus(dur));
     }
     /**
@@ -15418,8 +13117,8 @@
      * @param {Duration|Object|number} duration - the length of the Interval.
      * @return {Interval}
      */
-    static before(end2, duration) {
-      const dur = Duration.fromDurationLike(duration), dt = friendlyDateTime(end2);
+    static before(end, duration) {
+      const dur = Duration.fromDurationLike(duration), dt = friendlyDateTime(end);
       return _Interval.fromDateTimes(dt.minus(dur), dt);
     }
     /**
@@ -15433,32 +13132,32 @@
     static fromISO(text, opts) {
       const [s2, e] = (text || "").split("/", 2);
       if (s2 && e) {
-        let start2, startIsValid;
+        let start, startIsValid;
         try {
-          start2 = DateTime.fromISO(s2, opts);
-          startIsValid = start2.isValid;
+          start = DateTime.fromISO(s2, opts);
+          startIsValid = start.isValid;
         } catch (e2) {
           startIsValid = false;
         }
-        let end2, endIsValid;
+        let end, endIsValid;
         try {
-          end2 = DateTime.fromISO(e, opts);
-          endIsValid = end2.isValid;
+          end = DateTime.fromISO(e, opts);
+          endIsValid = end.isValid;
         } catch (e2) {
           endIsValid = false;
         }
         if (startIsValid && endIsValid) {
-          return _Interval.fromDateTimes(start2, end2);
+          return _Interval.fromDateTimes(start, end);
         }
         if (startIsValid) {
           const dur = Duration.fromISO(e, opts);
           if (dur.isValid) {
-            return _Interval.after(start2, dur);
+            return _Interval.after(start, dur);
           }
         } else if (endIsValid) {
           const dur = Duration.fromISO(s2, opts);
           if (dur.isValid) {
-            return _Interval.before(end2, dur);
+            return _Interval.before(end, dur);
           }
         }
       }
@@ -15527,15 +13226,15 @@
     count(unit = "milliseconds", opts) {
       if (!this.isValid)
         return NaN;
-      const start2 = this.start.startOf(unit, opts);
-      let end2;
+      const start = this.start.startOf(unit, opts);
+      let end;
       if (opts == null ? void 0 : opts.useLocaleWeeks) {
-        end2 = this.end.reconfigure({ locale: start2.locale });
+        end = this.end.reconfigure({ locale: start.locale });
       } else {
-        end2 = this.end;
+        end = this.end;
       }
-      end2 = end2.startOf(unit, opts);
-      return Math.floor(end2.diff(start2, unit).get(unit)) + (end2.valueOf() !== this.end.valueOf());
+      end = end.startOf(unit, opts);
+      return Math.floor(end.diff(start, unit).get(unit)) + (end.valueOf() !== this.end.valueOf());
     }
     /**
      * Returns whether this Interval's start and end are both in the same unit of time
@@ -15589,10 +13288,10 @@
      * @param {DateTime} values.end - the ending DateTime
      * @return {Interval}
      */
-    set({ start: start2, end: end2 } = {}) {
+    set({ start, end } = {}) {
       if (!this.isValid)
         return this;
-      return _Interval.fromDateTimes(start2 || this.s, end2 || this.e);
+      return _Interval.fromDateTimes(start || this.s, end || this.e);
     }
     /**
      * Split this Interval at each of the specified DateTimes
@@ -15673,7 +13372,7 @@
       return +other.e === +this.s;
     }
     /**
-     * Return whether this Interval engulfs the start and end of the specified Interval.
+     * Returns true if this Interval fully contains the specified Interval, specifically if the intersect (of this Interval and the other Interval) is equal to the other Interval; false otherwise.
      * @param {Interval} other
      * @return {boolean}
      */
@@ -15752,7 +13451,7 @@
      * @return {Array}
      */
     static xor(intervals) {
-      let start2 = null, currentCount = 0;
+      let start = null, currentCount = 0;
       const results = [], ends = intervals.map((i) => [
         { time: i.s, type: "s" },
         { time: i.e, type: "e" }
@@ -15760,12 +13459,12 @@
       for (const i of arr) {
         currentCount += i.type === "s" ? 1 : -1;
         if (currentCount === 1) {
-          start2 = i.time;
+          start = i.time;
         } else {
-          if (start2 && +start2 !== +i.time) {
-            results.push(_Interval.fromDateTimes(start2, i.time));
+          if (start && +start !== +i.time) {
+            results.push(_Interval.fromDateTimes(start, i.time));
           }
-          start2 = null;
+          start = null;
         }
       }
       return _Interval.merge(results);
@@ -16136,78 +13835,6 @@
     }
   }
 
-  // node_modules/luxon/src/impl/digits.js
-  var numberingSystems = {
-    arab: "[\u0660-\u0669]",
-    arabext: "[\u06F0-\u06F9]",
-    bali: "[\u1B50-\u1B59]",
-    beng: "[\u09E6-\u09EF]",
-    deva: "[\u0966-\u096F]",
-    fullwide: "[\uFF10-\uFF19]",
-    gujr: "[\u0AE6-\u0AEF]",
-    hanidec: "[\u3007|\u4E00|\u4E8C|\u4E09|\u56DB|\u4E94|\u516D|\u4E03|\u516B|\u4E5D]",
-    khmr: "[\u17E0-\u17E9]",
-    knda: "[\u0CE6-\u0CEF]",
-    laoo: "[\u0ED0-\u0ED9]",
-    limb: "[\u1946-\u194F]",
-    mlym: "[\u0D66-\u0D6F]",
-    mong: "[\u1810-\u1819]",
-    mymr: "[\u1040-\u1049]",
-    orya: "[\u0B66-\u0B6F]",
-    tamldec: "[\u0BE6-\u0BEF]",
-    telu: "[\u0C66-\u0C6F]",
-    thai: "[\u0E50-\u0E59]",
-    tibt: "[\u0F20-\u0F29]",
-    latn: "\\d"
-  };
-  var numberingSystemsUTF16 = {
-    arab: [1632, 1641],
-    arabext: [1776, 1785],
-    bali: [6992, 7001],
-    beng: [2534, 2543],
-    deva: [2406, 2415],
-    fullwide: [65296, 65303],
-    gujr: [2790, 2799],
-    khmr: [6112, 6121],
-    knda: [3302, 3311],
-    laoo: [3792, 3801],
-    limb: [6470, 6479],
-    mlym: [3430, 3439],
-    mong: [6160, 6169],
-    mymr: [4160, 4169],
-    orya: [2918, 2927],
-    tamldec: [3046, 3055],
-    telu: [3174, 3183],
-    thai: [3664, 3673],
-    tibt: [3872, 3881]
-  };
-  var hanidecChars = numberingSystems.hanidec.replace(/[\[|\]]/g, "").split("");
-  function parseDigits(str) {
-    let value = parseInt(str, 10);
-    if (isNaN(value)) {
-      value = "";
-      for (let i = 0; i < str.length; i++) {
-        const code = str.charCodeAt(i);
-        if (str[i].search(numberingSystems.hanidec) !== -1) {
-          value += hanidecChars.indexOf(str[i]);
-        } else {
-          for (const key in numberingSystemsUTF16) {
-            const [min2, max2] = numberingSystemsUTF16[key];
-            if (code >= min2 && code <= max2) {
-              value += code - min2;
-            }
-          }
-        }
-      }
-      return parseInt(value, 10);
-    } else {
-      return value;
-    }
-  }
-  function digitRegex({ numberingSystem }, append = "") {
-    return new RegExp(`${numberingSystems[numberingSystem || "latn"]}${append}`);
-  }
-
   // node_modules/luxon/src/impl/tokenParser.js
   var MISSING_FTP = "missing Intl.DateTimeFormat.formatToParts support";
   function intUnit(regex, post = (i) => i) {
@@ -16232,7 +13859,7 @@
       };
     }
   }
-  function offset2(regex, groups) {
+  function offset(regex, groups) {
     return { regex, deser: ([, h, m]) => signedOffset(h, m), groups };
   }
   function simple(regex) {
@@ -16338,9 +13965,9 @@
           return oneOf(loc.weekdays("long", true), 1);
         case "Z":
         case "ZZ":
-          return offset2(new RegExp(`([+-]${oneOrTwo.source})(?::(${two.source}))?`), 2);
+          return offset(new RegExp(`([+-]${oneOrTwo.source})(?::(${two.source}))?`), 2);
         case "ZZZ":
-          return offset2(new RegExp(`([+-]${oneOrTwo.source})(${two.source})?`), 2);
+          return offset(new RegExp(`([+-]${oneOrTwo.source})(${two.source})?`), 2);
         case "z":
           return simple(/[a-z_+-/]{1,256}?/i);
         case " ":
@@ -16547,19 +14174,51 @@
   function expandMacroTokens(tokens, locale) {
     return Array.prototype.concat(...tokens.map((t) => maybeExpandMacroToken(t, locale)));
   }
-  function explainFromTokens(locale, input, format) {
-    const tokens = expandMacroTokens(Formatter.parseFormat(format), locale), units = tokens.map((t) => unitForToken(t, locale)), disqualifyingUnit = units.find((t) => t.invalidReason);
-    if (disqualifyingUnit) {
-      return { input, tokens, invalidReason: disqualifyingUnit.invalidReason };
-    } else {
-      const [regexString, handlers] = buildRegex(units), regex = RegExp(regexString, "i"), [rawMatches, matches] = match(input, regex, handlers), [result, zone, specificOffset] = matches ? dateTimeFromMatches(matches) : [null, null, void 0];
-      if (hasOwnProperty(matches, "a") && hasOwnProperty(matches, "H")) {
-        throw new ConflictingSpecificationError(
-          "Can't include meridiem when specifying 24-hour format"
-        );
+  var TokenParser = class {
+    constructor(locale, format) {
+      this.locale = locale;
+      this.format = format;
+      this.tokens = expandMacroTokens(Formatter.parseFormat(format), locale);
+      this.units = this.tokens.map((t) => unitForToken(t, locale));
+      this.disqualifyingUnit = this.units.find((t) => t.invalidReason);
+      if (!this.disqualifyingUnit) {
+        const [regexString, handlers] = buildRegex(this.units);
+        this.regex = RegExp(regexString, "i");
+        this.handlers = handlers;
       }
-      return { input, tokens, regex, rawMatches, matches, result, zone, specificOffset };
     }
+    explainFromTokens(input) {
+      if (!this.isValid) {
+        return { input, tokens: this.tokens, invalidReason: this.invalidReason };
+      } else {
+        const [rawMatches, matches] = match(input, this.regex, this.handlers), [result, zone, specificOffset] = matches ? dateTimeFromMatches(matches) : [null, null, void 0];
+        if (hasOwnProperty(matches, "a") && hasOwnProperty(matches, "H")) {
+          throw new ConflictingSpecificationError(
+            "Can't include meridiem when specifying 24-hour format"
+          );
+        }
+        return {
+          input,
+          tokens: this.tokens,
+          regex: this.regex,
+          rawMatches,
+          matches,
+          result,
+          zone,
+          specificOffset
+        };
+      }
+    }
+    get isValid() {
+      return !this.disqualifyingUnit;
+    }
+    get invalidReason() {
+      return this.disqualifyingUnit ? this.disqualifyingUnit.invalidReason : null;
+    }
+  };
+  function explainFromTokens(locale, input, format) {
+    const parser = new TokenParser(locale, format);
+    return parser.explainFromTokens(input);
   }
   function parseFromTokens(locale, input, format) {
     const { result, zone, specificOffset, invalidReason } = explainFromTokens(locale, input, format);
@@ -16622,8 +14281,8 @@
     }
     return [localTS - Math.min(o2, o3) * 60 * 1e3, Math.max(o2, o3)];
   }
-  function tsToObj(ts, offset3) {
-    ts += offset3 * 60 * 1e3;
+  function tsToObj(ts, offset2) {
+    ts += offset2 * 60 * 1e3;
     const d = new Date(ts);
     return {
       year: d.getUTCFullYear(),
@@ -16635,8 +14294,8 @@
       millisecond: d.getUTCMilliseconds()
     };
   }
-  function objToTS(obj, offset3, zone) {
-    return fixOffset(objToLocalTS(obj), offset3, zone);
+  function objToTS(obj, offset2, zone) {
+    return fixOffset(objToLocalTS(obj), offset2, zone);
   }
   function adjustTime(inst, dur) {
     const oPre = inst.o, year = inst.c.year + Math.trunc(dur.years), month = inst.c.month + Math.trunc(dur.months) + Math.trunc(dur.quarters) * 3, c = __spreadProps(__spreadValues({}, inst.c), {
@@ -16816,8 +14475,21 @@
         return normalizeUnit(unit);
     }
   }
+  function guessOffsetForZone(zone) {
+    if (!zoneOffsetGuessCache[zone]) {
+      if (zoneOffsetTs === void 0) {
+        zoneOffsetTs = Settings.now();
+      }
+      zoneOffsetGuessCache[zone] = zone.offset(zoneOffsetTs);
+    }
+    return zoneOffsetGuessCache[zone];
+  }
   function quickDT(obj, opts) {
-    const zone = normalizeZone(opts.zone, Settings.defaultZone), loc = Locale.fromObject(opts), tsNow = Settings.now();
+    const zone = normalizeZone(opts.zone, Settings.defaultZone);
+    if (!zone.isValid) {
+      return DateTime.invalid(unsupportedZone(zone));
+    }
+    const loc = Locale.fromObject(opts);
     let ts, o;
     if (!isUndefined(obj.year)) {
       for (const u of orderedUnits2) {
@@ -16829,26 +14501,26 @@
       if (invalid) {
         return DateTime.invalid(invalid);
       }
-      const offsetProvis = zone.offset(tsNow);
+      const offsetProvis = guessOffsetForZone(zone);
       [ts, o] = objToTS(obj, offsetProvis, zone);
     } else {
-      ts = tsNow;
+      ts = Settings.now();
     }
     return new DateTime({ ts, zone, loc, o });
   }
-  function diffRelative(start2, end2, opts) {
-    const round2 = isUndefined(opts.round) ? true : opts.round, format = (c, unit) => {
-      c = roundTo(c, round2 || opts.calendary ? 0 : 2, true);
-      const formatter = end2.loc.clone(opts).relFormatter(opts);
+  function diffRelative(start, end, opts) {
+    const round = isUndefined(opts.round) ? true : opts.round, format = (c, unit) => {
+      c = roundTo(c, round || opts.calendary ? 0 : 2, true);
+      const formatter = end.loc.clone(opts).relFormatter(opts);
       return formatter.format(c, unit);
     }, differ = (unit) => {
       if (opts.calendary) {
-        if (!end2.hasSame(start2, unit)) {
-          return end2.startOf(unit).diff(start2.startOf(unit), unit).get(unit);
+        if (!end.hasSame(start, unit)) {
+          return end.startOf(unit).diff(start.startOf(unit), unit).get(unit);
         } else
           return 0;
       } else {
-        return end2.diff(start2, unit).get(unit);
+        return end.diff(start, unit).get(unit);
       }
     };
     if (opts.unit) {
@@ -16860,7 +14532,7 @@
         return format(count, unit);
       }
     }
-    return format(start2 > end2 ? -0 : 0, opts.units[opts.units.length - 1]);
+    return format(start > end ? -0 : 0, opts.units[opts.units.length - 1]);
   }
   function lastOpts(argList) {
     let opts = {}, args;
@@ -16872,6 +14544,8 @@
     }
     return [opts, args];
   }
+  var zoneOffsetTs;
+  var zoneOffsetGuessCache = {};
   var DateTime = class _DateTime {
     /**
      * @access private
@@ -16886,7 +14560,7 @@
         if (unchanged) {
           [c, o] = [config.old.c, config.old.o];
         } else {
-          const ot = zone.offset(this.ts);
+          const ot = isNumber(config.o) && !config.old ? config.o : zone.offset(this.ts);
           c = tsToObj(this.ts, ot);
           invalid = Number.isNaN(c.year) ? new Invalid("invalid input") : null;
           c = invalid ? null : c;
@@ -16951,6 +14625,7 @@
      * @param {string} [options.locale] - a locale to set on the resulting DateTime instance
      * @param {string} [options.outputCalendar] - the output calendar to set on the resulting DateTime instance
      * @param {string} [options.numberingSystem] - the numbering system to set on the resulting DateTime instance
+     * @param {string} [options.weekSettings] - the week settings to set on the resulting DateTime instance
      * @example DateTime.utc()                                              //~> now
      * @example DateTime.utc(2017)                                          //~> 2017-01-01T00:00:00Z
      * @example DateTime.utc(2017, 3)                                       //~> 2017-03-01T00:00:00Z
@@ -16997,6 +14672,7 @@
      * @param {string} [options.locale] - a locale to set on the resulting DateTime instance
      * @param {string} options.outputCalendar - the output calendar to set on the resulting DateTime instance
      * @param {string} options.numberingSystem - the numbering system to set on the resulting DateTime instance
+     * @param {string} options.weekSettings - the week settings to set on the resulting DateTime instance
      * @return {DateTime}
      */
     static fromMillis(milliseconds, options = {}) {
@@ -17022,6 +14698,7 @@
      * @param {string} [options.locale] - a locale to set on the resulting DateTime instance
      * @param {string} options.outputCalendar - the output calendar to set on the resulting DateTime instance
      * @param {string} options.numberingSystem - the numbering system to set on the resulting DateTime instance
+     * @param {string} options.weekSettings - the week settings to set on the resulting DateTime instance
      * @return {DateTime}
      */
     static fromSeconds(seconds, options = {}) {
@@ -17057,6 +14734,7 @@
      * @param {string} [opts.locale='system\'s locale'] - a locale to set on the resulting DateTime instance
      * @param {string} opts.outputCalendar - the output calendar to set on the resulting DateTime instance
      * @param {string} opts.numberingSystem - the numbering system to set on the resulting DateTime instance
+     * @param {string} opts.weekSettings - the week settings to set on the resulting DateTime instance
      * @example DateTime.fromObject({ year: 1982, month: 5, day: 25}).toISODate() //=> '1982-05-25'
      * @example DateTime.fromObject({ year: 1982 }).toISODate() //=> '1982-01-01'
      * @example DateTime.fromObject({ hour: 10, minute: 26, second: 6 }) //~> today at 10:26:06
@@ -17126,6 +14804,9 @@
           `you can't specify both a weekday of ${normalized.weekday} and a date of ${inst.toISO()}`
         );
       }
+      if (!inst.isValid) {
+        return _DateTime.invalid(inst.invalid);
+      }
       return inst;
     }
     /**
@@ -17137,6 +14818,7 @@
      * @param {string} [opts.locale='system's locale'] - a locale to set on the resulting DateTime instance
      * @param {string} [opts.outputCalendar] - the output calendar to set on the resulting DateTime instance
      * @param {string} [opts.numberingSystem] - the numbering system to set on the resulting DateTime instance
+     * @param {string} [opts.weekSettings] - the week settings to set on the resulting DateTime instance
      * @example DateTime.fromISO('2016-05-25T09:08:34.123')
      * @example DateTime.fromISO('2016-05-25T09:08:34.123+06:00')
      * @example DateTime.fromISO('2016-05-25T09:08:34.123+06:00', {setZone: true})
@@ -17157,6 +14839,7 @@
      * @param {string} [opts.locale='system's locale'] - a locale to set on the resulting DateTime instance
      * @param {string} opts.outputCalendar - the output calendar to set on the resulting DateTime instance
      * @param {string} opts.numberingSystem - the numbering system to set on the resulting DateTime instance
+     * @param {string} opts.weekSettings - the week settings to set on the resulting DateTime instance
      * @example DateTime.fromRFC2822('25 Nov 2016 13:23:12 GMT')
      * @example DateTime.fromRFC2822('Fri, 25 Nov 2016 13:23:12 +0600')
      * @example DateTime.fromRFC2822('25 Nov 2016 13:23 Z')
@@ -17176,6 +14859,7 @@
      * @param {string} [opts.locale='system's locale'] - a locale to set on the resulting DateTime instance
      * @param {string} opts.outputCalendar - the output calendar to set on the resulting DateTime instance
      * @param {string} opts.numberingSystem - the numbering system to set on the resulting DateTime instance
+     * @param {string} opts.weekSettings - the week settings to set on the resulting DateTime instance
      * @example DateTime.fromHTTP('Sun, 06 Nov 1994 08:49:37 GMT')
      * @example DateTime.fromHTTP('Sunday, 06-Nov-94 08:49:37 GMT')
      * @example DateTime.fromHTTP('Sun Nov  6 08:49:37 1994')
@@ -17195,6 +14879,7 @@
      * @param {boolean} [opts.setZone=false] - override the zone with a zone specified in the string itself, if it specifies one
      * @param {string} [opts.locale='en-US'] - a locale string to use when parsing. Will also set the DateTime to this locale
      * @param {string} opts.numberingSystem - the numbering system to use when parsing. Will also set the resulting DateTime to this numbering system
+     * @param {string} opts.weekSettings - the week settings to set on the resulting DateTime instance
      * @param {string} opts.outputCalendar - the output calendar to set on the resulting DateTime instance
      * @return {DateTime}
      */
@@ -17228,6 +14913,7 @@
      * @param {boolean} [opts.setZone=false] - override the zone with a zone specified in the string itself, if it specifies one
      * @param {string} [opts.locale='en-US'] - a locale string to use when parsing. Will also set the DateTime to this locale
      * @param {string} opts.numberingSystem - the numbering system to use when parsing. Will also set the resulting DateTime to this numbering system
+     * @param {string} opts.weekSettings - the week settings to set on the resulting DateTime instance
      * @param {string} opts.outputCalendar - the output calendar to set on the resulting DateTime instance
      * @example DateTime.fromSQL('2017-05-15')
      * @example DateTime.fromSQL('2017-05-15 09:12:34')
@@ -17288,6 +14974,10 @@
     static expandFormat(fmt, localeOpts = {}) {
       const expanded = expandMacroTokens(Formatter.parseFormat(fmt), Locale.fromObject(localeOpts));
       return expanded.map((t) => t.val).join("");
+    }
+    static resetCache() {
+      zoneOffsetTs = void 0;
+      zoneOffsetGuessCache = {};
     }
     // INFO
     /**
@@ -17689,8 +15379,8 @@
      * @param {Object} [opts={}] - options to pass to `setZone()`
      * @return {DateTime}
      */
-    toUTC(offset3 = 0, opts = {}) {
-      return this.setZone(FixedOffsetZone.instance(offset3), opts);
+    toUTC(offset2 = 0, opts = {}) {
+      return this.setZone(FixedOffsetZone.instance(offset2), opts);
     }
     /**
      * "Set" the DateTime's zone to the host's local zone. Returns a newly-constructed DateTime.
@@ -18362,6 +16052,66 @@
     static fromStringExplain(text, fmt, options = {}) {
       return _DateTime.fromFormatExplain(text, fmt, options);
     }
+    /**
+     * Build a parser for `fmt` using the given locale. This parser can be passed
+     * to {@link DateTime.fromFormatParser} to a parse a date in this format. This
+     * can be used to optimize cases where many dates need to be parsed in a
+     * specific format.
+     *
+     * @param {String} fmt - the format the string is expected to be in (see
+     * description)
+     * @param {Object} options - options used to set locale and numberingSystem
+     * for parser
+     * @returns {TokenParser} - opaque object to be used
+     */
+    static buildFormatParser(fmt, options = {}) {
+      const { locale = null, numberingSystem = null } = options, localeToUse = Locale.fromOpts({
+        locale,
+        numberingSystem,
+        defaultToEN: true
+      });
+      return new TokenParser(localeToUse, fmt);
+    }
+    /**
+     * Create a DateTime from an input string and format parser.
+     *
+     * The format parser must have been created with the same locale as this call.
+     *
+     * @param {String} text - the string to parse
+     * @param {TokenParser} formatParser - parser from {@link DateTime.buildFormatParser}
+     * @param {Object} opts - options taken by fromFormat()
+     * @returns {DateTime}
+     */
+    static fromFormatParser(text, formatParser, opts = {}) {
+      if (isUndefined(text) || isUndefined(formatParser)) {
+        throw new InvalidArgumentError(
+          "fromFormatParser requires an input string and a format parser"
+        );
+      }
+      const { locale = null, numberingSystem = null } = opts, localeToUse = Locale.fromOpts({
+        locale,
+        numberingSystem,
+        defaultToEN: true
+      });
+      if (!localeToUse.equals(formatParser.locale)) {
+        throw new InvalidArgumentError(
+          `fromFormatParser called with a locale of ${localeToUse}, but the format parser was created for ${formatParser.locale}`
+        );
+      }
+      const { result, zone, specificOffset, invalidReason } = formatParser.explainFromTokens(text);
+      if (invalidReason) {
+        return _DateTime.invalid(invalidReason);
+      } else {
+        return parseDataToDateTime(
+          result,
+          zone,
+          opts,
+          `format ${formatParser.format}`,
+          text,
+          specificOffset
+        );
+      }
+    }
     // FORMAT PRESETS
     /**
      * {@link DateTime#toLocaleString} format like 10/14/1983
@@ -18552,20 +16302,6 @@
   };
   getElementHeight();
   window.onresize = getElementHeight;
-  var setCookieExpirationNever = () => {
-    const d = /* @__PURE__ */ new Date();
-    d.setTime(d.getTime() + 100 * 365 * 24 * 60 * 60 * 1e3);
-    return `expires=${d.toUTCString()};`;
-  };
-  var getCookie = (name) => {
-    const pattern = RegExp(`${name}=.[^;]*`);
-    const matched = document.cookie.match(pattern);
-    if (matched) {
-      const cookie = matched[0].split("=");
-      return cookie[1];
-    }
-    return false;
-  };
   var getParents = (el) => {
     const parents = [];
     let node = el;
@@ -18656,38 +16392,6 @@
     });
   };
 
-  // js/src/alerts.js
-  (() => {
-    const topNoticeAlert = document.getElementById("topNoticeAlert");
-    const topNotice = window.sessionStorage.getItem("notice");
-    const cookieNoticeAlert = document.getElementById("cookieNoticeAlert");
-    const cookieNoticeName = "chocolatey_hide_cookies_notice";
-    if (topNoticeAlert) {
-      if (topNotice) {
-        topNoticeAlert.remove();
-      } else {
-        topNoticeAlert.classList.remove("d-none");
-      }
-      topNoticeAlert.querySelector("button").addEventListener("click", () => sessionStorage.setItem("notice", "true"), false);
-    }
-    if (cookieNoticeAlert) {
-      if (getCookie(cookieNoticeName)) {
-        cookieNoticeAlert.remove();
-      } else {
-        cookieNoticeAlert.classList.remove("d-none");
-      }
-      cookieNoticeAlert.querySelectorAll("button").forEach((el) => {
-        el.addEventListener("click", () => {
-          if (~location.hostname.indexOf("chocolatey.org")) {
-            document.cookie = `${cookieNoticeName}=true; ${setCookieExpirationNever()}path=/; domain=chocolatey.org;`;
-          } else {
-            document.cookie = `${cookieNoticeName}=true; ${setCookieExpirationNever()}path=/;`;
-          }
-        }, false);
-      });
-    }
-  })();
-
   // js/src/code-copy-for-view.js
   (() => {
     const codeForView = document.querySelectorAll(".copy-code-for-view");
@@ -18714,12 +16418,12 @@
           codeHighlight = "none";
       }
       let codeEscaped = escapeHTML(codeOriginal.innerHTML.trim());
-      const start2 = "&lt;";
-      const startSlash = `${start2}/`;
-      const end2 = "&gt;";
-      const endSlash = `/${end2}`;
+      const start = "&lt;";
+      const startSlash = `${start}/`;
+      const end = "&gt;";
+      const endSlash = `/${end}`;
       const contentQuotes = /content=&quot;([^&]*)&quot;/g;
-      codeEscaped = codeEscaped.replaceAll(`${start2}callout`, `${start2}Callout`).replaceAll(`${startSlash}callout`, `${startSlash}Callout`).replaceAll(`${start2}collapsebutton`, `${start2}CollapseButton`).replaceAll(`${startSlash}collapsebutton`, `${startSlash}CollapseButton`).replaceAll(`${start2}iframe ratio`, `${start2}Iframe ratio`).replaceAll(`${start2}tabspanecontainer`, `${start2}TabsPaneContainer`).replaceAll(`${startSlash}tabspanecontainer`, `${startSlash}TabsPaneContainer`).replaceAll(`${start2}tabstabcontainer`, `${start2}TabsTabContainer`).replaceAll(`${start2}tabspane`, `${start2}TabsPane`).replaceAll(`${start2}xref`, `${start2}Xref`).replaceAll(`value=&quot;example-define&quot;${end2}`, `value=&quot;example-define&quot; ${endSlash}`).replaceAll(`anchor=&quot;why&quot;${end2}`, `anchor=&quot;why&quot; ${endSlash}`).replaceAll(`${startSlash}tabspane`, `${startSlash}TabsPane`).replaceAll(`content=&quot;{tabs1}&quot;${end2}`, `content=&quot;{tabs1}&quot; ${endSlash}`).replaceAll(`content=&quot;{tabs2}&quot;${end2}`, `content=&quot;{tabs2}&quot; ${endSlash}`).replaceAll(`content=&quot;{tabs3}&quot;${end2}`, `content=&quot;{tabs3}&quot; ${endSlash}`).replaceAll(`multi=&quot;version&quot;${end2}`, `multi=&quot;version&quot; ${endSlash}`).replaceAll(`${startSlash}tabstabcontainer${end2}`, "").replaceAll(`${startSlash}xref${end2}`, "").replaceAll(`${startSlash}iframe${end2}`, "").replace(contentQuotes, (match2, p1) => `content=${p1}`);
+      codeEscaped = codeEscaped.replaceAll(`${start}callout`, `${start}Callout`).replaceAll(`${startSlash}callout`, `${startSlash}Callout`).replaceAll(`${start}collapsebutton`, `${start}CollapseButton`).replaceAll(`${startSlash}collapsebutton`, `${startSlash}CollapseButton`).replaceAll(`${start}iframe ratio`, `${start}Iframe ratio`).replaceAll(`${start}tabspanecontainer`, `${start}TabsPaneContainer`).replaceAll(`${startSlash}tabspanecontainer`, `${startSlash}TabsPaneContainer`).replaceAll(`${start}tabstabcontainer`, `${start}TabsTabContainer`).replaceAll(`${start}tabspane`, `${start}TabsPane`).replaceAll(`${start}xref`, `${start}Xref`).replaceAll(`value=&quot;example-define&quot;${end}`, `value=&quot;example-define&quot; ${endSlash}`).replaceAll(`anchor=&quot;why&quot;${end}`, `anchor=&quot;why&quot; ${endSlash}`).replaceAll(`${startSlash}tabspane`, `${startSlash}TabsPane`).replaceAll(`content=&quot;{tabs1}&quot;${end}`, `content=&quot;{tabs1}&quot; ${endSlash}`).replaceAll(`content=&quot;{tabs2}&quot;${end}`, `content=&quot;{tabs2}&quot; ${endSlash}`).replaceAll(`content=&quot;{tabs3}&quot;${end}`, `content=&quot;{tabs3}&quot; ${endSlash}`).replaceAll(`multi=&quot;version&quot;${end}`, `multi=&quot;version&quot; ${endSlash}`).replaceAll(`${startSlash}tabstabcontainer${end}`, "").replaceAll(`${startSlash}xref${end}`, "").replaceAll(`${startSlash}iframe${end}`, "").replace(contentQuotes, (match2, p1) => `content=${p1}`);
       if (codeReplace !== "true") {
         if (codeLanguage === "Astro") {
           const codeContainer = `<p class="border-top border-bottom py-2 px-3 mb-0">${codeLanguage}</p><pre class="border-0 mx-3 mb-3 mt-0 code-static-toolbar"><code class="language-${codeHighlight} line-numbers">${codeEscaped}</code></pre>`;
@@ -18780,23 +16484,9 @@
     applyCalloutStyles(markdownCallouts);
   })();
 
-  // js/src/ts/util/functions.ts
+  // js/src/ts/util/trim-string.ts
   var trimString = (item) => {
     item.innerHTML = item.innerHTML.trim();
-  };
-  var getCookie2 = (name) => {
-    const pattern = RegExp(`${name}=.[^;]*`);
-    const matched = document.cookie.match(pattern);
-    if (matched) {
-      const cookie = matched[0].split("=");
-      return cookie[1];
-    }
-    return false;
-  };
-  var setCookieExpirationNever2 = () => {
-    const d = /* @__PURE__ */ new Date();
-    d.setTime(d.getTime() + 100 * 365 * 24 * 60 * 60 * 1e3);
-    return `expires=${d.toUTCString()};`;
   };
 
   // js/src/ts/code.ts
@@ -18849,7 +16539,7 @@
           }
           collapseParents.reverse().forEach((el2, idx, array) => {
             el2 = document.getElementById(escapeId(el2.id));
-            const collapseParentContainer = Collapse.getOrCreateInstance(el2, { toggle: false });
+            const collapseParentContainer = bootstrap.Collapse.getOrCreateInstance(el2, { toggle: false });
             collapseParentContainer.show();
             el2.addEventListener("shown.bs.collapse", (e) => {
               e.stopImmediatePropagation();
@@ -18872,7 +16562,7 @@
             if (!el2.id.includes("-tab")) {
               el2 = document.getElementById(`${escapeId(el2.id)}-tab`);
             }
-            const tabParentContainer = Tab.getOrCreateInstance(el2, { toggle: false });
+            const tabParentContainer = bootstrap.Tab.getOrCreateInstance(el2, { toggle: false });
             tabParentContainer.show();
             el2.addEventListener("shown.bs.tab", (e) => {
               e.stopImmediatePropagation();
@@ -18893,7 +16583,7 @@
       btnCollapseTarget.forEach((el) => {
         el.addEventListener("click", () => {
           const collapseTarget = document.querySelector(el.getAttribute("data-collapse-target"));
-          const collapseTargetContainer = Collapse.getOrCreateInstance(collapseTarget, { toggle: false });
+          const collapseTargetContainer = bootstrap.Collapse.getOrCreateInstance(collapseTarget, { toggle: false });
           collapseTargetContainer.show();
         }, false);
       });
@@ -18912,7 +16602,7 @@
     const collapseLg = document.querySelector(".collapse-lg");
     if (collapseLg) {
       const mediaLg = window.matchMedia("(max-width: 1199px)");
-      const collapseLgCollapse = Collapse.getOrCreateInstance(collapseLg, { toggle: false });
+      const collapseLgCollapse = bootstrap.Collapse.getOrCreateInstance(collapseLg, { toggle: false });
       collapseLg.querySelectorAll("a").forEach((el) => {
         el.addEventListener("click", () => {
           if (mediaLg.matches) {
@@ -19069,12 +16759,30 @@
     });
   })();
 
+  // js/src/ts/util/set-cookie-expiration-never.ts
+  var setCookieExpirationNever2 = () => {
+    const d = /* @__PURE__ */ new Date();
+    d.setTime(d.getTime() + 100 * 365 * 24 * 60 * 60 * 1e3);
+    return `expires=${d.toUTCString()};`;
+  };
+
+  // js/src/ts/util/get-cookie.ts
+  var getCookie2 = (name) => {
+    const pattern = RegExp(`${name}=.[^;]*`);
+    const matched = document.cookie.match(pattern);
+    if (matched) {
+      const cookie = matched[0].split("=");
+      return cookie[1];
+    }
+    return false;
+  };
+
   // js/src/ts/tab-multiples.ts
   window.addEventListener("DOMContentLoaded", () => {
     const tabMultiAttribute = "data-choco-tab-multi";
     const tabMultiElements = document.querySelectorAll(`[${tabMultiAttribute}]`);
     const tabCookies = /* @__PURE__ */ new Set();
-    if (tabMultiElements.value) {
+    if (tabMultiElements && tabMultiElements.value) {
       for (const tabElement of tabMultiElements) {
         const tabMultiConfigAttribute = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, "");
         let tabMultiConfig = null;
@@ -19094,7 +16802,7 @@
           for (const otherTab of tabMultiElements) {
             const otherTabMultiValue = otherTab.getAttribute(tabMultiAttribute).replace(/\s/g, "");
             if (otherTabMultiValue == null ? void 0 : otherTabMultiValue.includes(tabMultiValue != null ? tabMultiValue : "")) {
-              Tab.getOrCreateInstance(otherTab).show();
+              bootstrap.Tab.getOrCreateInstance(otherTab).show();
             }
           }
           const cookieDomain = ~location.hostname.indexOf("chocolatey.org") ? "domain=chocolatey.org;" : "";
@@ -19112,7 +16820,7 @@
           for (const tabElement of tabMultiElements) {
             const tabMultiValue = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, "");
             if ((tabMultiValue == null ? void 0 : tabMultiValue.includes(cookieName)) && (tabMultiValue == null ? void 0 : tabMultiValue.includes(cookieValue))) {
-              Tab.getOrCreateInstance(tabElement).show();
+              bootstrap.Tab.getOrCreateInstance(tabElement).show();
             }
           }
         }
@@ -19137,19 +16845,27 @@
     themeDropdownContainers.forEach((dropdownContainer) => {
       dropdownContainer.querySelectorAll(".dropdown-toggle").forEach((el) => {
         el.addEventListener("hide.bs.dropdown", () => {
-          document.querySelectorAll("main").forEach((main2) => {
-            main2.classList.remove("z-0");
+          document.querySelectorAll("main").forEach((main) => {
+            main.classList.remove("z-0");
           });
         });
         el.addEventListener("show.bs.dropdown", () => {
-          document.querySelectorAll("main").forEach((main2) => {
-            main2.classList.add("z-0");
+          document.querySelectorAll("main").forEach((main) => {
+            main.classList.add("z-0");
           });
         });
       });
     });
   })();
 })();
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
+ */
 /*! Bundled license information:
 
 jquery/dist/jquery.js:
@@ -19163,11 +16879,4 @@ jquery/dist/jquery.js:
    *
    * Date: 2023-08-28T13:37Z
    *)
-
-bootstrap/dist/js/bootstrap.esm.js:
-  (*!
-    * Bootstrap v5.3.3 (https://getbootstrap.com/)
-    * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-    *)
 */
