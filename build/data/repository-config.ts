@@ -58,7 +58,7 @@ export const astroRepositoryConfig = {
     js: 'public/scripts/',
     favicons: 'public/',
     fontAwesome: 'public/fonts/fontawesome-free/',
-    ptSans: 'public/fonts/fonts/PT_Sans/',
+    ptSans: 'public/fonts/PT_Sans/',
     images: 'public/images/global-shared/',
     partials: 'src/components/global/',
     language: 'astro',
