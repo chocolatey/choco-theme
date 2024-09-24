@@ -8,19 +8,20 @@ This repository holds all of the CSS, JS, images, and shared partial files that 
 
 Before running any commands below, ensure you have ran `yarn` in the root of this repository, and have enabled corepack by running `corepack enable`.
 
-| Script                                          | Action                                                                                        |
-|-------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| yarn build                                      | Builds CSS, JS, and Partials.                                                                 |
-| yarn change-version OLD_VERSION NEW_VERSION     | Runs all build steps and updates choco-theme to the version specified.                        |
-| yarn lint                                       | Runs Stylelint and ESLint to determine code style errors.                                     |
-| yarn monitor-ports                              | Opens a page to monitor preview ports and report their status.                                |
-| yarn npm audit                                  | Audits packages and reports vulnerabilities.                                                  |
-| yarn preview --PROJECT_NAME                     | Runs the preview script in desired repositories all at once for easy testing and development. |
-| yarn preview-link --PROJECT_NAME                | Links choco-theme locally to desired repositories for local development.                      |
-| yarn preview-unlink --PROJECT_NAME              | Unlinks choco-theme and restores the packages.json and yarn.lock files.                       |
-| yarn preview-upgrade NEW_VERSION --PROJECT_NAME | Updates choco-theme to the specified version in desired repositories.                         |
-| yarn preview-watch --PROJECT_NAME               | Runs `yarn build` and `yarn-choco-theme` on desired repositories.                             |
-| yarn watch                                      | Watches for changes in CSS, JS, and Partials, and rebuilds them automatically.                |
+| Script                                            | Action                                                                                        |
+|---------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| yarn npm audit --all --recursive --ignore 1094698 | Audits all dependencies recursively and ignores [sweetalert2 vulnerability](https://github.com/advisories/GHSA-mrr8-v49w-3333). |
+| yarn build                                        | Builds CSS, JS, and Partials.                                                                 |
+| yarn change-version OLD_VERSION NEW_VERSION       | Runs all build steps and updates choco-theme to the version specified.                        |
+| yarn lint                                         | Runs Stylelint and ESLint to determine code style errors.                                     |
+| yarn monitor-ports                                | Opens a page to monitor preview ports and report their status.                                |
+| yarn npm audit                                    | Audits packages and reports vulnerabilities.                                                  |
+| yarn preview --PROJECT_NAME                       | Runs the preview script in desired repositories all at once for easy testing and development. |
+| yarn preview-link --PROJECT_NAME                  | Links choco-theme locally to desired repositories for local development.                      |
+| yarn preview-unlink --PROJECT_NAME                | Unlinks choco-theme and restores the packages.json and yarn.lock files.                       |
+| yarn preview-upgrade NEW_VERSION --PROJECT_NAME   | Updates choco-theme to the specified version in desired repositories.                         |
+| yarn preview-watch --PROJECT_NAME                 | Runs `yarn build` and `yarn-choco-theme` on desired repositories.                             |
+| yarn watch                                        | Watches for changes in CSS, JS, and Partials, and rebuilds them automatically.                |
 
 ## Repository Project Names for Previewing 
 
