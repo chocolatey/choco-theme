@@ -61,12 +61,6 @@ const init = async () => {
                 source: `${repositoryConfig.theme.css}${sourceCss}.min.css`,
                 destination: `${repository.css}${repository.name}.min.css`,
                 isFolder: false
-            },
-            {
-                task: 'PT Sans',
-                source: repositoryConfig.theme.ptSans,
-                destination: repository.ptSans,
-                isFolder: true
             }
         ];
 
@@ -231,13 +225,19 @@ const init = async () => {
             );
         }
 
-        // Font Awesome
+        // Font Awesome and PT Sans
         if (repository.name !== repositoryConfig.zendesk.name) {
             parallelTasksInitial.push(
                 {
                     task: 'Font Awesome',
                     source: repositoryConfig.theme.fontAwesome,
                     destination: repository.fontAwesome,
+                    isFolder: true
+                },
+                {
+                    task: 'PT Sans',
+                    source: repositoryConfig.theme.ptSans,
+                    destination: repository.ptSans,
                     isFolder: true
                 }
             );

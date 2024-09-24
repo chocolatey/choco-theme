@@ -95,6 +95,46 @@
         border-radius: .375rem;
     }
 
+    // Callouts
+    .callout {
+        .callout-header {
+            .fa-solid.fa-info,
+            .fa-solid.fa-check,
+            .fa-solid.fa-triangle-exclamation,
+            .fa-solid.fa-xmark {
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 15px;
+                    height: 15px;
+                    content: "";
+                    filter: unset !important;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .fa-solid.fa-info::before {
+                background-image: url("https://img.chocolatey.org/icons/info-solid.svg");
+            }
+
+            .fa-solid.fa-check::before {
+                background-image: url("https://img.chocolatey.org/icons/check-solid.svg");
+            }
+
+            .fa-solid.fa-triangle-exclamation::before {
+                background-image: url("https://img.chocolatey.org/icons/triangle-exclamation-solid.svg");
+            }
+
+            .fa-solid.fa-xmark::before {
+                background-image: url("https://img.chocolatey.org/icons/xmark-solid.svg");
+            }
+        }
+    }
+
     // Links inside cards
     .blocks-item-link:visited,
     .blocks-item-link:hover,

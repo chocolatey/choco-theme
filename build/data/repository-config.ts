@@ -169,7 +169,6 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
         css: 'assets/',
         js: 'assets/',
         favicons: 'assets/',
-        ptSans: 'assets/fonts/PT_Sans/',
         partials: 'global-partials/',
         language: 'hbs'
     }
@@ -270,6 +269,9 @@ repositoryConfig.zendesk.purgeCss = {
     ],
     safelist: [
         ...defaultRepositoryConfig.purgeCss.safelist,
+        /^fa-(check|triangle-exclamation|info|xmark)/,
+        /^bg-(secondary|danger|success)/,
+        /^callout-(danger|success)/,
         'main',
         'table-bordered',
         'table-striped',

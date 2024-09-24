@@ -22103,7 +22103,7 @@ ${templateEnter}`;
         };
         CodeMirror2.fromTextArea = fromTextArea;
         addLegacyProps(CodeMirror2);
-        CodeMirror2.version = "5.65.17";
+        CodeMirror2.version = "5.65.18";
         return CodeMirror2;
       });
     }
@@ -37317,7 +37317,7 @@ ${templateEnter}`;
         let tabMultiConfig = null;
         try {
           tabMultiConfig = JSON.parse(tabMultiConfigAttribute != null ? tabMultiConfigAttribute : "");
-        } catch (error) {
+        } catch (e) {
           console.error(`Invalid JSON: ${tabMultiConfigAttribute}`);
           return;
         }
