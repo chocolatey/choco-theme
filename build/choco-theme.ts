@@ -255,13 +255,13 @@ const init = async () => {
             );
         }
 
-        // ESLint and tsconfig - needed if repository contains it's own assets along with choco-theme
+        // ESLint - needed if repository contains it's own assets along with choco-theme
         if (repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.ccm.name) {
             parallelTasksInitial.push(
                 {
-                    task: '.eslintrc.js',
-                    source: `${repositoryConfig.theme.root}.eslintrc.js`,
-                    destination: `${repository.root}.eslintrc.js`,
+                    task: 'eslint.config.mjs',
+                    source: `${repositoryConfig.theme.root}eslint.config.mjs`,
+                    destination: `${repository.root}eslint.config.mjs`,
                     isFolder: false
                 }
             );

@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
             // Ensure the data-choco-tab-multi attribute is valid JSON
             try {
                 tabMultiConfig = JSON.parse(tabMultiConfigAttribute ?? '');
-            } catch (error) {
+            } catch {
                 console.error(`Invalid JSON: ${tabMultiConfigAttribute}`);
                 return; // Skip further processing
             }
