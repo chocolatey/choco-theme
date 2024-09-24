@@ -19912,7 +19912,7 @@
         let tabMultiConfig = null;
         try {
           tabMultiConfig = JSON.parse(tabMultiConfigAttribute != null ? tabMultiConfigAttribute : "");
-        } catch (error) {
+        } catch (e2) {
           console.error(`Invalid JSON: ${tabMultiConfigAttribute}`);
           return;
         }

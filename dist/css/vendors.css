@@ -481,7 +481,7 @@ div:where(.swal2-container) textarea:where(.swal2-textarea) {
   box-sizing: border-box;
   width: auto;
   transition: border-color 0.1s, box-shadow 0.1s;
-  border: 1px solid #d9d9d9;
+  border: 1px solid rgb(216.75, 216.75, 216.75);
   border-radius: 0.1875em;
   background: transparent;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px transparent;
@@ -577,7 +577,7 @@ div:where(.swal2-container) div:where(.swal2-validation-message) {
   margin: 1em 0 0;
   padding: 0.625em;
   overflow: hidden;
-  background: #f0f0f0;
+  background: rgb(239.7, 239.7, 239.7);
   color: #666666;
   font-size: 1em;
   font-weight: 300;
@@ -691,7 +691,7 @@ div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark {
   animation: swal2-animate-error-x-mark 0.5s;
 }
 div:where(.swal2-icon).swal2-warning {
-  border-color: #ffca2b;
+  border-color: rgb(255, 201.925, 42.7);
   color: #ffc107;
 }
 div:where(.swal2-icon).swal2-warning.swal2-icon-show {
@@ -701,7 +701,7 @@ div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content {
   animation: swal2-animate-i-mark 0.5s;
 }
 div:where(.swal2-icon).swal2-info {
-  border-color: #aecfec;
+  border-color: rgb(174.3069306931, 207.4752475248, 235.6930693069);
   color: #5c9fd8;
 }
 div:where(.swal2-icon).swal2-info.swal2-icon-show {
@@ -711,7 +711,7 @@ div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content {
   animation: swal2-animate-i-mark 0.8s;
 }
 div:where(.swal2-icon).swal2-question {
-  border-color: #a1a8ae;
+  border-color: rgb(161.1158798283, 167.8755364807, 173.8841201717);
   color: #6c757d;
 }
 div:where(.swal2-icon).swal2-question.swal2-icon-show {
