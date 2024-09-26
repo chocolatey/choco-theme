@@ -64,6 +64,11 @@ const init = async () => {
             const folderPath = path.join(__dirname, '../../', folderName);
             const port = folderConfig.port;
 
+            if (isWindows && !folderIsAstro) {
+                console.log(`⛔ This script does not currently run on Windows for ${folderName}.`);
+                clearInterval(loadingIntervals[index]);
+            }
+
             if (folderIsAstro) {
                 const childProcessTwo = spawn('yarn dev', [], {
                     shell: true,
