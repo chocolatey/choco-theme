@@ -59,7 +59,7 @@ const init = async () => {
             // Handle stdout data event
             childProcess.stdout.on('data', data => {
                 const output = data.toString().trim();
-                if (output.includes('🎉 choco-theme complete' || output.startsWith('[nodemon] restarting due to changes...'))) {
+                if (output.includes('🎉 choco-theme complete') || output.startsWith('[nodemon] restarting due to changes...')) {
                     // Stop loading animation for this script
                     clearInterval(loadingIntervals[index]);
                     process.stdout.write('\r✅ ');

@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.1 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -19154,8 +19154,8 @@
     var t2, n3, r2 = e2;
     if (!r2.__docsearch_parent && !e2._highlightResult)
       return e2.hierarchy.lvl0;
-    var o2 = ((r2.__docsearch_parent ? null === (t2 = r2.__docsearch_parent) || void 0 === t2 || null === (t2 = t2._highlightResult) || void 0 === t2 || null === (t2 = t2.hierarchy) || void 0 === t2 ? void 0 : t2.lvl0 : null === (n3 = e2._highlightResult) || void 0 === n3 || null === (n3 = n3.hierarchy) || void 0 === n3 ? void 0 : n3.lvl0) || {}).value;
-    return o2 && Nr.test(o2) ? o2.replace(xr, "") : o2;
+    var o2 = r2.__docsearch_parent ? null === (t2 = r2.__docsearch_parent) || void 0 === t2 || null === (t2 = t2._highlightResult) || void 0 === t2 || null === (t2 = t2.hierarchy) || void 0 === t2 ? void 0 : t2.lvl0 : null === (n3 = e2._highlightResult) || void 0 === n3 || null === (n3 = n3.hierarchy) || void 0 === n3 ? void 0 : n3.lvl0;
+    return o2 ? o2.value && Nr.test(o2.value) ? o2.value.replace(xr, "") : o2.value : e2.hierarchy.lvl0;
   }
   function Rr(e2) {
     return Fe.createElement("div", { className: "DocSearch-Dropdown-Container" }, e2.state.collections.map(function(t2) {
@@ -19657,7 +19657,7 @@
     } : v2, h2 = e2.navigator, y2 = e2.initialScrollY, _2 = void 0 === y2 ? 0 : y2, b2 = e2.transformSearchClient, g2 = void 0 === b2 ? kr : b2, S2 = e2.disableUserPersonalization, O2 = void 0 !== S2 && S2, w2 = e2.initialQuery, E2 = void 0 === w2 ? "" : w2, j2 = e2.translations, P2 = void 0 === j2 ? {} : j2, I2 = e2.getMissingResultsUrl, D2 = e2.insights, k2 = void 0 !== D2 && D2, C2 = P2.footer, A2 = P2.searchBox, x2 = Je(P2, ho), N2 = $e(Fe.useState({ query: "", collections: [], completion: null, context: {}, isOpen: false, activeItemId: null, status: "idle" }), 2), T2 = N2[0], R2 = N2[1], q2 = Fe.useRef(null), L2 = Fe.useRef(null), M2 = Fe.useRef(null), H2 = Fe.useRef(null), U2 = Fe.useRef(null), F2 = Fe.useRef(10), B2 = Fe.useRef("undefined" != typeof window ? window.getSelection().toString().slice(0, 64) : "").current, V2 = Fe.useRef(E2 || B2).current, K2 = function(e3, t3, n4) {
       return Fe.useMemo(function() {
         var r3 = vo(e3, t3);
-        return r3.addAlgoliaAgent("docsearch", "3.6.1"), false === /docsearch.js \(.*\)/.test(r3.transporter.userAgent.value) && r3.addAlgoliaAgent("docsearch-react", "3.6.1"), n4(r3);
+        return r3.addAlgoliaAgent("docsearch", "3.6.2"), false === /docsearch.js \(.*\)/.test(r3.transporter.userAgent.value) && r3.addAlgoliaAgent("docsearch-react", "3.6.2"), n4(r3);
       }, [e3, t3, n4]);
     }(t2, n3, g2), W2 = Fe.useRef(Vr({ key: "__DOCSEARCH_FAVORITE_SEARCHES__".concat(r2), limit: 10 })).current, z2 = Fe.useRef(Vr({ key: "__DOCSEARCH_RECENT_SEARCHES__".concat(r2), limit: 0 === W2.getAll().length ? 7 : 4 })).current, J2 = Fe.useCallback(function(e3) {
       if (!O2) {
@@ -19799,7 +19799,7 @@
   }
   function bo(e2) {
     Ce(Fe.createElement(_o, o({}, e2, { transformSearchClient: function(t2) {
-      return t2.addAlgoliaAgent("docsearch.js", "3.6.1"), e2.transformSearchClient ? e2.transformSearchClient(t2) : t2;
+      return t2.addAlgoliaAgent("docsearch.js", "3.6.2"), e2.transformSearchClient ? e2.transformSearchClient(t2) : t2;
     } })), function(e3) {
       var t2 = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : window;
       return "string" == typeof e3 ? t2.document.querySelector(e3) : e3;
@@ -19912,7 +19912,7 @@
         let tabMultiConfig = null;
         try {
           tabMultiConfig = JSON.parse(tabMultiConfigAttribute != null ? tabMultiConfigAttribute : "");
-        } catch (error) {
+        } catch (e2) {
           console.error(`Invalid JSON: ${tabMultiConfigAttribute}`);
           return;
         }
@@ -20005,5 +20005,5 @@ jquery/dist/jquery.js:
    *)
 
 @docsearch/js/dist/esm/index.js:
-  (*! @docsearch/js 3.6.1 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com *)
+  (*! @docsearch/js 3.6.2 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com *)
 */

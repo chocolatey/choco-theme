@@ -95,7 +95,7 @@ limitations under the License.
 
 ```
 
-#### [@playwright/test@1.47.0](https://github.com/microsoft/playwright)
+#### [@playwright/test@1.47.2](https://github.com/microsoft/playwright)
 
 [Repository Link](https://github.com/microsoft/playwright)
 
@@ -690,6 +690,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
+#### [@eslint/eslintrc@3.1.0](https://github.com/eslint/eslintrc)
+
+[Repository Link](https://github.com/eslint/eslintrc)
+
+No additional license information is available for this package.
+Refer to the license text above, listed under [MIT License](#mit-license).
+
+#### [@eslint/js@9.11.1](https://github.com/eslint/eslint)
+
+[Repository Link](https://github.com/eslint/eslint)
+
+No additional license information is available for this package.
+Refer to the license text above, listed under [MIT License](#mit-license).
+
 #### [@microsoft/signalr@8.0.7](https://github.com/dotnet/aspnetcore)
 
 [Repository Link](https://github.com/dotnet/aspnetcore)
@@ -711,7 +725,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@types/node@20.16.5](https://github.com/DefinitelyTyped/DefinitelyTyped)
+#### [@types/node@20.16.10](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
 [Repository Link](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
@@ -725,7 +739,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [abp-web-resources@5.9.2](https://github.com/aspnetboilerplate/bower-abp-resources)
+#### [abp-web-resources@5.9.3](https://github.com/aspnetboilerplate/bower-abp-resources)
 
 [Repository Link](https://github.com/aspnetboilerplate/bower-abp-resources)
 
@@ -767,14 +781,14 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [datatables.net-bs5@2.1.6](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
+#### [datatables.net-bs5@2.1.7](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
 
 [Repository Link](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [datatables.net-dt@2.1.6](https://github.com/DataTables/Dist-DataTables-DataTables)
+#### [datatables.net-dt@2.1.7](https://github.com/DataTables/Dist-DataTables-DataTables)
 
 [Repository Link](https://github.com/DataTables/Dist-DataTables-DataTables)
 
@@ -788,7 +802,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [eslint@8.57.0](https://github.com/eslint/eslint)
+#### [eslint@9.11.1](https://github.com/eslint/eslint)
 
 [Repository Link](https://github.com/eslint/eslint)
 
@@ -826,6 +840,13 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 #### [flatpickr@4.6.13](https://github.com/chmln/flatpickr)
 
 [Repository Link](https://github.com/chmln/flatpickr)
+
+No additional license information is available for this package.
+Refer to the license text above, listed under [MIT License](#mit-license).
+
+#### [globals@15.10.0](https://github.com/sindresorhus/globals)
+
+[Repository Link](https://github.com/sindresorhus/globals)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
@@ -893,14 +914,14 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [npm-run-all2@6.2.2](https://github.com/bcomnes/npm-run-all2)
+#### [npm-run-all2@6.2.3](https://github.com/bcomnes/npm-run-all2)
 
 [Repository Link](https://github.com/bcomnes/npm-run-all2)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [postcss@8.4.45](https://github.com/postcss/postcss)
+#### [postcss@8.4.47](https://github.com/postcss/postcss)
 
 [Repository Link](https://github.com/postcss/postcss)
 
@@ -914,7 +935,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [purgecss@5.0.0](https://github.com/FullHuman/purgecss)
+#### [purgecss@6.0.0](https://github.com/FullHuman/purgecss)
 
 [Repository Link](https://github.com/FullHuman/purgecss)
 
@@ -963,7 +984,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [sweetalert2@11.14.0](https://github.com/sweetalert2/sweetalert2)
+#### [sweetalert2@11.14.1](https://github.com/sweetalert2/sweetalert2)
 
 [Repository Link](https://github.com/sweetalert2/sweetalert2)
 

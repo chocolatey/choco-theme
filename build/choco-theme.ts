@@ -61,12 +61,6 @@ const init = async () => {
                 source: `${repositoryConfig.theme.css}${sourceCss}.min.css`,
                 destination: `${repository.css}${repository.name}.min.css`,
                 isFolder: false
-            },
-            {
-                task: 'PT Sans',
-                source: repositoryConfig.theme.ptSans,
-                destination: repository.ptSans,
-                isFolder: true
             }
         ];
 
@@ -231,13 +225,19 @@ const init = async () => {
             );
         }
 
-        // Font Awesome
+        // Font Awesome and PT Sans
         if (repository.name !== repositoryConfig.zendesk.name) {
             parallelTasksInitial.push(
                 {
                     task: 'Font Awesome',
                     source: repositoryConfig.theme.fontAwesome,
                     destination: repository.fontAwesome,
+                    isFolder: true
+                },
+                {
+                    task: 'PT Sans',
+                    source: repositoryConfig.theme.ptSans,
+                    destination: repository.ptSans,
                     isFolder: true
                 }
             );
@@ -255,13 +255,13 @@ const init = async () => {
             );
         }
 
-        // ESLint and tsconfig - needed if repository contains it's own assets along with choco-theme
+        // ESLint - needed if repository contains it's own assets along with choco-theme
         if (repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.ccm.name) {
             parallelTasksInitial.push(
                 {
-                    task: '.eslintrc.js',
-                    source: `${repositoryConfig.theme.root}.eslintrc.js`,
-                    destination: `${repository.root}.eslintrc.js`,
+                    task: 'eslint.config.mjs',
+                    source: `${repositoryConfig.theme.root}eslint.config.mjs`,
+                    destination: `${repository.root}eslint.config.mjs`,
                     isFolder: false
                 }
             );

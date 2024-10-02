@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.1 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -17369,7 +17369,7 @@
         let tabMultiConfig = null;
         try {
           tabMultiConfig = JSON.parse(tabMultiConfigAttribute != null ? tabMultiConfigAttribute : "");
-        } catch (error) {
+        } catch (e) {
           console.error(`Invalid JSON: ${tabMultiConfigAttribute}`);
           return;
         }
