@@ -52,6 +52,13 @@ const init = async () => {
         }
 
         try {
+            await fs.rm(`${folderPath}/yarn.lock`, { force: true });
+            console.log(`✅ ${folderName} yarn.lock removed`);
+        } catch (error) {
+            throw new Error(`Error removing yarn.lock: ${error.message}`);
+        }
+
+        try {
             const childProcess = spawn(`yarn up choco-theme@${url}`, [], {
                 // stdio: 'inherit', // Use 'inherit' to directly pipe the output to the parent process
                 shell: true, // Needed for Windows to execute .sh files
