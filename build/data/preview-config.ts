@@ -21,8 +21,8 @@ export const folderMapping: FolderMapping = {
     '--blog': {
         folder: 'blog',
         port: 5082,
-        isStatiq: true,
-        isAstro: false
+        isStatiq: false,
+        isAstro: true
     },
     '--boxstarter': {
         folder: 'boxstarter.org',

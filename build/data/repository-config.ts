@@ -91,9 +91,9 @@ export const astroRepositoryConfig = {
 
 export const repositoryConfig: Record<string, RepositoryConfig> = {
     blog: {
-        ...defaultRepositoryConfig,
-        name: 'blog',
-        language: 'hbs'
+        ...astroRepositoryConfig,
+        name: 'docs',
+        playwright: 'src/tests/'
     },
     boxstarter: {
         ...defaultRepositoryConfig,

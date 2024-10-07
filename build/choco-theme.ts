@@ -287,21 +287,6 @@ const init = async () => {
         }));
         console.log('✅ Copying of choco-theme complete');
 
-        // If blog repository, update Program.cs
-        if (repository.name === repositoryConfig.blog.name) {
-            console.log('🚀 Updating Program.cs with AlertText.html...');
-            await updateContent({
-                destination: `${repositoryConfig.theme.root}partials/`,
-                targetFile: 'Program.cs',
-                targetFileDestination: repository.root,
-                targetFileContentToReplace: '"TopNoticeText", ""',
-                replaceWithContent: 'AlertText.html',
-                replacementContentIsFile: true,
-                replacementTemplate: '"TopNoticeText", "{0}"'
-            });
-            console.log('✅ Program.cs updated');
-        }
-
         // Change CSS content
         // Font Awesome
         if (repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.ccm.name ||  repository.language === 'astro') {
