@@ -71,6 +71,7 @@ export const astroRepositoryConfig = {
             'src/**/*.mdx',
             'src/**/*.js',
             'src/**/*.ts',
+            'src/**/*.json',
             'public/**/*.js',
             'node_modules/choco-astro/src/**/*.astro',
             'node_modules/choco-astro/src/**/*.ts'
@@ -91,9 +92,9 @@ export const astroRepositoryConfig = {
 
 export const repositoryConfig: Record<string, RepositoryConfig> = {
     blog: {
-        ...defaultRepositoryConfig,
+        ...astroRepositoryConfig,
         name: 'blog',
-        language: 'hbs'
+        playwright: 'src/tests/'
     },
     boxstarter: {
         ...defaultRepositoryConfig,
