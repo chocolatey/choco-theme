@@ -24,6 +24,14 @@ export const folderMapping: FolderMapping = {
         isStatiq: true,
         isAstro: false
     },
+    '--ccm': {
+        folder: 'choco-licensed-management-ui',
+        protocol: 'https',
+        port: 44302,
+        isStatiq: false,
+        isAstro: false,
+        root: '/src/ChocolateySoftware.ChocolateyManagement.Web.Mvc'
+    },
     '--boxstarter': {
         folder: 'boxstarter.org',
         port: 5083,
