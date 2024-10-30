@@ -10,11 +10,7 @@
     --td-active-color: var(--bs-primary-contrast);
     --td-dow-color: var(--bs-secondary-color);
     --td-disabled-color: var(--bs-secondary-color);
-    --td-alternate-color: var(--bs-secondary-color);
-}
-
-.form-control[readonly].form-control-tempus-dominus {
-    background: var(--bs-secondary-bg);
+    --td-alternate-color: var(--bs-body-color);
 }
 
 .tempus-dominus-widget {
@@ -41,8 +37,8 @@
     .time-container-minute,
     .time-container-second
      {
-        div:not(.no-highlight):hover:hover {
-            color: var(--bs-black) !important;
+        div:not(.no-highlight):hover {
+            color: var(--bs-primary-contrast) !important;
         }
     }
 }

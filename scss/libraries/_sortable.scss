@@ -1,0 +1,43 @@
+.sortable-item {
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:hover .card {
+        cursor: grab;
+        box-shadow: inset 0 0 0 1px var(--bs-primary); // using box-shadow vs. border to prevent text layout shifts
+    }
+    
+    &.sortable-chosen {
+        cursor: grabbing;
+    }
+
+    &:hover,
+    &.sortable-chosen,
+    &.sortable-focused {
+        .card {
+            background-color: rgba(var(--bs-primary-rgb),.1) !important;
+            text-shadow: 0.5px 0 0 currentColor; // using text-shadow vs. bold to prevent text from layout shifts
+        }
+    }
+
+    &.sortable-chosen,
+    &.sortable-focused,
+    &.sortable-drag {
+        .card {
+            box-shadow: inset 0 0 0 3px var(--bs-primary); // using box-shadow vs. border to prevent text layout shifts
+        }
+    }
+
+    &.sortable-ghost {
+        .card {
+            box-shadow: none;
+            background: rgba(var(--bs-success-rgb),.1) !important;
+            outline: 3px dashed var(--bs-success) !important;
+        }
+    }
+
+    .btn-reorder.btn-outline-secondary:focus {
+        background-color: var(--bs-btn-hover-bg);
+    }
+}

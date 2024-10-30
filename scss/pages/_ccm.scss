@@ -112,6 +112,12 @@
                     }
                 }
 
+                &:not(.active-parent):not(.active) {
+                    a {
+                        font-weight: 400;
+                    }
+                }
+
                 [aria-expanded="true"] .fa-angle-down {
                     transform: rotate(180deg);
                 }

@@ -171,6 +171,14 @@ $colors-dark: (
     "gray-dark":  $dark
 );
 
+$theme-colors-custom: (
+    "tip":        $purple
+);
+
+$theme-colors-dark-custom: (
+    "tip":        $purple-dark
+);
+
 $theme-colors-dark: (
     "primary":    $primary-dark,
     "secondary":  $secondary-dark,
@@ -181,6 +189,9 @@ $theme-colors-dark: (
     "light":      $light,
     "dark":       $dark
 );
+
+$theme-colors: map-merge($theme-colors, $theme-colors-custom);
+$theme-colors-dark: map-merge($theme-colors-dark, $theme-colors-dark-custom);
 
 $spacers-custom: (
     6: $spacer * 6,

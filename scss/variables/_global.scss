@@ -171,6 +171,8 @@ $btn-close-bg: none;
 
 // Cards
 $card-bg:                           var(--bs-secondary-bg);
+$card-spacer-y:                     $spacer-md;
+$card-spacer-x:                     $spacer-md;
 
 // Carousel
 // $carousel-indicator-active-bg:      $primary;
@@ -240,6 +242,7 @@ $dropdown-bg:                       var(--bs-secondary-bg);
 $dropdown-link-hover-bg:            var(--bs-tertiary-bg);
 $dropdown-link-active-color:        var(--bs-body-color);
 $dropdown-link-active-bg:           var(--bs-tertiary-bg);
+$dropdown-item-padding-y:          .75rem;
 
 // Offcanvas
 $offcanvas-bg-color:                var(--bs-secondary-bg);

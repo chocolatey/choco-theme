@@ -167,3 +167,12 @@
 .d-label-none label {
     display: none;
 }
+
+// Disabled inputs
+label:has(+ input:disabled),
+label:has(+ textarea:disabled),
+input:disabled ~ .form-text,
+input:disabled ~ label,
+textarea:disabled ~ .form-text {
+    font-style: italic;
+}
