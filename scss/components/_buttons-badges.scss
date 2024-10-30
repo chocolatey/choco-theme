@@ -1,3 +1,8 @@
+.btn {
+    min-height: 45px;
+    min-width: 45px;
+}
+
 .btn-close
 {
     display: flex;
@@ -157,6 +162,20 @@ button.btn-grab:not(:disabled) {
     --#{$prefix}btn-disabled-color: var(--bs-body-color);
     --#{$prefix}btn-focus-shadow-rgb: #{to-rgb(mix(color-contrast($secondary), $secondary, 15%))};
     --#{$prefix}btn-focus-box-shadow: 0 0 0 #{$btn-focus-width} rgba(var(--#{$prefix}btn-focus-shadow-rgb), .5);
+}
+
+.btn-reorder {
+    --bs-btn-color: var(--bs-body-color);
+    --bs-btn-border-color: var(--bs-secondary);
+    --bs-btn-hover-color: var(--bs-primary);
+    --bs-btn-hover-border-color: var(--bs-primary);
+    --bs-btn-active-color: var(--bs-primary);
+    --bs-btn-active-border-color: var(--bs-primary);
+
+    &:focus {
+        border: 3px solid var(--bs-primary);
+        color: var(--bs-primary);
+    }
 }
 
 @each $color, $value in $theme-colors {
