@@ -77,3 +77,24 @@
 .tab-content > .active:focus-visible {
     outline: 1px solid var(--bs-body-color);
 }
+
+.nav-pills.btn-group .nav-item {
+    &:not(:last-child) .nav-link {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &:nth-child(n+2) .nav-link {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .nav-link {
+        border: 1px solid var(--bs-secondary);
+        font-weight: bold;
+
+        &:not(.active) {
+            color: var(--bs-body-color);
+        }
+    }
+}
