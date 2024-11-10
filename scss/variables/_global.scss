@@ -223,8 +223,8 @@ $nav-tabs-border-color:             var(--bs-body-color);
 $nav-tabs-link-active-border-color:  $nav-tabs-border-color $nav-tabs-border-color var(--bs-secondary-bg);
 $nav-tabs-link-hover-border-color: var(--bs-secondary) var(--bs-secondary) $nav-tabs-link-active-bg;
 
-$nav-pills-link-active-color:       var(--bs-primary-contrast);
-$nav-pills-link-active-bg:          var(--bs-primary);
+$nav-pills-link-active-color:       var(--bs-secondary-contrast);
+$nav-pills-link-active-bg:          var(--bs-secondary);
 
 // Tables
 $table-striped-bg:                  var(--bs-secondary-bg);
