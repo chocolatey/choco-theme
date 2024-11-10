@@ -3,11 +3,14 @@
     min-width: 45px;
 }
 
-.btn-close
-{
+.btn-close {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+[data-bs-theme="dark"] .toast .btn-close {
+    filter: none !important;
 }
 
 // Outline button with badge
