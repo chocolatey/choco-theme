@@ -115,26 +115,38 @@ $orange-850:  shade-color($orange, 70%);
 $orange-950:  shade-color($orange, 90%);
 
 // Additional Theme
-$dark:         $primary-950;
+$dark:                              $primary-950;
+$primary-opacity-25:                rgba(var(--bs-primary-rgb), .25);
 
-// Dark Emphasis Colors
-$green-text-emphasis-dark:        tint-color($green, 40%);
-$blue-text-emphasis-dark:         tint-color($blue, 40%);
-$red-text-emphasis-dark:          tint-color($red, 40%);
-$yellow-text-emphasis-dark:       tint-color($yellow, 40%);
-$purple-text-emphasis-dark:       tint-color($purple, 40%);
-$orange-text-emphasis-dark:       tint-color($orange, 40%);
-$pink-text-emphasis-dark:         tint-color($pink, 40%);
+// Extended Colors
+$primary-text:                      shade-color($primary, 20%);
+$primary-text-dark:                 tint-color($primary-dark, 20%);
+$primary-bg-subtle:                 tint-color($primary, 80%);
+$primary-bg-subtle-dark:            shade-color($primary-dark, 60%);
+$primary-border-subtle:             tint-color($primary, 60%);
+$primary-border-subtle-dark:        shade-color($primary-dark, 40%);
+$primary-contrast:                  color-contrast($primary);
+$primary-dark-contrast:             color-contrast($primary-dark);
 
-// Custom Colors
-$primary-opacity-25:              rgba($primary, .25);
+$success-text-dark:                 tint-color($success-dark, 20%);
+$success-bg-subtle-dark:            shade-color($success-dark, 60%);
+$success-border-subtle-dark:        shade-color($success-dark, 40%);
+$success-contrast:                  color-contrast($success);
+$success-dark-contrast:             color-contrast($success-dark);
 
-// Config
-$enable-responsive-font-sizes:      true;
-$enable-negative-margins:           true;
-$font-size-base:                    1rem;
-$line-height-base:                  1.7;
-$headings-line-height:              $line-height-base;
+$info-text-dark:                    tint-color($info-dark, 20%);
+$info-bg-subtle-dark:               shade-color($info-dark, 60%);
+$info-border-subtle-dark:           shade-color($info-dark, 40%);
+
+$warning-text-dark:                 tint-color($warning-dark, 20%);
+$warning-bg-subtle-dark:            shade-color($warning-dark, 60%);
+$warning-border-subtle-dark:        shade-color($warning-dark, 40%);
+
+$danger-text-dark:                  tint-color($danger-dark, 20%);
+$danger-bg-subtle-dark:             shade-color($danger-dark, 60%);
+$danger-border-subtle-dark:         shade-color($danger-dark, 40%);
+$danger-contrast:                   color-contrast($danger);
+$danger-dark-contrast:              color-contrast($danger-dark);
 
 // Links
 // $link-decoration: none;
@@ -144,7 +156,7 @@ $badge-color: var(--bs-body-color);
 
 // Borders
 $border-color:                      $gray-300;
-$border-color-adaptive-dark:        rgba($primary, .5);
+$border-color-adaptive-dark:        rgba(var(--bs-primary-rgb), .5);
 
 $border-color-translucent:          $gray-300;
 $border-color-adaptive:             $gray-300;
@@ -161,8 +173,8 @@ $btn-close-bg: none;
 $card-bg:                           var(--bs-secondary-bg);
 
 // Carousel
-$carousel-indicator-active-bg:      $primary;
-$carousel-dark-indicator-active-bg: $primary;
+// $carousel-indicator-active-bg:      $primary;
+// $carousel-dark-indicator-active-bg: $primary;
 $carousel-indicator-width:          15px;
 $carousel-indicator-height:         15px;
 
@@ -178,31 +190,42 @@ $breadcrumb-margin-bottom: 0;
 $breadcrumb-bg: transparent;
 
 // Inputs
-$form-check-input-bg: $dark;
-$form-check-input-border: $primary;
-$form-select-border-color: $primary;
+$input-bg:                           var(--bs-secondary-bg);
+$input-border-color:                 var(--bs-secondary);
+$input-disabled-bg:                  var(--bs-tertiary-bg);
+$form-check-input-border:            var(--bs-border-width) solid $input-border-color;
+$form-check-input-checked-bg-color:  var(--#{$prefix}primary);
+// Form images
 
-$input-border-color: $primary;
-$input-focus-border-color: $primary;
-$input-disabled-bg: $gray-300;
+$form-check-input-checked-bg-image:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+$form-check-input-checked-bg-image-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-dark-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
 
-$form-select-indicator-color: $primary;
-$form-select-indicator-color-dark: $primary;
+$form-check-radio-checked-bg-image:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$primary-contrast}'/></svg>");
+$form-check-radio-checked-bg-image-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$primary-dark-contrast}'/></svg>");
 
-$form-switch-color: $primary;
-$form-switch-color-dark: $primary;
+$form-check-input-indeterminate-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+$form-check-input-indeterminate-bg-image-dark:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-dark-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+
+$form-switch-focus-bg-image:                    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{tint-color($primary, 50%)}'/></svg>");
+$form-switch-focus-bg-image-dark:               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{tint-color($primary-dark, 50%)}'/></svg>");
+
+$form-switch-checked-bg-image:                  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$primary-contrast}'/></svg>");
+$form-switch-checked-bg-image-dark:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$primary-dark-contrast}'/></svg>");
+
+$form-feedback-icon-valid-dark:                 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$success-dark}' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>");
+$form-feedback-icon-invalid-dark:               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='#{$danger-dark}'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$danger-dark}' stroke='none'/></svg>");
 
 // Tabs
 $nav-tabs-link-active-bg:           transparent;
-$nav-tabs-link-active-border-color: var(--bs-border-color) var(--bs-border-color) transparent;
+$nav-tabs-border-color:             var(--bs-body-color);
+$nav-tabs-link-active-border-color:  $nav-tabs-border-color $nav-tabs-border-color var(--bs-secondary-bg);
+$nav-tabs-link-hover-border-color: var(--bs-secondary) var(--bs-secondary) $nav-tabs-link-active-bg;
+
+$nav-pills-link-active-color:       var(--bs-primary-contrast);
+$nav-pills-link-active-bg:          var(--bs-primary);
 
 // Tables
 $table-striped-bg:                  var(--bs-secondary-bg);
-
-// Tooltips
-$tooltip-bg:                        $primary;
-$tooltip-color:                     $dark;
-$tooltip-opacity:                   1;
 
 // Modals
 $modal-content-bg:                  var(--bs-secondary-bg);
@@ -222,8 +245,8 @@ $dropdown-link-active-bg:           var(--bs-tertiary-bg);
 $offcanvas-bg-color:                var(--bs-secondary-bg);
 
 // Popovers
-$popover-bg:                        var(--bs-secondary-bg);
-$popover-header-bg:                 var(--bs-tertiary-bg);
+// $popover-bg:                        var(--bs-secondary-bg);
+// $popover-header-bg:                 var(--bs-tertiary-bg);
 
 // Progress bars
 $progress-bg:                       var(--bs-tertiary-bg);

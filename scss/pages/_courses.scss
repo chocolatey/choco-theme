@@ -1,0 +1,163 @@
+.course-list {
+    padding-left: 10px;
+    list-style-type: none;
+
+    span:not(.additional-module),
+    .fa-angle-right {
+        display: none;
+    }
+
+    li {
+        padding: 0 0 20px 23px;
+        border-left: 3px solid var(--bs-border-color);
+
+        a {
+            padding-bottom: 20px;
+            font-size: .9rem;
+            font-weight: 400;
+            color: var(--bs-body-color);
+            transition: all .3s ease;
+        }
+    }
+
+    li:hover a.hover,
+    li a:hover,
+    li.active a {
+        font-weight: 700;
+        color: var(--bs-primary);
+    }
+
+    li:last-child {
+        padding-bottom: 0;
+        border-left: 3px solid transparent;
+    }
+
+    li::before {
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin: 0 1rem 0 -35px;
+        line-height: 20px;
+        content: "";
+        background-color: var(--bs-body-bg);
+        border: 3px solid var(--bs-border-color);
+        border-radius: 50%;
+        transition: all .3s ease;
+    }
+
+    li.completed,
+    li.mod-completed {
+        &::before,
+        &::after {
+            padding-left: 1px;
+            color: var(--bs-secondary-color);
+        }
+
+        &::before {
+            font-size: 70%;
+            line-height: 16px;
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+        }
+    }
+
+    li.completed:last-child,
+    li.mod-completed:last-child {
+        border-left: 3px solid transparent;
+    }
+
+    li:not(.completed):hover::before,
+    li:not(.mod-completed):hover::before,
+    li.active::before {
+        border-color: var(--bs-primary);
+    }
+}
+
+.course-home .course-list {
+
+    span {
+        display: block;
+        font-size: 80%;
+        font-weight: 100;
+    }
+
+    .fa-angle-right {
+        display: inline-block;
+    }
+
+    li a {
+        font-size: initial;
+        font-weight: 700;
+    }
+}
+
+#additionalCourses {
+
+    .course-list {
+
+        li {
+            float: left;
+            padding: 0 0 0 25px;
+            border-left: 0;
+
+            a {
+                margin-left: -33px;
+
+                .additional-module {
+                    position: relative;
+                    z-index: -99;
+                }
+            }
+        }
+    }
+
+    .completed + .btn,
+    .resume + .btn {
+        display: none;
+    }
+}
+
+.level::after {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    content: "";
+    border-radius: 50%;
+}
+
+.level.intermediate::after {
+    background: var(--bs-yellow);
+}
+
+.level.beginner::after {
+    background: var(--bs-green);
+}
+
+.level.advanced::after {
+    background: var(--bs-red);
+}
+
+.correct,
+.wrong {
+    &::before,
+    &::after {
+        display: flex;
+        margin-top: -3px;
+        margin-left: -22px;
+    }
+}
+
+.correct {
+    &::before,
+    &::after {
+        color: var(--bs-green);
+    }
+}
+
+.wrong {
+    &::before,
+    &::after {
+        color: var(--bs-red);
+    }
+}

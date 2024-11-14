@@ -1,0 +1,96 @@
+.splide {
+    @mixin fade-gradient {
+        background: linear-gradient(to right, rgba(var(--bs-body-bg-rgb), 1) 0%, rgba(var(--bs-body-bg-rgb), 0) 100%);
+    }
+
+    &.splide-trusted-businesses {
+        &::before,
+        &::after {
+            @include fade-gradient ();
+            position: absolute;
+            z-index: 2;
+            width: 75px;
+            height: 100px;
+            content: "";
+        }
+
+        &::after {
+            top: 0;
+            right: 0;
+            transform: rotateZ(180deg);
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+        }
+    }
+
+    /* stylelint-disable-next-line no-duplicate-selectors */
+    &.splide-trusted-businesses {
+        /* stylelint-disable-next-line selector-class-pattern */
+        .splide__track {
+            border: 0 !important;
+        }
+
+        /* stylelint-disable-next-line selector-class-pattern */
+        .splide__slide {
+            min-width: 250px;
+            margin: 0 .75rem;
+
+            .slide {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100px;
+                border: 1px solid var(--bs-border-color);
+
+                img {
+                    max-width: 175px;
+                    max-height: 60px;
+                }
+            }
+        }
+    }
+
+    &.splide-testimonials {
+        /* stylelint-disable-next-line selector-class-pattern */
+        .splide__slide {
+            &:not(.is-active) .card {
+                opacity: .9;
+                transform: scale(.9);
+            }
+
+            &.is-active .card {
+                border: 1px solid var(--bs-primary);
+                transform: scale(1);
+            }
+
+            .card {
+                min-height: 650px;
+                background: none;
+                /* stylelint-disable-next-line property-no-vendor-prefix */
+                -webkit-backdrop-filter: blur(100px);
+                backdrop-filter: blur(100px);
+            }
+        }
+
+        /* stylelint-disable-next-line selector-class-pattern */
+        .splide__arrows {
+            position: absolute;
+            bottom: -5rem;
+            left: 50%;
+            transform: translateX(-50%);
+
+            /* stylelint-disable-next-line selector-class-pattern */
+            .splide__arrow {
+                fill: var(--bs-primary);
+
+                /* stylelint-disable-next-line selector-class-pattern */
+                &.splide__arrow--prev {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

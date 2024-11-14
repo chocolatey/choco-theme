@@ -1,6 +1,9 @@
 @import "mixins/banner";
 @include ctBanner("zendesk");
 
+// Include config variables
+@import "variables/config";
+
 // Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "bootstrap/scss/functions";
 
@@ -24,5 +27,4 @@
 
 // Custom Styles
 @import "styles";
-@import "theme-toggle";
-@import "zendesk-guide";
+@import "pages/zendesk-guide";

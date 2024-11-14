@@ -11,20 +11,49 @@ $gray-800: #333230;
 $gray-900: #191918;
 $black:    #0c0c0b;
 
-// Default Colors
-$blue:          #008d9c;
-$purple:        #9d3a74;
-$red:           #c02636;
-$pink:          #af2e51;
-$yellow:        #fba830;
-$yellow-light:  #b87000;
-$orange:        #eb4420;
-$green-light:   #007427;
-$green:         #019a4a;
+// Color system
+$color-contrast-dark:  $black;
+$color-contrast-light: $white;
 
-// Theme
-$primary:        $green;
-$info:           $green;
+// Colors - Light
+$blue:          #008d9c;
+$indigo:        #6610f2;
+$purple:        #9d3a74;
+$pink:          #af2e51;
+$red:           #c02636;
+$orange:        #eb4420;
+$yellow:        #b87000;
+$green:         #007427;
+$teal:          #20c997;
+$cyan:          #0dcaf0;
+
+// Theme - Light
+$primary:       $green;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $green;
+$warning:       $yellow;
+$danger:        $red;
+
+// Colors - Dark
+$blue-dark:         $blue;
+$indigo-dark:       $indigo;
+$purple-dark:       $purple;
+$pink-dark:         $pink;
+$red-dark:          $red;
+$orange-dark:       $orange;
+$yellow-dark:       #f1fa8c;
+$green-dark:        #019a4a;
+$teal-dark:         $teal;
+$cyan-dark:         $cyan;
+
+// Theme - Dark
+$primary-dark:       $green-dark;
+$secondary-dark:     $gray-500;
+$success-dark:       $green-dark;
+$info-dark:          $green-dark;
+$warning-dark:       $yellow-dark;
+$danger-dark:        $red-dark;
 
 // Font
 $font-family-sans-serif:            "Inter", sans-serif;
