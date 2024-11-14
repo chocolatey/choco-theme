@@ -1,0 +1,75 @@
+// All carousels
+.carousel {
+    .carousel-inner {
+        .carousel-item {
+            margin-bottom: $spacer * 3;
+
+            *:last-child {
+                margin-bottom: 0;
+            }
+
+            .carousel-caption {
+                background: rgba($body-bg-dark, .95);
+            }
+        }
+    }
+
+    .carousel-indicators {
+        margin-bottom: 0;
+
+        button {
+            border-radius: 100%;
+        }
+    }
+
+    &:not(.carousel-control-center) .carousel-control-next,
+    &:not(.carousel-control-center) .carousel-control-prev {
+        top: unset;
+        bottom: 6.5px;
+    }
+
+    &.carousel-control-center {
+        .carousel-control-next {
+            right: -3.5%;
+        }
+
+        .carousel-control-prev {
+            left: -3.5%;
+        }
+    }
+}
+
+#headerCarousel {
+    .carousel-caption {
+        left: 0;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .bg-img-cover {
+        border-bottom: 1px solid var(--bs-border-color);
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .carousel {
+        .carousel-inner {
+            .carousel-item {
+                .carousel-caption {
+                    right: 10%;
+                }
+            }
+        }
+    }
+
+    #headerCarousel {
+        .carousel-caption {
+            left: 1px;
+        }
+
+        .bg-img-cover {
+            border: 1px solid var(--bs-border-color);
+            border-radius: 1rem;
+        }
+    }
+}

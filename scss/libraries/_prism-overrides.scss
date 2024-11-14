@@ -1,0 +1,224 @@
+/* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+csharp+diff+json+powershell+puppet+python+ruby+scss+shell-session+xml-doc+yaml&plugins=line-numbers+toolbar+copy-to-clipboard+diff-highlight */
+
+/**
+* prism.js default theme for JavaScript, CSS and HTML
+* Based on dabblet (http://dabblet.com)
+* @author Lea Verou
+*/
+
+code {
+    font-weight: 700;
+}
+
+pre.d-format-none {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    margin-bottom: 1rem;
+    font-family: var(--bs-font-monospace);
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--bs-body-color);
+    text-shadow: none;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+    background: rgba(var(--bs-primary-rgb), .2);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    max-height: 500px;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: var(--bs-secondary-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: .25rem;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    font-weight: 400;
+    color: var(--bs-secondary-color);
+}
+
+.token.punctuation {
+    color: var(--bs-body-color);
+}
+
+.token.namespace {
+    opacity: 1;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: var(--bs-red);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.url {
+    color: var(--bs-primary);
+}
+
+
+// These styles are currently not used and may need updated in the future
+.token.operator,
+.token.entity,
+.language-css .token.string,
+.style .token.string {
+    color: var(--bs-orange);
+    background: none;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: var(--bs-orange);
+}
+
+.token.function,
+.token.class-name {
+    color: var(--bs-purple);
+}
+
+.token.regex,
+.token.important,
+.token.variable,
+.token.inserted {
+    color: var(--bs-green);
+}
+
+.line-numbers .line-numbers-rows {
+    border-right: 1px solid var(--bs-primary);
+}
+
+.line-numbers-rows > span::before {
+    color: var(--bs-secondary);
+}
+
+div.code-toolbar > .toolbar {
+    top: .8rem;
+    right: 1rem;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar > .toolbar-item > span {
+    padding: .25em .5em;
+    font-size: .8em;
+    color: var(--bs-secondary-contrast);
+    background: var(--bs-secondary);
+    border-radius: .25em;
+    box-shadow: none;
+}
+
+pre.diff-highlight > code .token.deleted:not(.prefix),
+pre > code.diff-highlight .token.deleted:not(.prefix) {
+    background-color: rgba(var(--bs-red-rgb), .2);
+}
+
+pre.diff-highlight > code .token.inserted:not(.prefix),
+pre > code.diff-highlight .token.inserted:not(.prefix) {
+    background-color: rgba(var(--bs-green-rgb), .2);
+}
+
+// Chocolatey diff highlighting specific
+.token.inserted-sign .inserted,
+.token.deleted-sign .deleted,
+.token.unchanged .unchanged {
+    margin-right: 1rem;
+    margin-left: .5rem;
+}
+
+.token.coord {
+    display: inline-block;
+    width: 100%;
+    padding: .5rem 0 .5rem 1rem;
+    color: var(--bs-secondary);
+    background: rgba(var(--bs-secondary-rgb), .15);
+}
+
+// Chocolatey toolbar specific
+.code-static-toolbar + .toolbar {
+    top: -2.2rem !important;
+    opacity: 1 !important;
+}
+
+// Chocolatey log language specific
+.language-log {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+
+    .token {
+        position: relative;
+
+        &.debug,
+        &.constant {
+            color: var(--bs-primary);
+        }
+
+        &.info,
+        &.verbose,
+        &.date {
+            color: var(--bs-green);
+        }
+
+        &.warning,
+        &.string,
+        &.exceptiontype {
+            color: var(--bs-orange);
+        }
+
+        &.error {
+            font-weight: 700;
+            color: var(--bs-red);
+        }
+
+        &.exceptiontype {
+            font-style: italic;
+        }
+    }
+
+    .log-error-highlight {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: -3px;
+        background: rgba(var(--bs-red-rgb), .25);
+        border-top: 2px solid rgba(var(--bs-red-rgb), .25);
+        border-bottom: 1px solid rgba(var(--bs-red-rgb), .25);
+
+        i {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+// Custom Global Tokens
+.token.sensitive-variable,
+.token.string .token.sensitive-variable {
+    font-weight: 400;
+    color: var(--bs-body-color);
+    background: var(--bs-tertiary-bg);
+}
+
