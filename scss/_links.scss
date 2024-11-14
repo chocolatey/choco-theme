@@ -15,3 +15,8 @@ html:not(.chocolatey-ccm) {
 .link-underline-none {
     text-decoration: none !important;
 }
+
+a {
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+}
