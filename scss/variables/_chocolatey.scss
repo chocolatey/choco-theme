@@ -11,22 +11,49 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black:    #000;
 
-// Default Colors
-$blue:    #5c9fd8;
-$purple:  #6f42c1;
-$red:     #f4516c;
-$pink:    #d63384;
-$yellow:  #ffc107;
-$orange:  #fd7e14;
-$green:   #36bc98;
+// Color system
+$color-contrast-dark:  $black;
+$color-contrast-light: $white;
 
-// Theme
-$primary:      $blue;
-$success:      $green;
-$warning:      $yellow;
-$danger:       $red;
-$info:         $blue;
-$secondary:    $gray-600;
+// Colors - Light
+$blue:    #2C75B5;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #D1297D;
+$red:     #E10E32;
+$orange:  #BB5502;
+$yellow:  #8F6B00;
+$green:   #257E67;
+$teal:    $green;
+$cyan:    #077B92;
+
+// Theme - Light
+$primary:       $blue;
+$secondary:     #878F97;
+$success:       $green;
+$info:          $blue;
+$warning:       $yellow;
+$danger:        $red;
+
+// Colors - Dark
+$blue-dark:         #5c9fd8;
+$indigo-dark:       #9C64F7;
+$purple-dark:       #9271D1;
+$pink-dark:         #DC4C94;
+$red-dark:          #f4516c;
+$orange-dark:       #fd7e14;
+$yellow-dark:       #ffc107;
+$green-dark:        #36bc98;
+$teal-dark:         $green-dark;
+$cyan-dark:         #0dcaf0;
+
+// Theme - Dark
+$primary-dark:       $blue-dark;
+$secondary-dark:     #62686A;
+$success-dark:       $green-dark;
+$info-dark:          $blue-dark;
+$warning-dark:       $yellow-dark;
+$danger-dark:        $red-dark;
 
 // Font
 $font-family-sans-serif: "PT Sans", sans-serif;
@@ -46,25 +73,10 @@ $alert-border-width:                0;
 $alert-bg-scale:                    0%;
 $alert-color-scale:                 0%;
 
-// Tabs
-$nav-pills-link-active-color: $black;
-
 // List Group
 $list-group-active-color:           $black;
 
 // Pagination
-$pagination-bg:                     unset;
-$pagination-border-color:           $primary;
-
-$pagination-focus-color:            $black;
-$pagination-focus-bg:               $primary;
-
-$pagination-hover-color:            $black;
-$pagination-hover-bg:               $primary;
-$pagination-hover-border-color:     $primary;
-
-$pagination-active-color:           $black;
-
-$pagination-disabled-color:         $primary;
-$pagination-disabled-bg:            unset;
-$pagination-disabled-border-color:  $primary;
+$pagination-active-color:           var(--bs-primary-contrast);
+$pagination-active-bg:              var(--bs-primary);
+$pagination-active-border-color:    var(--bs-primary);

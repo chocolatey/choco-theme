@@ -1,6 +1,9 @@
 @import "mixins/banner";
 @include ctBanner("chocolatey");
 
+// Include config variables
+@import "variables/config";
+
 // Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "bootstrap/scss/functions";
 
@@ -44,6 +47,6 @@
 @import "@tarekraafat/autocomplete.js/dist/css/autoComplete.02";
 
 // Custom Styles
-@import "fonts";
+@import "utilities/fonts";
 @import "styles";
-@import "icons";
+@import "utilities/icons";
