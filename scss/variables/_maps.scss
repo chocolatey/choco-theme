@@ -154,6 +154,34 @@ $socialmedia-colors: (
 
 $colors-rgb: map-loop($colors, to-rgb, "$value");
 
+$colors-dark: (
+    "blue":       $blue-dark,
+    "indigo":     $indigo-dark,
+    "purple":     $purple-dark,
+    "pink":       $pink-dark,
+    "red":        $red-dark,
+    "orange":     $orange-dark,
+    "yellow":     $yellow-dark,
+    "green":      $green-dark,
+    "teal":       $teal-dark,
+    "cyan":       $cyan-dark,
+    "black":      $black,
+    "white":      $white,
+    "gray":       $gray-500,
+    "gray-dark":  $dark
+);
+
+$theme-colors-dark: (
+    "primary":    $primary-dark,
+    "secondary":  $secondary-dark,
+    "success":    $success-dark,
+    "info":       $info-dark,
+    "warning":    $warning-dark,
+    "danger":     $danger-dark,
+    "light":      $light,
+    "dark":       $dark
+);
+
 $spacers-custom: (
     6: $spacer * 6,
     7: $spacer * 12,

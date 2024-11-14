@@ -1,0 +1,36 @@
+.ribbon {
+    --ribbon-size: -15%;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    transform: translate(calc(-1 * var(--ribbon-size)), var(--ribbon-size)) rotate(45deg);
+    transform-origin: center left;
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 0;
+        width: 150%;
+        height: 100%;
+        margin: 0 -1px;
+        content: "";
+    }
+
+    &::before {
+        right: 100%;
+    }
+
+    &::after {
+        left: 100%;
+    }
+
+    @each $color, $value in $colors {
+        &.text-bg-#{$color}::before,
+        &.text-bg-#{$color}::after {
+            background: var(--bs-#{$color});
+        }
+    }
+}

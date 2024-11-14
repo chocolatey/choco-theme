@@ -3,11 +3,11 @@
 :root,
 :root[data-bs-theme="light"] {
     --td-active-bg: var(--bs-primary);
-    --td-active-border-color: var(--bs-black);
-    --td-btn-hover-bg: #74adde;
+    --td-active-border-color: var(--bs-primary-contrast);
+    --td-btn-hover-bg: var(--bs-primary);
     --td-widget-background: var(--bs-secondary-bg);
     --td-font-color: var(--bs-body-color);
-    --td-active-color: var(--bs-black);
+    --td-active-color: var(--bs-primary-contrast);
     --td-dow-color: var(--bs-secondary-color);
     --td-disabled-color: var(--bs-secondary-color);
     --td-alternate-color: var(--bs-secondary-color);

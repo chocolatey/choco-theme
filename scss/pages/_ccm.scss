@@ -1,0 +1,149 @@
+/* stylelint-disable selector-max-type */
+:root,
+:root[data-bs-theme="light"] {
+    &.chocolatey-ccm {
+        main #appSidebar nav {
+            li {
+                a,
+                button {
+                    &.active,
+                    &:hover{
+                        background: rgba(var(--bs-primary-rgb), .2);
+                    }
+                }
+
+                &.active-parent {
+                    a,
+                    button {
+                        &.collapsed {
+                            background: rgba(var(--bs-primary-rgb), .2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+:root[data-bs-theme="dark"] {
+    &.chocolatey-ccm {
+        main #appSidebar nav {
+            li {
+                a,
+                button {
+                    &.active,
+                    &:hover{
+                        background: rgba(var(--bs-primary-rgb), .1);
+                    }
+                }
+
+                &.active-parent {
+                    a,
+                    button {
+                        &.collapsed {
+                            background: rgba(var(--bs-primary-rgb), .1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chocolatey-ccm {
+    main #appSidebar {
+        max-width: 300px;
+
+        /* stylelint-disable-next-line selector-id-pattern */
+        &[data-icon-menu="false"] #appSidebar_offcanvas {
+            --bs-offcanvas-width: 300px;
+        }
+
+        /* stylelint-disable-next-line selector-id-pattern */
+        &[data-icon-menu="true"] #appSidebar_offcanvas {
+            --bs-offcanvas-width: 50px;
+        }
+
+        &.disabled li {
+            &:not(.active-parent):hover {
+                &::before {
+                    background: none !important;
+                }
+            }
+
+            a,
+            button {
+                pointer-events: none !important;
+                opacity: .5 !important;
+
+                &:hover {
+                    background: none !important;
+                }
+            }
+        }
+
+        nav {
+            li {
+                &.active-parent,
+                &:hover {
+                    &::before {
+                        position: absolute;
+                        top: -2px;
+                        left: 0;
+                        display: block;
+                        width: .25rem;
+                        height: calc(100% + 4px);
+                        content: "";
+                        background: var(--bs-primary);
+                        border-radius: .25rem;
+                    }
+
+                    &:first-child::before {
+                        top: 0;
+                        height: calc(100% + 2px);
+                    }
+                }
+
+                &.active-parent {
+                    .active,
+                    .collapsed,
+                    [aria-expanded="true"] {
+                        font-weight: 700;
+                    }
+                }
+
+                [aria-expanded="true"] .fa-angle-down {
+                    transform: rotate(180deg);
+                }
+
+                [data-bs-toggle="collapse"] .fa-angle-down {
+                    transition: transform .35s ease;
+                }
+            }
+        }
+    }
+
+    .card {
+        overflow: visible !important;
+    }
+
+    /* stylelint-disable selector-class-pattern */
+    .actionButton-cell {
+        width: 129px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .chocolatey-ccm {
+        main #appSidebar {
+            min-height: calc(100vh - 57px - 127px);
+
+            /* visual height - footer - header */
+        }
+
+        main #appSidebar,
+        main #appMain {
+            transition: transform .35s ease;
+        }
+    }
+}
