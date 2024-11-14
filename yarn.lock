@@ -2522,6 +2522,7 @@ __metadata:
     cssnano: "npm:^6.1.0"
     datatables.net-bs5: "npm:^2.0.8"
     datatables.net-dt: "npm:^2.0.8"
+    datatables.net-select: "npm:^2.1.0"
     easymde: "npm:^2.16.1"
     esbuild: "npm:^0.20.1"
     eslint: "npm:^9.11.1"
@@ -2973,6 +2974,16 @@ __metadata:
     datatables.net: "npm:2.2.0"
     jquery: "npm:>=1.7"
   checksum: 10c0/81372f4a17fd3af9b824b34b335bd3652163aaf7cbbc63b74b56fd4b724ea3470c63bb4dfd64aeb732685bb462dbd2c4d97da650db6adffe754e3d762ed5e7f9
+  languageName: node
+  linkType: hard
+
+"datatables.net-select@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "datatables.net-select@npm:2.1.0"
+  dependencies:
+    datatables.net: "npm:^2"
+    jquery: "npm:>=1.7"
+  checksum: 10c0/a6e379c49e6d14e563c91b66a67337d9ea8bcdc8c00febc9f048b7083236961dc7219c354e662954e60783a5034aaa66f85a02fb0751317f132ce15202f2378c
   languageName: node
   linkType: hard
 
