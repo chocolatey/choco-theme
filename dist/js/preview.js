@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.1 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.2 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -30,6 +30,14 @@
       port: 5082,
       isStatiq: false,
       isAstro: true
+    },
+    "--ccm": {
+      folder: "choco-licensed-management-ui",
+      protocol: "https",
+      port: 44302,
+      isStatiq: false,
+      isAstro: false,
+      root: "/src/ChocolateySoftware.ChocolateyManagement.Web.Mvc"
     },
     "--boxstarter": {
       folder: "boxstarter.org",

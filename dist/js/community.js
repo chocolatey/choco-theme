@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.1 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.2 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -10320,72 +10320,86 @@
   // node_modules/@tarekraafat/autocomplete.js/dist/autoComplete.min.js
   var require_autoComplete_min = __commonJS({
     "node_modules/@tarekraafat/autocomplete.js/dist/autoComplete.min.js"(exports, module) {
-      var e;
       var t;
-      e = exports, t = function() {
+      var e;
+      t = exports, e = function() {
         "use strict";
-        function e2(e3, t3) {
-          var n3 = Object.keys(e3);
+        function t2(t3, e3) {
+          (null == e3 || e3 > t3.length) && (e3 = t3.length);
+          for (var n3 = 0, r2 = Array(e3); n3 < e3; n3++)
+            r2[n3] = t3[n3];
+          return r2;
+        }
+        function e2(t3, e3, n3) {
+          return (e3 = function(t4) {
+            var e4 = function(t5, e5) {
+              if ("object" != typeof t5 || !t5)
+                return t5;
+              var n4 = t5[Symbol.toPrimitive];
+              if (void 0 !== n4) {
+                var r2 = n4.call(t5, e5 || "default");
+                if ("object" != typeof r2)
+                  return r2;
+                throw new TypeError("@@toPrimitive must return a primitive value.");
+              }
+              return ("string" === e5 ? String : Number)(t5);
+            }(t4, "string");
+            return "symbol" == typeof e4 ? e4 : e4 + "";
+          }(e3)) in t3 ? Object.defineProperty(t3, e3, { value: n3, enumerable: true, configurable: true, writable: true }) : t3[e3] = n3, t3;
+        }
+        function n2(t3, e3) {
+          var n3 = Object.keys(t3);
           if (Object.getOwnPropertySymbols) {
-            var r2 = Object.getOwnPropertySymbols(e3);
-            t3 && (r2 = r2.filter(function(t4) {
-              return Object.getOwnPropertyDescriptor(e3, t4).enumerable;
+            var r2 = Object.getOwnPropertySymbols(t3);
+            e3 && (r2 = r2.filter(function(e4) {
+              return Object.getOwnPropertyDescriptor(t3, e4).enumerable;
             })), n3.push.apply(n3, r2);
           }
           return n3;
         }
-        function t2(t3) {
-          for (var n3 = 1; n3 < arguments.length; n3++) {
-            var i2 = null != arguments[n3] ? arguments[n3] : {};
-            n3 % 2 ? e2(Object(i2), true).forEach(function(e3) {
-              r(t3, e3, i2[e3]);
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t3, Object.getOwnPropertyDescriptors(i2)) : e2(Object(i2)).forEach(function(e3) {
+        function r(t3) {
+          for (var r2 = 1; r2 < arguments.length; r2++) {
+            var i2 = null != arguments[r2] ? arguments[r2] : {};
+            r2 % 2 ? n2(Object(i2), true).forEach(function(n3) {
+              e2(t3, n3, i2[n3]);
+            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t3, Object.getOwnPropertyDescriptors(i2)) : n2(Object(i2)).forEach(function(e3) {
               Object.defineProperty(t3, e3, Object.getOwnPropertyDescriptor(i2, e3));
             });
           }
           return t3;
         }
-        function n2(e3) {
-          return n2 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e4) {
-            return typeof e4;
-          } : function(e4) {
-            return e4 && "function" == typeof Symbol && e4.constructor === Symbol && e4 !== Symbol.prototype ? "symbol" : typeof e4;
-          }, n2(e3);
-        }
-        function r(e3, t3, n3) {
-          return t3 in e3 ? Object.defineProperty(e3, t3, { value: n3, enumerable: true, configurable: true, writable: true }) : e3[t3] = n3, e3;
-        }
         function i(e3) {
           return function(e4) {
             if (Array.isArray(e4))
-              return s2(e4);
-          }(e3) || function(e4) {
-            if ("undefined" != typeof Symbol && null != e4[Symbol.iterator] || null != e4["@@iterator"])
-              return Array.from(e4);
-          }(e3) || o(e3) || function() {
+              return t2(e4);
+          }(e3) || function(t3) {
+            if ("undefined" != typeof Symbol && null != t3[Symbol.iterator] || null != t3["@@iterator"])
+              return Array.from(t3);
+          }(e3) || s2(e3) || function() {
             throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
           }();
         }
-        function o(e3, t3) {
+        function o(t3) {
+          return o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t4) {
+            return typeof t4;
+          } : function(t4) {
+            return t4 && "function" == typeof Symbol && t4.constructor === Symbol && t4 !== Symbol.prototype ? "symbol" : typeof t4;
+          }, o(t3);
+        }
+        function s2(e3, n3) {
           if (e3) {
             if ("string" == typeof e3)
-              return s2(e3, t3);
-            var n3 = Object.prototype.toString.call(e3).slice(8, -1);
-            return "Object" === n3 && e3.constructor && (n3 = e3.constructor.name), "Map" === n3 || "Set" === n3 ? Array.from(e3) : "Arguments" === n3 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n3) ? s2(e3, t3) : void 0;
+              return t2(e3, n3);
+            var r2 = {}.toString.call(e3).slice(8, -1);
+            return "Object" === r2 && e3.constructor && (r2 = e3.constructor.name), "Map" === r2 || "Set" === r2 ? Array.from(e3) : "Arguments" === r2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r2) ? t2(e3, n3) : void 0;
           }
         }
-        function s2(e3, t3) {
-          (null == t3 || t3 > e3.length) && (t3 = e3.length);
-          for (var n3 = 0, r2 = new Array(t3); n3 < t3; n3++)
-            r2[n3] = e3[n3];
-          return r2;
-        }
-        var u = function(e3) {
-          return "string" == typeof e3 ? document.querySelector(e3) : e3();
-        }, a = function(e3, t3) {
-          var n3 = "string" == typeof e3 ? document.createElement(e3) : e3;
-          for (var r2 in t3) {
-            var i2 = t3[r2];
+        var u = function(t3) {
+          return "string" == typeof t3 ? document.querySelector(t3) : t3();
+        }, a = function(t3, e3) {
+          var n3 = "string" == typeof t3 ? document.createElement(t3) : t3;
+          for (var r2 in e3) {
+            var i2 = e3[r2];
             if ("inside" === r2)
               i2.append(n3);
             else if ("dest" === r2)
@@ -10397,249 +10411,251 @@
               r2 in n3 ? n3[r2] = i2 : n3.setAttribute(r2, i2);
           }
           return n3;
-        }, c = function(e3, t3) {
-          return e3 = String(e3).toLowerCase(), t3 ? e3.normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC") : e3;
-        }, l2 = function(e3, n3) {
-          return a("mark", t2({ innerHTML: e3 }, "string" == typeof n3 && { class: n3 })).outerHTML;
-        }, f = function(e3, t3) {
-          t3.input.dispatchEvent(new CustomEvent(e3, { bubbles: true, detail: t3.feedback, cancelable: true }));
-        }, p = function(e3, t3, n3) {
-          var r2 = n3 || {}, i2 = r2.mode, o2 = r2.diacritics, s3 = r2.highlight, u2 = c(t3, o2);
-          if (t3 = String(t3), e3 = c(e3, o2), "loose" === i2) {
-            var a2 = (e3 = e3.replace(/ /g, "")).length, f2 = 0, p2 = Array.from(t3).map(function(t4, n4) {
-              return f2 < a2 && u2[n4] === e3[f2] && (t4 = s3 ? l2(t4, s3) : t4, f2++), t4;
+        }, c = function(t3, e3) {
+          return t3 = String(t3).toLowerCase(), e3 ? t3.normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC") : t3;
+        }, l2 = function(t3, e3) {
+          return a("mark", r({ innerHTML: t3 }, "string" == typeof e3 && { class: e3 })).outerHTML;
+        }, f = function(t3, e3) {
+          e3.input.dispatchEvent(new CustomEvent(t3, { bubbles: true, detail: e3.feedback, cancelable: true }));
+        }, p = function(t3, e3, n3) {
+          var r2 = n3 || {}, i2 = r2.mode, o2 = r2.diacritics, s3 = r2.highlight, u2 = c(e3, o2);
+          if (e3 = String(e3), t3 = c(t3, o2), "loose" === i2) {
+            var a2 = (t3 = t3.replace(/ /g, "")).length, f2 = 0, p2 = Array.from(e3).map(function(e4, n4) {
+              return f2 < a2 && u2[n4] === t3[f2] && (e4 = s3 ? l2(e4, s3) : e4, f2++), e4;
             }).join("");
             if (f2 === a2)
               return p2;
           } else {
-            var d2 = u2.indexOf(e3);
+            var d2 = u2.indexOf(t3);
             if (~d2)
-              return e3 = t3.substring(d2, d2 + e3.length), d2 = s3 ? t3.replace(e3, l2(e3, s3)) : t3;
+              return t3 = e3.substring(d2, d2 + t3.length), d2 = s3 ? e3.replace(t3, l2(t3, s3)) : e3;
           }
-        }, d = function(e3, t3) {
+        }, d = function(t3, e3) {
           return new Promise(function(n3, r2) {
             var i2;
-            return (i2 = e3.data).cache && i2.store ? n3() : new Promise(function(e4, n4) {
-              return "function" == typeof i2.src ? i2.src(t3).then(e4, n4) : e4(i2.src);
-            }).then(function(t4) {
+            return (i2 = t3.data).cache && i2.store ? n3() : new Promise(function(t4, n4) {
+              return "function" == typeof i2.src ? new Promise(function(t5, n5) {
+                return "AsyncFunction" === i2.src.constructor.name ? i2.src(e3).then(t5, n5) : t5(i2.src(e3));
+              }).then(t4, n4) : t4(i2.src);
+            }).then(function(e4) {
               try {
-                return e3.feedback = i2.store = t4, f("response", e3), n3();
-              } catch (e4) {
-                return r2(e4);
+                return t3.feedback = i2.store = e4, f("response", t3), n3();
+              } catch (t4) {
+                return r2(t4);
               }
             }, r2);
           });
-        }, h = function(e3, t3) {
-          var n3 = t3.data, r2 = t3.searchEngine, i2 = [];
-          n3.store.forEach(function(s4, u2) {
+        }, h = function(t3, e3) {
+          var n3 = e3.data, r2 = e3.searchEngine, i2 = [];
+          n3.store.forEach(function(o3, u2) {
             var a2 = function(n4) {
-              var o2 = n4 ? s4[n4] : s4, u3 = "function" == typeof r2 ? r2(e3, o2) : p(e3, o2, { mode: r2, diacritics: t3.diacritics, highlight: t3.resultItem.highlight });
+              var s3 = n4 ? o3[n4] : o3, u3 = "function" == typeof r2 ? r2(t3, s3) : p(t3, s3, { mode: r2, diacritics: e3.diacritics, highlight: e3.resultItem.highlight });
               if (u3) {
-                var a3 = { match: u3, value: s4 };
+                var a3 = { match: u3, value: o3 };
                 n4 && (a3.key = n4), i2.push(a3);
               }
             };
             if (n3.keys) {
-              var c2, l3 = function(e4, t4) {
-                var n4 = "undefined" != typeof Symbol && e4[Symbol.iterator] || e4["@@iterator"];
+              var c2, l3 = function(t4, e4) {
+                var n4 = "undefined" != typeof Symbol && t4[Symbol.iterator] || t4["@@iterator"];
                 if (!n4) {
-                  if (Array.isArray(e4) || (n4 = o(e4)) || t4 && e4 && "number" == typeof e4.length) {
-                    n4 && (e4 = n4);
+                  if (Array.isArray(t4) || (n4 = s2(t4)) || e4) {
+                    n4 && (t4 = n4);
                     var r3 = 0, i3 = function() {
                     };
                     return { s: i3, n: function() {
-                      return r3 >= e4.length ? { done: true } : { done: false, value: e4[r3++] };
-                    }, e: function(e5) {
-                      throw e5;
+                      return r3 >= t4.length ? { done: true } : { done: false, value: t4[r3++] };
+                    }, e: function(t5) {
+                      throw t5;
                     }, f: i3 };
                   }
                   throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
                 }
-                var s5, u3 = true, a3 = false;
+                var o4, u3 = true, a3 = false;
                 return { s: function() {
-                  n4 = n4.call(e4);
+                  n4 = n4.call(t4);
                 }, n: function() {
-                  var e5 = n4.next();
-                  return u3 = e5.done, e5;
-                }, e: function(e5) {
-                  a3 = true, s5 = e5;
+                  var t5 = n4.next();
+                  return u3 = t5.done, t5;
+                }, e: function(t5) {
+                  a3 = true, o4 = t5;
                 }, f: function() {
                   try {
                     u3 || null == n4.return || n4.return();
                   } finally {
                     if (a3)
-                      throw s5;
+                      throw o4;
                   }
                 } };
               }(n3.keys);
               try {
                 for (l3.s(); !(c2 = l3.n()).done; )
                   a2(c2.value);
-              } catch (e4) {
-                l3.e(e4);
+              } catch (t4) {
+                l3.e(t4);
               } finally {
                 l3.f();
               }
             } else
               a2();
           }), n3.filter && (i2 = n3.filter(i2));
-          var s3 = i2.slice(0, t3.resultsList.maxResults);
-          t3.feedback = { query: e3, matches: i2, results: s3 }, f("results", t3);
-        }, m = "aria-expanded", b = "aria-activedescendant", y = "aria-selected", v = function(e3, n3) {
-          e3.feedback.selection = t2({ index: n3 }, e3.feedback.results[n3]);
-        }, g = function(e3) {
-          e3.isOpen || ((e3.wrapper || e3.input).setAttribute(m, true), e3.list.removeAttribute("hidden"), e3.isOpen = true, f("open", e3));
-        }, w = function(e3) {
-          e3.isOpen && ((e3.wrapper || e3.input).setAttribute(m, false), e3.input.setAttribute(b, ""), e3.list.setAttribute("hidden", ""), e3.isOpen = false, f("close", e3));
-        }, O = function(e3, t3) {
-          var n3 = t3.resultItem, r2 = t3.list.getElementsByTagName(n3.tag), o2 = !!n3.selected && n3.selected.split(" ");
-          if (t3.isOpen && r2.length) {
-            var s3, u2, a2 = t3.cursor;
-            e3 >= r2.length && (e3 = 0), e3 < 0 && (e3 = r2.length - 1), t3.cursor = e3, a2 > -1 && (r2[a2].removeAttribute(y), o2 && (u2 = r2[a2].classList).remove.apply(u2, i(o2))), r2[e3].setAttribute(y, true), o2 && (s3 = r2[e3].classList).add.apply(s3, i(o2)), t3.input.setAttribute(b, r2[t3.cursor].id), t3.list.scrollTop = r2[e3].offsetTop - t3.list.clientHeight + r2[e3].clientHeight + 5, t3.feedback.cursor = t3.cursor, v(t3, e3), f("navigate", t3);
+          var o2 = i2.slice(0, e3.resultsList.maxResults);
+          e3.feedback = { query: t3, matches: i2, results: o2 }, f("results", e3);
+        }, m = "aria-expanded", v = "aria-activedescendant", y = "aria-selected", b = function(t3, e3) {
+          t3.feedback.selection = r({ index: e3 }, t3.feedback.results[e3]);
+        }, g = function(t3) {
+          t3.isOpen || ((t3.wrapper || t3.input).setAttribute(m, true), t3.list.removeAttribute("hidden"), t3.isOpen = true, f("open", t3));
+        }, w = function(t3) {
+          t3.isOpen && ((t3.wrapper || t3.input).setAttribute(m, false), t3.input.setAttribute(v, ""), t3.list.setAttribute("hidden", ""), t3.isOpen = false, f("close", t3));
+        }, O = function(t3, e3) {
+          var n3 = e3.resultItem, r2 = e3.list.getElementsByTagName(n3.tag), o2 = !!n3.selected && n3.selected.split(" ");
+          if (e3.isOpen && r2.length) {
+            var s3, u2, a2 = e3.cursor;
+            t3 >= r2.length && (t3 = 0), t3 < 0 && (t3 = r2.length - 1), e3.cursor = t3, a2 > -1 && (r2[a2].removeAttribute(y), o2 && (u2 = r2[a2].classList).remove.apply(u2, i(o2))), r2[t3].setAttribute(y, true), o2 && (s3 = r2[t3].classList).add.apply(s3, i(o2)), e3.input.setAttribute(v, r2[e3.cursor].id), e3.list.scrollTop = r2[t3].offsetTop - e3.list.clientHeight + r2[t3].clientHeight + 5, e3.feedback.cursor = e3.cursor, b(e3, t3), f("navigate", e3);
           }
-        }, A = function(e3) {
-          O(e3.cursor + 1, e3);
-        }, k = function(e3) {
-          O(e3.cursor - 1, e3);
-        }, L = function(e3, t3, n3) {
-          (n3 = n3 >= 0 ? n3 : e3.cursor) < 0 || (e3.feedback.event = t3, v(e3, n3), f("selection", e3), w(e3));
+        }, A = function(t3) {
+          O(t3.cursor + 1, t3);
+        }, S = function(t3) {
+          O(t3.cursor - 1, t3);
+        }, j = function(t3, e3, n3) {
+          (n3 = n3 >= 0 ? n3 : t3.cursor) < 0 || (t3.feedback.event = e3, b(t3, n3), f("selection", t3), w(t3));
         };
-        function j(e3, n3) {
-          var r2 = this;
+        function k(t3, e3) {
+          var n3 = this;
           return new Promise(function(i2, o2) {
             var s3, u2;
-            return s3 = n3 || ((u2 = e3.input) instanceof HTMLInputElement || u2 instanceof HTMLTextAreaElement ? u2.value : u2.innerHTML), function(e4, t3, n4) {
-              return t3 ? t3(e4) : e4.length >= n4;
-            }(s3 = e3.query ? e3.query(s3) : s3, e3.trigger, e3.threshold) ? d(e3, s3).then(function(n4) {
+            return s3 = e3 || ((u2 = t3.input) instanceof HTMLInputElement || u2 instanceof HTMLTextAreaElement ? u2.value : u2.innerHTML), function(t4, e4, n4) {
+              return e4 ? e4(t4) : t4.length >= n4;
+            }(s3 = t3.query ? t3.query(s3) : s3, t3.trigger, t3.threshold) ? d(t3, s3).then(function(e4) {
               try {
-                return e3.feedback instanceof Error ? i2() : (h(s3, e3), e3.resultsList && function(e4) {
-                  var n5 = e4.resultsList, r3 = e4.list, i3 = e4.resultItem, o3 = e4.feedback, s4 = o3.matches, u3 = o3.results;
-                  if (e4.cursor = -1, r3.innerHTML = "", s4.length || n5.noResults) {
+                return t3.feedback instanceof Error ? i2() : (h(s3, t3), t3.resultsList && function(t4) {
+                  var e5 = t4.resultsList, n4 = t4.list, i3 = t4.resultItem, o3 = t4.feedback, s4 = o3.matches, u3 = o3.results;
+                  if (t4.cursor = -1, n4.innerHTML = "", s4.length || e5.noResults) {
                     var c3 = new DocumentFragment();
-                    u3.forEach(function(e5, n6) {
-                      var r4 = a(i3.tag, t2({ id: "".concat(i3.id, "_").concat(n6), role: "option", innerHTML: e5.match, inside: c3 }, i3.class && { class: i3.class }));
-                      i3.element && i3.element(r4, e5);
-                    }), r3.append(c3), n5.element && n5.element(r3, o3), g(e4);
+                    u3.forEach(function(t5, e6) {
+                      var n5 = a(i3.tag, r({ id: "".concat(i3.id, "_").concat(e6), role: "option", innerHTML: t5.match, inside: c3 }, i3.class && { class: i3.class }));
+                      i3.element && i3.element(n5, t5);
+                    }), n4.append(c3), e5.element && e5.element(n4, o3), g(t4);
                   } else
-                    w(e4);
-                }(e3), c2.call(r2));
-              } catch (e4) {
-                return o2(e4);
+                    w(t4);
+                }(t3), c2.call(n3));
+              } catch (t4) {
+                return o2(t4);
               }
-            }, o2) : (w(e3), c2.call(r2));
+            }, o2) : (w(t3), c2.call(n3));
             function c2() {
               return i2();
             }
           });
         }
-        var S = function(e3, t3) {
-          for (var n3 in e3)
-            for (var r2 in e3[n3])
-              t3(n3, r2);
-        }, T = function(e3) {
-          var n3, r2, i2, o2 = e3.events, s3 = (n3 = function() {
-            return j(e3);
-          }, r2 = e3.debounce, function() {
+        var L = function(t3, e3) {
+          for (var n3 in t3)
+            for (var r2 in t3[n3])
+              e3(n3, r2);
+        }, T = function(t3) {
+          var e3, n3, i2, o2 = t3.events, s3 = (e3 = function() {
+            return k(t3);
+          }, n3 = t3.debounce, function() {
             clearTimeout(i2), i2 = setTimeout(function() {
-              return n3();
-            }, r2);
-          }), u2 = e3.events = t2({ input: t2({}, o2 && o2.input) }, e3.resultsList && { list: o2 ? t2({}, o2.list) : {} }), a2 = { input: { input: function() {
+              return e3();
+            }, n3);
+          }), u2 = t3.events = r({ input: r({}, o2 && o2.input) }, t3.resultsList && { list: o2 ? r({}, o2.list) : {} }), a2 = { input: { input: function() {
             s3();
-          }, keydown: function(t3) {
-            !function(e4, t4) {
-              switch (e4.keyCode) {
+          }, keydown: function(e4) {
+            !function(t4, e5) {
+              switch (t4.keyCode) {
                 case 40:
                 case 38:
-                  e4.preventDefault(), 40 === e4.keyCode ? A(t4) : k(t4);
+                  t4.preventDefault(), 40 === t4.keyCode ? A(e5) : S(e5);
                   break;
                 case 13:
-                  t4.submit || e4.preventDefault(), t4.cursor >= 0 && L(t4, e4);
+                  e5.submit || t4.preventDefault(), e5.cursor >= 0 && j(e5, t4);
                   break;
                 case 9:
-                  t4.resultsList.tabSelect && t4.cursor >= 0 && L(t4, e4);
+                  e5.resultsList.tabSelect && e5.cursor >= 0 && j(e5, t4);
                   break;
                 case 27:
-                  t4.input.value = "", w(t4);
+                  e5.input.value = "", f("clear", e5), w(e5);
               }
-            }(t3, e3);
+            }(e4, t3);
           }, blur: function() {
-            w(e3);
-          } }, list: { mousedown: function(e4) {
-            e4.preventDefault();
-          }, click: function(t3) {
-            !function(e4, t4) {
-              var n4 = t4.resultItem.tag.toUpperCase(), r3 = Array.from(t4.list.querySelectorAll(n4)), i3 = e4.target.closest(n4);
-              i3 && i3.nodeName === n4 && L(t4, e4, r3.indexOf(i3));
-            }(t3, e3);
+            w(t3);
+          } }, list: { mousedown: function(t4) {
+            t4.preventDefault();
+          }, click: function(e4) {
+            !function(t4, e5) {
+              var n4 = e5.resultItem.tag.toUpperCase(), r2 = Array.from(e5.list.querySelectorAll(n4)), i3 = t4.target.closest(n4);
+              i3 && i3.nodeName === n4 && j(e5, t4, r2.indexOf(i3));
+            }(e4, t3);
           } } };
-          S(a2, function(t3, n4) {
-            (e3.resultsList || "input" === n4) && (u2[t3][n4] || (u2[t3][n4] = a2[t3][n4]));
-          }), S(u2, function(t3, n4) {
-            e3[t3].addEventListener(n4, u2[t3][n4]);
+          L(a2, function(e4, n4) {
+            (t3.resultsList || "input" === n4) && (u2[e4][n4] || (u2[e4][n4] = a2[e4][n4]));
+          }), L(u2, function(e4, n4) {
+            t3[e4].addEventListener(n4, u2[e4][n4]);
           });
         };
-        function E(e3) {
-          var n3 = this;
-          return new Promise(function(r2, i2) {
+        function E(t3) {
+          var e3 = this;
+          return new Promise(function(n3, i2) {
             var o2, s3, u2;
-            if (o2 = e3.placeHolder, u2 = { role: "combobox", "aria-owns": (s3 = e3.resultsList).id, "aria-haspopup": true, "aria-expanded": false }, a(e3.input, t2(t2({ "aria-controls": s3.id, "aria-autocomplete": "both" }, o2 && { placeholder: o2 }), !e3.wrapper && t2({}, u2))), e3.wrapper && (e3.wrapper = a("div", t2({ around: e3.input, class: e3.name + "_wrapper" }, u2))), s3 && (e3.list = a(s3.tag, t2({ dest: [s3.destination, s3.position], id: s3.id, role: "listbox", hidden: "hidden" }, s3.class && { class: s3.class }))), T(e3), e3.data.cache)
-              return d(e3).then(function(e4) {
+            if (o2 = t3.placeHolder, u2 = { role: "combobox", "aria-owns": (s3 = t3.resultsList).id, "aria-haspopup": true, "aria-expanded": false }, a(t3.input, r(r({ "aria-controls": s3.id, "aria-autocomplete": "both" }, o2 && { placeholder: o2 }), !t3.wrapper && r({}, u2))), t3.wrapper && (t3.wrapper = a("div", r({ around: t3.input, class: t3.name + "_wrapper" }, u2))), s3 && (t3.list = a(s3.tag, r({ dest: [s3.destination, s3.position], id: s3.id, role: "listbox", hidden: "hidden" }, s3.class && { class: s3.class }))), T(t3), t3.data.cache)
+              return d(t3).then(function(t4) {
                 try {
-                  return c2.call(n3);
-                } catch (e5) {
-                  return i2(e5);
+                  return c2.call(e3);
+                } catch (t5) {
+                  return i2(t5);
                 }
               }, i2);
             function c2() {
-              return f("init", e3), r2();
+              return f("init", t3), n3();
             }
-            return c2.call(n3);
+            return c2.call(e3);
           });
         }
-        function x(e3) {
-          var t3 = e3.prototype;
-          t3.init = function() {
+        function P(t3) {
+          var e3 = t3.prototype;
+          e3.init = function() {
             E(this);
-          }, t3.start = function(e4) {
-            j(this, e4);
-          }, t3.unInit = function() {
+          }, e3.start = function(t4) {
+            k(this, t4);
+          }, e3.unInit = function() {
             if (this.wrapper) {
-              var e4 = this.wrapper.parentNode;
-              e4.insertBefore(this.input, this.wrapper), e4.removeChild(this.wrapper);
+              var t4 = this.wrapper.parentNode;
+              t4.insertBefore(this.input, this.wrapper), t4.removeChild(this.wrapper);
             }
-            var t4;
-            S((t4 = this).events, function(e5, n3) {
-              t4[e5].removeEventListener(n3, t4.events[e5][n3]);
+            var e4;
+            L((e4 = this).events, function(t5, n3) {
+              e4[t5].removeEventListener(n3, e4.events[t5][n3]);
             });
-          }, t3.open = function() {
+          }, e3.open = function() {
             g(this);
-          }, t3.close = function() {
+          }, e3.close = function() {
             w(this);
-          }, t3.goTo = function(e4) {
-            O(e4, this);
-          }, t3.next = function() {
+          }, e3.goTo = function(t4) {
+            O(t4, this);
+          }, e3.next = function() {
             A(this);
-          }, t3.previous = function() {
-            k(this);
-          }, t3.select = function(e4) {
-            L(this, null, e4);
-          }, t3.search = function(e4, t4, n3) {
-            return p(e4, t4, n3);
+          }, e3.previous = function() {
+            S(this);
+          }, e3.select = function(t4) {
+            j(this, null, t4);
+          }, e3.search = function(t4, e4, n3) {
+            return p(t4, e4, n3);
           };
         }
-        return function e3(t3) {
-          this.options = t3, this.id = e3.instances = (e3.instances || 0) + 1, this.name = "autoComplete", this.wrapper = 1, this.threshold = 1, this.debounce = 0, this.resultsList = { position: "afterend", tag: "ul", maxResults: 5 }, this.resultItem = { tag: "li" }, function(e4) {
-            var t4 = e4.name, r2 = e4.options, i2 = e4.resultsList, o2 = e4.resultItem;
-            for (var s3 in r2)
-              if ("object" === n2(r2[s3]))
-                for (var a2 in e4[s3] || (e4[s3] = {}), r2[s3])
-                  e4[s3][a2] = r2[s3][a2];
+        return function t3(e3) {
+          this.options = e3, this.id = t3.instances = (t3.instances || 0) + 1, this.name = "autoComplete", this.wrapper = 1, this.threshold = 1, this.debounce = 0, this.resultsList = { position: "afterend", tag: "ul", maxResults: 5 }, this.resultItem = { tag: "li" }, function(t4) {
+            var e4 = t4.name, n3 = t4.options, r2 = t4.resultsList, i2 = t4.resultItem;
+            for (var s3 in n3)
+              if ("object" === o(n3[s3]))
+                for (var a2 in t4[s3] || (t4[s3] = {}), n3[s3])
+                  t4[s3][a2] = n3[s3][a2];
               else
-                e4[s3] = r2[s3];
-            e4.selector = e4.selector || "#" + t4, i2.destination = i2.destination || e4.selector, i2.id = i2.id || t4 + "_list_" + e4.id, o2.id = o2.id || t4 + "_result", e4.input = u(e4.selector);
-          }(this), x.call(this, e3), E(this);
+                t4[s3] = n3[s3];
+            t4.selector = t4.selector || "#" + e4, r2.destination = r2.destination || t4.selector, r2.id = r2.id || e4 + "_list_" + t4.id, i2.id = i2.id || e4 + "_result", t4.input = u(t4.selector);
+          }(this), P.call(this, t3), E(this);
         };
-      }, "object" == typeof exports && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : (e = "undefined" != typeof globalThis ? globalThis : e || self).autoComplete = t();
+      }, "object" == typeof exports && "undefined" != typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : (t = "undefined" != typeof globalThis ? globalThis : t || self).autoComplete = e();
     }
   });
 
