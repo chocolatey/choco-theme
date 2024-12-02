@@ -1052,7 +1052,7 @@ div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-lin
     opacity: 1;
   }
 }
-body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) {
   overflow: hidden;
 }
 body.swal2-height-auto {
@@ -1069,13 +1069,13 @@ body.swal2-no-backdrop .swal2-container .swal2-modal {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 @media print {
-  body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+  body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) {
     overflow-y: scroll !important;
   }
-  body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) > [aria-hidden=true] {
+  body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) > [aria-hidden=true] {
     display: none;
   }
-  body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
+  body.swal2-shown:not(.swal2-no-backdrop, .swal2-toast-shown) .swal2-container {
     position: static !important;
   }
 }
