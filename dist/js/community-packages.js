@@ -29896,6 +29896,10 @@ ${templateEnter}`;
             calloutIconColor = "warning";
             calloutIcon = "triangle-exclamation";
             callout.classList.add("callout-warning");
+          } else if (callout.classList.contains("callout-tip") || calloutHeaderText.includes(":choco-tip:")) {
+            calloutIconColor = "tip";
+            calloutIcon = "lightbulb";
+            callout.classList.add("callout-tip");
           } else {
             calloutIconColor = "info";
             calloutIcon = "info";
