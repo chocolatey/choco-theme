@@ -150,6 +150,18 @@
         padding-left: 0;
     }
 
+    .article-body ul,
+    .article-body ol {
+        padding-left: 2rem;
+        margin: 0 0 1rem;
+
+        ul,
+        ol {
+            margin-bottom: 0;
+            list-style-type: circle;
+        }
+    }
+
     // Override with text color
     .attachments .attachment-item .attachment-icon,
     .recent-activity-item-meta {

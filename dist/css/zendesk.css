@@ -48271,6 +48271,18 @@ html:not(.chocolatey-ccm) body:not(.boxstarter-org) .btn-link:focus {
 .chocolatey-zendesk ul {
   padding-left: 0;
 }
+.chocolatey-zendesk .article-body ul,
+.chocolatey-zendesk .article-body ol {
+  padding-left: 2rem;
+  margin: 0 0 1rem 0;
+}
+.chocolatey-zendesk .article-body ul ul,
+.chocolatey-zendesk .article-body ul ol,
+.chocolatey-zendesk .article-body ol ul,
+.chocolatey-zendesk .article-body ol ol {
+  margin-bottom: 0;
+  list-style-type: circle;
+}
 .chocolatey-zendesk .attachments .attachment-item .attachment-icon,
 .chocolatey-zendesk .recent-activity-item-meta {
   color: var(--bs-body-color);
