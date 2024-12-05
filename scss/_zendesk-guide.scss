@@ -150,6 +150,18 @@
         padding-left: 0;
     }
 
+    .article-body ul,
+    .article-body ol {
+        padding-left: 2rem;
+        margin: 0 0 1rem;
+
+        ul,
+        ol {
+            margin-bottom: 0;
+            list-style-type: circle;
+        }
+    }
+
     // Override with text color
     .attachments .attachment-item .attachment-icon,
     .recent-activity-item-meta {
@@ -302,5 +314,15 @@
 
     .my-activities-header {
         margin-top: 20px;
+    }
+
+    // Tabs
+    .tab-content {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+        border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+        border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+        border-radius: 0 0 var(--bs-border-radius) var(--bs-border-radius);
     }
 }
