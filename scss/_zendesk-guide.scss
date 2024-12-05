@@ -315,4 +315,14 @@
     .my-activities-header {
         margin-top: 20px;
     }
+
+    // Tabs
+    .tab-content {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+        border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+        border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+        border-radius: 0 0 var(--bs-border-radius) var(--bs-border-radius);
+    }
 }

@@ -48407,3 +48407,11 @@ html:not(.chocolatey-ccm) body:not(.boxstarter-org) .btn-link:focus {
 .chocolatey-zendesk .my-activities-header {
   margin-top: 20px;
 }
+.chocolatey-zendesk .tab-content {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  border-radius: 0 0 var(--bs-border-radius) var(--bs-border-radius);
+}
