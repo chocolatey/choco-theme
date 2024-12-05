@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* choco-theme zendesk v0.8.2 (https://github.com/chocolatey/choco-theme#readme)
+* choco-theme zendesk v0.8.3 (https://github.com/chocolatey/choco-theme#readme)
 * Copyright 2020-2024 Chocolatey Software
 * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -48274,7 +48274,7 @@ html:not(.chocolatey-ccm) body:not(.boxstarter-org) .btn-link:focus {
 .chocolatey-zendesk .article-body ul,
 .chocolatey-zendesk .article-body ol {
   padding-left: 2rem;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
 }
 .chocolatey-zendesk .article-body ul ul,
 .chocolatey-zendesk .article-body ul ol,
@@ -48410,8 +48410,8 @@ html:not(.chocolatey-ccm) body:not(.boxstarter-org) .btn-link:focus {
 .chocolatey-zendesk .tab-content {
   padding: 1rem;
   margin-bottom: 1rem;
-  border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   border-radius: 0 0 var(--bs-border-radius) var(--bs-border-radius);
 }
