@@ -14,8 +14,8 @@
 
 // Checkbox buttons
 .btn-check + .btn.btn-outline-secondary:hover {
-    background-color: var(--bs-secondary);
     color: var(--secondary-contrast);
+    background-color: var(--bs-secondary);
 }
 
 // Custom Switches
