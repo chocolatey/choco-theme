@@ -37,9 +37,9 @@ strong {
 /*! purgecss start ignore */
 *:disabled, 
 *.disabled {
-    cursor: not-allowed;
     font-style: italic !important;
-    font-weight: normal !important;
+    font-weight: 400 !important;
+    cursor: not-allowed;
 }
 
 /*! purgecss end ignore */

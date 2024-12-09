@@ -1,10 +1,10 @@
 .btn {
-    min-height: 45px;
     min-width: 45px;
+    min-height: 45px;
 }
 
 a.btn {
-    line-height: 1.9
+    line-height: 1.9;
 }
 
 .btn-close {
@@ -180,8 +180,8 @@ button.btn-grab:not(:disabled) {
     --bs-btn-active-border-color: var(--bs-primary);
 
     &:focus {
-        border: 3px solid var(--bs-primary);
         color: var(--bs-primary);
+        border: 3px solid var(--bs-primary);
     }
 }
 

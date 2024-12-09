@@ -146,7 +146,6 @@ a.circle.text-bg-body-contrast:hover {
 }
 
 .bg-desk {
-    background: linear-gradient(-45deg, rgba(var(--bs-primary-rgb), .8) 0%, rgba(var(--bs-primary-rgb), .8) 100%), url("/assets/images/headers/c4b-banner.jpg");
     background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), .8) 0%, rgba(var(--bs-primary-rgb), .8) 100%), url("/assets/images/headers/c4b-banner.jpg");
     filter: progid:dximagetransform.microsoft.gradient(startColorstr="#e61a375a", endColorstr="#e67db9e8", GradientType=1);
 }
