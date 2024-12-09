@@ -1,55 +1,4 @@
 /* stylelint-disable selector-max-type */
-:root,
-:root[data-bs-theme="light"] {
-    &.chocolatey-ccm {
-        main #appSidebar nav {
-            li {
-                a,
-                button {
-                    &.active,
-                    &:hover{
-                        background: rgba(var(--bs-primary-rgb), .2);
-                    }
-                }
-
-                &.active-parent {
-                    a,
-                    button {
-                        &.collapsed {
-                            background: rgba(var(--bs-primary-rgb), .2);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-:root[data-bs-theme="dark"] {
-    &.chocolatey-ccm {
-        main #appSidebar nav {
-            li {
-                a,
-                button {
-                    &.active,
-                    &:hover{
-                        background: rgba(var(--bs-primary-rgb), .1);
-                    }
-                }
-
-                &.active-parent {
-                    a,
-                    button {
-                        &.collapsed {
-                            background: rgba(var(--bs-primary-rgb), .1);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 .chocolatey-ccm {
     main #appSidebar {
         max-width: 300px;
@@ -110,11 +59,26 @@
                     [aria-expanded="true"] {
                         font-weight: 700;
                     }
+
+                    a,
+                    button {
+                        &.collapsed {
+                            background: var(--bs-tertiary-bg);
+                        }
+                    }
                 }
 
                 &:not(.active-parent):not(.active) {
                     a {
                         font-weight: 400;
+                    }
+                }
+
+                a,
+                button {
+                    &.active,
+                    &:hover{
+                        background: var(--bs-tertiary-bg);
                     }
                 }
 

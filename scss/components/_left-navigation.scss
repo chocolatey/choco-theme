@@ -165,3 +165,20 @@
     }
 }
 
+#leftSidebarNav .navbar > .navbar-collapse .navbar-nav .nav-item {
+    &.nav-item-tertiary {
+        .nav-link {
+            &.active-page,
+            &:hover {
+                background: var(--bs-tertiary-bg);
+            }
+        }
+
+        .nav-link-collapse.active {
+            .collapsed,
+            .collapsed + a {
+                background: var(--bs-tertiary-bg);
+            }
+        }
+    }
+}
