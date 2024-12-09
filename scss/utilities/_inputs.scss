@@ -12,6 +12,12 @@
     }
 }
 
+// Checkbox buttons
+.btn-check + .btn.btn-outline-secondary:hover {
+    background-color: var(--bs-secondary);
+    color: var(--secondary-contrast);
+}
+
 // Custom Switches
 .form-switch {
     &.form-switch-active,

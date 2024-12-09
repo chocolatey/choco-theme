@@ -196,9 +196,14 @@ $input-bg:                           var(--bs-secondary-bg);
 $input-border-color:                 var(--bs-secondary);
 $input-disabled-bg:                  var(--bs-tertiary-bg);
 $form-check-input-border:            var(--bs-border-width) solid $input-border-color;
-$form-check-input-checked-bg-color:  var(--#{$prefix}primary);
-// Form images
+$form-check-input-checked-bg-color:  var(--bs-primary);
+$input-group-addon-color:            var(--bs-secondary-contrast);
+$input-group-addon-bg:               var(--bs-secondary);
+$form-file-button-color:             var(--bs-secondary-contrast);
+$form-file-button-bg:                var(--bs-secondary);
+$form-file-button-hover-bg:          var(--bs-secondary-shift);
 
+// Form images
 $form-check-input-checked-bg-image:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
 $form-check-input-checked-bg-image-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-dark-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
 
