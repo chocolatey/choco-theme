@@ -1,5 +1,5 @@
 .nav-tabs .nav-link {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .nav-tabs-image-boxes {
@@ -90,8 +90,8 @@
     }
 
     .nav-link {
+        font-weight: 700;
         border: 1px solid var(--bs-secondary);
-        font-weight: bold;
 
         &:not(.active) {
             color: var(--bs-body-color);

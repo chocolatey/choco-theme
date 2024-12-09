@@ -8,22 +8,22 @@
         &[aria-pressed="true"] {
             cursor: pointer;
 
-            &:before {
-                background: var(--bs-primary);
-                border-radius: .25rem;
-                content: "";
-                display: block;
-                height: calc(100% + 4px);
-                left: 0;
+            &::before {
                 position: absolute;
                 top: -2px;
+                left: 0;
+                display: block;
                 width: .25rem;
+                height: calc(100% + 4px);
+                content: "";
+                background: var(--bs-primary);
+                border-radius: .25rem;
             }
         }
 
         &[aria-pressed="true"],
         &.active {
-            font-weight: bold;
+            font-weight: 700;
         }
 
         &[aria-pressed="true"] {

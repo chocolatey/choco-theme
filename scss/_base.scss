@@ -34,11 +34,11 @@ strong {
     font-weight: 700;
 }
 
-*:disabled, 
+*:disabled,
 *.disabled {
-    cursor: not-allowed;
     font-style: italic !important;
-    font-weight: normal !important;
+    font-weight: 400 !important;
+    cursor: not-allowed;
 }
 
 [data-bs-theme="dark"] .light-theme,
