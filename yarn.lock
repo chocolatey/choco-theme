@@ -190,6 +190,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@axe-core/playwright@npm:^4.10.1":
+  version: 4.10.1
+  resolution: "@axe-core/playwright@npm:4.10.1"
+  dependencies:
+    axe-core: "npm:~4.10.2"
+  peerDependencies:
+    playwright-core: ">= 1.0.0"
+  checksum: 10c0/d6ca04bfb4d8d01238f2c3b9899a806da4975e847ed017ee03fe147226f55b3c94d21ee6e59a4419708a1c581176f4b3f18fb76f27b2c23ec5dd8405f4d383a0
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:^7.0.0":
   version: 7.26.2
   resolution: "@babel/code-frame@npm:7.26.2"
@@ -2091,6 +2102,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axe-core@npm:~4.10.2":
+  version: 4.10.2
+  resolution: "axe-core@npm:4.10.2"
+  checksum: 10c0/0e20169077de96946a547fce0df39d9aeebe0077f9d3eeff4896518b96fde857f80b98f0d4279274a7178791744dd5a54bb4f322de45b4f561ffa2586ff9a09d
+  languageName: node
+  linkType: hard
+
+"axe-html-reporter@npm:^2.2.11":
+  version: 2.2.11
+  resolution: "axe-html-reporter@npm:2.2.11"
+  dependencies:
+    mustache: "npm:^4.0.1"
+  peerDependencies:
+    axe-core: ">=3"
+  checksum: 10c0/7f56c06e28aea591762c10f151bd48efbf7cff6a4a783a8074e779d283366a745085be64de72e6f9208006bab8dedc83681c8a9a691c9904886244d579375acd
+  languageName: node
+  linkType: hard
+
 "balance-text@npm:^3.3.1":
   version: 3.3.1
   resolution: "balance-text@npm:3.3.1"
@@ -2373,6 +2402,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "choco-theme@workspace:."
   dependencies:
+    "@axe-core/playwright": "npm:^4.10.1"
     "@docsearch/css": "npm:^3.3.3"
     "@docsearch/js": "npm:^3.3.3"
     "@eonasdan/tempus-dominus": "npm:^6.9.9"
@@ -2401,6 +2431,7 @@ __metadata:
     abp-web-resources: "npm:^5.9.2"
     add-to-calendar-button: "npm:^2.6.9"
     anchor-js: "npm:^5.0.0"
+    axe-html-reporter: "npm:^2.2.11"
     balance-text: "npm:^3.3.1"
     block-ui: "npm:^2.70.1"
     bootstrap: "npm:5.3.3"
@@ -5294,7 +5325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mustache@npm:^4.2.0":
+"mustache@npm:^4.0.1, mustache@npm:^4.2.0":
   version: 4.2.0
   resolution: "mustache@npm:4.2.0"
   bin:
