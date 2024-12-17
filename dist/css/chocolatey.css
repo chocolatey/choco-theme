@@ -59782,7 +59782,7 @@ blockquote.blockquote-tip hr, blockquote.callout-tip hr,
   background: transparent !important;
 }
 
-.btn {
+.btn:not(.btn-sm) {
   min-width: 45px;
   min-height: 45px;
 }
