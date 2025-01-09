@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* choco-theme zendesk v0.8.3 (https://github.com/chocolatey/choco-theme#readme)
+* choco-theme zendesk v0.8.4 (https://github.com/chocolatey/choco-theme#readme)
 * Copyright 2020-2024 Chocolatey Software
 * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -47148,6 +47148,10 @@ table.dataTable tr.dt-hasChild td.dt-control:before {
   border-right: 5px solid transparent;
 }
 
+table.dataTable tfoot:empty {
+  display: none;
+}
+
 html.dark table.dataTable td.dt-control:before,
 :root[data-bs-theme=dark] table.dataTable td.dt-control:before,
 :root[data-theme=dark] table.dataTable td.dt-control:before {
@@ -47376,6 +47380,12 @@ table.dataTable td {
   box-sizing: border-box;
 }
 
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date,
+table.dataTable td.dt-type-numeric,
+table.dataTable td.dt-type-date {
+  text-align: right;
+}
+
 table.dataTable th.dt-left,
 table.dataTable td.dt-left {
   text-align: left;
@@ -47405,12 +47415,6 @@ table.dataTable th.dt-empty,
 table.dataTable td.dt-empty {
   text-align: center;
   vertical-align: top;
-}
-
-table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date,
-table.dataTable td.dt-type-numeric,
-table.dataTable td.dt-type-date {
-  text-align: right;
 }
 
 table.dataTable thead th,

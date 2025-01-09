@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.3 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.4 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -19989,7 +19989,7 @@
   }
   var zo = ["appId", "apiKey", "authMode", "algoliaAgents"];
   var Jo = ["params"];
-  var Qo = "5.12.0";
+  var Qo = "5.14.2";
   function $o(e2) {
     return [{ url: "".concat(e2, "-dsn.algolia.net"), accept: "read", protocol: "https" }, { url: "".concat(e2, ".algolia.net"), accept: "write", protocol: "https" }].concat(function(e3) {
       for (var t2 = e3, n3 = e3.length - 1; n3 > 0; n3--) {
@@ -19999,7 +19999,7 @@
       return t2;
     }([{ url: "".concat(e2, "-1.algolianet.com"), accept: "readWrite", protocol: "https" }, { url: "".concat(e2, "-2.algolianet.com"), accept: "readWrite", protocol: "https" }, { url: "".concat(e2, "-3.algolianet.com"), accept: "readWrite", protocol: "https" }]));
   }
-  var Zo = "3.8.0";
+  var Zo = "3.8.2";
   var Go = ["footer", "searchBox"];
   function Yo(e2) {
     var t2 = e2.appId, n3 = e2.apiKey, r2 = e2.indexName, o2 = e2.placeholder, i2 = void 0 === o2 ? "Search docs" : o2, a2 = e2.searchParameters, c2 = e2.maxResultsPerGroup, u2 = e2.onClose, l3 = void 0 === u2 ? mo : u2, s3 = e2.transformItems, f2 = void 0 === s3 ? fo : s3, p2 = e2.hitComponent, m2 = void 0 === p2 ? Kr : p2, v2 = e2.resultsFooterComponent, h2 = void 0 === v2 ? function() {
@@ -20565,5 +20565,5 @@ jquery/dist/jquery.js:
    *)
 
 @docsearch/js/dist/esm/index.js:
-  (*! @docsearch/js 3.8.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com *)
+  (*! @docsearch/js 3.8.2 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com *)
 */
