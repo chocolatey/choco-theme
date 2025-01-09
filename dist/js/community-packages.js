@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.3 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.4 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -11392,8 +11392,8 @@ ${templateEnter}`;
         var ie_version = ie && (ie_upto10 ? document.documentMode || 6 : +(edge || ie_11up)[1]);
         var webkit = !edge && /WebKit\//.test(userAgent);
         var qtwebkit = webkit && /Qt\/\d+\.\d+/.test(userAgent);
-        var chrome2 = !edge && /Chrome\/(\d+)/.exec(userAgent);
-        var chrome_version = chrome2 && +chrome2[1];
+        var chrome = !edge && /Chrome\/(\d+)/.exec(userAgent);
+        var chrome_version = chrome && +chrome[1];
         var presto = /Opera\//.test(userAgent);
         var safari = /Apple Computer/.test(navigator.vendor);
         var mac_geMountainLion = /Mac OS X 1\d\D([8-9]|\d\d)\D/.test(userAgent);
@@ -14166,13 +14166,13 @@ ${templateEnter}`;
           cm.display.lineNumChars = null;
         }
         function pageScrollX(doc2) {
-          if (chrome2 && android) {
+          if (chrome && android) {
             return -(doc2.body.getBoundingClientRect().left - parseInt(getComputedStyle(doc2.body).marginLeft));
           }
           return doc2.defaultView.pageXOffset || (doc2.documentElement || doc2.body).scrollLeft;
         }
         function pageScrollY(doc2) {
-          if (chrome2 && android) {
+          if (chrome && android) {
             return -(doc2.body.getBoundingClientRect().top - parseInt(getComputedStyle(doc2.body).marginTop));
           }
           return doc2.defaultView.pageYOffset || (doc2.documentElement || doc2.body).scrollTop;
@@ -16016,7 +16016,7 @@ ${templateEnter}`;
           d.scroller = elt("div", [d.sizer, d.heightForcer, d.gutters], "CodeMirror-scroll");
           d.scroller.setAttribute("tabIndex", "-1");
           d.wrapper = elt("div", [d.scrollbarFiller, d.gutterFiller, d.scroller], "CodeMirror");
-          if (chrome2 && chrome_version >= 105) {
+          if (chrome && chrome_version >= 105) {
             d.wrapper.style.clipPath = "inset(0px)";
           }
           d.wrapper.setAttribute("translate", "no");
@@ -16063,7 +16063,7 @@ ${templateEnter}`;
           wheelPixelsPerUnit = -0.53;
         } else if (gecko) {
           wheelPixelsPerUnit = 15;
-        } else if (chrome2) {
+        } else if (chrome) {
           wheelPixelsPerUnit = -0.7;
         } else if (safari) {
           wheelPixelsPerUnit = -1 / 3;
@@ -16087,7 +16087,7 @@ ${templateEnter}`;
           return delta;
         }
         function onScrollWheel(cm, e) {
-          if (chrome2 && chrome_version == 102) {
+          if (chrome && chrome_version == 102) {
             if (cm.display.chromeScrollHack == null) {
               cm.display.sizer.style.pointerEvents = "none";
             } else {
@@ -21269,7 +21269,7 @@ ${templateEnter}`;
             return;
           }
           var sel = this.getSelection(), cm = this.cm;
-          if (android && chrome2 && this.cm.display.gutterSpecs.length && isInGutter(sel.anchorNode)) {
+          if (android && chrome && this.cm.display.gutterSpecs.length && isInGutter(sel.anchorNode)) {
             this.cm.triggerOnKeyDown({ type: "keydown", keyCode: 8, preventDefault: Math.abs });
             this.blur();
             this.focus();
@@ -24597,16 +24597,17 @@ ${templateEnter}`;
             self2.dictionary = dictionary;
             if (affData && wordsData) {
               setup();
-            } else if (typeof window !== "undefined" && "chrome" in window && "extension" in window.chrome && "getURL" in window.chrome.extension) {
+            } else if (typeof window !== "undefined" && (window.chrome || window.browser)) {
+              var runtime = window.chrome && window.chrome.runtime ? window.chrome.runtime : browser.runtime;
               if (settings.dictionaryPath) {
                 path = settings.dictionaryPath;
               } else {
                 path = "typo/dictionaries";
               }
               if (!affData)
-                readDataFile(chrome.extension.getURL(path + "/" + dictionary + "/" + dictionary + ".aff"), setAffData);
+                readDataFile(runtime.getURL(path + "/" + dictionary + "/" + dictionary + ".aff"), setAffData);
               if (!wordsData)
-                readDataFile(chrome.extension.getURL(path + "/" + dictionary + "/" + dictionary + ".dic"), setWordsData);
+                readDataFile(runtime.getURL(path + "/" + dictionary + "/" + dictionary + ".dic"), setWordsData);
             } else {
               if (settings.dictionaryPath) {
                 path = settings.dictionaryPath;
@@ -24622,8 +24623,8 @@ ${templateEnter}`;
             }
           }
           function readDataFile(url, setFunc) {
-            var response = self2._readFile(url, null, settings.asyncLoad);
-            if (settings.asyncLoad) {
+            var response = self2._readFile(url, null, settings === null || settings === void 0 ? void 0 : settings.asyncLoad);
+            if (settings === null || settings === void 0 ? void 0 : settings.asyncLoad) {
               response.then(function(data) {
                 setFunc(data);
               });
@@ -24672,10 +24673,10 @@ ${templateEnter}`;
                   expressionText += character;
                 }
               }
-              self2.compoundRules[i] = new RegExp(expressionText, "i");
+              self2.compoundRules[i] = new RegExp("^" + expressionText + "$", "i");
             }
             self2.loaded = true;
-            if (settings.asyncLoad && settings.loadedCallback) {
+            if ((settings === null || settings === void 0 ? void 0 : settings.asyncLoad) && (settings === null || settings === void 0 ? void 0 : settings.loadedCallback)) {
               settings.loadedCallback(self2);
             }
           }
@@ -24685,7 +24686,7 @@ ${templateEnter}`;
           /**
            * Loads a Typo instance from a hash of all of the Typo properties.
            *
-           * @param object obj A hash of Typo properties, probably gotten from a JSON.parse(JSON.stringify(typo_instance)).
+           * @param {object} obj A hash of Typo properties, probably gotten from a JSON.parse(JSON.stringify(typo_instance)).
            */
           load: function(obj) {
             for (var i in obj) {
@@ -24697,38 +24698,40 @@ ${templateEnter}`;
           },
           /**
            * Read the contents of a file.
-           * 
-           * @param {String} path The path (relative) to the file.
-           * @param {String} [charset="ISO8859-1"] The expected charset of the file
-           * @param {Boolean} async If true, the file will be read asynchronously. For node.js this does nothing, all
+           *
+           * @param {string} path The path (relative) to the file.
+           * @param {string} [charset="ISO8859-1"] The expected charset of the file
+           * @param {boolean} async If true, the file will be read asynchronously. For node.js this does nothing, all
            *        files are read synchronously.
-           * @returns {String} The file data if async is false, otherwise a promise object. If running node.js, the data is
+           * @returns {string} The file data if async is false, otherwise a promise object. If running node.js, the data is
            *          always returned.
            */
           _readFile: function(path, charset, async) {
+            var _a;
             charset = charset || "utf8";
             if (typeof XMLHttpRequest !== "undefined") {
-              var promise;
-              var req = new XMLHttpRequest();
-              req.open("GET", path, async);
-              if (async) {
-                promise = new Promise(function(resolve, reject) {
-                  req.onload = function() {
-                    if (req.status === 200) {
-                      resolve(req.responseText);
+              var req_1 = new XMLHttpRequest();
+              req_1.open("GET", path, !!async);
+              (_a = req_1.overrideMimeType) === null || _a === void 0 ? void 0 : _a.call(req_1, "text/plain; charset=" + charset);
+              if (!!async) {
+                var promise = new Promise(function(resolve, reject) {
+                  req_1.onload = function() {
+                    if (req_1.status === 200) {
+                      resolve(req_1.responseText);
                     } else {
-                      reject(req.statusText);
+                      reject(req_1.statusText);
                     }
                   };
-                  req.onerror = function() {
-                    reject(req.statusText);
+                  req_1.onerror = function() {
+                    reject(req_1.statusText);
                   };
                 });
+                req_1.send(null);
+                return promise;
+              } else {
+                req_1.send(null);
+                return req_1.responseText;
               }
-              if (req.overrideMimeType)
-                req.overrideMimeType("text/plain; charset=" + charset);
-              req.send(null);
-              return async ? promise : req.responseText;
             } else if (typeof __require !== "undefined") {
               var fs = require_fs();
               try {
@@ -24739,14 +24742,15 @@ ${templateEnter}`;
                 }
               } catch (e) {
                 console.log(e);
-                return "";
               }
+              return "";
             }
+            return "";
           },
           /**
            * Parse the rules out from a .aff file.
            *
-           * @param {String} data The contents of the affix file.
+           * @param {string} data The contents of the affix file.
            * @returns object The rules from the file.
            */
           _parseAFF: function(data) {
@@ -24762,7 +24766,7 @@ ${templateEnter}`;
               }
               var definitionParts = line.split(/\s+/);
               var ruleType = definitionParts[0];
-              if (ruleType == "PFX" || ruleType == "SFX") {
+              if (ruleType === "PFX" || ruleType === "SFX") {
                 var ruleCode = definitionParts[1];
                 var combineable = definitionParts[2];
                 numEntries = parseInt(definitionParts[3], 10);
@@ -24777,8 +24781,9 @@ ${templateEnter}`;
                     charactersToAdd = "";
                   var continuationClasses = this.parseRuleCodes(additionParts[1]);
                   var regexToMatch = lineParts[4];
-                  var entry = {};
-                  entry.add = charactersToAdd;
+                  var entry = {
+                    add: charactersToAdd
+                  };
                   if (continuationClasses.length > 0)
                     entry.continuationClasses = continuationClasses;
                   if (regexToMatch !== ".") {
@@ -24797,7 +24802,7 @@ ${templateEnter}`;
                   }
                   entries.push(entry);
                 }
-                rules[ruleCode] = { "type": ruleType, "combineable": combineable == "Y", "entries": entries };
+                rules[ruleCode] = { "type": ruleType, "combineable": combineable === "Y", "entries": entries };
                 i += numEntries;
               } else if (ruleType === "COMPOUNDRULE") {
                 numEntries = parseInt(definitionParts[1], 10);
@@ -24821,11 +24826,11 @@ ${templateEnter}`;
           /**
            * Removes comments.
            *
-           * @param {String} data A line from an affix file.
-           * @return {String} The cleaned-up line.
+           * @param {string} data A line from an affix file.
+           * @return {string} The cleaned-up line.
            */
           _removeAffixComments: function(line) {
-            if (line.match(/^\s*#/, "")) {
+            if (line.match(/^\s*#/)) {
               return "";
             }
             return line;
@@ -24833,8 +24838,8 @@ ${templateEnter}`;
           /**
            * Parses the words out from the .dic file.
            *
-           * @param {String} data The data from the dictionary file.
-           * @returns object The lookup table containing all of the words and
+           * @param {string} data The data from the dictionary file.
+           * @returns HashMap The lookup table containing all of the words and
            *                 word forms from the dictionary.
            */
           _parseDIC: function(data) {
@@ -24861,7 +24866,7 @@ ${templateEnter}`;
               var word = parts[0];
               if (parts.length > 1) {
                 var ruleCodesArray = this.parseRuleCodes(parts[1]);
-                if (!("NEEDAFFIX" in this.flags) || ruleCodesArray.indexOf(this.flags.NEEDAFFIX) == -1) {
+                if (!("NEEDAFFIX" in this.flags) || ruleCodesArray.indexOf(this.flags.NEEDAFFIX) === -1) {
                   addWord(word, ruleCodesArray);
                 }
                 for (var j = 0, _jlen = ruleCodesArray.length; j < _jlen; j++) {
@@ -24902,8 +24907,8 @@ ${templateEnter}`;
           /**
            * Removes comment lines and then cleans up blank lines and trailing whitespace.
            *
-           * @param {String} data The data from a .dic file.
-           * @return {String} The cleaned-up data.
+           * @param {string} data The data from a .dic file.
+           * @return {string} The cleaned-up data.
            */
           _removeDicComments: function(data) {
             data = data.replace(/^\t.*$/mg, "");
@@ -24931,9 +24936,9 @@ ${templateEnter}`;
           /**
            * Applies an affix rule to a word.
            *
-           * @param {String} word The base word.
+           * @param {string} word The base word.
            * @param {Object} rule The affix rule.
-           * @returns {String[]} The new words generated by the rule.
+           * @returns {string[]} The new words generated by the rule.
            */
           _applyRule: function(word, rule) {
             var entries = rule.entries;
@@ -24970,8 +24975,8 @@ ${templateEnter}`;
            *
            * @see http://blog.stevenlevithan.com/archives/faster-trim-javascript re:trimming function
            *
-           * @param {String} aWord The word to check.
-           * @returns {Boolean}
+           * @param {string} aWord The word to check.
+           * @returns {boolean}
            */
           check: function(aWord) {
             if (!this.loaded) {
@@ -25010,8 +25015,8 @@ ${templateEnter}`;
           /**
            * Checks whether a word exists in the current dictionary.
            *
-           * @param {String} word The word to check.
-           * @returns {Boolean}
+           * @param {string} word The word to check.
+           * @returns {boolean}
            */
           checkExact: function(word) {
             if (!this.loaded) {
@@ -25041,9 +25046,9 @@ ${templateEnter}`;
           /**
            * Looks up whether a given word is flagged with a given flag.
            *
-           * @param {String} word The word in question.
-           * @param {String} flag The flag in question.
-           * @return {Boolean}
+           * @param {string} word The word in question.
+           * @param {string} flag The flag in question.
+           * @return {boolean}
            */
           hasFlag: function(word, flag, wordFlags) {
             if (!this.loaded) {
@@ -25065,9 +25070,9 @@ ${templateEnter}`;
            * @see http://www.norvig.com/spell-correct.html for the basis of this suggestor.
            * This suggestor is primitive, but it works.
            *
-           * @param {String} word The misspelling.
-           * @param {Number} [limit=5] The maximum number of suggestions to return.
-           * @returns {String[]} The array of suggestions.
+           * @param {string} word The misspelling.
+           * @param {number} [limit=5] The maximum number of suggestions to return.
+           * @returns {string[]} The array of suggestions.
            */
           alphabet: "",
           suggest: function(word, limit) {
@@ -25116,14 +25121,9 @@ ${templateEnter}`;
               var rv = {};
               var i2, j, _iilen, _len2, _jlen, _edit;
               var alphabetLength = self2.alphabet.length;
-              if (typeof words == "string") {
-                var word2 = words;
-                words = {};
-                words[word2] = true;
-              }
-              for (var word2 in words) {
-                for (i2 = 0, _len2 = word2.length + 1; i2 < _len2; i2++) {
-                  var s2 = [word2.substring(0, i2), word2.substring(i2)];
+              for (var word_1 in words) {
+                for (i2 = 0, _len2 = word_1.length + 1; i2 < _len2; i2++) {
+                  var s2 = [word_1.substring(0, i2), word_1.substring(i2)];
                   if (s2[1]) {
                     _edit = s2[0] + s2[1].substring(1);
                     if (!known_only || self2.check(_edit)) {
@@ -25185,7 +25185,8 @@ ${templateEnter}`;
               return rv;
             }
             function correct(word2) {
-              var ed1 = edits1(word2);
+              var _a;
+              var ed1 = edits1((_a = {}, _a[word2] = true, _a));
               var ed2 = edits1(ed1, true);
               var weighted_corrections = ed2;
               for (var ed1word in ed1) {
@@ -25230,7 +25231,7 @@ ${templateEnter}`;
                 } else if ("capitalized" === capitalization_scheme) {
                   sorted_corrections[i2][0] = sorted_corrections[i2][0].substr(0, 1).toUpperCase() + sorted_corrections[i2][0].substr(1);
                 }
-                if (!self2.hasFlag(sorted_corrections[i2][0], "NOSUGGEST") && rv.indexOf(sorted_corrections[i2][0]) == -1) {
+                if (!self2.hasFlag(sorted_corrections[i2][0], "NOSUGGEST") && rv.indexOf(sorted_corrections[i2][0]) === -1) {
                   rv.push(sorted_corrections[i2][0]);
                 } else {
                   working_limit++;
