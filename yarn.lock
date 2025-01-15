@@ -1751,20 +1751,20 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 22.10.6
-  resolution: "@types/node@npm:22.10.6"
+  version: 22.10.7
+  resolution: "@types/node@npm:22.10.7"
   dependencies:
     undici-types: "npm:~6.20.0"
-  checksum: 10c0/8b67affc211e5f9c74f7949cda04ca669721e50b83d71b8772a7bed7a4a3c41d663b3a794413f618e763ca6c5da8c234c25ffebcb0737983fc3e7415818ab9a7
+  checksum: 10c0/c941b4689dfc4044b64a5f601306cbcb0c7210be853ba378a5dd44137898c45accedd796ee002ad9407024cac7ecaf5049304951cb1d80ce3d7cebbbae56f20e
   languageName: node
   linkType: hard
 
 "@types/node@npm:^20.14.2":
-  version: 20.17.13
-  resolution: "@types/node@npm:20.17.13"
+  version: 20.17.14
+  resolution: "@types/node@npm:20.17.14"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10c0/a5ba630b5ead5144e8f605402bc14d77dc3cf6b31708a92c7221de9b06b17724ada661d0f66b6c974830857a79e7f38e976dd105fca330ab706de9e4d75cf8b9
+  checksum: 10c0/2af0722989c677416dec4d9bc37e262a9724e090e5ce021a976e4ab12d4fa26aecbb00dddc8114d0fbf4a6552f12ace0ec98156247a20bf4d57809b7ce90ea5a
   languageName: node
   linkType: hard
 
@@ -2590,7 +2590,6 @@ __metadata:
     cssnano: "npm:^6.1.0"
     datatables.net-bs5: "npm:^2.0.8"
     datatables.net-dt: "npm:^2.0.8"
-    datatables.net-select: "npm:^2.1.0"
     easymde: "npm:^2.16.1"
     esbuild: "npm:^0.20.1"
     eslint: "npm:^9.11.1"
@@ -2600,6 +2599,7 @@ __metadata:
     eslint-plugin-playwright: "npm:^1.4.1"
     eslint-plugin-promise: "npm:^6.0.0"
     flatpickr: "npm:^4.6.13"
+    fuse.js: "npm:^7.0.0"
     globals: "npm:^15.9.0"
     http-server: "npm:^14.1.1"
     jquery: "npm:^3.7.1"
@@ -3045,17 +3045,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"datatables.net-select@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "datatables.net-select@npm:2.1.0"
-  dependencies:
-    datatables.net: "npm:^2"
-    jquery: "npm:>=1.7"
-  checksum: 10c0/a6e379c49e6d14e563c91b66a67337d9ea8bcdc8c00febc9f048b7083236961dc7219c354e662954e60783a5034aaa66f85a02fb0751317f132ce15202f2378c
-  languageName: node
-  linkType: hard
-
-"datatables.net@npm:2.2.1, datatables.net@npm:^2":
+"datatables.net@npm:2.2.1":
   version: 2.2.1
   resolution: "datatables.net@npm:2.2.1"
   dependencies:
@@ -3255,9 +3245,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.73":
-  version: 1.5.82
-  resolution: "electron-to-chromium@npm:1.5.82"
-  checksum: 10c0/0d495077406adf4701c2b14d63a10e03128fbff0ca960c3c4132ef9b3ef36378f90618d8ca9f9f909270414b5e90b3912b65d10ea7f33418ea2e429d83593196
+  version: 1.5.83
+  resolution: "electron-to-chromium@npm:1.5.83"
+  checksum: 10c0/12380962d057c4679add1047cdddb18b909904614272da0527e505a3859eaffde2022dd0688ce7f230582de96405c3d33b667680614475cdafd3f629caa2fee1
   languageName: node
   linkType: hard
 
@@ -4072,13 +4062,13 @@ __metadata:
   linkType: hard
 
 "fs-extra@npm:^11.0.0":
-  version: 11.2.0
-  resolution: "fs-extra@npm:11.2.0"
+  version: 11.3.0
+  resolution: "fs-extra@npm:11.3.0"
   dependencies:
     graceful-fs: "npm:^4.2.0"
     jsonfile: "npm:^6.0.1"
     universalify: "npm:^2.0.0"
-  checksum: 10c0/d77a9a9efe60532d2e790e938c81a02c1b24904ef7a3efb3990b835514465ba720e99a6ea56fd5e2db53b4695319b644d76d5a0e9988a2beef80aa7b1da63398
+  checksum: 10c0/5f95e996186ff45463059feb115a22fb048bdaf7e487ecee8a8646c78ed8fdca63630e3077d4c16ce677051f5e60d3355a06f3cd61f3ca43f48cc58822a44d0a
   languageName: node
   linkType: hard
 
@@ -4154,6 +4144,13 @@ __metadata:
   version: 1.2.3
   resolution: "functions-have-names@npm:1.2.3"
   checksum: 10c0/33e77fd29bddc2d9bb78ab3eb854c165909201f88c75faa8272e35899e2d35a8a642a15e7420ef945e1f64a9670d6aa3ec744106b2aa42be68ca5114025954ca
+  languageName: node
+  linkType: hard
+
+"fuse.js@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "fuse.js@npm:7.0.0"
+  checksum: 10c0/3574b7fc2e0ccb047e05dbe5f8f04e8f0754f62fa209669ef426ea1354a32ae7355620788af8f1d29f94e1fdecd513f1f3787f012848a31ec90bb4e0e6092504
   languageName: node
   linkType: hard
 
@@ -5335,10 +5332,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdn-data@npm:^2.12.2":
-  version: 2.14.0
-  resolution: "mdn-data@npm:2.14.0"
-  checksum: 10c0/a54ffa00f81609af9776ba07e34ac872872d6614bf2e5178542e03599c9c95b98da989c286888f713001efb44e84638c311fd63e8fdf511520893a240492a429
+"mdn-data@npm:^2.14.0":
+  version: 2.15.0
+  resolution: "mdn-data@npm:2.15.0"
+  checksum: 10c0/8a0c83198b013d43c2c43bd19c38d44e397b3fe097d269fa3c093d8c112acf12d0be4d892ba50a4802cccb91dd4f720218a66e675150ea2cc3d8aa0d32247e76
   languageName: node
   linkType: hard
 
@@ -7675,20 +7672,20 @@ __metadata:
   linkType: hard
 
 "stylelint-scss@npm:^6.3.2, stylelint-scss@npm:^6.4.0":
-  version: 6.10.0
-  resolution: "stylelint-scss@npm:6.10.0"
+  version: 6.10.1
+  resolution: "stylelint-scss@npm:6.10.1"
   dependencies:
     css-tree: "npm:^3.0.1"
     is-plain-object: "npm:^5.0.0"
     known-css-properties: "npm:^0.35.0"
-    mdn-data: "npm:^2.12.2"
+    mdn-data: "npm:^2.14.0"
     postcss-media-query-parser: "npm:^0.2.3"
     postcss-resolve-nested-selector: "npm:^0.1.6"
     postcss-selector-parser: "npm:^7.0.0"
     postcss-value-parser: "npm:^4.2.0"
   peerDependencies:
     stylelint: ^16.0.2
-  checksum: 10c0/9086109bc36b46ea5e62aef5c1793debbd973aaecb28ba65cadaaf6761a295db1e52f94e1a6bae7ee884e440fc36463e9686941fc652a5ce79045ee58cae5308
+  checksum: 10c0/3fc9b456bff649840783b92365fc30f5e54539794711744f09df45020d2a3d86164e8e16948a35b3b167f6fc8109837d487253faebd8b1ac29800e67a7f7adc9
   languageName: node
   linkType: hard
 

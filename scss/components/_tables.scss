@@ -1,6 +1,10 @@
 .table {
     word-break: normal;
 
+    &.table-select.table-search-active tbody tr:not(.search-result):not(.table-no-data) {
+        display: none !important;
+    }
+
     thead:not(.text-wrap) {
         white-space: nowrap !important;
     }
