@@ -51541,30 +51541,30 @@ main {
 .chocolatey-ccm {
   /* stylelint-disable selector-class-pattern */
 }
-.chocolatey-ccm main #appSidebar {
+.chocolatey-ccm #appSidebar {
   max-width: 300px;
   /* stylelint-disable-next-line selector-id-pattern */
   /* stylelint-disable-next-line selector-id-pattern */
 }
-.chocolatey-ccm main #appSidebar[data-icon-menu=false] #appSidebar_offcanvas {
+.chocolatey-ccm #appSidebar[data-icon-menu=false] #appSidebar_offcanvas {
   --bs-offcanvas-width: 300px;
 }
-.chocolatey-ccm main #appSidebar[data-icon-menu=true] #appSidebar_offcanvas {
+.chocolatey-ccm #appSidebar[data-icon-menu=true] #appSidebar_offcanvas {
   --bs-offcanvas-width: 50px;
 }
-.chocolatey-ccm main #appSidebar.disabled li:not(.active-parent):hover::before {
+.chocolatey-ccm #appSidebar.disabled li:not(.active-parent):hover::before {
   background: none !important;
 }
-.chocolatey-ccm main #appSidebar.disabled li a,
-.chocolatey-ccm main #appSidebar.disabled li button {
+.chocolatey-ccm #appSidebar.disabled li a,
+.chocolatey-ccm #appSidebar.disabled li button {
   pointer-events: none !important;
   opacity: 0.5 !important;
 }
-.chocolatey-ccm main #appSidebar.disabled li a:hover,
-.chocolatey-ccm main #appSidebar.disabled li button:hover {
+.chocolatey-ccm #appSidebar.disabled li a:hover,
+.chocolatey-ccm #appSidebar.disabled li button:hover {
   background: none !important;
 }
-.chocolatey-ccm main #appSidebar nav li.active-parent::before, .chocolatey-ccm main #appSidebar nav li:hover::before {
+.chocolatey-ccm #appSidebar nav li.active-parent::before, .chocolatey-ccm #appSidebar nav li:hover::before {
   position: absolute;
   top: -2px;
   left: 0;
@@ -51575,31 +51575,31 @@ main {
   background: var(--bs-primary);
   border-radius: 0.25rem;
 }
-.chocolatey-ccm main #appSidebar nav li.active-parent:first-child::before, .chocolatey-ccm main #appSidebar nav li:hover:first-child::before {
+.chocolatey-ccm #appSidebar nav li.active-parent:first-child::before, .chocolatey-ccm #appSidebar nav li:hover:first-child::before {
   top: 0;
   height: calc(100% + 2px);
 }
-.chocolatey-ccm main #appSidebar nav li.active-parent .active,
-.chocolatey-ccm main #appSidebar nav li.active-parent .collapsed,
-.chocolatey-ccm main #appSidebar nav li.active-parent [aria-expanded=true] {
+.chocolatey-ccm #appSidebar nav li.active-parent .active,
+.chocolatey-ccm #appSidebar nav li.active-parent .collapsed,
+.chocolatey-ccm #appSidebar nav li.active-parent [aria-expanded=true] {
   font-weight: 700;
 }
-.chocolatey-ccm main #appSidebar nav li.active-parent a.collapsed,
-.chocolatey-ccm main #appSidebar nav li.active-parent button.collapsed {
+.chocolatey-ccm #appSidebar nav li.active-parent a.collapsed,
+.chocolatey-ccm #appSidebar nav li.active-parent button.collapsed {
   background: var(--bs-tertiary-bg);
 }
-.chocolatey-ccm main #appSidebar nav li:not(.active-parent):not(.active) a {
+.chocolatey-ccm #appSidebar nav li:not(.active-parent):not(.active) a {
   font-weight: 400;
 }
-.chocolatey-ccm main #appSidebar nav li a.active, .chocolatey-ccm main #appSidebar nav li a:hover,
-.chocolatey-ccm main #appSidebar nav li button.active,
-.chocolatey-ccm main #appSidebar nav li button:hover {
+.chocolatey-ccm #appSidebar nav li a.active, .chocolatey-ccm #appSidebar nav li a:hover,
+.chocolatey-ccm #appSidebar nav li button.active,
+.chocolatey-ccm #appSidebar nav li button:hover {
   background: var(--bs-tertiary-bg);
 }
-.chocolatey-ccm main #appSidebar nav li [aria-expanded=true] .fa-angle-down {
+.chocolatey-ccm #appSidebar nav li [aria-expanded=true] .fa-angle-down {
   transform: rotate(180deg);
 }
-.chocolatey-ccm main #appSidebar nav li [data-bs-toggle=collapse] .fa-angle-down {
+.chocolatey-ccm #appSidebar nav li [data-bs-toggle=collapse] .fa-angle-down {
   transition: transform 0.35s ease;
 }
 .chocolatey-ccm .card {
@@ -51610,12 +51610,12 @@ main {
 }
 
 @media (min-width: 992px) {
-  .chocolatey-ccm main #appSidebar {
+  .chocolatey-ccm #appSidebar {
     min-height: calc(100vh - 57px - 127px);
     /* visual height - footer - header */
   }
-  .chocolatey-ccm main #appSidebar,
-  .chocolatey-ccm main #appMain {
+  .chocolatey-ccm #appSidebar,
+  .chocolatey-ccm #appMain {
     transition: transform 0.35s ease;
   }
 }
