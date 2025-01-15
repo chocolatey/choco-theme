@@ -35,7 +35,7 @@
     "js-minify": "ts-node build/esbuild.ts --minify",
     "lint": "npm-run-all --parallel --silent lint-css lint-js",
     "lint-css": "echo 🚀 Linting SASS... && stylelint \"scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache && echo ✅ SASS linting complete",
-    "lint-js": "echo 🚀 Linting JS and TS... && eslint js/**/*.{js,ts} && echo ✅ JS and TS linting complete",
+    "lint-js": "echo 🚀 Linting JS and TS... && eslint js/**/*.{js,ts} --no-warn-ignored && echo ✅ JS and TS linting complete",
     "monitor-ports": "ts-node build/monitor-ports.ts",
     "partials": "ts-node build/build-partials.ts",
     "preview": "ts-node build/preview.ts",
