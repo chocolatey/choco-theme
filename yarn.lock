@@ -2443,7 +2443,6 @@ __metadata:
     cssnano: "npm:^6.1.0"
     datatables.net-bs5: "npm:^2.0.8"
     datatables.net-dt: "npm:^2.0.8"
-    datatables.net-select: "npm:^2.1.0"
     easymde: "npm:^2.16.1"
     esbuild: "npm:^0.25.0"
     eslint: "npm:^9.11.1"
@@ -2453,6 +2452,7 @@ __metadata:
     eslint-plugin-playwright: "npm:^1.4.1"
     eslint-plugin-promise: "npm:^6.0.0"
     flatpickr: "npm:^4.6.13"
+    fuse.js: "npm:^7.0.0"
     globals: "npm:^15.9.0"
     http-server: "npm:^14.1.1"
     jquery: "npm:^3.7.1"
@@ -2898,17 +2898,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"datatables.net-select@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "datatables.net-select@npm:2.1.0"
-  dependencies:
-    datatables.net: "npm:^2"
-    jquery: "npm:>=1.7"
-  checksum: 10c0/a6e379c49e6d14e563c91b66a67337d9ea8bcdc8c00febc9f048b7083236961dc7219c354e662954e60783a5034aaa66f85a02fb0751317f132ce15202f2378c
-  languageName: node
-  linkType: hard
-
-"datatables.net@npm:2.2.1, datatables.net@npm:^2":
+"datatables.net@npm:2.2.1":
   version: 2.2.1
   resolution: "datatables.net@npm:2.2.1"
   dependencies:
@@ -3930,6 +3920,13 @@ __metadata:
   version: 1.2.3
   resolution: "functions-have-names@npm:1.2.3"
   checksum: 10c0/33e77fd29bddc2d9bb78ab3eb854c165909201f88c75faa8272e35899e2d35a8a642a15e7420ef945e1f64a9670d6aa3ec744106b2aa42be68ca5114025954ca
+  languageName: node
+  linkType: hard
+
+"fuse.js@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "fuse.js@npm:7.0.0"
+  checksum: 10c0/3574b7fc2e0ccb047e05dbe5f8f04e8f0754f62fa209669ef426ea1354a32ae7355620788af8f1d29f94e1fdecd513f1f3787f012848a31ec90bb4e0e6092504
   languageName: node
   linkType: hard
 

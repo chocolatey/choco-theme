@@ -106,7 +106,7 @@
 @include media-breakpoint-up(lg) {
     .chocolatey-ccm {
         #appSidebar {
-            min-height: calc(100vh - 57px - 127px);
+            min-height: calc(100vh - 60px - 126px);
 
             /* visual height - footer - header */
         }

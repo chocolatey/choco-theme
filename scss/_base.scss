@@ -100,9 +100,9 @@ strong {
 
 ::-webkit-scrollbar-thumb,
 .DocSearch-Dropdown::-webkit-scrollbar-thumb { /* stylelint-disable-line */
-    background: rgba(var(--bs-secondary-rgb), .25);
+    background: var(--bs-secondary);
     border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(var(--bs-secondary-rgb), .25);
+    box-shadow: inset 0 0 6px rgba(var(--bs-secondary-rgb), .5);
 }
 
 /* Images & Main Content */

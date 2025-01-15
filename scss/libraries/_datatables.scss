@@ -29,31 +29,30 @@ div.dt-container div {
     }
 }
 
-table.table.dataTable {
-    &.table-striped>tbody>tr {
-        &.selected>* {
+table.table {
+    >tbody>tr {
+        .selected {
             box-shadow: unset !important;
-        }
-
-        &.selected .bg-selected {
             background-color: var(--bs-primary) !important;
             color: var(--bs-primary-contrast) !important;
             font-weight: bold !important;
         }
     }
 
-    &.table-striped>tbody>tr:nth-of-type(odd) {
-        >* {
-            box-shadow: unset;
-            background: var(--bs-secondary-bg);
+    &.dataTable {
+        &.table-striped>tbody>tr:nth-of-type(odd) {
+            >* {
+                box-shadow: unset;
+                background: var(--bs-secondary-bg);
+            }
         }
-    }
 
-    td.dt-type-date,
-    td.dt-type-numeric,
-    th.dt-type-date,
-    th.dt-type-numeric {
-        text-align: left;
+        td.dt-type-date,
+        td.dt-type-numeric,
+        th.dt-type-date,
+        th.dt-type-numeric {
+            text-align: left;
+        }
     }
 
     tr {
