@@ -1,6 +1,6 @@
 /* stylelint-disable selector-max-type */
 .chocolatey-ccm {
-    main #appSidebar {
+    #appSidebar {
         max-width: 300px;
 
         /* stylelint-disable-next-line selector-id-pattern */
@@ -105,14 +105,14 @@
 
 @include media-breakpoint-up(lg) {
     .chocolatey-ccm {
-        main #appSidebar {
+        #appSidebar {
             min-height: calc(100vh - 57px - 127px);
 
             /* visual height - footer - header */
         }
 
-        main #appSidebar,
-        main #appMain {
+        #appSidebar,
+        #appMain {
             transition: transform .35s ease;
         }
     }
