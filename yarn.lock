@@ -2908,9 +2908,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"datatables.net@npm:2.2.0":
-  version: 2.2.0
-  resolution: "datatables.net@npm:2.2.0"
+"datatables.net@npm:2.2.1, datatables.net@npm:^2":
+  version: 2.2.1
+  resolution: "datatables.net@npm:2.2.1"
   dependencies:
     jquery: "npm:>=1.7"
   checksum: 10c0/ca42e87e09cad2a3ca0f8728931fba48a222a87953d85ee0951432f9b0c7f15a630b787839ec2493b53f18744758ecfec9e18049ceccefec4323fd0895901845
