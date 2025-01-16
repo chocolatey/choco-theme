@@ -41077,9 +41077,9 @@ strong {
 
 ::-webkit-scrollbar-thumb,
 .DocSearch-Dropdown::-webkit-scrollbar-thumb { /* stylelint-disable-line */
-  background: rgba(var(--bs-secondary-rgb), 0.25);
+  background: var(--bs-secondary);
   border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(var(--bs-secondary-rgb), 0.25);
+  box-shadow: inset 0 0 6px rgba(var(--bs-secondary-rgb), 0.5);
 }
 
 /* Images & Main Content */
@@ -41213,7 +41213,7 @@ main {
 
 @media (min-width: 992px) {
   .chocolatey-ccm #appSidebar {
-    min-height: calc(100vh - 57px - 127px);
+    min-height: calc(100vh - 60px - 126px);
     /* visual height - footer - header */
   }
   .chocolatey-ccm #appSidebar,
@@ -44799,7 +44799,8 @@ blockquote.blockquote-tip hr, blockquote.callout-tip hr,
   min-height: 45px;
 }
 
-a.btn {
+a.btn,
+label.btn {
   line-height: 1.9;
 }
 
@@ -47525,6 +47526,9 @@ span.flatpickr-weekday {
 .table {
   word-break: normal;
 }
+.table.table-select.table-search-active tbody tr:not(.search-result):not(.table-no-data) {
+  display: none !important;
+}
 .table thead:not(.text-wrap) {
   white-space: nowrap !important;
 }
@@ -48210,10 +48214,8 @@ div.dt-container div .dt-length select {
   margin-right: 0.5rem;
 }
 
-table.table.dataTable.table-striped > tbody > tr.selected > * {
+table.table > tbody > tr .selected {
   box-shadow: unset !important;
-}
-table.table.dataTable.table-striped > tbody > tr.selected .bg-selected {
   background-color: var(--bs-primary) !important;
   color: var(--bs-primary-contrast) !important;
   font-weight: bold !important;
@@ -48228,7 +48230,7 @@ table.table.dataTable th.dt-type-date,
 table.table.dataTable th.dt-type-numeric {
   text-align: left;
 }
-table.table.dataTable tr {
+table.table tr {
   vertical-align: middle;
 }
 
