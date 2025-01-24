@@ -197,6 +197,8 @@ $input-border-color:                 var(--bs-secondary);
 $input-disabled-bg:                  var(--bs-tertiary-bg);
 $form-check-input-border:            var(--bs-border-width) solid $input-border-color;
 $form-check-input-checked-bg-color:  var(--bs-primary);
+$form-check-input-width:             1.57em;
+$form-check-min-height:              1.57em;
 $input-group-addon-color:            var(--bs-secondary-contrast);
 $input-group-addon-bg:               var(--bs-secondary);
 $form-file-button-color:             var(--bs-secondary-contrast);
