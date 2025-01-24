@@ -5255,32 +5255,32 @@ textarea.form-control-lg {
 
 .form-check {
   display: block;
-  min-height: 1.7rem;
-  padding-left: 1.5em;
+  min-height: 1.57em;
+  padding-left: 2.07em;
   margin-bottom: 0.125rem;
 }
 .form-check .form-check-input {
   float: left;
-  margin-left: -1.5em;
+  margin-left: -2.07em;
 }
 
 .form-check-reverse {
-  padding-right: 1.5em;
+  padding-right: 2.07em;
   padding-left: 0;
   text-align: right;
 }
 .form-check-reverse .form-check-input {
   float: right;
-  margin-right: -1.5em;
+  margin-right: -2.07em;
   margin-left: 0;
 }
 
 .form-check-input {
   --bs-form-check-bg: var(--bs-secondary-bg);
   flex-shrink: 0;
-  width: 1em;
-  height: 1em;
-  margin-top: 0.35em;
+  width: 1.57em;
+  height: 1.57em;
+  margin-top: 0.065em;
   vertical-align: top;
   appearance: none;
   background-color: var(--bs-form-check-bg);
