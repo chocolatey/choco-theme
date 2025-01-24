@@ -1,7 +1,7 @@
 :root {
     color-scheme: unset !important; // https://disqus.com/home/discussion/channel-discussdisqus/embed_disqus_comments_not_changing_background_color_with_bootstrap_53_color_mode/
     @each $color, $value in $colors-rgb {
-        --#{$variable-prefix}#{$color}-rgb: #{$value};
+        --#{$prefix}#{$color}-rgb: #{$value};
     }
 }
 
@@ -9,9 +9,44 @@
 :root[data-bs-theme="light"] {
     --choco-adaptive: #{$adaptive}; // Primary in chocolatey.org // Gray in boxstarter.org
     --choco-border-color-adaptive: #{$border-color-adaptive}; // Gray in light mode // Primary in dark mode
+
+    @each $color, $value in $colors {
+        // All colors contrast
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
+    }
+
+    @each $color, $value in $theme-colors {
+        // Theme colors contrast
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
+
+        // Theme colors shift
+        --#{$prefix}#{$color}-shift: #{shift-color($value, $shift-amount)};
+    }
 }
 
 :root[data-bs-theme="dark"] {
     --choco-adaptive: #{$adaptive-dark};
     --choco-border-color-adaptive: #{$border-color-adaptive-dark};
+
+    @each $color, $value in $colors-dark {
+        // All colors dark
+        --#{$prefix}#{$color}: #{$value};
+
+        // All colors dark contrast
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
+    }
+
+    @each $color, $value in $theme-colors-dark {
+        // Theme colors dark
+        --#{$prefix}#{$color}: #{$value};
+
+        // Theme colors dark contrast
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
+
+        // Theme colors dark shift
+        --#{$prefix}#{$color}-shift: #{shift-color($value, $shift-amount)};
+
+        // Theme colors rgb
+        --#{$prefix}#{$color}-rgb: #{to-rgb($value)};
+    }
 }
