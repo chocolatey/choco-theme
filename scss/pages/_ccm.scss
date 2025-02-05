@@ -31,6 +31,10 @@
             }
         }
 
+        .menu-item-parent.menu-item-child a:not([data-bs-toggle]) {
+            padding-left: 3rem !important;
+        }
+
         nav {
             li {
                 &.active-parent,
@@ -60,8 +64,8 @@
                         font-weight: 700;
                     }
 
-                    a,
-                    button {
+                    > a,
+                    > button {
                         &.collapsed {
                             background: var(--bs-tertiary-bg);
                         }
