@@ -55642,6 +55642,9 @@ main {
 .chocolatey-ccm #appSidebar.disabled li button:hover {
   background: none !important;
 }
+.chocolatey-ccm #appSidebar .menu-item-parent.menu-item-child a:not([data-bs-toggle]) {
+  padding-left: 3rem !important;
+}
 .chocolatey-ccm #appSidebar nav li.active-parent::before, .chocolatey-ccm #appSidebar nav li:hover::before {
   position: absolute;
   top: -2px;
@@ -55662,8 +55665,8 @@ main {
 .chocolatey-ccm #appSidebar nav li.active-parent [aria-expanded=true] {
   font-weight: 700;
 }
-.chocolatey-ccm #appSidebar nav li.active-parent a.collapsed,
-.chocolatey-ccm #appSidebar nav li.active-parent button.collapsed {
+.chocolatey-ccm #appSidebar nav li.active-parent > a.collapsed,
+.chocolatey-ccm #appSidebar nav li.active-parent > button.collapsed {
   background: var(--bs-tertiary-bg);
 }
 .chocolatey-ccm #appSidebar nav li:not(.active-parent):not(.active) a {
