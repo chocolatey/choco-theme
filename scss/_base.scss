@@ -39,7 +39,7 @@ strong {
 *.disabled {
     font-style: italic !important;
     font-weight: 400 !important;
-    cursor: not-allowed;
+    pointer-events: none;
 }
 
 /*! purgecss end ignore */

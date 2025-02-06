@@ -200,6 +200,7 @@ $form-check-input-checked-bg-color:  var(--bs-primary);
 $form-check-input-width:             1.57em;
 $form-check-min-height:              1.57em;
 $form-check-margin-bottom:           .5rem;
+$form-check-input-disabled-opacity:  1;
 $input-group-addon-color:            var(--bs-secondary-contrast);
 $input-group-addon-bg:               var(--bs-secondary);
 $form-file-button-color:             var(--bs-secondary-contrast);
@@ -250,6 +251,7 @@ $dropdown-bg:                       var(--bs-secondary-bg);
 $dropdown-link-hover-bg:            var(--bs-tertiary-bg);
 $dropdown-link-active-color:        var(--bs-body-color);
 $dropdown-link-active-bg:           var(--bs-tertiary-bg);
+$dropdown-link-disabled-color:      var(--bs-secondary-color);
 $dropdown-item-padding-y:          .75rem;
 
 // Offcanvas
