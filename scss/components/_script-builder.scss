@@ -24,7 +24,7 @@
 
     .tab-content .btn-next-step.disabled,
     .tab-content .btn-prev-step.disabled {
-        cursor: not-allowed;
+        pointer-events: none;
     }
 
     > .nav {
@@ -41,7 +41,7 @@
             text-align: center;
 
             &.disabled {
-                cursor: not-allowed !important;
+                pointer-events: none !important;
             }
 
             .nav-link {
