@@ -170,6 +170,7 @@ button.btn-grab:not(:disabled) {
     --#{$prefix}btn-disabled-color: var(--bs-body-color);
     --#{$prefix}btn-focus-shadow-rgb: #{to-rgb(mix(color-contrast($secondary), $secondary, 15%))};
     --#{$prefix}btn-focus-box-shadow: 0 0 0 #{$btn-focus-width} rgba(var(--#{$prefix}btn-focus-shadow-rgb), .5);
+    --#{$prefix}btn-disabled-border-color: transparent;
 }
 
 .btn-reorder {

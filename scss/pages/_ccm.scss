@@ -23,7 +23,6 @@
             a,
             button {
                 pointer-events: none !important;
-                opacity: .5 !important;
 
                 &:hover {
                     background: none !important;
@@ -38,7 +37,7 @@
         nav {
             li {
                 &.active-parent,
-                &:hover {
+                &:hover:not(.disabled) {
                     &::before {
                         position: absolute;
                         top: -2px;
