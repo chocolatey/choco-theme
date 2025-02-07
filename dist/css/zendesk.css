@@ -5323,11 +5323,11 @@ textarea.form-control-lg {
 .form-check-input:disabled {
   pointer-events: none;
   filter: none;
-  opacity: 0.5;
+  opacity: 1;
 }
 .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
   cursor: default;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .form-switch {
@@ -6330,7 +6330,7 @@ textarea.form-control-lg {
   --bs-dropdown-link-hover-bg: var(--bs-tertiary-bg);
   --bs-dropdown-link-active-color: var(--bs-body-color);
   --bs-dropdown-link-active-bg: var(--bs-tertiary-bg);
-  --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
+  --bs-dropdown-link-disabled-color: var(--bs-secondary-color);
   --bs-dropdown-item-padding-x: 1rem;
   --bs-dropdown-item-padding-y: 0.75rem;
   --bs-dropdown-header-color: #6c757d;
@@ -41010,7 +41010,7 @@ strong {
 *.disabled {
   font-style: italic !important;
   font-weight: 400 !important;
-  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /*! purgecss end ignore */
@@ -41160,7 +41160,6 @@ main {
 .chocolatey-ccm #appSidebar.disabled li a,
 .chocolatey-ccm #appSidebar.disabled li button {
   pointer-events: none !important;
-  opacity: 0.5 !important;
 }
 .chocolatey-ccm #appSidebar.disabled li a:hover,
 .chocolatey-ccm #appSidebar.disabled li button:hover {
@@ -41169,7 +41168,7 @@ main {
 .chocolatey-ccm #appSidebar .menu-item-parent.menu-item-child a:not([data-bs-toggle]) {
   padding-left: 3rem !important;
 }
-.chocolatey-ccm #appSidebar nav li.active-parent::before, .chocolatey-ccm #appSidebar nav li:hover::before {
+.chocolatey-ccm #appSidebar nav li.active-parent::before, .chocolatey-ccm #appSidebar nav li:hover:not(.disabled)::before {
   position: absolute;
   top: -2px;
   left: 0;
@@ -41180,7 +41179,7 @@ main {
   background: var(--bs-primary);
   border-radius: 0.25rem;
 }
-.chocolatey-ccm #appSidebar nav li.active-parent:first-child::before, .chocolatey-ccm #appSidebar nav li:hover:first-child::before {
+.chocolatey-ccm #appSidebar nav li.active-parent:first-child::before, .chocolatey-ccm #appSidebar nav li:hover:not(.disabled):first-child::before {
   top: 0;
   height: calc(100% + 2px);
 }
@@ -44958,6 +44957,7 @@ button.btn-grab:not(:disabled) {
   --bs-btn-disabled-color: var(--bs-body-color);
   --bs-btn-focus-shadow-rgb: 115, 122, 128;
   --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+  --bs-btn-disabled-border-color: transparent;
 }
 
 .btn-reorder {
@@ -46623,7 +46623,7 @@ textarea:disabled ~ .form-text {
 }
 #wizard .tab-content .btn-next-step.disabled,
 #wizard .tab-content .btn-prev-step.disabled {
-  cursor: not-allowed;
+  pointer-events: none;
 }
 #wizard > .nav {
   display: flex;
@@ -46639,7 +46639,7 @@ textarea:disabled ~ .form-text {
   text-align: center;
 }
 #wizard > .nav .nav-item.disabled {
-  cursor: not-allowed !important;
+  pointer-events: none !important;
 }
 #wizard > .nav .nav-item .nav-link {
   position: relative;
@@ -48551,6 +48551,10 @@ a,
   font-weight: 700;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
+}
+
+a:not(.btn).disabled {
+  color: var(--bs-secondary-color) !important;
 }
 
 .popover-header {
