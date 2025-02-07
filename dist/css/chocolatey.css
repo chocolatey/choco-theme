@@ -51634,17 +51634,9 @@ html[data-theme=dark] {
   padding: 0 0 2px;
   position: relative;
   top: -1px;
-  transition-duration: 0.1s;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 20px;
 }
 
-@media (prefers-reduced-motion) {
-  .DocSearch-Button-Key {
-    transition: none;
-  }
-}
 .DocSearch-Button-Key--pressed {
   box-shadow: var(--docsearch-key-pressed-shadow);
   transform: translate3d(0, 1px, 0);
@@ -51891,7 +51883,6 @@ html[data-theme=dark] {
   display: flex;
   padding-bottom: 4px;
   position: relative;
-  scroll-margin-top: 40px;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -61292,6 +61283,11 @@ input:disabled ~ .form-text,
 input:disabled ~ label,
 textarea:disabled ~ .form-text {
   font-style: italic;
+}
+
+input[readonly]:not([data-td-target]),
+textarea[readonly] {
+  background-color: var(--bs-tertiary-bg);
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
