@@ -13,23 +13,6 @@
             --bs-offcanvas-width: 50px;
         }
 
-        &.disabled li {
-            &:not(.active-parent):hover {
-                &::before {
-                    background: none !important;
-                }
-            }
-
-            a,
-            button {
-                pointer-events: none !important;
-
-                &:hover {
-                    background: none !important;
-                }
-            }
-        }
-
         .menu-item-parent.menu-item-child a:not([data-bs-toggle]) {
             padding-left: 3rem !important;
         }
@@ -42,6 +25,7 @@
                         position: absolute;
                         top: -2px;
                         left: 0;
+                        z-index: 1;
                         display: block;
                         width: .25rem;
                         height: calc(100% + 4px);
@@ -82,6 +66,12 @@
                     &.active,
                     &:hover{
                         background: var(--bs-tertiary-bg);
+                    }
+
+                    &.disabled,
+                    &:disabled {
+                        color: var(--bs-secondary-color) !important;
+                        opacity: 1;
                     }
                 }
 
