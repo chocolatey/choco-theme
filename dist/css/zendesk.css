@@ -46275,6 +46275,11 @@ textarea:disabled ~ .form-text {
   font-style: italic;
 }
 
+input[readonly]:not([data-td-target]),
+textarea[readonly] {
+  background-color: var(--bs-tertiary-bg);
+}
+
 /* stylelint-disable-next-line selector-class-pattern */
 .noUi-target {
   background: none;

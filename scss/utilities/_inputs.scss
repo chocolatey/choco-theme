@@ -182,3 +182,8 @@ input:disabled ~ label,
 textarea:disabled ~ .form-text {
     font-style: italic;
 }
+
+input[readonly]:not([data-td-target]),
+textarea[readonly] {
+    background-color: $input-disabled-bg;
+}
