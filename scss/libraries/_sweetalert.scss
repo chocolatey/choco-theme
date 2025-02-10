@@ -11,6 +11,9 @@ $swal2-box-shadow: unset;
 // BACKGROUND
 $swal2-background: var(--bs-secondary-bg);
 
+// TITLE
+$swal2-title-margin: 0 !important;
+
 // ICONS
 $swal2-icon-border-color: var(--bs-black);
 $swal2-success: $success;
