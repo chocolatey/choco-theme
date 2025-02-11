@@ -1,0 +1,111 @@
+@import "../variables/chocolatey";
+
+$swal2-outline-color: var(--bs-border-color);
+
+// POPUP
+$swal2-border: 1px solid var(--bs-border-color);
+$swal2-color: var(--bs-body-color);
+$swal2-border-radius: var(--bs-border-radius-lg);
+$swal2-box-shadow: unset;
+
+// BACKGROUND
+$swal2-background: var(--bs-secondary-bg);
+
+// TITLE
+$swal2-title-margin: 0 !important;
+
+// ICONS
+$swal2-icon-border-color: var(--bs-black);
+$swal2-success: $success;
+$swal2-error: $danger;
+$swal2-warning: $warning;
+$swal2-info: $primary;
+$swal2-question: $secondary;
+
+// CONFIRM BUTTON
+$swal2-confirm-button-border-radius: var(--bs-border-radius);
+$swal2-confirm-button-background-color: var(--bs-primary);
+$swal2-confirm-button-color: var(--bs-primary-contrast);
+$swal2-confirm-button-focus-box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), .5);
+
+// DENY BUTTON
+$swal2-deny-button-border-radius: var(--bs-border-radius);
+$swal2-deny-button-background-color: transparent;
+$swal2-deny-button-color: var(--bs-danger);
+$swal2-deny-button-focus-box-shadow: 0 0 0 3px rgba(var(--bs-danger-rgb), .5);
+
+// CANCEL BUTTON
+$swal2-cancel-button-border-radius: var(--bs-border-radius);
+$swal2-cancel-button-background-color: transparent;
+$swal2-cancel-button-color: var(--bs-body-color);
+$swal2-cancel-button-focus-box-shadow: 0 0 0 3px rgba(var(--bs-secondary-bg-rgb), .5);
+
+// LOADER
+$swal2-loader-border-color: var(--bs-primary) transparent var(--bs-primary) transparent;
+
+@import "sweetalert2/src/sweetalert2";
+
+.swal2-container {
+    z-index: 1070;
+
+    button {
+        font-weight: 700;
+        border: 1px solid transparent !important;
+
+        &.swal2-cancel {
+            &:hover {
+                background-image: none !important;
+                border: 1px solid var(--bs-secondary) !important;
+            }
+
+            &:focus-visible {
+                border-color: var(--bs-secondary);
+                box-shadow: 0 0 0 .25rem rgba(115, 122, 128, .5);
+            }
+        }
+
+        &.swal2-deny {
+            border: 1px solid var(--bs-danger) !important;
+
+            &:hover,
+            &:active {
+                color: var(--bs-danger-contrast) !important;
+                background-color: var(--bs-danger) !important;
+                background-image: none !important;
+            }
+        }
+    }
+
+    div:where(.swal2-icon) {
+        &.swal2-warning.swal2-icon-show {
+            color: var(--bs-warning);
+            border-color: var(--bs-warning);
+        }
+
+        &.swal2-error [class^="swal2-x-mark-line"] {
+            background-color: var(--bs-danger);
+        }
+
+        &.swal2-error {
+            border-color: var(--bs-danger);
+        }
+
+        &.swal2-success [class^="swal2-success-line"] {
+            background-color: var(--bs-success);
+        }
+
+        &.swal2-success .swal2-success-ring {
+            border-color: var(--bs-success);
+        }
+
+        &.swal2-info {
+            color: var(--bs-primary);
+            border-color: var(--bs-primary);
+        }
+
+        &.swal2-question {
+            color: var(--bs-secondary);
+            border-color: var(--bs-secondary);
+        }
+    }
+}

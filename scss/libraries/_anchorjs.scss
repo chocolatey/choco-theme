@@ -1,0 +1,31 @@
+h5,
+h6,
+li code,
+li strong {
+    .anchorjs-link {
+        font-size: 1.35rem !important;
+    }
+}
+
+h6 {
+    .anchorjs-link {
+        margin-top: -.25rem;
+    }
+}
+
+li {
+    code,
+    strong {
+        .anchorjs-link {
+            margin-top: -.35rem;
+        }
+    }
+
+    &:not(.task-list-item) .anchorjs-link {
+        margin-left: -1.65em !important;
+    }
+
+    &.task-list-item .anchorjs-link {
+        margin-left: -2.65em !important;
+    }
+}

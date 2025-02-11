@@ -1,0 +1,45 @@
+@if $enable-dark-mode {
+    @include color-mode(dark) {
+        .form-check-input {
+            &:checked {
+                &[type="checkbox"] {
+                    @if $enable-gradients {
+                        background-image: escape-svg($form-check-input-checked-bg-image-dark), var(--#{$prefix}gradient);
+                    } @else {
+                        background-image: escape-svg($form-check-input-checked-bg-image-dark);
+                    }
+                }
+                &[type="radio"] {
+                    @if $enable-gradients {
+                        background-image: escape-svg($form-check-radio-checked-bg-image-dark), var(--#{$prefix}gradient);
+                    } @else {
+                        background-image: escape-svg($form-check-radio-checked-bg-image-dark);
+                    }
+                }
+            }
+            &[type="checkbox"]:indeterminate {
+                @if $enable-gradients {
+                    background-image: escape-svg($form-check-input-indeterminate-bg-image-dark), var(--#{$prefix}gradient);
+                } @else {
+                    background-image: escape-svg($form-check-input-indeterminate-bg-image-dark);
+                }
+            }
+        }
+
+        .form-switch {
+            .form-check-input {
+                &:focus {
+                    background-image: escape-svg($form-switch-focus-bg-image-dark);
+                }
+
+                &:checked {
+                    @if $enable-gradients {
+                        background-image: escape-svg($form-switch-checked-bg-image-dark), var(--#{$prefix}gradient);
+                    } @else {
+                        background-image: escape-svg($form-switch-checked-bg-image-dark);
+                    }
+                }
+            }
+        }
+    }
+}

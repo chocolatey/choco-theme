@@ -142,18 +142,6 @@ const init = async () => {
             );
         }
 
-        // bootstrap-duallistbox css
-        if (repository.name === repositoryConfig.ccm.name) {
-            parallelTasksInitial.push(
-                {
-                    task: 'bootstrap-duallistbox.min.css',
-                    source: `${repositoryConfig.theme.css}bootstrap-duallistbox.min.css`,
-                    destination: `${repository.css}bootstrap-duallistbox.min.css`,
-                    isFolder: false
-                }
-            );
-        }
-
         // jstree css
         if (repository.name === repositoryConfig.ccm.name) {
             parallelTasksInitial.push(

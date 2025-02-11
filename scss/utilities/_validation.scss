@@ -1,0 +1,82 @@
+.validation-summary-valid {
+    display: none;
+}
+
+.validation-summary-errors {
+    ul {
+        padding-left: 0;
+        margin: $spacer 0;
+        list-style-type: none;
+
+        li {
+            &:not(:first-child) {
+                margin-top: calc($spacer / 2);
+            }
+
+            padding-left: $spacer;
+            font-weight: 700;
+            color: var(--bs-danger);
+            border-left: 6px solid var(--bs-danger);
+        }
+    }
+}
+
+@each $state, $data in $form-validation-states {
+    @if $state == "valid" {
+        .#{$state}-tooltip {
+            color: var(--#{$prefix}success-contrast);
+        }
+
+        @if $enable-dark-mode {
+            @include color-mode(dark) {
+                .form-control.is-valid,
+                .was-validated .form-control:valid {
+                    @if $enable-validation-icons {
+                        background-image: escape-svg($form-feedback-icon-valid-dark);
+                        background-repeat: no-repeat;
+                        background-position: right $input-height-inner-quarter center;
+                        background-size: $input-height-inner-half $input-height-inner-half;
+                    }
+                }
+
+                .form-select.is-valid,
+                .was-validated .form-select:valid {
+                    @if $enable-validation-icons {
+                        &:not([multiple]):not([size]),
+                        &:not([multiple])[size="1"] {
+                            --#{$prefix}form-select-bg-icon: #{escape-svg($form-feedback-icon-valid-dark)};
+                        }
+                    }
+                }
+            }
+        }
+    } @else if $state == "invalid" {
+        .#{$state}-tooltip {
+            color: var(--#{$prefix}danger-contrast);
+        }
+
+        @if $enable-dark-mode {
+            @include color-mode(dark) {
+                .form-control.is-invalid,
+                .was-validated .form-control:invalid {
+                    @if $enable-validation-icons {
+                        background-image: escape-svg($form-feedback-icon-invalid-dark);
+                        background-repeat: no-repeat;
+                        background-position: right $input-height-inner-quarter center;
+                        background-size: $input-height-inner-half $input-height-inner-half;
+                    }
+                }
+
+                .form-select.is-invalid,
+                .was-validated .form-select:invalid {
+                    @if $enable-validation-icons {
+                        &:not([multiple]):not([size]),
+                        &:not([multiple])[size="1"] {
+                            --#{$prefix}form-select-bg-icon: #{escape-svg($form-feedback-icon-invalid-dark)};
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
