@@ -41154,17 +41154,6 @@ main {
 .chocolatey-ccm #appSidebar[data-icon-menu=true] #appSidebar_offcanvas {
   --bs-offcanvas-width: 50px;
 }
-.chocolatey-ccm #appSidebar.disabled li:not(.active-parent):hover::before {
-  background: none !important;
-}
-.chocolatey-ccm #appSidebar.disabled li a,
-.chocolatey-ccm #appSidebar.disabled li button {
-  pointer-events: none !important;
-}
-.chocolatey-ccm #appSidebar.disabled li a:hover,
-.chocolatey-ccm #appSidebar.disabled li button:hover {
-  background: none !important;
-}
 .chocolatey-ccm #appSidebar .menu-item-parent.menu-item-child a:not([data-bs-toggle]) {
   padding-left: 3rem !important;
 }
@@ -41172,6 +41161,7 @@ main {
   position: absolute;
   top: -2px;
   left: 0;
+  z-index: 1;
   display: block;
   width: 0.25rem;
   height: calc(100% + 4px);
@@ -41199,6 +41189,12 @@ main {
 .chocolatey-ccm #appSidebar nav li button.active,
 .chocolatey-ccm #appSidebar nav li button:hover {
   background: var(--bs-tertiary-bg);
+}
+.chocolatey-ccm #appSidebar nav li a.disabled, .chocolatey-ccm #appSidebar nav li a:disabled,
+.chocolatey-ccm #appSidebar nav li button.disabled,
+.chocolatey-ccm #appSidebar nav li button:disabled {
+  color: var(--bs-secondary-color) !important;
+  opacity: 1;
 }
 .chocolatey-ccm #appSidebar nav li [aria-expanded=true] .fa-angle-down {
   transform: rotate(180deg);

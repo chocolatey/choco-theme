@@ -269,7 +269,7 @@ div:where(.swal2-container) div:where(.swal2-popup).swal2-dragging div:where(.sw
 div:where(.swal2-container) h2:where(.swal2-title) {
   position: relative;
   max-width: 100%;
-  margin: 0;
+  margin: 0 !important;
   padding: 0.8em 1em 0;
   color: inherit;
   font-size: 1.875em;

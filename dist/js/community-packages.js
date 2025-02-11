@@ -28959,7 +28959,7 @@ ${templateEnter}`;
               };
             }
           }
-          marked.setOptions(markedOptions);
+          marked.use(markedOptions);
           var htmlText = marked.parse(text);
           if (this.options.renderingConfig && typeof this.options.renderingConfig.sanitizerFunction === "function") {
             htmlText = this.options.renderingConfig.sanitizerFunction.call(this, htmlText);
