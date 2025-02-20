@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.4 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.5 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -3416,16 +3416,13 @@
                       var descriptor = props[i];
                       descriptor.enumerable = descriptor.enumerable || false;
                       descriptor.configurable = true;
-                      if ("value" in descriptor)
-                        descriptor.writable = true;
+                      if ("value" in descriptor) descriptor.writable = true;
                       Object.defineProperty(target, descriptor.key, descriptor);
                     }
                   }
                   function _createClass(Constructor, protoProps, staticProps) {
-                    if (protoProps)
-                      _defineProperties(Constructor.prototype, protoProps);
-                    if (staticProps)
-                      _defineProperties(Constructor, staticProps);
+                    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+                    if (staticProps) _defineProperties(Constructor, staticProps);
                     return Constructor;
                   }
                   function _inherits(subClass, superClass) {
@@ -3433,8 +3430,7 @@
                       throw new TypeError("Super expression must either be null or a function");
                     }
                     subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
-                    if (superClass)
-                      _setPrototypeOf(subClass, superClass);
+                    if (superClass) _setPrototypeOf(subClass, superClass);
                   }
                   function _setPrototypeOf(o, p) {
                     _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf2(o2, p2) {
@@ -3469,12 +3465,9 @@
                     return self2;
                   }
                   function _isNativeReflectConstruct() {
-                    if (typeof Reflect === "undefined" || !Reflect.construct)
-                      return false;
-                    if (Reflect.construct.sham)
-                      return false;
-                    if (typeof Proxy === "function")
-                      return true;
+                    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+                    if (Reflect.construct.sham) return false;
+                    if (typeof Proxy === "function") return true;
                     try {
                       Date.prototype.toString.call(Reflect.construct(Date, [], function() {
                       }));
@@ -11070,8 +11063,7 @@
      */
     offset(ts) {
       const date = new Date(ts);
-      if (isNaN(date))
-        return NaN;
+      if (isNaN(date)) return NaN;
       const dtf = makeDTF(this.name);
       let [year, month, day, adOrBc, hour, minute, second] = dtf.formatToParts ? partsOffset(dtf, date) : hackyOffset(dtf, date);
       if (adOrBc === "BC") {
@@ -11251,8 +11243,7 @@
       const _a = opts, { padTo, floor } = _a, otherOpts = __objRest(_a, ["padTo", "floor"]);
       if (!forceSimple || Object.keys(otherOpts).length > 0) {
         const intlOpts = __spreadValues({ useGrouping: false }, opts);
-        if (opts.padTo > 0)
-          intlOpts.minimumIntegerDigits = opts.padTo;
+        if (opts.padTo > 0) intlOpts.minimumIntegerDigits = opts.padTo;
         this.inf = getCachedINF(intl, intlOpts);
       }
     }
@@ -11697,14 +11688,10 @@
       return input;
     } else if (isString(input)) {
       const lowered = input.toLowerCase();
-      if (lowered === "default")
-        return defaultZone2;
-      else if (lowered === "local" || lowered === "system")
-        return SystemZone.instance;
-      else if (lowered === "utc" || lowered === "gmt")
-        return FixedOffsetZone.utcInstance;
-      else
-        return FixedOffsetZone.parseSpecifier(lowered) || IANAZone.create(input);
+      if (lowered === "default") return defaultZone2;
+      else if (lowered === "local" || lowered === "system") return SystemZone.instance;
+      else if (lowered === "utc" || lowered === "gmt") return FixedOffsetZone.utcInstance;
+      else return FixedOffsetZone.parseSpecifier(lowered) || IANAZone.create(input);
     } else if (isNumber(input)) {
       return FixedOffsetZone.instance(input);
     } else if (typeof input === "object" && "offset" in input && typeof input.offset === "function") {
@@ -12039,12 +12026,9 @@
           "Cannot mix locale-based week fields with ISO-based week fields"
         );
       }
-      if (!isUndefined(obj.localWeekday))
-        obj.weekday = obj.localWeekday;
-      if (!isUndefined(obj.localWeekNumber))
-        obj.weekNumber = obj.localWeekNumber;
-      if (!isUndefined(obj.localWeekYear))
-        obj.weekYear = obj.localWeekYear;
+      if (!isUndefined(obj.localWeekday)) obj.weekday = obj.localWeekday;
+      if (!isUndefined(obj.localWeekNumber)) obj.weekNumber = obj.localWeekNumber;
+      if (!isUndefined(obj.localWeekYear)) obj.weekYear = obj.localWeekYear;
       delete obj.localWeekday;
       delete obj.localWeekNumber;
       delete obj.localWeekYear;
@@ -12068,8 +12052,7 @@
       return unitOutOfRange("week", obj.weekNumber);
     } else if (!validWeekday) {
       return unitOutOfRange("weekday", obj.weekday);
-    } else
-      return false;
+    } else return false;
   }
   function hasInvalidOrdinalData(obj) {
     const validYear = isInteger(obj.year), validOrdinal = integerBetween(obj.ordinal, 1, daysInYear(obj.year));
@@ -12077,8 +12060,7 @@
       return unitOutOfRange("year", obj.year);
     } else if (!validOrdinal) {
       return unitOutOfRange("ordinal", obj.ordinal);
-    } else
-      return false;
+    } else return false;
   }
   function hasInvalidGregorianData(obj) {
     const validYear = isInteger(obj.year), validMonth = integerBetween(obj.month, 1, 12), validDay = integerBetween(obj.day, 1, daysInMonth(obj.year, obj.month));
@@ -12088,8 +12070,7 @@
       return unitOutOfRange("month", obj.month);
     } else if (!validDay) {
       return unitOutOfRange("day", obj.day);
-    } else
-      return false;
+    } else return false;
   }
   function hasInvalidTimeData(obj) {
     const { hour, minute, second, millisecond } = obj;
@@ -12102,8 +12083,7 @@
       return unitOutOfRange("second", second);
     } else if (!validMillisecond) {
       return unitOutOfRange("millisecond", millisecond);
-    } else
-      return false;
+    } else return false;
   }
 
   // node_modules/luxon/src/impl/util.js
@@ -12263,8 +12243,7 @@
   function untruncateYear(year) {
     if (year > 99) {
       return year;
-    } else
-      return year > Settings.twoDigitCutoffYear ? 1900 + year : 2e3 + year;
+    } else return year > Settings.twoDigitCutoffYear ? 1900 + year : 2e3 + year;
   }
   function parseZoneInfo(ts, offsetFormat, locale, timeZone = null) {
     const date = new Date(ts), intlOpts = {
@@ -12301,8 +12280,7 @@
     for (const u in obj) {
       if (hasOwnProperty(obj, u)) {
         const v = obj[u];
-        if (v === void 0 || v === null)
-          continue;
+        if (v === void 0 || v === null) continue;
         normalized[normalizer(u)] = asNumber(v);
       }
     }
@@ -12578,23 +12556,29 @@
         }
       }, era = (length) => knownEnglish ? eraForDateTime(dt, length) : string({ era: length }, "era"), tokenToString = (token) => {
         switch (token) {
+          // ms
           case "S":
             return this.num(dt.millisecond);
           case "u":
+          // falls through
           case "SSS":
             return this.num(dt.millisecond, 3);
+          // seconds
           case "s":
             return this.num(dt.second);
           case "ss":
             return this.num(dt.second, 2);
+          // fractional seconds
           case "uu":
             return this.num(Math.floor(dt.millisecond / 10), 2);
           case "uuu":
             return this.num(Math.floor(dt.millisecond / 100));
+          // minutes
           case "m":
             return this.num(dt.minute);
           case "mm":
             return this.num(dt.minute, 2);
+          // hours
           case "h":
             return this.num(dt.hour % 12 === 0 ? 12 : dt.hour % 12);
           case "hh":
@@ -12603,6 +12587,7 @@
             return this.num(dt.hour);
           case "HH":
             return this.num(dt.hour, 2);
+          // offset
           case "Z":
             return formatOffset2({ format: "narrow", allowZ: this.opts.allowZ });
           case "ZZ":
@@ -12613,14 +12598,18 @@
             return dt.zone.offsetName(dt.ts, { format: "short", locale: this.loc.locale });
           case "ZZZZZ":
             return dt.zone.offsetName(dt.ts, { format: "long", locale: this.loc.locale });
+          // zone
           case "z":
             return dt.zoneName;
+          // meridiems
           case "a":
             return meridiem();
+          // dates
           case "d":
             return useDateTimeFormatter ? string({ day: "numeric" }, "day") : this.num(dt.day);
           case "dd":
             return useDateTimeFormatter ? string({ day: "2-digit" }, "day") : this.num(dt.day, 2);
+          // weekdays - standalone
           case "c":
             return this.num(dt.weekday);
           case "ccc":
@@ -12629,6 +12618,7 @@
             return weekday("long", true);
           case "ccccc":
             return weekday("narrow", true);
+          // weekdays - format
           case "E":
             return this.num(dt.weekday);
           case "EEE":
@@ -12637,6 +12627,7 @@
             return weekday("long", false);
           case "EEEEE":
             return weekday("narrow", false);
+          // months - standalone
           case "L":
             return useDateTimeFormatter ? string({ month: "numeric", day: "numeric" }, "month") : this.num(dt.month);
           case "LL":
@@ -12647,6 +12638,7 @@
             return month("long", true);
           case "LLLLL":
             return month("narrow", true);
+          // months - format
           case "M":
             return useDateTimeFormatter ? string({ month: "numeric" }, "month") : this.num(dt.month);
           case "MM":
@@ -12657,6 +12649,7 @@
             return month("long", false);
           case "MMMMM":
             return month("narrow", false);
+          // years
           case "y":
             return useDateTimeFormatter ? string({ year: "numeric" }, "year") : this.num(dt.year);
           case "yy":
@@ -12665,6 +12658,7 @@
             return useDateTimeFormatter ? string({ year: "numeric" }, "year") : this.num(dt.year, 4);
           case "yyyyyy":
             return useDateTimeFormatter ? string({ year: "numeric" }, "year") : this.num(dt.year, 6);
+          // eras
           case "G":
             return era("short");
           case "GG":
@@ -12862,8 +12856,7 @@
       hour: parseInteger(hourStr),
       minute: parseInteger(minuteStr)
     };
-    if (secondStr)
-      result.second = parseInteger(secondStr);
+    if (secondStr) result.second = parseInteger(secondStr);
     if (weekdayStr) {
       result.weekday = weekdayStr.length > 3 ? weekdaysLong.indexOf(weekdayStr) + 1 : weekdaysShort.indexOf(weekdayStr) + 1;
     }
@@ -13299,8 +13292,7 @@
         millisecond: "milliseconds",
         milliseconds: "milliseconds"
       }[unit ? unit.toLowerCase() : unit];
-      if (!normalized)
-        throw new InvalidUnitError(unit);
+      if (!normalized) throw new InvalidUnitError(unit);
       return normalized;
     }
     /**
@@ -13369,8 +13361,7 @@
      * ```
      */
     toHuman(opts = {}) {
-      if (!this.isValid)
-        return INVALID;
+      if (!this.isValid) return INVALID;
       const l2 = orderedUnits.map((unit) => {
         const val = this.values[unit];
         if (isUndefined(val)) {
@@ -13386,8 +13377,7 @@
      * @return {Object}
      */
     toObject() {
-      if (!this.isValid)
-        return {};
+      if (!this.isValid) return {};
       return __spreadValues({}, this.values);
     }
     /**
@@ -13401,27 +13391,19 @@
      * @return {string}
      */
     toISO() {
-      if (!this.isValid)
-        return null;
+      if (!this.isValid) return null;
       let s2 = "P";
-      if (this.years !== 0)
-        s2 += this.years + "Y";
-      if (this.months !== 0 || this.quarters !== 0)
-        s2 += this.months + this.quarters * 3 + "M";
-      if (this.weeks !== 0)
-        s2 += this.weeks + "W";
-      if (this.days !== 0)
-        s2 += this.days + "D";
+      if (this.years !== 0) s2 += this.years + "Y";
+      if (this.months !== 0 || this.quarters !== 0) s2 += this.months + this.quarters * 3 + "M";
+      if (this.weeks !== 0) s2 += this.weeks + "W";
+      if (this.days !== 0) s2 += this.days + "D";
       if (this.hours !== 0 || this.minutes !== 0 || this.seconds !== 0 || this.milliseconds !== 0)
         s2 += "T";
-      if (this.hours !== 0)
-        s2 += this.hours + "H";
-      if (this.minutes !== 0)
-        s2 += this.minutes + "M";
+      if (this.hours !== 0) s2 += this.hours + "H";
+      if (this.minutes !== 0) s2 += this.minutes + "M";
       if (this.seconds !== 0 || this.milliseconds !== 0)
         s2 += roundTo(this.seconds + this.milliseconds / 1e3, 3) + "S";
-      if (s2 === "P")
-        s2 += "T0S";
+      if (s2 === "P") s2 += "T0S";
       return s2;
     }
     /**
@@ -13441,11 +13423,9 @@
      * @return {string}
      */
     toISOTime(opts = {}) {
-      if (!this.isValid)
-        return null;
+      if (!this.isValid) return null;
       const millis = this.toMillis();
-      if (millis < 0 || millis >= 864e5)
-        return null;
+      if (millis < 0 || millis >= 864e5) return null;
       opts = __spreadProps(__spreadValues({
         suppressMilliseconds: false,
         suppressSeconds: false,
@@ -13487,8 +13467,7 @@
      * @return {number}
      */
     toMillis() {
-      if (!this.isValid)
-        return NaN;
+      if (!this.isValid) return NaN;
       return durationToMillis(this.matrix, this.values);
     }
     /**
@@ -13504,8 +13483,7 @@
      * @return {Duration}
      */
     plus(duration) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const dur = _Duration.fromDurationLike(duration), result = {};
       for (const k of orderedUnits) {
         if (hasOwnProperty(dur.values, k) || hasOwnProperty(this.values, k)) {
@@ -13520,8 +13498,7 @@
      * @return {Duration}
      */
     minus(duration) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const dur = _Duration.fromDurationLike(duration);
       return this.plus(dur.negate());
     }
@@ -13533,8 +13510,7 @@
      * @return {Duration}
      */
     mapUnits(fn) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const result = {};
       for (const k of Object.keys(this.values)) {
         result[k] = asNumber(fn(this.values[k], k));
@@ -13560,8 +13536,7 @@
      * @return {Duration}
      */
     set(values) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const mixed = __spreadValues(__spreadValues({}, this.values), normalizeObject(values, _Duration.normalizeUnit));
       return clone(this, { values: mixed });
     }
@@ -13602,8 +13577,7 @@
      * @return {Duration}
      */
     normalize() {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const vals = this.toObject();
       normalizeValues(this.matrix, vals);
       return clone(this, { values: vals }, true);
@@ -13614,8 +13588,7 @@
      * @return {Duration}
      */
     rescale() {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const vals = removeZeroes(this.normalize().shiftToAll().toObject());
       return clone(this, { values: vals }, true);
     }
@@ -13625,8 +13598,7 @@
      * @return {Duration}
      */
     shiftTo(...units) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       if (units.length === 0) {
         return this;
       }
@@ -13665,8 +13637,7 @@
      * @return {Duration}
      */
     shiftToAll() {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       return this.shiftTo(
         "years",
         "months",
@@ -13684,8 +13655,7 @@
      * @return {Duration}
      */
     negate() {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const negated = {};
       for (const k of Object.keys(this.values)) {
         negated[k] = this.values[k] === 0 ? 0 : -this.values[k];
@@ -13791,8 +13761,7 @@
         return false;
       }
       function eq(v1, v2) {
-        if (v1 === void 0 || v1 === 0)
-          return v2 === void 0 || v2 === 0;
+        if (v1 === void 0 || v1 === 0) return v2 === void 0 || v2 === 0;
         return v1 === v2;
       }
       for (const u of orderedUnits) {
@@ -13988,8 +13957,7 @@
      * @return {number}
      */
     count(unit = "milliseconds", opts) {
-      if (!this.isValid)
-        return NaN;
+      if (!this.isValid) return NaN;
       const start = this.start.startOf(unit, opts);
       let end;
       if (opts == null ? void 0 : opts.useLocaleWeeks) {
@@ -14021,8 +13989,7 @@
      * @return {boolean}
      */
     isAfter(dateTime) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return this.s > dateTime;
     }
     /**
@@ -14031,8 +13998,7 @@
      * @return {boolean}
      */
     isBefore(dateTime) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return this.e <= dateTime;
     }
     /**
@@ -14041,8 +14007,7 @@
      * @return {boolean}
      */
     contains(dateTime) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return this.s <= dateTime && this.e > dateTime;
     }
     /**
@@ -14053,8 +14018,7 @@
      * @return {Interval}
      */
     set({ start, end } = {}) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       return _Interval.fromDateTimes(start || this.s, end || this.e);
     }
     /**
@@ -14063,8 +14027,7 @@
      * @return {Array}
      */
     splitAt(...dateTimes) {
-      if (!this.isValid)
-        return [];
+      if (!this.isValid) return [];
       const sorted = dateTimes.map(friendlyDateTime).filter((d) => this.contains(d)).sort((a, b) => a.toMillis() - b.toMillis()), results = [];
       let { s: s2 } = this, i = 0;
       while (s2 < this.e) {
@@ -14103,8 +14066,7 @@
      * @return {Array}
      */
     divideEqually(numberOfParts) {
-      if (!this.isValid)
-        return [];
+      if (!this.isValid) return [];
       return this.splitBy(this.length() / numberOfParts).slice(0, numberOfParts);
     }
     /**
@@ -14121,8 +14083,7 @@
      * @return {boolean}
      */
     abutsStart(other) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return +this.e === +other.s;
     }
     /**
@@ -14131,8 +14092,7 @@
      * @return {boolean}
      */
     abutsEnd(other) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return +other.e === +this.s;
     }
     /**
@@ -14141,8 +14101,7 @@
      * @return {boolean}
      */
     engulfs(other) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return this.s <= other.s && this.e >= other.e;
     }
     /**
@@ -14164,8 +14123,7 @@
      * @return {Interval}
      */
     intersection(other) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const s2 = this.s > other.s ? this.s : other.s, e = this.e < other.e ? this.e : other.e;
       if (s2 >= e) {
         return null;
@@ -14180,8 +14138,7 @@
      * @return {Interval}
      */
     union(other) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const s2 = this.s < other.s ? this.s : other.s, e = this.e > other.e ? this.e : other.e;
       return _Interval.fromDateTimes(s2, e);
     }
@@ -14246,8 +14203,7 @@
      * @return {string}
      */
     toString() {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `[${this.s.toISO()} \u2013 ${this.e.toISO()})`;
     }
     /**
@@ -14289,8 +14245,7 @@
      * @return {string}
      */
     toISO(opts) {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `${this.s.toISO(opts)}/${this.e.toISO(opts)}`;
     }
     /**
@@ -14300,8 +14255,7 @@
      * @return {string}
      */
     toISODate() {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `${this.s.toISODate()}/${this.e.toISODate()}`;
     }
     /**
@@ -14312,8 +14266,7 @@
      * @return {string}
      */
     toISOTime(opts) {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `${this.s.toISOTime(opts)}/${this.e.toISOTime(opts)}`;
     }
     /**
@@ -14328,8 +14281,7 @@
      * @return {string}
      */
     toFormat(dateFormat, { separator = " \u2013 " } = {}) {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `${this.s.toFormat(dateFormat)}${separator}${this.e.toFormat(dateFormat)}`;
     }
     /**
@@ -14638,10 +14590,12 @@
         return literal(t);
       }
       switch (t.val) {
+        // era
         case "G":
           return oneOf(loc.eras("short"), 0);
         case "GG":
           return oneOf(loc.eras("long"), 0);
+        // years
         case "y":
           return intUnit(oneToSix);
         case "yy":
@@ -14652,6 +14606,7 @@
           return intUnit(fourToSix);
         case "yyyyyy":
           return intUnit(six);
+        // months
         case "M":
           return intUnit(oneOrTwo);
         case "MM":
@@ -14668,14 +14623,17 @@
           return oneOf(loc.months("short", false), 1);
         case "LLLL":
           return oneOf(loc.months("long", false), 1);
+        // dates
         case "d":
           return intUnit(oneOrTwo);
         case "dd":
           return intUnit(two);
+        // ordinals
         case "o":
           return intUnit(oneToThree);
         case "ooo":
           return intUnit(three);
+        // time
         case "HH":
           return intUnit(two);
         case "H":
@@ -14706,16 +14664,20 @@
           return simple(oneOrTwo);
         case "uuu":
           return intUnit(one);
+        // meridiem
         case "a":
           return oneOf(loc.meridiems(), 0);
+        // weekYear (k)
         case "kkkk":
           return intUnit(four);
         case "kk":
           return intUnit(twoToFour, untruncateYear);
+        // weekNumber (W)
         case "W":
           return intUnit(oneOrTwo);
         case "WW":
           return intUnit(two);
+        // weekdays
         case "E":
         case "c":
           return intUnit(one);
@@ -14727,13 +14689,18 @@
           return oneOf(loc.weekdays("short", true), 1);
         case "cccc":
           return oneOf(loc.weekdays("long", true), 1);
+        // offset/zone
         case "Z":
         case "ZZ":
           return offset(new RegExp(`([+-]${oneOrTwo.source})(?::(${two.source}))?`), 2);
         case "ZZZ":
           return offset(new RegExp(`([+-]${oneOrTwo.source})(${two.source})?`), 2);
+        // we don't support ZZZZ (PST) or ZZZZZ (Pacific Standard Time) in parsing
+        // because we don't have any way to figure out what they are
         case "z":
           return simple(/[a-z_+-/]{1,256}?/i);
+        // this special-case "token" represents a place where a macro-token expanded into a white-space literal
+        // in this case we accept any non-newline white-space
         case " ":
           return simple(/[^\S\n\r]/);
         default:
@@ -15107,8 +15074,7 @@
   function toISODate(o, extended) {
     const longFormat = o.c.year > 9999 || o.c.year < 0;
     let c = "";
-    if (longFormat && o.c.year >= 0)
-      c += "+";
+    if (longFormat && o.c.year >= 0) c += "+";
     c += padStart(o.c.year, longFormat ? 6 : 4);
     if (extended) {
       c += "-";
@@ -15220,8 +15186,7 @@
       weekyears: "weekYear",
       ordinal: "ordinal"
     }[unit.toLowerCase()];
-    if (!normalized)
-      throw new InvalidUnitError(unit);
+    if (!normalized) throw new InvalidUnitError(unit);
     return normalized;
   }
   function normalizeUnitWithLocalWeeks(unit) {
@@ -15281,8 +15246,7 @@
       if (opts.calendary) {
         if (!end.hasSame(start, unit)) {
           return end.startOf(unit).diff(start.startOf(unit), unit).get(unit);
-        } else
-          return 0;
+        } else return 0;
       } else {
         return end.diff(start, unit).get(unit);
       }
@@ -16213,8 +16177,7 @@
      * @return {DateTime}
      */
     set(values) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const normalized = normalizeObject(values, normalizeUnitWithLocalWeeks);
       const { minDaysInFirstWeek, startOfWeek } = usesLocalWeekValues(normalized, this.loc);
       const settingWeekStuff = !isUndefined(normalized.weekYear) || !isUndefined(normalized.weekNumber) || !isUndefined(normalized.weekday), containsOrdinal = !isUndefined(normalized.ordinal), containsGregorYear = !isUndefined(normalized.year), containsGregorMD = !isUndefined(normalized.month) || !isUndefined(normalized.day), containsGregor = containsGregorYear || containsGregorMD, definiteWeekDef = normalized.weekYear || normalized.weekNumber;
@@ -16258,8 +16221,7 @@
      * @return {DateTime}
      */
     plus(duration) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const dur = Duration.fromDurationLike(duration);
       return clone2(this, adjustTime(this, dur));
     }
@@ -16270,8 +16232,7 @@
      @return {DateTime}
      */
     minus(duration) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const dur = Duration.fromDurationLike(duration).negate();
       return clone2(this, adjustTime(this, dur));
     }
@@ -16288,22 +16249,26 @@
      * @return {DateTime}
      */
     startOf(unit, { useLocaleWeeks = false } = {}) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const o = {}, normalizedUnit = Duration.normalizeUnit(unit);
       switch (normalizedUnit) {
         case "years":
           o.month = 1;
+        // falls through
         case "quarters":
         case "months":
           o.day = 1;
+        // falls through
         case "weeks":
         case "days":
           o.hour = 0;
+        // falls through
         case "hours":
           o.minute = 0;
+        // falls through
         case "minutes":
           o.second = 0;
+        // falls through
         case "seconds":
           o.millisecond = 0;
           break;
@@ -16628,8 +16593,7 @@
      * @return {Object}
      */
     toObject(opts = {}) {
-      if (!this.isValid)
-        return {};
+      if (!this.isValid) return {};
       const base = __spreadValues({}, this.c);
       if (opts.includeConfig) {
         base.outputCalendar = this.outputCalendar;
@@ -16700,8 +16664,7 @@
      * @return {boolean}
      */
     hasSame(otherDateTime, unit, opts) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       const inputMs = otherDateTime.valueOf();
       const adjustedToZone = this.setZone(otherDateTime.zone, { keepLocalTime: true });
       return adjustedToZone.startOf(unit, opts) <= inputMs && inputMs <= adjustedToZone.endOf(unit, opts);
@@ -16735,8 +16698,7 @@
      * @example DateTime.now().minus({ hours: 36 }).toRelative({ round: false }) //=> "1.5 days ago"
      */
     toRelative(options = {}) {
-      if (!this.isValid)
-        return null;
+      if (!this.isValid) return null;
       const base = options.base || _DateTime.fromObject({}, { zone: this.zone }), padding = options.padding ? this < base ? -options.padding : options.padding : 0;
       let units = ["years", "months", "days", "hours", "minutes", "seconds"];
       let unit = options.unit;
@@ -16764,8 +16726,7 @@
      * @example DateTime.now().minus({ days: 2 }).toRelativeCalendar() //=> "2 days ago"
      */
     toRelativeCalendar(options = {}) {
-      if (!this.isValid)
-        return null;
+      if (!this.isValid) return null;
       return diffRelative(options.base || _DateTime.fromObject({}, { zone: this.zone }), this, __spreadProps(__spreadValues({}, options), {
         numeric: "auto",
         units: ["years", "months", "days"],

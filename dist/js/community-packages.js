@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.4 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.5 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -31,8 +31,7 @@
   var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
     get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
   }) : x)(function(x) {
-    if (typeof require !== "undefined")
-      return require.apply(this, arguments);
+    if (typeof require !== "undefined") return require.apply(this, arguments);
     throw Error('Dynamic require of "' + x + '" is not supported');
   });
   var __objRest = (source, exclude) => {
@@ -9824,16 +9823,13 @@
                       var descriptor = props[i];
                       descriptor.enumerable = descriptor.enumerable || false;
                       descriptor.configurable = true;
-                      if ("value" in descriptor)
-                        descriptor.writable = true;
+                      if ("value" in descriptor) descriptor.writable = true;
                       Object.defineProperty(target, descriptor.key, descriptor);
                     }
                   }
                   function _createClass(Constructor, protoProps, staticProps) {
-                    if (protoProps)
-                      _defineProperties(Constructor.prototype, protoProps);
-                    if (staticProps)
-                      _defineProperties(Constructor, staticProps);
+                    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+                    if (staticProps) _defineProperties(Constructor, staticProps);
                     return Constructor;
                   }
                   function _inherits(subClass, superClass) {
@@ -9841,8 +9837,7 @@
                       throw new TypeError("Super expression must either be null or a function");
                     }
                     subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
-                    if (superClass)
-                      _setPrototypeOf(subClass, superClass);
+                    if (superClass) _setPrototypeOf(subClass, superClass);
                   }
                   function _setPrototypeOf(o, p) {
                     _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf2(o2, p2) {
@@ -9877,12 +9872,9 @@
                     return self2;
                   }
                   function _isNativeReflectConstruct() {
-                    if (typeof Reflect === "undefined" || !Reflect.construct)
-                      return false;
-                    if (Reflect.construct.sham)
-                      return false;
-                    if (typeof Proxy === "function")
-                      return true;
+                    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+                    if (Reflect.construct.sham) return false;
+                    if (typeof Proxy === "function") return true;
                     try {
                       Date.prototype.toString.call(Reflect.construct(Date, [], function() {
                       }));
@@ -10333,20 +10325,17 @@
         "use strict";
         function t2(t3, e3) {
           (null == e3 || e3 > t3.length) && (e3 = t3.length);
-          for (var n3 = 0, r2 = Array(e3); n3 < e3; n3++)
-            r2[n3] = t3[n3];
+          for (var n3 = 0, r2 = Array(e3); n3 < e3; n3++) r2[n3] = t3[n3];
           return r2;
         }
         function e2(t3, e3, n3) {
           return (e3 = function(t4) {
             var e4 = function(t5, e5) {
-              if ("object" != typeof t5 || !t5)
-                return t5;
+              if ("object" != typeof t5 || !t5) return t5;
               var n4 = t5[Symbol.toPrimitive];
               if (void 0 !== n4) {
                 var r2 = n4.call(t5, e5 || "default");
-                if ("object" != typeof r2)
-                  return r2;
+                if ("object" != typeof r2) return r2;
                 throw new TypeError("@@toPrimitive must return a primitive value.");
               }
               return ("string" === e5 ? String : Number)(t5);
@@ -10377,11 +10366,9 @@
         }
         function i(e3) {
           return function(e4) {
-            if (Array.isArray(e4))
-              return t2(e4);
+            if (Array.isArray(e4)) return t2(e4);
           }(e3) || function(t3) {
-            if ("undefined" != typeof Symbol && null != t3[Symbol.iterator] || null != t3["@@iterator"])
-              return Array.from(t3);
+            if ("undefined" != typeof Symbol && null != t3[Symbol.iterator] || null != t3["@@iterator"]) return Array.from(t3);
           }(e3) || s2(e3) || function() {
             throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
           }();
@@ -10395,8 +10382,7 @@
         }
         function s2(e3, n3) {
           if (e3) {
-            if ("string" == typeof e3)
-              return t2(e3, n3);
+            if ("string" == typeof e3) return t2(e3, n3);
             var r2 = {}.toString.call(e3).slice(8, -1);
             return "Object" === r2 && e3.constructor && (r2 = e3.constructor.name), "Map" === r2 || "Set" === r2 ? Array.from(e3) : "Arguments" === r2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r2) ? t2(e3, n3) : void 0;
           }
@@ -10407,15 +10393,12 @@
           var n3 = "string" == typeof t3 ? document.createElement(t3) : t3;
           for (var r2 in e3) {
             var i2 = e3[r2];
-            if ("inside" === r2)
-              i2.append(n3);
-            else if ("dest" === r2)
-              u(i2[0]).insertAdjacentElement(i2[1], n3);
+            if ("inside" === r2) i2.append(n3);
+            else if ("dest" === r2) u(i2[0]).insertAdjacentElement(i2[1], n3);
             else if ("around" === r2) {
               var o2 = i2;
               o2.parentNode.insertBefore(n3, o2), n3.append(o2), null != o2.getAttribute("autofocus") && o2.focus();
-            } else
-              r2 in n3 ? n3[r2] = i2 : n3.setAttribute(r2, i2);
+            } else r2 in n3 ? n3[r2] = i2 : n3.setAttribute(r2, i2);
           }
           return n3;
         }, c = function(t3, e3) {
@@ -10430,12 +10413,10 @@
             var a2 = (t3 = t3.replace(/ /g, "")).length, f2 = 0, p2 = Array.from(e3).map(function(e4, n4) {
               return f2 < a2 && u2[n4] === t3[f2] && (e4 = s3 ? l2(e4, s3) : e4, f2++), e4;
             }).join("");
-            if (f2 === a2)
-              return p2;
+            if (f2 === a2) return p2;
           } else {
             var d2 = u2.indexOf(t3);
-            if (~d2)
-              return t3 = e3.substring(d2, d2 + t3.length), d2 = s3 ? e3.replace(t3, l2(t3, s3)) : e3;
+            if (~d2) return t3 = e3.substring(d2, d2 + t3.length), d2 = s3 ? e3.replace(t3, l2(t3, s3)) : e3;
           }
         }, d = function(t3, e3) {
           return new Promise(function(n3, r2) {
@@ -10490,21 +10471,18 @@
                   try {
                     u3 || null == n4.return || n4.return();
                   } finally {
-                    if (a3)
-                      throw o4;
+                    if (a3) throw o4;
                   }
                 } };
               }(n3.keys);
               try {
-                for (l3.s(); !(c2 = l3.n()).done; )
-                  a2(c2.value);
+                for (l3.s(); !(c2 = l3.n()).done; ) a2(c2.value);
               } catch (t4) {
                 l3.e(t4);
               } finally {
                 l3.f();
               }
-            } else
-              a2();
+            } else a2();
           }), n3.filter && (i2 = n3.filter(i2));
           var o2 = i2.slice(0, e3.resultsList.maxResults);
           e3.feedback = { query: t3, matches: i2, results: o2 }, f("results", e3);
@@ -10543,8 +10521,7 @@
                       var n5 = a(i3.tag, r({ id: "".concat(i3.id, "_").concat(e6), role: "option", innerHTML: t5.match, inside: c3 }, i3.class && { class: i3.class }));
                       i3.element && i3.element(n5, t5);
                     }), n4.append(c3), e5.element && e5.element(n4, o3), g(t4);
-                  } else
-                    w(t4);
+                  } else w(t4);
                 }(t3), c2.call(n3));
               } catch (t4) {
                 return o2(t4);
@@ -10556,9 +10533,7 @@
           });
         }
         var L = function(t3, e3) {
-          for (var n3 in t3)
-            for (var r2 in t3[n3])
-              e3(n3, r2);
+          for (var n3 in t3) for (var r2 in t3[n3]) e3(n3, r2);
         }, T = function(t3) {
           var e3, n3, i2, o2 = t3.events, s3 = (e3 = function() {
             return k(t3);
@@ -10605,14 +10580,13 @@
           var e3 = this;
           return new Promise(function(n3, i2) {
             var o2, s3, u2;
-            if (o2 = t3.placeHolder, u2 = { role: "combobox", "aria-owns": (s3 = t3.resultsList).id, "aria-haspopup": true, "aria-expanded": false }, a(t3.input, r(r({ "aria-controls": s3.id, "aria-autocomplete": "both" }, o2 && { placeholder: o2 }), !t3.wrapper && r({}, u2))), t3.wrapper && (t3.wrapper = a("div", r({ around: t3.input, class: t3.name + "_wrapper" }, u2))), s3 && (t3.list = a(s3.tag, r({ dest: [s3.destination, s3.position], id: s3.id, role: "listbox", hidden: "hidden" }, s3.class && { class: s3.class }))), T(t3), t3.data.cache)
-              return d(t3).then(function(t4) {
-                try {
-                  return c2.call(e3);
-                } catch (t5) {
-                  return i2(t5);
-                }
-              }, i2);
+            if (o2 = t3.placeHolder, u2 = { role: "combobox", "aria-owns": (s3 = t3.resultsList).id, "aria-haspopup": true, "aria-expanded": false }, a(t3.input, r(r({ "aria-controls": s3.id, "aria-autocomplete": "both" }, o2 && { placeholder: o2 }), !t3.wrapper && r({}, u2))), t3.wrapper && (t3.wrapper = a("div", r({ around: t3.input, class: t3.name + "_wrapper" }, u2))), s3 && (t3.list = a(s3.tag, r({ dest: [s3.destination, s3.position], id: s3.id, role: "listbox", hidden: "hidden" }, s3.class && { class: s3.class }))), T(t3), t3.data.cache) return d(t3).then(function(t4) {
+              try {
+                return c2.call(e3);
+              } catch (t5) {
+                return i2(t5);
+              }
+            }, i2);
             function c2() {
               return f("init", t3), n3();
             }
@@ -10653,12 +10627,8 @@
         return function t3(e3) {
           this.options = e3, this.id = t3.instances = (t3.instances || 0) + 1, this.name = "autoComplete", this.wrapper = 1, this.threshold = 1, this.debounce = 0, this.resultsList = { position: "afterend", tag: "ul", maxResults: 5 }, this.resultItem = { tag: "li" }, function(t4) {
             var e4 = t4.name, n3 = t4.options, r2 = t4.resultsList, i2 = t4.resultItem;
-            for (var s3 in n3)
-              if ("object" === o(n3[s3]))
-                for (var a2 in t4[s3] || (t4[s3] = {}), n3[s3])
-                  t4[s3][a2] = n3[s3][a2];
-              else
-                t4[s3] = n3[s3];
+            for (var s3 in n3) if ("object" === o(n3[s3])) for (var a2 in t4[s3] || (t4[s3] = {}), n3[s3]) t4[s3][a2] = n3[s3][a2];
+            else t4[s3] = n3[s3];
             t4.selector = t4.selector || "#" + e4, r2.destination = r2.destination || t4.selector, r2.id = r2.id || e4 + "_list_" + t4.id, i2.id = i2.id || e4 + "_result", t4.input = u(t4.selector);
           }(this), P.call(this, t3), E(this);
         };
@@ -12397,19 +12367,18 @@ ${templateEnter}`;
         }
         function lineAtHeight(chunk, h) {
           var n2 = chunk.first;
-          outer:
-            do {
-              for (var i$12 = 0; i$12 < chunk.children.length; ++i$12) {
-                var child = chunk.children[i$12], ch = child.height;
-                if (h < ch) {
-                  chunk = child;
-                  continue outer;
-                }
-                h -= ch;
-                n2 += child.chunkSize();
+          outer: do {
+            for (var i$12 = 0; i$12 < chunk.children.length; ++i$12) {
+              var child = chunk.children[i$12], ch = child.height;
+              if (h < ch) {
+                chunk = child;
+                continue outer;
               }
-              return n2;
-            } while (!chunk.lines);
+              h -= ch;
+              n2 += child.chunkSize();
+            }
+            return n2;
+          } while (!chunk.lines);
           var i2 = 0;
           for (; i2 < chunk.lines.length; ++i2) {
             var line = chunk.lines[i2], lh = line.height;
@@ -12427,8 +12396,7 @@ ${templateEnter}`;
           return String(options.lineNumberFormatter(i2 + options.firstLineNumber));
         }
         function Pos(line, ch, sticky) {
-          if (sticky === void 0)
-            sticky = null;
+          if (sticky === void 0) sticky = null;
           if (!(this instanceof Pos)) {
             return new Pos(line, ch, sticky);
           }
@@ -12575,8 +12543,7 @@ ${templateEnter}`;
             context.baseTokens = null;
             context.baseTokenPos = 1;
           };
-          for (var o = 0; o < cm.state.overlays.length; ++o)
-            loop(o);
+          for (var o = 0; o < cm.state.overlays.length; ++o) loop(o);
           return { styles: st, classes: lineClasses.bgClass || lineClasses.textClass ? lineClasses : null };
         }
         function getLineStyles(cm, line, updateFrontier) {
@@ -14718,8 +14685,7 @@ ${templateEnter}`;
           cm.display.input.showSelection(cm.display.input.prepareSelection());
         }
         function prepareSelection(cm, primary) {
-          if (primary === void 0)
-            primary = true;
+          if (primary === void 0) primary = true;
           var doc2 = cm.doc, result = {};
           var curFragment = result.cursors = document.createDocumentFragment();
           var selFragment = result.selection = document.createDocumentFragment();
@@ -15852,8 +15818,7 @@ ${templateEnter}`;
           var view = display.view, lineN = display.viewFrom;
           for (var i2 = 0; i2 < view.length; i2++) {
             var lineView = view[i2];
-            if (lineView.hidden)
-              ;
+            if (lineView.hidden) ;
             else if (!lineView.node || lineView.node.parentNode != container) {
               var node = buildLineElement(cm, lineView, lineN, dims);
               container.insertBefore(node, cur);
@@ -16112,15 +16077,14 @@ ${templateEnter}`;
             return;
           }
           if (dy && mac && webkit) {
-            outer:
-              for (var cur = e.target, view = display.view; cur != scroll; cur = cur.parentNode) {
-                for (var i2 = 0; i2 < view.length; i2++) {
-                  if (view[i2].node == cur) {
-                    cm.display.currentWheelTarget = cur;
-                    break outer;
-                  }
+            outer: for (var cur = e.target, view = display.view; cur != scroll; cur = cur.parentNode) {
+              for (var i2 = 0; i2 < view.length; i2++) {
+                if (view[i2].node == cur) {
+                  cm.display.currentWheelTarget = cur;
+                  break outer;
                 }
               }
+            }
           }
           if (dx && !gecko && !presto && pixelsPerUnit != null) {
             if (dy && canScrollY) {
@@ -16581,16 +16545,15 @@ ${templateEnter}`;
           for (var i2 = 0; i2 < old.length; ++i2) {
             var oldCur = old[i2], stretchCur = stretched[i2];
             if (oldCur && stretchCur) {
-              spans:
-                for (var j = 0; j < stretchCur.length; ++j) {
-                  var span = stretchCur[j];
-                  for (var k = 0; k < oldCur.length; ++k) {
-                    if (oldCur[k].marker == span.marker) {
-                      continue spans;
-                    }
+              spans: for (var j = 0; j < stretchCur.length; ++j) {
+                var span = stretchCur[j];
+                for (var k = 0; k < oldCur.length; ++k) {
+                  if (oldCur[k].marker == span.marker) {
+                    continue spans;
                   }
-                  oldCur.push(span);
                 }
+                oldCur.push(span);
+              }
             } else if (stretchCur) {
               old[i2] = stretchCur;
             }
@@ -16954,8 +16917,7 @@ ${templateEnter}`;
           };
           for (var i$12 = event.changes.length - 1; i$12 >= 0; --i$12) {
             var returned = loop(i$12);
-            if (returned)
-              return returned.v;
+            if (returned) return returned.v;
           }
         }
         function shiftDoc(doc2, distance) {
@@ -17691,8 +17653,7 @@ ${templateEnter}`;
               }
             }
           };
-          for (var i2 = 0; i2 < markers.length; i2++)
-            loop(i2);
+          for (var i2 = 0; i2 < markers.length; i2++) loop(i2);
         }
         var nextDocId = 0;
         var Doc = function(text, mode, firstLine, lineSep, direction) {
@@ -22139,8 +22100,7 @@ ${templateEnter}`;
         "use strict";
         var listRE = /^(\s*)(>[> ]*|[*+-] \[[x ]\]\s|[*+-]\s|(\d+)([.)]))(\s*)/, emptyListRE = /^(\s*)(>[> ]*|[*+-] \[[x ]\]|[*+-]|(\d+)[.)])(\s*)$/, unorderedListRE = /[*+-]\s/;
         CodeMirror2.commands.newlineAndIndentContinueMarkdownList = function(cm) {
-          if (cm.getOption("disableInput"))
-            return CodeMirror2.Pass;
+          if (cm.getOption("disableInput")) return CodeMirror2.Pass;
           var ranges = cm.listSelections(), replacements = [];
           for (var i = 0; i < ranges.length; i++) {
             var pos = ranges[i].head;
@@ -22163,22 +22123,20 @@ ${templateEnter}`;
             if (emptyListRE.test(line)) {
               var endOfQuote = inQuote && />\s*$/.test(line);
               var endOfList = !/>\s*$/.test(line);
-              if (endOfQuote || endOfList)
-                cm.replaceRange("", {
-                  line: pos.line,
-                  ch: 0
-                }, {
-                  line: pos.line,
-                  ch: pos.ch + 1
-                });
+              if (endOfQuote || endOfList) cm.replaceRange("", {
+                line: pos.line,
+                ch: 0
+              }, {
+                line: pos.line,
+                ch: pos.ch + 1
+              });
               replacements[i] = "\n";
             } else {
               var indent = match2[1], after = match2[5];
               var numbered = !(unorderedListRE.test(match2[2]) || match2[2].indexOf(">") >= 0);
               var bullet = numbered ? parseInt(match2[3], 10) + 1 + match2[4] : match2[2].replace("x", " ");
               replacements[i] = "\n" + indent + bullet + after;
-              if (numbered)
-                incrementRemainingMarkdownListNumbers(cm, pos);
+              if (numbered) incrementRemainingMarkdownListNumbers(cm, pos);
             }
           }
           cm.replaceSelections(replacements);
@@ -22195,10 +22153,8 @@ ${templateEnter}`;
               var newNumber = parseInt(startItem[3], 10) + lookAhead - skipCount;
               var nextNumber = parseInt(nextItem[3], 10), itemNumber = nextNumber;
               if (startIndent === nextIndent && !isNaN(nextNumber)) {
-                if (newNumber === nextNumber)
-                  itemNumber = nextNumber + 1;
-                if (newNumber > nextNumber)
-                  itemNumber = newNumber + 1;
+                if (newNumber === nextNumber) itemNumber = nextNumber + 1;
+                if (newNumber > nextNumber) itemNumber = newNumber + 1;
                 cm.replaceRange(
                   nextLine.replace(listRE, nextIndent + itemNumber + nextItem[4] + nextItem[5]),
                   {
@@ -22211,10 +22167,8 @@ ${templateEnter}`;
                   }
                 );
               } else {
-                if (startIndent.length > nextIndent.length)
-                  return;
-                if (startIndent.length < nextIndent.length && lookAhead === 1)
-                  return;
+                if (startIndent.length > nextIndent.length) return;
+                if (startIndent.length < nextIndent.length && lookAhead === 1) return;
                 skipCount += 1;
               }
             }
@@ -22276,14 +22230,10 @@ ${templateEnter}`;
       })(function(CodeMirror2) {
         "use strict";
         CodeMirror2.defineOption("fullScreen", false, function(cm, val, old) {
-          if (old == CodeMirror2.Init)
-            old = false;
-          if (!old == !val)
-            return;
-          if (val)
-            setFullscreen(cm);
-          else
-            setNormal(cm);
+          if (old == CodeMirror2.Init) old = false;
+          if (!old == !val) return;
+          if (val) setFullscreen(cm);
+          else setNormal(cm);
         });
         function setFullscreen(cm) {
           var wrap = cm.getWrapperElement();
@@ -22423,10 +22373,8 @@ ${templateEnter}`;
           var indentUnit = editorConf.indentUnit;
           var config = {};
           var defaults = config_.htmlMode ? htmlConfig : xmlConfig;
-          for (var prop in defaults)
-            config[prop] = defaults[prop];
-          for (var prop in config_)
-            config[prop] = config_[prop];
+          for (var prop in defaults) config[prop] = defaults[prop];
+          for (var prop in config_) config[prop] = config_[prop];
           var type, setStyle;
           function inText(stream, state) {
             function chain(parser) {
@@ -22437,10 +22385,8 @@ ${templateEnter}`;
             if (ch == "<") {
               if (stream.eat("!")) {
                 if (stream.eat("[")) {
-                  if (stream.match("CDATA["))
-                    return chain(inBlock("atom", "]]>"));
-                  else
-                    return null;
+                  if (stream.match("CDATA[")) return chain(inBlock("atom", "]]>"));
+                  else return null;
                 } else if (stream.match("--")) {
                   return chain(inBlock("comment", "-->"));
                 } else if (stream.match("DOCTYPE", true, true)) {
@@ -22557,8 +22503,7 @@ ${templateEnter}`;
               this.noIndent = true;
           }
           function popContext(state) {
-            if (state.context)
-              state.context = state.context.prev;
+            if (state.context) state.context = state.context.prev;
           }
           function maybePopContext(state, nextTagName) {
             var parentTagName;
@@ -22647,15 +22592,12 @@ ${templateEnter}`;
             return attrState;
           }
           function attrEqState(type2, stream, state) {
-            if (type2 == "equals")
-              return attrValueState;
-            if (!config.allowMissing)
-              setStyle = "error";
+            if (type2 == "equals") return attrValueState;
+            if (!config.allowMissing) setStyle = "error";
             return attrState(type2, stream, state);
           }
           function attrValueState(type2, stream, state) {
-            if (type2 == "string")
-              return attrContinuedState;
+            if (type2 == "string") return attrContinuedState;
             if (type2 == "word" && config.allowUnquoted) {
               setStyle = "string";
               return attrState;
@@ -22664,8 +22606,7 @@ ${templateEnter}`;
             return attrState(type2, stream, state);
           }
           function attrContinuedState(type2, stream, state) {
-            if (type2 == "string")
-              return attrContinuedState;
+            if (type2 == "string") return attrContinuedState;
             return attrState(type2, stream, state);
           }
           return {
@@ -22678,15 +22619,13 @@ ${templateEnter}`;
                 tagStart: null,
                 context: null
               };
-              if (baseIndent != null)
-                state.baseIndent = baseIndent;
+              if (baseIndent != null) state.baseIndent = baseIndent;
               return state;
             },
             token: function(stream, state) {
               if (!state.tagName && stream.sol())
                 state.indented = stream.indentation();
-              if (stream.eatSpace())
-                return null;
+              if (stream.eatSpace()) return null;
               type = null;
               var style = state.tokenize(stream, state);
               if ((style || type) && style != "comment") {
@@ -22705,8 +22644,7 @@ ${templateEnter}`;
                 else
                   return state.indented + indentUnit;
               }
-              if (context && context.noIndent)
-                return CodeMirror2.Pass;
+              if (context && context.noIndent) return CodeMirror2.Pass;
               if (state.tokenize != inTag && state.tokenize != inText)
                 return fullLine ? fullLine.match(/^(\s*)/)[0].length : 0;
               if (state.tagName) {
@@ -22715,8 +22653,7 @@ ${templateEnter}`;
                 else
                   return state.tagStart + indentUnit * (config.multilineTagIndentFactor || 1);
               }
-              if (config.alignCDATA && /<!\[CDATA\[/.test(textAfter))
-                return 0;
+              if (config.alignCDATA && /<!\[CDATA\[/.test(textAfter)) return 0;
               var tagAfter = textAfter && /^<(\/)?([\w_:\.-]*)/.exec(textAfter);
               if (tagAfter && tagAfter[1]) {
                 while (context) {
@@ -22740,10 +22677,8 @@ ${templateEnter}`;
               }
               while (context && context.prev && !context.startOfLine)
                 context = context.prev;
-              if (context)
-                return context.indent + indentUnit;
-              else
-                return state.baseIndent || 0;
+              if (context) return context.indent + indentUnit;
+              else return state.baseIndent || 0;
             },
             electricInput: /<\/[\s\w:]+>$/,
             blockCommentStart: "<!--",
@@ -22957,25 +22892,20 @@ ${templateEnter}`;
         ];
         for (var i = 0; i < CodeMirror2.modeInfo.length; i++) {
           var info = CodeMirror2.modeInfo[i];
-          if (info.mimes)
-            info.mime = info.mimes[0];
+          if (info.mimes) info.mime = info.mimes[0];
         }
         CodeMirror2.findModeByMIME = function(mime) {
           mime = mime.toLowerCase();
           for (var i2 = 0; i2 < CodeMirror2.modeInfo.length; i2++) {
             var info2 = CodeMirror2.modeInfo[i2];
-            if (info2.mime == mime)
-              return info2;
+            if (info2.mime == mime) return info2;
             if (info2.mimes) {
               for (var j = 0; j < info2.mimes.length; j++)
-                if (info2.mimes[j] == mime)
-                  return info2;
+                if (info2.mimes[j] == mime) return info2;
             }
           }
-          if (/\+xml$/.test(mime))
-            return CodeMirror2.findModeByMIME("application/xml");
-          if (/\+json$/.test(mime))
-            return CodeMirror2.findModeByMIME("application/json");
+          if (/\+xml$/.test(mime)) return CodeMirror2.findModeByMIME("application/xml");
+          if (/\+json$/.test(mime)) return CodeMirror2.findModeByMIME("application/json");
         };
         CodeMirror2.findModeByExtension = function(ext) {
           ext = ext.toLowerCase();
@@ -22983,32 +22913,27 @@ ${templateEnter}`;
             var info2 = CodeMirror2.modeInfo[i2];
             if (info2.ext) {
               for (var j = 0; j < info2.ext.length; j++)
-                if (info2.ext[j] == ext)
-                  return info2;
+                if (info2.ext[j] == ext) return info2;
             }
           }
         };
         CodeMirror2.findModeByFileName = function(filename) {
           for (var i2 = 0; i2 < CodeMirror2.modeInfo.length; i2++) {
             var info2 = CodeMirror2.modeInfo[i2];
-            if (info2.file && info2.file.test(filename))
-              return info2;
+            if (info2.file && info2.file.test(filename)) return info2;
           }
           var dot = filename.lastIndexOf(".");
           var ext = dot > -1 && filename.substring(dot + 1, filename.length);
-          if (ext)
-            return CodeMirror2.findModeByExtension(ext);
+          if (ext) return CodeMirror2.findModeByExtension(ext);
         };
         CodeMirror2.findModeByName = function(name) {
           name = name.toLowerCase();
           for (var i2 = 0; i2 < CodeMirror2.modeInfo.length; i2++) {
             var info2 = CodeMirror2.modeInfo[i2];
-            if (info2.name.toLowerCase() == name)
-              return info2;
+            if (info2.name.toLowerCase() == name) return info2;
             if (info2.alias) {
               for (var j = 0; j < info2.alias.length; j++)
-                if (info2.alias[j].toLowerCase() == name)
-                  return info2;
+                if (info2.alias[j].toLowerCase() == name) return info2;
             }
           }
         };
@@ -23034,8 +22959,7 @@ ${templateEnter}`;
           function getMode(name) {
             if (CodeMirror2.findModeByName) {
               var found = CodeMirror2.findModeByName(name);
-              if (found)
-                name = found.mime || found.mimes[0];
+              if (found) name = found.mime || found.mimes[0];
             }
             var mode2 = CodeMirror2.getMode(cmCfg, name);
             return mode2.name == "null" ? null : mode2;
@@ -23044,8 +22968,7 @@ ${templateEnter}`;
             modeCfg.highlightFormatting = false;
           if (modeCfg.maxBlockquoteDepth === void 0)
             modeCfg.maxBlockquoteDepth = 0;
-          if (modeCfg.taskLists === void 0)
-            modeCfg.taskLists = false;
+          if (modeCfg.taskLists === void 0) modeCfg.taskLists = false;
           if (modeCfg.strikethrough === void 0)
             modeCfg.strikethrough = false;
           if (modeCfg.emoji === void 0)
@@ -23162,14 +23085,12 @@ ${templateEnter}`;
               state.quote = 0;
               state.header = match2[1].length;
               state.thisLine.header = true;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "header";
+              if (modeCfg.highlightFormatting) state.formatting = "header";
               state.f = state.inline;
               return getType(state);
             } else if (state.indentation <= maxNonCodeIndentation && stream.eat(">")) {
               state.quote = firstTokenOnLine ? 1 : state.quote + 1;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "quote";
+              if (modeCfg.highlightFormatting) state.formatting = "quote";
               stream.eatSpace();
               return getType(state);
             } else if (!isHr && !state.setext && firstTokenOnLine && state.indentation <= maxNonCodeIndentation && (match2 = stream.match(listRE))) {
@@ -23186,18 +23107,15 @@ ${templateEnter}`;
                 state.taskList = true;
               }
               state.f = state.inline;
-              if (modeCfg.highlightFormatting)
-                state.formatting = ["list", "list-" + listType];
+              if (modeCfg.highlightFormatting) state.formatting = ["list", "list-" + listType];
               return getType(state);
             } else if (firstTokenOnLine && state.indentation <= maxNonCodeIndentation && (match2 = stream.match(fencedCodeRE, true))) {
               state.quote = 0;
               state.fencedEndRE = new RegExp(match2[1] + "+ *$");
               state.localMode = modeCfg.fencedCodeBlockHighlighting && getMode(match2[2] || modeCfg.fencedCodeBlockDefaultMode);
-              if (state.localMode)
-                state.localState = CodeMirror2.startState(state.localMode);
+              if (state.localMode) state.localState = CodeMirror2.startState(state.localMode);
               state.f = state.block = local;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "code-block";
+              if (modeCfg.highlightFormatting) state.formatting = "code-block";
               state.code = -1;
               return getType(state);
             } else if (
@@ -23212,8 +23130,7 @@ ${templateEnter}`;
                 state.header = state.setext;
                 state.setext = 0;
                 stream.skipToEnd();
-                if (modeCfg.highlightFormatting)
-                  state.formatting = "header";
+                if (modeCfg.highlightFormatting) state.formatting = "header";
               }
               state.thisLine.header = true;
               state.f = state.inline;
@@ -23245,19 +23162,16 @@ ${templateEnter}`;
             var hasExitedList = state.indentation < currListInd;
             var maxFencedEndInd = currListInd + 3;
             if (state.fencedEndRE && state.indentation <= maxFencedEndInd && (hasExitedList || stream.match(state.fencedEndRE))) {
-              if (modeCfg.highlightFormatting)
-                state.formatting = "code-block";
+              if (modeCfg.highlightFormatting) state.formatting = "code-block";
               var returnType;
-              if (!hasExitedList)
-                returnType = getType(state);
+              if (!hasExitedList) returnType = getType(state);
               state.localMode = state.localState = null;
               state.block = blockNormal;
               state.f = inlineNormal;
               state.fencedEndRE = null;
               state.code = 0;
               state.thisLine.fencedCodeEnd = true;
-              if (hasExitedList)
-                return switchBlock(stream, state, state.block);
+              if (hasExitedList) return switchBlock(stream, state, state.block);
               return returnType;
             } else if (state.localMode) {
               return state.localMode.token(stream, state.localState);
@@ -23270,8 +23184,7 @@ ${templateEnter}`;
             var styles = [];
             if (state.formatting) {
               styles.push(tokenTypes.formatting);
-              if (typeof state.formatting === "string")
-                state.formatting = [state.formatting];
+              if (typeof state.formatting === "string") state.formatting = [state.formatting];
               for (var i = 0; i < state.formatting.length; i++) {
                 styles.push(tokenTypes.formatting + "-" + state.formatting[i]);
                 if (state.formatting[i] === "header") {
@@ -23369,20 +23282,16 @@ ${templateEnter}`;
             }
             if (state.taskList) {
               var taskOpen = stream.match(taskListRE, true)[1] === " ";
-              if (taskOpen)
-                state.taskOpen = true;
-              else
-                state.taskClosed = true;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "task";
+              if (taskOpen) state.taskOpen = true;
+              else state.taskClosed = true;
+              if (modeCfg.highlightFormatting) state.formatting = "task";
               state.taskList = false;
               return getType(state);
             }
             state.taskOpen = false;
             state.taskClosed = false;
             if (state.header && stream.match(/^#+$/, true)) {
-              if (modeCfg.highlightFormatting)
-                state.formatting = "header";
+              if (modeCfg.highlightFormatting) state.formatting = "header";
               return getType(state);
             }
             var ch = stream.next();
@@ -23400,8 +23309,7 @@ ${templateEnter}`;
             }
             if (ch === "`") {
               var previousFormatting = state.formatting;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "code";
+              if (modeCfg.highlightFormatting) state.formatting = "code";
               stream.eatWhile("`");
               var count = stream.current().length;
               if (state.code == 0 && (!state.quote || count == 1)) {
@@ -23429,20 +23337,17 @@ ${templateEnter}`;
             if (ch === "!" && stream.match(/\[[^\]]*\] ?(?:\(|\[)/, false)) {
               state.imageMarker = true;
               state.image = true;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "image";
+              if (modeCfg.highlightFormatting) state.formatting = "image";
               return getType(state);
             }
             if (ch === "[" && state.imageMarker && stream.match(/[^\]]*\](\(.*?\)| ?\[.*?\])/, false)) {
               state.imageMarker = false;
               state.imageAltText = true;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "image";
+              if (modeCfg.highlightFormatting) state.formatting = "image";
               return getType(state);
             }
             if (ch === "]" && state.imageAltText) {
-              if (modeCfg.highlightFormatting)
-                state.formatting = "image";
+              if (modeCfg.highlightFormatting) state.formatting = "image";
               var type = getType(state);
               state.imageAltText = false;
               state.image = false;
@@ -23450,16 +23355,13 @@ ${templateEnter}`;
               return type;
             }
             if (ch === "[" && !state.image) {
-              if (state.linkText && stream.match(/^.*?\]/))
-                return getType(state);
+              if (state.linkText && stream.match(/^.*?\]/)) return getType(state);
               state.linkText = true;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "link";
+              if (modeCfg.highlightFormatting) state.formatting = "link";
               return getType(state);
             }
             if (ch === "]" && state.linkText) {
-              if (modeCfg.highlightFormatting)
-                state.formatting = "link";
+              if (modeCfg.highlightFormatting) state.formatting = "link";
               var type = getType(state);
               state.linkText = false;
               state.inline = state.f = stream.match(/\(.*?\)| ?\[.*?\]/, false) ? linkHref : inlineNormal;
@@ -23467,8 +23369,7 @@ ${templateEnter}`;
             }
             if (ch === "<" && stream.match(/^(https?|ftps?):\/\/(?:[^\\>]|\\.)+>/, false)) {
               state.f = state.inline = linkInline;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "link";
+              if (modeCfg.highlightFormatting) state.formatting = "link";
               var type = getType(state);
               if (type) {
                 type += " ";
@@ -23479,8 +23380,7 @@ ${templateEnter}`;
             }
             if (ch === "<" && stream.match(/^[^> \\]+@(?:[^\\>]|\\.)+>/, false)) {
               state.f = state.inline = linkInline;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "link";
+              if (modeCfg.highlightFormatting) state.formatting = "link";
               var type = getType(state);
               if (type) {
                 type += " ";
@@ -23493,8 +23393,7 @@ ${templateEnter}`;
               var end = stream.string.indexOf(">", stream.pos);
               if (end != -1) {
                 var atts = stream.string.substring(stream.start, end);
-                if (/markdown\s*=\s*('|"){0,1}1('|"){0,1}/.test(atts))
-                  state.md_inside = true;
+                if (/markdown\s*=\s*('|"){0,1}1('|"){0,1}/.test(atts)) state.md_inside = true;
               }
               stream.backUp(1);
               state.htmlState = CodeMirror2.startState(htmlMode);
@@ -23505,8 +23404,7 @@ ${templateEnter}`;
               return "tag";
             } else if (ch === "*" || ch === "_") {
               var len = 1, before = stream.pos == 1 ? " " : stream.string.charAt(stream.pos - 2);
-              while (len < 3 && stream.eat(ch))
-                len++;
+              while (len < 3 && stream.eat(ch)) len++;
               var after = stream.peek() || " ";
               var leftFlanking = !/\s/.test(after) && (!punctuation.test(after) || /\s/.test(before) || punctuation.test(before));
               var rightFlanking = !/\s/.test(before) && (!punctuation.test(before) || /\s/.test(after) || punctuation.test(after));
@@ -23524,17 +23422,12 @@ ${templateEnter}`;
                   setStrong = false;
               }
               if (setStrong != null || setEm != null) {
-                if (modeCfg.highlightFormatting)
-                  state.formatting = setEm == null ? "strong" : setStrong == null ? "em" : "strong em";
-                if (setEm === true)
-                  state.em = ch;
-                if (setStrong === true)
-                  state.strong = ch;
+                if (modeCfg.highlightFormatting) state.formatting = setEm == null ? "strong" : setStrong == null ? "em" : "strong em";
+                if (setEm === true) state.em = ch;
+                if (setStrong === true) state.strong = ch;
                 var t = getType(state);
-                if (setEm === false)
-                  state.em = false;
-                if (setStrong === false)
-                  state.strong = false;
+                if (setEm === false) state.em = false;
+                if (setStrong === false) state.strong = false;
                 return t;
               }
             } else if (ch === " ") {
@@ -23549,15 +23442,13 @@ ${templateEnter}`;
             if (modeCfg.strikethrough) {
               if (ch === "~" && stream.eatWhile(ch)) {
                 if (state.strikethrough) {
-                  if (modeCfg.highlightFormatting)
-                    state.formatting = "strikethrough";
+                  if (modeCfg.highlightFormatting) state.formatting = "strikethrough";
                   var t = getType(state);
                   state.strikethrough = false;
                   return t;
                 } else if (stream.match(/^[^\s]/, false)) {
                   state.strikethrough = true;
-                  if (modeCfg.highlightFormatting)
-                    state.formatting = "strikethrough";
+                  if (modeCfg.highlightFormatting) state.formatting = "strikethrough";
                   return getType(state);
                 }
               } else if (ch === " ") {
@@ -23572,8 +23463,7 @@ ${templateEnter}`;
             }
             if (modeCfg.emoji && ch === ":" && stream.match(/^(?:[a-z_\d+][a-z_\d+-]*|\-[a-z_\d+][a-z_\d+-]*):/)) {
               state.emoji = true;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "emoji";
+              if (modeCfg.highlightFormatting) state.formatting = "emoji";
               var retType = getType(state);
               state.emoji = false;
               return retType;
@@ -23591,8 +23481,7 @@ ${templateEnter}`;
             var ch = stream.next();
             if (ch === ">") {
               state.f = state.inline = inlineNormal;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "link";
+              if (modeCfg.highlightFormatting) state.formatting = "link";
               var type = getType(state);
               if (type) {
                 type += " ";
@@ -23611,8 +23500,7 @@ ${templateEnter}`;
             var ch = stream.next();
             if (ch === "(" || ch === "[") {
               state.f = state.inline = getLinkHrefInside(ch === "(" ? ")" : "]");
-              if (modeCfg.highlightFormatting)
-                state.formatting = "link-string";
+              if (modeCfg.highlightFormatting) state.formatting = "link-string";
               state.linkHref = true;
               return getType(state);
             }
@@ -23627,8 +23515,7 @@ ${templateEnter}`;
               var ch = stream.next();
               if (ch === endChar) {
                 state.f = state.inline = inlineNormal;
-                if (modeCfg.highlightFormatting)
-                  state.formatting = "link-string";
+                if (modeCfg.highlightFormatting) state.formatting = "link-string";
                 var returnState = getType(state);
                 state.linkHref = false;
                 return returnState;
@@ -23642,8 +23529,7 @@ ${templateEnter}`;
             if (stream.match(/^([^\]\\]|\\.)*\]:/, false)) {
               state.f = footnoteLinkInside;
               stream.next();
-              if (modeCfg.highlightFormatting)
-                state.formatting = "link";
+              if (modeCfg.highlightFormatting) state.formatting = "link";
               state.linkText = true;
               return getType(state);
             }
@@ -23652,8 +23538,7 @@ ${templateEnter}`;
           function footnoteLinkInside(stream, state) {
             if (stream.match("]:", true)) {
               state.f = state.inline = footnoteUrl;
-              if (modeCfg.highlightFormatting)
-                state.formatting = "link";
+              if (modeCfg.highlightFormatting) state.formatting = "link";
               var returnType = getType(state);
               state.linkText = false;
               return returnType;
@@ -23761,25 +23646,20 @@ ${templateEnter}`;
                     var indentation = stream.match(/^\s*/, true)[0].replace(/\t/g, expandedTab).length;
                     state.indentation = indentation;
                     state.indentationDiff = null;
-                    if (indentation > 0)
-                      return null;
+                    if (indentation > 0) return null;
                   }
                 }
               }
               return state.f(stream, state);
             },
             innerMode: function(state) {
-              if (state.block == htmlBlock)
-                return { state: state.htmlState, mode: htmlMode };
-              if (state.localState)
-                return { state: state.localState, mode: state.localMode };
+              if (state.block == htmlBlock) return { state: state.htmlState, mode: htmlMode };
+              if (state.localState) return { state: state.localState, mode: state.localMode };
               return { state, mode };
             },
             indent: function(state, textAfter, line) {
-              if (state.block == htmlBlock && htmlMode.indent)
-                return htmlMode.indent(state.htmlState, textAfter, line);
-              if (state.localState && state.localMode.indent)
-                return state.localMode.indent(state.localState, textAfter, line);
+              if (state.block == htmlBlock && htmlMode.indent) return htmlMode.indent(state.htmlState, textAfter, line);
+              if (state.localState && state.localMode.indent) return state.localMode.indent(state.localState, textAfter, line);
               return CodeMirror2.Pass;
             },
             blankLine,
@@ -23847,12 +23727,10 @@ ${templateEnter}`;
                 state.overlayPos = stream.pos;
               }
               stream.pos = Math.min(state.basePos, state.overlayPos);
-              if (state.overlayCur == null)
-                return state.baseCur;
+              if (state.overlayCur == null) return state.baseCur;
               else if (state.baseCur != null && state.overlay.combineTokens || combine && state.overlay.combineTokens == null)
                 return state.baseCur + " " + state.overlayCur;
-              else
-                return state.overlayCur;
+              else return state.overlayCur;
             },
             indent: base.indent && function(state, textAfter, line) {
               return base.indent(state.base, textAfter, line);
@@ -23863,10 +23741,8 @@ ${templateEnter}`;
             },
             blankLine: function(state) {
               var baseToken, overlayToken;
-              if (base.blankLine)
-                baseToken = base.blankLine(state.base);
-              if (overlay.blankLine)
-                overlayToken = overlay.blankLine(state.overlay);
+              if (base.blankLine) baseToken = base.blankLine(state.base);
+              if (overlay.blankLine) overlayToken = overlay.blankLine(state.overlay);
               return overlayToken == null ? baseToken : combine && baseToken != null ? baseToken + " " + overlayToken : overlayToken;
             }
           };
@@ -23905,8 +23781,7 @@ ${templateEnter}`;
             var wrapper = cm.getWrapperElement();
             wrapper.className = wrapper.className.replace(" CodeMirror-empty", "");
           }
-          if (val && !cm.hasFocus())
-            onBlur(cm);
+          if (val && !cm.hasFocus()) onBlur(cm);
         });
         function clearPlaceholder(cm) {
           if (cm.state.placeholder) {
@@ -23921,8 +23796,7 @@ ${templateEnter}`;
           elt.style.direction = cm.getOption("direction");
           elt.className = "CodeMirror-placeholder CodeMirror-line-like";
           var placeHolder = cm.getOption("placeholder");
-          if (typeof placeHolder == "string")
-            placeHolder = document.createTextNode(placeHolder);
+          if (typeof placeHolder == "string") placeHolder = document.createTextNode(placeHolder);
           elt.appendChild(placeHolder);
           cm.display.lineSpace.insertBefore(elt, cm.display.lineSpace.firstChild);
         }
@@ -23933,23 +23807,18 @@ ${templateEnter}`;
               var input = cm.getInputField();
               empty = input.nodeName == "TEXTAREA" ? !cm.getLine(0).length : !/[^\u200b]/.test(input.querySelector(".CodeMirror-line").textContent);
             }
-            if (empty)
-              setPlaceholder(cm);
-            else
-              clearPlaceholder(cm);
+            if (empty) setPlaceholder(cm);
+            else clearPlaceholder(cm);
           }, 20);
         }
         function onBlur(cm) {
-          if (isEmpty(cm))
-            setPlaceholder(cm);
+          if (isEmpty(cm)) setPlaceholder(cm);
         }
         function onChange(cm) {
           var wrapper = cm.getWrapperElement(), empty = isEmpty(cm);
           wrapper.className = wrapper.className.replace(" CodeMirror-empty", "") + (empty ? " CodeMirror-empty" : "");
-          if (empty)
-            setPlaceholder(cm);
-          else
-            clearPlaceholder(cm);
+          if (empty) setPlaceholder(cm);
+          else clearPlaceholder(cm);
         }
         function isEmpty(cm) {
           return cm.lineCount() === 1 && cm.getLine(0) === "";
@@ -24048,8 +23917,7 @@ ${templateEnter}`;
         var Pos = CodeMirror2.Pos;
         var cmp = CodeMirror2.cmpPos;
         function coverRange(cm, from, to, addAt) {
-          if (cmp(from, to) == 0)
-            return;
+          if (cmp(from, to) == 0) return;
           var array = cm.state.markedSelection;
           var cls = cm.state.markedSelectionStyle;
           for (var line = from.line; ; ) {
@@ -24057,19 +23925,15 @@ ${templateEnter}`;
             var endLine = line + CHUNK_SIZE, atEnd = endLine >= to.line;
             var end = atEnd ? to : Pos(endLine, 0);
             var mark = cm.markText(start, end, { className: cls });
-            if (addAt == null)
-              array.push(mark);
-            else
-              array.splice(addAt++, 0, mark);
-            if (atEnd)
-              break;
+            if (addAt == null) array.push(mark);
+            else array.splice(addAt++, 0, mark);
+            if (atEnd) break;
             line = endLine;
           }
         }
         function clear(cm) {
           var array = cm.state.markedSelection;
-          for (var i = 0; i < array.length; ++i)
-            array[i].clear();
+          for (var i = 0; i < array.length; ++i) array[i].clear();
           array.length = 0;
         }
         function reset(cm) {
@@ -24079,14 +23943,11 @@ ${templateEnter}`;
             coverRange(cm, ranges[i].from(), ranges[i].to());
         }
         function update(cm) {
-          if (!cm.somethingSelected())
-            return clear(cm);
-          if (cm.listSelections().length > 1)
-            return reset(cm);
+          if (!cm.somethingSelected()) return clear(cm);
+          if (cm.listSelections().length > 1) return reset(cm);
           var from = cm.getCursor("start"), to = cm.getCursor("end");
           var array = cm.state.markedSelection;
-          if (!array.length)
-            return coverRange(cm, from, to);
+          if (!array.length) return coverRange(cm, from, to);
           var coverStart = array[0].find(), coverEnd = array[array.length - 1].find();
           if (!coverStart || !coverEnd || to.line - from.line <= CHUNK_SIZE || cmp(from, coverEnd.to) >= 0 || cmp(to, coverStart.from) <= 0)
             return reset(cm);
@@ -24138,9 +23999,8 @@ ${templateEnter}`;
         }
         function ensureFlags(regexp, flags) {
           var current = regexpFlags(regexp), target = current;
-          for (var i = 0; i < flags.length; i++)
-            if (target.indexOf(flags.charAt(i)) == -1)
-              target += flags.charAt(i);
+          for (var i = 0; i < flags.length; i++) if (target.indexOf(flags.charAt(i)) == -1)
+            target += flags.charAt(i);
           return current == target ? regexp : new RegExp(regexp.source, target);
         }
         function maybeMultiline(regexp) {
@@ -24160,14 +24020,12 @@ ${templateEnter}`;
           }
         }
         function searchRegexpForwardMultiline(doc, regexp, start) {
-          if (!maybeMultiline(regexp))
-            return searchRegexpForward(doc, regexp, start);
+          if (!maybeMultiline(regexp)) return searchRegexpForward(doc, regexp, start);
           regexp = ensureFlags(regexp, "gm");
           var string, chunk = 1;
           for (var line = start.line, last = doc.lastLine(); line <= last; ) {
             for (var i = 0; i < chunk; i++) {
-              if (line > last)
-                break;
+              if (line > last) break;
               var curLine = doc.getLine(line++);
               string = string == null ? curLine : string + "\n" + curLine;
             }
@@ -24193,11 +24051,9 @@ ${templateEnter}`;
           while (from <= string.length) {
             regexp.lastIndex = from;
             var newMatch = regexp.exec(string);
-            if (!newMatch)
-              break;
+            if (!newMatch) break;
             var end = newMatch.index + newMatch[0].length;
-            if (end > string.length - endMargin)
-              break;
+            if (end > string.length - endMargin) break;
             if (!match2 || end > match2.index + match2[0].length)
               match2 = newMatch;
             from = newMatch.index + 1;
@@ -24218,8 +24074,7 @@ ${templateEnter}`;
           }
         }
         function searchRegexpBackwardMultiline(doc, regexp, start) {
-          if (!maybeMultiline(regexp))
-            return searchRegexpBackward(doc, regexp, start);
+          if (!maybeMultiline(regexp)) return searchRegexpBackward(doc, regexp, start);
           regexp = ensureFlags(regexp, "gm");
           var string, chunkSize = 1, endMargin = doc.getLine(start.line).length - start.ch;
           for (var line = start.line, first = doc.firstLine(); line >= first; ) {
@@ -24260,90 +24115,72 @@ ${templateEnter}`;
           };
         }
         function adjustPos(orig, folded, pos, foldFunc) {
-          if (orig.length == folded.length)
-            return pos;
+          if (orig.length == folded.length) return pos;
           for (var min = 0, max = pos + Math.max(0, orig.length - folded.length); ; ) {
-            if (min == max)
-              return min;
+            if (min == max) return min;
             var mid = min + max >> 1;
             var len = foldFunc(orig.slice(0, mid)).length;
-            if (len == pos)
-              return mid;
-            else if (len > pos)
-              max = mid;
-            else
-              min = mid + 1;
+            if (len == pos) return mid;
+            else if (len > pos) max = mid;
+            else min = mid + 1;
           }
         }
         function searchStringForward(doc, query, start, caseFold) {
-          if (!query.length)
-            return null;
+          if (!query.length) return null;
           var fold = caseFold ? doFold : noFold;
           var lines = fold(query).split(/\r|\n\r?/);
-          search:
-            for (var line = start.line, ch = start.ch, last = doc.lastLine() + 1 - lines.length; line <= last; line++, ch = 0) {
-              var orig = doc.getLine(line).slice(ch), string = fold(orig);
-              if (lines.length == 1) {
-                var found = string.indexOf(lines[0]);
-                if (found == -1)
-                  continue search;
-                var start = adjustPos(orig, string, found, fold) + ch;
-                return {
-                  from: Pos(line, adjustPos(orig, string, found, fold) + ch),
-                  to: Pos(line, adjustPos(orig, string, found + lines[0].length, fold) + ch)
-                };
-              } else {
-                var cutFrom = string.length - lines[0].length;
-                if (string.slice(cutFrom) != lines[0])
-                  continue search;
-                for (var i = 1; i < lines.length - 1; i++)
-                  if (fold(doc.getLine(line + i)) != lines[i])
-                    continue search;
-                var end = doc.getLine(line + lines.length - 1), endString = fold(end), lastLine = lines[lines.length - 1];
-                if (endString.slice(0, lastLine.length) != lastLine)
-                  continue search;
-                return {
-                  from: Pos(line, adjustPos(orig, string, cutFrom, fold) + ch),
-                  to: Pos(line + lines.length - 1, adjustPos(end, endString, lastLine.length, fold))
-                };
-              }
+          search: for (var line = start.line, ch = start.ch, last = doc.lastLine() + 1 - lines.length; line <= last; line++, ch = 0) {
+            var orig = doc.getLine(line).slice(ch), string = fold(orig);
+            if (lines.length == 1) {
+              var found = string.indexOf(lines[0]);
+              if (found == -1) continue search;
+              var start = adjustPos(orig, string, found, fold) + ch;
+              return {
+                from: Pos(line, adjustPos(orig, string, found, fold) + ch),
+                to: Pos(line, adjustPos(orig, string, found + lines[0].length, fold) + ch)
+              };
+            } else {
+              var cutFrom = string.length - lines[0].length;
+              if (string.slice(cutFrom) != lines[0]) continue search;
+              for (var i = 1; i < lines.length - 1; i++)
+                if (fold(doc.getLine(line + i)) != lines[i]) continue search;
+              var end = doc.getLine(line + lines.length - 1), endString = fold(end), lastLine = lines[lines.length - 1];
+              if (endString.slice(0, lastLine.length) != lastLine) continue search;
+              return {
+                from: Pos(line, adjustPos(orig, string, cutFrom, fold) + ch),
+                to: Pos(line + lines.length - 1, adjustPos(end, endString, lastLine.length, fold))
+              };
             }
+          }
         }
         function searchStringBackward(doc, query, start, caseFold) {
-          if (!query.length)
-            return null;
+          if (!query.length) return null;
           var fold = caseFold ? doFold : noFold;
           var lines = fold(query).split(/\r|\n\r?/);
-          search:
-            for (var line = start.line, ch = start.ch, first = doc.firstLine() - 1 + lines.length; line >= first; line--, ch = -1) {
-              var orig = doc.getLine(line);
-              if (ch > -1)
-                orig = orig.slice(0, ch);
-              var string = fold(orig);
-              if (lines.length == 1) {
-                var found = string.lastIndexOf(lines[0]);
-                if (found == -1)
-                  continue search;
-                return {
-                  from: Pos(line, adjustPos(orig, string, found, fold)),
-                  to: Pos(line, adjustPos(orig, string, found + lines[0].length, fold))
-                };
-              } else {
-                var lastLine = lines[lines.length - 1];
-                if (string.slice(0, lastLine.length) != lastLine)
-                  continue search;
-                for (var i = 1, start = line - lines.length + 1; i < lines.length - 1; i++)
-                  if (fold(doc.getLine(start + i)) != lines[i])
-                    continue search;
-                var top = doc.getLine(line + 1 - lines.length), topString = fold(top);
-                if (topString.slice(topString.length - lines[0].length) != lines[0])
-                  continue search;
-                return {
-                  from: Pos(line + 1 - lines.length, adjustPos(top, topString, top.length - lines[0].length, fold)),
-                  to: Pos(line, adjustPos(orig, string, lastLine.length, fold))
-                };
-              }
+          search: for (var line = start.line, ch = start.ch, first = doc.firstLine() - 1 + lines.length; line >= first; line--, ch = -1) {
+            var orig = doc.getLine(line);
+            if (ch > -1) orig = orig.slice(0, ch);
+            var string = fold(orig);
+            if (lines.length == 1) {
+              var found = string.lastIndexOf(lines[0]);
+              if (found == -1) continue search;
+              return {
+                from: Pos(line, adjustPos(orig, string, found, fold)),
+                to: Pos(line, adjustPos(orig, string, found + lines[0].length, fold))
+              };
+            } else {
+              var lastLine = lines[lines.length - 1];
+              if (string.slice(0, lastLine.length) != lastLine) continue search;
+              for (var i = 1, start = line - lines.length + 1; i < lines.length - 1; i++)
+                if (fold(doc.getLine(start + i)) != lines[i]) continue search;
+              var top = doc.getLine(line + 1 - lines.length), topString = fold(top);
+              if (topString.slice(topString.length - lines[0].length) != lines[0]) continue search;
+              return {
+                from: Pos(line + 1 - lines.length, adjustPos(top, topString, top.length - lines[0].length, fold)),
+                to: Pos(line, adjustPos(orig, string, lastLine.length, fold))
+              };
             }
+          }
         }
         function SearchCursor(doc, query, pos, options) {
           this.atOccurrence = false;
@@ -24359,8 +24196,7 @@ ${templateEnter}`;
             options = null;
           }
           if (typeof query == "string") {
-            if (caseFold == null)
-              caseFold = false;
+            if (caseFold == null) caseFold = false;
             this.matches = function(reverse, pos2) {
               return (reverse ? searchStringBackward : searchStringForward)(doc, query, pos2, caseFold);
             };
@@ -24417,16 +24253,13 @@ ${templateEnter}`;
             }
           },
           from: function() {
-            if (this.atOccurrence)
-              return this.pos.from;
+            if (this.atOccurrence) return this.pos.from;
           },
           to: function() {
-            if (this.atOccurrence)
-              return this.pos.to;
+            if (this.atOccurrence) return this.pos.to;
           },
           replace: function(newText, origin) {
-            if (!this.atOccurrence)
-              return;
+            if (!this.atOccurrence) return;
             var lines = CodeMirror2.splitLines(newText);
             this.doc.replaceRange(lines, this.pos.from, this.pos.to, origin);
             this.pos.to = Pos(
@@ -24445,8 +24278,7 @@ ${templateEnter}`;
           var ranges = [];
           var cur = this.getSearchCursor(query, this.getCursor("from"), caseFold);
           while (cur.findNext()) {
-            if (CodeMirror2.cmpPos(cur.to(), this.getCursor("to")) > 0)
-              break;
+            if (CodeMirror2.cmpPos(cur.to(), this.getCursor("to")) > 0) break;
             ranges.push({ anchor: cur.from(), head: cur.to() });
           }
           if (ranges.length)
@@ -25349,16 +25181,13 @@ ${templateEnter}`;
           var descriptor = props[i];
           descriptor.enumerable = descriptor.enumerable || false;
           descriptor.configurable = true;
-          if ("value" in descriptor)
-            descriptor.writable = true;
+          if ("value" in descriptor) descriptor.writable = true;
           Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
         }
       }
       function _createClass(Constructor, protoProps, staticProps) {
-        if (protoProps)
-          _defineProperties(Constructor.prototype, protoProps);
-        if (staticProps)
-          _defineProperties(Constructor, staticProps);
+        if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) _defineProperties(Constructor, staticProps);
         Object.defineProperty(Constructor, "prototype", {
           writable: false
         });
@@ -25379,38 +25208,28 @@ ${templateEnter}`;
         return _extends.apply(this, arguments);
       }
       function _unsupportedIterableToArray(o, minLen) {
-        if (!o)
-          return;
-        if (typeof o === "string")
-          return _arrayLikeToArray(o, minLen);
+        if (!o) return;
+        if (typeof o === "string") return _arrayLikeToArray(o, minLen);
         var n2 = Object.prototype.toString.call(o).slice(8, -1);
-        if (n2 === "Object" && o.constructor)
-          n2 = o.constructor.name;
-        if (n2 === "Map" || n2 === "Set")
-          return Array.from(o);
-        if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2))
-          return _arrayLikeToArray(o, minLen);
+        if (n2 === "Object" && o.constructor) n2 = o.constructor.name;
+        if (n2 === "Map" || n2 === "Set") return Array.from(o);
+        if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return _arrayLikeToArray(o, minLen);
       }
       function _arrayLikeToArray(arr, len) {
-        if (len == null || len > arr.length)
-          len = arr.length;
-        for (var i = 0, arr2 = new Array(len); i < len; i++)
-          arr2[i] = arr[i];
+        if (len == null || len > arr.length) len = arr.length;
+        for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
         return arr2;
       }
       function _createForOfIteratorHelperLoose(o, allowArrayLike) {
         var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
-        if (it)
-          return (it = it.call(o)).next.bind(it);
+        if (it) return (it = it.call(o)).next.bind(it);
         if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
-          if (it)
-            o = it;
+          if (it) o = it;
           var i = 0;
           return function() {
-            if (i >= o.length)
-              return {
-                done: true
-              };
+            if (i >= o.length) return {
+              done: true
+            };
             return {
               done: false,
               value: o[i++]
@@ -25420,13 +25239,11 @@ ${templateEnter}`;
         throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
       }
       function _toPrimitive(input, hint) {
-        if (typeof input !== "object" || input === null)
-          return input;
+        if (typeof input !== "object" || input === null) return input;
         var prim = input[Symbol.toPrimitive];
         if (prim !== void 0) {
           var res = prim.call(input, hint || "default");
-          if (typeof res !== "object")
-            return res;
+          if (typeof res !== "object") return res;
           throw new TypeError("@@toPrimitive must return a primitive value.");
         }
         return (hint === "string" ? String : Number)(input);
@@ -25493,8 +25310,7 @@ ${templateEnter}`;
       function unescape(html) {
         return html.replace(unescapeTest, function(_, n2) {
           n2 = n2.toLowerCase();
-          if (n2 === "colon")
-            return ":";
+          if (n2 === "colon") return ":";
           if (n2.charAt(0) === "#") {
             return n2.charAt(1) === "x" ? String.fromCharCode(parseInt(n2.substring(2), 16)) : String.fromCharCode(+n2.substring(1));
           }
@@ -26157,10 +25973,8 @@ ${templateEnter}`;
             prevChar = "";
           }
           var match2 = this.rules.inline.emStrong.lDelim.exec(src);
-          if (!match2)
-            return;
-          if (match2[3] && prevChar.match(/(?:[0-9A-Za-z\xAA\xB2\xB3\xB5\xB9\xBA\xBC-\xBE\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u0660-\u0669\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07C0-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0966-\u096F\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09E6-\u09F1\u09F4-\u09F9\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A66-\u0A6F\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AE6-\u0AEF\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B66-\u0B6F\u0B71-\u0B77\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0BE6-\u0BF2\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C66-\u0C6F\u0C78-\u0C7E\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CE6-\u0CEF\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D58-\u0D61\u0D66-\u0D78\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0DE6-\u0DEF\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E50-\u0E59\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0ED0-\u0ED9\u0EDC-\u0EDF\u0F00\u0F20-\u0F33\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F-\u1049\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u1090-\u1099\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1369-\u137C\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16EE-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u17E0-\u17E9\u17F0-\u17F9\u1810-\u1819\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1946-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u19D0-\u19DA\u1A00-\u1A16\u1A20-\u1A54\u1A80-\u1A89\u1A90-\u1A99\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B50-\u1B59\u1B83-\u1BA0\u1BAE-\u1BE5\u1C00-\u1C23\u1C40-\u1C49\u1C4D-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2070\u2071\u2074-\u2079\u207F-\u2089\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2150-\u2189\u2460-\u249B\u24EA-\u24FF\u2776-\u2793\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2CFD\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005-\u3007\u3021-\u3029\u3031-\u3035\u3038-\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u3192-\u3195\u31A0-\u31BF\u31F0-\u31FF\u3220-\u3229\u3248-\u324F\u3251-\u325F\u3280-\u3289\u32B1-\u32BF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6EF\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA830-\uA835\uA840-\uA873\uA882-\uA8B3\uA8D0-\uA8D9\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA900-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF-\uA9D9\uA9E0-\uA9E4\uA9E6-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA50-\uAA59\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uABF0-\uABF9\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF10-\uFF19\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC]|\uD800[\uDC00-\uDC0B\uDC0D-\uDC26\uDC28-\uDC3A\uDC3C\uDC3D\uDC3F-\uDC4D\uDC50-\uDC5D\uDC80-\uDCFA\uDD07-\uDD33\uDD40-\uDD78\uDD8A\uDD8B\uDE80-\uDE9C\uDEA0-\uDED0\uDEE1-\uDEFB\uDF00-\uDF23\uDF2D-\uDF4A\uDF50-\uDF75\uDF80-\uDF9D\uDFA0-\uDFC3\uDFC8-\uDFCF\uDFD1-\uDFD5]|\uD801[\uDC00-\uDC9D\uDCA0-\uDCA9\uDCB0-\uDCD3\uDCD8-\uDCFB\uDD00-\uDD27\uDD30-\uDD63\uDD70-\uDD7A\uDD7C-\uDD8A\uDD8C-\uDD92\uDD94\uDD95\uDD97-\uDDA1\uDDA3-\uDDB1\uDDB3-\uDDB9\uDDBB\uDDBC\uDE00-\uDF36\uDF40-\uDF55\uDF60-\uDF67\uDF80-\uDF85\uDF87-\uDFB0\uDFB2-\uDFBA]|\uD802[\uDC00-\uDC05\uDC08\uDC0A-\uDC35\uDC37\uDC38\uDC3C\uDC3F-\uDC55\uDC58-\uDC76\uDC79-\uDC9E\uDCA7-\uDCAF\uDCE0-\uDCF2\uDCF4\uDCF5\uDCFB-\uDD1B\uDD20-\uDD39\uDD80-\uDDB7\uDDBC-\uDDCF\uDDD2-\uDE00\uDE10-\uDE13\uDE15-\uDE17\uDE19-\uDE35\uDE40-\uDE48\uDE60-\uDE7E\uDE80-\uDE9F\uDEC0-\uDEC7\uDEC9-\uDEE4\uDEEB-\uDEEF\uDF00-\uDF35\uDF40-\uDF55\uDF58-\uDF72\uDF78-\uDF91\uDFA9-\uDFAF]|\uD803[\uDC00-\uDC48\uDC80-\uDCB2\uDCC0-\uDCF2\uDCFA-\uDD23\uDD30-\uDD39\uDE60-\uDE7E\uDE80-\uDEA9\uDEB0\uDEB1\uDF00-\uDF27\uDF30-\uDF45\uDF51-\uDF54\uDF70-\uDF81\uDFB0-\uDFCB\uDFE0-\uDFF6]|\uD804[\uDC03-\uDC37\uDC52-\uDC6F\uDC71\uDC72\uDC75\uDC83-\uDCAF\uDCD0-\uDCE8\uDCF0-\uDCF9\uDD03-\uDD26\uDD36-\uDD3F\uDD44\uDD47\uDD50-\uDD72\uDD76\uDD83-\uDDB2\uDDC1-\uDDC4\uDDD0-\uDDDA\uDDDC\uDDE1-\uDDF4\uDE00-\uDE11\uDE13-\uDE2B\uDE80-\uDE86\uDE88\uDE8A-\uDE8D\uDE8F-\uDE9D\uDE9F-\uDEA8\uDEB0-\uDEDE\uDEF0-\uDEF9\uDF05-\uDF0C\uDF0F\uDF10\uDF13-\uDF28\uDF2A-\uDF30\uDF32\uDF33\uDF35-\uDF39\uDF3D\uDF50\uDF5D-\uDF61]|\uD805[\uDC00-\uDC34\uDC47-\uDC4A\uDC50-\uDC59\uDC5F-\uDC61\uDC80-\uDCAF\uDCC4\uDCC5\uDCC7\uDCD0-\uDCD9\uDD80-\uDDAE\uDDD8-\uDDDB\uDE00-\uDE2F\uDE44\uDE50-\uDE59\uDE80-\uDEAA\uDEB8\uDEC0-\uDEC9\uDF00-\uDF1A\uDF30-\uDF3B\uDF40-\uDF46]|\uD806[\uDC00-\uDC2B\uDCA0-\uDCF2\uDCFF-\uDD06\uDD09\uDD0C-\uDD13\uDD15\uDD16\uDD18-\uDD2F\uDD3F\uDD41\uDD50-\uDD59\uDDA0-\uDDA7\uDDAA-\uDDD0\uDDE1\uDDE3\uDE00\uDE0B-\uDE32\uDE3A\uDE50\uDE5C-\uDE89\uDE9D\uDEB0-\uDEF8]|\uD807[\uDC00-\uDC08\uDC0A-\uDC2E\uDC40\uDC50-\uDC6C\uDC72-\uDC8F\uDD00-\uDD06\uDD08\uDD09\uDD0B-\uDD30\uDD46\uDD50-\uDD59\uDD60-\uDD65\uDD67\uDD68\uDD6A-\uDD89\uDD98\uDDA0-\uDDA9\uDEE0-\uDEF2\uDFB0\uDFC0-\uDFD4]|\uD808[\uDC00-\uDF99]|\uD809[\uDC00-\uDC6E\uDC80-\uDD43]|\uD80B[\uDF90-\uDFF0]|[\uD80C\uD81C-\uD820\uD822\uD840-\uD868\uD86A-\uD86C\uD86F-\uD872\uD874-\uD879\uD880-\uD883][\uDC00-\uDFFF]|\uD80D[\uDC00-\uDC2E]|\uD811[\uDC00-\uDE46]|\uD81A[\uDC00-\uDE38\uDE40-\uDE5E\uDE60-\uDE69\uDE70-\uDEBE\uDEC0-\uDEC9\uDED0-\uDEED\uDF00-\uDF2F\uDF40-\uDF43\uDF50-\uDF59\uDF5B-\uDF61\uDF63-\uDF77\uDF7D-\uDF8F]|\uD81B[\uDE40-\uDE96\uDF00-\uDF4A\uDF50\uDF93-\uDF9F\uDFE0\uDFE1\uDFE3]|\uD821[\uDC00-\uDFF7]|\uD823[\uDC00-\uDCD5\uDD00-\uDD08]|\uD82B[\uDFF0-\uDFF3\uDFF5-\uDFFB\uDFFD\uDFFE]|\uD82C[\uDC00-\uDD22\uDD50-\uDD52\uDD64-\uDD67\uDD70-\uDEFB]|\uD82F[\uDC00-\uDC6A\uDC70-\uDC7C\uDC80-\uDC88\uDC90-\uDC99]|\uD834[\uDEE0-\uDEF3\uDF60-\uDF78]|\uD835[\uDC00-\uDC54\uDC56-\uDC9C\uDC9E\uDC9F\uDCA2\uDCA5\uDCA6\uDCA9-\uDCAC\uDCAE-\uDCB9\uDCBB\uDCBD-\uDCC3\uDCC5-\uDD05\uDD07-\uDD0A\uDD0D-\uDD14\uDD16-\uDD1C\uDD1E-\uDD39\uDD3B-\uDD3E\uDD40-\uDD44\uDD46\uDD4A-\uDD50\uDD52-\uDEA5\uDEA8-\uDEC0\uDEC2-\uDEDA\uDEDC-\uDEFA\uDEFC-\uDF14\uDF16-\uDF34\uDF36-\uDF4E\uDF50-\uDF6E\uDF70-\uDF88\uDF8A-\uDFA8\uDFAA-\uDFC2\uDFC4-\uDFCB\uDFCE-\uDFFF]|\uD837[\uDF00-\uDF1E]|\uD838[\uDD00-\uDD2C\uDD37-\uDD3D\uDD40-\uDD49\uDD4E\uDE90-\uDEAD\uDEC0-\uDEEB\uDEF0-\uDEF9]|\uD839[\uDFE0-\uDFE6\uDFE8-\uDFEB\uDFED\uDFEE\uDFF0-\uDFFE]|\uD83A[\uDC00-\uDCC4\uDCC7-\uDCCF\uDD00-\uDD43\uDD4B\uDD50-\uDD59]|\uD83B[\uDC71-\uDCAB\uDCAD-\uDCAF\uDCB1-\uDCB4\uDD01-\uDD2D\uDD2F-\uDD3D\uDE00-\uDE03\uDE05-\uDE1F\uDE21\uDE22\uDE24\uDE27\uDE29-\uDE32\uDE34-\uDE37\uDE39\uDE3B\uDE42\uDE47\uDE49\uDE4B\uDE4D-\uDE4F\uDE51\uDE52\uDE54\uDE57\uDE59\uDE5B\uDE5D\uDE5F\uDE61\uDE62\uDE64\uDE67-\uDE6A\uDE6C-\uDE72\uDE74-\uDE77\uDE79-\uDE7C\uDE7E\uDE80-\uDE89\uDE8B-\uDE9B\uDEA1-\uDEA3\uDEA5-\uDEA9\uDEAB-\uDEBB]|\uD83C[\uDD00-\uDD0C]|\uD83E[\uDFF0-\uDFF9]|\uD869[\uDC00-\uDEDF\uDF00-\uDFFF]|\uD86D[\uDC00-\uDF38\uDF40-\uDFFF]|\uD86E[\uDC00-\uDC1D\uDC20-\uDFFF]|\uD873[\uDC00-\uDEA1\uDEB0-\uDFFF]|\uD87A[\uDC00-\uDFE0]|\uD87E[\uDC00-\uDE1D]|\uD884[\uDC00-\uDF4A])/))
-            return;
+          if (!match2) return;
+          if (match2[3] && prevChar.match(/(?:[0-9A-Za-z\xAA\xB2\xB3\xB5\xB9\xBA\xBC-\xBE\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u0660-\u0669\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07C0-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0966-\u096F\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09E6-\u09F1\u09F4-\u09F9\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A66-\u0A6F\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AE6-\u0AEF\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B66-\u0B6F\u0B71-\u0B77\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0BE6-\u0BF2\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C66-\u0C6F\u0C78-\u0C7E\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CE6-\u0CEF\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D58-\u0D61\u0D66-\u0D78\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0DE6-\u0DEF\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E50-\u0E59\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0ED0-\u0ED9\u0EDC-\u0EDF\u0F00\u0F20-\u0F33\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F-\u1049\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u1090-\u1099\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1369-\u137C\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16EE-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u17E0-\u17E9\u17F0-\u17F9\u1810-\u1819\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1946-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u19D0-\u19DA\u1A00-\u1A16\u1A20-\u1A54\u1A80-\u1A89\u1A90-\u1A99\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B50-\u1B59\u1B83-\u1BA0\u1BAE-\u1BE5\u1C00-\u1C23\u1C40-\u1C49\u1C4D-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2070\u2071\u2074-\u2079\u207F-\u2089\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2150-\u2189\u2460-\u249B\u24EA-\u24FF\u2776-\u2793\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2CFD\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005-\u3007\u3021-\u3029\u3031-\u3035\u3038-\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u3192-\u3195\u31A0-\u31BF\u31F0-\u31FF\u3220-\u3229\u3248-\u324F\u3251-\u325F\u3280-\u3289\u32B1-\u32BF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6EF\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA830-\uA835\uA840-\uA873\uA882-\uA8B3\uA8D0-\uA8D9\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA900-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF-\uA9D9\uA9E0-\uA9E4\uA9E6-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA50-\uAA59\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uABF0-\uABF9\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF10-\uFF19\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC]|\uD800[\uDC00-\uDC0B\uDC0D-\uDC26\uDC28-\uDC3A\uDC3C\uDC3D\uDC3F-\uDC4D\uDC50-\uDC5D\uDC80-\uDCFA\uDD07-\uDD33\uDD40-\uDD78\uDD8A\uDD8B\uDE80-\uDE9C\uDEA0-\uDED0\uDEE1-\uDEFB\uDF00-\uDF23\uDF2D-\uDF4A\uDF50-\uDF75\uDF80-\uDF9D\uDFA0-\uDFC3\uDFC8-\uDFCF\uDFD1-\uDFD5]|\uD801[\uDC00-\uDC9D\uDCA0-\uDCA9\uDCB0-\uDCD3\uDCD8-\uDCFB\uDD00-\uDD27\uDD30-\uDD63\uDD70-\uDD7A\uDD7C-\uDD8A\uDD8C-\uDD92\uDD94\uDD95\uDD97-\uDDA1\uDDA3-\uDDB1\uDDB3-\uDDB9\uDDBB\uDDBC\uDE00-\uDF36\uDF40-\uDF55\uDF60-\uDF67\uDF80-\uDF85\uDF87-\uDFB0\uDFB2-\uDFBA]|\uD802[\uDC00-\uDC05\uDC08\uDC0A-\uDC35\uDC37\uDC38\uDC3C\uDC3F-\uDC55\uDC58-\uDC76\uDC79-\uDC9E\uDCA7-\uDCAF\uDCE0-\uDCF2\uDCF4\uDCF5\uDCFB-\uDD1B\uDD20-\uDD39\uDD80-\uDDB7\uDDBC-\uDDCF\uDDD2-\uDE00\uDE10-\uDE13\uDE15-\uDE17\uDE19-\uDE35\uDE40-\uDE48\uDE60-\uDE7E\uDE80-\uDE9F\uDEC0-\uDEC7\uDEC9-\uDEE4\uDEEB-\uDEEF\uDF00-\uDF35\uDF40-\uDF55\uDF58-\uDF72\uDF78-\uDF91\uDFA9-\uDFAF]|\uD803[\uDC00-\uDC48\uDC80-\uDCB2\uDCC0-\uDCF2\uDCFA-\uDD23\uDD30-\uDD39\uDE60-\uDE7E\uDE80-\uDEA9\uDEB0\uDEB1\uDF00-\uDF27\uDF30-\uDF45\uDF51-\uDF54\uDF70-\uDF81\uDFB0-\uDFCB\uDFE0-\uDFF6]|\uD804[\uDC03-\uDC37\uDC52-\uDC6F\uDC71\uDC72\uDC75\uDC83-\uDCAF\uDCD0-\uDCE8\uDCF0-\uDCF9\uDD03-\uDD26\uDD36-\uDD3F\uDD44\uDD47\uDD50-\uDD72\uDD76\uDD83-\uDDB2\uDDC1-\uDDC4\uDDD0-\uDDDA\uDDDC\uDDE1-\uDDF4\uDE00-\uDE11\uDE13-\uDE2B\uDE80-\uDE86\uDE88\uDE8A-\uDE8D\uDE8F-\uDE9D\uDE9F-\uDEA8\uDEB0-\uDEDE\uDEF0-\uDEF9\uDF05-\uDF0C\uDF0F\uDF10\uDF13-\uDF28\uDF2A-\uDF30\uDF32\uDF33\uDF35-\uDF39\uDF3D\uDF50\uDF5D-\uDF61]|\uD805[\uDC00-\uDC34\uDC47-\uDC4A\uDC50-\uDC59\uDC5F-\uDC61\uDC80-\uDCAF\uDCC4\uDCC5\uDCC7\uDCD0-\uDCD9\uDD80-\uDDAE\uDDD8-\uDDDB\uDE00-\uDE2F\uDE44\uDE50-\uDE59\uDE80-\uDEAA\uDEB8\uDEC0-\uDEC9\uDF00-\uDF1A\uDF30-\uDF3B\uDF40-\uDF46]|\uD806[\uDC00-\uDC2B\uDCA0-\uDCF2\uDCFF-\uDD06\uDD09\uDD0C-\uDD13\uDD15\uDD16\uDD18-\uDD2F\uDD3F\uDD41\uDD50-\uDD59\uDDA0-\uDDA7\uDDAA-\uDDD0\uDDE1\uDDE3\uDE00\uDE0B-\uDE32\uDE3A\uDE50\uDE5C-\uDE89\uDE9D\uDEB0-\uDEF8]|\uD807[\uDC00-\uDC08\uDC0A-\uDC2E\uDC40\uDC50-\uDC6C\uDC72-\uDC8F\uDD00-\uDD06\uDD08\uDD09\uDD0B-\uDD30\uDD46\uDD50-\uDD59\uDD60-\uDD65\uDD67\uDD68\uDD6A-\uDD89\uDD98\uDDA0-\uDDA9\uDEE0-\uDEF2\uDFB0\uDFC0-\uDFD4]|\uD808[\uDC00-\uDF99]|\uD809[\uDC00-\uDC6E\uDC80-\uDD43]|\uD80B[\uDF90-\uDFF0]|[\uD80C\uD81C-\uD820\uD822\uD840-\uD868\uD86A-\uD86C\uD86F-\uD872\uD874-\uD879\uD880-\uD883][\uDC00-\uDFFF]|\uD80D[\uDC00-\uDC2E]|\uD811[\uDC00-\uDE46]|\uD81A[\uDC00-\uDE38\uDE40-\uDE5E\uDE60-\uDE69\uDE70-\uDEBE\uDEC0-\uDEC9\uDED0-\uDEED\uDF00-\uDF2F\uDF40-\uDF43\uDF50-\uDF59\uDF5B-\uDF61\uDF63-\uDF77\uDF7D-\uDF8F]|\uD81B[\uDE40-\uDE96\uDF00-\uDF4A\uDF50\uDF93-\uDF9F\uDFE0\uDFE1\uDFE3]|\uD821[\uDC00-\uDFF7]|\uD823[\uDC00-\uDCD5\uDD00-\uDD08]|\uD82B[\uDFF0-\uDFF3\uDFF5-\uDFFB\uDFFD\uDFFE]|\uD82C[\uDC00-\uDD22\uDD50-\uDD52\uDD64-\uDD67\uDD70-\uDEFB]|\uD82F[\uDC00-\uDC6A\uDC70-\uDC7C\uDC80-\uDC88\uDC90-\uDC99]|\uD834[\uDEE0-\uDEF3\uDF60-\uDF78]|\uD835[\uDC00-\uDC54\uDC56-\uDC9C\uDC9E\uDC9F\uDCA2\uDCA5\uDCA6\uDCA9-\uDCAC\uDCAE-\uDCB9\uDCBB\uDCBD-\uDCC3\uDCC5-\uDD05\uDD07-\uDD0A\uDD0D-\uDD14\uDD16-\uDD1C\uDD1E-\uDD39\uDD3B-\uDD3E\uDD40-\uDD44\uDD46\uDD4A-\uDD50\uDD52-\uDEA5\uDEA8-\uDEC0\uDEC2-\uDEDA\uDEDC-\uDEFA\uDEFC-\uDF14\uDF16-\uDF34\uDF36-\uDF4E\uDF50-\uDF6E\uDF70-\uDF88\uDF8A-\uDFA8\uDFAA-\uDFC2\uDFC4-\uDFCB\uDFCE-\uDFFF]|\uD837[\uDF00-\uDF1E]|\uD838[\uDD00-\uDD2C\uDD37-\uDD3D\uDD40-\uDD49\uDD4E\uDE90-\uDEAD\uDEC0-\uDEEB\uDEF0-\uDEF9]|\uD839[\uDFE0-\uDFE6\uDFE8-\uDFEB\uDFED\uDFEE\uDFF0-\uDFFE]|\uD83A[\uDC00-\uDCC4\uDCC7-\uDCCF\uDD00-\uDD43\uDD4B\uDD50-\uDD59]|\uD83B[\uDC71-\uDCAB\uDCAD-\uDCAF\uDCB1-\uDCB4\uDD01-\uDD2D\uDD2F-\uDD3D\uDE00-\uDE03\uDE05-\uDE1F\uDE21\uDE22\uDE24\uDE27\uDE29-\uDE32\uDE34-\uDE37\uDE39\uDE3B\uDE42\uDE47\uDE49\uDE4B\uDE4D-\uDE4F\uDE51\uDE52\uDE54\uDE57\uDE59\uDE5B\uDE5D\uDE5F\uDE61\uDE62\uDE64\uDE67-\uDE6A\uDE6C-\uDE72\uDE74-\uDE77\uDE79-\uDE7C\uDE7E\uDE80-\uDE89\uDE8B-\uDE9B\uDEA1-\uDEA3\uDEA5-\uDEA9\uDEAB-\uDEBB]|\uD83C[\uDD00-\uDD0C]|\uD83E[\uDFF0-\uDFF9]|\uD869[\uDC00-\uDEDF\uDF00-\uDFFF]|\uD86D[\uDC00-\uDF38\uDF40-\uDFFF]|\uD86E[\uDC00-\uDC1D\uDC20-\uDFFF]|\uD873[\uDC00-\uDEA1\uDEB0-\uDFFF]|\uD87A[\uDC00-\uDFE0]|\uD87E[\uDC00-\uDE1D]|\uD884[\uDC00-\uDF4A])/)) return;
           var nextChar = match2[1] || match2[2] || "";
           if (!nextChar || nextChar && (prevChar === "" || this.rules.inline.punctuation.exec(prevChar))) {
             var lLength = match2[0].length - 1;
@@ -26170,8 +25984,7 @@ ${templateEnter}`;
             maskedSrc = maskedSrc.slice(-1 * src.length + lLength);
             while ((match2 = endReg.exec(maskedSrc)) != null) {
               rDelim = match2[1] || match2[2] || match2[3] || match2[4] || match2[5] || match2[6];
-              if (!rDelim)
-                continue;
+              if (!rDelim) continue;
               rLength = rDelim.length;
               if (match2[3] || match2[4]) {
                 delimTotal += rLength;
@@ -26183,8 +25996,7 @@ ${templateEnter}`;
                 }
               }
               delimTotal -= rLength;
-              if (delimTotal > 0)
-                continue;
+              if (delimTotal > 0) continue;
               rLength = Math.min(rLength, rLength + delimTotal + midDelimTotal);
               var raw = src.slice(0, lLength + match2.index + (match2[0].length - rDelim.length) + rLength);
               if (Math.min(lLength, rLength) % 2) {
@@ -26885,8 +26697,7 @@ ${templateEnter}`;
           return "<p>" + text + "</p>\n";
         };
         _proto.table = function table(header, body) {
-          if (body)
-            body = "<tbody>" + body + "</tbody>";
+          if (body) body = "<tbody>" + body + "</tbody>";
           return "<table>\n<thead>\n" + header + "</thead>\n" + body + "</table>\n";
         };
         _proto.tablerow = function tablerow(content) {
@@ -27317,8 +27128,7 @@ ${templateEnter}`;
               return done();
             }
             delete opt.highlight;
-            if (!tokens.length)
-              return done();
+            if (!tokens.length) return done();
             var pending = 0;
             marked.walkTokens(tokens, function(token) {
               if (token.type === "code") {
@@ -27701,8 +27511,7 @@ ${templateEnter}`;
       var isMobile = function() {
         var check = false;
         (function(a) {
-          if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw-(n|u)|c55\/|capi|ccwa|cdm-|cell|chtm|cldc|cmd-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc-s|devi|dica|dmob|do(c|p)o|ds(12|-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(-|_)|g1 u|g560|gene|gf-5|g-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd-(m|p|t)|hei-|hi(pt|ta)|hp( i|ip)|hs-c|ht(c(-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i-(20|go|ma)|i230|iac( |-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|-[a-w])|libw|lynx|m1-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|-([1-8]|c))|phil|pire|pl(ay|uc)|pn-2|po(ck|rt|se)|prox|psio|pt-g|qa-a|qc(07|12|21|32|60|-[2-7]|i-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h-|oo|p-)|sdk\/|se(c(-|0|1)|47|mc|nd|ri)|sgh-|shar|sie(-|m)|sk-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h-|v-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl-|tdg-|tel(i|m)|tim-|t-mo|to(pl|sh)|ts(70|m-|m3|m5)|tx-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas-|your|zeto|zte-/i.test(a.substr(0, 4)))
-            check = true;
+          if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw-(n|u)|c55\/|capi|ccwa|cdm-|cell|chtm|cldc|cmd-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc-s|devi|dica|dmob|do(c|p)o|ds(12|-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(-|_)|g1 u|g560|gene|gf-5|g-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd-(m|p|t)|hei-|hi(pt|ta)|hp( i|ip)|hs-c|ht(c(-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i-(20|go|ma)|i230|iac( |-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|-[a-w])|libw|lynx|m1-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|-([1-8]|c))|phil|pire|pl(ay|uc)|pn-2|po(ck|rt|se)|prox|psio|pt-g|qa-a|qc(07|12|21|32|60|-[2-7]|i-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h-|oo|p-)|sdk\/|se(c(-|0|1)|47|mc|nd|ri)|sgh-|shar|sie(-|m)|sk-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h-|v-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl-|tdg-|tel(i|m)|tim-|t-mo|to(pl|sh)|ts(70|m-|m3|m5)|tx-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas-|your|zeto|zte-/i.test(a.substr(0, 4))) check = true;
         })(navigator.userAgent || navigator.vendor || window.opera);
         return check;
       };
@@ -27861,8 +27670,7 @@ ${templateEnter}`;
       function getState(cm, pos) {
         pos = pos || cm.getCursor("start");
         var stat = cm.getTokenAt(pos);
-        if (!stat.type)
-          return {};
+        if (!stat.type) return {};
         var types = stat.type.split(" ");
         var ret = {}, data, text;
         for (var i = 0; i < types.length; i++) {
@@ -28307,8 +28115,7 @@ ${templateEnter}`;
             easyMDEContainer.classList.remove("sided--no-fullscreen");
           }
           preview.classList.remove("editor-preview-active-side");
-          if (toolbarButton)
-            toolbarButton.classList.remove("active");
+          if (toolbarButton) toolbarButton.classList.remove("active");
           wrapper.classList.remove("CodeMirror-sided");
         } else {
           setTimeout(function() {
@@ -28321,8 +28128,7 @@ ${templateEnter}`;
             }
             preview.classList.add("editor-preview-active-side");
           }, 1);
-          if (toolbarButton)
-            toolbarButton.classList.add("active");
+          if (toolbarButton) toolbarButton.classList.add("active");
           wrapper.classList.add("CodeMirror-sided");
           useSideBySideListener = true;
         }
@@ -28694,8 +28500,7 @@ ${templateEnter}`;
         var pattern = /[a-zA-Z0-9_\u00A0-\u02AF\u0392-\u03c9\u0410-\u04F9]+|[\u4E00-\u9FFF\u3400-\u4dbf\uf900-\ufaff\u3040-\u309f\uac00-\ud7af]+/g;
         var m = data.match(pattern);
         var count = 0;
-        if (m === null)
-          return count;
+        if (m === null) return count;
         for (var i = 0; i < m.length; i++) {
           if (m[i].charCodeAt(0) >= 19968) {
             count += m[i].length;
@@ -29043,6 +28848,7 @@ ${templateEnter}`;
         options.imagePathAbsolute = options.imagePathAbsolute || false;
         options.imageCSRFName = options.imageCSRFName || "csrfmiddlewaretoken";
         options.imageCSRFHeader = options.imageCSRFHeader || false;
+        options.imageInputName = options.imageInputName || "image";
         if (options.autosave != void 0 && options.autosave.unique_id != void 0 && options.autosave.unique_id != "")
           options.autosave.uniqueId = options.autosave.unique_id;
         if (options.overlayMode && options.overlayMode.combine === void 0) {
@@ -29192,14 +28998,12 @@ ${templateEnter}`;
         keyMaps["Tab"] = "tabAndIndentMarkdownList";
         keyMaps["Shift-Tab"] = "shiftTabAndUnindentMarkdownList";
         keyMaps["Esc"] = function(cm2) {
-          if (cm2.getOption("fullScreen"))
-            toggleFullScreen(self2);
+          if (cm2.getOption("fullScreen")) toggleFullScreen(self2);
         };
         this.documentOnKeyDown = function(e) {
           e = e || window.event;
           if (e.keyCode == 27) {
-            if (self2.codemirror.getOption("fullScreen"))
-              toggleFullScreen(self2);
+            if (self2.codemirror.getOption("fullScreen")) toggleFullScreen(self2);
           }
         };
         document.addEventListener("keydown", this.documentOnKeyDown, false);
@@ -29301,8 +29105,9 @@ ${templateEnter}`;
         }
         var _vm = this;
         function assignImageBlockAttributes(parentEl, img) {
-          parentEl.setAttribute("data-img-src", img.url);
-          parentEl.setAttribute("style", "--bg-image:url(" + img.url + ");--width:" + img.naturalWidth + "px;--height:" + calcHeight(img.naturalWidth, img.naturalHeight));
+          var url = new URL(img.url, document.baseURI).href;
+          parentEl.setAttribute("data-img-src", url);
+          parentEl.setAttribute("style", "--bg-image:url(" + url + ");--width:" + img.naturalWidth + "px;--height:" + calcHeight(img.naturalWidth, img.naturalHeight));
           _vm.codemirror.setSize();
         }
         function handleImages() {
@@ -29315,7 +29120,7 @@ ${templateEnter}`;
               return;
             }
             if (!parentEl.hasAttribute("data-img-src")) {
-              var srcAttr = parentEl.innerText.match("\\((.*)\\)");
+              var srcAttr = parentEl.innerText.match(/!\[.*?\]\((.*?)\)/);
               if (!window.EMDEimagesCache) {
                 window.EMDEimagesCache = {};
               }
@@ -29328,6 +29133,7 @@ ${templateEnter}`;
                   }
                 }
                 if (!window.EMDEimagesCache[keySrc]) {
+                  window.EMDEimagesCache[keySrc] = {};
                   var img = document.createElement("img");
                   img.onload = function() {
                     window.EMDEimagesCache[keySrc] = {
@@ -29557,8 +29363,7 @@ ${templateEnter}`;
         if (typeof this.options.maxHeight !== "undefined") {
           this.setPreviewMaxHeight();
         }
-        if (this.options.syncSideBySidePreviewScroll === false)
-          return preview;
+        if (this.options.syncSideBySidePreviewScroll === false) return preview;
         var cScroll = false;
         var pScroll = false;
         cm.on("scroll", function(v) {
@@ -29635,7 +29440,7 @@ ${templateEnter}`;
               imageInput.className = "imageInput";
               imageInput.type = "file";
               imageInput.multiple = true;
-              imageInput.name = "image";
+              imageInput.name = self2.options.imageInputName;
               imageInput.accept = self2.options.imageAccept;
               imageInput.style.display = "none";
               imageInput.style.opacity = 0;
@@ -30624,8 +30429,7 @@ ${templateEnter}`;
      */
     offset(ts) {
       const date = new Date(ts);
-      if (isNaN(date))
-        return NaN;
+      if (isNaN(date)) return NaN;
       const dtf = makeDTF(this.name);
       let [year, month, day, adOrBc, hour, minute, second] = dtf.formatToParts ? partsOffset(dtf, date) : hackyOffset(dtf, date);
       if (adOrBc === "BC") {
@@ -30805,8 +30609,7 @@ ${templateEnter}`;
       const _a = opts, { padTo, floor } = _a, otherOpts = __objRest(_a, ["padTo", "floor"]);
       if (!forceSimple || Object.keys(otherOpts).length > 0) {
         const intlOpts = __spreadValues({ useGrouping: false }, opts);
-        if (opts.padTo > 0)
-          intlOpts.minimumIntegerDigits = opts.padTo;
+        if (opts.padTo > 0) intlOpts.minimumIntegerDigits = opts.padTo;
         this.inf = getCachedINF(intl, intlOpts);
       }
     }
@@ -31251,14 +31054,10 @@ ${templateEnter}`;
       return input;
     } else if (isString(input)) {
       const lowered = input.toLowerCase();
-      if (lowered === "default")
-        return defaultZone2;
-      else if (lowered === "local" || lowered === "system")
-        return SystemZone.instance;
-      else if (lowered === "utc" || lowered === "gmt")
-        return FixedOffsetZone.utcInstance;
-      else
-        return FixedOffsetZone.parseSpecifier(lowered) || IANAZone.create(input);
+      if (lowered === "default") return defaultZone2;
+      else if (lowered === "local" || lowered === "system") return SystemZone.instance;
+      else if (lowered === "utc" || lowered === "gmt") return FixedOffsetZone.utcInstance;
+      else return FixedOffsetZone.parseSpecifier(lowered) || IANAZone.create(input);
     } else if (isNumber(input)) {
       return FixedOffsetZone.instance(input);
     } else if (typeof input === "object" && "offset" in input && typeof input.offset === "function") {
@@ -31593,12 +31392,9 @@ ${templateEnter}`;
           "Cannot mix locale-based week fields with ISO-based week fields"
         );
       }
-      if (!isUndefined(obj.localWeekday))
-        obj.weekday = obj.localWeekday;
-      if (!isUndefined(obj.localWeekNumber))
-        obj.weekNumber = obj.localWeekNumber;
-      if (!isUndefined(obj.localWeekYear))
-        obj.weekYear = obj.localWeekYear;
+      if (!isUndefined(obj.localWeekday)) obj.weekday = obj.localWeekday;
+      if (!isUndefined(obj.localWeekNumber)) obj.weekNumber = obj.localWeekNumber;
+      if (!isUndefined(obj.localWeekYear)) obj.weekYear = obj.localWeekYear;
       delete obj.localWeekday;
       delete obj.localWeekNumber;
       delete obj.localWeekYear;
@@ -31622,8 +31418,7 @@ ${templateEnter}`;
       return unitOutOfRange("week", obj.weekNumber);
     } else if (!validWeekday) {
       return unitOutOfRange("weekday", obj.weekday);
-    } else
-      return false;
+    } else return false;
   }
   function hasInvalidOrdinalData(obj) {
     const validYear = isInteger(obj.year), validOrdinal = integerBetween(obj.ordinal, 1, daysInYear(obj.year));
@@ -31631,8 +31426,7 @@ ${templateEnter}`;
       return unitOutOfRange("year", obj.year);
     } else if (!validOrdinal) {
       return unitOutOfRange("ordinal", obj.ordinal);
-    } else
-      return false;
+    } else return false;
   }
   function hasInvalidGregorianData(obj) {
     const validYear = isInteger(obj.year), validMonth = integerBetween(obj.month, 1, 12), validDay = integerBetween(obj.day, 1, daysInMonth(obj.year, obj.month));
@@ -31642,8 +31436,7 @@ ${templateEnter}`;
       return unitOutOfRange("month", obj.month);
     } else if (!validDay) {
       return unitOutOfRange("day", obj.day);
-    } else
-      return false;
+    } else return false;
   }
   function hasInvalidTimeData(obj) {
     const { hour, minute, second, millisecond } = obj;
@@ -31656,8 +31449,7 @@ ${templateEnter}`;
       return unitOutOfRange("second", second);
     } else if (!validMillisecond) {
       return unitOutOfRange("millisecond", millisecond);
-    } else
-      return false;
+    } else return false;
   }
 
   // node_modules/luxon/src/impl/util.js
@@ -31817,8 +31609,7 @@ ${templateEnter}`;
   function untruncateYear(year) {
     if (year > 99) {
       return year;
-    } else
-      return year > Settings.twoDigitCutoffYear ? 1900 + year : 2e3 + year;
+    } else return year > Settings.twoDigitCutoffYear ? 1900 + year : 2e3 + year;
   }
   function parseZoneInfo(ts, offsetFormat, locale, timeZone = null) {
     const date = new Date(ts), intlOpts = {
@@ -31855,8 +31646,7 @@ ${templateEnter}`;
     for (const u in obj) {
       if (hasOwnProperty(obj, u)) {
         const v = obj[u];
-        if (v === void 0 || v === null)
-          continue;
+        if (v === void 0 || v === null) continue;
         normalized[normalizer(u)] = asNumber(v);
       }
     }
@@ -32132,23 +31922,29 @@ ${templateEnter}`;
         }
       }, era = (length) => knownEnglish ? eraForDateTime(dt, length) : string({ era: length }, "era"), tokenToString = (token) => {
         switch (token) {
+          // ms
           case "S":
             return this.num(dt.millisecond);
           case "u":
+          // falls through
           case "SSS":
             return this.num(dt.millisecond, 3);
+          // seconds
           case "s":
             return this.num(dt.second);
           case "ss":
             return this.num(dt.second, 2);
+          // fractional seconds
           case "uu":
             return this.num(Math.floor(dt.millisecond / 10), 2);
           case "uuu":
             return this.num(Math.floor(dt.millisecond / 100));
+          // minutes
           case "m":
             return this.num(dt.minute);
           case "mm":
             return this.num(dt.minute, 2);
+          // hours
           case "h":
             return this.num(dt.hour % 12 === 0 ? 12 : dt.hour % 12);
           case "hh":
@@ -32157,6 +31953,7 @@ ${templateEnter}`;
             return this.num(dt.hour);
           case "HH":
             return this.num(dt.hour, 2);
+          // offset
           case "Z":
             return formatOffset2({ format: "narrow", allowZ: this.opts.allowZ });
           case "ZZ":
@@ -32167,14 +31964,18 @@ ${templateEnter}`;
             return dt.zone.offsetName(dt.ts, { format: "short", locale: this.loc.locale });
           case "ZZZZZ":
             return dt.zone.offsetName(dt.ts, { format: "long", locale: this.loc.locale });
+          // zone
           case "z":
             return dt.zoneName;
+          // meridiems
           case "a":
             return meridiem();
+          // dates
           case "d":
             return useDateTimeFormatter ? string({ day: "numeric" }, "day") : this.num(dt.day);
           case "dd":
             return useDateTimeFormatter ? string({ day: "2-digit" }, "day") : this.num(dt.day, 2);
+          // weekdays - standalone
           case "c":
             return this.num(dt.weekday);
           case "ccc":
@@ -32183,6 +31984,7 @@ ${templateEnter}`;
             return weekday("long", true);
           case "ccccc":
             return weekday("narrow", true);
+          // weekdays - format
           case "E":
             return this.num(dt.weekday);
           case "EEE":
@@ -32191,6 +31993,7 @@ ${templateEnter}`;
             return weekday("long", false);
           case "EEEEE":
             return weekday("narrow", false);
+          // months - standalone
           case "L":
             return useDateTimeFormatter ? string({ month: "numeric", day: "numeric" }, "month") : this.num(dt.month);
           case "LL":
@@ -32201,6 +32004,7 @@ ${templateEnter}`;
             return month("long", true);
           case "LLLLL":
             return month("narrow", true);
+          // months - format
           case "M":
             return useDateTimeFormatter ? string({ month: "numeric" }, "month") : this.num(dt.month);
           case "MM":
@@ -32211,6 +32015,7 @@ ${templateEnter}`;
             return month("long", false);
           case "MMMMM":
             return month("narrow", false);
+          // years
           case "y":
             return useDateTimeFormatter ? string({ year: "numeric" }, "year") : this.num(dt.year);
           case "yy":
@@ -32219,6 +32024,7 @@ ${templateEnter}`;
             return useDateTimeFormatter ? string({ year: "numeric" }, "year") : this.num(dt.year, 4);
           case "yyyyyy":
             return useDateTimeFormatter ? string({ year: "numeric" }, "year") : this.num(dt.year, 6);
+          // eras
           case "G":
             return era("short");
           case "GG":
@@ -32416,8 +32222,7 @@ ${templateEnter}`;
       hour: parseInteger(hourStr),
       minute: parseInteger(minuteStr)
     };
-    if (secondStr)
-      result.second = parseInteger(secondStr);
+    if (secondStr) result.second = parseInteger(secondStr);
     if (weekdayStr) {
       result.weekday = weekdayStr.length > 3 ? weekdaysLong.indexOf(weekdayStr) + 1 : weekdaysShort.indexOf(weekdayStr) + 1;
     }
@@ -32853,8 +32658,7 @@ ${templateEnter}`;
         millisecond: "milliseconds",
         milliseconds: "milliseconds"
       }[unit ? unit.toLowerCase() : unit];
-      if (!normalized)
-        throw new InvalidUnitError(unit);
+      if (!normalized) throw new InvalidUnitError(unit);
       return normalized;
     }
     /**
@@ -32923,8 +32727,7 @@ ${templateEnter}`;
      * ```
      */
     toHuman(opts = {}) {
-      if (!this.isValid)
-        return INVALID;
+      if (!this.isValid) return INVALID;
       const l2 = orderedUnits.map((unit) => {
         const val = this.values[unit];
         if (isUndefined(val)) {
@@ -32940,8 +32743,7 @@ ${templateEnter}`;
      * @return {Object}
      */
     toObject() {
-      if (!this.isValid)
-        return {};
+      if (!this.isValid) return {};
       return __spreadValues({}, this.values);
     }
     /**
@@ -32955,27 +32757,19 @@ ${templateEnter}`;
      * @return {string}
      */
     toISO() {
-      if (!this.isValid)
-        return null;
+      if (!this.isValid) return null;
       let s2 = "P";
-      if (this.years !== 0)
-        s2 += this.years + "Y";
-      if (this.months !== 0 || this.quarters !== 0)
-        s2 += this.months + this.quarters * 3 + "M";
-      if (this.weeks !== 0)
-        s2 += this.weeks + "W";
-      if (this.days !== 0)
-        s2 += this.days + "D";
+      if (this.years !== 0) s2 += this.years + "Y";
+      if (this.months !== 0 || this.quarters !== 0) s2 += this.months + this.quarters * 3 + "M";
+      if (this.weeks !== 0) s2 += this.weeks + "W";
+      if (this.days !== 0) s2 += this.days + "D";
       if (this.hours !== 0 || this.minutes !== 0 || this.seconds !== 0 || this.milliseconds !== 0)
         s2 += "T";
-      if (this.hours !== 0)
-        s2 += this.hours + "H";
-      if (this.minutes !== 0)
-        s2 += this.minutes + "M";
+      if (this.hours !== 0) s2 += this.hours + "H";
+      if (this.minutes !== 0) s2 += this.minutes + "M";
       if (this.seconds !== 0 || this.milliseconds !== 0)
         s2 += roundTo(this.seconds + this.milliseconds / 1e3, 3) + "S";
-      if (s2 === "P")
-        s2 += "T0S";
+      if (s2 === "P") s2 += "T0S";
       return s2;
     }
     /**
@@ -32995,11 +32789,9 @@ ${templateEnter}`;
      * @return {string}
      */
     toISOTime(opts = {}) {
-      if (!this.isValid)
-        return null;
+      if (!this.isValid) return null;
       const millis = this.toMillis();
-      if (millis < 0 || millis >= 864e5)
-        return null;
+      if (millis < 0 || millis >= 864e5) return null;
       opts = __spreadProps(__spreadValues({
         suppressMilliseconds: false,
         suppressSeconds: false,
@@ -33041,8 +32833,7 @@ ${templateEnter}`;
      * @return {number}
      */
     toMillis() {
-      if (!this.isValid)
-        return NaN;
+      if (!this.isValid) return NaN;
       return durationToMillis(this.matrix, this.values);
     }
     /**
@@ -33058,8 +32849,7 @@ ${templateEnter}`;
      * @return {Duration}
      */
     plus(duration) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const dur = _Duration.fromDurationLike(duration), result = {};
       for (const k of orderedUnits) {
         if (hasOwnProperty(dur.values, k) || hasOwnProperty(this.values, k)) {
@@ -33074,8 +32864,7 @@ ${templateEnter}`;
      * @return {Duration}
      */
     minus(duration) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const dur = _Duration.fromDurationLike(duration);
       return this.plus(dur.negate());
     }
@@ -33087,8 +32876,7 @@ ${templateEnter}`;
      * @return {Duration}
      */
     mapUnits(fn) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const result = {};
       for (const k of Object.keys(this.values)) {
         result[k] = asNumber(fn(this.values[k], k));
@@ -33114,8 +32902,7 @@ ${templateEnter}`;
      * @return {Duration}
      */
     set(values) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const mixed = __spreadValues(__spreadValues({}, this.values), normalizeObject(values, _Duration.normalizeUnit));
       return clone(this, { values: mixed });
     }
@@ -33156,8 +32943,7 @@ ${templateEnter}`;
      * @return {Duration}
      */
     normalize() {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const vals = this.toObject();
       normalizeValues(this.matrix, vals);
       return clone(this, { values: vals }, true);
@@ -33168,8 +32954,7 @@ ${templateEnter}`;
      * @return {Duration}
      */
     rescale() {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const vals = removeZeroes(this.normalize().shiftToAll().toObject());
       return clone(this, { values: vals }, true);
     }
@@ -33179,8 +32964,7 @@ ${templateEnter}`;
      * @return {Duration}
      */
     shiftTo(...units) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       if (units.length === 0) {
         return this;
       }
@@ -33219,8 +33003,7 @@ ${templateEnter}`;
      * @return {Duration}
      */
     shiftToAll() {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       return this.shiftTo(
         "years",
         "months",
@@ -33238,8 +33021,7 @@ ${templateEnter}`;
      * @return {Duration}
      */
     negate() {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const negated = {};
       for (const k of Object.keys(this.values)) {
         negated[k] = this.values[k] === 0 ? 0 : -this.values[k];
@@ -33345,8 +33127,7 @@ ${templateEnter}`;
         return false;
       }
       function eq(v1, v2) {
-        if (v1 === void 0 || v1 === 0)
-          return v2 === void 0 || v2 === 0;
+        if (v1 === void 0 || v1 === 0) return v2 === void 0 || v2 === 0;
         return v1 === v2;
       }
       for (const u of orderedUnits) {
@@ -33542,8 +33323,7 @@ ${templateEnter}`;
      * @return {number}
      */
     count(unit = "milliseconds", opts) {
-      if (!this.isValid)
-        return NaN;
+      if (!this.isValid) return NaN;
       const start = this.start.startOf(unit, opts);
       let end;
       if (opts == null ? void 0 : opts.useLocaleWeeks) {
@@ -33575,8 +33355,7 @@ ${templateEnter}`;
      * @return {boolean}
      */
     isAfter(dateTime) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return this.s > dateTime;
     }
     /**
@@ -33585,8 +33364,7 @@ ${templateEnter}`;
      * @return {boolean}
      */
     isBefore(dateTime) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return this.e <= dateTime;
     }
     /**
@@ -33595,8 +33373,7 @@ ${templateEnter}`;
      * @return {boolean}
      */
     contains(dateTime) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return this.s <= dateTime && this.e > dateTime;
     }
     /**
@@ -33607,8 +33384,7 @@ ${templateEnter}`;
      * @return {Interval}
      */
     set({ start, end } = {}) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       return _Interval.fromDateTimes(start || this.s, end || this.e);
     }
     /**
@@ -33617,8 +33393,7 @@ ${templateEnter}`;
      * @return {Array}
      */
     splitAt(...dateTimes) {
-      if (!this.isValid)
-        return [];
+      if (!this.isValid) return [];
       const sorted = dateTimes.map(friendlyDateTime).filter((d) => this.contains(d)).sort((a, b) => a.toMillis() - b.toMillis()), results = [];
       let { s: s2 } = this, i = 0;
       while (s2 < this.e) {
@@ -33657,8 +33432,7 @@ ${templateEnter}`;
      * @return {Array}
      */
     divideEqually(numberOfParts) {
-      if (!this.isValid)
-        return [];
+      if (!this.isValid) return [];
       return this.splitBy(this.length() / numberOfParts).slice(0, numberOfParts);
     }
     /**
@@ -33675,8 +33449,7 @@ ${templateEnter}`;
      * @return {boolean}
      */
     abutsStart(other) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return +this.e === +other.s;
     }
     /**
@@ -33685,8 +33458,7 @@ ${templateEnter}`;
      * @return {boolean}
      */
     abutsEnd(other) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return +other.e === +this.s;
     }
     /**
@@ -33695,8 +33467,7 @@ ${templateEnter}`;
      * @return {boolean}
      */
     engulfs(other) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       return this.s <= other.s && this.e >= other.e;
     }
     /**
@@ -33718,8 +33489,7 @@ ${templateEnter}`;
      * @return {Interval}
      */
     intersection(other) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const s2 = this.s > other.s ? this.s : other.s, e = this.e < other.e ? this.e : other.e;
       if (s2 >= e) {
         return null;
@@ -33734,8 +33504,7 @@ ${templateEnter}`;
      * @return {Interval}
      */
     union(other) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const s2 = this.s < other.s ? this.s : other.s, e = this.e > other.e ? this.e : other.e;
       return _Interval.fromDateTimes(s2, e);
     }
@@ -33800,8 +33569,7 @@ ${templateEnter}`;
      * @return {string}
      */
     toString() {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `[${this.s.toISO()} \u2013 ${this.e.toISO()})`;
     }
     /**
@@ -33843,8 +33611,7 @@ ${templateEnter}`;
      * @return {string}
      */
     toISO(opts) {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `${this.s.toISO(opts)}/${this.e.toISO(opts)}`;
     }
     /**
@@ -33854,8 +33621,7 @@ ${templateEnter}`;
      * @return {string}
      */
     toISODate() {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `${this.s.toISODate()}/${this.e.toISODate()}`;
     }
     /**
@@ -33866,8 +33632,7 @@ ${templateEnter}`;
      * @return {string}
      */
     toISOTime(opts) {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `${this.s.toISOTime(opts)}/${this.e.toISOTime(opts)}`;
     }
     /**
@@ -33882,8 +33647,7 @@ ${templateEnter}`;
      * @return {string}
      */
     toFormat(dateFormat, { separator = " \u2013 " } = {}) {
-      if (!this.isValid)
-        return INVALID2;
+      if (!this.isValid) return INVALID2;
       return `${this.s.toFormat(dateFormat)}${separator}${this.e.toFormat(dateFormat)}`;
     }
     /**
@@ -34192,10 +33956,12 @@ ${templateEnter}`;
         return literal(t);
       }
       switch (t.val) {
+        // era
         case "G":
           return oneOf(loc.eras("short"), 0);
         case "GG":
           return oneOf(loc.eras("long"), 0);
+        // years
         case "y":
           return intUnit(oneToSix);
         case "yy":
@@ -34206,6 +33972,7 @@ ${templateEnter}`;
           return intUnit(fourToSix);
         case "yyyyyy":
           return intUnit(six);
+        // months
         case "M":
           return intUnit(oneOrTwo);
         case "MM":
@@ -34222,14 +33989,17 @@ ${templateEnter}`;
           return oneOf(loc.months("short", false), 1);
         case "LLLL":
           return oneOf(loc.months("long", false), 1);
+        // dates
         case "d":
           return intUnit(oneOrTwo);
         case "dd":
           return intUnit(two);
+        // ordinals
         case "o":
           return intUnit(oneToThree);
         case "ooo":
           return intUnit(three);
+        // time
         case "HH":
           return intUnit(two);
         case "H":
@@ -34260,16 +34030,20 @@ ${templateEnter}`;
           return simple(oneOrTwo);
         case "uuu":
           return intUnit(one);
+        // meridiem
         case "a":
           return oneOf(loc.meridiems(), 0);
+        // weekYear (k)
         case "kkkk":
           return intUnit(four);
         case "kk":
           return intUnit(twoToFour, untruncateYear);
+        // weekNumber (W)
         case "W":
           return intUnit(oneOrTwo);
         case "WW":
           return intUnit(two);
+        // weekdays
         case "E":
         case "c":
           return intUnit(one);
@@ -34281,13 +34055,18 @@ ${templateEnter}`;
           return oneOf(loc.weekdays("short", true), 1);
         case "cccc":
           return oneOf(loc.weekdays("long", true), 1);
+        // offset/zone
         case "Z":
         case "ZZ":
           return offset(new RegExp(`([+-]${oneOrTwo.source})(?::(${two.source}))?`), 2);
         case "ZZZ":
           return offset(new RegExp(`([+-]${oneOrTwo.source})(${two.source})?`), 2);
+        // we don't support ZZZZ (PST) or ZZZZZ (Pacific Standard Time) in parsing
+        // because we don't have any way to figure out what they are
         case "z":
           return simple(/[a-z_+-/]{1,256}?/i);
+        // this special-case "token" represents a place where a macro-token expanded into a white-space literal
+        // in this case we accept any non-newline white-space
         case " ":
           return simple(/[^\S\n\r]/);
         default:
@@ -34661,8 +34440,7 @@ ${templateEnter}`;
   function toISODate(o, extended) {
     const longFormat = o.c.year > 9999 || o.c.year < 0;
     let c = "";
-    if (longFormat && o.c.year >= 0)
-      c += "+";
+    if (longFormat && o.c.year >= 0) c += "+";
     c += padStart(o.c.year, longFormat ? 6 : 4);
     if (extended) {
       c += "-";
@@ -34774,8 +34552,7 @@ ${templateEnter}`;
       weekyears: "weekYear",
       ordinal: "ordinal"
     }[unit.toLowerCase()];
-    if (!normalized)
-      throw new InvalidUnitError(unit);
+    if (!normalized) throw new InvalidUnitError(unit);
     return normalized;
   }
   function normalizeUnitWithLocalWeeks(unit) {
@@ -34835,8 +34612,7 @@ ${templateEnter}`;
       if (opts.calendary) {
         if (!end.hasSame(start, unit)) {
           return end.startOf(unit).diff(start.startOf(unit), unit).get(unit);
-        } else
-          return 0;
+        } else return 0;
       } else {
         return end.diff(start, unit).get(unit);
       }
@@ -35767,8 +35543,7 @@ ${templateEnter}`;
      * @return {DateTime}
      */
     set(values) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const normalized = normalizeObject(values, normalizeUnitWithLocalWeeks);
       const { minDaysInFirstWeek, startOfWeek } = usesLocalWeekValues(normalized, this.loc);
       const settingWeekStuff = !isUndefined(normalized.weekYear) || !isUndefined(normalized.weekNumber) || !isUndefined(normalized.weekday), containsOrdinal = !isUndefined(normalized.ordinal), containsGregorYear = !isUndefined(normalized.year), containsGregorMD = !isUndefined(normalized.month) || !isUndefined(normalized.day), containsGregor = containsGregorYear || containsGregorMD, definiteWeekDef = normalized.weekYear || normalized.weekNumber;
@@ -35812,8 +35587,7 @@ ${templateEnter}`;
      * @return {DateTime}
      */
     plus(duration) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const dur = Duration.fromDurationLike(duration);
       return clone2(this, adjustTime(this, dur));
     }
@@ -35824,8 +35598,7 @@ ${templateEnter}`;
      @return {DateTime}
      */
     minus(duration) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const dur = Duration.fromDurationLike(duration).negate();
       return clone2(this, adjustTime(this, dur));
     }
@@ -35842,22 +35615,26 @@ ${templateEnter}`;
      * @return {DateTime}
      */
     startOf(unit, { useLocaleWeeks = false } = {}) {
-      if (!this.isValid)
-        return this;
+      if (!this.isValid) return this;
       const o = {}, normalizedUnit = Duration.normalizeUnit(unit);
       switch (normalizedUnit) {
         case "years":
           o.month = 1;
+        // falls through
         case "quarters":
         case "months":
           o.day = 1;
+        // falls through
         case "weeks":
         case "days":
           o.hour = 0;
+        // falls through
         case "hours":
           o.minute = 0;
+        // falls through
         case "minutes":
           o.second = 0;
+        // falls through
         case "seconds":
           o.millisecond = 0;
           break;
@@ -36182,8 +35959,7 @@ ${templateEnter}`;
      * @return {Object}
      */
     toObject(opts = {}) {
-      if (!this.isValid)
-        return {};
+      if (!this.isValid) return {};
       const base = __spreadValues({}, this.c);
       if (opts.includeConfig) {
         base.outputCalendar = this.outputCalendar;
@@ -36254,8 +36030,7 @@ ${templateEnter}`;
      * @return {boolean}
      */
     hasSame(otherDateTime, unit, opts) {
-      if (!this.isValid)
-        return false;
+      if (!this.isValid) return false;
       const inputMs = otherDateTime.valueOf();
       const adjustedToZone = this.setZone(otherDateTime.zone, { keepLocalTime: true });
       return adjustedToZone.startOf(unit, opts) <= inputMs && inputMs <= adjustedToZone.endOf(unit, opts);
@@ -36289,8 +36064,7 @@ ${templateEnter}`;
      * @example DateTime.now().minus({ hours: 36 }).toRelative({ round: false }) //=> "1.5 days ago"
      */
     toRelative(options = {}) {
-      if (!this.isValid)
-        return null;
+      if (!this.isValid) return null;
       const base = options.base || _DateTime.fromObject({}, { zone: this.zone }), padding = options.padding ? this < base ? -options.padding : options.padding : 0;
       let units = ["years", "months", "days", "hours", "minutes", "seconds"];
       let unit = options.unit;
@@ -36318,8 +36092,7 @@ ${templateEnter}`;
      * @example DateTime.now().minus({ days: 2 }).toRelativeCalendar() //=> "2 days ago"
      */
     toRelativeCalendar(options = {}) {
-      if (!this.isValid)
-        return null;
+      if (!this.isValid) return null;
       return diffRelative(options.base || _DateTime.fromObject({}, { zone: this.zone }), this, __spreadProps(__spreadValues({}, options), {
         numeric: "auto",
         units: ["years", "months", "days"],

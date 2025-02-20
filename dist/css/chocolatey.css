@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* choco-theme chocolatey v0.8.4 (https://github.com/chocolatey/choco-theme#readme)
+* choco-theme chocolatey v0.8.5 (https://github.com/chocolatey/choco-theme#readme)
 * Copyright 2020-2024 Chocolatey Software
 * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -51328,7 +51328,7 @@ readers do not read off random characters that represent icons */
   --fa: "\f3f6";
 }
 
-/*! @docsearch/css 3.8.2 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+/*! @docsearch/css 3.9.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 :root {
   --docsearch-primary-color:#5468ff;
   --docsearch-text-color:#1c1e21;
@@ -51438,9 +51438,17 @@ html[data-theme=dark] {
   padding: 0 0 2px;
   position: relative;
   top: -1px;
+  transition-duration: 0.1s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 20px;
 }
 
+@media (prefers-reduced-motion) {
+  .DocSearch-Button-Key {
+    transition: none;
+  }
+}
 .DocSearch-Button-Key--pressed {
   box-shadow: var(--docsearch-key-pressed-shadow);
   transform: translate3d(0, 1px, 0);
@@ -51687,6 +51695,7 @@ html[data-theme=dark] {
   display: flex;
   padding-bottom: 4px;
   position: relative;
+  scroll-margin-top: 40px;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -54271,7 +54280,7 @@ span.flatpickr-weekday {
 
 
 /**
- * easymde v2.18.0
+ * easymde v2.19.0
  * Copyright Jeroen Akkerman
  * @link https://github.com/ionaru/easy-markdown-editor
  * @license MIT
