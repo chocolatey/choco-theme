@@ -10,12 +10,11 @@ Before running any commands below, ensure you have ran `yarn` in the root of thi
 
 | Script                                            | Action                                                                                        |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| yarn npm audit --all --recursive --ignore 1094698 | Audits all dependencies recursively and ignores [sweetalert2 vulnerability](https://github.com/advisories/GHSA-mrr8-v49w-3333). |
+| yarn audit                                        | Audits all dependencies recursively and ignores [sweetalert2 vulnerability](https://github.com/advisories/GHSA-mrr8-v49w-3333). |
 | yarn build                                        | Builds CSS, JS, and Partials.                                                                 |
 | yarn change-version OLD_VERSION NEW_VERSION       | Runs all build steps and updates choco-theme to the version specified.                        |
 | yarn lint                                         | Runs Stylelint and ESLint to determine code style errors.                                     |
 | yarn monitor-ports                                | Opens a page to monitor preview ports and report their status.                                |
-| yarn npm audit                                    | Audits packages and reports vulnerabilities.                                                  |
 | yarn preview --PROJECT_NAME                       | Runs the preview script in desired repositories all at once for easy testing and development. |
 | yarn preview-link --PROJECT_NAME                  | Links choco-theme locally to desired repositories for local development.                      |
 | yarn preview-unlink --PROJECT_NAME                | Unlinks choco-theme and restores the packages.json and yarn.lock files.                       |

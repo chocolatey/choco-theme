@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/chocolatey/choco-theme#readme",
   "scripts": {
+    "audit": "yarn npm audit --all --recursive --ignore 1094698",
     "build": "npm run --silent clean && npm-run-all --parallel --silent css js partials && echo 🎉 Build complete",
     "change-version": "ts-node build/change-version.ts",
     "css": "npm-run-all --sequential --silent css-compile css-minify",
