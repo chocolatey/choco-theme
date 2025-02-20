@@ -95,7 +95,7 @@ limitations under the License.
 
 ```
 
-#### [@playwright/test@1.49.1](https://github.com/microsoft/playwright)
+#### [@playwright/test@1.50.1](https://github.com/microsoft/playwright)
 
 [Repository Link](https://github.com/microsoft/playwright)
 
@@ -724,7 +724,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@eslint/js@9.17.0](https://github.com/eslint/eslint)
+#### [@eslint/js@9.20.0](https://github.com/eslint/eslint)
 
 [Repository Link](https://github.com/eslint/eslint)
 
@@ -752,7 +752,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@types/node@20.17.12](https://github.com/DefinitelyTyped/DefinitelyTyped)
+#### [@types/node@20.17.19](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
 [Repository Link](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
@@ -808,28 +808,28 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [datatables.net-bs5@2.2.0](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
+#### [datatables.net-bs5@2.2.2](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
 
 [Repository Link](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [datatables.net-dt@2.2.0](https://github.com/DataTables/Dist-DataTables-DataTables)
+#### [datatables.net-dt@2.2.2](https://github.com/DataTables/Dist-DataTables-DataTables)
 
 [Repository Link](https://github.com/DataTables/Dist-DataTables-DataTables)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [esbuild@0.20.2](https://github.com/evanw/esbuild)
+#### [esbuild@0.25.0](https://github.com/evanw/esbuild)
 
 [Repository Link](https://github.com/evanw/esbuild)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [eslint@9.17.0](https://github.com/eslint/eslint)
+#### [eslint@9.20.1](https://github.com/eslint/eslint)
 
 [Repository Link](https://github.com/eslint/eslint)
 
@@ -871,7 +871,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [globals@15.14.0](https://github.com/sindresorhus/globals)
+#### [globals@15.15.0](https://github.com/sindresorhus/globals)
 
 [Repository Link](https://github.com/sindresorhus/globals)
 
@@ -927,7 +927,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [moment-timezone@0.5.46](https://github.com/moment/moment-timezone)
+#### [moment-timezone@0.5.47](https://github.com/moment/moment-timezone)
 
 [Repository Link](https://github.com/moment/moment-timezone)
 
@@ -948,7 +948,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [postcss@8.4.49](https://github.com/postcss/postcss)
+#### [postcss@8.5.3](https://github.com/postcss/postcss)
 
 [Repository Link](https://github.com/postcss/postcss)
 
@@ -983,7 +983,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [stylelint@16.12.0](https://github.com/stylelint/stylelint)
+#### [stylelint@16.14.1](https://github.com/stylelint/stylelint)
 
 [Repository Link](https://github.com/stylelint/stylelint)
 
@@ -1011,7 +1011,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [sweetalert2@11.15.10](https://github.com/sweetalert2/sweetalert2)
+#### [sweetalert2@11.17.2](https://github.com/sweetalert2/sweetalert2)
 
 [Repository Link](https://github.com/sweetalert2/sweetalert2)
 
@@ -1032,7 +1032,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [tsx@4.19.2](https://github.com/privatenumber/tsx)
+#### [tsx@4.19.3](https://github.com/privatenumber/tsx)
 
 [Repository Link](https://github.com/privatenumber/tsx)
 

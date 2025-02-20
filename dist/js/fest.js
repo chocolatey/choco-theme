@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.4 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.5 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -87,8 +87,7 @@
      * But TBH, I don't think it'll happen soon with Site Isolation and split caches adding serious complexity.
      */
     static warmConnections() {
-      if (_LiteYTEmbed.preconnected)
-        return;
+      if (_LiteYTEmbed.preconnected) return;
       _LiteYTEmbed.addPrefetch("preconnect", "https://www.youtube-nocookie.com");
       _LiteYTEmbed.addPrefetch("preconnect", "https://www.google.com");
       _LiteYTEmbed.addPrefetch("preconnect", "https://googleads.g.doubleclick.net");
@@ -96,8 +95,7 @@
       _LiteYTEmbed.preconnected = true;
     }
     fetchYTPlayerApi() {
-      if (window.YT || window.YT && window.YT.Player)
-        return;
+      if (window.YT || window.YT && window.YT.Player) return;
       this.ytApiPromise = new Promise((res, rej) => {
         var el = document.createElement("script");
         el.src = "https://www.youtube.com/iframe_api";
@@ -155,8 +153,7 @@
     }
     activate() {
       return __async(this, null, function* () {
-        if (this.classList.contains("lyt-activated"))
-          return;
+        if (this.classList.contains("lyt-activated")) return;
         this.classList.add("lyt-activated");
         if (this.needsYTApi) {
           return this.addYTPlayerIframe(this.getParams());
@@ -193,8 +190,7 @@
         img.src = webpUrl;
         img.onload = (e) => {
           const noAvailablePoster = e.target.naturalHeight == 90 && e.target.naturalWidth == 120;
-          if (noAvailablePoster)
-            return;
+          if (noAvailablePoster) return;
           this.style.backgroundImage = `url("${webpUrl}")`;
         };
       }, 100);
