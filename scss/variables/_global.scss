@@ -152,7 +152,8 @@ $danger-dark-contrast:              color-contrast($danger-dark);
 // $link-decoration: none;
 
 // Badges
-$badge-color: var(--bs-body-color);
+$badge-color:                       var(--bs-body-color);
+$badge-font-size:                   $font-size-base;
 
 // Borders
 $border-color:                      $gray-300;
@@ -262,7 +263,8 @@ $offcanvas-bg-color:                var(--bs-secondary-bg);
 // $popover-header-bg:                 var(--bs-tertiary-bg);
 
 // Progress bars
-$progress-bg:                       var(--bs-tertiary-bg);
+$progress-bg:                      var(--bs-tertiary-bg);
+$progress-height:                  1.5rem;
 
 // Z-index
 $zindex-dropdown:                   1060;

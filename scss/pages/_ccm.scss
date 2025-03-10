@@ -73,6 +73,10 @@
                         color: var(--bs-secondary-color) !important;
                         opacity: 1;
                     }
+
+                    &:focus-visible {
+                        outline: -webkit-focus-ring-color auto 1px !important;
+                    }
                 }
 
                 [aria-expanded="true"] .fa-angle-down {

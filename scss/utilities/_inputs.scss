@@ -184,6 +184,7 @@ textarea:disabled ~ .form-text {
 }
 
 input[readonly]:not([data-td-target]),
-textarea[readonly] {
+textarea[readonly],
+input[type="checkbox"]:disabled {
     background-color: $input-disabled-bg;
 }
