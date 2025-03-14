@@ -59170,6 +59170,22 @@ a:not(.btn).disabled {
   overflow: visible !important;
 }
 
+.toast.text-bg-success .btn-close {
+  color: var(--bs-success-contrast);
+}
+.toast.text-bg-danger .btn-close {
+  color: var(--bs-danger-contrast);
+}
+.toast.text-bg-warning .btn-close {
+  color: var(--bs-warning-contrast);
+}
+.toast .btn-close {
+  opacity: 0.75;
+}
+.toast .btn-close:hover {
+  opacity: 1;
+}
+
 .boxstarter-org a:not(.nav-link):not(.btn),
 .boxstarter-org .btn-link {
   color: var(--bs-primary);
