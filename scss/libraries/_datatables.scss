@@ -59,3 +59,45 @@ table.table {
         vertical-align: middle;
     }
 }
+
+table.dataTable thead > tr > th {
+    &.dt-orderable-asc, 
+    &.dt-orderable-desc, 
+    &.dt-ordering-asc, 
+    &.dt-ordering-desc {
+      padding-right: 40px;
+    }
+  
+    &.dt-orderable-asc span.dt-column-order, 
+    &.dt-orderable-desc span.dt-column-order {
+      width: 20px;
+    }
+  
+    &.dt-orderable-asc span.dt-column-order {
+      &::before, 
+      &::after {
+        opacity: 1;
+        color: var(--bs-body-color);
+        font-size: 1em;
+        line-height: 15px;
+      }
+    }
+  
+    &.dt-orderable-desc span.dt-column-order {
+      &::before, 
+      &::after {
+        opacity: 1;
+        color: var(--bs-body-color);
+        font-size: 1em;
+        line-height: 15px;
+      }
+    }
+  
+    &.dt-ordering-asc span.dt-column-order::before, 
+    &.dt-ordering-desc span.dt-column-order::after {
+      color: var(--bs-primary);
+      font-size: 1em;
+      line-height: 15px;
+    }
+  }
+  
