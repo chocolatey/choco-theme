@@ -58,6 +58,8 @@
   --bs-dark-shift: rgb(3.74, 9.945, 15.385);
   --bs-tip-contrast: #fff;
   --bs-tip-shift: rgb(94.35, 56.1, 164.05);
+  --bs-tertiary-bg-contrast: #000;
+  --bs-secondary-bg-contrast: #000;
 }
 
 :root[data-bs-theme=dark] {
@@ -127,6 +129,8 @@
   --bs-tip-contrast: #000;
   --bs-tip-shift: rgb(124.1, 96.05, 177.65);
   --bs-tip-rgb: 146, 113, 209;
+  --bs-tertiary-bg-contrast: #fff;
+  --bs-secondary-bg-contrast: #fff;
 }
 
 :root,
@@ -41564,6 +41568,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   width: 100%;
   padding: 0.5rem 0.25rem 0.5rem 0;
   color: var(--bs-body-color);
+  text-decoration: none;
 }
 #leftSidebarNav .navbar > .navbar-collapse .navbar-nav .nav-item .nav-link-collapse .btn-collapse {
   padding: 0.5rem 0 0.5rem 1rem;
@@ -42131,7 +42136,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   appearance: none;
   background-color: var(--bs-secondary-bg);
   background-clip: padding-box;
@@ -42140,7 +42145,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .autoComplete_wrapper > input:focus, .autoComplete_wrapper > input:hover {
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   background-color: var(--bs-secondary-bg);
   border-color: var(--bs-primary);
   outline: 0;
@@ -42152,7 +42157,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
 .autoComplete_wrapper > ul {
   max-height: unset;
   overflow-y: hidden;
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   background-color: var(--bs-secondary-bg);
   border: 1px solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
@@ -42183,15 +42188,15 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   border-bottom-left-radius: var(--bs-border-radius);
 }
 .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions):hover, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions)[aria-selected=true] {
-  color: var(--bs-dark);
+  color: var(--bs-primary-contrast);
   background-color: var(--bs-primary);
 }
 .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions):hover mark, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions):hover .mark, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions)[aria-selected=true] mark, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions)[aria-selected=true] .mark { /* stylelint-disable-line selector-max-type */
-  color: var(--bs-dark);
+  color: var(--bs-primary-contrast);
   text-decoration: underline;
 }
 .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions):hover .autocomplete-downloads, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions)[aria-selected=true] .autocomplete-downloads {
-  color: var(--bs-dark);
+  color: var(--bs-primary-contrast);
 }
 .autoComplete_wrapper > ul > li.autocomplete-no-suggestions:hover, .autoComplete_wrapper > ul > li.autocomplete-no-suggestions[aria-selected=true] {
   cursor: default;
@@ -42259,7 +42264,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   --docsearch-modal-shadow: 0 .5rem 1rem rgba(var(--bs-primary-rgb), 20%);
   --docsearch-hit-background: var(--bs-body-bg);
   --docsearch-hit-color: var(--bs-body-color);
-  --docsearch-hit-active-color: var(--bs-dark);
+  --docsearch-hit-active-color: var(--bs-primary-contrast);
   --docsearch-hit-shadow: none;
   --docsearch-footer-background: var(--bs-tertiary-bg);
   --docsearch-footer-shadow: none;
@@ -42314,6 +42319,11 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   border-top-left-radius: var(--bs-border-radius);
   border-top-right-radius: var(--bs-border-radius);
 }
+.DocSearch-Hit .DocSearch-Hit[aria-selected=true] .mark,
+.DocSearch-Hit .DocSearch-Hit[aria-selected=true] mark {
+  text-decoration: underline;
+  font-weight: bold;
+}
 
 .DocSearch-Hit-content-wrapper {
   overflow: hidden;
@@ -42329,7 +42339,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   height: 20px;
   padding: 0;
   line-height: 0.875rem;
-  color: var(--bs-dark);
+  color: var(--bs-primary-contrast);
   text-transform: lowercase;
 }
 
@@ -43657,12 +43667,12 @@ a .card:hover,
 }
 
 .text-bg-body-secondary {
-  color: var(--bs-body-color) !important;
+  color: var(--bs-secondary-bg-contrast) !important;
   background: var(--bs-secondary-bg) !important;
 }
 
 .text-bg-body-tertiary {
-  color: var(--bs-body-color) !important;
+  color: var(--bs-tertiary-bg-contrast) !important;
   background: var(--bs-tertiary-bg) !important;
 }
 
@@ -44038,6 +44048,98 @@ a.circle.text-bg-body-contrast:hover {
     margin-top: 25px;
   }
 }
+.text-blue {
+  color: var(--bs-blue) !important;
+}
+
+.text-indigo {
+  color: var(--bs-indigo) !important;
+}
+
+.text-purple {
+  color: var(--bs-purple) !important;
+}
+
+.text-pink {
+  color: var(--bs-pink) !important;
+}
+
+.text-red {
+  color: var(--bs-red) !important;
+}
+
+.text-orange {
+  color: var(--bs-orange) !important;
+}
+
+.text-yellow {
+  color: var(--bs-yellow) !important;
+}
+
+.text-green {
+  color: var(--bs-green) !important;
+}
+
+.text-teal {
+  color: var(--bs-teal) !important;
+}
+
+.text-cyan {
+  color: var(--bs-cyan) !important;
+}
+
+.text-black {
+  color: var(--bs-black) !important;
+}
+
+.text-white {
+  color: var(--bs-white) !important;
+}
+
+.text-gray {
+  color: var(--bs-gray) !important;
+}
+
+.text-gray-dark {
+  color: var(--bs-gray-dark) !important;
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.text-secondary {
+  color: var(--bs-secondary) !important;
+}
+
+.text-success {
+  color: var(--bs-success) !important;
+}
+
+.text-info {
+  color: var(--bs-info) !important;
+}
+
+.text-warning {
+  color: var(--bs-warning) !important;
+}
+
+.text-danger {
+  color: var(--bs-danger) !important;
+}
+
+.text-light {
+  color: var(--bs-light) !important;
+}
+
+.text-dark {
+  color: var(--bs-dark) !important;
+}
+
+.text-tip {
+  color: var(--bs-tip) !important;
+}
+
 .text-adaptive {
   color: var(--choco-adaptive) !important;
 }
@@ -44069,7 +44171,7 @@ a.circle.text-bg-body-contrast:hover {
 
 .text-shiny {
   display: inline-block;
-  background: linear-gradient(110deg, var(--text-shiny-color), 45%, var(--bs-primary), 55%, var(--bs-body-color));
+  background: linear-gradient(110deg, var(--bs-body-color), 45%, var(--bs-primary), 55%, var(--bs-body-color));
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text;
   background-clip: text;
@@ -44113,6 +44215,10 @@ a.circle.text-bg-body-contrast:hover {
 }
 .carousel .carousel-indicators button {
   border-radius: 100%;
+}
+.carousel .carousel-control-next,
+.carousel .carousel-control-prev {
+  text-decoration: none;
 }
 .carousel:not(.carousel-control-center) .carousel-control-next, .carousel:not(.carousel-control-center) .carousel-control-prev {
   top: unset;
@@ -44828,7 +44934,7 @@ label.btn {
 }
 
 .navbar-toggler:hover .fa-solid {
-  color: rgb(4.4, 11.7, 18.1);
+  color: var(--bs-primary-contrast);
 }
 .navbar-toggler .fa-solid {
   color: var(--bs-primary);
@@ -44867,10 +44973,10 @@ button.btn-grab:not(:disabled) {
   --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
   --bs-btn-color: var(--bs-primary);
   --bs-btn-border-color: var(--choco-border-color-adaptive);
-  --bs-btn-hover-color: var(--bs-dark);
+  --bs-btn-hover-color: var(--bs-primary-contrast);
   --bs-btn-hover-bg: var(--bs-primary);
   --bs-btn-hover-border-color: var(--bs-primary);
-  --bs-btn-active-color: var(--bs-dark);
+  --bs-btn-active-color: var(--bs-primary-contrast);
   --bs-btn-active-bg: var(--bs-primary);
   --bs-btn-active-border-color: var(--bs-primary);
   --bs-btn-disabled-color: var(--bs-secondary-color);
@@ -46145,7 +46251,7 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 .token.sensitive-variable,
 .token.string .token.sensitive-variable {
   font-weight: 400;
-  color: var(--bs-body-color);
+  color: var(--bs-tertiary-bg-contrast);
   background: var(--bs-tertiary-bg);
 }
 
@@ -46160,93 +46266,6 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 .btn-check + .btn.btn-outline-secondary:hover {
   color: var(--secondary-contrast);
   background-color: var(--bs-secondary);
-}
-
-.form-switch.form-switch-active .form-check-input, .form-switch.form-switch-expired .form-check-input, .form-switch.form-switch-deactivated .form-check-input, .form-switch.form-switch-latest .form-check-input {
-  width: 3rem;
-  margin-right: 0.75rem;
-  background-image: none !important;
-}
-.form-switch.form-switch-active .form-check-input:active, .form-switch.form-switch-expired .form-check-input:active, .form-switch.form-switch-deactivated .form-check-input:active, .form-switch.form-switch-latest .form-check-input:active {
-  filter: unset;
-}
-.form-switch.form-switch-active .form-check-input:not(:active):not(:focus), .form-switch.form-switch-expired .form-check-input:not(:active):not(:focus), .form-switch.form-switch-deactivated .form-check-input:not(:active):not(:focus), .form-switch.form-switch-latest .form-check-input:not(:active):not(:focus) {
-  box-shadow: none !important;
-}
-.form-switch.form-switch-active .form-check-input::before, .form-switch.form-switch-active .form-check-input::after, .form-switch.form-switch-expired .form-check-input::before, .form-switch.form-switch-expired .form-check-input::after, .form-switch.form-switch-deactivated .form-check-input::before, .form-switch.form-switch-deactivated .form-check-input::after, .form-switch.form-switch-latest .form-check-input::before, .form-switch.form-switch-latest .form-check-input::after {
-  position: absolute;
-  top: 50%;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  font: var(--fa-font-solid);
-  font-size: 0.875em;
-  line-height: 1.7;
-  text-align: center;
-  content: "";
-  border-radius: 100%;
-  transform: translateY(-50%);
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-.form-switch.form-switch-active .form-check-input:checked::before, .form-switch.form-switch-active .form-check-input:checked::after, .form-switch.form-switch-expired .form-check-input:checked::before, .form-switch.form-switch-expired .form-check-input:checked::after, .form-switch.form-switch-deactivated .form-check-input:checked::before, .form-switch.form-switch-deactivated .form-check-input:checked::after, .form-switch.form-switch-latest .form-check-input:checked::before, .form-switch.form-switch-latest .form-check-input:checked::after {
-  right: -1px;
-}
-.form-switch.form-switch-active .form-check-input:not(:checked)::before, .form-switch.form-switch-active .form-check-input:not(:checked)::after, .form-switch.form-switch-expired .form-check-input:not(:checked)::before, .form-switch.form-switch-expired .form-check-input:not(:checked)::after, .form-switch.form-switch-deactivated .form-check-input:not(:checked)::before, .form-switch.form-switch-deactivated .form-check-input:not(:checked)::after, .form-switch.form-switch-latest .form-check-input:not(:checked)::before, .form-switch.form-switch-latest .form-check-input:not(:checked)::after {
-  left: -1px;
-}
-.form-switch.form-switch-active .form-check-input::after {
-  color: var(--bs-success-contrast);
-  content: "\f00c";
-}
-.form-switch.form-switch-active .form-check-input::before {
-  border: 1px solid var(--bs-success);
-}
-.form-switch.form-switch-active .form-check-input:checked, .form-switch.form-switch-active .form-check-input::before {
-  background: var(--bs-success);
-}
-.form-switch.form-switch-expired .form-check-input::after {
-  color: var(--bs-danger-contrast);
-  content: "!";
-}
-.form-switch.form-switch-expired .form-check-input::before {
-  border: 1px solid var(--bs-danger);
-}
-.form-switch.form-switch-expired .form-check-input:checked, .form-switch.form-switch-expired .form-check-input::before {
-  background: var(--bs-danger);
-}
-.form-switch.form-switch-deactivated .form-check-input::after {
-  color: var(--bs-secondary-contrast);
-  content: "\f05e";
-}
-.form-switch.form-switch-deactivated .form-check-input::before {
-  border: 1px solid var(--bs-secondary);
-}
-.form-switch.form-switch-deactivated .form-check-input:checked, .form-switch.form-switch-deactivated .form-check-input::before {
-  background: var(--bs-secondary);
-}
-.form-switch.form-switch-deactivated .form-check-input:not(:checked)::after {
-  left: -0.5px;
-}
-.form-switch.form-switch-deactivated .form-check-input:checked::after {
-  right: -1.5px;
-}
-.form-switch.form-switch-latest .form-check-input::after {
-  color: var(--bs-warning);
-  content: "\f005";
-}
-.form-switch.form-switch-latest .form-check-input::before {
-  background: var(--bs-secondary-bg);
-  border: 1px solid var(--bs-warning);
-}
-.form-switch.form-switch-latest .form-check-input:checked {
-  background: var(--bs-warning);
-}
-.form-switch.form-switch-latest .form-check-input:not(:checked)::after {
-  left: -1.5px;
-}
-.form-switch.form-switch-latest .form-check-input:checked::after {
-  right: -0.5px;
 }
 
 .task-list-item .form-check {
@@ -46581,7 +46600,7 @@ input[type=checkbox]:disabled {
   display: none;
 }
 .EasyMDEContainer .CodeMirror {
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   background: var(--bs-secondary-bg);
   border-color: var(--bs-primary);
 }
@@ -46658,7 +46677,7 @@ input[type=checkbox]:disabled {
   margin-right: 30px;
   margin-left: -30px;
   font-weight: 400;
-  color: var(--bs-body-color);
+  color: var(--bs-tertiary-bg-contrast);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -46773,13 +46792,24 @@ input[type=checkbox]:disabled {
   margin-right: 2rem;
 }
 
+.list-hr > li:not(:last-child) {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.list-hr-lg > li:not(:last-child) {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
 .list-group-item {
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   background: var(--bs-secondary-bg);
   border-color: var(--bs-border-color);
 }
 .list-group-item.list-group-item-action:hover {
-  color: var(--bs-body-color);
+  color: var(--bs-tertiary-bg-contrast);
   background-color: var(--bs-tertiary-bg);
 }
 
@@ -47519,7 +47549,7 @@ span.flatpickr-weekday {
 .flatpickr-day.prevMonthDay:hover,
 .flatpickr-day:focus,
 .flatpickr-day:hover {
-  color: var(--bs-body-color);
+  color: var(--bs-tertiary-bg-contrast);
   background: var(--bs-tertiary-bg);
   border-color: var(--bs-tertiary-bg);
 }
@@ -48299,24 +48329,24 @@ table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order::before, ta
   margin-right: 1rem !important;
 }
 .ct-legend .ct-series-0:before {
-  background-color: #6f42c1;
-  border-color: #6f42c1;
+  background-color: var(--bs-purple);
+  border-color: var(--bs-purple);
 }
 .ct-legend .ct-series-1:before {
-  background-color: #257e67;
-  border-color: #257e67;
+  background-color: var(--bs-green);
+  border-color: var(--bs-green);
 }
 .ct-legend .ct-series-2:before {
-  background-color: #8f6b00;
-  border-color: #8f6b00;
+  background-color: var(--bs-yellow);
+  border-color: var(--bs-yellow);
 }
 .ct-legend .ct-series-3:before {
-  background-color: #e10e32;
-  border-color: #e10e32;
+  background-color: var(--bs-red);
+  border-color: var(--bs-red);
 }
 .ct-legend .ct-series-4:before {
-  background-color: #bb5502;
-  border-color: #bb5502;
+  background-color: var(--bs-orange);
+  border-color: var(--bs-orange);
 }
 
 .chocolatey-license-portal .card-chartist-legend {

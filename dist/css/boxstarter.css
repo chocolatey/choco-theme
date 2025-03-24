@@ -22,24 +22,115 @@
   --bs-gray-dark-rgb: 51, 50, 48;
 }
 
+:root,
 :root[data-bs-theme=light] {
   --choco-adaptive: #cccac0;
   --choco-border-color-adaptive: #b2b0a8;
+  --bs-blue-contrast: #0c0c0b;
+  --bs-indigo-contrast: #fffcf0;
+  --bs-purple-contrast: #fffcf0;
+  --bs-pink-contrast: #fffcf0;
+  --bs-red-contrast: #fffcf0;
+  --bs-orange-contrast: #0c0c0b;
+  --bs-yellow-contrast: #0c0c0b;
+  --bs-green-contrast: #fffcf0;
+  --bs-teal-contrast: #0c0c0b;
+  --bs-cyan-contrast: #0c0c0b;
+  --bs-black-contrast: #fffcf0;
+  --bs-white-contrast: #0c0c0b;
+  --bs-gray-contrast: #fffcf0;
+  --bs-gray-dark-contrast: #fffcf0;
+  --bs-primary-contrast: #fffcf0;
+  --bs-primary-shift: rgb(0, 98.6, 33.15);
+  --bs-secondary-contrast: #fffcf0;
+  --bs-secondary-shift: rgb(86.7, 85.85, 81.6);
+  --bs-success-contrast: #fffcf0;
+  --bs-success-shift: rgb(0, 98.6, 33.15);
+  --bs-info-contrast: #fffcf0;
+  --bs-info-shift: rgb(0, 98.6, 33.15);
+  --bs-warning-contrast: #0c0c0b;
+  --bs-warning-shift: rgb(156.4, 95.2, 0);
+  --bs-danger-contrast: #fffcf0;
+  --bs-danger-shift: rgb(163.2, 32.3, 45.9);
+  --bs-light-contrast: #0c0c0b;
+  --bs-light-shift: rgb(194.65, 192.1, 183.6);
+  --bs-dark-contrast: #fffcf0;
+  --bs-dark-shift: rgb(0, 9.86, 3.315);
+  --bs-tip-contrast: #fffcf0;
+  --bs-tip-shift: rgb(133.45, 49.3, 98.6);
+  --bs-tertiary-bg-contrast: #0c0c0b;
+  --bs-secondary-bg-contrast: #0c0c0b;
 }
 
 :root[data-bs-theme=dark] {
   --choco-adaptive: #333230;
   --choco-border-color-adaptive: rgba(var(--bs-primary-rgb), 0.5);
-  --bs-green: #019a4a;
-  --bs-green-rgb: 1, 154, 74;
-  --bs-success: #019a4a;
-  --bs-success-rgb: 1, 154, 74;
-  --bs-primary: #019a4a;
-  --bs-primary-rgb: 1, 154, 74;
+  --bs-blue: #008d9c;
+  --bs-blue-contrast: #0c0c0b;
+  --bs-indigo: #6610f2;
+  --bs-indigo-contrast: #fffcf0;
+  --bs-purple: #9d3a74;
+  --bs-purple-contrast: #fffcf0;
+  --bs-pink: #af2e51;
+  --bs-pink-contrast: #fffcf0;
+  --bs-red: #c02636;
+  --bs-red-contrast: #fffcf0;
+  --bs-orange: #eb4420;
+  --bs-orange-contrast: #0c0c0b;
   --bs-yellow: #f1fa8c;
-  --bs-yellow-rgb: 241, 250, 140;
+  --bs-yellow-contrast: #0c0c0b;
+  --bs-green: #019a4a;
+  --bs-green-contrast: #0c0c0b;
+  --bs-teal: #20c997;
+  --bs-teal-contrast: #0c0c0b;
+  --bs-cyan: #0dcaf0;
+  --bs-cyan-contrast: #0c0c0b;
+  --bs-black: #0c0c0b;
+  --bs-black-contrast: #fffcf0;
+  --bs-white: #fffcf0;
+  --bs-white-contrast: #0c0c0b;
+  --bs-gray: #7f7e78;
+  --bs-gray-contrast: #0c0c0b;
+  --bs-gray-dark: rgb(0, 11.6, 3.9);
+  --bs-gray-dark-contrast: #fffcf0;
+  --bs-primary: #019a4a;
+  --bs-primary-contrast: #0c0c0b;
+  --bs-primary-shift: rgb(0.85, 130.9, 62.9);
+  --bs-primary-rgb: 1, 154, 74;
+  --bs-secondary: #7f7e78;
+  --bs-secondary-contrast: #0c0c0b;
+  --bs-secondary-shift: rgb(107.95, 107.1, 102);
+  --bs-secondary-rgb: 127, 126, 120;
+  --bs-success: #019a4a;
+  --bs-success-contrast: #0c0c0b;
+  --bs-success-shift: rgb(0.85, 130.9, 62.9);
+  --bs-success-rgb: 1, 154, 74;
+  --bs-info: #019a4a;
+  --bs-info-contrast: #0c0c0b;
+  --bs-info-shift: rgb(0.85, 130.9, 62.9);
+  --bs-info-rgb: 1, 154, 74;
   --bs-warning: #f1fa8c;
+  --bs-warning-contrast: #0c0c0b;
+  --bs-warning-shift: rgb(204.85, 212.5, 119);
   --bs-warning-rgb: 241, 250, 140;
+  --bs-danger: #c02636;
+  --bs-danger-contrast: #fffcf0;
+  --bs-danger-shift: rgb(163.2, 32.3, 45.9);
+  --bs-danger-rgb: 192, 38, 54;
+  --bs-light: #e5e2d8;
+  --bs-light-contrast: #0c0c0b;
+  --bs-light-shift: rgb(194.65, 192.1, 183.6);
+  --bs-light-rgb: 229, 226, 216;
+  --bs-dark: rgb(0, 11.6, 3.9);
+  --bs-dark-contrast: #fffcf0;
+  --bs-dark-shift: rgb(0, 9.86, 3.315);
+  --bs-dark-rgb: 0, 12, 4;
+  --bs-tip: #9d3a74;
+  --bs-tip-contrast: #fffcf0;
+  --bs-tip-shift: rgb(133.45, 49.3, 98.6);
+  --bs-tip-rgb: 157, 58, 116;
+  --bs-tertiary-bg-contrast: #fffcf0;
+  --bs-secondary-bg-contrast: #fffcf0;
 }
 
 :root,
@@ -40894,6 +40985,25 @@ textarea.form-control-lg {
 .far,
 .fab,
 .fa-solid,
+.list-curve p:last-child::after,
+.list-circle li.list-circle-fa-plus::before,
+.list-circle.list-circle-fa-plus li::before,
+.list-curve p:last-child::before,
+.list-circle li.list-circle-fa-check::before,
+.list-circle.list-circle-fa-check li::before,
+.list-curve p:not(:last-child)::before,
+.list-curve p:first-child::after,
+.list-circle li.list-circle-fa-edit::before,
+.list-circle li.list-circle-fa-paper-plane::before,
+.list-circle li.list-circle-fa-user-lock::before,
+.list-circle li.list-circle-fa-users::before,
+.list-circle li.list-circle-fa-cogs::before,
+.list-circle li.list-circle-fa-star::before,
+.course-list li.completed::before,
+.course-list li.mod-completed::before,
+.correct::before,
+.step-tabs li.step-inactive::before,
+.wrong::before,
 .fa-regular,
 .fa-brands,
 .fa {
@@ -40910,6 +41020,23 @@ textarea.form-control-lg {
 .far::before,
 .fab::before,
 .fa-solid::before,
+.list-circle li.list-circle-fa-plus::before,
+.list-circle.list-circle-fa-plus li::before,
+.list-curve p:last-child::before,
+.list-circle li.list-circle-fa-check::before,
+.list-circle.list-circle-fa-check li::before,
+.list-curve p:not(:last-child)::before,
+.list-circle li.list-circle-fa-edit::before,
+.list-circle li.list-circle-fa-paper-plane::before,
+.list-circle li.list-circle-fa-user-lock::before,
+.list-circle li.list-circle-fa-users::before,
+.list-circle li.list-circle-fa-cogs::before,
+.list-circle li.list-circle-fa-star::before,
+.course-list li.completed::before,
+.course-list li.mod-completed::before,
+.correct::before,
+.step-tabs li.step-inactive::before,
+.wrong::before,
 .fa-regular::before,
 .fa-brands::before,
 .fa::before {
@@ -40919,6 +41046,25 @@ textarea.form-control-lg {
 .fa-classic,
 .fas,
 .fa-solid,
+.list-curve p:last-child::after,
+.list-circle li.list-circle-fa-plus::before,
+.list-circle.list-circle-fa-plus li::before,
+.list-curve p:last-child::before,
+.list-circle li.list-circle-fa-check::before,
+.list-circle.list-circle-fa-check li::before,
+.list-curve p:not(:last-child)::before,
+.list-curve p:first-child::after,
+.list-circle li.list-circle-fa-edit::before,
+.list-circle li.list-circle-fa-paper-plane::before,
+.list-circle li.list-circle-fa-user-lock::before,
+.list-circle li.list-circle-fa-users::before,
+.list-circle li.list-circle-fa-cogs::before,
+.list-circle li.list-circle-fa-star::before,
+.course-list li.completed::before,
+.course-list li.mod-completed::before,
+.correct::before,
+.step-tabs li.step-inactive::before,
+.wrong::before,
 .far,
 .fa-regular {
   font-family: "Font Awesome 6 Free";
@@ -40927,6 +41073,22 @@ textarea.form-control-lg {
 .fa-brands,
 .fab {
   font-family: "Font Awesome 6 Brands";
+}
+
+.list-curve p:last-child::after, .list-circle li.list-circle-fa-plus::before,
+.list-circle.list-circle-fa-plus li::before, .list-curve p:last-child::before,
+.list-circle li.list-circle-fa-check::before,
+.list-circle.list-circle-fa-check li::before, .list-curve p:not(:last-child)::before, .list-curve p:first-child::after, .list-circle li.list-circle-fa-edit::before, .list-circle li.list-circle-fa-paper-plane::before, .list-circle li.list-circle-fa-user-lock::before, .list-circle li.list-circle-fa-users::before, .list-circle li.list-circle-fa-cogs::before, .list-circle li.list-circle-fa-star::before, .course-list li.completed::before,
+.course-list li.mod-completed::before,
+.correct::before,
+.step-tabs li.step-inactive::before, .wrong::before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
 }
 
 .fa-1x {
@@ -49179,7 +49341,26 @@ readers do not read off random characters that represent icons */
   src: url("/assets/fonts/fontawesome-free/fa-solid-900.woff2") format("woff2"), url("/assets/fonts/fontawesome-free/fa-solid-900.ttf") format("truetype");
 }
 .fas,
-.fa-solid {
+.fa-solid,
+.list-curve p:last-child::after,
+.list-circle li.list-circle-fa-plus::before,
+.list-circle.list-circle-fa-plus li::before,
+.list-curve p:last-child::before,
+.list-circle li.list-circle-fa-check::before,
+.list-circle.list-circle-fa-check li::before,
+.list-curve p:not(:last-child)::before,
+.list-curve p:first-child::after,
+.list-circle li.list-circle-fa-edit::before,
+.list-circle li.list-circle-fa-paper-plane::before,
+.list-circle li.list-circle-fa-user-lock::before,
+.list-circle li.list-circle-fa-users::before,
+.list-circle li.list-circle-fa-cogs::before,
+.list-circle li.list-circle-fa-star::before,
+.course-list li.completed::before,
+.course-list li.mod-completed::before,
+.correct::before,
+.step-tabs li.step-inactive::before,
+.wrong::before {
   font-weight: 900;
 }
 
@@ -51633,14 +51814,249 @@ main {
   position: relative;
   padding-right: 1rem;
 }
-.chocolatey-zendesk .fa-solid.fa-sun::before,
+.chocolatey-zendesk .fa-solid.fa-sun::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-plus::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-plus::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-sun::before,
+.list-circle.list-circle-fa-plus .chocolatey-zendesk li.fa-sun::before, .chocolatey-zendesk .list-curve p.fa-sun:last-child::before, .list-curve .chocolatey-zendesk p.fa-sun:last-child::before,
+.chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-check::before,
+.list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-check::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-sun::before,
+.list-circle.list-circle-fa-check .chocolatey-zendesk li.fa-sun::before, .chocolatey-zendesk .list-curve p.fa-sun:not(:last-child)::before, .list-curve .chocolatey-zendesk p.fa-sun:not(:last-child)::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-edit::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-edit::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-paper-plane::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-paper-plane::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-user-lock::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-user-lock::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-users::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-users::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-cogs::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-cogs::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-star::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-star::before, .chocolatey-zendesk .course-list li.fa-sun.completed::before, .course-list .chocolatey-zendesk li.fa-sun.completed::before,
+.chocolatey-zendesk .course-list li.fa-sun.mod-completed::before,
+.course-list .chocolatey-zendesk li.fa-sun.mod-completed::before,
+.chocolatey-zendesk .fa-sun.correct::before,
+.chocolatey-zendesk .step-tabs li.fa-sun.step-inactive::before,
+.step-tabs .chocolatey-zendesk li.fa-sun.step-inactive::before, .chocolatey-zendesk .fa-sun.wrong::before,
 .chocolatey-zendesk .fa-solid.fa-moon::before,
+.chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-plus::before,
+.list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-plus::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-moon::before,
+.list-circle.list-circle-fa-plus .chocolatey-zendesk li.fa-moon::before,
+.chocolatey-zendesk .list-curve p.fa-moon:last-child::before,
+.list-curve .chocolatey-zendesk p.fa-moon:last-child::before,
+.chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-check::before,
+.list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-check::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-moon::before,
+.list-circle.list-circle-fa-check .chocolatey-zendesk li.fa-moon::before,
+.chocolatey-zendesk .list-curve p.fa-moon:not(:last-child)::before,
+.list-curve .chocolatey-zendesk p.fa-moon:not(:last-child)::before,
+.chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-edit::before,
+.list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-edit::before,
+.chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-paper-plane::before,
+.chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-user-lock::before,
+.chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-users::before,
+.list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-users::before,
+.chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-cogs::before,
+.list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-cogs::before,
+.chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-star::before,
+.list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-star::before,
+.chocolatey-zendesk .course-list li.fa-moon.completed::before,
+.course-list .chocolatey-zendesk li.fa-moon.completed::before,
+.chocolatey-zendesk .course-list li.fa-moon.mod-completed::before,
+.course-list .chocolatey-zendesk li.fa-moon.mod-completed::before,
+.chocolatey-zendesk .fa-moon.correct::before,
+.chocolatey-zendesk .step-tabs li.fa-moon.step-inactive::before,
+.step-tabs .chocolatey-zendesk li.fa-moon.step-inactive::before,
+.chocolatey-zendesk .fa-moon.wrong::before,
 .chocolatey-zendesk .fa-solid.fa-circle-half-stroke::before,
+.chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-plus::before,
+.list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-plus::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-circle-half-stroke::before,
+.list-circle.list-circle-fa-plus .chocolatey-zendesk li.fa-circle-half-stroke::before,
+.chocolatey-zendesk .list-curve p.fa-circle-half-stroke:last-child::before,
+.list-curve .chocolatey-zendesk p.fa-circle-half-stroke:last-child::before,
+.chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-check::before,
+.list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-check::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-circle-half-stroke::before,
+.list-circle.list-circle-fa-check .chocolatey-zendesk li.fa-circle-half-stroke::before,
+.chocolatey-zendesk .list-curve p.fa-circle-half-stroke:not(:last-child)::before,
+.list-curve .chocolatey-zendesk p.fa-circle-half-stroke:not(:last-child)::before,
+.chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-edit::before,
+.list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-edit::before,
+.chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-paper-plane::before,
+.chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-user-lock::before,
+.chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-users::before,
+.list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-users::before,
+.chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-cogs::before,
+.list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-cogs::before,
+.chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-star::before,
+.list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-star::before,
+.chocolatey-zendesk .course-list li.fa-circle-half-stroke.completed::before,
+.course-list .chocolatey-zendesk li.fa-circle-half-stroke.completed::before,
+.chocolatey-zendesk .course-list li.fa-circle-half-stroke.mod-completed::before,
+.course-list .chocolatey-zendesk li.fa-circle-half-stroke.mod-completed::before,
+.chocolatey-zendesk .fa-circle-half-stroke.correct::before,
+.chocolatey-zendesk .step-tabs li.fa-circle-half-stroke.step-inactive::before,
+.step-tabs .chocolatey-zendesk li.fa-circle-half-stroke.step-inactive::before,
+.chocolatey-zendesk .fa-circle-half-stroke.wrong::before,
 .chocolatey-zendesk .fa-solid.fa-check::before,
+.chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-plus::before,
+.list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-plus::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-check::before,
+.list-circle.list-circle-fa-plus .chocolatey-zendesk li.fa-check::before,
+.chocolatey-zendesk .list-curve p.fa-check:last-child::before,
+.list-curve .chocolatey-zendesk p.fa-check:last-child::before,
+.chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-check::before,
+.list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-check::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-check::before,
+.list-circle.list-circle-fa-check .chocolatey-zendesk li.fa-check::before,
+.chocolatey-zendesk .list-curve p.fa-check:not(:last-child)::before,
+.list-curve .chocolatey-zendesk p.fa-check:not(:last-child)::before,
+.chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-edit::before,
+.list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-edit::before,
+.chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-paper-plane::before,
+.chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-user-lock::before,
+.chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-users::before,
+.list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-users::before,
+.chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-cogs::before,
+.list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-cogs::before,
+.chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-star::before,
+.list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-star::before,
+.chocolatey-zendesk .course-list li.fa-check.completed::before,
+.course-list .chocolatey-zendesk li.fa-check.completed::before,
+.chocolatey-zendesk .course-list li.fa-check.mod-completed::before,
+.course-list .chocolatey-zendesk li.fa-check.mod-completed::before,
+.chocolatey-zendesk .fa-check.correct::before,
+.chocolatey-zendesk .step-tabs li.fa-check.step-inactive::before,
+.step-tabs .chocolatey-zendesk li.fa-check.step-inactive::before,
+.chocolatey-zendesk .fa-check.wrong::before,
 .chocolatey-choco-theme-directory .fa-solid.fa-sun::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-plus::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-plus::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-sun::before,
+.list-circle.list-circle-fa-plus .chocolatey-choco-theme-directory li.fa-sun::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-sun:last-child::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-sun:last-child::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-check::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-check::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-sun::before,
+.list-circle.list-circle-fa-check .chocolatey-choco-theme-directory li.fa-sun::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-sun:not(:last-child)::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-sun:not(:last-child)::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-edit::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-edit::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-paper-plane::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-user-lock::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-users::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-users::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-cogs::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-cogs::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-star::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-star::before,
+.chocolatey-choco-theme-directory .course-list li.fa-sun.completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-sun.completed::before,
+.chocolatey-choco-theme-directory .course-list li.fa-sun.mod-completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-sun.mod-completed::before,
+.chocolatey-choco-theme-directory .fa-sun.correct::before,
+.chocolatey-choco-theme-directory .step-tabs li.fa-sun.step-inactive::before,
+.step-tabs .chocolatey-choco-theme-directory li.fa-sun.step-inactive::before,
+.chocolatey-choco-theme-directory .fa-sun.wrong::before,
 .chocolatey-choco-theme-directory .fa-solid.fa-moon::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-plus::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-plus::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-moon::before,
+.list-circle.list-circle-fa-plus .chocolatey-choco-theme-directory li.fa-moon::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-moon:last-child::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-moon:last-child::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-check::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-check::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-moon::before,
+.list-circle.list-circle-fa-check .chocolatey-choco-theme-directory li.fa-moon::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-moon:not(:last-child)::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-moon:not(:last-child)::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-edit::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-edit::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-paper-plane::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-user-lock::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-users::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-users::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-cogs::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-cogs::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-star::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-star::before,
+.chocolatey-choco-theme-directory .course-list li.fa-moon.completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-moon.completed::before,
+.chocolatey-choco-theme-directory .course-list li.fa-moon.mod-completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-moon.mod-completed::before,
+.chocolatey-choco-theme-directory .fa-moon.correct::before,
+.chocolatey-choco-theme-directory .step-tabs li.fa-moon.step-inactive::before,
+.step-tabs .chocolatey-choco-theme-directory li.fa-moon.step-inactive::before,
+.chocolatey-choco-theme-directory .fa-moon.wrong::before,
 .chocolatey-choco-theme-directory .fa-solid.fa-circle-half-stroke::before,
-.chocolatey-choco-theme-directory .fa-solid.fa-check::before {
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-plus::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-plus::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-circle-half-stroke::before,
+.list-circle.list-circle-fa-plus .chocolatey-choco-theme-directory li.fa-circle-half-stroke::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-circle-half-stroke:last-child::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-circle-half-stroke:last-child::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-check::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-check::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-circle-half-stroke::before,
+.list-circle.list-circle-fa-check .chocolatey-choco-theme-directory li.fa-circle-half-stroke::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-circle-half-stroke:not(:last-child)::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-circle-half-stroke:not(:last-child)::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-edit::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-edit::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-paper-plane::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-user-lock::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-users::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-users::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-cogs::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-cogs::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-star::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-star::before,
+.chocolatey-choco-theme-directory .course-list li.fa-circle-half-stroke.completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-circle-half-stroke.completed::before,
+.chocolatey-choco-theme-directory .course-list li.fa-circle-half-stroke.mod-completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-circle-half-stroke.mod-completed::before,
+.chocolatey-choco-theme-directory .fa-circle-half-stroke.correct::before,
+.chocolatey-choco-theme-directory .step-tabs li.fa-circle-half-stroke.step-inactive::before,
+.step-tabs .chocolatey-choco-theme-directory li.fa-circle-half-stroke.step-inactive::before,
+.chocolatey-choco-theme-directory .fa-circle-half-stroke.wrong::before,
+.chocolatey-choco-theme-directory .fa-solid.fa-check::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-plus::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-plus::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-check::before,
+.list-circle.list-circle-fa-plus .chocolatey-choco-theme-directory li.fa-check::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-check:last-child::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-check:last-child::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-check::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-check::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-check::before,
+.list-circle.list-circle-fa-check .chocolatey-choco-theme-directory li.fa-check::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-check:not(:last-child)::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-check:not(:last-child)::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-edit::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-edit::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-paper-plane::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-user-lock::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-users::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-users::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-cogs::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-cogs::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-star::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-star::before,
+.chocolatey-choco-theme-directory .course-list li.fa-check.completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-check.completed::before,
+.chocolatey-choco-theme-directory .course-list li.fa-check.mod-completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-check.mod-completed::before,
+.chocolatey-choco-theme-directory .fa-check.correct::before,
+.chocolatey-choco-theme-directory .step-tabs li.fa-check.step-inactive::before,
+.step-tabs .chocolatey-choco-theme-directory li.fa-check.step-inactive::before,
+.chocolatey-choco-theme-directory .fa-check.wrong::before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -51652,30 +52068,316 @@ main {
   background-size: contain;
   transform: translate(-50%, -50%);
 }
-.chocolatey-zendesk .fa-solid.fa-sun::before,
-.chocolatey-choco-theme-directory .fa-solid.fa-sun::before {
+.chocolatey-zendesk .fa-solid.fa-sun::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-plus::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-plus::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-sun::before,
+.list-circle.list-circle-fa-plus .chocolatey-zendesk li.fa-sun::before, .chocolatey-zendesk .list-curve p.fa-sun:last-child::before, .list-curve .chocolatey-zendesk p.fa-sun:last-child::before,
+.chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-check::before,
+.list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-check::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-sun::before,
+.list-circle.list-circle-fa-check .chocolatey-zendesk li.fa-sun::before, .chocolatey-zendesk .list-curve p.fa-sun:not(:last-child)::before, .list-curve .chocolatey-zendesk p.fa-sun:not(:last-child)::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-edit::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-edit::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-paper-plane::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-paper-plane::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-user-lock::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-user-lock::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-users::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-users::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-cogs::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-cogs::before, .chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-star::before, .list-circle .chocolatey-zendesk li.fa-sun.list-circle-fa-star::before, .chocolatey-zendesk .course-list li.fa-sun.completed::before, .course-list .chocolatey-zendesk li.fa-sun.completed::before,
+.chocolatey-zendesk .course-list li.fa-sun.mod-completed::before,
+.course-list .chocolatey-zendesk li.fa-sun.mod-completed::before,
+.chocolatey-zendesk .fa-sun.correct::before,
+.chocolatey-zendesk .step-tabs li.fa-sun.step-inactive::before,
+.step-tabs .chocolatey-zendesk li.fa-sun.step-inactive::before, .chocolatey-zendesk .fa-sun.wrong::before,
+.chocolatey-choco-theme-directory .fa-solid.fa-sun::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-plus::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-plus::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-sun::before,
+.list-circle.list-circle-fa-plus .chocolatey-choco-theme-directory li.fa-sun::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-sun:last-child::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-sun:last-child::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-check::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-check::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-sun::before,
+.list-circle.list-circle-fa-check .chocolatey-choco-theme-directory li.fa-sun::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-sun:not(:last-child)::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-sun:not(:last-child)::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-edit::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-edit::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-paper-plane::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-user-lock::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-users::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-users::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-cogs::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-cogs::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-star::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-sun.list-circle-fa-star::before,
+.chocolatey-choco-theme-directory .course-list li.fa-sun.completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-sun.completed::before,
+.chocolatey-choco-theme-directory .course-list li.fa-sun.mod-completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-sun.mod-completed::before,
+.chocolatey-choco-theme-directory .fa-sun.correct::before,
+.chocolatey-choco-theme-directory .step-tabs li.fa-sun.step-inactive::before,
+.step-tabs .chocolatey-choco-theme-directory li.fa-sun.step-inactive::before,
+.chocolatey-choco-theme-directory .fa-sun.wrong::before {
   background-image: url("https://img.chocolatey.org/icons/sun-solid.svg");
 }
-.chocolatey-zendesk .fa-solid.fa-moon::before,
-.chocolatey-choco-theme-directory .fa-solid.fa-moon::before {
+.chocolatey-zendesk .fa-solid.fa-moon::before, .chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-plus::before, .list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-plus::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-moon::before,
+.list-circle.list-circle-fa-plus .chocolatey-zendesk li.fa-moon::before, .chocolatey-zendesk .list-curve p.fa-moon:last-child::before, .list-curve .chocolatey-zendesk p.fa-moon:last-child::before,
+.chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-check::before,
+.list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-check::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-moon::before,
+.list-circle.list-circle-fa-check .chocolatey-zendesk li.fa-moon::before, .chocolatey-zendesk .list-curve p.fa-moon:not(:last-child)::before, .list-curve .chocolatey-zendesk p.fa-moon:not(:last-child)::before, .chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-edit::before, .list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-edit::before, .chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-paper-plane::before, .list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-paper-plane::before, .chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-user-lock::before, .list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-user-lock::before, .chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-users::before, .list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-users::before, .chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-cogs::before, .list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-cogs::before, .chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-star::before, .list-circle .chocolatey-zendesk li.fa-moon.list-circle-fa-star::before, .chocolatey-zendesk .course-list li.fa-moon.completed::before, .course-list .chocolatey-zendesk li.fa-moon.completed::before,
+.chocolatey-zendesk .course-list li.fa-moon.mod-completed::before,
+.course-list .chocolatey-zendesk li.fa-moon.mod-completed::before,
+.chocolatey-zendesk .fa-moon.correct::before,
+.chocolatey-zendesk .step-tabs li.fa-moon.step-inactive::before,
+.step-tabs .chocolatey-zendesk li.fa-moon.step-inactive::before, .chocolatey-zendesk .fa-moon.wrong::before,
+.chocolatey-choco-theme-directory .fa-solid.fa-moon::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-plus::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-plus::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-moon::before,
+.list-circle.list-circle-fa-plus .chocolatey-choco-theme-directory li.fa-moon::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-moon:last-child::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-moon:last-child::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-check::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-check::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-moon::before,
+.list-circle.list-circle-fa-check .chocolatey-choco-theme-directory li.fa-moon::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-moon:not(:last-child)::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-moon:not(:last-child)::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-edit::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-edit::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-paper-plane::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-user-lock::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-users::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-users::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-cogs::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-cogs::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-star::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-moon.list-circle-fa-star::before,
+.chocolatey-choco-theme-directory .course-list li.fa-moon.completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-moon.completed::before,
+.chocolatey-choco-theme-directory .course-list li.fa-moon.mod-completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-moon.mod-completed::before,
+.chocolatey-choco-theme-directory .fa-moon.correct::before,
+.chocolatey-choco-theme-directory .step-tabs li.fa-moon.step-inactive::before,
+.step-tabs .chocolatey-choco-theme-directory li.fa-moon.step-inactive::before,
+.chocolatey-choco-theme-directory .fa-moon.wrong::before {
   background-image: url("https://img.chocolatey.org/icons/moon-solid.svg");
 }
-.chocolatey-zendesk .fa-solid.fa-circle-half-stroke::before,
-.chocolatey-choco-theme-directory .fa-solid.fa-circle-half-stroke::before {
+.chocolatey-zendesk .fa-solid.fa-circle-half-stroke::before, .chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-plus::before, .list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-plus::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-circle-half-stroke::before,
+.list-circle.list-circle-fa-plus .chocolatey-zendesk li.fa-circle-half-stroke::before, .chocolatey-zendesk .list-curve p.fa-circle-half-stroke:last-child::before, .list-curve .chocolatey-zendesk p.fa-circle-half-stroke:last-child::before,
+.chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-check::before,
+.list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-check::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-circle-half-stroke::before,
+.list-circle.list-circle-fa-check .chocolatey-zendesk li.fa-circle-half-stroke::before, .chocolatey-zendesk .list-curve p.fa-circle-half-stroke:not(:last-child)::before, .list-curve .chocolatey-zendesk p.fa-circle-half-stroke:not(:last-child)::before, .chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-edit::before, .list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-edit::before, .chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-paper-plane::before, .list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-paper-plane::before, .chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-user-lock::before, .list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-user-lock::before, .chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-users::before, .list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-users::before, .chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-cogs::before, .list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-cogs::before, .chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-star::before, .list-circle .chocolatey-zendesk li.fa-circle-half-stroke.list-circle-fa-star::before, .chocolatey-zendesk .course-list li.fa-circle-half-stroke.completed::before, .course-list .chocolatey-zendesk li.fa-circle-half-stroke.completed::before,
+.chocolatey-zendesk .course-list li.fa-circle-half-stroke.mod-completed::before,
+.course-list .chocolatey-zendesk li.fa-circle-half-stroke.mod-completed::before,
+.chocolatey-zendesk .fa-circle-half-stroke.correct::before,
+.chocolatey-zendesk .step-tabs li.fa-circle-half-stroke.step-inactive::before,
+.step-tabs .chocolatey-zendesk li.fa-circle-half-stroke.step-inactive::before, .chocolatey-zendesk .fa-circle-half-stroke.wrong::before,
+.chocolatey-choco-theme-directory .fa-solid.fa-circle-half-stroke::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-plus::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-plus::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-circle-half-stroke::before,
+.list-circle.list-circle-fa-plus .chocolatey-choco-theme-directory li.fa-circle-half-stroke::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-circle-half-stroke:last-child::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-circle-half-stroke:last-child::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-check::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-check::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-circle-half-stroke::before,
+.list-circle.list-circle-fa-check .chocolatey-choco-theme-directory li.fa-circle-half-stroke::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-circle-half-stroke:not(:last-child)::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-circle-half-stroke:not(:last-child)::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-edit::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-edit::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-paper-plane::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-user-lock::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-users::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-users::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-cogs::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-cogs::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-star::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-circle-half-stroke.list-circle-fa-star::before,
+.chocolatey-choco-theme-directory .course-list li.fa-circle-half-stroke.completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-circle-half-stroke.completed::before,
+.chocolatey-choco-theme-directory .course-list li.fa-circle-half-stroke.mod-completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-circle-half-stroke.mod-completed::before,
+.chocolatey-choco-theme-directory .fa-circle-half-stroke.correct::before,
+.chocolatey-choco-theme-directory .step-tabs li.fa-circle-half-stroke.step-inactive::before,
+.step-tabs .chocolatey-choco-theme-directory li.fa-circle-half-stroke.step-inactive::before,
+.chocolatey-choco-theme-directory .fa-circle-half-stroke.wrong::before {
   background-image: url("https://img.chocolatey.org/icons/circle-half-stroke-solid.svg");
 }
-.chocolatey-zendesk .fa-solid.fa-check::before,
-.chocolatey-choco-theme-directory .fa-solid.fa-check::before {
+.chocolatey-zendesk .fa-solid.fa-check::before, .chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-plus::before, .list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-plus::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-check::before,
+.list-circle.list-circle-fa-plus .chocolatey-zendesk li.fa-check::before, .chocolatey-zendesk .list-curve p.fa-check:last-child::before, .list-curve .chocolatey-zendesk p.fa-check:last-child::before,
+.chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-check::before,
+.list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-check::before,
+.chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-check::before,
+.list-circle.list-circle-fa-check .chocolatey-zendesk li.fa-check::before, .chocolatey-zendesk .list-curve p.fa-check:not(:last-child)::before, .list-curve .chocolatey-zendesk p.fa-check:not(:last-child)::before, .chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-edit::before, .list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-edit::before, .chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-paper-plane::before, .list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-paper-plane::before, .chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-user-lock::before, .list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-user-lock::before, .chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-users::before, .list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-users::before, .chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-cogs::before, .list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-cogs::before, .chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-star::before, .list-circle .chocolatey-zendesk li.fa-check.list-circle-fa-star::before, .chocolatey-zendesk .course-list li.fa-check.completed::before, .course-list .chocolatey-zendesk li.fa-check.completed::before,
+.chocolatey-zendesk .course-list li.fa-check.mod-completed::before,
+.course-list .chocolatey-zendesk li.fa-check.mod-completed::before,
+.chocolatey-zendesk .fa-check.correct::before,
+.chocolatey-zendesk .step-tabs li.fa-check.step-inactive::before,
+.step-tabs .chocolatey-zendesk li.fa-check.step-inactive::before, .chocolatey-zendesk .fa-check.wrong::before,
+.chocolatey-choco-theme-directory .fa-solid.fa-check::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-plus::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-plus::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-check::before,
+.list-circle.list-circle-fa-plus .chocolatey-choco-theme-directory li.fa-check::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-check:last-child::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-check:last-child::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-check::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-check::before,
+.chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-check::before,
+.list-circle.list-circle-fa-check .chocolatey-choco-theme-directory li.fa-check::before,
+.chocolatey-choco-theme-directory .list-curve p.fa-check:not(:last-child)::before,
+.list-curve .chocolatey-choco-theme-directory p.fa-check:not(:last-child)::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-edit::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-edit::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-paper-plane::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-paper-plane::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-user-lock::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-user-lock::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-users::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-users::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-cogs::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-cogs::before,
+.chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-star::before,
+.list-circle .chocolatey-choco-theme-directory li.fa-check.list-circle-fa-star::before,
+.chocolatey-choco-theme-directory .course-list li.fa-check.completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-check.completed::before,
+.chocolatey-choco-theme-directory .course-list li.fa-check.mod-completed::before,
+.course-list .chocolatey-choco-theme-directory li.fa-check.mod-completed::before,
+.chocolatey-choco-theme-directory .fa-check.correct::before,
+.chocolatey-choco-theme-directory .step-tabs li.fa-check.step-inactive::before,
+.step-tabs .chocolatey-choco-theme-directory li.fa-check.step-inactive::before,
+.chocolatey-choco-theme-directory .fa-check.wrong::before {
   background-image: url("https://img.chocolatey.org/icons/check-solid.svg");
 }
 
-:root[data-bs-theme=dark].chocolatey-zendesk .fa-solid.fa-sun::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .fa-solid.fa-sun::before, :root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-plus::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-sun::before, :root[data-bs-theme=dark].chocolatey-zendesk .list-curve p.fa-sun:last-child::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-check::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-sun::before, :root[data-bs-theme=dark].chocolatey-zendesk .list-curve p.fa-sun:not(:last-child)::before, :root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-edit::before, :root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-paper-plane::before, :root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-user-lock::before, :root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-users::before, :root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-cogs::before, :root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-sun.list-circle-fa-star::before, :root[data-bs-theme=dark].chocolatey-zendesk .course-list li.fa-sun.completed::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .course-list li.fa-sun.mod-completed::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .fa-sun.correct::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .step-tabs li.fa-sun.step-inactive::before, :root[data-bs-theme=dark].chocolatey-zendesk .fa-sun.wrong::before,
 :root[data-bs-theme=dark].chocolatey-zendesk .fa-solid.fa-moon::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-plus::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-moon::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-curve p.fa-moon:last-child::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-check::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-moon::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-curve p.fa-moon:not(:last-child)::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-edit::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-paper-plane::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-user-lock::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-users::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-cogs::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-moon.list-circle-fa-star::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .course-list li.fa-moon.completed::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .course-list li.fa-moon.mod-completed::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .fa-moon.correct::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .step-tabs li.fa-moon.step-inactive::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .fa-moon.wrong::before,
 :root[data-bs-theme=dark].chocolatey-zendesk .fa-solid.fa-circle-half-stroke::before,
-:root[data-bs-theme=dark].chocolatey-zendesk .fa-solid.fa-check::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-solid.fa-sun::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-plus::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-circle-half-stroke::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-curve p.fa-circle-half-stroke:last-child::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-check::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-circle-half-stroke::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-curve p.fa-circle-half-stroke:not(:last-child)::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-edit::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-paper-plane::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-user-lock::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-users::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-cogs::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-circle-half-stroke.list-circle-fa-star::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .course-list li.fa-circle-half-stroke.completed::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .course-list li.fa-circle-half-stroke.mod-completed::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .fa-circle-half-stroke.correct::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .step-tabs li.fa-circle-half-stroke.step-inactive::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .fa-circle-half-stroke.wrong::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .fa-solid.fa-check::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-plus::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle.list-circle-fa-plus li.fa-check::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-curve p.fa-check:last-child::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-check::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle.list-circle-fa-check li.fa-check::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-curve p.fa-check:not(:last-child)::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-edit::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-paper-plane::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-user-lock::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-users::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-cogs::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .list-circle li.fa-check.list-circle-fa-star::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .course-list li.fa-check.completed::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .course-list li.fa-check.mod-completed::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .fa-check.correct::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .step-tabs li.fa-check.step-inactive::before,
+:root[data-bs-theme=dark].chocolatey-zendesk .fa-check.wrong::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-solid.fa-sun::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-plus::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-sun::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-curve p.fa-sun:last-child::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-check::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-sun::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-curve p.fa-sun:not(:last-child)::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-edit::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-paper-plane::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-user-lock::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-users::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-cogs::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-sun.list-circle-fa-star::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .course-list li.fa-sun.completed::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .course-list li.fa-sun.mod-completed::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-sun.correct::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .step-tabs li.fa-sun.step-inactive::before, :root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-sun.wrong::before,
 :root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-solid.fa-moon::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-plus::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-moon::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-curve p.fa-moon:last-child::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-check::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-moon::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-curve p.fa-moon:not(:last-child)::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-edit::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-paper-plane::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-user-lock::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-users::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-cogs::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-moon.list-circle-fa-star::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .course-list li.fa-moon.completed::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .course-list li.fa-moon.mod-completed::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-moon.correct::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .step-tabs li.fa-moon.step-inactive::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-moon.wrong::before,
 :root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-solid.fa-circle-half-stroke::before,
-:root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-solid.fa-check::before {
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-plus::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-circle-half-stroke::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-curve p.fa-circle-half-stroke:last-child::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-check::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-circle-half-stroke::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-curve p.fa-circle-half-stroke:not(:last-child)::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-edit::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-paper-plane::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-user-lock::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-users::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-cogs::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-circle-half-stroke.list-circle-fa-star::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .course-list li.fa-circle-half-stroke.completed::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .course-list li.fa-circle-half-stroke.mod-completed::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-circle-half-stroke.correct::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .step-tabs li.fa-circle-half-stroke.step-inactive::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-circle-half-stroke.wrong::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-solid.fa-check::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-plus::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle.list-circle-fa-plus li.fa-check::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-curve p.fa-check:last-child::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-check::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle.list-circle-fa-check li.fa-check::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-curve p.fa-check:not(:last-child)::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-edit::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-paper-plane::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-user-lock::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-users::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-cogs::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .list-circle li.fa-check.list-circle-fa-star::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .course-list li.fa-check.completed::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .course-list li.fa-check.mod-completed::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-check.correct::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .step-tabs li.fa-check.step-inactive::before,
+:root[data-bs-theme=dark].chocolatey-choco-theme-directory .fa-check.wrong::before {
   filter: invert(1);
 }
 
@@ -51962,6 +52664,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   width: 100%;
   padding: 0.5rem 0.25rem 0.5rem 0;
   color: var(--bs-body-color);
+  text-decoration: none;
 }
 #leftSidebarNav .navbar > .navbar-collapse .navbar-nav .nav-item .nav-link-collapse .btn-collapse {
   padding: 0.5rem 0 0.5rem 1rem;
@@ -52529,7 +53232,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   appearance: none;
   background-color: var(--bs-secondary-bg);
   background-clip: padding-box;
@@ -52538,7 +53241,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .autoComplete_wrapper > input:focus, .autoComplete_wrapper > input:hover {
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   background-color: var(--bs-secondary-bg);
   border-color: var(--bs-primary);
   outline: 0;
@@ -52550,7 +53253,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
 .autoComplete_wrapper > ul {
   max-height: unset;
   overflow-y: hidden;
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   background-color: var(--bs-secondary-bg);
   border: 1px solid var(--bs-border-color);
   border-radius: 0;
@@ -52581,15 +53284,15 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   border-bottom-left-radius: var(--bs-border-radius);
 }
 .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions):hover, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions)[aria-selected=true] {
-  color: var(--bs-dark);
+  color: var(--bs-primary-contrast);
   background-color: var(--bs-primary);
 }
 .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions):hover mark, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions):hover .mark, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions)[aria-selected=true] mark, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions)[aria-selected=true] .mark { /* stylelint-disable-line selector-max-type */
-  color: var(--bs-dark);
+  color: var(--bs-primary-contrast);
   text-decoration: underline;
 }
 .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions):hover .autocomplete-downloads, .autoComplete_wrapper > ul > li:not(.autocomplete-no-suggestions)[aria-selected=true] .autocomplete-downloads {
-  color: var(--bs-dark);
+  color: var(--bs-primary-contrast);
 }
 .autoComplete_wrapper > ul > li.autocomplete-no-suggestions:hover, .autoComplete_wrapper > ul > li.autocomplete-no-suggestions[aria-selected=true] {
   cursor: default;
@@ -52657,7 +53360,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   --docsearch-modal-shadow: 0 .5rem 1rem rgba(var(--bs-primary-rgb), 20%);
   --docsearch-hit-background: var(--bs-body-bg);
   --docsearch-hit-color: var(--bs-body-color);
-  --docsearch-hit-active-color: var(--bs-dark);
+  --docsearch-hit-active-color: var(--bs-primary-contrast);
   --docsearch-hit-shadow: none;
   --docsearch-footer-background: var(--bs-tertiary-bg);
   --docsearch-footer-shadow: none;
@@ -52712,6 +53415,11 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   border-top-left-radius: var(--bs-border-radius);
   border-top-right-radius: var(--bs-border-radius);
 }
+.DocSearch-Hit .DocSearch-Hit[aria-selected=true] .mark,
+.DocSearch-Hit .DocSearch-Hit[aria-selected=true] mark {
+  text-decoration: underline;
+  font-weight: bold;
+}
 
 .DocSearch-Hit-content-wrapper {
   overflow: hidden;
@@ -52727,7 +53435,7 @@ body > header:not(.DocSearch-SearchBar) { /* stylelint-disable-line */
   height: 20px;
   padding: 0;
   line-height: 0.875rem;
-  color: var(--bs-dark);
+  color: var(--bs-primary-contrast);
   text-transform: lowercase;
 }
 
@@ -54055,12 +54763,12 @@ a .card:hover,
 }
 
 .text-bg-body-secondary {
-  color: var(--bs-body-color) !important;
+  color: var(--bs-secondary-bg-contrast) !important;
   background: var(--bs-secondary-bg) !important;
 }
 
 .text-bg-body-tertiary {
-  color: var(--bs-body-color) !important;
+  color: var(--bs-tertiary-bg-contrast) !important;
   background: var(--bs-tertiary-bg) !important;
 }
 
@@ -54436,6 +55144,98 @@ a.circle.text-bg-body-contrast:hover {
     margin-top: 25px;
   }
 }
+.text-blue {
+  color: var(--bs-blue) !important;
+}
+
+.text-indigo {
+  color: var(--bs-indigo) !important;
+}
+
+.text-purple {
+  color: var(--bs-purple) !important;
+}
+
+.text-pink {
+  color: var(--bs-pink) !important;
+}
+
+.text-red {
+  color: var(--bs-red) !important;
+}
+
+.text-orange {
+  color: var(--bs-orange) !important;
+}
+
+.text-yellow {
+  color: var(--bs-yellow) !important;
+}
+
+.text-green {
+  color: var(--bs-green) !important;
+}
+
+.text-teal {
+  color: var(--bs-teal) !important;
+}
+
+.text-cyan {
+  color: var(--bs-cyan) !important;
+}
+
+.text-black {
+  color: var(--bs-black) !important;
+}
+
+.text-white {
+  color: var(--bs-white) !important;
+}
+
+.text-gray {
+  color: var(--bs-gray) !important;
+}
+
+.text-gray-dark {
+  color: var(--bs-gray-dark) !important;
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.text-secondary {
+  color: var(--bs-secondary) !important;
+}
+
+.text-success {
+  color: var(--bs-success) !important;
+}
+
+.text-info {
+  color: var(--bs-info) !important;
+}
+
+.text-warning {
+  color: var(--bs-warning) !important;
+}
+
+.text-danger {
+  color: var(--bs-danger) !important;
+}
+
+.text-light {
+  color: var(--bs-light) !important;
+}
+
+.text-dark {
+  color: var(--bs-dark) !important;
+}
+
+.text-tip {
+  color: var(--bs-tip) !important;
+}
+
 .text-adaptive {
   color: var(--choco-adaptive) !important;
 }
@@ -54467,7 +55267,7 @@ a.circle.text-bg-body-contrast:hover {
 
 .text-shiny {
   display: inline-block;
-  background: linear-gradient(110deg, var(--text-shiny-color), 45%, var(--bs-primary), 55%, var(--bs-body-color));
+  background: linear-gradient(110deg, var(--bs-body-color), 45%, var(--bs-primary), 55%, var(--bs-body-color));
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text;
   background-clip: text;
@@ -54511,6 +55311,10 @@ a.circle.text-bg-body-contrast:hover {
 }
 .carousel .carousel-indicators button {
   border-radius: 100%;
+}
+.carousel .carousel-control-next,
+.carousel .carousel-control-prev {
+  text-decoration: none;
 }
 .carousel:not(.carousel-control-center) .carousel-control-next, .carousel:not(.carousel-control-center) .carousel-control-prev {
   top: unset;
@@ -55225,10 +56029,32 @@ label.btn {
   box-shadow: unset;
 }
 
-.navbar-toggler:hover .fa-solid {
-  color: rgb(0, 11.6, 3.9);
+.navbar-toggler:hover .fa-solid, .navbar-toggler:hover .list-curve p:last-child::after, .list-curve .navbar-toggler:hover p:last-child::after, .navbar-toggler:hover .list-circle li.list-circle-fa-plus::before, .list-circle .navbar-toggler:hover li.list-circle-fa-plus::before,
+.navbar-toggler:hover .list-circle.list-circle-fa-plus li::before,
+.list-circle.list-circle-fa-plus .navbar-toggler:hover li::before, .navbar-toggler:hover .list-curve p:last-child::before, .list-curve .navbar-toggler:hover p:last-child::before,
+.navbar-toggler:hover .list-circle li.list-circle-fa-check::before,
+.list-circle .navbar-toggler:hover li.list-circle-fa-check::before,
+.navbar-toggler:hover .list-circle.list-circle-fa-check li::before,
+.list-circle.list-circle-fa-check .navbar-toggler:hover li::before, .navbar-toggler:hover .list-curve p:not(:last-child)::before, .list-curve .navbar-toggler:hover p:not(:last-child)::before, .navbar-toggler:hover .list-curve p:first-child::after, .list-curve .navbar-toggler:hover p:first-child::after, .navbar-toggler:hover .list-circle li.list-circle-fa-edit::before, .list-circle .navbar-toggler:hover li.list-circle-fa-edit::before, .navbar-toggler:hover .list-circle li.list-circle-fa-paper-plane::before, .list-circle .navbar-toggler:hover li.list-circle-fa-paper-plane::before, .navbar-toggler:hover .list-circle li.list-circle-fa-user-lock::before, .list-circle .navbar-toggler:hover li.list-circle-fa-user-lock::before, .navbar-toggler:hover .list-circle li.list-circle-fa-users::before, .list-circle .navbar-toggler:hover li.list-circle-fa-users::before, .navbar-toggler:hover .list-circle li.list-circle-fa-cogs::before, .list-circle .navbar-toggler:hover li.list-circle-fa-cogs::before, .navbar-toggler:hover .list-circle li.list-circle-fa-star::before, .list-circle .navbar-toggler:hover li.list-circle-fa-star::before, .navbar-toggler:hover .course-list li.completed::before, .course-list .navbar-toggler:hover li.completed::before,
+.navbar-toggler:hover .course-list li.mod-completed::before,
+.course-list .navbar-toggler:hover li.mod-completed::before,
+.navbar-toggler:hover .correct::before,
+.navbar-toggler:hover .step-tabs li.step-inactive::before,
+.step-tabs .navbar-toggler:hover li.step-inactive::before, .navbar-toggler:hover .wrong::before {
+  color: var(--bs-primary-contrast);
 }
-.navbar-toggler .fa-solid {
+.navbar-toggler .fa-solid, .navbar-toggler .list-curve p:last-child::after, .list-curve .navbar-toggler p:last-child::after, .navbar-toggler .list-circle li.list-circle-fa-plus::before, .list-circle .navbar-toggler li.list-circle-fa-plus::before,
+.navbar-toggler .list-circle.list-circle-fa-plus li::before,
+.list-circle.list-circle-fa-plus .navbar-toggler li::before, .navbar-toggler .list-curve p:last-child::before, .list-curve .navbar-toggler p:last-child::before,
+.navbar-toggler .list-circle li.list-circle-fa-check::before,
+.list-circle .navbar-toggler li.list-circle-fa-check::before,
+.navbar-toggler .list-circle.list-circle-fa-check li::before,
+.list-circle.list-circle-fa-check .navbar-toggler li::before, .navbar-toggler .list-curve p:not(:last-child)::before, .list-curve .navbar-toggler p:not(:last-child)::before, .navbar-toggler .list-curve p:first-child::after, .list-curve .navbar-toggler p:first-child::after, .navbar-toggler .list-circle li.list-circle-fa-edit::before, .list-circle .navbar-toggler li.list-circle-fa-edit::before, .navbar-toggler .list-circle li.list-circle-fa-paper-plane::before, .list-circle .navbar-toggler li.list-circle-fa-paper-plane::before, .navbar-toggler .list-circle li.list-circle-fa-user-lock::before, .list-circle .navbar-toggler li.list-circle-fa-user-lock::before, .navbar-toggler .list-circle li.list-circle-fa-users::before, .list-circle .navbar-toggler li.list-circle-fa-users::before, .navbar-toggler .list-circle li.list-circle-fa-cogs::before, .list-circle .navbar-toggler li.list-circle-fa-cogs::before, .navbar-toggler .list-circle li.list-circle-fa-star::before, .list-circle .navbar-toggler li.list-circle-fa-star::before, .navbar-toggler .course-list li.completed::before, .course-list .navbar-toggler li.completed::before,
+.navbar-toggler .course-list li.mod-completed::before,
+.course-list .navbar-toggler li.mod-completed::before,
+.navbar-toggler .correct::before,
+.navbar-toggler .step-tabs li.step-inactive::before,
+.step-tabs .navbar-toggler li.step-inactive::before, .navbar-toggler .wrong::before {
   color: var(--bs-primary);
 }
 
@@ -55265,10 +56091,10 @@ button.btn-grab:not(:disabled) {
   --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
   --bs-btn-color: var(--bs-primary);
   --bs-btn-border-color: var(--choco-border-color-adaptive);
-  --bs-btn-hover-color: var(--bs-dark);
+  --bs-btn-hover-color: var(--bs-primary-contrast);
   --bs-btn-hover-bg: var(--bs-primary);
   --bs-btn-hover-border-color: var(--bs-primary);
-  --bs-btn-active-color: var(--bs-dark);
+  --bs-btn-active-color: var(--bs-primary-contrast);
   --bs-btn-active-bg: var(--bs-primary);
   --bs-btn-active-border-color: var(--bs-primary);
   --bs-btn-disabled-color: var(--bs-secondary-color);
@@ -56543,7 +57369,7 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 .token.sensitive-variable,
 .token.string .token.sensitive-variable {
   font-weight: 400;
-  color: var(--bs-body-color);
+  color: var(--bs-tertiary-bg-contrast);
   background: var(--bs-tertiary-bg);
 }
 
@@ -56558,93 +57384,6 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 .btn-check + .btn.btn-outline-secondary:hover {
   color: var(--secondary-contrast);
   background-color: var(--bs-secondary);
-}
-
-.form-switch.form-switch-active .form-check-input, .form-switch.form-switch-expired .form-check-input, .form-switch.form-switch-deactivated .form-check-input, .form-switch.form-switch-latest .form-check-input {
-  width: 3rem;
-  margin-right: 0.75rem;
-  background-image: none !important;
-}
-.form-switch.form-switch-active .form-check-input:active, .form-switch.form-switch-expired .form-check-input:active, .form-switch.form-switch-deactivated .form-check-input:active, .form-switch.form-switch-latest .form-check-input:active {
-  filter: unset;
-}
-.form-switch.form-switch-active .form-check-input:not(:active):not(:focus), .form-switch.form-switch-expired .form-check-input:not(:active):not(:focus), .form-switch.form-switch-deactivated .form-check-input:not(:active):not(:focus), .form-switch.form-switch-latest .form-check-input:not(:active):not(:focus) {
-  box-shadow: none !important;
-}
-.form-switch.form-switch-active .form-check-input::before, .form-switch.form-switch-active .form-check-input::after, .form-switch.form-switch-expired .form-check-input::before, .form-switch.form-switch-expired .form-check-input::after, .form-switch.form-switch-deactivated .form-check-input::before, .form-switch.form-switch-deactivated .form-check-input::after, .form-switch.form-switch-latest .form-check-input::before, .form-switch.form-switch-latest .form-check-input::after {
-  position: absolute;
-  top: 50%;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  font: var(--fa-font-solid);
-  font-size: 0.875em;
-  line-height: 1.7;
-  text-align: center;
-  content: "";
-  border-radius: 100%;
-  transform: translateY(-50%);
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-.form-switch.form-switch-active .form-check-input:checked::before, .form-switch.form-switch-active .form-check-input:checked::after, .form-switch.form-switch-expired .form-check-input:checked::before, .form-switch.form-switch-expired .form-check-input:checked::after, .form-switch.form-switch-deactivated .form-check-input:checked::before, .form-switch.form-switch-deactivated .form-check-input:checked::after, .form-switch.form-switch-latest .form-check-input:checked::before, .form-switch.form-switch-latest .form-check-input:checked::after {
-  right: -1px;
-}
-.form-switch.form-switch-active .form-check-input:not(:checked)::before, .form-switch.form-switch-active .form-check-input:not(:checked)::after, .form-switch.form-switch-expired .form-check-input:not(:checked)::before, .form-switch.form-switch-expired .form-check-input:not(:checked)::after, .form-switch.form-switch-deactivated .form-check-input:not(:checked)::before, .form-switch.form-switch-deactivated .form-check-input:not(:checked)::after, .form-switch.form-switch-latest .form-check-input:not(:checked)::before, .form-switch.form-switch-latest .form-check-input:not(:checked)::after {
-  left: -1px;
-}
-.form-switch.form-switch-active .form-check-input::after {
-  color: var(--bs-success-contrast);
-  content: "\f00c";
-}
-.form-switch.form-switch-active .form-check-input::before {
-  border: 1px solid var(--bs-success);
-}
-.form-switch.form-switch-active .form-check-input:checked, .form-switch.form-switch-active .form-check-input::before {
-  background: var(--bs-success);
-}
-.form-switch.form-switch-expired .form-check-input::after {
-  color: var(--bs-danger-contrast);
-  content: "!";
-}
-.form-switch.form-switch-expired .form-check-input::before {
-  border: 1px solid var(--bs-danger);
-}
-.form-switch.form-switch-expired .form-check-input:checked, .form-switch.form-switch-expired .form-check-input::before {
-  background: var(--bs-danger);
-}
-.form-switch.form-switch-deactivated .form-check-input::after {
-  color: var(--bs-secondary-contrast);
-  content: "\f05e";
-}
-.form-switch.form-switch-deactivated .form-check-input::before {
-  border: 1px solid var(--bs-secondary);
-}
-.form-switch.form-switch-deactivated .form-check-input:checked, .form-switch.form-switch-deactivated .form-check-input::before {
-  background: var(--bs-secondary);
-}
-.form-switch.form-switch-deactivated .form-check-input:not(:checked)::after {
-  left: -0.5px;
-}
-.form-switch.form-switch-deactivated .form-check-input:checked::after {
-  right: -1.5px;
-}
-.form-switch.form-switch-latest .form-check-input::after {
-  color: var(--bs-warning);
-  content: "\f005";
-}
-.form-switch.form-switch-latest .form-check-input::before {
-  background: var(--bs-secondary-bg);
-  border: 1px solid var(--bs-warning);
-}
-.form-switch.form-switch-latest .form-check-input:checked {
-  background: var(--bs-warning);
-}
-.form-switch.form-switch-latest .form-check-input:not(:checked)::after {
-  left: -1.5px;
-}
-.form-switch.form-switch-latest .form-check-input:checked::after {
-  right: -0.5px;
 }
 
 .task-list-item .form-check {
@@ -56979,7 +57718,7 @@ input[type=checkbox]:disabled {
   display: none;
 }
 .EasyMDEContainer .CodeMirror {
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   background: var(--bs-secondary-bg);
   border-color: var(--bs-primary);
 }
@@ -57056,7 +57795,7 @@ input[type=checkbox]:disabled {
   margin-right: 30px;
   margin-left: -30px;
   font-weight: 400;
-  color: var(--bs-body-color);
+  color: var(--bs-tertiary-bg-contrast);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -57171,13 +57910,24 @@ input[type=checkbox]:disabled {
   margin-right: 2rem;
 }
 
+.list-hr > li:not(:last-child) {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.list-hr-lg > li:not(:last-child) {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
 .list-group-item {
-  color: var(--bs-body-color);
+  color: var(--bs-secondary-bg-contrast);
   background: var(--bs-secondary-bg);
   border-color: var(--bs-border-color);
 }
 .list-group-item.list-group-item-action:hover {
-  color: var(--bs-body-color);
+  color: var(--bs-tertiary-bg-contrast);
   background-color: var(--bs-tertiary-bg);
 }
 
@@ -57917,7 +58667,7 @@ span.flatpickr-weekday {
 .flatpickr-day.prevMonthDay:hover,
 .flatpickr-day:focus,
 .flatpickr-day:hover {
-  color: var(--bs-body-color);
+  color: var(--bs-tertiary-bg-contrast);
   background: var(--bs-tertiary-bg);
   border-color: var(--bs-tertiary-bg);
 }
@@ -58697,24 +59447,24 @@ table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order::before, ta
   margin-right: 1rem !important;
 }
 .ct-legend .ct-series-0:before {
-  background-color: #9d3a74;
-  border-color: #9d3a74;
+  background-color: var(--bs-purple);
+  border-color: var(--bs-purple);
 }
 .ct-legend .ct-series-1:before {
-  background-color: #007427;
-  border-color: #007427;
+  background-color: var(--bs-green);
+  border-color: var(--bs-green);
 }
 .ct-legend .ct-series-2:before {
-  background-color: #b87000;
-  border-color: #b87000;
+  background-color: var(--bs-yellow);
+  border-color: var(--bs-yellow);
 }
 .ct-legend .ct-series-3:before {
-  background-color: #c02636;
-  border-color: #c02636;
+  background-color: var(--bs-red);
+  border-color: var(--bs-red);
 }
 .ct-legend .ct-series-4:before {
-  background-color: #eb4420;
-  border-color: #eb4420;
+  background-color: var(--bs-orange);
+  border-color: var(--bs-orange);
 }
 
 .chocolatey-license-portal .card-chartist-legend {
@@ -59210,6 +59960,202 @@ a:not(.btn).disabled {
   opacity: 1;
 }
 
+.btn-collapse::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 0.5rem;
+  font: var(--fa-font-solid);
+  content: "\f054";
+  transition: transform 0.35s ease;
+}
+.btn-collapse:not(.collapsed)::before {
+  transform: rotate(90deg);
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+#status h3, #status .h3 {
+  line-height: 1.75rem;
+}
+
+.status {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0 0.75rem 0 0;
+  overflow: hidden;
+  list-style: none;
+  border-radius: 50%;
+}
+.status.status-sm {
+  width: 15px;
+  height: 15px;
+  margin: 0 0.5rem 0 0;
+}
+.status li {
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 70%;
+  height: 70%;
+  overflow: hidden;
+  transform-origin: 0% 100%;
+}
+.status li:first-child {
+  transform: rotate(0deg) skewY(30deg);
+}
+.status li:nth-child(2) {
+  transform: rotate(120deg) skewY(30deg);
+}
+.status li:nth-child(3) {
+  transform: rotate(240deg) skewY(30deg);
+}
+.status li [class*=status-] {
+  position: absolute;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  padding-top: 20px;
+  text-align: center;
+  transform: skewY(-60deg) rotate(15deg);
+}
+.status li .status-failing,
+.status li .status-flagged-error,
+.status li .status-investigate-none,
+.status li .status-scannerexempted-none,
+.status li .status-investigate-unknown,
+.status li .status-scannerexempted-unknown,
+.status li .status-investigate-note {
+  background: var(--bs-red);
+}
+.status li .status-pending,
+.status li .status-flagged-note,
+.status li .status-pending-none,
+.status li .status-pending-unknown {
+  background: var(--bs-yellow);
+}
+.status li .status-passing,
+.status li .status-notflagged-none,
+.status li .status-notflagged-unknown {
+  background: var(--bs-green);
+}
+.status li .status-exempted,
+.status li .status-unknown,
+.status li .status-exempted-none,
+.status li .status-unknown-none,
+.status li .status-exempted-unknown,
+.status li .status-unknown-unknown,
+.status li .status-exempted-note {
+  background: var(--bs-secondary);
+}
+.status li .status-flagged-none,
+.status li .status-flagged-warning,
+.status li .status-flagged-unknown {
+  background: var(--bs-orange);
+}
+
+.container-text-small .circle:not(.circle-sm):not(.circle-lg),
+.circle-sm {
+  width: 25px;
+  height: 25px;
+}
+.container-text-small .circle:not(.circle-sm):not(.circle-lg) i,
+.circle-sm i {
+  font-size: 0.875em;
+}
+
+.container-text-large .circle:not(.circle-sm):not(.circle-lg),
+.container-text-large-md-small .circle:not(.circle-sm):not(.circle-lg),
+.circle-lg {
+  width: 40px;
+  height: 40px;
+}
+
+.wrong::before {
+  text-align: center;
+  content: "\f00d";
+}
+
+.course-list li.completed::before,
+.course-list li.mod-completed::before,
+.correct::before,
+.step-tabs li.step-inactive::before {
+  text-align: center;
+  content: "\f00c";
+}
+
+.list-circle li.list-circle-fa-star::before {
+  content: "\f005";
+}
+
+.list-circle li.list-circle-fa-cogs::before {
+  content: "\f085";
+}
+
+.list-circle li.list-circle-fa-users::before {
+  content: "\f0c0";
+}
+
+.list-circle li.list-circle-fa-user-lock::before {
+  content: "\f502";
+}
+
+.list-circle li.list-circle-fa-paper-plane::before {
+  content: "\f1d8";
+}
+
+.list-circle li.list-circle-fa-edit::before {
+  content: "\f044";
+}
+
+.list-curve p:first-child::after {
+  content: "\f106";
+}
+
+.list-curve p:not(:last-child)::before {
+  content: "\f00d";
+}
+
+.list-curve p:last-child::before,
+.list-circle li.list-circle-fa-check::before,
+.list-circle.list-circle-fa-check li::before {
+  content: "\f00c";
+}
+
+.list-circle li.list-circle-fa-plus::before,
+.list-circle.list-circle-fa-plus li::before {
+  content: "\+";
+}
+
+.list-curve p:last-child::after {
+  content: "\f107";
+}
+
+@media (min-width: 768px) {
+  .container-text-small-md-none .circle:not(.circle-sm):not(.circle-lg),
+  .container-text-large-md-none .circle:not(.circle-sm):not(.circle-lg) {
+    width: 30px;
+    height: 30px;
+  }
+  .container-text-small-md .circle:not(.circle-sm):not(.circle-lg),
+  .container-text-large-md-small .circle:not(.circle-sm):not(.circle-lg) {
+    width: 25px;
+    height: 25px;
+  }
+  .container-text-small-md .circle:not(.circle-sm):not(.circle-lg) i,
+  .container-text-large-md-small .circle:not(.circle-sm):not(.circle-lg) i {
+    font-size: 0.875em;
+  }
+}
 .boxstarter-org a:not(.nav-link):not(.btn),
 .boxstarter-org .btn-link {
   color: var(--bs-primary);
