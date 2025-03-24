@@ -5,22 +5,55 @@
     }
 }
 
+:root,
 :root[data-bs-theme="light"] {
-    --choco-adaptive: #{$adaptive};
-    --choco-border-color-adaptive: #{$border-color-adaptive};
+    --choco-adaptive: #{$adaptive}; // Primary in chocolatey.org // Gray in boxstarter.org
+    --choco-border-color-adaptive: #{$border-color-adaptive}; // Gray in light mode // Primary in dark mode
+
+    @each $color, $value in $colors {
+        // All colors contrast
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
+    }
+
+    @each $color, $value in $theme-colors {
+        // Theme colors contrast
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
+
+        // Theme colors shift
+        --#{$prefix}#{$color}-shift: #{shift-color($value, $shift-amount)};
+    }
+
+    --#{$prefix}tertiary-bg-contrast: #{color-contrast($body-tertiary-bg)};
+    --#{$prefix}secondary-bg-contrast: #{color-contrast($body-secondary-bg)};
 }
 
 :root[data-bs-theme="dark"] {
     --choco-adaptive: #{$adaptive-dark};
     --choco-border-color-adaptive: #{$border-color-adaptive-dark};
-    --bs-green: #{$green-dark};
-    --bs-green-rgb: #{to-rgb($green-dark)};
-    --bs-success: #{$green-dark};
-    --bs-success-rgb: #{to-rgb($green-dark)};
-    --bs-primary: #{$green-dark};
-    --bs-primary-rgb: #{to-rgb($green-dark)};
-    --bs-yellow: #{$yellow-dark};
-    --bs-yellow-rgb: #{to-rgb($yellow-dark)};
-    --bs-warning: #{$yellow-dark};
-    --bs-warning-rgb: #{to-rgb($yellow-dark)};
+
+    @each $color, $value in $colors-dark {
+        // All colors dark
+        --#{$prefix}#{$color}: #{$value};
+
+        // All colors dark contrast
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
+    }
+
+    @each $color, $value in $theme-colors-dark {
+        // Theme colors dark
+        --#{$prefix}#{$color}: #{$value};
+
+        // Theme colors dark contrast
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
+
+        // Theme colors dark shift
+        --#{$prefix}#{$color}-shift: #{shift-color($value, $shift-amount)};
+
+        // Theme colors rgb
+        --#{$prefix}#{$color}-rgb: #{to-rgb($value)};
+    }
+
+    --#{$prefix}tertiary-bg-contrast: #{color-contrast($body-tertiary-bg-dark)};
+    --#{$prefix}secondary-bg-contrast: #{color-contrast($body-secondary-bg-dark)};
 }
+

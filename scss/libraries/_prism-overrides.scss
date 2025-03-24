@@ -218,7 +218,7 @@ pre > code.diff-highlight .token.inserted:not(.prefix) {
 .token.sensitive-variable,
 .token.string .token.sensitive-variable {
     font-weight: 400;
-    color: var(--bs-body-color);
+    color: var(--bs-tertiary-bg-contrast);
     background: var(--bs-tertiary-bg);
 }
 
