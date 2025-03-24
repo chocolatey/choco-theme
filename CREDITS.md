@@ -1,4 +1,4 @@
-## choco-theme Third-Party Licenses
+Ôªø## choco-theme Third-Party Licenses
 
 choco-theme uses a number of 3rd-party components.
 Their details are below.
@@ -95,14 +95,14 @@ limitations under the License.
 
 ```
 
-#### [@playwright/test@1.50.1](https://github.com/microsoft/playwright)
+#### [@playwright/test@1.51.1](https://github.com/microsoft/playwright)
 
 [Repository Link](https://github.com/microsoft/playwright)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [Apache License 2.0](#apache-license-20).
 
-#### [typescript@5.7.3](https://github.com/microsoft/TypeScript)
+#### [typescript@5.8.2](https://github.com/microsoft/TypeScript)
 
 [Repository Link](https://github.com/microsoft/TypeScript)
 
@@ -142,7 +142,7 @@ Additional information or modified licenses will be listed below for each depend
 ```txt
 Creative Commons Attribution 4.0 International
 
- Creative Commons Corporation (ìCreative Commonsî) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an ìas-isî basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.
+ Creative Commons Corporation (‚ÄúCreative Commons‚Äù) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an ‚Äúas-is‚Äù basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.
 
 Using Creative Commons Public Licenses
 
@@ -150,13 +150,13 @@ Creative Commons public licenses provide a standard set of terms and conditions 
 
 Considerations for licensors: Our public licenses are intended for use by those authorized to give the public permission to use material in ways otherwise restricted by copyright and certain other rights. Our licenses are irrevocable. Licensors should read and understand the terms and conditions of the license they choose before applying it. Licensors should also secure all rights necessary before applying our licenses so that the public can reuse the material as expected. Licensors should clearly mark any material not subject to the license. This includes other CC-licensed material, or material used under an exception or limitation to copyright. More considerations for licensors.
 
-Considerations for the public: By using one of our public licenses, a licensor grants the public permission to use the licensed material under specified terms and conditions. If the licensorís permission is not necessary for any reasonñfor example, because of any applicable exception or limitation to copyrightñthen that use is not regulated by the license. Our licenses grant only permissions under copyright and certain other rights that a licensor has authority to grant. Use of the licensed material may still be restricted for other reasons, including because others have copyright or other rights in the material. A licensor may make special requests, such as asking that all changes be marked or described. Although not required by our licenses, you are encouraged to respect those requests where reasonable. More considerations for the public.
+Considerations for the public: By using one of our public licenses, a licensor grants the public permission to use the licensed material under specified terms and conditions. If the licensor‚Äôs permission is not necessary for any reason‚Äìfor example, because of any applicable exception or limitation to copyright‚Äìthen that use is not regulated by the license. Our licenses grant only permissions under copyright and certain other rights that a licensor has authority to grant. Use of the licensed material may still be restricted for other reasons, including because others have copyright or other rights in the material. A licensor may make special requests, such as asking that all changes be marked or described. Although not required by our licenses, you are encouraged to respect those requests where reasonable. More considerations for the public.
 
 Creative Commons Attribution 4.0 International Public License
 
 By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution 4.0 International Public License ("Public License"). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.
 
-Section 1 ñ Definitions.
+Section 1 ‚Äì Definitions.
 
      a.	Adapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.
 
@@ -180,7 +180,7 @@ Section 1 ñ Definitions.
 
      k.	You means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.
 
-Section 2 ñ Scope.
+Section 2 ‚Äì Scope.
 
      a.	License grant.
 
@@ -198,7 +198,7 @@ Section 2 ñ Scope.
 
           5. Downstream recipients.
 
-               A. Offer from the Licensor ñ Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.
+               A. Offer from the Licensor ‚Äì Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.
 
                B. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.
 
@@ -212,7 +212,7 @@ b. Other rights.
 
           3. To the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.
 
-Section 3 ñ License Conditions.
+Section 3 ‚Äì License Conditions.
 
 Your exercise of the Licensed Rights is expressly made subject to the following conditions.
 
@@ -242,7 +242,7 @@ Your exercise of the Licensed Rights is expressly made subject to the following 
 
           4. If You Share Adapted Material You produce, the Adapter's License You apply must not prevent recipients of the Adapted Material from complying with this Public License.
 
-Section 4 ñ Sui Generis Database Rights.
+Section 4 ‚Äì Sui Generis Database Rights.
 
 Where the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:
 
@@ -253,7 +253,7 @@ Where the Licensed Rights include Sui Generis Database Rights that apply to Your
      c.	You must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.
 For the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.
 
-Section 5 ñ Disclaimer of Warranties and Limitation of Liability.
+Section 5 ‚Äì Disclaimer of Warranties and Limitation of Liability.
 
      a.	Unless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.
 
@@ -261,7 +261,7 @@ Section 5 ñ Disclaimer of Warranties and Limitation of Liability.
 
      c.	The disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.
 
-Section 6 ñ Term and Termination.
+Section 6 ‚Äì Term and Termination.
 
      a.	This Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.
 
@@ -277,13 +277,13 @@ Section 6 ñ Term and Termination.
 
      e.	Sections 1, 5, 6, 7, and 8 survive termination of this Public License.
 
-Section 7 ñ Other Terms and Conditions.
+Section 7 ‚Äì Other Terms and Conditions.
 
      a.	The Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.
 
      b.	Any arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.
 
-Section 8 ñ Interpretation.
+Section 8 ‚Äì Interpretation.
 
      a.	For the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.
 
@@ -293,7 +293,7 @@ Section 8 ñ Interpretation.
 
      d.	Nothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.
 
-Creative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the ìLicensor.î Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark ìCreative Commonsî or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.
+Creative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the ‚ÄúLicensor.‚Äù Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark ‚ÄúCreative Commons‚Äù or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.
 
 Creative Commons may be contacted at creativecommons.org.
 
@@ -318,7 +318,7 @@ DEFINITIONS
 
 "Original Version" refers to the collection of Font Software components as distributed by the Copyright Holder(s).
 
-"Modified Version" refers to any derivative made by adding to, deleting, or substituting ó in part or in whole ó any of the components of the Original Version, by changing formats or by porting the Font Software to a new environment.
+"Modified Version" refers to any derivative made by adding to, deleting, or substituting ‚Äî in part or in whole ‚Äî any of the components of the Original Version, by changing formats or by porting the Font Software to a new environment.
 
 "Author" refers to any designer, engineer, programmer, technical writer or other person who contributed to the Font Software.
 
@@ -384,7 +384,7 @@ Additional information or modified licenses will be listed below for each depend
 GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007
 
-Copyright © 2007 Free Software Foundation, Inc. <https://fsf.org/>
+Copyright ¬© 2007 Free Software Foundation, Inc. <https://fsf.org/>
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 
@@ -414,30 +414,30 @@ TERMS AND CONDITIONS
 
 0. Definitions.
 
-ìThis Licenseî refers to version 3 of the GNU General Public License.
+‚ÄúThis License‚Äù refers to version 3 of the GNU General Public License.
 
-ìCopyrightî also means copyright-like laws that apply to other kinds of works, such as semiconductor masks.
+‚ÄúCopyright‚Äù also means copyright-like laws that apply to other kinds of works, such as semiconductor masks.
 
-ìThe Programî refers to any copyrightable work licensed under this License. Each licensee is addressed as ìyouî. ìLicenseesî and ìrecipientsî may be individuals or organizations.
+‚ÄúThe Program‚Äù refers to any copyrightable work licensed under this License. Each licensee is addressed as ‚Äúyou‚Äù. ‚ÄúLicensees‚Äù and ‚Äúrecipients‚Äù may be individuals or organizations.
 
-To ìmodifyî a work means to copy from or adapt all or part of the work in a fashion requiring copyright permission, other than the making of an exact copy. The resulting work is called a ìmodified versionî of the earlier work or a work ìbased onî the earlier work.
+To ‚Äúmodify‚Äù a work means to copy from or adapt all or part of the work in a fashion requiring copyright permission, other than the making of an exact copy. The resulting work is called a ‚Äúmodified version‚Äù of the earlier work or a work ‚Äúbased on‚Äù the earlier work.
 
-A ìcovered workî means either the unmodified Program or a work based on the Program.
+A ‚Äúcovered work‚Äù means either the unmodified Program or a work based on the Program.
 
-To ìpropagateî a work means to do anything with it that, without permission, would make you directly or secondarily liable for infringement under applicable copyright law, except executing it on a computer or modifying a private copy. Propagation includes copying, distribution (with or without modification), making available to the public, and in some countries other activities as well.
+To ‚Äúpropagate‚Äù a work means to do anything with it that, without permission, would make you directly or secondarily liable for infringement under applicable copyright law, except executing it on a computer or modifying a private copy. Propagation includes copying, distribution (with or without modification), making available to the public, and in some countries other activities as well.
 
-To ìconveyî a work means any kind of propagation that enables other parties to make or receive copies. Mere interaction with a user through a computer network, with no transfer of a copy, is not conveying.
+To ‚Äúconvey‚Äù a work means any kind of propagation that enables other parties to make or receive copies. Mere interaction with a user through a computer network, with no transfer of a copy, is not conveying.
 
-An interactive user interface displays ìAppropriate Legal Noticesî to the extent that it includes a convenient and prominently visible feature that (1) displays an appropriate copyright notice, and (2) tells the user that there is no warranty for the work (except to the extent that warranties are provided), that licensees may convey the work under this License, and how to view a copy of this License. If the interface presents a list of user commands or options, such as a menu, a prominent item in the list meets this criterion.
+An interactive user interface displays ‚ÄúAppropriate Legal Notices‚Äù to the extent that it includes a convenient and prominently visible feature that (1) displays an appropriate copyright notice, and (2) tells the user that there is no warranty for the work (except to the extent that warranties are provided), that licensees may convey the work under this License, and how to view a copy of this License. If the interface presents a list of user commands or options, such as a menu, a prominent item in the list meets this criterion.
 
 1. Source Code.
-The ìsource codeî for a work means the preferred form of the work for making modifications to it. ìObject codeî means any non-source form of a work.
+The ‚Äúsource code‚Äù for a work means the preferred form of the work for making modifications to it. ‚ÄúObject code‚Äù means any non-source form of a work.
 
-A ìStandard Interfaceî means an interface that either is an official standard defined by a recognized standards body, or, in the case of interfaces specified for a particular programming language, one that is widely used among developers working in that language.
+A ‚ÄúStandard Interface‚Äù means an interface that either is an official standard defined by a recognized standards body, or, in the case of interfaces specified for a particular programming language, one that is widely used among developers working in that language.
 
-The ìSystem Librariesî of an executable work include anything, other than the work as a whole, that (a) is included in the normal form of packaging a Major Component, but which is not part of that Major Component, and (b) serves only to enable use of the work with that Major Component, or to implement a Standard Interface for which an implementation is available to the public in source code form. A ìMajor Componentî, in this context, means a major essential component (kernel, window system, and so on) of the specific operating system (if any) on which the executable work runs, or a compiler used to produce the work, or an object code interpreter used to run it.
+The ‚ÄúSystem Libraries‚Äù of an executable work include anything, other than the work as a whole, that (a) is included in the normal form of packaging a Major Component, but which is not part of that Major Component, and (b) serves only to enable use of the work with that Major Component, or to implement a Standard Interface for which an implementation is available to the public in source code form. A ‚ÄúMajor Component‚Äù, in this context, means a major essential component (kernel, window system, and so on) of the specific operating system (if any) on which the executable work runs, or a compiler used to produce the work, or an object code interpreter used to run it.
 
-The ìCorresponding Sourceî for a work in object code form means all the source code needed to generate, install, and (for an executable work) run the object code and to modify the work, including scripts to control those activities. However, it does not include the work's System Libraries, or general-purpose tools or generally available free programs which are used unmodified in performing those activities but which are not part of the work. For example, Corresponding Source includes interface definition files associated with source files for the work, and the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require, such as by intimate data communication or control flow between those subprograms and other parts of the work.
+The ‚ÄúCorresponding Source‚Äù for a work in object code form means all the source code needed to generate, install, and (for an executable work) run the object code and to modify the work, including scripts to control those activities. However, it does not include the work's System Libraries, or general-purpose tools or generally available free programs which are used unmodified in performing those activities but which are not part of the work. For example, Corresponding Source includes interface definition files associated with source files for the work, and the source code for shared libraries and dynamically linked subprograms that the work is specifically designed to require, such as by intimate data communication or control flow between those subprograms and other parts of the work.
 
 The Corresponding Source need not include anything that users can regenerate automatically from other parts of the Corresponding Source.
 
@@ -465,13 +465,13 @@ You may convey a work based on the Program, or the modifications to produce it f
 
      a) The work must carry prominent notices stating that you modified it, and giving a relevant date.
 
-     b) The work must carry prominent notices stating that it is released under this License and any conditions added under section 7. This requirement modifies the requirement in section 4 to ìkeep intact all noticesî.
+     b) The work must carry prominent notices stating that it is released under this License and any conditions added under section 7. This requirement modifies the requirement in section 4 to ‚Äúkeep intact all notices‚Äù.
 
      c) You must license the entire work, as a whole, under this License to anyone who comes into possession of a copy. This License will therefore apply, along with any applicable section 7 additional terms, to the whole of the work, and all its parts, regardless of how they are packaged. This License gives no permission to license the work in any other way, but it does not invalidate such permission if you have separately received it.
 
      d) If the work has interactive user interfaces, each must display Appropriate Legal Notices; however, if the Program has interactive interfaces that do not display Appropriate Legal Notices, your work need not make them do so.
 
-A compilation of a covered work with other separate and independent works, which are not by their nature extensions of the covered work, and which are not combined with it such as to form a larger program, in or on a volume of a storage or distribution medium, is called an ìaggregateî if the compilation and its resulting copyright are not used to limit the access or legal rights of the compilation's users beyond what the individual works permit. Inclusion of a covered work in an aggregate does not cause this License to apply to the other parts of the aggregate.
+A compilation of a covered work with other separate and independent works, which are not by their nature extensions of the covered work, and which are not combined with it such as to form a larger program, in or on a volume of a storage or distribution medium, is called an ‚Äúaggregate‚Äù if the compilation and its resulting copyright are not used to limit the access or legal rights of the compilation's users beyond what the individual works permit. Inclusion of a covered work in an aggregate does not cause this License to apply to the other parts of the aggregate.
 
 6. Conveying Non-Source Forms.
 You may convey a covered work in object code form under the terms of sections 4 and 5, provided that you also convey the machine-readable Corresponding Source under the terms of this License, in one of these ways:
@@ -488,9 +488,9 @@ You may convey a covered work in object code form under the terms of sections 4 
 
 A separable portion of the object code, whose source code is excluded from the Corresponding Source as a System Library, need not be included in conveying the object code work.
 
-A ìUser Productî is either (1) a ìconsumer productî, which means any tangible personal property which is normally used for personal, family, or household purposes, or (2) anything designed or sold for incorporation into a dwelling. In determining whether a product is a consumer product, doubtful cases shall be resolved in favor of coverage. For a particular product received by a particular user, ìnormally usedî refers to a typical or common use of that class of product, regardless of the status of the particular user or of the way in which the particular user actually uses, or expects or is expected to use, the product. A product is a consumer product regardless of whether the product has substantial commercial, industrial or non-consumer uses, unless such uses represent the only significant mode of use of the product.
+A ‚ÄúUser Product‚Äù is either (1) a ‚Äúconsumer product‚Äù, which means any tangible personal property which is normally used for personal, family, or household purposes, or (2) anything designed or sold for incorporation into a dwelling. In determining whether a product is a consumer product, doubtful cases shall be resolved in favor of coverage. For a particular product received by a particular user, ‚Äúnormally used‚Äù refers to a typical or common use of that class of product, regardless of the status of the particular user or of the way in which the particular user actually uses, or expects or is expected to use, the product. A product is a consumer product regardless of whether the product has substantial commercial, industrial or non-consumer uses, unless such uses represent the only significant mode of use of the product.
 
-ìInstallation Informationî for a User Product means any methods, procedures, authorization keys, or other information required to install and execute modified versions of a covered work in that User Product from a modified version of its Corresponding Source. The information must suffice to ensure that the continued functioning of the modified object code is in no case prevented or interfered with solely because modification has been made.
+‚ÄúInstallation Information‚Äù for a User Product means any methods, procedures, authorization keys, or other information required to install and execute modified versions of a covered work in that User Product from a modified version of its Corresponding Source. The information must suffice to ensure that the continued functioning of the modified object code is in no case prevented or interfered with solely because modification has been made.
 
 If you convey an object code work under this section in, or with, or specifically for use in, a User Product, and the conveying occurs as part of a transaction in which the right of possession and use of the User Product is transferred to the recipient in perpetuity or for a fixed term (regardless of how the transaction is characterized), the Corresponding Source conveyed under this section must be accompanied by the Installation Information. But this requirement does not apply if neither you nor any third party retains the ability to install modified object code on the User Product (for example, the work has been installed in ROM).
 
@@ -499,7 +499,7 @@ The requirement to provide Installation Information does not include a requireme
 Corresponding Source conveyed, and Installation Information provided, in accord with this section must be in a format that is publicly documented (and with an implementation available to the public in source code form), and must require no special password or key for unpacking, reading or copying.
 
 7. Additional Terms.
-ìAdditional permissionsî are terms that supplement the terms of this License by making exceptions from one or more of its conditions. Additional permissions that are applicable to the entire Program shall be treated as though they were included in this License, to the extent that they are valid under applicable law. If additional permissions apply only to part of the Program, that part may be used separately under those permissions, but the entire Program remains governed by this License without regard to the additional permissions.
+‚ÄúAdditional permissions‚Äù are terms that supplement the terms of this License by making exceptions from one or more of its conditions. Additional permissions that are applicable to the entire Program shall be treated as though they were included in this License, to the extent that they are valid under applicable law. If additional permissions apply only to part of the Program, that part may be used separately under those permissions, but the entire Program remains governed by this License without regard to the additional permissions.
 
 When you convey a copy of a covered work, you may at your option remove any additional permissions from that copy, or from any part of it. (Additional permissions may be written to require their own removal in certain cases when you modify the work.) You may place additional permissions on material, added by you to a covered work, for which you have or can give appropriate copyright permission.
 
@@ -517,7 +517,7 @@ Notwithstanding any other provision of this License, for material you add to a c
 
      f) Requiring indemnification of licensors and authors of that material by anyone who conveys the material (or modified versions of it) with contractual assumptions of liability to the recipient, for any liability that these contractual assumptions directly impose on those licensors and authors.
 
-All other non-permissive additional terms are considered ìfurther restrictionsî within the meaning of section 10. If the Program as you received it, or any part of it, contains a notice stating that it is governed by this License along with a term that is a further restriction, you may remove that term. If a license document contains a further restriction but permits relicensing or conveying under this License, you may add to a covered work material governed by the terms of that license document, provided that the further restriction does not survive such relicensing or conveying.
+All other non-permissive additional terms are considered ‚Äúfurther restrictions‚Äù within the meaning of section 10. If the Program as you received it, or any part of it, contains a notice stating that it is governed by this License along with a term that is a further restriction, you may remove that term. If a license document contains a further restriction but permits relicensing or conveying under this License, you may add to a covered work material governed by the terms of that license document, provided that the further restriction does not survive such relicensing or conveying.
 
 If you add terms to a covered work in accord with this section, you must place, in the relevant source files, a statement of the additional terms that apply to those files, or a notice indicating where to find the applicable terms.
 
@@ -538,24 +538,24 @@ You are not required to accept this License in order to receive or run a copy of
 10. Automatic Licensing of Downstream Recipients.
 Each time you convey a covered work, the recipient automatically receives a license from the original licensors, to run, modify and propagate that work, subject to this License. You are not responsible for enforcing compliance by third parties with this License.
 
-An ìentity transactionî is a transaction transferring control of an organization, or substantially all assets of one, or subdividing an organization, or merging organizations. If propagation of a covered work results from an entity transaction, each party to that transaction who receives a copy of the work also receives whatever licenses to the work the party's predecessor in interest had or could give under the previous paragraph, plus a right to possession of the Corresponding Source of the work from the predecessor in interest, if the predecessor has it or can get it with reasonable efforts.
+An ‚Äúentity transaction‚Äù is a transaction transferring control of an organization, or substantially all assets of one, or subdividing an organization, or merging organizations. If propagation of a covered work results from an entity transaction, each party to that transaction who receives a copy of the work also receives whatever licenses to the work the party's predecessor in interest had or could give under the previous paragraph, plus a right to possession of the Corresponding Source of the work from the predecessor in interest, if the predecessor has it or can get it with reasonable efforts.
 
 You may not impose any further restrictions on the exercise of the rights granted or affirmed under this License. For example, you may not impose a license fee, royalty, or other charge for exercise of rights granted under this License, and you may not initiate litigation (including a cross-claim or counterclaim in a lawsuit) alleging that any patent claim is infringed by making, using, selling, offering for sale, or importing the Program or any portion of it.
 
 11. Patents.
-A ìcontributorî is a copyright holder who authorizes use under this License of the Program or a work on which the Program is based. The work thus licensed is called the contributor's ìcontributor versionî.
+A ‚Äúcontributor‚Äù is a copyright holder who authorizes use under this License of the Program or a work on which the Program is based. The work thus licensed is called the contributor's ‚Äúcontributor version‚Äù.
 
-A contributor's ìessential patent claimsî are all patent claims owned or controlled by the contributor, whether already acquired or hereafter acquired, that would be infringed by some manner, permitted by this License, of making, using, or selling its contributor version, but do not include claims that would be infringed only as a consequence of further modification of the contributor version. For purposes of this definition, ìcontrolî includes the right to grant patent sublicenses in a manner consistent with the requirements of this License.
+A contributor's ‚Äúessential patent claims‚Äù are all patent claims owned or controlled by the contributor, whether already acquired or hereafter acquired, that would be infringed by some manner, permitted by this License, of making, using, or selling its contributor version, but do not include claims that would be infringed only as a consequence of further modification of the contributor version. For purposes of this definition, ‚Äúcontrol‚Äù includes the right to grant patent sublicenses in a manner consistent with the requirements of this License.
 
 Each contributor grants you a non-exclusive, worldwide, royalty-free patent license under the contributor's essential patent claims, to make, use, sell, offer for sale, import and otherwise run, modify and propagate the contents of its contributor version.
 
-In the following three paragraphs, a ìpatent licenseî is any express agreement or commitment, however denominated, not to enforce a patent (such as an express permission to practice a patent or covenant not to sue for patent infringement). To ìgrantî such a patent license to a party means to make such an agreement or commitment not to enforce a patent against the party.
+In the following three paragraphs, a ‚Äúpatent license‚Äù is any express agreement or commitment, however denominated, not to enforce a patent (such as an express permission to practice a patent or covenant not to sue for patent infringement). To ‚Äúgrant‚Äù such a patent license to a party means to make such an agreement or commitment not to enforce a patent against the party.
 
-If you convey a covered work, knowingly relying on a patent license, and the Corresponding Source of the work is not available for anyone to copy, free of charge and under the terms of this License, through a publicly available network server or other readily accessible means, then you must either (1) cause the Corresponding Source to be so available, or (2) arrange to deprive yourself of the benefit of the patent license for this particular work, or (3) arrange, in a manner consistent with the requirements of this License, to extend the patent license to downstream recipients. ìKnowingly relyingî means you have actual knowledge that, but for the patent license, your conveying the covered work in a country, or your recipient's use of the covered work in a country, would infringe one or more identifiable patents in that country that you have reason to believe are valid.
+If you convey a covered work, knowingly relying on a patent license, and the Corresponding Source of the work is not available for anyone to copy, free of charge and under the terms of this License, through a publicly available network server or other readily accessible means, then you must either (1) cause the Corresponding Source to be so available, or (2) arrange to deprive yourself of the benefit of the patent license for this particular work, or (3) arrange, in a manner consistent with the requirements of this License, to extend the patent license to downstream recipients. ‚ÄúKnowingly relying‚Äù means you have actual knowledge that, but for the patent license, your conveying the covered work in a country, or your recipient's use of the covered work in a country, would infringe one or more identifiable patents in that country that you have reason to believe are valid.
 
 If, pursuant to or in connection with a single transaction or arrangement, you convey, or propagate by procuring conveyance of, a covered work, and grant a patent license to some of the parties receiving the covered work authorizing them to use, propagate, modify or convey a specific copy of the covered work, then the patent license you grant is automatically extended to all recipients of the covered work and works based on it.
 
-A patent license is ìdiscriminatoryî if it does not include within the scope of its coverage, prohibits the exercise of, or is conditioned on the non-exercise of one or more of the rights that are specifically granted under this License. You may not convey a covered work if you are a party to an arrangement with a third party that is in the business of distributing software, under which you make payment to the third party based on the extent of your activity of conveying the work, and under which the third party grants, to any of the parties who would receive the covered work from you, a discriminatory patent license (a) in connection with copies of the covered work conveyed by you (or copies made from those copies), or (b) primarily for and in connection with specific products or compilations that contain the covered work, unless you entered into that arrangement, or that patent license was granted, prior to 28 March 2007.
+A patent license is ‚Äúdiscriminatory‚Äù if it does not include within the scope of its coverage, prohibits the exercise of, or is conditioned on the non-exercise of one or more of the rights that are specifically granted under this License. You may not convey a covered work if you are a party to an arrangement with a third party that is in the business of distributing software, under which you make payment to the third party based on the extent of your activity of conveying the work, and under which the third party grants, to any of the parties who would receive the covered work from you, a discriminatory patent license (a) in connection with copies of the covered work conveyed by you (or copies made from those copies), or (b) primarily for and in connection with specific products or compilations that contain the covered work, unless you entered into that arrangement, or that patent license was granted, prior to 28 March 2007.
 
 Nothing in this License shall be construed as excluding or limiting any implied license or other defenses to infringement that may otherwise be available to you under applicable patent law.
 
@@ -568,14 +568,14 @@ Notwithstanding any other provision of this License, you have permission to link
 14. Revised Versions of this License.
 The Free Software Foundation may publish revised and/or new versions of the GNU General Public License from time to time. Such new versions will be similar in spirit to the present version, but may differ in detail to address new problems or concerns.
 
-Each version is given a distinguishing version number. If the Program specifies that a certain numbered version of the GNU General Public License ìor any later versionî applies to it, you have the option of following the terms and conditions either of that numbered version or of any later version published by the Free Software Foundation. If the Program does not specify a version number of the GNU General Public License, you may choose any version ever published by the Free Software Foundation.
+Each version is given a distinguishing version number. If the Program specifies that a certain numbered version of the GNU General Public License ‚Äúor any later version‚Äù applies to it, you have the option of following the terms and conditions either of that numbered version or of any later version published by the Free Software Foundation. If the Program does not specify a version number of the GNU General Public License, you may choose any version ever published by the Free Software Foundation.
 
 If the Program specifies that a proxy can decide which future versions of the GNU General Public License can be used, that proxy's public statement of acceptance of a version permanently authorizes you to choose that version for the Program.
 
 Later license versions may give you additional or different permissions. However, no additional obligations are imposed on any author or copyright holder as a result of your choosing to follow a later version.
 
 15. Disclaimer of Warranty.
-THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM ìAS ISî WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM ‚ÄúAS IS‚Äù WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 
 16. Limitation of Liability.
 IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
@@ -589,7 +589,7 @@ How to Apply These Terms to Your New Programs
 
 If you develop a new program, and you want it to be of the greatest possible use to the public, the best way to achieve this is to make it free software which everyone can redistribute and change under these terms.
 
-To do so, attach the following notices to the program. It is safest to attach them to the start of each source file to most effectively state the exclusion of warranty; and each file should have at least the ìcopyrightî line and a pointer to where the full notice is found.
+To do so, attach the following notices to the program. It is safest to attach them to the start of each source file to most effectively state the exclusion of warranty; and each file should have at least the ‚Äúcopyright‚Äù line and a pointer to where the full notice is found.
 
      <one line to give the program's name and a brief idea of what it does.>
      Copyright (C) <year>  <name of author>
@@ -608,9 +608,9 @@ If the program does terminal interaction, make it output a short notice like thi
      This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
      This is free software, and you are welcome to redistribute it under certain conditions; type `show c' for details.
 
-The hypothetical commands `show w' and `show c' should show the appropriate parts of the General Public License. Of course, your program's commands might be different; for a GUI interface, you would use an ìabout boxî.
+The hypothetical commands `show w' and `show c' should show the appropriate parts of the General Public License. Of course, your program's commands might be different; for a GUI interface, you would use an ‚Äúabout box‚Äù.
 
-You should also get your employer (if you work as a programmer) or school, if any, to sign a ìcopyright disclaimerî for the program, if necessary. For more information on this, and how to apply and follow the GNU GPL, see <https://www.gnu.org/licenses/>.
+You should also get your employer (if you work as a programmer) or school, if any, to sign a ‚Äúcopyright disclaimer‚Äù for the program, if necessary. For more information on this, and how to apply and follow the GNU GPL, see <https://www.gnu.org/licenses/>.
 
 The GNU General Public License does not permit incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read <https://www.gnu.org/philosophy/why-not-lgpl.html>.
 
@@ -710,21 +710,21 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ```
 
-#### [@eonasdan/tempus-dominus@6.9.11](https://github.com/Eonasdan/tempus-dominus)
+#### [@eonasdan/tempus-dominus@6.10.2](https://github.com/Eonasdan/tempus-dominus)
 
 [Repository Link](https://github.com/Eonasdan/tempus-dominus)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@eslint/eslintrc@3.2.0](https://github.com/eslint/eslintrc)
+#### [@eslint/eslintrc@3.3.1](https://github.com/eslint/eslintrc)
 
 [Repository Link](https://github.com/eslint/eslintrc)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@eslint/js@9.20.0](https://github.com/eslint/eslint)
+#### [@eslint/js@9.23.0](https://github.com/eslint/eslint)
 
 [Repository Link](https://github.com/eslint/eslint)
 
@@ -752,7 +752,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@types/node@20.17.19](https://github.com/DefinitelyTyped/DefinitelyTyped)
+#### [@types/node@20.17.27](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
 [Repository Link](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
@@ -822,14 +822,14 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [esbuild@0.25.0](https://github.com/evanw/esbuild)
+#### [esbuild@0.25.1](https://github.com/evanw/esbuild)
 
 [Repository Link](https://github.com/evanw/esbuild)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [eslint@9.20.1](https://github.com/eslint/eslint)
+#### [eslint@9.23.0](https://github.com/eslint/eslint)
 
 [Repository Link](https://github.com/eslint/eslint)
 
@@ -927,7 +927,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [moment-timezone@0.5.47](https://github.com/moment/moment-timezone)
+#### [moment-timezone@0.5.48](https://github.com/moment/moment-timezone)
 
 [Repository Link](https://github.com/moment/moment-timezone)
 
@@ -955,7 +955,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [postcss-cli@11.0.0](https://github.com/postcss/postcss-cli)
+#### [postcss-cli@11.0.1](https://github.com/postcss/postcss-cli)
 
 [Repository Link](https://github.com/postcss/postcss-cli)
 
@@ -983,7 +983,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [stylelint@16.14.1](https://github.com/stylelint/stylelint)
+#### [stylelint@16.16.0](https://github.com/stylelint/stylelint)
 
 [Repository Link](https://github.com/stylelint/stylelint)
 
