@@ -22,6 +22,11 @@
         }
     }
 
+    .carousel-control-next,
+    .carousel-control-prev {
+        text-decoration: none;
+    }
+
     &:not(.carousel-control-center) .carousel-control-next,
     &:not(.carousel-control-center) .carousel-control-prev {
         top: unset;

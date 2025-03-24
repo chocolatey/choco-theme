@@ -22,6 +22,9 @@
         // Theme colors shift
         --#{$prefix}#{$color}-shift: #{shift-color($value, $shift-amount)};
     }
+
+    --#{$prefix}tertiary-bg-contrast: #{color-contrast($body-tertiary-bg)};
+    --#{$prefix}secondary-bg-contrast: #{color-contrast($body-secondary-bg)};
 }
 
 :root[data-bs-theme="dark"] {
@@ -49,4 +52,7 @@
         // Theme colors rgb
         --#{$prefix}#{$color}-rgb: #{to-rgb($value)};
     }
+
+    --#{$prefix}tertiary-bg-contrast: #{color-contrast($body-tertiary-bg-dark)};
+    --#{$prefix}secondary-bg-contrast: #{color-contrast($body-secondary-bg-dark)};
 }

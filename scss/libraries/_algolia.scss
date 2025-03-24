@@ -20,7 +20,7 @@
     --docsearch-modal-shadow: 0 .5rem 1rem rgba(var(--bs-primary-rgb), 20%);
     --docsearch-hit-background: var(--bs-body-bg);
     --docsearch-hit-color: var(--bs-body-color);
-    --docsearch-hit-active-color: var(--bs-dark);
+    --docsearch-hit-active-color: var(--bs-primary-contrast);
     --docsearch-hit-shadow: none;
     --docsearch-footer-background: var(--bs-tertiary-bg);
     --docsearch-footer-shadow: none;
@@ -79,6 +79,12 @@
         border-top-left-radius: var(--bs-border-radius);
         border-top-right-radius: var(--bs-border-radius);
     }
+
+    .DocSearch-Hit[aria-selected="true"] .mark,
+    .DocSearch-Hit[aria-selected="true"] mark {
+        font-weight: 700;
+        text-decoration: underline;
+    }
 }
 
 .DocSearch-Hit-content-wrapper {
@@ -95,7 +101,7 @@
     height: 20px;
     padding: 0;
     line-height: .875rem;
-    color: var(--bs-dark);
+    color: var(--bs-primary-contrast);
     text-transform: lowercase;
 }
 

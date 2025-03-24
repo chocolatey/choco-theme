@@ -1,3 +1,15 @@
+@each $color, $value in $colors {
+    .text-#{$color} {
+        color: var(--bs-#{$color}) !important;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .text-#{$color} {
+        color: var(--bs-#{$color}) !important;
+    }
+}
+
 .text-adaptive {
     color: var(--choco-adaptive) !important;
 }
@@ -30,7 +42,7 @@
 
 .text-shiny {
     display: inline-block;
-    background: linear-gradient(110deg, var(--text-shiny-color), 45%, var(--bs-primary), 55%, var(--bs-body-color));
+    background: linear-gradient(110deg, var(--bs-body-color), 45%, var(--bs-primary), 55%, var(--bs-body-color));
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-background-clip: text;
     background-clip: text;
