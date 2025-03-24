@@ -1,4 +1,4 @@
-/* PrismJS 1.29.0
+/* PrismJS 1.30.0
 https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+csharp+diff+json+powershell+puppet+python+ruby+scss+shell-session+xml-doc+yaml&plugins=line-numbers+toolbar+copy-to-clipboard+diff-highlight */
 /// <reference lib="WebWorker"/>
 
@@ -224,7 +224,7 @@ var Prism = (function (_self) {
 				if (typeof document === 'undefined') {
 					return null;
 				}
-				if ('currentScript' in document && 1 < 2 /* hack to trip TS' flow analysis */) {
+				if (document.currentScript && document.currentScript.tagName === 'SCRIPT' && 1 < 2 /* hack to trip TS' flow analysis */) {
 					return /** @type {any} */ (document.currentScript);
 				}
 

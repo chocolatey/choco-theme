@@ -656,7 +656,7 @@
               if (typeof document === "undefined") {
                 return null;
               }
-              if ("currentScript" in document && 1 < 2) {
+              if (document.currentScript && document.currentScript.tagName === "SCRIPT" && 1 < 2) {
                 return (
                   /** @type {any} */
                   document.currentScript
