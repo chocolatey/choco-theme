@@ -432,7 +432,7 @@ $finalDocument = $DocumentTemplate.
     Replace('__TOC__', $toc.ToString()).
     Replace('__BODY__', $body.ToString())
 
-$finalDocument | Set-Content -Path $OutFile
+$finalDocument | Set-Content -Path $OutFile -Encoding utf8
 
 $file = Get-Item -Path $OutFile
 

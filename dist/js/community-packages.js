@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.5 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v0.8.6 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -284,7 +284,7 @@
               if (typeof document === "undefined") {
                 return null;
               }
-              if ("currentScript" in document && 1 < 2) {
+              if (document.currentScript && document.currentScript.tagName === "SCRIPT" && 1 < 2) {
                 return (
                   /** @type {any} */
                   document.currentScript
@@ -22080,7 +22080,7 @@ ${templateEnter}`;
         };
         CodeMirror2.fromTextArea = fromTextArea;
         addLegacyProps(CodeMirror2);
-        CodeMirror2.version = "5.65.18";
+        CodeMirror2.version = "5.65.19";
         return CodeMirror2;
       });
     }
@@ -28959,7 +28959,7 @@ ${templateEnter}`;
               };
             }
           }
-          marked.setOptions(markedOptions);
+          marked.use(markedOptions);
           var htmlText = marked.parse(text);
           if (this.options.renderingConfig && typeof this.options.renderingConfig.sanitizerFunction === "function") {
             htmlText = this.options.renderingConfig.sanitizerFunction.call(this, htmlText);
