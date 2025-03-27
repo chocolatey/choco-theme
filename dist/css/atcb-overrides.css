@@ -1416,7 +1416,7 @@ a.atcb-modal-btn:not([disabled]):hover {
   --btn-hover-background: var(--bs-primary);
   --btn-border: var(--bs-primary);
   --btn-text: var(--bs-primary);
-  --btn-hover-text: var(--bs-black);
+  --btn-hover-text: var(--bs-primary-contrast);
   --btn-shadow: none;
   --btn-hover-shadow: none;
   --btn-active-shadow: none;
