@@ -1,0 +1,21 @@
+.toast {
+    &.text-bg-success .btn-close {
+        color: var(--bs-success-contrast);
+    }
+
+    &.text-bg-danger .btn-close {
+        color: var(--bs-danger-contrast);
+    }
+
+    &.text-bg-warning .btn-close {
+        color: var(--bs-warning-contrast);
+    }
+
+    .btn-close {
+        opacity: .75;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+blockquote,
+.callout {
+    position: relative;
+    padding: $spacer $spacer $spacer 1.75rem;
+    margin-bottom: $spacer;
+    background: rgba(var(--bs-secondary-rgb), .1);
+    border-radius: .25rem;
+    outline: 1px solid var(--bs-secondary);
+    box-shadow: 0 0 0 .1rem var(--bs-secondary);
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+    &::after {
+        position: absolute;
+        top: .5rem;
+        left: .5rem;
+        width: .25rem;
+        height: calc(100% - 1rem);
+        content: "";
+        background: var(--bs-secondary);
+        border-radius: .25rem;
+    }
+
+    .callout-header {
+        display: none;
+
+        + * {
+            margin-top: 1rem;
+        }
+    }
+
+    @each $color, $value in $theme-colors {
+        &.blockquote-#{$color}, &.callout-#{$color} {
+            background-color: rgba(var(--bs-#{$color}-rgb), .1);
+            border-color: var(--bs-#{$color});
+            outline-color: var(--bs-#{$color});
+            box-shadow: 0 0 0 .1rem var(--bs-#{$color});
+
+            &::after {
+                background: var(--bs-#{$color});
+            }
+
+            a:not(.btn) {
+                color: var(--bs-body-color);
+            }
+
+            hr {
+                color: var(--bs-#{$color});
+                opacity: .5;
+            }
+        }
+    }
+}
+
+.callout-marker-none {
+    &::after {
+        background: transparent !important;
+    }
+}

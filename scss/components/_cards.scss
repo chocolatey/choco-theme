@@ -1,0 +1,129 @@
+.card {
+    overflow: hidden;
+
+    &.card-body,
+    .card-header {
+        overflow: hidden;
+    }
+
+    &.card-index {
+        height: 100%;
+        margin-left: 15px;
+        overflow: visible !important;
+
+        .circle {
+            position: absolute;
+            top: 15px;
+            left: -15px;
+            background: var(--choco-adaptive);
+
+            i {
+                color: var(--bs-primary);
+            }
+        }
+
+        .card-content {
+            color: var(--bs-body-color);
+        }
+
+        :last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            .circle {
+                background: var(--bs-primary);
+
+                i {
+                    color: var(--bs-primary-contrast);
+                }
+            }
+        }
+    }
+
+    &.card-link {
+        transition: all .3s ease;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(.98);
+        }
+    }
+
+    &.card-blur,
+    &.card-blur .card-footer {
+        background: rgba(var(--bs-body-bg-rgb), .1);
+        /* stylelint-disable-next-line property-no-vendor-prefix */
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+    }
+
+    &.card-overlay-bottom {
+        height: 560px;
+        overflow: hidden;
+        background-position: center top;
+        background-size: cover;
+
+        &::before {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            content: "";
+            background-image: -webkit-gradient(linear, right top, right bottom, from(transparent), to(var(--bs-black)));
+            background-image: linear-gradient(-180deg, transparent, var(--bs-black));
+        }
+
+        &.card-overlay-theme-bottom::before {
+            background-image: -webkit-gradient(linear, right top, right bottom, from(transparent), to(var(--bs-secondary-bg)));
+            background-image: linear-gradient(-180deg, transparent, var(--bs-secondary-bg));
+        }
+    }
+
+    &.card-border-top::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 1rem;
+        content: "";
+        background: var(--bs-primary);
+    }
+
+    .card-img-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        padding: var(--bs-card-img-overlay-padding);
+        border-radius: var(--bs-card-inner-border-radius);
+    }
+
+    .card-footer {
+        border-top: 0;
+    }
+}
+
+// TODO: Find all cards wrapped in an a or .video story and add the class .card-link and remove these lines
+a,
+.video-story {
+    .card {
+        transition: all .3s ease;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(.98);
+        }
+    }
+}
+
+.navbar-nested-collapse {
+    .card {
+        border-width: 1px 0 0;
+    }
+}

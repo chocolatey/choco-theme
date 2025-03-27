@@ -16360,6 +16360,10 @@
             calloutIconColor = "warning";
             calloutIcon = "triangle-exclamation";
             callout.classList.add("callout-warning");
+          } else if (callout.classList.contains("callout-tip") || calloutHeaderText.includes(":choco-tip:")) {
+            calloutIconColor = "tip";
+            calloutIcon = "lightbulb";
+            callout.classList.add("callout-tip");
           } else {
             calloutIconColor = "info";
             calloutIcon = "info";
@@ -16984,6 +16988,13 @@
       return sysLocaleCache;
     }
   }
+  var intlResolvedOptionsCache = {};
+  function getCachedIntResolvedOptions(locString) {
+    if (!intlResolvedOptionsCache[locString]) {
+      intlResolvedOptionsCache[locString] = new Intl.DateTimeFormat(locString).resolvedOptions();
+    }
+    return intlResolvedOptionsCache[locString];
+  }
   var weekInfoCache = {};
   function getCachedWeekInfo(locString) {
     let data = weekInfoCache[locString];
@@ -17063,7 +17074,7 @@
     if (loc.numberingSystem && loc.numberingSystem !== "latn") {
       return false;
     } else {
-      return loc.numberingSystem === "latn" || !loc.locale || loc.locale.startsWith("en") || new Intl.DateTimeFormat(loc.intl).resolvedOptions().numberingSystem === "latn";
+      return loc.numberingSystem === "latn" || !loc.locale || loc.locale.startsWith("en") || getCachedIntResolvedOptions(loc.locale).numberingSystem === "latn";
     }
   }
   var PolyNumberFormatter = class {
@@ -17198,6 +17209,7 @@
       intlDTCache = {};
       intlNumCache = {};
       intlRelCache = {};
+      intlResolvedOptionsCache = {};
     }
     static fromObject({ locale, numberingSystem, outputCalendar, weekSettings } = {}) {
       return _Locale.create(locale, numberingSystem, outputCalendar, weekSettings);
@@ -17310,7 +17322,7 @@
       return getCachedLF(this.intl, opts);
     }
     isEnglish() {
-      return this.locale === "en" || this.locale.toLowerCase() === "en-us" || new Intl.DateTimeFormat(this.intl).resolvedOptions().locale.startsWith("en-us");
+      return this.locale === "en" || this.locale.toLowerCase() === "en-us" || getCachedIntResolvedOptions(this.intl).locale.startsWith("en-us");
     }
     getWeekSettings() {
       if (this.weekSettings) {
@@ -19749,6 +19761,13 @@
       return this.isValid ? this.e : null;
     }
     /**
+     * Returns the last DateTime included in the interval (since end is not part of the interval)
+     * @type {DateTime}
+     */
+    get lastDateTime() {
+      return this.isValid ? this.e ? this.e.minus(1) : null : null;
+    }
+    /**
      * Returns whether this Interval's end is at least its start, meaning that the Interval isn't 'backwards'.
      * @type {boolean}
      */
@@ -21035,13 +21054,17 @@
     }
   }
   function guessOffsetForZone(zone) {
-    if (!zoneOffsetGuessCache[zone]) {
-      if (zoneOffsetTs === void 0) {
-        zoneOffsetTs = Settings.now();
-      }
-      zoneOffsetGuessCache[zone] = zone.offset(zoneOffsetTs);
+    if (zoneOffsetTs === void 0) {
+      zoneOffsetTs = Settings.now();
     }
-    return zoneOffsetGuessCache[zone];
+    if (zone.type !== "iana") {
+      return zone.offset(zoneOffsetTs);
+    }
+    const zoneName = zone.name;
+    if (!zoneOffsetGuessCache[zoneName]) {
+      zoneOffsetGuessCache[zoneName] = zone.offset(zoneOffsetTs);
+    }
+    return zoneOffsetGuessCache[zoneName];
   }
   function quickDT(obj, opts) {
     const zone = normalizeZone(opts.zone, Settings.defaultZone);
@@ -22204,7 +22227,7 @@
      * @example DateTime.now().toISO() //=> '2017-04-22T20:47:05.335-04:00'
      * @example DateTime.now().toISO({ includeOffset: false }) //=> '2017-04-22T20:47:05.335'
      * @example DateTime.now().toISO({ format: 'basic' }) //=> '20170422T204705.335-0400'
-     * @return {string}
+     * @return {string|null}
      */
     toISO({
       format: format2 = "extended",
@@ -22228,7 +22251,7 @@
      * @param {string} [opts.format='extended'] - choose between the basic and extended format
      * @example DateTime.utc(1982, 5, 25).toISODate() //=> '1982-05-25'
      * @example DateTime.utc(1982, 5, 25).toISODate({ format: 'basic' }) //=> '19820525'
-     * @return {string}
+     * @return {string|null}
      */
     toISODate({ format: format2 = "extended" } = {}) {
       if (!this.isValid) {
@@ -22303,7 +22326,7 @@
     /**
      * Returns a string representation of this DateTime appropriate for use in SQL Date
      * @example DateTime.utc(2014, 7, 13).toSQLDate() //=> '2014-07-13'
-     * @return {string}
+     * @return {string|null}
      */
     toSQLDate() {
       if (!this.isValid) {
@@ -22388,7 +22411,7 @@
       return this.isValid ? this.ts : NaN;
     }
     /**
-     * Returns the epoch seconds of this DateTime.
+     * Returns the epoch seconds (including milliseconds in the fractional part) of this DateTime.
      * @return {number}
      */
     toSeconds() {
@@ -22477,7 +22500,7 @@
     /**
      * Return an Interval spanning between this DateTime and another DateTime
      * @param {DateTime} otherDateTime - the other end point of the Interval
-     * @return {Interval}
+     * @return {Interval|DateTime}
      */
     until(otherDateTime) {
       return this.isValid ? Interval.fromDateTimes(this, otherDateTime) : this;

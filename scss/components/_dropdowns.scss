@@ -1,0 +1,33 @@
+.dropdown-menu {
+    li {
+        position: relative;
+    }
+
+    .dropdown-item {
+        &:hover,
+        &[aria-pressed="true"] {
+            cursor: pointer;
+
+            &::before {
+                position: absolute;
+                top: -2px;
+                left: 0;
+                display: block;
+                width: .25rem;
+                height: calc(100% + 4px);
+                content: "";
+                background: var(--bs-primary);
+                border-radius: .25rem;
+            }
+        }
+
+        &[aria-pressed="true"],
+        &.active {
+            font-weight: 700;
+        }
+
+        &[aria-pressed="true"] {
+            background: var(--bs-tertiary-bg);
+        }
+    }
+}

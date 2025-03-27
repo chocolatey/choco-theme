@@ -1,0 +1,60 @@
+// Checkboxes
+.form-check {
+    .form-check-input {
+        &.is-invalid {
+            border-color: var(--bs-danger);
+        }
+    }
+
+    .form-text,
+    .invalid-feedback {
+        margin-top: 0;
+    }
+}
+
+// Checkbox buttons
+.btn-check + .btn.btn-outline-secondary:hover {
+    color: var(--secondary-contrast);
+    background-color: var(--bs-secondary);
+}
+
+// Markdown task lists
+.task-list-item {
+    .form-check {
+        display: inline-block;
+        min-height: $spacer;
+        margin-right: -.5rem;
+
+        .form-check-input {
+            opacity: 1;
+
+            &:not(:checked) {
+                &[disabled],
+                &:disabled {
+                    background: var(--bs-secondary-bg);
+                    border-color: var(--bs-secondary);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.d-label-none label {
+    display: none;
+}
+
+// Disabled inputs
+label:has(+ input:disabled),
+label:has(+ textarea:disabled),
+input:disabled ~ .form-text,
+input:disabled ~ label,
+textarea:disabled ~ .form-text {
+    font-style: italic;
+}
+
+input[readonly]:not([data-td-target]),
+textarea[readonly],
+input[type="checkbox"]:disabled {
+    background-color: $input-disabled-bg;
+}
