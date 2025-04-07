@@ -1,3 +1,68 @@
+$tertiary-bg: "tertiary-bg";
+
+$sidebar-colors: map-merge(
+    $colors,
+    (
+        $tertiary-bg: $body-tertiary-bg
+    )
+);
+
+@mixin sidebar-item-styles($map) {
+    @each $color, $value in $map {
+        &.nav-item-#{$color} {
+            position: relative;
+
+            &.active::before,
+            .nav-link.active-page::before,
+            &:hover::before {
+                position: absolute;
+                top: -2px;
+                left: 0;
+                z-index: 9;
+                display: block;
+                width: .25rem;
+                height: calc(100% + 4px);
+                content: "";
+                border-radius: .25rem;
+                @if $color == $tertiary-bg {
+                    background: var(--bs-primary);
+                } @else {
+                    background: var(--bs-#{$color});
+                }
+            }
+
+            &.active:first-child::before,
+            &:first-child .nav-link.active-page::before,
+            &:first-child:hover::before {
+                top: 0;
+                height: calc(100% + 2px);
+            }
+
+            .nav-link {
+                &.active-page,
+                &:hover {
+                    @if $color == $tertiary-bg {
+                        background: var(--bs-#{$color});
+                    } @else {
+                        background: rgba(var(--bs-#{$color}-rgb), .2);
+                    }
+                }
+            }
+
+            .nav-link-collapse.active {
+                .collapsed,
+                .collapsed + a {
+                    @if $color == $tertiary-bg {
+                        background: var(--bs-#{$color});
+                    } @else {
+                        background: rgba(var(--bs-#{$color}-rgb), .2);
+                    }
+                }
+            }
+        }
+    }
+}
+
 #leftSidebarNav {
     background: var(--bs-secondary-bg);
 
@@ -46,32 +111,7 @@
                     }
                 }
 
-                @each $color, $value in $colors {
-                    &.nav-item-#{$color} {
-                        position: relative;
-
-                        &.active::before,
-                        .nav-link.active-page::before,
-                        &:hover::before {
-                            position: absolute;
-                            top: -2px;
-                            left: 0;
-                            display: block;
-                            width: .25rem;
-                            height: calc(100% + 4px);
-                            content: "";
-                            background: var(--bs-#{$color});
-                            border-radius: .25rem;
-                        }
-
-                        &.active:first-child::before,
-                        &:first-child .nav-link.active-page::before,
-                        &:first-child:hover::before {
-                            top: 0;
-                            height: calc(100% + 2px);
-                        }
-                    }
-                }
+                @include sidebar-item-styles($sidebar-colors);
             }
 
 
@@ -139,48 +179,6 @@
 
         .navbar > .navbar-collapse {
             border-bottom: 0;
-        }
-    }
-}
-
-:root,
-:root[data-bs-theme="light"] {
-    #leftSidebarNav .navbar > .navbar-collapse .navbar-nav .nav-item {
-        @each $color, $value in $colors {
-            &.nav-item-#{$color} {
-                .nav-link {
-                    &.active-page,
-                    &:hover {
-                        background: rgba(var(--bs-#{$color}-rgb), .15);
-                    }
-                }
-
-                .nav-link-collapse.active {
-                    .collapsed,
-                    .collapsed + a {
-                        background: rgba(var(--bs-#{$color}-rgb), .15);
-                    }
-                }
-            }
-        }
-    }
-}
-
-/* stylelint-disable-next-line no-duplicate-selectors */
-#leftSidebarNav .navbar > .navbar-collapse .navbar-nav .nav-item {
-    &.nav-item-tertiary {
-        .nav-link {
-            &.active-page,
-            &:hover {
-                background: var(--bs-tertiary-bg);
-            }
-        }
-
-        .nav-link-collapse.active {
-            .collapsed,
-            .collapsed + a {
-                background: var(--bs-tertiary-bg);
-            }
         }
     }
 }

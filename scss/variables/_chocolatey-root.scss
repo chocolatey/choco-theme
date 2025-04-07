@@ -23,6 +23,12 @@
         --#{$prefix}#{$color}-shift: #{shift-color($value, $shift-amount)};
     }
 
+    @each $color, $value in $palette-colors {
+        // All colors
+        --#{$prefix}#{$color}: #{$value};
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
+    }
+
     --#{$prefix}tertiary-bg-contrast: #{color-contrast($body-tertiary-bg)};
     --#{$prefix}secondary-bg-contrast: #{color-contrast($body-secondary-bg)};
 }
@@ -51,6 +57,12 @@
 
         // Theme colors rgb
         --#{$prefix}#{$color}-rgb: #{to-rgb($value)};
+    }
+
+    @each $color, $value in $palette-colors-dark {
+        // All colors
+        --#{$prefix}#{$color}: #{$value};
+        --#{$prefix}#{$color}-contrast: #{color-contrast($value)};
     }
 
     --#{$prefix}tertiary-bg-contrast: #{color-contrast($body-tertiary-bg-dark)};
