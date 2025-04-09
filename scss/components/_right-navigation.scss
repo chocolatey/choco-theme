@@ -9,6 +9,7 @@
         position: relative;
         display: block;
         padding: .5rem 0 .5rem 1rem;
+        color: var(--bs-body-color);
 
         &::before {
             position: absolute;
@@ -25,7 +26,7 @@
         &.active,
         &:hover {
             color: var(--bs-body-color);
-            background: $primary-opacity-25;
+            background: var(--bs-tertiary-bg);
 
             &::before {
                 background: var(--bs-primary);
