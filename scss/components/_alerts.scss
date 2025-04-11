@@ -12,16 +12,17 @@
     background: var(--bs-#{$color}) !important;
 
     a {
-        font-weight: 700;
-        color: color-contrast($value) !important;
-
-        &:hover {
-            text-decoration: underline;
-        }
+        color: var(--bs-#{$color}-contrast) !important;
     }
 
     .btn-close {
-        text-shadow: none;
+        color: var(--bs-#{$color}-contrast) !important;
+        filter: unset !important;
+        opacity: .75;
+
+        &:hover {
+            opacity: 1;
+        }
     }
 }
 
