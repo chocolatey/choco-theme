@@ -811,18 +811,14 @@
 :root,
 :root[data-bs-theme=light] {
   --td-active-bg: var(--bs-primary);
-  --td-active-border-color: var(--bs-black);
-  --td-btn-hover-bg: #74adde;
+  --td-active-border-color: var(--bs-primary-contrast);
+  --td-btn-hover-bg: var(--bs-primary);
   --td-widget-background: var(--bs-secondary-bg);
   --td-font-color: var(--bs-body-color);
-  --td-active-color: var(--bs-black);
+  --td-active-color: var(--bs-primary-contrast);
   --td-dow-color: var(--bs-secondary-color);
   --td-disabled-color: var(--bs-secondary-color);
-  --td-alternate-color: var(--bs-secondary-color);
-}
-
-.form-control[readonly].form-control-tempus-dominus {
-  background: var(--bs-secondary-bg);
+  --td-alternate-color: var(--bs-body-color);
 }
 
 .tempus-dominus-widget {
@@ -838,13 +834,13 @@
 .tempus-dominus-widget .time-container-hour {
   margin-top: 40px;
 }
-.tempus-dominus-widget .date-container-days div:not(.no-highlight):hover:hover,
-.tempus-dominus-widget .date-container-decades div:not(.no-highlight):hover:hover,
-.tempus-dominus-widget .date-container-months div:not(.no-highlight):hover:hover,
-.tempus-dominus-widget .date-container-years div:not(.no-highlight):hover:hover,
-.tempus-dominus-widget .time-container-clock div:not(.no-highlight):hover:hover,
-.tempus-dominus-widget .time-container-hour div:not(.no-highlight):hover:hover,
-.tempus-dominus-widget .time-container-minute div:not(.no-highlight):hover:hover,
-.tempus-dominus-widget .time-container-second div:not(.no-highlight):hover:hover {
-  color: var(--bs-black) !important;
+.tempus-dominus-widget .date-container-days div:not(.no-highlight):hover,
+.tempus-dominus-widget .date-container-decades div:not(.no-highlight):hover,
+.tempus-dominus-widget .date-container-months div:not(.no-highlight):hover,
+.tempus-dominus-widget .date-container-years div:not(.no-highlight):hover,
+.tempus-dominus-widget .time-container-clock div:not(.no-highlight):hover,
+.tempus-dominus-widget .time-container-hour div:not(.no-highlight):hover,
+.tempus-dominus-widget .time-container-minute div:not(.no-highlight):hover,
+.tempus-dominus-widget .time-container-second div:not(.no-highlight):hover {
+  color: var(--bs-primary-contrast) !important;
 }
