@@ -37,6 +37,26 @@ $primary-850:  shade-color($primary, 70%);
 $primary-900:  shade-color($primary, 80%);
 $primary-950:  shade-color($primary, 90%);
 
+$primary-50-dark:   tint-color($primary-dark, 90%);
+$primary-100-dark:  tint-color($primary-dark, 80%);
+$primary-150-dark:  tint-color($primary-dark, 70%);
+$primary-200-dark:  tint-color($primary-dark, 60%);
+$primary-250-dark:  tint-color($primary-dark, 50%);
+$primary-300-dark:  tint-color($primary-dark, 40%);
+$primary-350-dark:  tint-color($primary-dark, 30%);
+$primary-400-dark:  tint-color($primary-dark, 20%);
+$primary-450-dark:  tint-color($primary-dark, 10%);
+$primary-500-dark:  $primary-dark;
+$primary-550-dark:  shade-color($primary-dark, 10%);
+$primary-600-dark:  shade-color($primary-dark, 20%);
+$primary-650-dark:  shade-color($primary-dark, 30%);
+$primary-700-dark:  shade-color($primary-dark, 40%);
+$primary-750-dark:  shade-color($primary-dark, 50%);
+$primary-800-dark:  shade-color($primary-dark, 60%);
+$primary-850-dark:  shade-color($primary-dark, 70%);
+$primary-900-dark:  shade-color($primary-dark, 80%);
+$primary-950-dark:  shade-color($primary-dark, 90%);
+
 $blue-50:   tint-color($blue, 90%);
 $blue-150:  tint-color($blue, 70%);
 $blue-250:  tint-color($blue, 50%);
@@ -47,6 +67,26 @@ $blue-650:  shade-color($blue, 30%);
 $blue-750:  shade-color($blue, 50%);
 $blue-850:  shade-color($blue, 70%);
 $blue-950:  shade-color($blue, 90%);
+
+$blue-50-dark:   tint-color($blue-dark, 90%);
+$blue-100-dark:  tint-color($blue-dark, 80%);
+$blue-150-dark:  tint-color($blue-dark, 70%);
+$blue-200-dark:  tint-color($blue-dark, 60%);
+$blue-250-dark:  tint-color($blue-dark, 50%);
+$blue-300-dark:  tint-color($blue-dark, 40%);
+$blue-350-dark:  tint-color($blue-dark, 30%);
+$blue-400-dark:  tint-color($blue-dark, 20%);
+$blue-450-dark:  tint-color($blue-dark, 10%);
+$blue-500-dark:  $blue-dark;
+$blue-550-dark:  shade-color($blue-dark, 10%);
+$blue-600-dark:  shade-color($blue-dark, 20%);
+$blue-650-dark:  shade-color($blue-dark, 30%);
+$blue-700-dark:  shade-color($blue-dark, 40%);
+$blue-750-dark:  shade-color($blue-dark, 50%);
+$blue-800-dark:  shade-color($blue-dark, 60%);
+$blue-850-dark:  shade-color($blue-dark, 70%);
+$blue-900-dark:  shade-color($blue-dark, 80%);
+$blue-950-dark:  shade-color($blue-dark, 90%);
 
 $red-50:   tint-color($red, 90%);
 $red-150:  tint-color($red, 70%);
@@ -59,6 +99,26 @@ $red-750:  shade-color($red, 50%);
 $red-850:  shade-color($red, 70%);
 $red-950:  shade-color($red, 90%);
 
+$red-50-dark:   tint-color($red-dark, 90%);
+$red-100-dark:  tint-color($red-dark, 80%);
+$red-150-dark:  tint-color($red-dark, 70%);
+$red-200-dark:  tint-color($red-dark, 60%);
+$red-250-dark:  tint-color($red-dark, 50%);
+$red-300-dark:  tint-color($red-dark, 40%);
+$red-350-dark:  tint-color($red-dark, 30%);
+$red-400-dark:  tint-color($red-dark, 20%);
+$red-450-dark:  tint-color($red-dark, 10%);
+$red-500-dark:  $red-dark;
+$red-550-dark:  shade-color($red-dark, 10%);
+$red-600-dark:  shade-color($red-dark, 20%);
+$red-650-dark:  shade-color($red-dark, 30%);
+$red-700-dark:  shade-color($red-dark, 40%);
+$red-750-dark:  shade-color($red-dark, 50%);
+$red-800-dark:  shade-color($red-dark, 60%);
+$red-850-dark:  shade-color($red-dark, 70%);
+$red-900-dark:  shade-color($red-dark, 80%);
+$red-950-dark:  shade-color($red-dark, 90%);
+
 $pink-50:   tint-color($pink, 90%);
 $pink-150:  tint-color($pink, 70%);
 $pink-250:  tint-color($pink, 50%);
@@ -69,6 +129,26 @@ $pink-650:  shade-color($pink, 30%);
 $pink-750:  shade-color($pink, 50%);
 $pink-850:  shade-color($pink, 70%);
 $pink-950:  shade-color($pink, 90%);
+
+$pink-50-dark:   tint-color($pink-dark, 90%);
+$pink-100-dark:  tint-color($pink-dark, 80%);
+$pink-150-dark:  tint-color($pink-dark, 70%);
+$pink-200-dark:  tint-color($pink-dark, 60%);
+$pink-250-dark:  tint-color($pink-dark, 50%);
+$pink-300-dark:  tint-color($pink-dark, 40%);
+$pink-350-dark:  tint-color($pink-dark, 30%);
+$pink-400-dark:  tint-color($pink-dark, 20%);
+$pink-450-dark:  tint-color($pink-dark, 10%);
+$pink-500-dark:  $pink-dark;
+$pink-550-dark:  shade-color($pink-dark, 10%);
+$pink-600-dark:  shade-color($pink-dark, 20%);
+$pink-650-dark:  shade-color($pink-dark, 30%);
+$pink-700-dark:  shade-color($pink-dark, 40%);
+$pink-750-dark:  shade-color($pink-dark, 50%);
+$pink-800-dark:  shade-color($pink-dark, 60%);
+$pink-850-dark:  shade-color($pink-dark, 70%);
+$pink-900-dark:  shade-color($pink-dark, 80%);
+$pink-950-dark:  shade-color($pink-dark, 90%);
 
 $yellow-50:   tint-color($yellow, 90%);
 $yellow-150:  tint-color($yellow, 70%);
@@ -81,6 +161,26 @@ $yellow-750:  shade-color($yellow, 50%);
 $yellow-850:  shade-color($yellow, 70%);
 $yellow-950:  shade-color($yellow, 90%);
 
+$yellow-50-dark:   tint-color($yellow-dark, 90%);
+$yellow-100-dark:  tint-color($yellow-dark, 80%);
+$yellow-150-dark:  tint-color($yellow-dark, 70%);
+$yellow-200-dark:  tint-color($yellow-dark, 60%);
+$yellow-250-dark:  tint-color($yellow-dark, 50%);
+$yellow-300-dark:  tint-color($yellow-dark, 40%);
+$yellow-350-dark:  tint-color($yellow-dark, 30%);
+$yellow-400-dark:  tint-color($yellow-dark, 20%);
+$yellow-450-dark:  tint-color($yellow-dark, 10%);
+$yellow-500-dark:  $yellow-dark;
+$yellow-550-dark:  shade-color($yellow-dark, 10%);
+$yellow-600-dark:  shade-color($yellow-dark, 20%);
+$yellow-650-dark:  shade-color($yellow-dark, 30%);
+$yellow-700-dark:  shade-color($yellow-dark, 40%);
+$yellow-750-dark:  shade-color($yellow-dark, 50%);
+$yellow-800-dark:  shade-color($yellow-dark, 60%);
+$yellow-850-dark:  shade-color($yellow-dark, 70%);
+$yellow-900-dark:  shade-color($yellow-dark, 80%);
+$yellow-950-dark:  shade-color($yellow-dark, 90%);
+
 $green-50:   tint-color($green, 90%);
 $green-150:  tint-color($green, 70%);
 $green-250:  tint-color($green, 50%);
@@ -91,6 +191,26 @@ $green-650:  shade-color($green, 30%);
 $green-750:  shade-color($green, 50%);
 $green-850:  shade-color($green, 70%);
 $green-950:  shade-color($green, 90%);
+
+$green-50-dark:   tint-color($green-dark, 90%);
+$green-100-dark:  tint-color($green-dark, 80%);
+$green-150-dark:  tint-color($green-dark, 70%);
+$green-200-dark:  tint-color($green-dark, 60%);
+$green-250-dark:  tint-color($green-dark, 50%);
+$green-300-dark:  tint-color($green-dark, 40%);
+$green-350-dark:  tint-color($green-dark, 30%);
+$green-400-dark:  tint-color($green-dark, 20%);
+$green-450-dark:  tint-color($green-dark, 10%);
+$green-500-dark:  $green-dark;
+$green-550-dark:  shade-color($green-dark, 10%);
+$green-600-dark:  shade-color($green-dark, 20%);
+$green-650-dark:  shade-color($green-dark, 30%);
+$green-700-dark:  shade-color($green-dark, 40%);
+$green-750-dark:  shade-color($green-dark, 50%);
+$green-800-dark:  shade-color($green-dark, 60%);
+$green-850-dark:  shade-color($green-dark, 70%);
+$green-900-dark:  shade-color($green-dark, 80%);
+$green-950-dark:  shade-color($green-dark, 90%);
 
 $purple-50:   tint-color($purple, 90%);
 $purple-150:  tint-color($purple, 70%);
@@ -103,6 +223,26 @@ $purple-750:  shade-color($purple, 50%);
 $purple-850:  shade-color($purple, 70%);
 $purple-950:  shade-color($purple, 90%);
 
+$purple-50-dark:   tint-color($purple-dark, 90%);
+$purple-100-dark:  tint-color($purple-dark, 80%);
+$purple-150-dark:  tint-color($purple-dark, 70%);
+$purple-200-dark:  tint-color($purple-dark, 60%);
+$purple-250-dark:  tint-color($purple-dark, 50%);
+$purple-300-dark:  tint-color($purple-dark, 40%);
+$purple-350-dark:  tint-color($purple-dark, 30%);
+$purple-400-dark:  tint-color($purple-dark, 20%);
+$purple-450-dark:  tint-color($purple-dark, 10%);
+$purple-500-dark:  $purple-dark;
+$purple-550-dark:  shade-color($purple-dark, 10%);
+$purple-600-dark:  shade-color($purple-dark, 20%);
+$purple-650-dark:  shade-color($purple-dark, 30%);
+$purple-700-dark:  shade-color($purple-dark, 40%);
+$purple-750-dark:  shade-color($purple-dark, 50%);
+$purple-800-dark:  shade-color($purple-dark, 60%);
+$purple-850-dark:  shade-color($purple-dark, 70%);
+$purple-900-dark:  shade-color($purple-dark, 80%);
+$purple-950-dark:  shade-color($purple-dark, 90%);
+
 $orange-50:   tint-color($orange, 90%);
 $orange-150:  tint-color($orange, 70%);
 $orange-250:  tint-color($orange, 50%);
@@ -114,53 +254,91 @@ $orange-750:  shade-color($orange, 50%);
 $orange-850:  shade-color($orange, 70%);
 $orange-950:  shade-color($orange, 90%);
 
+$orange-50-dark:   tint-color($orange-dark, 90%);
+$orange-100-dark:  tint-color($orange-dark, 80%);
+$orange-150-dark:  tint-color($orange-dark, 70%);
+$orange-200-dark:  tint-color($orange-dark, 60%);
+$orange-250-dark:  tint-color($orange-dark, 50%);
+$orange-300-dark:  tint-color($orange-dark, 40%);
+$orange-350-dark:  tint-color($orange-dark, 30%);
+$orange-400-dark:  tint-color($orange-dark, 20%);
+$orange-450-dark:  tint-color($orange-dark, 10%);
+$orange-500-dark:  $orange-dark;
+$orange-550-dark:  shade-color($orange-dark, 10%);
+$orange-600-dark:  shade-color($orange-dark, 20%);
+$orange-650-dark:  shade-color($orange-dark, 30%);
+$orange-700-dark:  shade-color($orange-dark, 40%);
+$orange-750-dark:  shade-color($orange-dark, 50%);
+$orange-800-dark:  shade-color($orange-dark, 60%);
+$orange-850-dark:  shade-color($orange-dark, 70%);
+$orange-900-dark:  shade-color($orange-dark, 80%);
+$orange-950-dark:  shade-color($orange-dark, 90%);
+
 // Additional Theme
-$dark:         $primary-950;
+$dark:                              $primary-950;
+$primary-opacity-25:                rgba(var(--bs-primary-rgb), .25);
 
-// Dark Emphasis Colors
-$green-text-emphasis-dark:        tint-color($green, 40%);
-$blue-text-emphasis-dark:         tint-color($blue, 40%);
-$red-text-emphasis-dark:          tint-color($red, 40%);
-$yellow-text-emphasis-dark:       tint-color($yellow, 40%);
-$purple-text-emphasis-dark:       tint-color($purple, 40%);
-$orange-text-emphasis-dark:       tint-color($orange, 40%);
-$pink-text-emphasis-dark:         tint-color($pink, 40%);
+// Extended Colors
+$primary-text:                      shade-color($primary, 20%);
+$primary-text-dark:                 tint-color($primary-dark, 20%);
+$primary-bg-subtle:                 tint-color($primary, 80%);
+$primary-bg-subtle-dark:            shade-color($primary-dark, 60%);
+$primary-border-subtle:             tint-color($primary, 60%);
+$primary-border-subtle-dark:        shade-color($primary-dark, 40%);
+$primary-contrast:                  color-contrast($primary);
+$primary-dark-contrast:             color-contrast($primary-dark);
 
-// Custom Colors
-$primary-opacity-25:              rgba($primary, .25);
+$success-text-dark:                 tint-color($success-dark, 20%);
+$success-bg-subtle-dark:            shade-color($success-dark, 60%);
+$success-border-subtle-dark:        shade-color($success-dark, 40%);
+$success-contrast:                  color-contrast($success);
+$success-dark-contrast:             color-contrast($success-dark);
 
-// Config
-$enable-responsive-font-sizes:      true;
-$enable-negative-margins:           true;
-$font-size-base:                    1rem;
+$info-text-dark:                    tint-color($info-dark, 20%);
+$info-bg-subtle-dark:               shade-color($info-dark, 60%);
+$info-border-subtle-dark:           shade-color($info-dark, 40%);
+
+$warning-text-dark:                 tint-color($warning-dark, 20%);
+$warning-bg-subtle-dark:            shade-color($warning-dark, 60%);
+$warning-border-subtle-dark:        shade-color($warning-dark, 40%);
+
+$danger-text-dark:                  tint-color($danger-dark, 20%);
+$danger-bg-subtle-dark:             shade-color($danger-dark, 60%);
+$danger-border-subtle-dark:         shade-color($danger-dark, 40%);
+$danger-contrast:                   color-contrast($danger);
+$danger-dark-contrast:              color-contrast($danger-dark);
 
 // Links
-$link-decoration: none;
+// $link-decoration: none;
 
 // Badges
-$badge-color: var(--bs-body-color);
+$badge-color:                       var(--bs-body-color);
+$badge-font-size:                   $font-size-base;
 
 // Borders
 $border-color:                      $gray-300;
-$border-color-adaptive-dark:        rgba($primary, .5);
+$border-color-adaptive-dark:        rgba(var(--bs-primary-rgb), .5);
 
 $border-color-translucent:          $gray-300;
 $border-color-adaptive:             $gray-300;
 
 // Buttons
-$input-btn-padding-y-sm: 0;
-$input-btn-padding-x-sm: 6px;
-$btn-font-weight: 700;
+$input-btn-padding-y-sm:            0;
+$input-btn-padding-x-sm:            6px;
+$btn-font-weight:                   700;
+$btn-font-size-sm:                  $font-size-base;
 
 // Close Button
 $btn-close-bg: none;
 
 // Cards
 $card-bg:                           var(--bs-secondary-bg);
+$card-spacer-y:                     $spacer-md;
+$card-spacer-x:                     $spacer-md;
 
 // Carousel
-$carousel-indicator-active-bg:      $primary;
-$carousel-dark-indicator-active-bg: $primary;
+// $carousel-indicator-active-bg:      $primary;
+// $carousel-dark-indicator-active-bg: $primary;
 $carousel-indicator-width:          15px;
 $carousel-indicator-height:         15px;
 
@@ -176,31 +354,51 @@ $breadcrumb-margin-bottom: 0;
 $breadcrumb-bg: transparent;
 
 // Inputs
-$form-check-input-bg: $dark;
-$form-check-input-border: $primary;
-$form-select-border-color: $primary;
+$input-bg:                           var(--bs-secondary-bg);
+$input-border-color:                 var(--bs-secondary);
+$input-disabled-bg:                  var(--bs-tertiary-bg);
+$form-check-input-border:            var(--bs-border-width) solid $input-border-color;
+$form-check-input-checked-bg-color:  var(--bs-primary);
+$form-check-input-width:             1.57em;
+$form-check-min-height:              1.57em;
+$form-check-margin-bottom:           .5rem;
+$form-check-input-disabled-opacity:  1;
+$input-group-addon-color:            var(--bs-secondary-contrast);
+$input-group-addon-bg:               var(--bs-secondary);
+$form-file-button-color:             var(--bs-secondary-contrast);
+$form-file-button-bg:                var(--bs-secondary);
+$form-file-button-hover-bg:          var(--bs-secondary-shift);
 
-$input-border-color: $primary;
-$input-focus-border-color: $primary;
-$input-disabled-bg: $gray-300;
+// Form images
+$form-check-input-checked-bg-image:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+$form-check-input-checked-bg-image-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-dark-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
 
-$form-select-indicator-color: $primary;
-$form-select-indicator-color-dark: $primary;
+$form-check-radio-checked-bg-image:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$primary-contrast}'/></svg>");
+$form-check-radio-checked-bg-image-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$primary-dark-contrast}'/></svg>");
 
-$form-switch-color: $primary;
-$form-switch-color-dark: $primary;
+$form-check-input-indeterminate-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+$form-check-input-indeterminate-bg-image-dark:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$primary-dark-contrast}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+
+$form-switch-focus-bg-image:                    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{tint-color($primary, 50%)}'/></svg>");
+$form-switch-focus-bg-image-dark:               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{tint-color($primary-dark, 50%)}'/></svg>");
+
+$form-switch-checked-bg-image:                  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$primary-contrast}'/></svg>");
+$form-switch-checked-bg-image-dark:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$primary-dark-contrast}'/></svg>");
+
+$form-feedback-icon-valid-dark:                 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$success-dark}' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>");
+$form-feedback-icon-invalid-dark:               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='#{$danger-dark}'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$danger-dark}' stroke='none'/></svg>");
 
 // Tabs
 $nav-tabs-link-active-bg:           transparent;
-$nav-tabs-link-active-border-color: var(--bs-border-color) var(--bs-border-color) transparent;
+$nav-tabs-border-color:             var(--bs-body-color);
+$nav-tabs-link-active-border-color:  $nav-tabs-border-color $nav-tabs-border-color var(--bs-secondary-bg);
+$nav-tabs-link-hover-border-color: var(--bs-secondary) var(--bs-secondary) $nav-tabs-link-active-bg;
+
+$nav-pills-link-active-color:       var(--bs-secondary-contrast);
+$nav-pills-link-active-bg:          var(--bs-secondary);
 
 // Tables
 $table-striped-bg:                  var(--bs-secondary-bg);
-
-// Tooltips
-$tooltip-bg:                        $primary;
-$tooltip-color:                     $dark;
-$tooltip-opacity:                   1;
 
 // Modals
 $modal-content-bg:                  var(--bs-secondary-bg);
@@ -215,16 +413,19 @@ $dropdown-bg:                       var(--bs-secondary-bg);
 $dropdown-link-hover-bg:            var(--bs-tertiary-bg);
 $dropdown-link-active-color:        var(--bs-body-color);
 $dropdown-link-active-bg:           var(--bs-tertiary-bg);
+$dropdown-link-disabled-color:      var(--bs-secondary-color);
+$dropdown-item-padding-y:          .75rem;
 
 // Offcanvas
 $offcanvas-bg-color:                var(--bs-secondary-bg);
 
 // Popovers
-$popover-bg:                        var(--bs-secondary-bg);
-$popover-header-bg:                 var(--bs-tertiary-bg);
+// $popover-bg:                        var(--bs-secondary-bg);
+// $popover-header-bg:                 var(--bs-tertiary-bg);
 
 // Progress bars
-$progress-bg:                       var(--bs-tertiary-bg);
+$progress-bg:                      var(--bs-tertiary-bg);
+$progress-height:                  1.5rem;
 
 // Z-index
 $zindex-dropdown:                   1060;

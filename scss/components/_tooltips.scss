@@ -1,0 +1,113 @@
+.tt {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        display: none;
+        width: 60px;
+        padding: 5px;
+        font-size: $small-font-size;
+        color: var(--bs-body-bg);
+        text-align: center;
+        word-break: normal;
+        content: attr(data-tooltip-text);
+        background: var(--#{$prefix}emphasis-color);
+        border-radius: .25rem;
+    }
+
+    &::after {
+        position: absolute;
+        display: none;
+        content: "";
+        border: 10px solid var(--#{$prefix}emphasis-color);
+    }
+
+    &.tt-start,
+    &.tt-end {
+        &::before,
+        &::after {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &.tt-start {
+        &::before,
+        &::after {
+            right: 100%;
+        }
+
+        &::before {
+            margin-right: $spacer;
+        }
+
+        &::after {
+            border-color: transparent transparent transparent var(--#{$prefix}emphasis-color);
+        }
+    }
+
+    &.tt-end {
+        &::before,
+        &::after {
+            left: 100%;
+        }
+
+        &::before {
+            margin-left: $spacer;
+        }
+
+        &::after {
+            border-color: transparent var(--#{$prefix}emphasis-color) transparent transparent;
+        }
+    }
+
+    &.tt-top,
+    &.tt-bottom {
+        &::before,
+        &::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &.tt-top {
+        &::before,
+        &::after {
+            bottom: 100%;
+        }
+
+        &::before {
+            margin-bottom: $spacer;
+        }
+
+        &::after {
+            border-color: var(--#{$prefix}emphasis-color) transparent transparent transparent;
+        }
+    }
+
+    &.tt-bottom {
+        &::before,
+        &::after {
+            top: 100%;
+        }
+
+        &::before {
+            margin-top: $spacer;
+        }
+
+        &::after {
+            border-color: transparent transparent var(--#{$prefix}emphasis-color) transparent;
+        }
+    }
+
+    &:hover::before,
+    &:hover::after,
+    &.active::before,
+    &.active::after {
+        display: block;
+    }
+
+    &.active::before {
+        content: attr(data-tooltip-text-active);
+    }
+}

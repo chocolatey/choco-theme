@@ -1,6 +1,9 @@
 @import "mixins/banner";
 @include ctBanner("boxstarter");
 
+// Include config variables
+@import "variables/config";
+
 // Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "bootstrap/scss/functions";
 
@@ -26,7 +29,7 @@
 @import "fontawesome";
 
 // Custom Styles
-@import "fonts";
+@import "utilities/fonts";
 @import "styles";
-@import "icons";
-@import "boxstarterorg";
+@import "utilities/icons";
+@import "pages/boxstarterorg";
