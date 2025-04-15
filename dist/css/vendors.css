@@ -45,6 +45,8 @@
   --swal2-footer-border-color: #eee;
   --swal2-show-animation: swal2-show 0.3s;
   --swal2-hide-animation: swal2-hide 0.15s forwards;
+  --swal2-title-padding: 0.8em 1em 0;
+  --swal2-html-container-padding: 1em 1.6em 0.3em;
   --swal2-input-background: transparent;
   --swal2-progress-step-background: #add8e6;
   --swal2-validation-message-background: #f0f0f0;
@@ -53,6 +55,9 @@
   --swal2-close-button-inset: auto;
   --swal2-close-button-font-size: 2.5em;
   --swal2-close-button-color: #ccc;
+  --swal2-close-button-transition: color 0.1s, box-shadow 0.1s;
+  --swal2-close-button-outline: initial;
+  --swal2-close-button-hover-transform: none;
 }
 
 [data-swal2-theme=dark] {
@@ -269,8 +274,8 @@ div:where(.swal2-container) div:where(.swal2-popup).swal2-dragging div:where(.sw
 div:where(.swal2-container) h2:where(.swal2-title) {
   position: relative;
   max-width: 100%;
-  margin: 0;
-  padding: 0.8em 1em 0;
+  margin: 0 !important;
+  padding: var(--swal2-title-padding);
   color: inherit;
   font-size: 1.875em;
   font-weight: 600;
@@ -327,7 +332,7 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
   border-radius: var(--bs-border-radius);
   background: initial;
   background-color: var(--bs-primary);
-  color: var(--bs-black);
+  color: var(--bs-primary-contrast);
   font-size: 1em;
 }
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):focus-visible {
@@ -337,8 +342,8 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny) {
   border: 0;
   border-radius: var(--bs-border-radius);
   background: initial;
-  background-color: var(--bs-danger);
-  color: var(--bs-black);
+  background-color: transparent;
+  color: var(--bs-danger);
   font-size: 1em;
 }
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny):focus-visible {
@@ -348,12 +353,12 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
   border: 0;
   border-radius: var(--bs-border-radius);
   background: initial;
-  background-color: var(--bs-tertiary-bg);
+  background-color: transparent;
   color: var(--bs-body-color);
   font-size: 1em;
 }
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel):focus-visible {
-  box-shadow: 0 0 0 3px rgba(var(--bs-tertiary-bg-rgb), 0.5);
+  box-shadow: 0 0 0 3px rgba(var(--bs-secondary-bg-rgb), 0.5);
 }
 div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus-visible {
   box-shadow: 0 0 0 3px var(--bs-border-color);
@@ -406,9 +411,10 @@ div:where(.swal2-container) button:where(.swal2-close) {
   margin-bottom: -1.2em;
   padding: 0;
   overflow: hidden;
-  transition: color 0.1s, box-shadow 0.1s;
+  transition: var(--swal2-close-button-transition);
   border: none;
   border-radius: var(--bs-border-radius-lg);
+  outline: var(--swal2-close-button-outline);
   background: transparent;
   color: var(--swal2-close-button-color);
   font-family: monospace;
@@ -417,9 +423,9 @@ div:where(.swal2-container) button:where(.swal2-close) {
   justify-self: end;
 }
 div:where(.swal2-container) button:where(.swal2-close):hover {
-  transform: none;
+  transform: var(--swal2-close-button-hover-transform);
   background: transparent;
-  color: #f4516c;
+  color: #e10e32;
 }
 div:where(.swal2-container) button:where(.swal2-close):focus-visible {
   outline: none;
@@ -432,7 +438,7 @@ div:where(.swal2-container) div:where(.swal2-html-container) {
   z-index: 1;
   justify-content: center;
   margin: 0;
-  padding: 1em 1.6em 0.3em;
+  padding: var(--swal2-html-container-padding);
   overflow: auto;
   color: inherit;
   font-size: 1.125em;
@@ -467,8 +473,8 @@ div:where(.swal2-container) textarea:where(.swal2-textarea) {
 div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,
 div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,
 div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror {
-  border-color: #f4516c !important;
-  box-shadow: 0 0 2px #f4516c !important;
+  border-color: #e10e32 !important;
+  box-shadow: 0 0 2px #e10e32 !important;
 }
 div:where(.swal2-container) input:where(.swal2-input):focus,
 div:where(.swal2-container) input:where(.swal2-file):focus,
@@ -566,7 +572,7 @@ div:where(.swal2-container) div:where(.swal2-validation-message)::before {
   height: 1.5em;
   margin: 0 0.625em;
   border-radius: 50%;
-  background-color: #f4516c;
+  background-color: #e10e32;
   color: #fff;
   font-weight: 600;
   line-height: 1.5em;
@@ -624,7 +630,7 @@ div:where(.swal2-icon) {
   margin: 2.5em auto 0.6em;
   border: 0.25em solid transparent;
   border-radius: 50%;
-  border-color: #000;
+  border-color: var(--bs-black);
   font-family: inherit;
   line-height: 5em;
   cursor: default;
@@ -636,8 +642,8 @@ div:where(.swal2-icon) .swal2-icon-content {
   font-size: 3.75em;
 }
 div:where(.swal2-icon).swal2-error {
-  border-color: #f4516c;
-  color: #f4516c;
+  border-color: #e10e32;
+  color: #e10e32;
 }
 div:where(.swal2-icon).swal2-error .swal2-x-mark {
   position: relative;
@@ -650,7 +656,7 @@ div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line] {
   width: 2.9375em;
   height: 0.3125em;
   border-radius: 0.125em;
-  background-color: #f4516c;
+  background-color: #e10e32;
 }
 div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left] {
   left: 1.0625em;
@@ -667,8 +673,8 @@ div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark {
   animation: swal2-animate-error-x-mark 0.5s;
 }
 div:where(.swal2-icon).swal2-warning {
-  border-color: #ffc107;
-  color: #ffc107;
+  border-color: #8f6b00;
+  color: #8f6b00;
 }
 div:where(.swal2-icon).swal2-warning.swal2-icon-show {
   animation: swal2-animate-error-icon 0.5s;
@@ -677,8 +683,8 @@ div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content {
   animation: swal2-animate-i-mark 0.5s;
 }
 div:where(.swal2-icon).swal2-info {
-  border-color: #5c9fd8;
-  color: #5c9fd8;
+  border-color: #2c75b5;
+  color: #2c75b5;
 }
 div:where(.swal2-icon).swal2-info.swal2-icon-show {
   animation: swal2-animate-error-icon 0.5s;
@@ -687,8 +693,8 @@ div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content {
   animation: swal2-animate-i-mark 0.8s;
 }
 div:where(.swal2-icon).swal2-question {
-  border-color: #6c757d;
-  color: #6c757d;
+  border-color: #878f97;
+  color: #878f97;
 }
 div:where(.swal2-icon).swal2-question.swal2-icon-show {
   animation: swal2-animate-error-icon 0.5s;
@@ -697,8 +703,8 @@ div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content {
   animation: swal2-animate-question-mark 0.8s;
 }
 div:where(.swal2-icon).swal2-success {
-  border-color: #36bc98;
-  color: #36bc98;
+  border-color: #257e67;
+  color: #257e67;
 }
 div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line] {
   position: absolute;
@@ -728,7 +734,7 @@ div:where(.swal2-icon).swal2-success .swal2-success-ring {
   box-sizing: content-box;
   width: 100%;
   height: 100%;
-  border: 0.25em solid rgba(54, 188, 152, 0.3);
+  border: 0.25em solid rgba(37, 126, 103, 0.3);
   border-radius: 50%;
 }
 div:where(.swal2-icon).swal2-success .swal2-success-fix {
@@ -746,7 +752,7 @@ div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
   z-index: 2;
   height: 0.3125em;
   border-radius: 0.125em;
-  background-color: #36bc98;
+  background-color: #257e67;
 }
 div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip] {
   top: 2.875em;
@@ -908,7 +914,7 @@ div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-lin
   font-size: 1em;
 }
 .swal2-toast .swal2-success {
-  border-color: #36bc98;
+  border-color: #257e67;
 }
 .swal2-toast .swal2-success [class^=swal2-success-circular-line] {
   position: absolute;
@@ -1195,6 +1201,47 @@ div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-lin
 }
 .swal2-container button {
   font-weight: 700;
+  border: 1px solid transparent !important;
+}
+.swal2-container button.swal2-cancel:hover {
+  background-image: none !important;
+  border: 1px solid var(--bs-secondary) !important;
+}
+.swal2-container button.swal2-cancel:focus-visible {
+  border-color: var(--bs-secondary);
+  box-shadow: 0 0 0 0.25rem rgba(115, 122, 128, 0.5);
+}
+.swal2-container button.swal2-deny {
+  border: 1px solid var(--bs-danger) !important;
+}
+.swal2-container button.swal2-deny:hover, .swal2-container button.swal2-deny:active {
+  color: var(--bs-danger-contrast) !important;
+  background-color: var(--bs-danger) !important;
+  background-image: none !important;
+}
+.swal2-container div:where(.swal2-icon).swal2-warning.swal2-icon-show {
+  color: var(--bs-warning);
+  border-color: var(--bs-warning);
+}
+.swal2-container div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line] {
+  background-color: var(--bs-danger);
+}
+.swal2-container div:where(.swal2-icon).swal2-error {
+  border-color: var(--bs-danger);
+}
+.swal2-container div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
+  background-color: var(--bs-success);
+}
+.swal2-container div:where(.swal2-icon).swal2-success .swal2-success-ring {
+  border-color: var(--bs-success);
+}
+.swal2-container div:where(.swal2-icon).swal2-info {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.swal2-container div:where(.swal2-icon).swal2-question {
+  color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
 }
 
 /*!

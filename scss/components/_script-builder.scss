@@ -1,0 +1,170 @@
+#modalScriptBuilder {
+    z-index: 99999;
+
+    .modal-body {
+        height: 90vh;
+        overflow: auto;
+
+        .internal-repo-url-input {
+            margin: 0 auto;
+        }
+    }
+}
+
+#warningVersion {
+    z-index: 99999;
+}
+
+#wizard {
+    *,
+    &::after,
+    &::before {
+        box-sizing: border-box;
+    }
+
+    .tab-content .btn-next-step.disabled,
+    .tab-content .btn-prev-step.disabled {
+        pointer-events: none;
+    }
+
+    > .nav {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-top: 0;
+        overflow: hidden;
+        list-style: none;
+
+        .nav-item {
+            flex-grow: 1;
+            flex-basis: 0;
+            text-align: center;
+
+            &.disabled {
+                pointer-events: none !important;
+            }
+
+            .nav-link {
+                position: relative;
+                display: block;
+                flex-grow: 1;
+                flex-basis: 0;
+                height: 100%;
+                min-height: 100%;
+                padding-left: 40px;
+                margin-right: 30px;
+                margin-left: -30px;
+                font-weight: 400;
+                color: var(--bs-tertiary-bg-contrast);
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                background: var(--bs-tertiary-bg);
+                border-color: var(--bs-border-color);
+                border-radius: unset;
+
+                &.disabled {
+                    color: var(--bs-secondary);
+                    background: var(--choco-adaptive) !important;
+                    border-color: var(--choco-adaptive) !important;
+
+                    &::after,
+                    &.active::after {
+                        border-left-color: var(--choco-adaptive) !important;
+                    }
+                }
+
+                &.done {
+                    color: var(--bs-success-contrast);
+                    background: var(--bs-success);
+                    border-color: var(--bs-success);
+
+                    &::after {
+                        border-left-color: var(--bs-success);
+                    }
+                }
+
+                &.active {
+                    color: var(--bs-primary-contrast);
+                    background: var(--bs-primary);
+                    border-color: var(--bs-primary);
+
+                    &::after {
+                        border-left-color: var(--bs-primary) !important;
+                    }
+                }
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    top: 50%;
+                    left: 100%;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    margin-top: -50px;
+                    content: " ";
+                    border-top: 50px solid transparent;
+                    border-bottom: 50px solid transparent;
+                    border-left: 30px solid var(--bs-tertiary-bg);
+                }
+
+                &::before {
+                    z-index: 1;
+                }
+
+                &::after {
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}
+
+.storage-builder {
+    display: flex;
+    flex-wrap: wrap;
+
+    hr {
+        display: none;
+    }
+
+    .storage-row {
+        width: 100%;
+        padding: 10px;
+        margin: 1%;
+        border: 1px solid var(--bs-border-color);
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    #modalScriptBuilder .modal-dialog {
+        max-width: 667px !important;
+
+        .storage-builder .storage-row {
+            width: 48%;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #modalScriptBuilder .modal-dialog {
+        max-width: 800px !important;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #modalScriptBuilder .modal-dialog {
+        max-width: 992px !important;
+
+        .storage-builder .storage-row {
+            width: 31.33%;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #modalScriptBuilder .modal-dialog {
+        max-width: 1200px !important;
+    }
+}

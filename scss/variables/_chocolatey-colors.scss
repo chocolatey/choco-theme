@@ -10,18 +10,21 @@ $body-color-dark:                   $gray-200;
 $body-bg-dark:                      $primary-950;
 
 $body-secondary-bg:                 $white;
-$body-secondary-bg-dark:            $primary-900;
+$body-secondary-bg-dark:            #141b1f;
 
 $body-tertiary-bg:                  $gray-300;
-$body-tertiary-bg-dark:             $primary-800;
+$body-tertiary-bg-dark:             #2b3135;
 
 // Links
-$link-color:                        shade-color($primary, 40%); // shade this so it's accessible
-$link-hover-color:                  shift-color($link-color, -20%);
+$link-shade-percentage:             20%;
+// $link-color:                        $primary;
+// $link-hover-color:                  shift-color($link-color, $link-shade-percentage);;
+$link-color-dark:                   $primary-dark;
+$link-hover-color-dark:             shift-color($link-color-dark, $link-shade-percentage);
 
 // Borders
-$border-color-dark:                 $primary-800;
-$border-color-translucent-dark:     $primary-800;
+$border-color-dark:                 #2b3135;
+$border-color-translucent-dark:     #2b3135;
 
 // Carousel
 $carousel-caption-color:            $body-color-dark;

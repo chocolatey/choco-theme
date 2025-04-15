@@ -1,6 +1,6 @@
 {
   "name": "choco-theme",
-  "version": "0.8.6",
+  "version": "1.0.0",
   "packageManager": "yarn@4.1.1",
   "description": "The global theme for Chocolatey Software.",
   "repository": {
@@ -19,11 +19,10 @@
     "change-version": "ts-node build/change-version.ts",
     "css": "npm-run-all --sequential --silent css-compile css-minify",
     "css-compile": "echo 🚀 Compiling SASS... && sass --load-path=node_modules --style=expanded --no-source-map --stop-on-error --quiet scss/:dist/css/ && echo ✅ SASS compiled",
-    "css-minify": "echo 🚀 Minifying CSS... && npm-run-all --parallel --silent css-minify-atcb-overrides css-minify-boxstarter css-minify-chocolatey css-minify-bootstrap-duallistbox css-minify-jstree css-minify-tempus-dominus css-minify-vendors css-minify-zendesk && echo ✅ CSS minified",
+    "css-minify": "echo 🚀 Minifying CSS... && npm-run-all --parallel --silent css-minify-atcb-overrides css-minify-boxstarter css-minify-chocolatey css-minify-jstree css-minify-tempus-dominus css-minify-vendors css-minify-zendesk && echo ✅ CSS minified",
     "css-minify-atcb-overrides": "postcss dist/css/atcb-overrides.css > dist/css/atcb-overrides.min.css",
     "css-minify-boxstarter": "postcss dist/css/boxstarter.css > dist/css/boxstarter.min.css",
     "css-minify-chocolatey": "postcss dist/css/chocolatey.css > dist/css/chocolatey.min.css",
-    "css-minify-bootstrap-duallistbox": "postcss dist/css/bootstrap-duallistbox.css > dist/css/bootstrap-duallistbox.min.css",
     "css-minify-jstree": "postcss dist/css/jstree.css > dist/css/jstree.min.css",
     "css-minify-tempus-dominus": "postcss dist/css/tempus-dominus.css > dist/css/tempus-dominus.min.css",
     "css-minify-vendors": "postcss dist/css/vendors.css > dist/css/vendors.min.css",
@@ -35,7 +34,7 @@
     "js-minify": "ts-node build/esbuild.ts --minify",
     "lint": "npm-run-all --parallel --silent lint-css lint-js",
     "lint-css": "echo 🚀 Linting SASS... && stylelint \"scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache && echo ✅ SASS linting complete",
-    "lint-js": "echo 🚀 Linting JS and TS... && eslint js/**/*.{js,ts} && echo ✅ JS and TS linting complete",
+    "lint-js": "echo 🚀 Linting JS and TS... && eslint js/**/*.{js,ts} --no-warn-ignored && echo ✅ JS and TS linting complete",
     "monitor-ports": "ts-node build/monitor-ports.ts",
     "partials": "ts-node build/build-partials.ts",
     "preview": "ts-node build/preview.ts",
@@ -80,6 +79,7 @@
     "ws": "^8.17.1"
   },
   "dependencies": {
+    "@axe-core/playwright": "^4.10.1",
     "@eonasdan/tempus-dominus": "^6.9.9",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.11.1",
@@ -92,6 +92,7 @@
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "abp-web-resources": "^5.9.2",
+    "axe-html-reporter": "^2.2.11",
     "block-ui": "^2.70.1",
     "bootstrap": "5.3.3",
     "chartist": "^0.11.4",
@@ -109,6 +110,7 @@
     "eslint-plugin-playwright": "^1.4.1",
     "eslint-plugin-promise": "^6.0.0",
     "flatpickr": "^4.6.13",
+    "fuse.js": "^7.0.0",
     "globals": "^15.9.0",
     "jquery": "^3.7.1",
     "jquery-serializejson": "^3.2.1",

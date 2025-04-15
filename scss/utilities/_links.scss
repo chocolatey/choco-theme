@@ -1,0 +1,14 @@
+.link-underline-none {
+    text-decoration: none !important;
+}
+
+a,
+.btn-link:not(.link-underline-none) {
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+a:not(.btn).disabled {
+    color: var(--bs-secondary-color) !important;
+}

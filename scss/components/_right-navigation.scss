@@ -1,0 +1,46 @@
+#rightSidebarNav {
+    font-size: $small-font-size;
+
+    .card.card-body {
+        background: var(--bs-secondary-bg);
+    }
+
+    .nav-item .nav-link {
+        position: relative;
+        display: block;
+        padding: .5rem 0 .5rem 1rem;
+        color: var(--bs-body-color);
+
+        &::before {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            display: block;
+            width: .25rem;
+            height: calc(100% + 4px);
+            content: "";
+            background: transparent;
+            border-radius: .25rem;
+        }
+
+        &.active,
+        &:hover {
+            color: var(--bs-body-color);
+            background: var(--bs-tertiary-bg);
+
+            &::before {
+                background: var(--bs-primary);
+            }
+        }
+
+        &.active {
+            font-weight: 700;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #rightSidebarNav .card.card-body {
+        background: none;
+    }
+}

@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.6 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.0.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -32,6 +32,10 @@
             calloutIconColor = "warning";
             calloutIcon = "triangle-exclamation";
             callout.classList.add("callout-warning");
+          } else if (callout.classList.contains("callout-tip") || calloutHeaderText.includes(":choco-tip:")) {
+            calloutIconColor = "tip";
+            calloutIcon = "lightbulb";
+            callout.classList.add("callout-tip");
           } else {
             calloutIconColor = "info";
             calloutIcon = "info";

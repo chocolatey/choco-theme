@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v0.8.6 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.0.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -10151,12 +10151,13 @@
   };
 
   // node_modules/luxon/src/zones/IANAZone.js
-  var dtfCache = {};
-  function makeDTF(zone) {
-    if (!dtfCache[zone]) {
-      dtfCache[zone] = new Intl.DateTimeFormat("en-US", {
+  var dtfCache = /* @__PURE__ */ new Map();
+  function makeDTF(zoneName) {
+    let dtf = dtfCache.get(zoneName);
+    if (dtf === void 0) {
+      dtf = new Intl.DateTimeFormat("en-US", {
         hour12: false,
-        timeZone: zone,
+        timeZone: zoneName,
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
@@ -10165,8 +10166,9 @@
         second: "2-digit",
         era: "short"
       });
+      dtfCache.set(zoneName, dtf);
     }
-    return dtfCache[zone];
+    return dtf;
   }
   var typeToPos = {
     year: 0,
@@ -10195,25 +10197,26 @@
     }
     return filled;
   }
-  var ianaZoneCache = {};
+  var ianaZoneCache = /* @__PURE__ */ new Map();
   var IANAZone = class _IANAZone extends Zone {
     /**
      * @param {string} name - Zone name
      * @return {IANAZone}
      */
     static create(name) {
-      if (!ianaZoneCache[name]) {
-        ianaZoneCache[name] = new _IANAZone(name);
+      let zone = ianaZoneCache.get(name);
+      if (zone === void 0) {
+        ianaZoneCache.set(name, zone = new _IANAZone(name));
       }
-      return ianaZoneCache[name];
+      return zone;
     }
     /**
      * Reset local caches. Should only be necessary in testing scenarios.
      * @return {void}
      */
     static resetCache() {
-      ianaZoneCache = {};
-      dtfCache = {};
+      ianaZoneCache.clear();
+      dtfCache.clear();
     }
     /**
      * Returns whether the provided string is a valid specifier. This only checks the string's format, not that the specifier identifies a known zone; see isValidZone for that.
@@ -10305,6 +10308,7 @@
      * @return {number}
      */
     offset(ts) {
+      if (!this.valid) return NaN;
       const date = new Date(ts);
       if (isNaN(date)) return NaN;
       const dtf = makeDTF(this.name);
@@ -10357,34 +10361,34 @@
     }
     return dtf;
   }
-  var intlDTCache = {};
+  var intlDTCache = /* @__PURE__ */ new Map();
   function getCachedDTF(locString, opts = {}) {
     const key = JSON.stringify([locString, opts]);
-    let dtf = intlDTCache[key];
-    if (!dtf) {
+    let dtf = intlDTCache.get(key);
+    if (dtf === void 0) {
       dtf = new Intl.DateTimeFormat(locString, opts);
-      intlDTCache[key] = dtf;
+      intlDTCache.set(key, dtf);
     }
     return dtf;
   }
-  var intlNumCache = {};
+  var intlNumCache = /* @__PURE__ */ new Map();
   function getCachedINF(locString, opts = {}) {
     const key = JSON.stringify([locString, opts]);
-    let inf = intlNumCache[key];
-    if (!inf) {
+    let inf = intlNumCache.get(key);
+    if (inf === void 0) {
       inf = new Intl.NumberFormat(locString, opts);
-      intlNumCache[key] = inf;
+      intlNumCache.set(key, inf);
     }
     return inf;
   }
-  var intlRelCache = {};
+  var intlRelCache = /* @__PURE__ */ new Map();
   function getCachedRTF(locString, opts = {}) {
     const _a = opts, { base } = _a, cacheKeyOpts = __objRest(_a, ["base"]);
     const key = JSON.stringify([locString, cacheKeyOpts]);
-    let inf = intlRelCache[key];
-    if (!inf) {
+    let inf = intlRelCache.get(key);
+    if (inf === void 0) {
       inf = new Intl.RelativeTimeFormat(locString, opts);
-      intlRelCache[key] = inf;
+      intlRelCache.set(key, inf);
     }
     return inf;
   }
@@ -10397,13 +10401,25 @@
       return sysLocaleCache;
     }
   }
-  var weekInfoCache = {};
+  var intlResolvedOptionsCache = /* @__PURE__ */ new Map();
+  function getCachedIntResolvedOptions(locString) {
+    let opts = intlResolvedOptionsCache.get(locString);
+    if (opts === void 0) {
+      opts = new Intl.DateTimeFormat(locString).resolvedOptions();
+      intlResolvedOptionsCache.set(locString, opts);
+    }
+    return opts;
+  }
+  var weekInfoCache = /* @__PURE__ */ new Map();
   function getCachedWeekInfo(locString) {
-    let data = weekInfoCache[locString];
+    let data = weekInfoCache.get(locString);
     if (!data) {
       const locale = new Intl.Locale(locString);
       data = "getWeekInfo" in locale ? locale.getWeekInfo() : locale.weekInfo;
-      weekInfoCache[locString] = data;
+      if (!("minimalDays" in data)) {
+        data = __spreadValues(__spreadValues({}, fallbackWeekSettings), data);
+      }
+      weekInfoCache.set(locString, data);
     }
     return data;
   }
@@ -10476,7 +10492,7 @@
     if (loc.numberingSystem && loc.numberingSystem !== "latn") {
       return false;
     } else {
-      return loc.numberingSystem === "latn" || !loc.locale || loc.locale.startsWith("en") || new Intl.DateTimeFormat(loc.intl).resolvedOptions().numberingSystem === "latn";
+      return loc.numberingSystem === "latn" || !loc.locale || loc.locale.startsWith("en") || getCachedIntResolvedOptions(loc.locale).numberingSystem === "latn";
     }
   }
   var PolyNumberFormatter = class {
@@ -10608,9 +10624,11 @@
     }
     static resetCache() {
       sysLocaleCache = null;
-      intlDTCache = {};
-      intlNumCache = {};
-      intlRelCache = {};
+      intlDTCache.clear();
+      intlNumCache.clear();
+      intlRelCache.clear();
+      intlResolvedOptionsCache.clear();
+      weekInfoCache.clear();
     }
     static fromObject({ locale, numberingSystem, outputCalendar, weekSettings } = {}) {
       return _Locale.create(locale, numberingSystem, outputCalendar, weekSettings);
@@ -10723,7 +10741,7 @@
       return getCachedLF(this.intl, opts);
     }
     isEnglish() {
-      return this.locale === "en" || this.locale.toLowerCase() === "en-us" || new Intl.DateTimeFormat(this.intl).resolvedOptions().locale.startsWith("en-us");
+      return this.locale === "en" || this.locale.toLowerCase() === "en-us" || getCachedIntResolvedOptions(this.intl).locale.startsWith("en-us");
     }
     getWeekSettings() {
       if (this.weekSettings) {
@@ -11012,19 +11030,23 @@
       return value;
     }
   }
-  var digitRegexCache = {};
+  var digitRegexCache = /* @__PURE__ */ new Map();
   function resetDigitRegexCache() {
-    digitRegexCache = {};
+    digitRegexCache.clear();
   }
   function digitRegex({ numberingSystem }, append = "") {
     const ns = numberingSystem || "latn";
-    if (!digitRegexCache[ns]) {
-      digitRegexCache[ns] = {};
+    let appendCache = digitRegexCache.get(ns);
+    if (appendCache === void 0) {
+      appendCache = /* @__PURE__ */ new Map();
+      digitRegexCache.set(ns, appendCache);
     }
-    if (!digitRegexCache[ns][append]) {
-      digitRegexCache[ns][append] = new RegExp(`${numberingSystems[ns]}${append}`);
+    let regex = appendCache.get(append);
+    if (regex === void 0) {
+      regex = new RegExp(`${numberingSystems[ns]}${append}`);
+      appendCache.set(append, regex);
     }
-    return digitRegexCache[ns][append];
+    return regex;
   }
 
   // node_modules/luxon/src/settings.js
@@ -13162,6 +13184,13 @@
       return this.isValid ? this.e : null;
     }
     /**
+     * Returns the last DateTime included in the interval (since end is not part of the interval)
+     * @type {DateTime}
+     */
+    get lastDateTime() {
+      return this.isValid ? this.e ? this.e.minus(1) : null : null;
+    }
+    /**
      * Returns whether this Interval's end is at least its start, meaning that the Interval isn't 'backwards'.
      * @type {boolean}
      */
@@ -13386,8 +13415,11 @@
       return _Interval.fromDateTimes(s2, e);
     }
     /**
-     * Merge an array of Intervals into a equivalent minimal set of Intervals.
+     * Merge an array of Intervals into an equivalent minimal set of Intervals.
      * Combines overlapping and adjacent Intervals.
+     * The resulting array will contain the Intervals in ascending order, that is, starting with the earliest Interval
+     * and ending with the latest.
+     *
      * @param {Array} intervals
      * @return {Array}
      */
@@ -14448,13 +14480,19 @@
     }
   }
   function guessOffsetForZone(zone) {
-    if (!zoneOffsetGuessCache[zone]) {
-      if (zoneOffsetTs === void 0) {
-        zoneOffsetTs = Settings.now();
-      }
-      zoneOffsetGuessCache[zone] = zone.offset(zoneOffsetTs);
+    if (zoneOffsetTs === void 0) {
+      zoneOffsetTs = Settings.now();
     }
-    return zoneOffsetGuessCache[zone];
+    if (zone.type !== "iana") {
+      return zone.offset(zoneOffsetTs);
+    }
+    const zoneName = zone.name;
+    let offsetGuess = zoneOffsetGuessCache.get(zoneName);
+    if (offsetGuess === void 0) {
+      offsetGuess = zone.offset(zoneOffsetTs);
+      zoneOffsetGuessCache.set(zoneName, offsetGuess);
+    }
+    return offsetGuess;
   }
   function quickDT(obj, opts) {
     const zone = normalizeZone(opts.zone, Settings.defaultZone);
@@ -14516,7 +14554,7 @@
     return [opts, args];
   }
   var zoneOffsetTs;
-  var zoneOffsetGuessCache = {};
+  var zoneOffsetGuessCache = /* @__PURE__ */ new Map();
   var DateTime = class _DateTime {
     /**
      * @access private
@@ -14948,7 +14986,7 @@
     }
     static resetCache() {
       zoneOffsetTs = void 0;
-      zoneOffsetGuessCache = {};
+      zoneOffsetGuessCache.clear();
     }
     // INFO
     /**
@@ -15617,7 +15655,7 @@
      * @example DateTime.now().toISO() //=> '2017-04-22T20:47:05.335-04:00'
      * @example DateTime.now().toISO({ includeOffset: false }) //=> '2017-04-22T20:47:05.335'
      * @example DateTime.now().toISO({ format: 'basic' }) //=> '20170422T204705.335-0400'
-     * @return {string}
+     * @return {string|null}
      */
     toISO({
       format = "extended",
@@ -15641,7 +15679,7 @@
      * @param {string} [opts.format='extended'] - choose between the basic and extended format
      * @example DateTime.utc(1982, 5, 25).toISODate() //=> '1982-05-25'
      * @example DateTime.utc(1982, 5, 25).toISODate({ format: 'basic' }) //=> '19820525'
-     * @return {string}
+     * @return {string|null}
      */
     toISODate({ format = "extended" } = {}) {
       if (!this.isValid) {
@@ -15716,7 +15754,7 @@
     /**
      * Returns a string representation of this DateTime appropriate for use in SQL Date
      * @example DateTime.utc(2014, 7, 13).toSQLDate() //=> '2014-07-13'
-     * @return {string}
+     * @return {string|null}
      */
     toSQLDate() {
       if (!this.isValid) {
@@ -15801,7 +15839,7 @@
       return this.isValid ? this.ts : NaN;
     }
     /**
-     * Returns the epoch seconds of this DateTime.
+     * Returns the epoch seconds (including milliseconds in the fractional part) of this DateTime.
      * @return {number}
      */
     toSeconds() {
@@ -15890,7 +15928,7 @@
     /**
      * Return an Interval spanning between this DateTime and another DateTime
      * @param {DateTime} otherDateTime - the other end point of the Interval
-     * @return {Interval}
+     * @return {Interval|DateTime}
      */
     until(otherDateTime) {
       return this.isValid ? Interval.fromDateTimes(this, otherDateTime) : this;
@@ -16435,6 +16473,10 @@
             calloutIconColor = "warning";
             calloutIcon = "triangle-exclamation";
             callout.classList.add("callout-warning");
+          } else if (callout.classList.contains("callout-tip") || calloutHeaderText.includes(":choco-tip:")) {
+            calloutIconColor = "tip";
+            calloutIcon = "lightbulb";
+            callout.classList.add("callout-tip");
           } else {
             calloutIconColor = "info";
             calloutIcon = "info";
