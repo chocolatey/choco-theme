@@ -45,6 +45,8 @@
   --swal2-footer-border-color: #eee;
   --swal2-show-animation: swal2-show 0.3s;
   --swal2-hide-animation: swal2-hide 0.15s forwards;
+  --swal2-title-padding: 0.8em 1em 0;
+  --swal2-html-container-padding: 1em 1.6em 0.3em;
   --swal2-input-background: transparent;
   --swal2-progress-step-background: #add8e6;
   --swal2-validation-message-background: #f0f0f0;
@@ -53,6 +55,9 @@
   --swal2-close-button-inset: auto;
   --swal2-close-button-font-size: 2.5em;
   --swal2-close-button-color: #ccc;
+  --swal2-close-button-transition: color 0.1s, box-shadow 0.1s;
+  --swal2-close-button-outline: initial;
+  --swal2-close-button-hover-transform: none;
 }
 
 [data-swal2-theme=dark] {
@@ -270,7 +275,7 @@ div:where(.swal2-container) h2:where(.swal2-title) {
   position: relative;
   max-width: 100%;
   margin: 0 !important;
-  padding: 0.8em 1em 0;
+  padding: var(--swal2-title-padding);
   color: inherit;
   font-size: 1.875em;
   font-weight: 600;
@@ -406,9 +411,10 @@ div:where(.swal2-container) button:where(.swal2-close) {
   margin-bottom: -1.2em;
   padding: 0;
   overflow: hidden;
-  transition: color 0.1s, box-shadow 0.1s;
+  transition: var(--swal2-close-button-transition);
   border: none;
   border-radius: var(--bs-border-radius-lg);
+  outline: var(--swal2-close-button-outline);
   background: transparent;
   color: var(--swal2-close-button-color);
   font-family: monospace;
@@ -417,7 +423,7 @@ div:where(.swal2-container) button:where(.swal2-close) {
   justify-self: end;
 }
 div:where(.swal2-container) button:where(.swal2-close):hover {
-  transform: none;
+  transform: var(--swal2-close-button-hover-transform);
   background: transparent;
   color: #e10e32;
 }
@@ -432,7 +438,7 @@ div:where(.swal2-container) div:where(.swal2-html-container) {
   z-index: 1;
   justify-content: center;
   margin: 0;
-  padding: 1em 1.6em 0.3em;
+  padding: var(--swal2-html-container-padding);
   overflow: auto;
   color: inherit;
   font-size: 1.125em;
