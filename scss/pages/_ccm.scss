@@ -1,11 +1,11 @@
 /* stylelint-disable selector-max-type */
 .chocolatey-ccm {
     #appSidebar {
-        max-width: 300px;
+        max-width: 325px;
 
         /* stylelint-disable-next-line selector-id-pattern */
         &[data-icon-menu="false"] #appSidebar_offcanvas {
-            --bs-offcanvas-width: 300px;
+            --bs-offcanvas-width: 325px;
         }
 
         /* stylelint-disable-next-line selector-id-pattern */
@@ -13,7 +13,7 @@
             --bs-offcanvas-width: 50px;
         }
 
-        .menu-item-parent.menu-item-child a:not([data-bs-toggle]) {
+        .menu-item-parent li li a {
             padding-left: 3rem !important;
         }
 
@@ -75,7 +75,7 @@
                     }
 
                     &:focus-visible {
-                        outline: -webkit-focus-ring-color auto 1px !important;
+                        outline: revert !important;
                     }
                 }
 
