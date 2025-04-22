@@ -333,6 +333,7 @@ $btn-close-bg: none;
 
 // Cards
 $card-bg:                           var(--bs-secondary-bg);
+$card-color:                        var(--bs-body-color);
 $card-spacer-y:                     $spacer-md;
 $card-spacer-x:                     $spacer-md;
 
@@ -352,6 +353,9 @@ $breadcrumb-padding-x: 0;
 $breadcrumb-border-radius: 0;
 $breadcrumb-margin-bottom: 0;
 $breadcrumb-bg: transparent;
+
+// Headings
+$heading-color:                     var(--bs-body-color);
 
 // Inputs
 $input-bg:                           var(--bs-secondary-bg);

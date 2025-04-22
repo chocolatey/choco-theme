@@ -34,6 +34,7 @@
   }
 }
 :root {
+  --swal2-outline: 0 0 0 3px rgba(100, 150, 200, 0.5);
   --swal2-container-padding: 0.625em;
   --swal2-backdrop: rgba(0, 0, 0, 0.4);
   --swal2-width: 32em;
@@ -57,7 +58,12 @@
   --swal2-close-button-color: #ccc;
   --swal2-close-button-transition: color 0.1s, box-shadow 0.1s;
   --swal2-close-button-outline: initial;
+  --swal2-close-button-box-shadow: inset 0 0 0 3px transparent;
+  --swal2-close-button-focus-box-shadow: inset var(--swal2-outline);
   --swal2-close-button-hover-transform: none;
+  --swal2-confirm-button-background-color: #7066e0;
+  --swal2-deny-button-background-color: #dc3741;
+  --swal2-cancel-button-background-color: #6e7881;
 }
 
 [data-swal2-theme=dark] {
@@ -335,9 +341,6 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
   color: var(--bs-primary-contrast);
   font-size: 1em;
 }
-div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):focus-visible {
-  box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.5);
-}
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny) {
   border: 0;
   border-radius: var(--bs-border-radius);
@@ -345,9 +348,6 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny) {
   background-color: transparent;
   color: var(--bs-danger);
   font-size: 1em;
-}
-div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny):focus-visible {
-  box-shadow: 0 0 0 3px rgba(var(--bs-danger-rgb), 0.5);
 }
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
   border: 0;
@@ -357,14 +357,9 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel) {
   color: var(--bs-body-color);
   font-size: 1em;
 }
-div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel):focus-visible {
-  box-shadow: 0 0 0 3px rgba(var(--bs-secondary-bg-rgb), 0.5);
-}
-div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus-visible {
-  box-shadow: 0 0 0 3px var(--bs-border-color);
-}
 div:where(.swal2-container) button:where(.swal2-styled):focus-visible {
   outline: none;
+  box-shadow: var(--swal2-action-button-outline);
 }
 div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner {
   border: 0;
@@ -429,7 +424,7 @@ div:where(.swal2-container) button:where(.swal2-close):hover {
 }
 div:where(.swal2-container) button:where(.swal2-close):focus-visible {
   outline: none;
-  box-shadow: inset 0 0 0 3px var(--bs-border-color);
+  box-shadow: var(--swal2-close-button-focus-box-shadow);
 }
 div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner {
   border: 0;

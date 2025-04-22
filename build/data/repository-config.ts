@@ -80,7 +80,7 @@ export const astroRepositoryConfig = {
             '::-webkit-scrollbar',
             '::-webkit-scrollbar-thumb',
             /^fa-(check|triangle-exclamation|info|xmark)/,
-            /^text-bg-(info|warning|danger|success)/,
+            /^text-bg-/,
             /^data-bs-popper/,
             /^ratio-/,
             /^callout-/,
