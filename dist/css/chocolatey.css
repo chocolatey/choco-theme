@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* choco-theme chocolatey v1.0.0 (https://github.com/chocolatey/choco-theme#readme)
+* choco-theme chocolatey v1.1.0 (https://github.com/chocolatey/choco-theme#readme)
 * Copyright 2020-2024 Chocolatey Software
 * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -23,7 +23,7 @@
 }
 
 :root,
-:root[data-bs-theme=light] {
+[data-bs-theme=light] {
   --choco-adaptive: rgb(191.7, 213.6, 232.8);
   --choco-border-color-adaptive: #dee2e6;
   --bs-blue-contrast: #fff;
@@ -366,7 +366,8 @@
   --bs-secondary-bg-contrast: #000;
 }
 
-:root[data-bs-theme=dark] {
+:root[data-bs-theme=dark],
+[data-bs-theme=dark] {
   --choco-adaptive: rgb(13.2, 35.1, 54.3);
   --choco-border-color-adaptive: rgba(var(--bs-primary-rgb), 0.5);
   --bs-blue: #5c9fd8;
@@ -7974,7 +7975,7 @@ textarea.form-control-lg {
   --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
-  --bs-card-color: ;
+  --bs-card-color: var(--bs-body-color);
   --bs-card-bg: var(--bs-secondary-bg);
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
@@ -56252,17 +56253,17 @@ main {
   /* stylelint-disable selector-class-pattern */
 }
 .chocolatey-ccm #appSidebar {
-  max-width: 300px;
+  max-width: 325px;
   /* stylelint-disable-next-line selector-id-pattern */
   /* stylelint-disable-next-line selector-id-pattern */
 }
 .chocolatey-ccm #appSidebar[data-icon-menu=false] #appSidebar_offcanvas {
-  --bs-offcanvas-width: 300px;
+  --bs-offcanvas-width: 325px;
 }
 .chocolatey-ccm #appSidebar[data-icon-menu=true] #appSidebar_offcanvas {
   --bs-offcanvas-width: 50px;
 }
-.chocolatey-ccm #appSidebar .menu-item-parent.menu-item-child a:not([data-bs-toggle]) {
+.chocolatey-ccm #appSidebar .menu-item-parent li li a {
   padding-left: 3rem !important;
 }
 .chocolatey-ccm #appSidebar nav li.active-parent::before, .chocolatey-ccm #appSidebar nav li:hover:not(.disabled)::before {
@@ -56306,7 +56307,7 @@ main {
 }
 .chocolatey-ccm #appSidebar nav li a:focus-visible,
 .chocolatey-ccm #appSidebar nav li button:focus-visible {
-  outline: -webkit-focus-ring-color auto 1px !important;
+  outline: revert !important;
 }
 .chocolatey-ccm #appSidebar nav li [aria-expanded=true] .fa-angle-down {
   transform: rotate(180deg);
