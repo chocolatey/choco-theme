@@ -6,7 +6,7 @@
 }
 
 :root,
-:root[data-bs-theme="light"] {
+[data-bs-theme="light"] {
     --choco-adaptive: #{$adaptive}; // Primary in chocolatey.org // Gray in boxstarter.org
     --choco-border-color-adaptive: #{$border-color-adaptive}; // Gray in light mode // Primary in dark mode
 
@@ -27,7 +27,8 @@
     --#{$prefix}secondary-bg-contrast: #{color-contrast($body-secondary-bg)};
 }
 
-:root[data-bs-theme="dark"] {
+:root[data-bs-theme="dark"],
+[data-bs-theme="dark"] {
     --choco-adaptive: #{$adaptive-dark};
     --choco-border-color-adaptive: #{$border-color-adaptive-dark};
 
