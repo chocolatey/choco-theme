@@ -178,29 +178,6 @@ const init = async () => {
             );
         }
 
-        // Playwright
-        if (repository.playwright) {
-            parallelTasksInitial.push(
-                {
-                    task: 'Playwright tests - general',
-                    source: `${repositoryConfig.theme.playwright}tests/general/`,
-                    destination: `${repository.playwright}general/`,
-                    isFolder: true
-                }
-            );
-
-            if (repository.name === repositoryConfig.org.name) {
-                parallelTasksInitial.push(
-                    {
-                        task: 'Playwright tests - pricing calculator',
-                        source: `${repositoryConfig.theme.playwright}tests/pricing-calculator/`,
-                        destination: `${repository.playwright}pricing-calculator/`,
-                        isFolder: true
-                    }
-                );
-            }
-        }
-
         // Favicons
         if (repository.name !== repositoryConfig.boxstarter.name) {
             parallelTasksInitial.push(
