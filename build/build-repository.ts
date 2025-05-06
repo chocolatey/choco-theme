@@ -7,7 +7,6 @@
  */
 
 import * as esbuild from 'esbuild';
-import * as fs from 'fs/promises';
 import { purgeCss } from './functions/purge-css';
 import { repository } from './functions/determine-repository';
 import { repositoryConfig } from './data/repository-config';
@@ -22,7 +21,7 @@ const init = async () => {
         outdir: '',
         minify: true,
         outExtension: { '.js': '.min.js' }
-    }
+    };
 
     switch (repository.name) {
         case repositoryConfig.ccm.name:
@@ -68,4 +67,7 @@ const init = async () => {
     });
 };
 
-init();
+init().catch(error => {
+    console.error(error);
+    process.exit(1);
+});

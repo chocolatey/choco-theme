@@ -72,4 +72,7 @@ const init = async (args: string[]): Promise<void> => {
     }
 };
 
-init(process.argv.slice(2));
+init(process.argv.slice(2)).catch(error => {
+    console.error(error);
+    process.exit(1);
+});

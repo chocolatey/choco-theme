@@ -17,6 +17,7 @@ const portList: number[] = Object.values(folderMapping)
     .map(item => item.port)
     .filter(port => port !== undefined);
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const childProcess = spawn('yarn dlx http-server --cors -o', [], {
     stdio: 'inherit', // sends info over to preview.ts to be read
     shell: true
@@ -53,15 +54,14 @@ const checkPortStatus = (port: number): Promise<string> => {
 
 // Function to monitor ports and send status to client
 const monitorPorts = async (): Promise<void> => {
-    const portStatus: { [key: number]: string } = {};
+    const portStatus: Record<number, string> = {};
 
     for (const port of portList) {
         try {
             const status: string = await checkPortStatus(port);
             portStatus[port] = status;
             console.log(`Port ${port} is ${status}`);
-        } catch (err) {
-            // console.error(`Error checking port ${port}: ${(err as Error).message}`);
+        } catch {
             // Send port status to connected clients
             console.log(`Port ${port} is closed`);
             wss.clients.forEach(client => {

@@ -13,21 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     internalRepoUrls.forEach(el => {
         if (getCookie('internal_repo_url')) {
-            for (let i = 0; i < internalRepoUrls.length; i++) {
-                internalRepoUrls[i].value = getCookie('internal_repo_url');
+            for (const repoUrl of internalRepoUrls) {
+                repoUrl.value = getCookie('internal_repo_url');
             }
         }
 
         const internalUrlWarningAndCopy = () => {
             const internalRepoUrl = document.querySelectorAll('.internalRepoUrl');
 
-            for (let i = 0; i < internalRepoUrls.length; i++) {
-                internalRepoUrls[i].value = el.value;
+            for (const repoUrl of internalRepoUrls) {
+                repoUrl.value = el.value;
             }
 
             if (el.value) {
-                for (let i = 0; i < internalRepoUrl.length; i++) {
-                    internalRepoUrl[i].innerHTML = el.value;
+                for (const repoUrl of internalRepoUrl) {
+                    repoUrl.innerHTML = el.value;
                 }
 
                 for (const i of containsInternalRepoUrl) {
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             } else {
-                for (let i = 0; i < internalRepoUrl.length; i++) {
-                    internalRepoUrl[i].innerHTML = defaultUrl;
+                for (const repoUrl of internalRepoUrl) {
+                    repoUrl.innerHTML = defaultUrl;
                 }
 
                 for (const i of containsInternalRepoUrl) {

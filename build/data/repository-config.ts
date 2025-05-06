@@ -19,9 +19,8 @@ export interface RepositoryConfig {
     language: string;
     purgeCss?: {
         content: string[];
-        safelist: Array<string | RegExp>;
+        safelist: (string | RegExp)[];
     };
-    playwright?: string | null;
 }
 
 export const defaultRepositoryConfig = {
@@ -93,8 +92,7 @@ export const astroRepositoryConfig = {
 export const repositoryConfig: Record<string, RepositoryConfig> = {
     blog: {
         ...astroRepositoryConfig,
-        name: 'blog',
-        playwright: 'src/tests/'
+        name: 'blog'
     },
     boxstarter: {
         ...defaultRepositoryConfig,
@@ -128,8 +126,7 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
     },
     docs: {
         ...astroRepositoryConfig,
-        name: 'docs',
-        playwright: 'src/tests/'
+        name: 'docs'
     },
     fest: {
         ...defaultRepositoryConfig,
@@ -137,8 +134,7 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
     },
     org: {
         ...defaultRepositoryConfig,
-        name: 'org',
-        playwright: 'tests/'
+        name: 'org'
     },
     portal: {
         ...defaultRepositoryConfig,
@@ -151,6 +147,10 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
         images: 'wwwroot/images/global-shared/',
         partials: 'Pages/Global/'
     },
+    playwright: {
+        ...defaultRepositoryConfig,
+        name: 'playwright'
+    },
     theme: {
         name: 'choco-theme',
         css: 'node_modules/choco-theme/dist/css/',
@@ -160,7 +160,6 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
         ptSans: 'node_modules/choco-theme/fonts/PT_Sans/',
         images: 'node_modules/choco-theme/images/global-shared/',
         partials: 'node_modules/choco-theme/dist/partials/',
-        playwright: 'node_modules/choco-theme/playwright/',
         language: 'mixed',
         root: 'node_modules/choco-theme/'
     },

@@ -44,7 +44,7 @@ const init = async () => {
         // Check if folder exists
         try {
             await fs.access(folderPath);
-        } catch (error) {
+        } catch {
             clearInterval(loadingIntervals[index]);
             process.stdout.write('\r🟨 ');
             console.log(`${folderName} does not exist. Skipping...`);
@@ -93,4 +93,7 @@ const init = async () => {
     }));
 };
 
-init();
+init().catch(error => {
+    console.error(error);
+    process.exit(1);
+});

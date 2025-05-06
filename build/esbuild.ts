@@ -12,7 +12,7 @@ import * as esbuild from 'esbuild';
 const init = async () => {
     const minify = process.argv.includes('--minify');
 
-    const banner: string = `/*!
+    const banner = `/*!
   * choco-theme v1.1.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
@@ -47,4 +47,7 @@ const init = async () => {
     }
 };
 
-init();
+init().catch(error => {
+    console.error(error);
+    process.exit(1);
+});
