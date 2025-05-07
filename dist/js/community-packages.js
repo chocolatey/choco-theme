@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.1.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.2.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -11097,7 +11097,7 @@
       var import_autocomplete = __toESM(require_autoComplete_min());
       init_set_cookie_expiration_never();
       init_get_cookie();
-      var Mousetrap = require_mousetrap();
+      var import_mousetrap = __toESM(require_mousetrap());
       (() => {
         const autoCompleteInput = document.querySelector("#autoComplete");
         if (autoCompleteInput) {
@@ -11105,13 +11105,12 @@
             document.querySelector(".search-box").style.opacity = 1;
           });
           const autoCompleteJS = new import_autocomplete.default({
-            // eslint-disable-line new-cap
             name: "autoComplete",
             placeHolder: "Search packages or get suggestions...",
             submit: false,
             debounce: 300,
             data: {
-              src: (query) => __async(exports, null, function* () {
+              src: (query) => __async(null, null, function* () {
                 try {
                   const source = yield fetch(`${window.location.protocol}//${window.location.host}/json/JsonApi?invoke&action=GetSuggestions&SearchTerm=${query}`);
                   const data = yield source.json();
@@ -11260,13 +11259,13 @@ ${templateEnter}`;
         };
         if (isMac && searchKey) {
           searchKey.innerHTML = "&#8984;";
-          Mousetrap.bind("command+k", () => {
+          import_mousetrap.default.bind("command+k", () => {
             searchKeys();
             return false;
           });
         } else if (!isMac && searchKey) {
           searchKey.innerHTML = "ctrl";
-          Mousetrap.bind("ctrl+k", () => {
+          import_mousetrap.default.bind("ctrl+k", () => {
             searchKeys();
             return false;
           });
@@ -36726,7 +36725,7 @@ ${templateEnter}`;
         document.querySelectorAll(".course-list:not(.authenticated) li a").forEach((el) => {
           const href = el.getAttribute("href");
           if (path.substring(0, href.indexOf("courses/").length) === href) {
-            const completed = localStorage.completed === void 0 ? new Array() : JSON.parse(localStorage.completed);
+            const completed = localStorage.completed === void 0 ? [] : JSON.parse(localStorage.completed);
             if (completed.indexOf(href) == -1) {
               completed.push(href);
             }
@@ -36743,7 +36742,7 @@ ${templateEnter}`;
             i.parentNode.classList.add("active");
           }
         }
-        const completed = localStorage.completed === void 0 ? new Array() : JSON.parse(localStorage.completed);
+        const completed = localStorage.completed === void 0 ? [] : JSON.parse(localStorage.completed);
         for (const i in completed) {
           const completedLinks = document.querySelectorAll(`.course-list li a[href="${completed[i]}"]`);
           for (const completedLink of completedLinks) {
@@ -36888,18 +36887,18 @@ ${templateEnter}`;
     }
     internalRepoUrls.forEach((el) => {
       if (getCookie("internal_repo_url")) {
-        for (let i = 0; i < internalRepoUrls.length; i++) {
-          internalRepoUrls[i].value = getCookie("internal_repo_url");
+        for (const repoUrl of internalRepoUrls) {
+          repoUrl.value = getCookie("internal_repo_url");
         }
       }
       const internalUrlWarningAndCopy = () => {
         const internalRepoUrl = document.querySelectorAll(".internalRepoUrl");
-        for (let i = 0; i < internalRepoUrls.length; i++) {
-          internalRepoUrls[i].value = el.value;
+        for (const repoUrl of internalRepoUrls) {
+          repoUrl.value = el.value;
         }
         if (el.value) {
-          for (let i = 0; i < internalRepoUrl.length; i++) {
-            internalRepoUrl[i].innerHTML = el.value;
+          for (const repoUrl of internalRepoUrl) {
+            repoUrl.innerHTML = el.value;
           }
           for (const i of containsInternalRepoUrl) {
             if (i.querySelector(".internal-repo-url-warning")) {
@@ -36907,8 +36906,8 @@ ${templateEnter}`;
             }
           }
         } else {
-          for (let i = 0; i < internalRepoUrl.length; i++) {
-            internalRepoUrl[i].innerHTML = defaultUrl;
+          for (const repoUrl of internalRepoUrl) {
+            repoUrl.innerHTML = defaultUrl;
           }
           for (const i of containsInternalRepoUrl) {
             if (!i.querySelector(".internal-repo-url-warning")) {
@@ -37473,7 +37472,7 @@ ${templateEnter}`;
   // js/src/script-builder.js
   init_get_cookie();
   (() => {
-    const packages = localStorage.packageList === void 0 ? new Array() : JSON.parse(localStorage.packageList);
+    const packages = localStorage.packageList === void 0 ? [] : JSON.parse(localStorage.packageList);
     const modalBuilder = document.getElementById("modalScriptBuilder");
     const modalBuilderInstance = bootstrap.Modal.getOrCreateInstance(modalBuilder, { keyboard: false, backdrop: "static" });
     const deploymentMethods2 = document.querySelectorAll("[data-deployment-method]");
@@ -37884,8 +37883,8 @@ package { '${storageValue}':
       if (builderNextStep) {
         const builderNextStepTab = builderNextStep.firstElementChild;
         if (builderNextStepTab.classList.contains("d-none")) {
-          for (let i = 0; i < builderNextBtn.length; i++) {
-            builderNextBtn[i].classList.add("disabled");
+          for (const btn of builderNextBtn) {
+            btn.classList.add("disabled");
           }
         } else {
           if (!internalRepoUrl.value && builderCurrentStep.id == "builder-step-4-tab") {
@@ -37894,27 +37893,27 @@ package { '${storageValue}':
           }
           if (!internalRepoUrl.value) {
             if (builderCurrentStep.id == "builder-step-3-tab") {
-              for (let i = 0; i < builderNextBtn.length; i++) {
-                builderNextBtn[i].classList.add("disabled");
+              for (const btn of builderNextBtn) {
+                btn.classList.add("disabled");
               }
             } else {
-              for (let i = 0; i < builderNextBtn.length; i++) {
-                builderNextBtn[i].classList.remove("disabled");
+              for (const btn of builderNextBtn) {
+                btn.classList.remove("disabled");
               }
             }
             builderStep4.classList.add("disabled");
             builderStep5.classList.add("disabled");
           } else {
-            for (let i = 0; i < builderNextBtn.length; i++) {
-              builderNextBtn[i].classList.remove("disabled");
+            for (const btn of builderNextBtn) {
+              btn.classList.remove("disabled");
             }
             builderStep4.classList.remove("disabled");
             builderStep5.classList.remove("disabled");
           }
         }
       } else {
-        for (let i = 0; i < builderNextBtn.length; i++) {
-          builderNextBtn[i].classList.add("disabled");
+        for (const btn of builderNextBtn) {
+          btn.classList.add("disabled");
         }
         if (!internalRepoUrl.value && builderCurrentStep.id == "builder-step-5-tab") {
           builderStep3Tab.show();
@@ -37922,12 +37921,12 @@ package { '${storageValue}':
         }
       }
       if (builderPrevStep) {
-        for (let i = 0; i < builderPrevBtn.length; i++) {
-          builderPrevBtn[i].classList.remove("disabled");
+        for (const btn of builderPrevBtn) {
+          btn.classList.remove("disabled");
         }
       } else {
-        for (let i = 0; i < builderPrevBtn.length; i++) {
-          builderPrevBtn[i].classList.add("disabled");
+        for (const btn of builderPrevBtn) {
+          btn.classList.add("disabled");
         }
       }
     };

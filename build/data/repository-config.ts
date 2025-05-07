@@ -193,7 +193,8 @@ repositoryConfig.ccm.purgeCss = {
         /^code-toolbar/,
         /^text-bg-(blue|pink|purple|green|red|yellow|orange)/,
         /^fill-(blue|pink|purple|green|red|yellow|orange|success|danger|info|primary)/,
-        /^selected/
+        /^selected/,
+        /^dt-column-header/
     ]
 };
 
@@ -257,7 +258,8 @@ repositoryConfig.portal.purgeCss = {
         'ManagedServiceProvider',
         'Professional',
         'Business',
-        'Trial'
+        'Trial',
+        /^dt-column-header/
     ]
 };
 
