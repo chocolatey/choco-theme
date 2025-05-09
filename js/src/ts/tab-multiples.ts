@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (tabMultiElements && tabMultiElements.value) {
         for (const tabElement of tabMultiElements) {
             const tabMultiConfigAttribute = tabElement.getAttribute(tabMultiAttribute).replace(/\s/g, '');
-            let tabMultiConfig: { [key: string]: string } | null = null;
+            let tabMultiConfig: Record<string, string> | null = null;
 
             // Ensure the data-choco-tab-multi attribute is valid JSON
             try {

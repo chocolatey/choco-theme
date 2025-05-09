@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.1.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.2.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -11091,7 +11091,7 @@
       var import_autocomplete = __toESM(require_autoComplete_min());
       init_set_cookie_expiration_never();
       init_get_cookie();
-      var Mousetrap = require_mousetrap();
+      var import_mousetrap = __toESM(require_mousetrap());
       (() => {
         const autoCompleteInput = document.querySelector("#autoComplete");
         if (autoCompleteInput) {
@@ -11099,13 +11099,12 @@
             document.querySelector(".search-box").style.opacity = 1;
           });
           const autoCompleteJS = new import_autocomplete.default({
-            // eslint-disable-line new-cap
             name: "autoComplete",
             placeHolder: "Search packages or get suggestions...",
             submit: false,
             debounce: 300,
             data: {
-              src: (query) => __async(exports, null, function* () {
+              src: (query) => __async(null, null, function* () {
                 try {
                   const source = yield fetch(`${window.location.protocol}//${window.location.host}/json/JsonApi?invoke&action=GetSuggestions&SearchTerm=${query}`);
                   const data = yield source.json();
@@ -11254,13 +11253,13 @@ ${templateEnter}`;
         };
         if (isMac && searchKey) {
           searchKey.innerHTML = "&#8984;";
-          Mousetrap.bind("command+k", () => {
+          import_mousetrap.default.bind("command+k", () => {
             searchKeys();
             return false;
           });
         } else if (!isMac && searchKey) {
           searchKey.innerHTML = "ctrl";
-          Mousetrap.bind("ctrl+k", () => {
+          import_mousetrap.default.bind("ctrl+k", () => {
             searchKeys();
             return false;
           });
@@ -18317,7 +18316,7 @@ ${templateEnter}`;
         document.querySelectorAll(".course-list:not(.authenticated) li a").forEach((el) => {
           const href = el.getAttribute("href");
           if (path.substring(0, href.indexOf("courses/").length) === href) {
-            const completed = localStorage.completed === void 0 ? new Array() : JSON.parse(localStorage.completed);
+            const completed = localStorage.completed === void 0 ? [] : JSON.parse(localStorage.completed);
             if (completed.indexOf(href) == -1) {
               completed.push(href);
             }
@@ -18334,7 +18333,7 @@ ${templateEnter}`;
             i.parentNode.classList.add("active");
           }
         }
-        const completed = localStorage.completed === void 0 ? new Array() : JSON.parse(localStorage.completed);
+        const completed = localStorage.completed === void 0 ? [] : JSON.parse(localStorage.completed);
         for (const i in completed) {
           const completedLinks = document.querySelectorAll(`.course-list li a[href="${completed[i]}"]`);
           for (const completedLink of completedLinks) {
@@ -18479,18 +18478,18 @@ ${templateEnter}`;
     }
     internalRepoUrls.forEach((el) => {
       if (getCookie("internal_repo_url")) {
-        for (let i = 0; i < internalRepoUrls.length; i++) {
-          internalRepoUrls[i].value = getCookie("internal_repo_url");
+        for (const repoUrl of internalRepoUrls) {
+          repoUrl.value = getCookie("internal_repo_url");
         }
       }
       const internalUrlWarningAndCopy = () => {
         const internalRepoUrl = document.querySelectorAll(".internalRepoUrl");
-        for (let i = 0; i < internalRepoUrls.length; i++) {
-          internalRepoUrls[i].value = el.value;
+        for (const repoUrl of internalRepoUrls) {
+          repoUrl.value = el.value;
         }
         if (el.value) {
-          for (let i = 0; i < internalRepoUrl.length; i++) {
-            internalRepoUrl[i].innerHTML = el.value;
+          for (const repoUrl of internalRepoUrl) {
+            repoUrl.innerHTML = el.value;
           }
           for (const i of containsInternalRepoUrl) {
             if (i.querySelector(".internal-repo-url-warning")) {
@@ -18498,8 +18497,8 @@ ${templateEnter}`;
             }
           }
         } else {
-          for (let i = 0; i < internalRepoUrl.length; i++) {
-            internalRepoUrl[i].innerHTML = defaultUrl;
+          for (const repoUrl of internalRepoUrl) {
+            repoUrl.innerHTML = defaultUrl;
           }
           for (const i of containsInternalRepoUrl) {
             if (!i.querySelector(".internal-repo-url-warning")) {

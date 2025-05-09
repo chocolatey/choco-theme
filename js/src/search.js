@@ -1,7 +1,7 @@
 import autoComplete from '@tarekraafat/autocomplete.js';
 import { setCookieExpirationNever } from './util/set-cookie-expiration-never';
 import { getCookie } from './util/get-cookie';
-const Mousetrap = require('mousetrap');
+import Mousetrap from 'mousetrap';
 
 (() => {
     const autoCompleteInput = document.querySelector('#autoComplete');
@@ -12,7 +12,7 @@ const Mousetrap = require('mousetrap');
             document.querySelector('.search-box').style.opacity = 1;
         });
 
-        const autoCompleteJS = new autoComplete({ // eslint-disable-line new-cap
+        const autoCompleteJS = new autoComplete({
             name: 'autoComplete',
             placeHolder: 'Search packages or get suggestions...',
             submit: false,

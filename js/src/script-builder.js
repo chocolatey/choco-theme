@@ -2,7 +2,7 @@ import { copyCodeBlocks, removeLineBreaks, selectDeploymentMethodTab } from './u
 import { getCookie } from './util/get-cookie';
 
 (() => {
-    const packages = localStorage.packageList === undefined ? new Array() : JSON.parse(localStorage.packageList); // eslint-disable-line
+    const packages = localStorage.packageList === undefined ? [] : JSON.parse(localStorage.packageList);  
     const modalBuilder = document.getElementById('modalScriptBuilder');
     const modalBuilderInstance = bootstrap.Modal.getOrCreateInstance(modalBuilder, { keyboard: false, backdrop: 'static' });
     const deploymentMethods = document.querySelectorAll('[data-deployment-method]');
@@ -513,8 +513,8 @@ package { '${storageValue}':
             const builderNextStepTab = builderNextStep.firstElementChild;
 
             if (builderNextStepTab.classList.contains('d-none')) {
-                for (let i = 0; i < builderNextBtn.length; i++) {
-                    builderNextBtn[i].classList.add('disabled');
+                for (const btn of builderNextBtn) {
+                    btn.classList.add('disabled');
                 }
             } else { // Organization
                 if (!internalRepoUrl.value && builderCurrentStep.id == 'builder-step-4-tab') {
@@ -524,20 +524,20 @@ package { '${storageValue}':
 
                 if (!internalRepoUrl.value) {
                     if (builderCurrentStep.id == 'builder-step-3-tab') {
-                        for (let i = 0; i < builderNextBtn.length; i++) {
-                            builderNextBtn[i].classList.add('disabled');
+                        for (const btn of builderNextBtn) {
+                            btn.classList.add('disabled');
                         }
                     } else {
-                        for (let i = 0; i < builderNextBtn.length; i++) {
-                            builderNextBtn[i].classList.remove('disabled');
+                        for (const btn of builderNextBtn) {
+                            btn.classList.remove('disabled');
                         }
                     }
 
                     builderStep4.classList.add('disabled');
                     builderStep5.classList.add('disabled');
                 } else {
-                    for (let i = 0; i < builderNextBtn.length; i++) {
-                        builderNextBtn[i].classList.remove('disabled');
+                    for (const btn of builderNextBtn) {
+                        btn.classList.remove('disabled');
                     }
 
                     builderStep4.classList.remove('disabled');
@@ -545,8 +545,8 @@ package { '${storageValue}':
                 }
             }
         } else {
-            for (let i = 0; i < builderNextBtn.length; i++) {
-                builderNextBtn[i].classList.add('disabled');
+            for (const btn of builderNextBtn) {
+                btn.classList.add('disabled');
             }
 
             if (!internalRepoUrl.value && builderCurrentStep.id == 'builder-step-5-tab') {
@@ -557,12 +557,12 @@ package { '${storageValue}':
 
         // Previous Button
         if (builderPrevStep) {
-            for (let i = 0; i < builderPrevBtn.length; i++) {
-                builderPrevBtn[i].classList.remove('disabled');
+            for (const btn of builderPrevBtn) {
+                btn.classList.remove('disabled');
             }
         } else {
-            for (let i = 0; i < builderPrevBtn.length; i++) {
-                builderPrevBtn[i].classList.add('disabled');
+            for (const btn of builderPrevBtn) {
+                btn.classList.add('disabled');
             }
         }
     };

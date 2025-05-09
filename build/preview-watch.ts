@@ -71,4 +71,7 @@ const init = async () => {
     }
 };
 
-init();
+init().catch(error => {
+    console.error(error);
+    process.exit(1);
+});

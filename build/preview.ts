@@ -113,7 +113,7 @@ const init = async () => {
                 // Check if preview script exists
                 try {
                     await fs.access(scriptPath);
-                } catch (error) {
+                } catch {
                     clearInterval(loadingIntervals[index]);
                     process.stdout.write('\r🟨 ');
                     console.log(`${folderName} does not contain a ${previewScript} file. Skipping...`);
@@ -173,5 +173,8 @@ const init = async () => {
 if (isWindows) {
     console.log('⛔ This script does not currently run on Windows.');
 } else {
-    init();
+    init().catch(error => {
+        console.error(error);
+        process.exit(1);
+    });
 }

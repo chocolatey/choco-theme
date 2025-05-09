@@ -58,5 +58,6 @@
         "webfonts",
         "xmark",
         "zindex"
-    ]
+    ],
+    "files.trimTrailingWhitespace": true
 }

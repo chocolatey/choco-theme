@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.1.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.2.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -59,7 +59,7 @@
           const diffContent = document.querySelector("#diffContent");
           const diffSelector = document.querySelector("#diffSelector");
           const anyPackageRole = document.querySelector("#anyPackageRole").value.toLowerCase() === "true";
-          const callEndpoint = (url) => __async(exports, null, function* () {
+          const callEndpoint = (url) => __async(null, null, function* () {
             try {
               const response = yield fetch(url);
               const data = yield response.json();

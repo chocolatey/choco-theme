@@ -9,4 +9,4 @@ jobs:
         with:
           node-version: 20
       - run: yarn
-      - run: yarn run eslint js/**/*.{js,ts}
+      - run: yarn eslint '**/*.{js,mjs,cjs,ts}'

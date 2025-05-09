@@ -11,7 +11,7 @@
     // Tutorial: https://thisdevbrain.com/disqus-auto-theme-switching/
     document.addEventListener('themeChanged', () => {
         if (document.readyState == 'complete') {
-            // eslint-disable-next-line no-undef, camelcase
+            // eslint-disable-next-line no-undef
             DISQUS.reset({ reload: true, config: disqus_config });
         }
     });

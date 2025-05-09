@@ -6,16 +6,14 @@
  * Licensed under Apache License (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
  */
 
-export interface FolderMapping {
-    [key: string]: {
-        folder: string;
-        protocol?: string;
-        port?: null | number;
-        isStatiq: boolean;
-        isAstro: boolean;
-        root?: string
-    };
-}
+export type FolderMapping = Record<string, {
+    folder: string;
+    protocol?: string;
+    port?: null | number;
+    isStatiq: boolean;
+    isAstro: boolean;
+    root?: string;
+}>;
 
 export const folderMapping: FolderMapping = {
     '--blog': {

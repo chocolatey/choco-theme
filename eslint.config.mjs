@@ -1,113 +1,117 @@
-import globals from 'globals';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
+import globals from 'globals';
+import playwright from 'eslint-plugin-playwright';
+import tseslint from 'typescript-eslint';
+import tsParser from '@typescript-eslint/parser';
+import stylistic from '@stylistic/eslint-plugin';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
+const varsIgnorePattern = 'Alert|Button|Carousel|Collapse|Dropdown|Modal|Offcanvas|Tab';
+const commonRules = {
+    // Stylistic rules from @stylistic
+    '@stylistic/indent': ['error', 4, { SwitchCase: 1 }],
+    '@stylistic/semi': ['error', 'always'],
+    '@stylistic/quotes': ['error', 'single'],
+    '@stylistic/one-var-declaration-per-line': ['error', 'always'],
+    '@stylistic/arrow-parens': ['error', 'as-needed'],
+    '@stylistic/member-delimiter-style': ['error', {
+        multiline: { delimiter: 'semi', requireLast: true },
+        singleline: { delimiter: 'semi', requireLast: true },
+    }],
 
-export default [{
-    ignores: [
-        'js/src/lib',
-        '**/node_modules',
-        'wwwroot/js/**/*.min.js',
-        'input/assets/js/*.min.js',
-        'Scripts/*.min.js'
-    ]
-}, ...compat.extends('standard'), {
-    languageOptions: {
-        globals: {
-            ...globals.browser,
-            Prism: 'readonly',
-            bootstrap: 'readonly'
+    // Best-practice and logic rules (not stylistic)
+    'func-style': ['error', 'expression'],
+    'no-var': 'error',
+    'object-shorthand': ['error', 'consistent-as-needed'],
+    'one-var': ['error', 'never'],
+    'prefer-template': 'error',
+    'prefer-arrow-callback': ['error'],
+    'eqeqeq': 'off',
+};
+
+export default defineConfig([
+    // Ignore patterns
+    globalIgnores([
+        'js/src/lib/*',
+        '**/dist/*',
+        '**/node_modules/*',
+        '**/*.min.js'
+    ]),
+
+    // JS files only
+    {
+        files: ['**/*.{js,mjs,cjs}'],
+        plugins: {
+            js: js,
+            '@stylistic': stylistic,
         },
+        extends: [
+            'js/recommended'
+        ],
+        rules: {
+            ...commonRules,
 
-        ecmaVersion: 'latest',
-        sourceType: 'module'
-    }
-}, ...compat.extends(
-    'standard',
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended'
-).map(config => ({
-    ...config,
-    files: ['js/src/ts/**/*.ts', 'playwright/**/*.ts', 'build/**/*.ts']
-})), {
-    files: ['js/src/ts/**/*.ts', 'playwright/**/*.ts', 'build/**/*.ts'],
-
-    plugins: {
-        '@typescript-eslint': typescriptEslint
-    },
-
-    languageOptions: {
-        parser: tsParser,
-        ecmaVersion: 5,
-        sourceType: 'script',
-
-        parserOptions: {
-            project: 'tsconfig.json'
-        }
-    }
-}, ...compat.extends('plugin:playwright/recommended').map(config => ({
-    ...config,
-    files: ['playwright/**/*.ts']
-})), {
-    files: ['playwright/**/*.ts'],
-
-    languageOptions: {
-        ecmaVersion: 5,
-        sourceType: 'script',
-
-        parserOptions: {
-            project: 'playwright/tsconfig.json'
+            // JS-specific rules
+            'no-unused-vars': ['error', {
+                varsIgnorePattern
+            }],
         }
     },
 
-    rules: {
-        'playwright/no-conditional-in-test': 0,
-        'playwright/expect-expect': 0
+    // TS files only
+    {
+        files: ['**/*.ts'],
+        plugins: {
+            js: js,
+            '@typescript-eslint': tseslint.plugin,
+            '@stylistic': stylistic,
+        },
+        languageOptions: {
+            parser: tsParser,
+            parserOptions: {
+                project: 'tsconfig.json',
+            },
+        },
+        extends: [
+            ...tseslint.configs.stylistic,
+            ...tseslint.configs.recommended,
+            tseslint.configs.eslintRecommended,
+        ],
+        rules: {
+            ...commonRules,
+
+            // TS-specific rules
+            '@typescript-eslint/no-floating-promises': 'error',
+            'no-unused-vars': 'off',
+            '@typescript-eslint/no-unused-vars': ['error', {
+                varsIgnorePattern
+            }]
+        }
+    },
+
+    // Shared globals for all JS/TS files
+    {
+        files: ['**/*.{js,mjs,cjs,ts}'],
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+                Prism: 'readonly',
+                bootstrap: 'readonly'
+            }
+        }
+    },
+
+    // Playwright-specific config
+    {
+        ...playwright.configs['flat/recommended'],
+        files: ['playwright/**/*.ts'],
+        rules: {
+            ...playwright.configs['flat/recommended'].rules,
+            'playwright/expect-expect': 'off',
+            'playwright/no-conditional-expect': 'off',
+            'playwright/no-conditional-in-test': 'off',
+            'playwright/no-wait-for-timeout': 'off'
+        }
     }
-}, {
-    files: [
-        '**/eslint.config.mjs',
-        '**/postcss.config.js',
-        'js/**/**/*.*',
-        'getting-started/*.js',
-        'playwright/**/*.ts',
-        'wwwroot/js/src/**/*.js',
-        'build/**/*.*'
-    ],
-
-    rules: {
-        semi: ['error', 'always'],
-        quotes: ['error', 'single'],
-
-        indent: ['error', 4, {
-            SwitchCase: 1
-        }],
-
-        'no-var': 'error',
-        'one-var': ['error', 'never'],
-        'one-var-declaration-per-line': ['error', 'always'],
-
-        'no-unused-vars': ['error', {
-            varsIgnorePattern: 'Alert|Button|Carousel|Collapse|Dropdown|Modal|Offcanvas|Tab'
-        }],
-
-        'prefer-template': 'error',
-        'prefer-arrow-callback': ['error'],
-        'func-style': ['error', 'expression'],
-        'arrow-parens': ['error', 'as-needed'],
-        'object-shorthand': ['error', 'consistent-as-needed'],
-        eqeqeq: 0
-    }
-}];
+]);

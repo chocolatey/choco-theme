@@ -20,8 +20,7 @@
                 const href = el.getAttribute('href');
 
                 if (path.substring(0, href.indexOf('courses/').length) === href) {
-                    // eslint-disable-next-line
-                    const completed = localStorage.completed === undefined ? new Array() : JSON.parse(localStorage.completed);
+                    const completed = localStorage.completed === undefined ? [] : JSON.parse(localStorage.completed);
 
                     if (completed.indexOf(href) == -1) { // check that the element is not in the array
                         completed.push(href);
@@ -48,8 +47,7 @@
             }
 
             // Get Completed Localstorage Items
-            // eslint-disable-next-line
-            const completed = localStorage.completed === undefined ? new Array() : JSON.parse(localStorage.completed); // get all completed items
+            const completed = localStorage.completed === undefined ? [] : JSON.parse(localStorage.completed); // get all completed items
 
             for (const i in completed) { // <-- completed is the name of the cookie
                 const completedLinks = document.querySelectorAll(`.course-list li a[href="${completed[i]}"]`);

@@ -14,14 +14,14 @@ div.dt-container div {
     .dt-length {
         display: flex;
         align-items: center;
-    
+
         &::before {
             display: inline-block;
             content: '||';
             color: var(--bs-body-color);
             margin: 0 1rem;
         }
-    
+
         select {
             width: fit-content;
             margin-right: .5rem;
@@ -52,6 +52,10 @@ table.table {
         th.dt-type-date,
         th.dt-type-numeric {
             text-align: left;
+
+            div.dt-column-header {
+                flex-direction: row !important;
+            }
         }
     }
 
@@ -61,43 +65,35 @@ table.table {
 }
 
 table.dataTable thead > tr > th {
-    &.dt-orderable-asc, 
-    &.dt-orderable-desc, 
-    &.dt-ordering-asc, 
-    &.dt-ordering-desc {
-      padding-right: 40px;
-    }
-  
-    &.dt-orderable-asc span.dt-column-order, 
+    &.dt-orderable-asc span.dt-column-order,
     &.dt-orderable-desc span.dt-column-order {
-      width: 20px;
+        width: 20px;
     }
-  
+
     &.dt-orderable-asc span.dt-column-order {
-      &::before, 
-      &::after {
-        opacity: 1;
-        color: var(--bs-body-color);
-        font-size: 1em;
-        line-height: 15px;
-      }
+        &::before,
+        &::after {
+            opacity: 1;
+            color: var(--bs-body-color);
+            font-size: 1em;
+            line-height: 15px;
+        }
     }
-  
+
     &.dt-orderable-desc span.dt-column-order {
-      &::before, 
-      &::after {
-        opacity: 1;
-        color: var(--bs-body-color);
+        &::before,
+        &::after {
+            opacity: 1;
+            color: var(--bs-body-color);
+            font-size: 1em;
+            line-height: 15px;
+        }
+    }
+
+    &.dt-ordering-asc span.dt-column-order::before,
+    &.dt-ordering-desc span.dt-column-order::after {
+        color: var(--bs-primary);
         font-size: 1em;
         line-height: 15px;
-      }
     }
-  
-    &.dt-ordering-asc span.dt-column-order::before, 
-    &.dt-ordering-desc span.dt-column-order::after {
-      color: var(--bs-primary);
-      font-size: 1em;
-      line-height: 15px;
-    }
-  }
-  
+}
