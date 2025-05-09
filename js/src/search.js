@@ -12,7 +12,7 @@ import Mousetrap from 'mousetrap';
             document.querySelector('.search-box').style.opacity = 1;
         });
 
-        const autoCompleteJS = new autoComplete({  
+        const autoCompleteJS = new autoComplete({
             name: 'autoComplete',
             placeHolder: 'Search packages or get suggestions...',
             submit: false,

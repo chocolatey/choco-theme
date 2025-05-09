@@ -20,7 +20,6 @@
                 const href = el.getAttribute('href');
 
                 if (path.substring(0, href.indexOf('courses/').length) === href) {
-                     
                     const completed = localStorage.completed === undefined ? [] : JSON.parse(localStorage.completed);
 
                     if (completed.indexOf(href) == -1) { // check that the element is not in the array
@@ -48,7 +47,6 @@
             }
 
             // Get Completed Localstorage Items
-             
             const completed = localStorage.completed === undefined ? [] : JSON.parse(localStorage.completed); // get all completed items
 
             for (const i in completed) { // <-- completed is the name of the cookie
