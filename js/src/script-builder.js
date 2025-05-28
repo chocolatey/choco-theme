@@ -2,7 +2,7 @@ import { copyCodeBlocks, removeLineBreaks, selectDeploymentMethodTab } from './u
 import { getCookie } from './util/get-cookie';
 
 (() => {
-    const packages = localStorage.packageList === undefined ? [] : JSON.parse(localStorage.packageList);  
+    const packages = localStorage.packageList === undefined ? [] : JSON.parse(localStorage.packageList);
     const modalBuilder = document.getElementById('modalScriptBuilder');
     const modalBuilderInstance = bootstrap.Modal.getOrCreateInstance(modalBuilder, { keyboard: false, backdrop: 'static' });
     const deploymentMethods = document.querySelectorAll('[data-deployment-method]');
@@ -192,7 +192,7 @@ import { getCookie } from './util/get-cookie';
                             if (findScriptValue(storageValue) == findScriptValue(packageValue)) {
                                 // Show modal
                                 const modalBuilderVersionWarning = document.getElementById('modalScriptBuilderVersionWarning');
-                                const modalBuilderVersionWarningInstance = bootstrap.getOrCreateInstance(modalBuilderVersionWarning, { keyboard: false, backdrop: 'static' });
+                                const modalBuilderVersionWarningInstance = bootstrap.Modal.getOrCreateInstance(modalBuilderVersionWarning, { keyboard: false, backdrop: 'static' });
 
                                 modalBuilderVersionWarning.addEventListener('show.bs.modal', () => {
                                     const btnBuilderVersion = document.querySelector('.btn-builder-version');

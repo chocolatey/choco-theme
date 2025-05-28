@@ -230,7 +230,7 @@ import { getCookie } from './util/get-cookie';
                 }
 
                 for (const i of fileCollapse) {
-                    const fileCollapseTarget = bootstrap.getOrCreateInstance(i, { toggle: false });
+                    const fileCollapseTarget = bootstrap.Collapse.getOrCreateInstance(i, { toggle: false });
 
                     fileCollapseTarget.show();
                 }

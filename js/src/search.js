@@ -83,7 +83,7 @@ import Mousetrap from 'mousetrap';
     <p class="mb-0"><strong>author:searchValue</strong><br />search by author</p>
 </div>
 <div class="p-3 border-bottom">
-    <a class="d-hash-none text-reset text-sm-center d-block small ${templateHelpLinkClass}" data-bs-toggle="collapse" href="#collapseTemplateHelp" role="button" aria-expanded="${isTemplateHelpExpanded}" aria-controls="collapseTemplateHelp">
+    <a class="d-hash-none text-sm-center d-block small ${templateHelpLinkClass}" data-bs-toggle="collapse" href="#collapseTemplateHelp" role="button" aria-expanded="${isTemplateHelpExpanded}" aria-controls="collapseTemplateHelp">
         <i class="fa-solid fa-circle-question text-primary me-1"></i>Click to <span id="collapseTemplateHelpTextContainer">${templateHelpText}</span> search help and examples.
     </a>
     <div class="collapse ${templateHelpContainerClass}" id="collapseTemplateHelp">

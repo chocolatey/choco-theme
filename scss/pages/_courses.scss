@@ -56,6 +56,7 @@
         &::before {
             font-size: 70%;
             line-height: 16px;
+            color: var(--bs-primary-contrast);
             background-color: var(--bs-primary);
             border-color: var(--bs-primary);
         }
