@@ -46,7 +46,9 @@
     "watch": "npm-run-all --parallel watch-css watch-js watch-partials",
     "watch-css": "nodemon --watch scss/ --ext scss --exec \"yarn css\"",
     "watch-js": "nodemon --watch js/ --ext js,ts --exec \"yarn js\"",
-    "watch-partials": "nodemon --watch partials/ --ext html --exec \"yarn partials\""
+    "watch-partials": "nodemon --watch partials/ --ext html --exec \"yarn partials\"",
+    "credits-rename": "ts-node build/credits-rename.ts",
+    "credits": "echo 🚀 Generating the credits.json file... && yarn credits-rename && license-report --only=prod --fields=name --fields=link --fields=installedVersion --fields=licenseType --output=json > credits.json && ts-node build/credits.ts && echo ✅ credits.json file generated successfully"
   },
   "devDependencies": {
     "@docsearch/css": "^3.3.3",
