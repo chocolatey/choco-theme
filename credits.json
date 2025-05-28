@@ -4,7 +4,7 @@
         {
             "name": "@eonasdan/tempus-dominus",
             "link": "https://github.com/Eonasdan/tempus-dominus",
-            "installedVersion": "6.10.3",
+            "installedVersion": "v6.10.4",
             "licenses": [
                 {
                     "type": "MIT",
@@ -15,7 +15,7 @@
         {
             "name": "@eslint/js",
             "link": "https://github.com/eslint/eslint",
-            "installedVersion": "9.26.0",
+            "installedVersion": "9.27.0",
             "licenses": [
                 {
                     "type": "MIT",
@@ -56,7 +56,7 @@
         {
             "name": "@stylistic/eslint-plugin",
             "link": "https://github.com/eslint-stylistic/eslint-stylistic",
-            "installedVersion": "4.2.0",
+            "installedVersion": "4.4.0",
             "licenses": [
                 {
                     "type": "MIT",
@@ -89,7 +89,7 @@
         {
             "name": "@types/node",
             "link": "https://github.com/DefinitelyTyped/DefinitelyTyped",
-            "installedVersion": "22.15.14",
+            "installedVersion": "22.15.24",
             "licenses": [
                 {
                     "type": "MIT",
@@ -188,7 +188,7 @@
         {
             "name": "datatables.net-bs5",
             "link": "https://github.com/DataTables/Dist-DataTables-Bootstrap5",
-            "installedVersion": "2.3.0",
+            "installedVersion": "2.3.1",
             "licenses": [
                 {
                     "type": "MIT",
@@ -199,7 +199,7 @@
         {
             "name": "datatables.net-dt",
             "link": "https://github.com/DataTables/Dist-DataTables-DataTables",
-            "installedVersion": "2.3.0",
+            "installedVersion": "2.3.1",
             "licenses": [
                 {
                     "type": "MIT",
@@ -210,7 +210,7 @@
         {
             "name": "esbuild",
             "link": "https://github.com/evanw/esbuild",
-            "installedVersion": "0.25.4",
+            "installedVersion": "0.25.5",
             "licenses": [
                 {
                     "type": "MIT",
@@ -221,7 +221,7 @@
         {
             "name": "eslint",
             "link": "https://github.com/eslint/eslint",
-            "installedVersion": "9.26.0",
+            "installedVersion": "9.27.0",
             "licenses": [
                 {
                     "type": "MIT",
@@ -518,7 +518,7 @@
         {
             "name": "sweetalert2",
             "link": "https://github.com/sweetalert2/sweetalert2",
-            "installedVersion": "11.21.0",
+            "installedVersion": "11.22.0",
             "licenses": [
                 {
                     "type": "MIT",
@@ -573,7 +573,7 @@
         {
             "name": "typescript-eslint",
             "link": "https://github.com/typescript-eslint/typescript-eslint",
-            "installedVersion": "8.32.0",
+            "installedVersion": "8.33.0",
             "licenses": [
                 {
                     "type": "MIT",

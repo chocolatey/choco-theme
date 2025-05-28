@@ -677,14 +677,14 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ```
 
-#### [@eonasdan/tempus-dominus@6.10.3](https://github.com/Eonasdan/tempus-dominus)
+#### [@eonasdan/tempus-dominus@v6.10.4](https://github.com/Eonasdan/tempus-dominus)
 
 [Repository Link](https://github.com/Eonasdan/tempus-dominus)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@eslint/js@9.26.0](https://github.com/eslint/eslint)
+#### [@eslint/js@9.27.0](https://github.com/eslint/eslint)
 
 [Repository Link](https://github.com/eslint/eslint)
 
@@ -698,7 +698,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@stylistic/eslint-plugin@4.2.0](https://github.com/eslint-stylistic/eslint-stylistic)
+#### [@stylistic/eslint-plugin@4.4.0](https://github.com/eslint-stylistic/eslint-stylistic)
 
 [Repository Link](https://github.com/eslint-stylistic/eslint-stylistic)
 
@@ -719,7 +719,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@types/node@22.15.14](https://github.com/DefinitelyTyped/DefinitelyTyped)
+#### [@types/node@22.15.24](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
 [Repository Link](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
@@ -768,28 +768,28 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [datatables.net-bs5@2.3.0](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
+#### [datatables.net-bs5@2.3.1](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
 
 [Repository Link](https://github.com/DataTables/Dist-DataTables-Bootstrap5)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [datatables.net-dt@2.3.0](https://github.com/DataTables/Dist-DataTables-DataTables)
+#### [datatables.net-dt@2.3.1](https://github.com/DataTables/Dist-DataTables-DataTables)
 
 [Repository Link](https://github.com/DataTables/Dist-DataTables-DataTables)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [esbuild@0.25.4](https://github.com/evanw/esbuild)
+#### [esbuild@0.25.5](https://github.com/evanw/esbuild)
 
 [Repository Link](https://github.com/evanw/esbuild)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [eslint@9.26.0](https://github.com/eslint/eslint)
+#### [eslint@9.27.0](https://github.com/eslint/eslint)
 
 [Repository Link](https://github.com/eslint/eslint)
 
@@ -950,7 +950,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [sweetalert2@11.21.0](https://github.com/sweetalert2/sweetalert2)
+#### [sweetalert2@11.22.0](https://github.com/sweetalert2/sweetalert2)
 
 [Repository Link](https://github.com/sweetalert2/sweetalert2)
 
@@ -978,7 +978,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [typescript-eslint@8.32.0](https://github.com/typescript-eslint/typescript-eslint)
+#### [typescript-eslint@8.33.0](https://github.com/typescript-eslint/typescript-eslint)
 
 [Repository Link](https://github.com/typescript-eslint/typescript-eslint)
 
