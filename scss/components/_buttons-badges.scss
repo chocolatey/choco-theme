@@ -23,8 +23,8 @@ label.btn {
     &:hover,
     &:active {
         .badge {
-            color: var(--bs-primary) !important;
-            background: var(--bs-primary-contrast) !important;
+            color: var(--bs-body-color) !important;
+            background: var(--bs-body-bg) !important;
         }
     }
 }
@@ -65,29 +65,7 @@ button.btn-grab:not(:disabled) {
 .btn-outline-bg-body-contrast,
 .btn-bg-body-tertiary {
     --bs-btn-focus-shadow-rgb: var(--bs-secondary-rgb);
-}
-
-.btn-bg-body,
-.btn-bg-body-contrast,
-.btn-outline-bg-body,
-.btn-outline-bg-body-contrast,
-.btn-bg-body-tertiary,
-.btn-top-nav {
     --bs-btn-active-shadow: #{$btn-active-box-shadow};
-}
-
-.btn-top-nav {
-    --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
-    --bs-btn-color: var(--bs-primary);
-    --bs-btn-border-color: var(--choco-border-color-adaptive);
-    --bs-btn-hover-color: var(--bs-primary-contrast);
-    --bs-btn-hover-bg: var(--bs-primary);
-    --bs-btn-hover-border-color: var(--bs-primary);
-    --bs-btn-active-color: var(--bs-primary-contrast);
-    --bs-btn-active-bg: var(--bs-primary);
-    --bs-btn-active-border-color: var(--bs-primary);
-    --bs-btn-disabled-color: var(--bs-secondary-color);
-    --bs-btn-disabled-border-color: var(--choco-border-color-adaptive);
 }
 
 .btn-bg-body {

@@ -58,7 +58,7 @@
     > input {
         display: block;
         width: 100%;
-        height: unset;
+        height: 45px;
         padding: .375rem .75rem .375rem 2.5rem;
         font-size: 1rem;
         font-weight: 400;
@@ -67,7 +67,7 @@
         appearance: none;
         background-color: var(--bs-secondary-bg);
         background-clip: padding-box;
-        border: 1px solid var(--bs-primary);
+        border: 1px solid var(--bs-secondary);
         border-radius: .375rem;
         transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
@@ -75,9 +75,9 @@
         &:hover {
             color: var(--bs-secondary-bg-contrast);
             background-color: var(--bs-secondary-bg);
-            border-color: var(--bs-primary);
+            border-color: var(--bs-body-color);
             outline: 0;
-            box-shadow: 0 0 0 .25rem rgba(92, 159, 216, .25);
+            box-shadow: none;
         }
 
         &:focus::placeholder,
