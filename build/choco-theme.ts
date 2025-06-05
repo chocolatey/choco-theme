@@ -214,7 +214,7 @@ const init = async () => {
             }
 
             // Images
-            if (repository.name !== repositoryConfig.zendesk.name && repository.name !== repositoryConfig.ccm.name && repository.name !== repositoryConfig.credits.name) {
+            if (repository.name !== repositoryConfig.zendesk.name && repository.name !== repositoryConfig.ccm.name) {
                 parallelTasksInitial.push(
                     {
                         task: 'Images',
