@@ -31,7 +31,7 @@ interface OutputJson {
     isPrivate: boolean;
     link: string;
     version: string;
-    licenseLink?: string;
+    licenseLink: string;
     licenseName: string;
     dependencies: DependencyEntry[];
 }
@@ -97,7 +97,7 @@ const init = async () => {
 
         controlLinks (
             '@types/node',
-            '22.15.33',
+            '22.16.3',
             'https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node'
         );
 
@@ -194,7 +194,7 @@ const init = async () => {
         name: 'choco-theme',
         isPrivate: false,
         link: 'https://github.com/chocolatey/choco-theme',
-        licenseLink: '',
+        licenseLink: 'https://github.com/chocolatey/choco-theme/blob/main/LICENSE',
         licenseName: 'LICENSE',
         version: parsedPackageJson.version,
         dependencies: rawArray
