@@ -5,9 +5,24 @@ import ClipboardJS from 'clipboard';
     const userSelectAllInput = document.querySelectorAll('.user-select-all');
 
     clipboard.on('success', e => {
-        const button = new bootstrap.Button(e.trigger);
+        if (e.trigger.classList.contains('copy-to-clipboard-button')) {
+            // Button is inside a Prism code block
+            e.trigger.textContent = 'Copied!';
+            setTimeout(() => {
+                e.trigger.blur();
+                setTimeout(() => {
+                    e.trigger.textContent = 'Copy';
+                }, 200); // Wait for the blur to take effect
+            }, 2000);
+        } else {
+            // Button has an icon and a tooltip
+            const button = new bootstrap.Button(e.trigger);
 
-        setTimeout(() => { button.toggle(); }, 2000);
+            setTimeout(() => {
+                button.toggle();
+            }, 2000);
+        }
+
         e.clearSelection();
     });
 
