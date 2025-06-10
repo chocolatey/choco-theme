@@ -11464,10 +11464,20 @@ ${templateEnter}`;
     const clipboard = new import_clipboard.default(".btn-copy");
     const userSelectAllInput = document.querySelectorAll(".user-select-all");
     clipboard.on("success", (e) => {
-      const button = new bootstrap.Button(e.trigger);
-      setTimeout(() => {
-        button.toggle();
-      }, 2e3);
+      if (e.trigger.classList.contains("copy-to-clipboard-button")) {
+        e.trigger.textContent = "Copied!";
+        setTimeout(() => {
+          e.trigger.blur();
+          setTimeout(() => {
+            e.trigger.textContent = "Copy";
+          }, 200);
+        }, 2e3);
+      } else {
+        const button = new bootstrap.Button(e.trigger);
+        setTimeout(() => {
+          button.toggle();
+        }, 2e3);
+      }
       e.clearSelection();
     });
     if (userSelectAllInput) {

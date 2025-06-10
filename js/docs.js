@@ -1,6 +1,7 @@
 import './src/lib/prism.js';
 import './src/alerts.js';
 import './src/callouts.js';
+import './src/clipboard.js';
 import './src/ts/code.ts';
 import './src/collapse-nested.js';
 import './src/collapse-responsive.js';
@@ -13,3 +14,4 @@ import './src/scrollspy.js';
 import './src/ts/tab-multiples.ts';
 import './src/ts/tables.ts';
 import './src/theme-toggle.js';
+import './src/dynamic-code-block.js';
