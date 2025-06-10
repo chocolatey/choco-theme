@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.2.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.2.1 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -359,7 +359,6 @@
           const parentDiv = value.parentNode;
           const divider = document.createElement("span");
           divider.innerText = "&";
-          divider.classList.add("btn", "btn-sm", "disabled", "text-theme", "ms-n1");
           parentDiv.insertBefore(divider, value);
         }
       });

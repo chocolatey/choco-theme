@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.2.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.2.1 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -11166,7 +11166,7 @@
     <p class="mb-0"><strong>author:searchValue</strong><br />search by author</p>
 </div>
 <div class="p-3 border-bottom">
-    <a class="d-hash-none text-reset text-sm-center d-block small ${templateHelpLinkClass}" data-bs-toggle="collapse" href="#collapseTemplateHelp" role="button" aria-expanded="${isTemplateHelpExpanded}" aria-controls="collapseTemplateHelp">
+    <a class="d-hash-none text-sm-center d-block small ${templateHelpLinkClass}" data-bs-toggle="collapse" href="#collapseTemplateHelp" role="button" aria-expanded="${isTemplateHelpExpanded}" aria-controls="collapseTemplateHelp">
         <i class="fa-solid fa-circle-question text-primary me-1"></i>Click to <span id="collapseTemplateHelpTextContainer">${templateHelpText}</span> search help and examples.
     </a>
     <div class="collapse ${templateHelpContainerClass}" id="collapseTemplateHelp">
@@ -37063,7 +37063,6 @@ ${templateEnter}`;
           const parentDiv = value.parentNode;
           const divider = document.createElement("span");
           divider.innerText = "&";
-          divider.classList.add("btn", "btn-sm", "disabled", "text-theme", "ms-n1");
           parentDiv.insertBefore(divider, value);
         }
       });
@@ -37401,7 +37400,7 @@ ${templateEnter}`;
             i.innerText = i.innerText.replace("Show", "Hide");
           }
           for (const i of fileCollapse) {
-            const fileCollapseTarget = bootstrap.getOrCreateInstance(i, { toggle: false });
+            const fileCollapseTarget = bootstrap.Collapse.getOrCreateInstance(i, { toggle: false });
             fileCollapseTarget.show();
           }
         } else if (btnCollapseFiles.classList.contains("btn-danger")) {
@@ -37627,7 +37626,7 @@ ${templateEnter}`;
                 const storageValue = getStorage[3];
                 if (findScriptValue(storageValue) == findScriptValue(packageValue)) {
                   const modalBuilderVersionWarning = document.getElementById("modalScriptBuilderVersionWarning");
-                  const modalBuilderVersionWarningInstance = bootstrap.getOrCreateInstance(modalBuilderVersionWarning, { keyboard: false, backdrop: "static" });
+                  const modalBuilderVersionWarningInstance = bootstrap.Modal.getOrCreateInstance(modalBuilderVersionWarning, { keyboard: false, backdrop: "static" });
                   modalBuilderVersionWarning.addEventListener("show.bs.modal", () => {
                     const btnBuilderVersion = document.querySelector(".btn-builder-version");
                     const builderCurrentVersion = document.querySelector(".current-version");
