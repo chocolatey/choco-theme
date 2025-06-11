@@ -48,7 +48,6 @@
                 const divider = document.createElement('span');
 
                 divider.innerText = '&';
-                divider.classList.add('btn', 'btn-sm', 'disabled', 'text-theme', 'ms-n1');
 
                 parentDiv.insertBefore(divider, value);
             }

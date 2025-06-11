@@ -87,6 +87,16 @@ const init = async () => {
             replacementContentIsFile: false
         });
 
+        // astro files
+        await updateContent({
+            destination: destinationAstro,
+            targetFile: 'SocialMedia.html',
+            targetFileDestination: destinationAstro,
+            targetFileContentToReplace: '@@chocolatey',
+            replaceWithContent: '@chocolatey',
+            replacementContentIsFile: false
+        });
+
         // Delete TopAlertBanner.html
         await fs.rm(path.join(destinationHbs, 'TopAlertBanner.html'));
         await fs.rm(path.join(destinationAstro, 'TopAlertBanner.html'));
