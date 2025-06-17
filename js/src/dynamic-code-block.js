@@ -21,9 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     dynamicCodeBlockInputs.forEach(input => {
         const inputVariable = input.name;
         const inputDefaultValue = input.getAttribute('data-default-value');
+        const regex = new RegExp(`\\b${inputVariable}\\b`, 'g');
 
         for (const dynamicCodeBlockContainer of dynamicCodeBlockContainers) {
-            dynamicCodeBlockContainer.innerHTML = dynamicCodeBlockContainer.innerHTML.replaceAll(inputVariable, `<span class="${inputVariable}">${inputDefaultValue}</span>`);
+            dynamicCodeBlockContainer.innerHTML = dynamicCodeBlockContainer.innerHTML.replaceAll(regex, `<span class="${inputVariable}">${inputDefaultValue}</span>`);
         }
 
         replaceCodeVariableInCodeBlock(input, inputVariable, inputDefaultValue);
