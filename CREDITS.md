@@ -684,7 +684,7 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@eslint/js@9.28.0](https://github.com/eslint/eslint)
+#### [@eslint/js@9.29.0](https://github.com/eslint/eslint)
 
 [Repository Link](https://github.com/eslint/eslint)
 
@@ -719,7 +719,7 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [@types/node@22.15.31](https://github.com/DefinitelyTyped/DefinitelyTyped)
+#### [@types/node@22.15.32](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
 [Repository Link](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
@@ -789,16 +789,16 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [eslint@9.28.0](https://github.com/eslint/eslint)
+#### [eslint-plugin-playwright@2.2.0](https://github.com/playwright-community/eslint-plugin-playwright)
 
-[Repository Link](https://github.com/eslint/eslint)
+[Repository Link](https://github.com/playwright-community/eslint-plugin-playwright)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [eslint-plugin-playwright@2.2.0](https://github.com/playwright-community/eslint-plugin-playwright)
+#### [eslint@9.29.0](https://github.com/eslint/eslint)
 
-[Repository Link](https://github.com/playwright-community/eslint-plugin-playwright)
+[Repository Link](https://github.com/eslint/eslint)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
@@ -817,13 +817,6 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [jquery@3.7.1](https://github.com/jquery/jquery)
-
-[Repository Link](https://github.com/jquery/jquery)
-
-No additional license information is available for this package.
-Refer to the license text above, listed under [MIT License](#mit-license).
-
 #### [jquery-serializejson@3.2.1](https://github.com/marioizquierdo/jquery.serializeJSON)
 
 [Repository Link](https://github.com/marioizquierdo/jquery.serializeJSON)
@@ -834,6 +827,13 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 #### [jquery-validation@1.21.0](https://github.com/jquery-validation/jquery-validation)
 
 [Repository Link](https://github.com/jquery-validation/jquery-validation)
+
+No additional license information is available for this package.
+Refer to the license text above, listed under [MIT License](#mit-license).
+
+#### [jquery@3.7.1](https://github.com/jquery/jquery)
+
+[Repository Link](https://github.com/jquery/jquery)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
@@ -859,16 +859,16 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [moment@2.30.1](https://github.com/moment/moment)
+#### [moment-timezone@0.5.48](https://github.com/moment/moment-timezone)
 
-[Repository Link](https://github.com/moment/moment)
+[Repository Link](https://github.com/moment/moment-timezone)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [moment-timezone@0.5.48](https://github.com/moment/moment-timezone)
+#### [moment@2.30.1](https://github.com/moment/moment)
 
-[Repository Link](https://github.com/moment/moment-timezone)
+[Repository Link](https://github.com/moment/moment)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
@@ -887,16 +887,16 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [postcss@8.5.4](https://github.com/postcss/postcss)
+#### [postcss-cli@11.0.1](https://github.com/postcss/postcss-cli)
 
-[Repository Link](https://github.com/postcss/postcss)
+[Repository Link](https://github.com/postcss/postcss-cli)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [postcss-cli@11.0.1](https://github.com/postcss/postcss-cli)
+#### [postcss@8.5.6](https://github.com/postcss/postcss)
 
-[Repository Link](https://github.com/postcss/postcss-cli)
+[Repository Link](https://github.com/postcss/postcss)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
@@ -922,9 +922,9 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [stylelint@16.20.0](https://github.com/stylelint/stylelint)
+#### [stylelint-config-standard-scss@13.1.0](https://github.com/stylelint-scss/stylelint-config-standard-scss)
 
-[Repository Link](https://github.com/stylelint/stylelint)
+[Repository Link](https://github.com/stylelint-scss/stylelint-config-standard-scss)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
@@ -936,16 +936,16 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [stylelint-config-standard-scss@13.1.0](https://github.com/stylelint-scss/stylelint-config-standard-scss)
+#### [stylelint-config-twbs-bootstrap@14.2.0](https://github.com/twbs/stylelint-config-twbs-bootstrap)
 
-[Repository Link](https://github.com/stylelint-scss/stylelint-config-standard-scss)
+[Repository Link](https://github.com/twbs/stylelint-config-twbs-bootstrap)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [stylelint-config-twbs-bootstrap@14.2.0](https://github.com/twbs/stylelint-config-twbs-bootstrap)
+#### [stylelint@16.20.0](https://github.com/stylelint/stylelint)
 
-[Repository Link](https://github.com/twbs/stylelint-config-twbs-bootstrap)
+[Repository Link](https://github.com/stylelint/stylelint)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
@@ -971,14 +971,14 @@ Refer to the license text above, listed under [MIT License](#mit-license).
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [tsx@4.19.4](https://github.com/privatenumber/tsx)
+#### [tsx@4.20.3](https://github.com/privatenumber/tsx)
 
 [Repository Link](https://github.com/privatenumber/tsx)
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT License](#mit-license).
 
-#### [typescript-eslint@8.34.0](https://github.com/typescript-eslint/typescript-eslint)
+#### [typescript-eslint@8.34.1](https://github.com/typescript-eslint/typescript-eslint)
 
 [Repository Link](https://github.com/typescript-eslint/typescript-eslint)
 
@@ -1072,3 +1072,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 No additional license information is available for this package.
 Refer to the license text above, listed under [MIT No Attribution](#mit-no-attribution).
+
+### Other
+
+
