@@ -16,5 +16,5 @@ export const setCookie = (name, value, expirationDays, domainName) => {
 
     const domain = domainName || '';
 
-    document.cookie = `${name}=${value};${expires};path=/;${domain};`;
+    document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/;${domain};`;
 };
