@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.2.2 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.2.3 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -10448,7 +10448,7 @@
     const matched = document.cookie.match(pattern);
     if (matched) {
       const cookie = matched[0].split("=");
-      return cookie[1];
+      return decodeURIComponent(cookie[1]);
     }
     return false;
   };
@@ -20899,7 +20899,7 @@
     const matched = document.cookie.match(pattern);
     if (matched) {
       const cookie = matched[0].split("=");
-      return cookie[1];
+      return decodeURIComponent(cookie[1]);
     }
     return false;
   };
@@ -20985,30 +20985,53 @@
     });
   })();
 
+  // js/src/util/set-cookie.js
+  var setCookie = (name, value, expirationDays, domainName) => {
+    let expires;
+    if (expirationDays === "never") {
+      expires = setCookieExpirationNever();
+    } else if (expirationDays === "expired") {
+      expires = "expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    } else {
+      const d2 = /* @__PURE__ */ new Date();
+      d2.setTime(d2.getTime() + expirationDays * 24 * 60 * 60 * 1e3);
+      expires = `expires=${d2.toUTCString()}`;
+    }
+    const domain = domainName || "";
+    document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/;${domain};`;
+  };
+
   // js/src/dynamic-code-block.js
   document.addEventListener("DOMContentLoaded", () => {
     const dynamicCodeBlockContainers = document.querySelectorAll(".dynamic-code-block-container");
     const dynamicCodeBlockInputs = document.querySelectorAll(".dynamic-code-block-input");
-    const replaceCodeVariableInCodeBlock = (input, inputVariable, inputDefaultValue) => {
+    const replaceCodeVariableInCodeBlock = (input, inputVariable, inputDefaultValue, inputCookie) => {
       const codeVariables = document.querySelectorAll(`.${inputVariable}`);
-      if (input.value) {
+      const inputValue = inputCookie ? inputCookie : input.value;
+      if (input.value || inputCookie) {
         for (const codeVariable of codeVariables) {
-          codeVariable.textContent = input.value;
+          codeVariable.textContent = inputValue;
+          setCookie(inputVariable, inputValue, "never");
+          if (inputCookie && inputCookie !== inputDefaultValue) {
+            input.value = inputCookie;
+          }
         }
       } else {
         for (const codeVariable of codeVariables) {
           codeVariable.textContent = inputDefaultValue;
+          setCookie(inputVariable, inputDefaultValue, "never");
         }
       }
     };
     dynamicCodeBlockInputs.forEach((input) => {
       const inputVariable = input.name;
       const inputDefaultValue = input.getAttribute("data-default-value");
+      const inputCookie = getCookie(inputVariable);
       const regex = new RegExp(`\\b${inputVariable}\\b`, "g");
       for (const dynamicCodeBlockContainer of dynamicCodeBlockContainers) {
-        dynamicCodeBlockContainer.innerHTML = dynamicCodeBlockContainer.innerHTML.replaceAll(regex, `<span class="${inputVariable}">${inputDefaultValue}</span>`);
+        dynamicCodeBlockContainer.innerHTML = dynamicCodeBlockContainer.innerHTML.replaceAll(regex, `<span class="${inputVariable}">${inputCookie ? inputCookie : inputDefaultValue}</span>`);
       }
-      replaceCodeVariableInCodeBlock(input, inputVariable, inputDefaultValue);
+      replaceCodeVariableInCodeBlock(input, inputVariable, inputDefaultValue, inputCookie);
       input.addEventListener("keyup", () => {
         replaceCodeVariableInCodeBlock(input, inputVariable, inputDefaultValue);
       });

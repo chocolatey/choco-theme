@@ -1,6 +1,6 @@
 {
     "name": "choco-theme",
-    "version": "1.2.1",
+    "version": "1.2.3",
     "dependencies": [
         {
             "name": "@eonasdan/tempus-dominus",
@@ -16,7 +16,7 @@
         {
             "name": "@eslint/js",
             "link": "https://github.com/eslint/eslint",
-            "version": "9.28.0",
+            "version": "9.29.0",
             "licenses": [
                 {
                     "type": "MIT",
@@ -90,7 +90,7 @@
         {
             "name": "@types/node",
             "link": "https://github.com/DefinitelyTyped/DefinitelyTyped",
-            "version": "22.15.31",
+            "version": "22.15.32",
             "licenses": [
                 {
                     "type": "MIT",
@@ -222,7 +222,7 @@
         {
             "name": "eslint",
             "link": "https://github.com/eslint/eslint",
-            "version": "9.28.0",
+            "version": "9.29.0",
             "licenses": [
                 {
                     "type": "MIT",
@@ -387,7 +387,7 @@
         {
             "name": "postcss",
             "link": "https://github.com/postcss/postcss",
-            "version": "8.5.4",
+            "version": "8.5.6",
             "licenses": [
                 {
                     "type": "MIT",
@@ -475,7 +475,7 @@
         {
             "name": "stylelint",
             "link": "https://github.com/stylelint/stylelint",
-            "version": "16.20.0",
+            "version": "16.21.0",
             "licenses": [
                 {
                     "type": "MIT",
@@ -552,7 +552,7 @@
         {
             "name": "tsx",
             "link": "https://github.com/privatenumber/tsx",
-            "version": "4.19.4",
+            "version": "4.20.3",
             "licenses": [
                 {
                     "type": "MIT",
@@ -574,7 +574,7 @@
         {
             "name": "typescript-eslint",
             "link": "https://github.com/typescript-eslint/typescript-eslint",
-            "version": "8.34.0",
+            "version": "8.34.1",
             "licenses": [
                 {
                     "type": "MIT",

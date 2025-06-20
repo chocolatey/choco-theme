@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.2.2 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.2.3 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -3300,7 +3300,7 @@
         const matched = document.cookie.match(pattern);
         if (matched) {
           const cookie = matched[0].split("=");
-          return cookie[1];
+          return decodeURIComponent(cookie[1]);
         }
         return false;
       };
@@ -18732,7 +18732,7 @@ ${templateEnter}`;
     const matched = document.cookie.match(pattern);
     if (matched) {
       const cookie = matched[0].split("=");
-      return cookie[1];
+      return decodeURIComponent(cookie[1]);
     }
     return false;
   };
