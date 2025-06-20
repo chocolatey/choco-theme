@@ -4,7 +4,7 @@ export const getCookie = name => {
 
     if (matched) {
         const cookie = matched[0].split('=');
-        return cookie[1];
+        return decodeURIComponent(cookie[1]);
     }
 
     return false;
