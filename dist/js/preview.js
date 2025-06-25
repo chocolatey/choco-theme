@@ -31,6 +31,12 @@
       isStatiq: false,
       isAstro: true
     },
+    "--boxstarter": {
+      folder: "boxstarter.org",
+      port: 5083,
+      isStatiq: true,
+      isAstro: false
+    },
     "--ccm": {
       folder: "choco-licensed-management-ui",
       protocol: "https",
@@ -39,18 +45,18 @@
       isAstro: false,
       root: "/src/ChocolateySoftware.ChocolateyManagement.Web.Mvc"
     },
-    "--boxstarter": {
-      folder: "boxstarter.org",
-      port: 5083,
-      isStatiq: true,
-      isAstro: false
-    },
     "--community": {
       folder: "community.chocolatey.org",
       port: 55881,
       isStatiq: false,
       isAstro: false,
       root: "/chocolatey/Website"
+    },
+    "--credits": {
+      folder: "credits",
+      port: 5087,
+      isStatiq: false,
+      isAstro: true
     },
     "--design": {
       folder: "choco-design-system",

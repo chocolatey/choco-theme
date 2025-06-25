@@ -120,6 +120,10 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
         images: 'Content/Images/global-shared/',
         partials: 'Views/GlobalPartials/'
     },
+    credits: {
+        ...astroRepositoryConfig,
+        name: 'credits'
+    },
     design: {
         ...defaultRepositoryConfig,
         name: 'design'

@@ -7,12 +7,11 @@
  */
 
 import * as fs from 'fs/promises';
+import { consoleColors } from './data/console-colors';
 
 const file = 'credits.json';
 const oldFile = 'credits.old.json';
 const packageJsonFile = 'package.json';
-const yellowOpen = '\x1b[33m';
-const yellowClose = '\x1b[0m';
 
 interface DependencyEntry {
     name: string;
@@ -28,7 +27,10 @@ interface DependencyEntry {
 
 interface OutputJson {
     name: string;
+    isPrivate: boolean;
+    link: string;
     version: string;
+    licenseLink?: string;
     dependencies: DependencyEntry[];
 }
 
@@ -51,13 +53,18 @@ const init = async () => {
             oldJson.dependencies.map(dep => [dep.name, dep])
         );
     } catch {
-        console.warn(`${yellowOpen}No old file found or failed to parse. Proceeding with empty defaults.${yellowClose}`);
+        console.warn(`${consoleColors.yellow}No old file found or failed to parse. Proceeding with empty defaults.${consoleColors.revert}`);
     }
 
     for (const entry of rawArray) {
         // Rename installedVersion to version
         entry.version = entry.installedVersion;
         delete entry.installedVersion;
+
+        // Manually override timeago link
+        if (entry.name === 'timeago') {
+            entry.link = 'https://github.com/rmm5t/jquery-timeago';
+        }
 
         // Remove git+ and .git from urls
         if (entry.link) {
@@ -76,7 +83,7 @@ const init = async () => {
                 default:
                     // Default to 'Other' if no specific license is known
                     entry.licenseType = 'Other';
-                    console.warn(`${yellowOpen}No licenseType provided for ${entry.name}. Setting to 'Other'. License must be updated manually.${yellowClose}`);
+                    console.warn(`${consoleColors.yellow}No licenseType provided for ${entry.name}. Setting to 'Other'. License must be updated manually.${consoleColors.revert}`);
                     break;
             }
         }
@@ -101,7 +108,7 @@ const init = async () => {
             const keepLink = old && old.version === entry.version;
 
             if (!keepLink && oldLink) {
-                console.warn(`${yellowOpen}License link for ${entry.name} has been removed. The license url must be manually updated.${yellowClose}`);
+                console.warn(`${consoleColors.yellow}License link for ${entry.name} has been removed. The license url must be manually updated.${consoleColors.revert}`);
             }
 
             return {
@@ -112,7 +119,7 @@ const init = async () => {
 
         // If no license link are found, warn the user
         if (!entry.licenses.some(l => l.link)) {
-            console.warn(`${yellowOpen}No license link found for ${entry.name}. The license url must be manually updated.${yellowClose}`);
+            console.warn(`${consoleColors.yellow}No license link found for ${entry.name}. The license url must be manually updated.${consoleColors.revert}`);
         }
 
         // If the entry has multiple licenses, either add to the known multi-license packages or warn the user
@@ -120,7 +127,7 @@ const init = async () => {
 
         if (entry.licenses.length > 1) {
             if (!knownMultiLicensePackages.includes(entry.name)) {
-                console.warn(`${yellowOpen}Multiple licenses detected for ${entry.name}. You must manually inspect and choose the correct license, or include multiple if needed.${yellowClose}`);
+                console.warn(`${consoleColors.yellow}Multiple licenses detected for ${entry.name}. You must manually inspect and choose the correct license, or include multiple if needed.${consoleColors.revert}`);
             }
         }
 
@@ -134,6 +141,9 @@ const init = async () => {
 
     const wrapped: OutputJson = {
         name: 'choco-theme',
+        isPrivate: false,
+        link: 'https://github.com/chocolatey/choco-theme',
+        licenseLink: '',
         version: parsedPackageJson.version,
         dependencies: rawArray
     };

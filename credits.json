@@ -1,5 +1,8 @@
 {
     "name": "choco-theme",
+    "isPrivate": false,
+    "link": "https://github.com/chocolatey/choco-theme",
+    "licenseLink": "",
     "version": "1.2.3",
     "dependencies": [
         {
@@ -55,6 +58,17 @@
             ]
         },
         {
+            "name": "@octokit/types",
+            "link": "https://github.com/octokit/types.ts",
+            "version": "14.1.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": ""
+                }
+            ]
+        },
+        {
             "name": "@stylistic/eslint-plugin",
             "link": "https://github.com/eslint-stylistic/eslint-stylistic",
             "version": "4.4.1",
@@ -90,7 +104,7 @@
         {
             "name": "@types/node",
             "link": "https://github.com/DefinitelyTyped/DefinitelyTyped",
-            "version": "22.15.32",
+            "version": "22.15.33",
             "licenses": [
                 {
                     "type": "MIT",
@@ -275,6 +289,17 @@
             ]
         },
         {
+            "name": "html-to-pdfmake",
+            "link": "https://github.com/Aymkdn/html-to-pdfmake",
+            "version": "2.5.28",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": ""
+                }
+            ]
+        },
+        {
             "name": "jquery",
             "link": "https://github.com/jquery/jquery",
             "version": "3.7.1",
@@ -377,6 +402,28 @@
             "name": "npm-run-all2",
             "link": "https://github.com/bcomnes/npm-run-all2",
             "version": "6.2.6",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": ""
+                }
+            ]
+        },
+        {
+            "name": "octokit",
+            "link": "https://github.com/octokit/octokit.js",
+            "version": "5.0.3",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": ""
+                }
+            ]
+        },
+        {
+            "name": "pdfmake",
+            "link": "https://github.com/bpampuch/pdfmake",
+            "version": "0.2.20",
             "licenses": [
                 {
                     "type": "MIT",
@@ -519,7 +566,7 @@
         {
             "name": "sweetalert2",
             "link": "https://github.com/sweetalert2/sweetalert2",
-            "version": "11.22.0",
+            "version": "11.22.1",
             "licenses": [
                 {
                     "type": "MIT",
@@ -529,7 +576,7 @@
         },
         {
             "name": "timeago",
-            "link": "http://ryan.mcgeary.org/",
+            "link": "https://github.com/rmm5t/jquery-timeago",
             "version": "1.6.7",
             "licenses": [
                 {
@@ -561,6 +608,17 @@
             ]
         },
         {
+            "name": "turndown",
+            "link": "https://github.com/mixmark-io/turndown",
+            "version": "7.2.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": ""
+                }
+            ]
+        },
+        {
             "name": "typescript",
             "link": "https://github.com/microsoft/TypeScript",
             "version": "5.8.3",
@@ -574,7 +632,7 @@
         {
             "name": "typescript-eslint",
             "link": "https://github.com/typescript-eslint/typescript-eslint",
-            "version": "8.34.1",
+            "version": "8.35.0",
             "licenses": [
                 {
                     "type": "MIT",
