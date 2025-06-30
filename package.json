@@ -48,7 +48,7 @@
     "watch-js": "nodemon --watch js/ --ext js,ts --exec \"yarn js\"",
     "watch-partials": "nodemon --watch partials/ --ext html --exec \"yarn partials\"",
     "credits-rename": "ts-node build/credits-rename.ts",
-    "credits": "echo 🚀 Generating the credits.json file... && yarn credits-rename && license-report --only=prod --fields=name --fields=link --fields=installedVersion --fields=licenseType --output=json > credits.json && ts-node build/credits.ts && echo ✅ credits.json file generated successfully"
+    "credits": "echo 🚀 Generating the CREDITS.json file... && yarn credits-rename && license-report --only=prod --fields=name --fields=link --fields=installedVersion --fields=licenseType --output=json > CREDITS.json && ts-node build/credits.ts && echo ✅ CREDITS.json file generated successfully"
   },
   "devDependencies": {
     "@docsearch/css": "^3.3.3",
