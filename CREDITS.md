@@ -13,15 +13,17 @@ Chocolatey uses a number of 3rd party components. Their details are below.
   * [ISC License](#isc-license)
   * [MIT License](#mit-license)
   * [MIT No Attribution License](#mit-no-attribution-license)
+  * [Mozilla Public License 2.0 License](#mozilla-public-license-20-license)
   * [SIL OPEN FONT 1.1 LICENSE](#sil-open-font-11-license)
 * [Chocolatey Software Component License](#chocolatey-software-component-licenses)
   * [Chocolatey Open Source](#chocolatey-open-source)
 * [choco-theme](#choco-theme)
   * [Apache v2.0 License](#apache-v20-license-1)
-    * [@playwright/test@1.47.0](#playwrighttest1470)
-    * [typescript@5.6.2](#typescript562)
+    * [@playwright/test@1.52.0](#playwrighttest1520)
+    * [fuse.js@7.1.0](#fusejs710)
+    * [typescript@5.8.3](#typescript583)
   * [Attribution 4.0 International License](#attribution-40-international-license-1)
-    * [@fortawesome/fontawesome-free@6.6.0](#fortawesomefontawesome-free660)
+    * [@fortawesome/fontawesome-free@6.7.2](#fortawesomefontawesome-free672)
   * [BSD-2-Clause License](#bsd-2-clause-license-1)
     * [@typescript-eslint/parser@7.18.0](#typescript-eslintparser7180)
   * [ISC License](#isc-license-1)
@@ -29,57 +31,64 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [eslint-plugin-promise@6.6.0](#eslint-plugin-promise660)
     * [rimraf@5.0.10](#rimraf5010)
   * [MIT License](#mit-license-1)
-    * [@eonasdan/tempus-dominus@6.9.11](#eonasdantempus-dominus6911)
-    * [@fortawesome/fontawesome-free@6.6.0](#fortawesomefontawesome-free660-1)
+    * [@eonasdan/tempus-dominus@6.10.3](#eonasdantempus-dominus6103)
+    * [@eslint/eslintrc@3.3.1](#eslinteslintrc331)
+    * [@eslint/js@9.25.1](#eslintjs9251)
+    * [@fortawesome/fontawesome-free@6.7.2](#fortawesomefontawesome-free672-1)
     * [@microsoft/signalr@8.0.7](#microsoftsignalr807)
     * [@types/bootstrap@5.2.10](#typesbootstrap5210)
-    * [@types/luxon@3.4.2](#typesluxon342)
-    * [@types/node@20.16.5](#typesnode20165)
+    * [@types/luxon@3.6.2](#typesluxon362)
+    * [@types/node@20.17.30](#typesnode201730)
     * [@typescript-eslint/eslint-plugin@7.18.0](#typescript-eslinteslint-plugin7180)
-    * [abp-web-resources@5.9.2](#abp-web-resources592)
+    * [abp-web-resources@5.9.3](#abp-web-resources593)
+    * [axe-html-reporter@2.2.11](#axe-html-reporter2211)
     * [block-ui@2.70.1](#block-ui2701)
     * [bootstrap@5.3.3](#bootstrap533)
     * [chartist@0.11.4](#chartist0114)
     * [clipboard@2.0.11](#clipboard2011)
     * [cropperjs@1.6.2](#cropperjs162)
     * [cssnano@cssnano@6.1.2](#cssnanocssnano612)
-    * [datatables.net-bs5@2.1.6](#datatablesnet-bs5216)
-    * [datatables.net-dt@2.1.6](#datatablesnet-dt216)
-    * [esbuild@0.20.2](#esbuild0202)
-    * [eslint@8.57.0](#eslint8570)
+    * [datatables.net-bs5@2.2.2](#datatablesnet-bs5222)
+    * [datatables.net-dt@2.2.2](#datatablesnet-dt222)
+    * [esbuild@0.25.2](#esbuild0252)
+    * [eslint@9.25.1](#eslint9251)
     * [eslint-config-standard@17.1.0](#eslint-config-standard1710)
-    * [eslint-plugin-import@2.30.0](#eslint-plugin-import2300)
+    * [eslint-plugin-import@2.31.0](#eslint-plugin-import2310)
     * [eslint-plugin-n@16.6.2](#eslint-plugin-n1662)
-    * [eslint-plugin-playwright@1.6.2](#eslint-plugin-playwright162)
+    * [eslint-plugin-playwright@1.8.3](#eslint-plugin-playwright183)
     * [flatpickr@4.6.13](#flatpickr4613)
+    * [globals@15.15.0](#globals15150)
     * [jquery@3.7.1](#jquery371)
     * [jquery-serializejson@3.2.1](#jquery-serializejson321)
     * [jquery-validation@1.21.0](#jquery-validation1210)
     * [jstree@3.3.17](#jstree3317)
-    * [luxon@3.5.0](#luxon350)
+    * [luxon@3.6.1](#luxon361)
     * [marked@12.0.2](#marked1202)
     * [moment@2.30.1](#moment2301)
-    * [moment-timezone@0.5.45](#moment-timezone0545)
+    * [moment-timezone@0.5.48](#moment-timezone0548)
     * [mustache@4.2.0](#mustache420)
-    * [npm-run-all2@6.2.2](#npm-run-all2622)
-    * [postcss@8.4.45](#postcss8445)
-    * [postcss-cli@11.0.0](#postcss-cli1100)
-    * [purgecss@5.0.0](#purgecss500)
+    * [npm-run-all2@6.2.6](#npm-run-all2626)
+    * [postcss@8.5.3](#postcss853)
+    * [postcss-cli@11.0.1](#postcss-cli1101)
+    * [purgecss@6.0.0](#purgecss600)
     * [pwstrength-bootstrap@3.1.3](#pwstrength-bootstrap313)
-    * [sortablejs@1.15.3](#sortablejs1153)
+    * [sortablejs@1.15.6](#sortablejs1156)
     * [spin.js@4.1.2](#spinjs412)
-    * [stylelint@16.9.0](#stylelint1690)
+    * [stylelint@16.18.0](#stylelint16180)
     * [stylelint-config-standard@36.0.1](#stylelint-config-standard3601)
     * [stylelint-config-standard-scss@13.1.0](#stylelint-config-standard-scss1310)
     * [stylelint-config-twbs-bootstrap@14.2.0](#stylelint-config-twbs-bootstrap1420)
-    * [sweetalert2@11.14.0](#sweetalert211140)
+    * [sweetalert2@11.19.1](#sweetalert211191)
     * [timeago@1.6.7](#timeago167)
     * [ts-node@10.9.2](#ts-node1092)
+    * [tsx@4.19.3](#tsx4193)
     * [underscore@1.13.7](#underscore1137)
   * [MIT No Attribution License](#mit-no-attribution-license-1)
     * [postcss-preset-env@9.6.0](#postcss-preset-env960)
+  * [Mozilla Public License 2.0 License](#mozilla-public-license-20-license-1)
+    * [@axe-core/playwright@4.10.1](#axe-coreplaywright4101)
   * [SIL OPEN FONT 1.1 LICENSE](#sil-open-font-11-license-1)
-    * [@fortawesome/fontawesome-free@6.6.0](#fortawesomefontawesome-free660-2)
+    * [@fortawesome/fontawesome-free@6.7.2](#fortawesomefontawesome-free672-2)
 
 ## Open Source License Types (Reference)
 
@@ -270,7 +279,7 @@ END OF TERMS AND CONDITIONS
 
 ### Attribution 4.0 International License
 
-The [Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode.txt) has the following terms:
+The [Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode.txt) has the following terms:
 
 ```text
 Attribution 4.0 International
@@ -752,6 +761,375 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
+### Mozilla Public License 2.0 License
+
+The [Mozilla Public License 2.0 License](https://creativecommons.org/licenses/by/4.0/legalcode.txt) has the following terms:
+
+```text
+Mozilla Public License, version 2.0
+
+1. Definitions
+
+1.1. "Contributor"
+
+     means each individual or legal entity that creates, contributes to the
+     creation of, or owns Covered Software.
+
+1.2. "Contributor Version"
+
+     means the combination of the Contributions of others (if any) used by a
+     Contributor and that particular Contributor's Contribution.
+
+1.3. "Contribution"
+
+     means Covered Software of a particular Contributor.
+
+1.4. "Covered Software"
+
+     means Source Code Form to which the initial Contributor has attached the
+     notice in Exhibit A, the Executable Form of such Source Code Form, and
+     Modifications of such Source Code Form, in each case including portions
+     thereof.
+
+1.5. "Incompatible With Secondary Licenses"
+     means
+
+     a. that the initial Contributor has attached the notice described in
+        Exhibit B to the Covered Software; or
+
+     b. that the Covered Software was made available under the terms of
+        version 1.1 or earlier of the License, but not also under the terms of
+        a Secondary License.
+
+1.6. "Executable Form"
+
+     means any form of the work other than Source Code Form.
+
+1.7. "Larger Work"
+
+     means a work that combines Covered Software with other material, in a
+     separate file or files, that is not Covered Software.
+
+1.8. "License"
+
+     means this document.
+
+1.9. "Licensable"
+
+     means having the right to grant, to the maximum extent possible, whether
+     at the time of the initial grant or subsequently, any and all of the
+     rights conveyed by this License.
+
+1.10. "Modifications"
+
+     means any of the following:
+
+     a. any file in Source Code Form that results from an addition to,
+        deletion from, or modification of the contents of Covered Software; or
+
+     b. any new file in Source Code Form that contains any Covered Software.
+
+1.11. "Patent Claims" of a Contributor
+
+      means any patent claim(s), including without limitation, method,
+      process, and apparatus claims, in any patent Licensable by such
+      Contributor that would be infringed, but for the grant of the License,
+      by the making, using, selling, offering for sale, having made, import,
+      or transfer of either its Contributions or its Contributor Version.
+
+1.12. "Secondary License"
+
+      means either the GNU General Public License, Version 2.0, the GNU Lesser
+      General Public License, Version 2.1, the GNU Affero General Public
+      License, Version 3.0, or any later versions of those licenses.
+
+1.13. "Source Code Form"
+
+      means the form of the work preferred for making modifications.
+
+1.14. "You" (or "Your")
+
+      means an individual or a legal entity exercising rights under this
+      License. For legal entities, "You" includes any entity that controls, is
+      controlled by, or is under common control with You. For purposes of this
+      definition, "control" means (a) the power, direct or indirect, to cause
+      the direction or management of such entity, whether by contract or
+      otherwise, or (b) ownership of more than fifty percent (50%) of the
+      outstanding shares or beneficial ownership of such entity.
+
+
+2. License Grants and Conditions
+
+2.1. Grants
+
+     Each Contributor hereby grants You a world-wide, royalty-free,
+     non-exclusive license:
+
+     a. under intellectual property rights (other than patent or trademark)
+        Licensable by such Contributor to use, reproduce, make available,
+        modify, display, perform, distribute, and otherwise exploit its
+        Contributions, either on an unmodified basis, with Modifications, or
+        as part of a Larger Work; and
+
+     b. under Patent Claims of such Contributor to make, use, sell, offer for
+        sale, have made, import, and otherwise transfer either its
+        Contributions or its Contributor Version.
+
+2.2. Effective Date
+
+     The licenses granted in Section 2.1 with respect to any Contribution
+     become effective for each Contribution on the date the Contributor first
+     distributes such Contribution.
+
+2.3. Limitations on Grant Scope
+
+     The licenses granted in this Section 2 are the only rights granted under
+     this License. No additional rights or licenses will be implied from the
+     distribution or licensing of Covered Software under this License.
+     Notwithstanding Section 2.1(b) above, no patent license is granted by a
+     Contributor:
+
+     a. for any code that a Contributor has removed from Covered Software; or
+
+     b. for infringements caused by: (i) Your and any other third party's
+        modifications of Covered Software, or (ii) the combination of its
+        Contributions with other software (except as part of its Contributor
+        Version); or
+
+     c. under Patent Claims infringed by Covered Software in the absence of
+        its Contributions.
+
+     This License does not grant any rights in the trademarks, service marks,
+     or logos of any Contributor (except as may be necessary to comply with
+     the notice requirements in Section 3.4).
+
+2.4. Subsequent Licenses
+
+     No Contributor makes additional grants as a result of Your choice to
+     distribute the Covered Software under a subsequent version of this
+     License (see Section 10.2) or under the terms of a Secondary License (if
+     permitted under the terms of Section 3.3).
+
+2.5. Representation
+
+     Each Contributor represents that the Contributor believes its
+     Contributions are its original creation(s) or it has sufficient rights to
+     grant the rights to its Contributions conveyed by this License.
+
+2.6. Fair Use
+
+     This License is not intended to limit any rights You have under
+     applicable copyright doctrines of fair use, fair dealing, or other
+     equivalents.
+
+2.7. Conditions
+
+     Sections 3.1, 3.2, 3.3, and 3.4 are conditions of the licenses granted in
+     Section 2.1.
+
+
+3. Responsibilities
+
+3.1. Distribution of Source Form
+
+     All distribution of Covered Software in Source Code Form, including any
+     Modifications that You create or to which You contribute, must be under
+     the terms of this License. You must inform recipients that the Source
+     Code Form of the Covered Software is governed by the terms of this
+     License, and how they can obtain a copy of this License. You may not
+     attempt to alter or restrict the recipients' rights in the Source Code
+     Form.
+
+3.2. Distribution of Executable Form
+
+     If You distribute Covered Software in Executable Form then:
+
+     a. such Covered Software must also be made available in Source Code Form,
+        as described in Section 3.1, and You must inform recipients of the
+        Executable Form how they can obtain a copy of such Source Code Form by
+        reasonable means in a timely manner, at a charge no more than the cost
+        of distribution to the recipient; and
+
+     b. You may distribute such Executable Form under the terms of this
+        License, or sublicense it under different terms, provided that the
+        license for the Executable Form does not attempt to limit or alter the
+        recipients' rights in the Source Code Form under this License.
+
+3.3. Distribution of a Larger Work
+
+     You may create and distribute a Larger Work under terms of Your choice,
+     provided that You also comply with the requirements of this License for
+     the Covered Software. If the Larger Work is a combination of Covered
+     Software with a work governed by one or more Secondary Licenses, and the
+     Covered Software is not Incompatible With Secondary Licenses, this
+     License permits You to additionally distribute such Covered Software
+     under the terms of such Secondary License(s), so that the recipient of
+     the Larger Work may, at their option, further distribute the Covered
+     Software under the terms of either this License or such Secondary
+     License(s).
+
+3.4. Notices
+
+     You may not remove or alter the substance of any license notices
+     (including copyright notices, patent notices, disclaimers of warranty, or
+     limitations of liability) contained within the Source Code Form of the
+     Covered Software, except that You may alter any license notices to the
+     extent required to remedy known factual inaccuracies.
+
+3.5. Application of Additional Terms
+
+     You may choose to offer, and to charge a fee for, warranty, support,
+     indemnity or liability obligations to one or more recipients of Covered
+     Software. However, You may do so only on Your own behalf, and not on
+     behalf of any Contributor. You must make it absolutely clear that any
+     such warranty, support, indemnity, or liability obligation is offered by
+     You alone, and You hereby agree to indemnify every Contributor for any
+     liability incurred by such Contributor as a result of warranty, support,
+     indemnity or liability terms You offer. You may include additional
+     disclaimers of warranty and limitations of liability specific to any
+     jurisdiction.
+
+4. Inability to Comply Due to Statute or Regulation
+
+   If it is impossible for You to comply with any of the terms of this License
+   with respect to some or all of the Covered Software due to statute,
+   judicial order, or regulation then You must: (a) comply with the terms of
+   this License to the maximum extent possible; and (b) describe the
+   limitations and the code they affect. Such description must be placed in a
+   text file included with all distributions of the Covered Software under
+   this License. Except to the extent prohibited by statute or regulation,
+   such description must be sufficiently detailed for a recipient of ordinary
+   skill to be able to understand it.
+
+5. Termination
+
+5.1. The rights granted under this License will terminate automatically if You
+     fail to comply with any of its terms. However, if You become compliant,
+     then the rights granted under this License from a particular Contributor
+     are reinstated (a) provisionally, unless and until such Contributor
+     explicitly and finally terminates Your grants, and (b) on an ongoing
+     basis, if such Contributor fails to notify You of the non-compliance by
+     some reasonable means prior to 60 days after You have come back into
+     compliance. Moreover, Your grants from a particular Contributor are
+     reinstated on an ongoing basis if such Contributor notifies You of the
+     non-compliance by some reasonable means, this is the first time You have
+     received notice of non-compliance with this License from such
+     Contributor, and You become compliant prior to 30 days after Your receipt
+     of the notice.
+
+5.2. If You initiate litigation against any entity by asserting a patent
+     infringement claim (excluding declaratory judgment actions,
+     counter-claims, and cross-claims) alleging that a Contributor Version
+     directly or indirectly infringes any patent, then the rights granted to
+     You by any and all Contributors for the Covered Software under Section
+     2.1 of this License shall terminate.
+
+5.3. In the event of termination under Sections 5.1 or 5.2 above, all end user
+     license agreements (excluding distributors and resellers) which have been
+     validly granted by You or Your distributors under this License prior to
+     termination shall survive termination.
+
+6. Disclaimer of Warranty
+
+   Covered Software is provided under this License on an "as is" basis,
+   without warranty of any kind, either expressed, implied, or statutory,
+   including, without limitation, warranties that the Covered Software is free
+   of defects, merchantable, fit for a particular purpose or non-infringing.
+   The entire risk as to the quality and performance of the Covered Software
+   is with You. Should any Covered Software prove defective in any respect,
+   You (not any Contributor) assume the cost of any necessary servicing,
+   repair, or correction. This disclaimer of warranty constitutes an essential
+   part of this License. No use of  any Covered Software is authorized under
+   this License except under this disclaimer.
+
+7. Limitation of Liability
+
+   Under no circumstances and under no legal theory, whether tort (including
+   negligence), contract, or otherwise, shall any Contributor, or anyone who
+   distributes Covered Software as permitted above, be liable to You for any
+   direct, indirect, special, incidental, or consequential damages of any
+   character including, without limitation, damages for lost profits, loss of
+   goodwill, work stoppage, computer failure or malfunction, or any and all
+   other commercial damages or losses, even if such party shall have been
+   informed of the possibility of such damages. This limitation of liability
+   shall not apply to liability for death or personal injury resulting from
+   such party's negligence to the extent applicable law prohibits such
+   limitation. Some jurisdictions do not allow the exclusion or limitation of
+   incidental or consequential damages, so this exclusion and limitation may
+   not apply to You.
+
+8. Litigation
+
+   Any litigation relating to this License may be brought only in the courts
+   of a jurisdiction where the defendant maintains its principal place of
+   business and such litigation shall be governed by laws of that
+   jurisdiction, without reference to its conflict-of-law provisions. Nothing
+   in this Section shall prevent a party's ability to bring cross-claims or
+   counter-claims.
+
+9. Miscellaneous
+
+   This License represents the complete agreement concerning the subject
+   matter hereof. If any provision of this License is held to be
+   unenforceable, such provision shall be reformed only to the extent
+   necessary to make it enforceable. Any law or regulation which provides that
+   the language of a contract shall be construed against the drafter shall not
+   be used to construe this License against a Contributor.
+
+
+10. Versions of the License
+
+10.1. New Versions
+
+      Mozilla Foundation is the license steward. Except as provided in Section
+      10.3, no one other than the license steward has the right to modify or
+      publish new versions of this License. Each version will be given a
+      distinguishing version number.
+
+10.2. Effect of New Versions
+
+      You may distribute the Covered Software under the terms of the version
+      of the License under which You originally received the Covered Software,
+      or under the terms of any subsequent version published by the license
+      steward.
+
+10.3. Modified Versions
+
+      If you create software not governed by this License, and you want to
+      create a new license for such software, you may create and use a
+      modified version of this License if you rename the license and remove
+      any references to the name of the license steward (except to note that
+      such modified license differs from this License).
+
+10.4. Distributing Source Code Form that is Incompatible With Secondary
+      Licenses If You choose to distribute Source Code Form that is
+      Incompatible With Secondary Licenses under the terms of this version of
+      the License, the notice described in Exhibit B of this License must be
+      attached.
+
+Exhibit A - Source Code Form License Notice
+
+      This Source Code Form is subject to the
+      terms of the Mozilla Public License, v.
+      2.0. If a copy of the MPL was not
+      distributed with this file, You can
+      obtain one at
+      http://mozilla.org/MPL/2.0/.
+
+If it is not possible or desirable to put the notice in a particular file,
+then You may include the notice in a location (such as a LICENSE file in a
+relevant directory) where a recipient would be likely to look for such a
+notice.
+
+You may add additional accurate notices of copyright ownership.
+
+Exhibit B - "Incompatible With Secondary Licenses" Notice
+
+      This Source Code Form is "Incompatible
+      With Secondary Licenses", as defined by
+      the Mozilla Public License, v. 2.0.
+```
+
 ### SIL OPEN FONT 1.1 LICENSE
 
 The [SIL OPEN FONT 1.1 LICENSE](https://opensource.org/license/ofl-1-1) has the following terms:
@@ -808,25 +1186,29 @@ Chocolatey Open Source components fall under the [Apache v2.0 license](https://w
 https://www.apache.org/licenses/LICENSE-2.0
 ```
 
-* [choco-theme](https://github.com/chocolatey/choco-theme) - [License terms](https://github.com/chocolatey/choco-theme/blob/5cb195e1aa0eb5ca8d736e29c179515d8980b310/LICENSE)
+* [choco-theme](https://github.com/chocolatey/choco-theme) - [License terms](https://github.com/chocolatey/choco-theme/blob/f840b0d61e27d352fab6611c12f891dc4d6e4f7d/LICENSE)
 
 ## choco-theme
 
 ### Apache v2.0 License
 
-#### @playwright/test@1.47.0
+#### @playwright/test@1.52.0
 
-[@playwright/test](https://github.com/microsoft/playwright) - [License terms.](https://github.com/microsoft/playwright/blob/d5943def35edadc6f9bd8daeed382559d2a55fbe/LICENSE)
+[@playwright/test](https://github.com/microsoft/playwright) - [License terms.](https://github.com/microsoft/playwright/blob/471930b1ceae03c9e66e0eb80c1364a1a788e7db/LICENSE)
 
-#### typescript@5.6.2
+#### fuse.js@7.1.0
 
-[typescript](https://github.com/microsoft/TypeScript) - [License terms.](https://github.com/microsoft/TypeScript/blob/a7e3374f13327483fbe94e32806d65785b0b6cda/LICENSE.txt)
+[fuse.js](https://github.com/krisk/Fuse) - [License terms.](https://github.com/krisk/Fuse/blob/8119c18862f7df585688b1320ff307eb19f8ff89/LICENSE)
+
+#### typescript@5.8.3
+
+[typescript](https://github.com/microsoft/TypeScript) - [License terms.](https://github.com/microsoft/TypeScript/blob/83dc0bb2ed91fe0815ab28dc3ff95fae7425e413/LICENSE.txt)
 
 ### Attribution 4.0 International License
 
-#### @fortawesome/fontawesome-free@6.6.0
+#### @fortawesome/fontawesome-free@6.7.2
 
-[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/37eff7fa00de26db41183a3ad8ed0e9119fbc44b/LICENSE.txt)
+[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/af620534bfc3c2d4cbefcfeec29603bbe7809e64/LICENSE.txt)
 
 ### BSD-2-Clause License
 
@@ -850,13 +1232,21 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 ### MIT License
 
-#### @eonasdan/tempus-dominus@6.9.11
+#### @eonasdan/tempus-dominus@6.10.3
 
-[@eonasdan/tempus-dominus](https://github.com/Eonasdan/tempus-dominus) - [License terms.](https://github.com/Eonasdan/tempus-dominus/blob/9f3dcd2194b8c35d72276f9021065887c2045bbb/LICENSE)
+[@eonasdan/tempus-dominus](https://github.com/Eonasdan/tempus-dominus) - [License terms.](https://github.com/Eonasdan/tempus-dominus/blob/63c1edb612f191912864f4070620a625d0ddadec/LICENSE)
 
-#### @fortawesome/fontawesome-free@6.6.0
+#### @eslint/eslintrc@3.3.1
 
-[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/37eff7fa00de26db41183a3ad8ed0e9119fbc44b/LICENSE.txt)
+[@eslint/eslintrc](https://github.com/eslint/eslintrc) - [License terms.](https://github.com/eslint/eslintrc/blob/556e80029f01d07758ab1f5801bc9421bca4b072/LICENSE)
+
+#### @eslint/js@9.25.1
+
+[@eslint/js](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/3ed4b3652d9fe3dfa4017d22a6ddbd15e3c6cd7a/LICENSE)
+
+#### @fortawesome/fontawesome-free@6.7.2
+
+[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/af620534bfc3c2d4cbefcfeec29603bbe7809e64/LICENSE.txt)
 
 #### @microsoft/signalr@8.0.7
 
@@ -866,21 +1256,25 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@types/bootstrap](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/bootstrap) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/451dc8fc19383bc12af59522020e571957f1684e/LICENSE)
 
-#### @types/luxon@3.4.2
+#### @types/luxon@3.6.2
 
-[@types/luxon](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/luxon) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/c05287df0dcc0ce2d0096df62e1a12e12c5f8e82/LICENSE)
+[@types/luxon](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/luxon) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/f16051d13fd3f5c6e5a00f37d9c9e6ced225ea72/LICENSE)
 
-#### @types/node@20.16.5
+#### @types/node@20.17.30
 
-[@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/4b49cac49912d6036a706ab6675c6c93751de00c/LICENSE)
+[@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/ab6216cd4fb4c8e7f400937ed287bd78d88e6ecd/LICENSE)
 
 #### @typescript-eslint/eslint-plugin@7.18.0
 
 [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint) - [License terms.](https://github.com/typescript-eslint/typescript-eslint/blob/35cf3d2b2b9611c3812b120c461d863c7881ac04/LICENSE)
 
-#### abp-web-resources@5.9.2
+#### abp-web-resources@5.9.3
 
-[abp-web-resources](https://github.com/aspnetboilerplate/bower-abp-resources) - [License terms.](https://github.com/aspnetboilerplate/bower-abp-resources/blob/30251a651c7e4c3371e75810d2493b69b3123e3e/LICENSE)
+[abp-web-resources](https://github.com/aspnetboilerplate/bower-abp-resources) - [License terms.](https://github.com/aspnetboilerplate/bower-abp-resources/blob/77305bc69ff614ea202c6b46f8b482c2aebf45ae/LICENSE)
+
+#### axe-html-reporter@2.2.11
+
+[axe-html-reporter](https://github.com/lpelypenko/axe-html-reporter) - [License terms.](https://github.com/lpelypenko/axe-html-reporter/blob/0f6b7832690708716b40a7113f1b7c8561cdefba/LICENSE)
 
 #### block-ui@2.70.1
 
@@ -906,41 +1300,45 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [cssnano](https://github.com/cssnano/cssnano) - [License terms.](https://github.com/cssnano/cssnano/blob/760ba29a4255c6a4ad39e2dfba1b15ab72d9c382/LICENSE-MIT)
 
-#### datatables.net-bs5@2.1.6
+#### datatables.net-bs5@2.2.2
 
-[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/1bf2e518974b9d8774ff0e761895f10c4183728c/License.txt)
+[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/296f9e8d155b2a6656452711b401889c6e2c32f5/License.txt)
 
-#### datatables.net-dt@2.1.6
+#### datatables.net-dt@2.2.2
 
-[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/8526883d9402b6ff77bb6da4d6f6053ffce19dbd/License.txt)
+[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/b90fd31f6b4a1907c7271d8386a93d2afc76afd8/License.txt)
 
-#### esbuild@0.20.2
+#### esbuild@0.25.2
 
-[esbuild](https://github.com/evanw/esbuild) - [License terms.](https://github.com/evanw/esbuild/blob/617eddaa32b7649ad23ddd15257816df3f0f544c/LICENSE.md)
+[esbuild](https://github.com/evanw/esbuild) - [License terms.](https://github.com/evanw/esbuild/blob/4475787eef4c4923b92b9fa37ebba1c88b9e1d9b/LICENSE.md)
 
-#### eslint@8.57.0
+#### eslint@9.25.1
 
-[eslint](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/abea3b6f399fde9e28cf6dc5d6c013938f163cdc/LICENSE)
+[eslint](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/3ed4b3652d9fe3dfa4017d22a6ddbd15e3c6cd7a/LICENSE)
 
 #### eslint-config-standard@17.1.0
 
 [eslint-config-standard](https://github.com/standard/eslint-config-standard) - [License terms.](https://github.com/standard/eslint-config-standard/blob/7d01bbc373bf3bb7374b698323032077ad05f6b1/LICENSE)
 
-#### eslint-plugin-import@2.30.0
+#### eslint-plugin-import@2.31.0
 
-[eslint-plugin-import](https://github.com/import-js/eslint-plugin-import) - [License terms.](https://github.com/import-js/eslint-plugin-import/blob/18787d3e6966028983af81a878d1a505893932d4/LICENSE)
+[eslint-plugin-import](https://github.com/import-js/eslint-plugin-import) - [License terms.](https://github.com/import-js/eslint-plugin-import/blob/91f809b28323bfbd27749bae84daed00511b07e5/LICENSE)
 
 #### eslint-plugin-n@16.6.2
 
 [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n) - [License terms.](https://github.com/eslint-community/eslint-plugin-n/blob/ec5badbca03b8e88c594757e4d5c391370727892/LICENSE)
 
-#### eslint-plugin-playwright@1.6.2
+#### eslint-plugin-playwright@1.8.3
 
-[eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright) - [License terms.](https://github.com/playwright-community/eslint-plugin-playwright/blob/d894de6471c5ea22ab4b42d5e9b2d16f62adf87d/LICENSE)
+[eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright) - [License terms.](https://github.com/playwright-community/eslint-plugin-playwright/blob/591692d0664b19adfbd1e9f3e39905e639b5ff1e/LICENSE)
 
 #### flatpickr@4.6.13
 
 [flatpickr](https://github.com/chmln/flatpickr) - [License terms.](https://github.com/chmln/flatpickr/blob/82df19a8a595bb9c008da93b30f241c4155fa058/LICENSE.md)
+
+#### globals@15.15.0
+
+[globals](https://github.com/sindresorhus/globals) - [License terms.](https://github.com/sindresorhus/globals/blob/8a43ab65056483c0248c7be3a69fdb2866d859a2/license)
 
 #### jquery@3.7.1
 
@@ -958,9 +1356,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [jstree](https://github.com/vakata/jstree) - [License terms.](https://github.com/vakata/jstree/blob/6256df013ebd98aea138402d8ac96db3efe0c0da/LICENSE-MIT)
 
-#### luxon@3.5.0
+#### luxon@3.6.1
 
-[luxon](https://github.com/moment/luxon) - [License terms.](https://github.com/moment/luxon/blob/a4044fe60eaae88d2397069eb43f018491a6a698/LICENSE.md)
+[luxon](https://github.com/moment/luxon) - [License terms.](https://github.com/moment/luxon/blob/93c85a384853a728184e5820d1a75e84383b1e82/LICENSE.md)
 
 #### marked@12.0.2
 
@@ -970,45 +1368,45 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [moment](https://github.com/moment/moment) - [License terms.](https://github.com/moment/moment/blob/485d9a7d709bd5f3869a7ad24630cf0746d072dc/LICENSE)
 
-#### moment-timezone@0.5.45
+#### moment-timezone@0.5.48
 
-[moment-timezone](https://github.com/moment/moment-timezone) - [License terms.](https://github.com/moment/moment-timezone/blob/16157c7521ab525b256c5e73f1435fb1fc313939/LICENSE)
+[moment-timezone](https://github.com/moment/moment-timezone) - [License terms.](https://github.com/moment/moment-timezone/blob/fcec4545800e8980a956acb2f443b0f16d9cdb16/LICENSE)
 
 #### mustache@4.2.0
 
 [mustache](https://github.com/janl/mustache.js) - [License terms.](https://github.com/janl/mustache.js/blob/bd29972ab8a0f4c592f35483615ab9a274396300/LICENSE)
 
-#### npm-run-all2@6.2.2
+#### npm-run-all2@6.2.6
 
-[npm-run-all2](https://github.com/bcomnes/npm-run-all2) - [License terms.](https://github.com/bcomnes/npm-run-all2/blob/bac3905b1ed55caa4405cae76589ec89808486e0/LICENSE)
+[npm-run-all2](https://github.com/bcomnes/npm-run-all2) - [License terms.](https://github.com/bcomnes/npm-run-all2/blob/67a6356a185f6ca5b4a39d88613c8aa491c648c0/LICENSE)
 
-#### postcss@8.4.45
+#### postcss@8.5.3
 
-[postcss](https://github.com/postcss/postcss) - [License terms.](https://github.com/postcss/postcss/blob/448c4f34d6540181e8ceb499dd9ffe4518356d1c/LICENSE)
+[postcss](https://github.com/postcss/postcss) - [License terms.](https://github.com/postcss/postcss/blob/22c309d32924e1eeb33c80a6a50b7ba8a43a1832/LICENSE)
 
-#### postcss-cli@11.0.0
+#### postcss-cli@11.0.1
 
-[postcss-cli](https://github.com/postcss/postcss-cli) - [License terms.](https://github.com/postcss/postcss-cli/blob/ac801f1f91e22fc36a25af5fc2c36266d3f0c75d/LICENSE)
+[postcss-cli](https://github.com/postcss/postcss-cli) - [License terms.](https://github.com/postcss/postcss-cli/blob/7bea18069b334b0d537d5c772ce20b1637c7e5d6/LICENSE)
 
-#### purgecss@5.0.0
+#### purgecss@6.0.0
 
-[purgecss](https://github.com/FullHuman/purgecss) - [License terms.](https://github.com/FullHuman/purgecss/blob/3b9873472c260504ceef9ea9815495ec945db181/LICENSE)
+[purgecss](https://github.com/FullHuman/purgecss) - [License terms.](https://github.com/FullHuman/purgecss/blob/152ccba46e781902f302b7adca1788a6909e9569/LICENSE)
 
 #### pwstrength-bootstrap@3.1.3
 
 [pwstrength-bootstrap](https://github.com/ablanco/jquery.pwstrength.bootstrap) - [License terms.](https://github.com/ablanco/jquery.pwstrength.bootstrap/blob/7dd598f7088bff1146c4e040eff217f37aee600f/MIT-LICENSE.txt)
 
-#### sortablejs@1.15.3
+#### sortablejs@1.15.6
 
-[sortablejs](https://github.com/SortableJS/Sortable) - [License terms.](https://github.com/SortableJS/Sortable/blob/dcb8f9e85b972292db1e0cab2ff9d7cd359ff352/LICENSE)
+[sortablejs](https://github.com/SortableJS/Sortable) - [License terms.](https://github.com/SortableJS/Sortable/blob/63ecb31937d19fcb30aa924e82ee8a769ef34492/LICENSE)
 
 #### spin.js@4.1.2
 
 [spin.js](https://github.com/fgnass/spin.js) - [License terms.](https://github.com/fgnass/spin.js/blob/653e79c5ef1f068e5a1a31da5b79b6d1e1b1674d/LICENSE.md)
 
-#### stylelint@16.9.0
+#### stylelint@16.18.0
 
-[stylelint](https://github.com/stylelint/stylelint) - [License terms.](https://github.com/stylelint/stylelint/blob/94c3d936e9999782297392494f81ae52fcd354f9/LICENSE)
+[stylelint](https://github.com/stylelint/stylelint) - [License terms.](https://github.com/stylelint/stylelint/blob/1cc5e8b33ba97c816d40e4b330aa8073d07ca124/LICENSE)
 
 #### stylelint-config-standard@36.0.1
 
@@ -1022,9 +1420,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [stylelint-config-twbs-bootstrap](https://github.com/twbs/stylelint-config-twbs-bootstrap) - [License terms.](https://github.com/twbs/stylelint-config-twbs-bootstrap/blob/cf7718c37234a44312b2aba39077ca152287b10e/LICENSE)
 
-#### sweetalert2@11.14.0
+#### sweetalert2@11.19.1
 
-[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/76f2afd81a6195ae73d0cd66e477378f7bca293a/LICENSE)
+[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/14582d912a0852d435deffe8e87121981355919e/LICENSE)
 
 #### timeago@1.6.7
 
@@ -1033,6 +1431,10 @@ https://www.apache.org/licenses/LICENSE-2.0
 #### ts-node@10.9.2
 
 [ts-node](https://github.com/TypeStrong/ts-node) - [License terms.](https://github.com/TypeStrong/ts-node/blob/057ac1beb118f9c42d21e876a17320ad73ea6be2/LICENSE)
+
+#### tsx@4.19.3
+
+[tsx](https://github.com/privatenumber/tsx) - [License terms.](https://github.com/privatenumber/tsx/blob/e04e6c6ccb56f74db5036c358d6c6b24bebe6319/LICENSE)
 
 #### underscore@1.13.7
 
@@ -1044,8 +1446,14 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env) - [License terms.](https://github.com/csstools/postcss-plugins/blob/5d45f917601848f9d41f23424de4a98133e5bc2b/LICENSE.md)
 
+### Mozilla Public License 2.0 License
+
+#### @axe-core/playwright@4.10.1
+
+[@axe-core/playwright](https://github.com/dequelabs/axe-core-npm) - [License terms.](https://github.com/dequelabs/axe-core-npm/blob/b4f5cc4283708c14c9529a9280a530db40f3c7ce/LICENSE)
+
 ### SIL OPEN FONT 1.1 LICENSE
 
-#### @fortawesome/fontawesome-free@6.6.0
+#### @fortawesome/fontawesome-free@6.7.2
 
-[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/37eff7fa00de26db41183a3ad8ed0e9119fbc44b/LICENSE.txt)
+[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/af620534bfc3c2d4cbefcfeec29603bbe7809e64/LICENSE.txt)
