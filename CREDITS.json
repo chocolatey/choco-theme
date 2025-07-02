@@ -1,0 +1,611 @@
+{
+    "name": "choco-theme",
+    "isPrivate": false,
+    "link": "https://github.com/chocolatey/choco-theme",
+    "licenseLink": "https://github.com/chocolatey/choco-theme/blob/5cb195e1aa0eb5ca8d736e29c179515d8980b310/LICENSE",
+    "version": "0.8.0",
+    "dependencies": [
+        {
+            "name": "@eonasdan/tempus-dominus",
+            "link": "https://github.com/Eonasdan/tempus-dominus",
+            "version": "6.9.11",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/Eonasdan/tempus-dominus/blob/9f3dcd2194b8c35d72276f9021065887c2045bbb/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "@fortawesome/fontawesome-free",
+            "link": "https://github.com/FortAwesome/Font-Awesome",
+            "version": "6.6.0",
+            "licenses": [
+                {
+                    "type": "CC-BY-4.0",
+                    "link": "https://github.com/FortAwesome/Font-Awesome/blob/37eff7fa00de26db41183a3ad8ed0e9119fbc44b/LICENSE.txt"
+                },
+                {
+                    "type": "OFL-1.1",
+                    "link": "https://github.com/FortAwesome/Font-Awesome/blob/37eff7fa00de26db41183a3ad8ed0e9119fbc44b/LICENSE.txt"
+                },
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/FortAwesome/Font-Awesome/blob/37eff7fa00de26db41183a3ad8ed0e9119fbc44b/LICENSE.txt"
+                }
+            ]
+        },
+        {
+            "name": "@microsoft/signalr",
+            "link": "https://github.com/dotnet/aspnetcore",
+            "version": "8.0.7",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/dotnet/aspnetcore/blob/2f1db20456007c9515068a35a65afdf99af70bc6/LICENSE.txt"
+                }
+            ]
+        },
+        {
+            "name": "@playwright/test",
+            "link": "https://github.com/microsoft/playwright",
+            "version": "1.47.0",
+            "licenses": [
+                {
+                    "type": "Apache-2.0",
+                    "link": "https://github.com/microsoft/playwright/blob/d5943def35edadc6f9bd8daeed382559d2a55fbe/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "@types/bootstrap",
+            "link": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/bootstrap",
+            "version": "5.2.10",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/451dc8fc19383bc12af59522020e571957f1684e/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "@types/luxon",
+            "link": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/luxon",
+            "version": "3.4.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/c05287df0dcc0ce2d0096df62e1a12e12c5f8e82/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "@types/node",
+            "link": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node",
+            "version": "20.16.5",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/4b49cac49912d6036a706ab6675c6c93751de00c/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "@typescript-eslint/eslint-plugin",
+            "link": "https://github.com/typescript-eslint/typescript-eslint",
+            "version": "7.18.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/typescript-eslint/typescript-eslint/blob/35cf3d2b2b9611c3812b120c461d863c7881ac04/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "@typescript-eslint/parser",
+            "link": "https://github.com/typescript-eslint/typescript-eslint",
+            "version": "7.18.0",
+            "licenses": [
+                {
+                    "type": "BSD-2-Clause",
+                    "link": "https://github.com/typescript-eslint/typescript-eslint/blob/35cf3d2b2b9611c3812b120c461d863c7881ac04/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "abp-web-resources",
+            "link": "https://github.com/aspnetboilerplate/bower-abp-resources",
+            "version": "5.9.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/aspnetboilerplate/bower-abp-resources/blob/30251a651c7e4c3371e75810d2493b69b3123e3e/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "block-ui",
+            "link": "https://github.com/malsup/blockui",
+            "version": "2.70.1",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://malsup.github.io/mit-license.txt"
+                }
+            ]
+        },
+        {
+            "name": "bootstrap",
+            "link": "https://github.com/twbs/bootstrap",
+            "version": "5.3.3",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/twbs/bootstrap/blob/6e1f75f420f68e1d52733b8e407fc7c3766c9dba/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "chartist",
+            "link": "https://github.com/gionkunz/chartist-js",
+            "version": "0.11.4",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/gionkunz/chartist-js/blob/c55b2c129c3fc4e447bbea2f3bbe2b3246fd9eb9/LICENSE-MIT"
+                }
+            ]
+        },
+        {
+            "name": "chartist-plugin-legend",
+            "link": "https://github.com/CodeYellowBV/chartist-plugin-legend",
+            "version": "0.6.2",
+            "licenses": [
+                {
+                    "type": "ISC",
+                    "link": "https://github.com/CodeYellowBV/chartist-plugin-legend/blob/4e86f4352b0a3041f3a36c487499b1bec1108e56/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "clipboard",
+            "link": "https://github.com/zenorocha/clipboard.js",
+            "version": "2.0.11",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/zenorocha/clipboard.js/blob/2b2f9eef6fd1cf951612740e16e422db2848c00a/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "cropperjs",
+            "link": "https://github.com/fengyuanchen/cropperjs",
+            "version": "1.6.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/fengyuanchen/cropperjs/blob/da3f6f7d4b9c29c7234ddf114c71a27a269855f0/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "cssnano",
+            "link": "https://github.com/cssnano/cssnano",
+            "version": "cssnano@6.1.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/cssnano/cssnano/blob/760ba29a4255c6a4ad39e2dfba1b15ab72d9c382/LICENSE-MIT"
+                }
+            ]
+        },
+        {
+            "name": "datatables.net-bs5",
+            "link": "https://github.com/DataTables/Dist-DataTables-Bootstrap5",
+            "version": "2.1.6",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/1bf2e518974b9d8774ff0e761895f10c4183728c/License.txt"
+                }
+            ]
+        },
+        {
+            "name": "datatables.net-dt",
+            "link": "https://github.com/DataTables/Dist-DataTables-DataTables",
+            "version": "2.1.6",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/DataTables/Dist-DataTables-DataTables/blob/8526883d9402b6ff77bb6da4d6f6053ffce19dbd/License.txt"
+                }
+            ]
+        },
+        {
+            "name": "esbuild",
+            "link": "https://github.com/evanw/esbuild",
+            "version": "0.20.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/evanw/esbuild/blob/617eddaa32b7649ad23ddd15257816df3f0f544c/LICENSE.md"
+                }
+            ]
+        },
+        {
+            "name": "eslint",
+            "link": "https://github.com/eslint/eslint",
+            "version": "8.57.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/eslint/eslint/blob/abea3b6f399fde9e28cf6dc5d6c013938f163cdc/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "eslint-config-standard",
+            "link": "https://github.com/standard/eslint-config-standard",
+            "version": "17.1.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/standard/eslint-config-standard/blob/7d01bbc373bf3bb7374b698323032077ad05f6b1/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "eslint-plugin-import",
+            "link": "https://github.com/import-js/eslint-plugin-import",
+            "version": "2.30.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/import-js/eslint-plugin-import/blob/18787d3e6966028983af81a878d1a505893932d4/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "eslint-plugin-n",
+            "link": "https://github.com/eslint-community/eslint-plugin-n",
+            "version": "16.6.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/eslint-community/eslint-plugin-n/blob/ec5badbca03b8e88c594757e4d5c391370727892/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "eslint-plugin-playwright",
+            "link": "https://github.com/playwright-community/eslint-plugin-playwright",
+            "version": "1.6.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/playwright-community/eslint-plugin-playwright/blob/d894de6471c5ea22ab4b42d5e9b2d16f62adf87d/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "eslint-plugin-promise",
+            "link": "https://github.com/eslint-community/eslint-plugin-promise",
+            "version": "6.6.0",
+            "licenses": [
+                {
+                    "type": "ISC",
+                    "link": "https://github.com/eslint-community/eslint-plugin-promise/blob/fa482cc1134f5669b2dd9f56ea2ef9e96c3c30a0/LICENSE.md"
+                }
+            ]
+        },
+        {
+            "name": "flatpickr",
+            "link": "https://github.com/chmln/flatpickr",
+            "version": "4.6.13",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/chmln/flatpickr/blob/82df19a8a595bb9c008da93b30f241c4155fa058/LICENSE.md"
+                }
+            ]
+        },
+        {
+            "name": "jquery",
+            "link": "https://github.com/jquery/jquery",
+            "version": "3.7.1",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/jquery/jquery/blob/f79d5f1a337528940ab7029d4f8bbba72326f269/LICENSE.txt"
+                }
+            ]
+        },
+        {
+            "name": "jquery-serializejson",
+            "link": "https://github.com/marioizquierdo/jquery.serializeJSON",
+            "version": "3.2.1",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/marioizquierdo/jquery.serializeJSON/blob/54b151140878253ab1a2a1f5c6a40e0e56d63af7/LICENSE.txt"
+                }
+            ]
+        },
+        {
+            "name": "jquery-validation",
+            "link": "https://github.com/jquery-validation/jquery-validation",
+            "version": "1.21.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/jquery-validation/jquery-validation/blob/b4f8d54633adb224457790d2bd48673d0cd984b4/LICENSE.md"
+                }
+            ]
+        },
+        {
+            "name": "jstree",
+            "link": "https://github.com/vakata/jstree",
+            "version": "3.3.17",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/vakata/jstree/blob/6256df013ebd98aea138402d8ac96db3efe0c0da/LICENSE-MIT"
+                }
+            ]
+        },
+        {
+            "name": "luxon",
+            "link": "https://github.com/moment/luxon",
+            "version": "3.5.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/moment/luxon/blob/a4044fe60eaae88d2397069eb43f018491a6a698/LICENSE.md"
+                }
+            ]
+        },
+        {
+            "name": "marked",
+            "link": "https://github.com/markedjs/marked",
+            "version": "12.0.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/markedjs/marked/blob/c6a98ea66c36d12255543e2fabd8f8236dbc5276/LICENSE.md"
+                }
+            ]
+        },
+        {
+            "name": "moment",
+            "link": "https://github.com/moment/moment",
+            "version": "2.30.1",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/moment/moment/blob/485d9a7d709bd5f3869a7ad24630cf0746d072dc/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "moment-timezone",
+            "link": "https://github.com/moment/moment-timezone",
+            "version": "0.5.45",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/moment/moment-timezone/blob/16157c7521ab525b256c5e73f1435fb1fc313939/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "mustache",
+            "link": "https://github.com/janl/mustache.js",
+            "version": "4.2.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/janl/mustache.js/blob/bd29972ab8a0f4c592f35483615ab9a274396300/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "npm-run-all2",
+            "link": "https://github.com/bcomnes/npm-run-all2",
+            "version": "6.2.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/bcomnes/npm-run-all2/blob/bac3905b1ed55caa4405cae76589ec89808486e0/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "postcss",
+            "link": "https://github.com/postcss/postcss",
+            "version": "8.4.45",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/postcss/postcss/blob/448c4f34d6540181e8ceb499dd9ffe4518356d1c/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "postcss-cli",
+            "link": "https://github.com/postcss/postcss-cli",
+            "version": "11.0.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/postcss/postcss-cli/blob/ac801f1f91e22fc36a25af5fc2c36266d3f0c75d/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "postcss-preset-env",
+            "link": "https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env",
+            "version": "9.6.0",
+            "licenses": [
+                {
+                    "type": "MIT-0",
+                    "link": "https://github.com/csstools/postcss-plugins/blob/5d45f917601848f9d41f23424de4a98133e5bc2b/LICENSE.md"
+                }
+            ]
+        },
+        {
+            "name": "purgecss",
+            "link": "https://github.com/FullHuman/purgecss",
+            "version": "5.0.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/FullHuman/purgecss/blob/3b9873472c260504ceef9ea9815495ec945db181/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "pwstrength-bootstrap",
+            "link": "https://github.com/ablanco/jquery.pwstrength.bootstrap",
+            "version": "3.1.3",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/ablanco/jquery.pwstrength.bootstrap/blob/7dd598f7088bff1146c4e040eff217f37aee600f/MIT-LICENSE.txt"
+                }
+            ]
+        },
+        {
+            "name": "rimraf",
+            "link": "https://github.com/isaacs/rimraf",
+            "version": "5.0.10",
+            "licenses": [
+                {
+                    "type": "ISC",
+                    "link": "https://github.com/isaacs/rimraf/blob/982faa77dc2398f5e4e1daa9a8f35d3bb82168c0/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "sortablejs",
+            "link": "https://github.com/SortableJS/Sortable",
+            "version": "1.15.3",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/SortableJS/Sortable/blob/dcb8f9e85b972292db1e0cab2ff9d7cd359ff352/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "spin.js",
+            "link": "https://github.com/fgnass/spin.js",
+            "version": "4.1.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/fgnass/spin.js/blob/653e79c5ef1f068e5a1a31da5b79b6d1e1b1674d/LICENSE.md"
+                }
+            ]
+        },
+        {
+            "name": "stylelint",
+            "link": "https://github.com/stylelint/stylelint",
+            "version": "16.9.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/stylelint/stylelint/blob/94c3d936e9999782297392494f81ae52fcd354f9/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "stylelint-config-standard",
+            "link": "https://github.com/stylelint/stylelint-config-standard",
+            "version": "36.0.1",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/stylelint/stylelint-config-standard/blob/01ac06819094f545656569e538d857ed9d816aec/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "stylelint-config-standard-scss",
+            "link": "https://github.com/stylelint-scss/stylelint-config-standard-scss",
+            "version": "13.1.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/stylelint-scss/stylelint-config-standard-scss/blob/c2e1f8cbd26fc9a55c6ba045d89ed2ba4ed41d96/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "stylelint-config-twbs-bootstrap",
+            "link": "https://github.com/twbs/stylelint-config-twbs-bootstrap",
+            "version": "14.2.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/twbs/stylelint-config-twbs-bootstrap/blob/cf7718c37234a44312b2aba39077ca152287b10e/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "sweetalert2",
+            "link": "https://github.com/sweetalert2/sweetalert2",
+            "version": "11.14.0",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/sweetalert2/sweetalert2/blob/76f2afd81a6195ae73d0cd66e477378f7bca293a/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "timeago",
+            "link": "https://github.com/rmm5t/jquery-timeago",
+            "version": "1.6.7",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/rmm5t/jquery-timeago/blob/48fdda3ca724dcd655e8e990f6d7fbd203718905/LICENSE.txt"
+                }
+            ]
+        },
+        {
+            "name": "ts-node",
+            "link": "https://github.com/TypeStrong/ts-node",
+            "version": "10.9.2",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/TypeStrong/ts-node/blob/057ac1beb118f9c42d21e876a17320ad73ea6be2/LICENSE"
+                }
+            ]
+        },
+        {
+            "name": "typescript",
+            "link": "https://github.com/microsoft/TypeScript",
+            "version": "5.6.2",
+            "licenses": [
+                {
+                    "type": "Apache-2.0",
+                    "link": "https://github.com/microsoft/TypeScript/blob/a7e3374f13327483fbe94e32806d65785b0b6cda/LICENSE.txt"
+                }
+            ]
+        },
+        {
+            "name": "underscore",
+            "link": "https://github.com/jashkenas/underscore",
+            "version": "1.13.7",
+            "licenses": [
+                {
+                    "type": "MIT",
+                    "link": "https://github.com/jashkenas/underscore/blob/d2e7e613a597bec6b16c946e42c91950dcc1a215/LICENSE"
+                }
+            ]
+        }
+    ]
+}
