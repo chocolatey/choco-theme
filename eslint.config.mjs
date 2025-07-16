@@ -35,7 +35,8 @@ export default defineConfig([
         'js/src/lib/*',
         '**/dist/*',
         '**/node_modules/*',
-        '**/*.min.js'
+        '**/*.min.js',
+        '.astro/*'
     ]),
 
     // JS files only

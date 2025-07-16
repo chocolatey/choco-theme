@@ -14,7 +14,7 @@ import { updateContent } from './functions/update-content';
 
 if (repository.name !== repositoryConfig.playwright.name) {
     console.log('Using repository information:', repository);
-}  
+}
 
 // Determine source CSS name
 let sourceCss: string;
@@ -239,7 +239,7 @@ const init = async () => {
         }
 
         // ESLint - needed if repository contains it's own assets along with choco-theme
-        if (repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.ccm.name || repository.name === repositoryConfig.playwright.name) {
+        if (repository.name === repositoryConfig.portal.name || repository.name === repositoryConfig.ccm.name || repository.name === repositoryConfig.playwright.name || repository.name === repositoryConfig.credits.name) {
             parallelTasksInitial.push(
                 {
                     task: 'eslint.config.mjs',

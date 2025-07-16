@@ -13,7 +13,7 @@ const init = async () => {
     const minify = process.argv.includes('--minify');
 
     const banner = `/*!
-  * choco-theme v1.2.3 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.3.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */`;
