@@ -91,13 +91,13 @@ const init = async () => {
 
         controlLinks (
             '@types/luxon',
-            '3.6.2',
+            '3.7.1',
             'https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/luxon'
         );
 
         controlLinks (
             '@types/node',
-            '22.16.3',
+            '22.17.0',
             'https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node'
         );
 

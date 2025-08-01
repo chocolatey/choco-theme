@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.3.0 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.3.1 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -24428,8 +24428,8 @@ ${templateEnter}`;
             self2.dictionary = dictionary;
             if (affData && wordsData) {
               setup();
-            } else if (typeof window !== "undefined" && (window.chrome || window.browser)) {
-              var runtime = window.chrome && window.chrome.runtime ? window.chrome.runtime : browser.runtime;
+            } else if (typeof window !== "undefined" && (window.chrome && window.chrome.runtime || window.browser && window.browser.runtime)) {
+              var runtime = window.chrome && window.chrome.runtime ? window.chrome.runtime : window.browser.runtime;
               if (settings.dictionaryPath) {
                 path = settings.dictionaryPath;
               } else {
@@ -25034,6 +25034,9 @@ ${templateEnter}`;
               var sorted_corrections = [];
               for (i2 in weighted_corrections) {
                 if (weighted_corrections.hasOwnProperty(i2)) {
+                  if (self2.hasFlag(i2, "PRIORITYSUGGEST")) {
+                    weighted_corrections[i2] += 1e3;
+                  }
                   sorted_corrections.push([i2, weighted_corrections[i2]]);
                 }
               }
