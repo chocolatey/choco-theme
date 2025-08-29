@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.3.1 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.3.2 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -6026,11 +6026,11 @@
             return "script";
           }
         });
-        support.createHTMLDocument = function() {
+        support.createHTMLDocument = (function() {
           var body = document2.implementation.createHTMLDocument("").body;
           body.innerHTML = "<form></form><form></form>";
           return body.childNodes.length === 2;
-        }();
+        })();
         jQuery3.parseHTML = function(data, context, keepScripts) {
           if (typeof data !== "string") {
             return [];
@@ -7472,7 +7472,7 @@
               return this.optional(element) || /^(?:(?:(?:https?|ftp):)?\/\/)(?:(?:[^\]\[?\/<~#`!@$^&*()+=}|:";',>{ ]|%[0-9A-Fa-f]{2})+(?::(?:[^\]\[?\/<~#`!@$^&*()+=}|:";',>{ ]|%[0-9A-Fa-f]{2})*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u00a1-\uffff][a-z0-9\u00a1-\uffff_-]{0,62})?[a-z0-9\u00a1-\uffff]\.)+(?:[a-z\u00a1-\uffff]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(value);
             },
             // https://jqueryvalidation.org/date-method/
-            date: /* @__PURE__ */ function() {
+            date: /* @__PURE__ */ (function() {
               var called = false;
               return function(value, element) {
                 if (!called) {
@@ -7485,7 +7485,7 @@
                 }
                 return this.optional(element) || !/Invalid|NaN/.test(new Date(value).toString());
               };
-            }(),
+            })(),
             // https://jqueryvalidation.org/dateISO-method/
             dateISO: function(value, element) {
               return this.optional(element) || /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/.test(value);

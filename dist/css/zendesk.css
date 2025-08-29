@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* choco-theme zendesk v1.3.1 (https://github.com/chocolatey/choco-theme#readme)
+* choco-theme zendesk v1.3.2 (https://github.com/chocolatey/choco-theme#readme)
 * Copyright 2020-2024 Chocolatey Software
 * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -48261,11 +48261,12 @@ span.flatpickr-weekday {
 :root {
   --dt-row-selected: 13, 110, 253;
   --dt-row-selected-text: 255, 255, 255;
-  --dt-row-selected-link: 9, 10, 11;
+  --dt-row-selected-link: 228, 228, 228;
   --dt-row-stripe: 0, 0, 0;
   --dt-row-hover: 0, 0, 0;
   --dt-column-ordering: 0, 0, 0;
   --dt-header-align-items: center;
+  --dt-header-vertical-align: middle;
   --dt-html-background: white;
 }
 
@@ -48370,7 +48371,7 @@ table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order,
 table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   position: relative;
   width: 12px;
-  height: 20px;
+  height: 24px;
 }
 
 table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:after, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order:before, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order:after, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:after, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:after,
@@ -48407,7 +48408,8 @@ table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order:after {
   opacity: 0.6;
 }
 
-table.dataTable thead > tr > th.sorting_desc_disabled span.dt-column-order:after, table.dataTable thead > tr > th.sorting_asc_disabled span.dt-column-order:before,
+table.dataTable thead > tr > th.dt-orderable-none:not(.dt-ordering-asc, .dt-ordering-desc) span.dt-column-order:empty, table.dataTable thead > tr > th.sorting_desc_disabled span.dt-column-order:after, table.dataTable thead > tr > th.sorting_asc_disabled span.dt-column-order:before,
+table.dataTable thead > tr > td.dt-orderable-none:not(.dt-ordering-asc, .dt-ordering-desc) span.dt-column-order:empty,
 table.dataTable thead > tr > td.sorting_desc_disabled span.dt-column-order:after,
 table.dataTable thead > tr > td.sorting_asc_disabled span.dt-column-order:before {
   display: none;
@@ -48625,6 +48627,7 @@ table.dataTable thead td,
 table.dataTable tfoot th,
 table.dataTable tfoot td {
   text-align: left;
+  vertical-align: var(--dt-header-vertical-align);
 }
 
 table.dataTable thead th.dt-head-left,
@@ -48720,10 +48723,6 @@ table.dataTable tbody td.dt-body-nowrap {
   white-space: nowrap;
 }
 
-:root {
-  --dt-header-align-items: flex-end;
-}
-
 /*! Bootstrap 5 integration for DataTables
  *
  * ©2020 SpryMedia Ltd, all rights reserved.
@@ -48756,7 +48755,7 @@ table.table.dataTable > tbody > tr.selected > * {
 }
 
 table.table.dataTable > tbody > tr.selected a {
-  color: rgb(9, 10, 11);
+  color: rgb(228, 228, 228);
   color: rgb(var(--dt-row-selected-link));
 }
 
