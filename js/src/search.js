@@ -138,6 +138,8 @@ ${templateEnter}`;
                     focus: event => {
                         if (event.target.value) {
                             autoCompleteJS.start(event.target.value);
+                            const textLength = autoCompleteInput.value.length;
+                            autoCompleteInput.setSelectionRange(textLength, textLength);
                         }
                     }
                 }

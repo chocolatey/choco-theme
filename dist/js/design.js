@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.3.1 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.3.2 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -64,7 +64,7 @@
   var require_prism = __commonJS({
     "js/src/lib/prism.js"(exports, module) {
       var _self = typeof window !== "undefined" ? window : typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope ? self : {};
-      var Prism2 = function(_self2) {
+      var Prism2 = (function(_self2) {
         var lang = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i;
         var uniqueId = 0;
         var plainTextGrammar = {};
@@ -949,7 +949,7 @@
           }
         }
         return _;
-      }(_self);
+      })(_self);
       if (typeof module !== "undefined" && module.exports) {
         module.exports = Prism2;
       }
@@ -9425,11 +9425,11 @@
             return "script";
           }
         });
-        support.createHTMLDocument = function() {
+        support.createHTMLDocument = (function() {
           var body = document2.implementation.createHTMLDocument("").body;
           body.innerHTML = "<form></form><form></form>";
           return body.childNodes.length === 2;
-        }();
+        })();
         jQuery2.parseHTML = function(data, context, keepScripts) {
           if (typeof data !== "string") {
             return [];

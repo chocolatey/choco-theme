@@ -26,14 +26,14 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [rimraf@5.0.10](#rimraf5010)
   * [MIT License](#mit-license-1)
     * [@eonasdan/tempus-dominus@v6.10.4](#eonasdantempus-dominusv6104)
-    * [@eslint/js@9.32.0](#eslintjs9320)
+    * [@eslint/js@9.34.0](#eslintjs9340)
     * [@fortawesome/fontawesome-free@6.7.2](#fortawesomefontawesome-free672-1)
     * [@microsoft/signalr@8.0.17](#microsoftsignalr8017)
     * [@octokit/types@14.1.0](#octokittypes1410)
-    * [@stylistic/eslint-plugin@5.2.2](#stylisticeslint-plugin522)
+    * [@stylistic/eslint-plugin@5.2.3](#stylisticeslint-plugin523)
     * [@types/bootstrap@5.2.10](#typesbootstrap5210)
     * [@types/luxon@3.7.1](#typesluxon371)
-    * [@types/node@22.17.0](#typesnode22170)
+    * [@types/node@22.18.0](#typesnode22180)
     * [abp-web-resources@5.9.3](#abp-web-resources593)
     * [block-ui@2.70.1](#block-ui2701)
     * [bootstrap@5.3.3](#bootstrap533)
@@ -41,14 +41,14 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [clipboard@2.0.11](#clipboard2011)
     * [cropperjs@1.6.2](#cropperjs162)
     * [cssnano@cssnano@6.1.2](#cssnanocssnano612)
-    * [datatables.net-bs5@2.3.2](#datatablesnet-bs5232)
-    * [datatables.net-dt@2.3.2](#datatablesnet-dt232)
-    * [esbuild@0.25.8](#esbuild0258)
-    * [eslint@9.32.0](#eslint9320)
+    * [datatables.net-bs5@2.3.3](#datatablesnet-bs5233)
+    * [datatables.net-dt@2.3.3](#datatablesnet-dt233)
+    * [esbuild@0.25.9](#esbuild0259)
+    * [eslint@9.34.0](#eslint9340)
     * [eslint-plugin-playwright@2.2.2](#eslint-plugin-playwright222)
     * [flatpickr@4.6.13](#flatpickr4613)
     * [globals@15.15.0](#globals15150)
-    * [html-to-pdfmake@2.5.28](#html-to-pdfmake2528)
+    * [html-to-pdfmake@2.5.31](#html-to-pdfmake2531)
     * [jquery@3.7.1](#jquery371)
     * [jquery-serializejson@3.2.1](#jquery-serializejson321)
     * [jquery-validation@1.21.0](#jquery-validation1210)
@@ -67,14 +67,14 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [pwstrength-bootstrap@3.1.3](#pwstrength-bootstrap313)
     * [sortablejs@1.15.6](#sortablejs1156)
     * [spin.js@4.1.2](#spinjs412)
-    * [stylelint@16.23.0](#stylelint16230)
+    * [stylelint@16.23.1](#stylelint16231)
     * [stylelint-config-twbs-bootstrap@16.1.0](#stylelint-config-twbs-bootstrap1610)
-    * [sweetalert2@11.22.2](#sweetalert211222)
+    * [sweetalert2@11.22.5](#sweetalert211225)
     * [timeago@1.6.7](#timeago167)
     * [ts-node@10.9.2](#ts-node1092)
-    * [tsx@4.20.3](#tsx4203)
-    * [turndown@7.2.0](#turndown720)
-    * [typescript-eslint@8.38.0](#typescript-eslint8380)
+    * [tsx@4.20.5](#tsx4205)
+    * [turndown@7.2.1](#turndown721)
+    * [typescript-eslint@8.41.0](#typescript-eslint8410)
     * [underscore@1.13.7](#underscore1137)
   * [MIT No Attribution License](#mit-no-attribution-license-1)
     * [postcss-preset-env@9.6.0](#postcss-preset-env960)
@@ -814,9 +814,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@eonasdan/tempus-dominus](https://github.com/Eonasdan/tempus-dominus) - [License terms.](https://github.com/Eonasdan/tempus-dominus/blob/5a81b754dd37925a83c28762ff1afb3b53114bfd/LICENSE)
 
-#### @eslint/js@9.32.0
+#### @eslint/js@9.34.0
 
-[@eslint/js](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/2364031090daafe34e80904c32065bfe4692d7a2/LICENSE)
+[@eslint/js](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/b8875f67a7bc99824f19147f4a669be7e98f3eee/LICENSE)
 
 #### @fortawesome/fontawesome-free@6.7.2
 
@@ -830,9 +830,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@octokit/types](https://github.com/octokit/types.ts) - [License terms.](https://github.com/octokit/types.ts/blob/a7ec8303ea2c1d3aa3fa72a6c592857edfb76f45/LICENSE)
 
-#### @stylistic/eslint-plugin@5.2.2
+#### @stylistic/eslint-plugin@5.2.3
 
-[@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic) - [License terms.](https://github.com/eslint-stylistic/eslint-stylistic/blob/7b45fc5ab5f431301eebe6ac93f799d167039f27/LICENSE)
+[@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic) - [License terms.](https://github.com/eslint-stylistic/eslint-stylistic/blob/621b82a1a9602a641d25cb63167e9257ed4e9a43/LICENSE)
 
 #### @types/bootstrap@5.2.10
 
@@ -842,9 +842,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@types/luxon](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/luxon) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/643225315bb7631642d06e39af178e0b2eb1e129/LICENSE)
 
-#### @types/node@22.17.0
+#### @types/node@22.18.0
 
-[@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/fbfb2a98774a3f74efdf73220ecb0fc49a23d136/LICENSE)
+[@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/610b2deb01be15ce329a4ba5b7f05659833582a0/LICENSE)
 
 #### abp-web-resources@5.9.3
 
@@ -874,21 +874,21 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [cssnano](https://github.com/cssnano/cssnano) - [License terms.](https://github.com/cssnano/cssnano/blob/760ba29a4255c6a4ad39e2dfba1b15ab72d9c382/LICENSE-MIT)
 
-#### datatables.net-bs5@2.3.2
+#### datatables.net-bs5@2.3.3
 
-[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/83db80cb51e7c7a75d6520a4952a47562ba2eba7/License.txt)
+[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/3e2b7ae87f1fc918e2268b8d355660e43b36eadb/License.txt)
 
-#### datatables.net-dt@2.3.2
+#### datatables.net-dt@2.3.3
 
-[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/f52c821aa0ab015dd0f006c33cbd73d27ebec233/License.txt)
+[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/4f2fd7cf6105adc51bb571569b9fd6d150b32a08/License.txt)
 
-#### esbuild@0.25.8
+#### esbuild@0.25.9
 
-[esbuild](https://github.com/evanw/esbuild) - [License terms.](https://github.com/evanw/esbuild/blob/8c71947edbe5a158fec3a6d1cbfea1e8d5cdee70/LICENSE.md)
+[esbuild](https://github.com/evanw/esbuild) - [License terms.](https://github.com/evanw/esbuild/blob/195e05c16f03a341390feef38b8ebf17d3075e14/LICENSE.md)
 
-#### eslint@9.32.0
+#### eslint@9.34.0
 
-[eslint](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/2364031090daafe34e80904c32065bfe4692d7a2/LICENSE)
+[eslint](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/b8875f67a7bc99824f19147f4a669be7e98f3eee/LICENSE)
 
 #### eslint-plugin-playwright@2.2.2
 
@@ -902,9 +902,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [globals](https://github.com/sindresorhus/globals) - [License terms.](https://github.com/sindresorhus/globals/blob/8a43ab65056483c0248c7be3a69fdb2866d859a2/license)
 
-#### html-to-pdfmake@2.5.28
+#### html-to-pdfmake@2.5.31
 
-[html-to-pdfmake](https://github.com/Aymkdn/html-to-pdfmake) - [License terms.](https://github.com/Aymkdn/html-to-pdfmake/blob/fed75a0c2af2274d368006c62fc35181eae7ff83/LICENSE)
+[html-to-pdfmake](https://github.com/Aymkdn/html-to-pdfmake) - [License terms.](https://github.com/Aymkdn/html-to-pdfmake/blob/26dc771bee4c04662d6b642971bc9fdd6a4de978/LICENSE)
 
 #### jquery@3.7.1
 
@@ -978,17 +978,17 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [spin.js](https://github.com/fgnass/spin.js) - [License terms.](https://github.com/fgnass/spin.js/blob/653e79c5ef1f068e5a1a31da5b79b6d1e1b1674d/LICENSE.md)
 
-#### stylelint@16.23.0
+#### stylelint@16.23.1
 
-[stylelint](https://github.com/stylelint/stylelint) - [License terms.](https://github.com/stylelint/stylelint/blob/c56de6a1a1b2e28fa17b25149fc644ba34925dd2/LICENSE)
+[stylelint](https://github.com/stylelint/stylelint) - [License terms.](https://github.com/stylelint/stylelint/blob/a282f6c2b0b4e8e15d0324b79a3c325a536daf63/LICENSE)
 
 #### stylelint-config-twbs-bootstrap@16.1.0
 
 [stylelint-config-twbs-bootstrap](https://github.com/twbs/stylelint-config-twbs-bootstrap) - [License terms.](https://github.com/twbs/stylelint-config-twbs-bootstrap/blob/f77749e132382ffb7674a77908e77a01e1a4a951/LICENSE)
 
-#### sweetalert2@11.22.2
+#### sweetalert2@11.22.5
 
-[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/d9406027c73c9a1bd6e7085012922e4690db0ae9/LICENSE)
+[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/80d573e06fd96be1ff62052364e489b8735f30d7/LICENSE)
 
 #### timeago@1.6.7
 
@@ -998,17 +998,17 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [ts-node](https://github.com/TypeStrong/ts-node) - [License terms.](https://github.com/TypeStrong/ts-node/blob/057ac1beb118f9c42d21e876a17320ad73ea6be2/LICENSE)
 
-#### tsx@4.20.3
+#### tsx@4.20.5
 
-[tsx](https://github.com/privatenumber/tsx) - [License terms.](https://github.com/privatenumber/tsx/blob/dadcf27b2e1721bd98e4e02d926180f060a5f48a/LICENSE)
+[tsx](https://github.com/privatenumber/tsx) - [License terms.](https://github.com/privatenumber/tsx/blob/e6d1a4726540eb4dbef9b331acb13a294c674e96/LICENSE)
 
-#### turndown@7.2.0
+#### turndown@7.2.1
 
-[turndown](https://github.com/mixmark-io/turndown) - [License terms.](https://github.com/mixmark-io/turndown/blob/cc73387fb707e5fb5e1083e94078d08f38f3abc8/LICENSE)
+[turndown](https://github.com/mixmark-io/turndown) - [License terms.](https://github.com/mixmark-io/turndown/blob/0df0c0506233e0459ba21974f30b9ad3f1feb20f/LICENSE)
 
-#### typescript-eslint@8.38.0
+#### typescript-eslint@8.41.0
 
-[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) - [License terms.](https://github.com/typescript-eslint/typescript-eslint/blob/d11e79e9c9edc9f6f5e66306e3b3d65f3149a760/LICENSE)
+[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) - [License terms.](https://github.com/typescript-eslint/typescript-eslint/blob/31a73361bd6449974c89b78ef77be0d04e77510b/LICENSE)
 
 #### underscore@1.13.7
 

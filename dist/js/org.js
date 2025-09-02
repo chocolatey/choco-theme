@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.3.1 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.3.2 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -465,7 +465,7 @@
   var require_prism = __commonJS({
     "js/src/lib/prism.js"(exports, module) {
       var _self = typeof window !== "undefined" ? window : typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope ? self : {};
-      var Prism2 = function(_self2) {
+      var Prism2 = (function(_self2) {
         var lang = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i;
         var uniqueId2 = 0;
         var plainTextGrammar = {};
@@ -1350,7 +1350,7 @@
           }
         }
         return _;
-      }(_self);
+      })(_self);
       if (typeof module !== "undefined" && module.exports) {
         module.exports = Prism2;
       }
@@ -3672,12 +3672,12 @@
       })(exports, function() {
         return (
           /******/
-          function() {
+          (function() {
             var __webpack_modules__ = {
               /***/
               686: (
                 /***/
-                function(__unused_webpack_module, __webpack_exports__, __webpack_require__2) {
+                (function(__unused_webpack_module, __webpack_exports__, __webpack_require__2) {
                   "use strict";
                   __webpack_require__2.d(__webpack_exports__, {
                     "default": function() {
@@ -3890,7 +3890,7 @@
                     }
                     return element.getAttribute(attribute);
                   }
-                  var Clipboard = /* @__PURE__ */ function(_Emitter) {
+                  var Clipboard = /* @__PURE__ */ (function(_Emitter) {
                     _inherits(Clipboard2, _Emitter);
                     var _super = _createSuper(Clipboard2);
                     function Clipboard2(trigger, options) {
@@ -4029,14 +4029,14 @@
                       }
                     }]);
                     return Clipboard2;
-                  }(tiny_emitter_default());
+                  })(tiny_emitter_default());
                   var clipboard = Clipboard;
-                }
+                })
               ),
               /***/
               828: (
                 /***/
-                function(module2) {
+                (function(module2) {
                   var DOCUMENT_NODE_TYPE = 9;
                   if (typeof Element !== "undefined" && !Element.prototype.matches) {
                     var proto = Element.prototype;
@@ -4051,12 +4051,12 @@
                     }
                   }
                   module2.exports = closest3;
-                }
+                })
               ),
               /***/
               438: (
                 /***/
-                function(module2, __unused_webpack_exports, __webpack_require__2) {
+                (function(module2, __unused_webpack_exports, __webpack_require__2) {
                   var closest3 = __webpack_require__2(828);
                   function _delegate(element, selector, type, callback, useCapture) {
                     var listenerFn = listener.apply(this, arguments);
@@ -4090,12 +4090,12 @@
                     };
                   }
                   module2.exports = delegate;
-                }
+                })
               ),
               /***/
               879: (
                 /***/
-                function(__unused_webpack_module, exports2) {
+                (function(__unused_webpack_module, exports2) {
                   exports2.node = function(value) {
                     return value !== void 0 && value instanceof HTMLElement && value.nodeType === 1;
                   };
@@ -4110,12 +4110,12 @@
                     var type = Object.prototype.toString.call(value);
                     return type === "[object Function]";
                   };
-                }
+                })
               ),
               /***/
               370: (
                 /***/
-                function(module2, __unused_webpack_exports, __webpack_require__2) {
+                (function(module2, __unused_webpack_exports, __webpack_require__2) {
                   var is = __webpack_require__2(879);
                   var delegate = __webpack_require__2(438);
                   function listen(target, type, callback) {
@@ -4162,12 +4162,12 @@
                     return delegate(document.body, selector, type, callback);
                   }
                   module2.exports = listen;
-                }
+                })
               ),
               /***/
               817: (
                 /***/
-                function(module2) {
+                (function(module2) {
                   function select(element) {
                     var selectedText;
                     if (element.nodeName === "SELECT") {
@@ -4198,12 +4198,12 @@
                     return selectedText;
                   }
                   module2.exports = select;
-                }
+                })
               ),
               /***/
               279: (
                 /***/
-                function(module2) {
+                (function(module2) {
                   function E() {
                   }
                   E.prototype = {
@@ -4251,7 +4251,7 @@
                   };
                   module2.exports = E;
                   module2.exports.TinyEmitter = E;
-                }
+                })
               )
               /******/
             };
@@ -4272,7 +4272,7 @@
               __webpack_modules__[moduleId](module2, module2.exports, __webpack_require__);
               return module2.exports;
             }
-            !function() {
+            !(function() {
               __webpack_require__.n = function(module2) {
                 var getter = module2 && module2.__esModule ? (
                   /******/
@@ -4288,8 +4288,8 @@
                 __webpack_require__.d(getter, { a: getter });
                 return getter;
               };
-            }();
-            !function() {
+            })();
+            !(function() {
               __webpack_require__.d = function(exports2, definition) {
                 for (var key in definition) {
                   if (__webpack_require__.o(definition, key) && !__webpack_require__.o(exports2, key)) {
@@ -4297,14 +4297,14 @@
                   }
                 }
               };
-            }();
-            !function() {
+            })();
+            !(function() {
               __webpack_require__.o = function(obj, prop) {
                 return Object.prototype.hasOwnProperty.call(obj, prop);
               };
-            }();
+            })();
             return __webpack_require__(686);
-          }().default
+          })().default
         );
       });
     }
@@ -10306,11 +10306,11 @@
             return "script";
           }
         });
-        support.createHTMLDocument = function() {
+        support.createHTMLDocument = (function() {
           var body = document2.implementation.createHTMLDocument("").body;
           body.innerHTML = "<form></form><form></form>";
           return body.childNodes.length === 2;
-        }();
+        })();
         jQuery3.parseHTML = function(data, context, keepScripts) {
           if (typeof data !== "string") {
             return [];
@@ -10711,13 +10711,13 @@
     if (tzBlock[1] == null || tzBlock[1] == "") {
       return "";
     }
-    const location2 = function() {
+    const location2 = (function() {
       if (tzBlock[0] == "") {
         return tzName;
       } else {
         return tzBlock[0];
       }
-    }();
+    })();
     const tzidLine = "TZID=" + location2;
     const output = [
       "BEGIN:VTIMEZONE\r\nTZID:" + location2 + "\r\nX-LIC-LOCATION:" + location2 + "\r\nLAST-MODIFIED:" + tzBlock[1].replace(/[^\w_\-:,;=+/<br>]/g, "").replace(/<br>/g, "\r\n") + "END:VTIMEZONE",
@@ -10778,9 +10778,9 @@
         return tzBreakpoints[1].offset;
       }
     }
-    const theCase = function() {
+    const theCase = (function() {
       return Object.keys(tzBreakpoints).find((key) => tzBreakpoints[`${key}`].month == dateMonth);
-    }();
+    })();
     const helperArrayWeekdays = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
     const numberDays = new Date(dateYear, dateMonth, 0).getDate();
     let weekdayCount = new Date(dateYear, dateMonth - 1, 1).getDay();
@@ -10793,7 +10793,7 @@
         weekdayCount = 0;
       }
     }
-    const actualDay = function() {
+    const actualDay = (function() {
       if (tzBreakpoints[`${theCase}`].day[0] == "-") {
         const breakpointWeekday = tzBreakpoints[`${theCase}`].day.substr(2, 2);
         const dayIndex = Object.keys(weekdays2[`${breakpointWeekday}`]).length + 1 - parseInt(tzBreakpoints[`${theCase}`].day[1]);
@@ -10802,23 +10802,23 @@
         const breakpointWeekday = tzBreakpoints[`${theCase}`].day.substr(1, 2);
         return weekdays2[`${breakpointWeekday}`][tzBreakpoints[`${theCase}`].day[0]];
       }
-    }();
+    })();
     if (dateDay > actualDay || dateDay == actualDay && dateHour >= tzBreakpoints[`${theCase}`].hour) {
       return tzBreakpoints[`${theCase}`].offset;
     }
-    const fallbackCase = function() {
+    const fallbackCase = (function() {
       if (theCase == 1) {
         return 2;
       } else {
         return 1;
       }
-    }();
+    })();
     return tzBreakpoints[`${fallbackCase}`].offset;
   }
   var tzlibZoneNames = [];
   function tzlib_get_timezones(jsonType = false) {
     if (tzlibZoneNames.length == 0) {
-      tzlibZoneNames = function() {
+      tzlibZoneNames = (function() {
         let namesArr = [];
         for (const [key, value] of Object.entries(tzlibZonesDB)) {
           if (typeof value === "object" && !Array.isArray(value)) {
@@ -10836,7 +10836,7 @@
           }
         }
         return namesArr;
-      }();
+      })();
     }
     if (jsonType) {
       return JSON.stringify(tzlibZoneNames);
@@ -11169,7 +11169,7 @@
     return data;
   }
   function atcb_decorate_data_options(data) {
-    const theOptions = function() {
+    const theOptions = (function() {
       if (atcbIsiOS() || data.fakeIOS) {
         if (data.optionsIOS && data.optionsIOS.length > 0) {
           return data.optionsIOS;
@@ -11182,7 +11182,7 @@
         return data.optionsMobile;
       }
       return data.options || ["ical"];
-    }();
+    })();
     let newOptions = [];
     let iCalGiven = false;
     let appleGiven = false;
@@ -11474,13 +11474,13 @@
   }
   function atcb_date_specials_calculation(type, dateString, timeString = null, timeZone) {
     try {
-      const tmpDate = function() {
+      const tmpDate = (function() {
         if (timeString) {
           const offsetEnd = tzlib_get_offset(timeZone, dateString, timeString);
           return /* @__PURE__ */ new Date(dateString + " " + timeString + ":00 GMT" + offsetEnd);
         }
         return new Date(dateString);
-      }();
+      })();
       if (type === "timestamp") {
         return tmpDate.getTime();
       }
@@ -11513,14 +11513,14 @@
     if (!data.pastDateHandling || data.pastDateHandling != "disable" && data.pastDateHandling != "hide") {
       data.pastDateHandling = "none";
     }
-    data.allOverdue = function() {
+    data.allOverdue = (function() {
       for (let i = 0; i < data.dates.length; i++) {
         if (!data.dates[`${i}`].overdue) {
           return false;
         }
       }
       return true;
-    }();
+    })();
     if (data.allOverdue) {
       if (data.pastDateHandling == "disable") {
         data.disabled = true;
@@ -11528,14 +11528,14 @@
         data.hidden = true;
       }
     }
-    data.allCancelled = function() {
+    data.allCancelled = (function() {
       for (let i = 0; i < data.dates.length; i++) {
         if (!data.dates[`${i}`].status || data.dates[`${i}`].status.toLowerCase() !== "cancelled") {
           return false;
         }
       }
       return true;
-    }();
+    })();
     if (data.disabled || data.hidden) {
       data.blockInteraction = true;
     }
@@ -11544,12 +11544,12 @@
   function atcb_decorate_data_rsvp(data) {
     return __async(this, null, function* () {
       if (typeof atcb_check_bookings !== "function" || !data.rsvp || !data.proKey || Object.keys(data.rsvp).length === 0) return data;
-      data.rsvp.expired = function() {
+      data.rsvp.expired = (function() {
         if (data.rsvp && data.rsvp.expires && new Date(data.rsvp.expires) < /* @__PURE__ */ new Date()) {
           return true;
         }
         return false;
-      }();
+      })();
       if (data.rsvp.max) {
         const bookings = yield atcb_check_bookings(data.proKey, data.dev);
         data.rsvp.seatsLeft = data.rsvp.max - bookings;
@@ -11627,7 +11627,7 @@
   }
   function atcb_validate_icsFile(data, msgPrefix, i = "", msgSuffix = "") {
     return __async(this, null, function* () {
-      const icsFileStr = function() {
+      const icsFileStr = (function() {
         if (i !== "" && data.dates[`${i}`].icsFile) {
           return data.dates[`${i}`].icsFile;
         }
@@ -11635,7 +11635,7 @@
           return data.icsFile;
         }
         return "";
-      }();
+      })();
       if (icsFileStr !== "") {
         if (!atcb_secure_url(icsFileStr, false) || !data.icsFile.startsWith("https://") && !data.icsFile.startsWith("http://")) {
           throw new Error(msgPrefix + " failed: explicit ics file path not valid" + msgSuffix);
@@ -11701,13 +11701,13 @@
     return __async(this, null, function* () {
       try {
         for (let i = 0; i < data.dates.length; i++) {
-          const msgSuffix = function() {
+          const msgSuffix = (function() {
             if (data.dates.length === 1) {
               return "";
             } else {
               return " [dates array object #" + (i + 1) + "/" + data.dates.length + "] ";
             }
-          }();
+          })();
           yield atcb_validate_icsFile(data, msgPrefix, i, msgSuffix);
           yield atcb_validate_status(data, msgPrefix, i, msgSuffix);
           yield atcb_validate_availability(data, msgPrefix, i, msgSuffix);
@@ -11959,7 +11959,7 @@
         }, 5);
         atcb_set_fullsize(bgOverlay);
       }
-      const focusEl = function() {
+      const focusEl = (function() {
         const hostEl = host.querySelector(".atcb-list-item");
         if (hostEl) {
           return hostEl;
@@ -11969,7 +11969,7 @@
           return;
         }
         return modalHost.shadowRoot.querySelector(".atcb-list-item");
-      }();
+      })();
       if (focusEl) {
         if (keyboardTrigger) {
           focusEl.focus();
@@ -11982,12 +11982,12 @@
   }
   function atcb_close(host, keyboardTrigger = false) {
     const existingModalHost = document.getElementById(host.host.getAttribute("atcb-button-id") + "-modal-host");
-    const allModals = function() {
+    const allModals = (function() {
       if (!existingModalHost || existingModalHost.length === 0) {
         return [];
       }
       return existingModalHost.shadowRoot.querySelectorAll(".atcb-modal[data-modal-nr]");
-    }();
+    })();
     if (allModals.length > 1) {
       existingModalHost.shadowRoot.querySelectorAll('.atcb-modal[data-modal-nr="' + allModals.length + '"]')[0].remove();
       const nextModal = existingModalHost.shadowRoot.querySelectorAll('.atcb-modal[data-modal-nr="' + (allModals.length - 1) + '"]')[0];
@@ -12002,13 +12002,13 @@
         focusEl.blur();
       }
     } else {
-      const newFocusEl = function() {
+      const newFocusEl = (function() {
         const hostEl = host.querySelector(".atcb-active, .atcb-active-modal");
         if (hostEl) {
           return hostEl;
         }
         return document.querySelector(".atcb-active, .atcb-active-modal");
-      }();
+      })();
       if (newFocusEl) {
         newFocusEl.focus({ preventScroll: true });
         if (!keyboardTrigger) {
@@ -12087,12 +12087,12 @@
       let header = {};
       if (tyData.type === "form") {
         const noIntro = !tyData.text || tyData.text === "" || tyData.text === void 0;
-        const label = function() {
+        const label = (function() {
           if (tyData.button_label && tyData.button_label !== "") {
             return tyData.button_label;
           }
           return atcb_translate_hook("submit", data);
-        }();
+        })();
         tyContent += '<form id="' + data.identifier + '-ty-form" class="pro-form' + (noIntro ? " no-intro" : "") + '">';
         if (tyData.fields && tyData.fields.length > 0) {
           const headerField = tyData.fields.find((field) => field.name === "header" && field.type === "hidden");
@@ -12115,12 +12115,12 @@
         tyContent += "</form>";
       }
       if (tyData.type === "link") {
-        const label = function() {
+        const label = (function() {
           if (tyData.button_label && tyData.button_label !== "") {
             return tyData.button_label;
           }
           return atcb_translate_hook("continue", data);
-        }();
+        })();
         tyContent += '<p class="pro-pt"><a href="' + tyData.url + '" target="_blank" rel="noopener" class="atcb-modal-btn atcb-modal-btn-primary atcb-modal-btn-border">' + label + "</a></p>";
       }
       tyContent += "</div></div>";
@@ -12244,7 +12244,7 @@
         rsvpContent += '<div class="pro-field"><label for="' + data.identifier + '-rsvp-amount">' + atcb_translate_hook("form.amount", data) + " (" + atcb_translate_hook("form.max", data) + " " + maxAmount + ")<span>*</span></label>";
         rsvpContent += '<input type="number" name="' + staticID + '-amount" min="1" max="' + maxAmount + '" id="' + data.identifier + '-rsvp-amount" ' + (data.disabled && "disabled") + ' aria-label="' + atcb_translate_hook("form.amount", data) + '" value="1" /></div>';
       }
-      const attendee = function() {
+      const attendee = (function() {
         if (data.attendee && data.attendee !== "") {
           const attendeeParts = data.attendee.split("|");
           if (attendeeParts.length > 1) {
@@ -12253,7 +12253,7 @@
           return attendeeParts[0];
         }
         return null;
-      }();
+      })();
       const customEmailField = (_a = rsvpData.fields) == null ? void 0 : _a.find((field) => field.name === "email");
       if (!customEmailField) {
         if (attendee) {
@@ -12510,7 +12510,7 @@
       buttonTrigger.type = "button";
       buttonTrigger.setAttribute("aria-expanded", false);
       buttonTriggerWrapper.append(buttonTrigger);
-      const label = function() {
+      const label = (function() {
         if (data.rsvp.expired) {
           return atcb_translate_hook("label.rsvp.expired", data);
         }
@@ -12518,7 +12518,7 @@
           return atcb_translate_hook("label.rsvp.bookedout", data);
         }
         return atcb_translate_hook("label.rsvp", data);
-      }();
+      })();
       atcb_generate_label(host, data, buttonTrigger, "rsvp", !data.hideIconButton, label, true);
       if (data.debug) {
         console.log('Add to Calendar RSVP Button "' + data.identifier + '" created');
@@ -12800,7 +12800,7 @@
     atcb_generate_label_content(data, parent, type, icon, text, oneOption);
   }
   function atcb_generate_label_content(data, parent, type, icon, text, oneOption) {
-    const defaultTriggerText = function() {
+    const defaultTriggerText = (function() {
       if (data.pastDateHandling != "none") {
         let allOverdue = true;
         for (let i = 0; i < data.dates.length; i++) {
@@ -12814,7 +12814,7 @@
         }
       }
       return atcb_translate_hook("label.addtocalendar", data);
-    }();
+    })();
     if (text === "") {
       if (data.options.length === 1 || type === "trigger") {
         text = defaultTriggerText;
@@ -12845,12 +12845,12 @@
     }
   }
   function atcb_generate_button(host, button, data) {
-    const oneOption = function() {
+    const oneOption = (function() {
       if (data.options.length === 1 || data.buttonsList && data.buttonStyle != "date") {
         return true;
       }
       return false;
-    }();
+    })();
     const optionSplit = oneOption ? data.options : ["default"];
     optionSplit.forEach(function(option, index) {
       const buttonTriggerWrapper = document.createElement("div");
@@ -12884,12 +12884,12 @@
       }
       if (oneOption) {
         buttonTrigger.classList.add("atcb-single");
-        const label = function() {
+        const label = (function() {
           if (data.buttonsList && data.options.length > 1) {
             return atcb_translate_hook(`${data.options[`${index}`]}`, data);
           }
           return data.label;
-        }();
+        })();
         atcb_generate_label(host, data, buttonTrigger, option, !data.hideIconButton, label, true);
         buttonTrigger.id = data.identifier;
         if (data.buttonsList) {
@@ -12946,12 +12946,12 @@
     return optionsList;
   }
   function atcb_generate_bg_overlay(host, trigger = "", modal = false, darken = true, closable = true) {
-    const bgOverlay = function() {
+    const bgOverlay = (function() {
       if (modal) {
         return document.createElement("dialog");
       }
       return document.createElement("div");
-    }();
+    })();
     if (modal) {
       bgOverlay.setAttribute("open", true);
     }
@@ -13036,7 +13036,7 @@
       atcbStates["active"] = data.identifier;
       const noHeadline = !headline || headline === "" || headline === void 0;
       const modalHost = yield atcb_generate_modal_host(mainHost, data, false);
-      const bgOverlay = function() {
+      const bgOverlay = (function() {
         const el = modalHost.getElementById("atcb-bgoverlay");
         if (!el) {
           const newOverlay = atcb_generate_bg_overlay(mainHost, "click", true, !data.hideBackground, closable);
@@ -13044,7 +13044,7 @@
           return newOverlay;
         }
         return el;
-      }();
+      })();
       const modalWrapper = document.createElement("div");
       modalWrapper.classList.add("atcb-modal");
       bgOverlay.append(modalWrapper);
@@ -13053,13 +13053,13 @@
       modalWrapper.tabIndex = 0;
       modalWrapper.focus({ preventScroll: true });
       modalWrapper.blur();
-      const parentButton = function() {
+      const parentButton = (function() {
         const hostEl = mainHost.getElementById(data.identifier);
         if (hostEl) {
           return hostEl;
         }
         return document.getElementById(data.identifier);
-      }();
+      })();
       if (parentButton) {
         parentButton.classList.add("atcb-active-modal");
       }
@@ -13233,7 +13233,7 @@
       subEvent = 0;
     }
     const fullTimeInfo = atcb_generate_timestring(data.dates, data.language, subEvent, false, false, forceFullDate);
-    const hoverText = function() {
+    const hoverText = (function() {
       if (subEvent !== "all" && data.dates[`${subEvent}`].status.toLowerCase() === "cancelled" || subEvent === "all" && data.allCancelled) {
         return atcb_translate_hook("date.status.cancelled", data) + "<br>" + atcb_translate_hook("date.status.cancelled.cta", data);
       }
@@ -13246,19 +13246,19 @@
         return data.label;
       }
       return "+ " + atcb_translate_hook("label.addtocalendar", data);
-    }();
-    const cancelledInfo = function() {
+    })();
+    const cancelledInfo = (function() {
       if (subEvent !== "all" && data.dates[`${subEvent}`].status.toLowerCase() === "cancelled" || subEvent === "all" && data.allCancelled) {
         return atcb_translate_hook("date.status.cancelled", data);
       }
       return "";
-    }();
-    const recurringString = function() {
+    })();
+    const recurringString = (function() {
       if (fullTimeInfo.length === 0) {
         return atcb_translate_hook("recurring", data) + " &#x27F3;";
       }
       return "&#x27F3;";
-    }();
+    })();
     let subEventAll = false;
     if (subEvent === "all") {
       subEvent = 0;
@@ -13499,7 +13499,7 @@
       schemaRecurrenceContent.push('"repeatFrequency":"' + repeatFrequency + '"');
     }
     if (data.recurrence_byDay && data.recurrence_byDay !== "") {
-      const byDayString = function() {
+      const byDayString = (function() {
         if (/\d/.test(data.recurrence_byDay)) {
           return '"' + data.recurrence_byDay + '"';
         } else {
@@ -13519,7 +13519,7 @@
           }
           return "[" + output.join(",") + "]";
         }
-      }();
+      })();
       schemaRecurrenceContent.push('"byDay":' + byDayString);
     }
     if (data.recurrence_byMonth && data.recurrence_byMonth !== "") {
@@ -13713,13 +13713,13 @@
     const baseUrl = "https://calendar.google.com/calendar/u/0/r?cid=";
     const baseUrlApp = "calendar.google.com/calendar?cid=";
     let isGoogleCalId = false;
-    const newFileUrl = function() {
+    const newFileUrl = (function() {
       if (/^(?:webcal:\/\/|\/\/)calendar\.google\.com\/.*\?cid=/.test(fileUrl)) {
         isGoogleCalId = true;
         return fileUrl.replace(/^(.)*\?cid=/, "");
       }
       return encodeURIComponent(fileUrl);
-    }();
+    })();
     if ((atcbIsAndroid() || data.fakeAndroid) && isGoogleCalId) {
       atcb_open_cal_url(data, "google", "intent://" + baseUrlApp + newFileUrl + "#Intent;scheme=https;package=com.google.android.calendar;end", true);
       return;
@@ -13728,13 +13728,13 @@
   }
   function atcb_subscribe_microsoft(data, fileUrl, calName, type = "ms365") {
     const urlParts = [];
-    const baseUrl = function() {
+    const baseUrl = (function() {
       if (type == "outlookcom") {
         return "https://outlook.live.com/calendar/0/addfromweb/?";
       } else {
         return "https://outlook.office.com/calendar/0/addfromweb/?";
       }
-    }();
+    })();
     urlParts.push("url=" + encodeURIComponent(fileUrl));
     urlParts.push("name=" + encodeURIComponent(calName));
     atcb_open_cal_url(data, type, baseUrl + urlParts.join("&"), true);
@@ -13774,12 +13774,12 @@
       urlParts.push("recur=" + encodeURIComponent(date.recurrence));
     }
     if (date.availability && date.availability !== "") {
-      const availabilityPart = function() {
+      const availabilityPart = (function() {
         if (date.availability == "free") {
           return "crm=AVAILABLE&trp=false";
         }
         return "crm=BUSY&trp=true";
-      }();
+      })();
       urlParts.push(availabilityPart);
     }
     let fullUrl = urlParts.join("&");
@@ -13819,19 +13819,19 @@
   }
   function atcb_generate_microsoft(data, date, subEvent = "all", type = "ms365") {
     const urlParts = [];
-    const basePath = function() {
+    const basePath = (function() {
       if (atcbIsMobile() || data.fakeMobile) {
         return "/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent";
       }
       return "/calendar/0/action/compose?rru=addevent";
-    }();
-    const baseUrl = function() {
+    })();
+    const baseUrl = (function() {
       if (type == "outlookcom") {
         return "https://outlook.live.com" + basePath;
       } else {
         return "https://outlook.office.com" + basePath;
       }
-    }();
+    })();
     urlParts.push(baseUrl);
     const formattedDate = atcb_generate_time(date, "delimiters", "microsoft");
     urlParts.push("startdt=" + formattedDate.start);
@@ -13881,7 +13881,7 @@
     }
     if (data.proxy && data.proKey && data.proKey !== "") {
       const urlType = subscribe ? "s" : "o";
-      const query2 = function() {
+      const query2 = (function() {
         const parts = [];
         if (data.attendee && data.attendee !== "") {
           parts.push("attendee=" + encodeURIComponent(data.attendee));
@@ -13896,7 +13896,7 @@
           return "?" + parts.join("&");
         }
         return "";
-      }();
+      })();
       const host = data.domain ? data.domain : data.dev ? "dev.caldn.net" : "caldn.net";
       url = `https://${host}/${data.proKey}/${urlType}/${type}${query2}`;
       if (!atcb_secure_url(url)) {
@@ -13915,7 +13915,7 @@
       subEvent = parseInt(subEvent);
     }
     const filename = atcb_determine_ical_filename(data, subEvent);
-    const givenIcsFile = function() {
+    const givenIcsFile = (function() {
       const potentialHostAttendee = host.host.getAttribute("attendee") || "";
       const potentialHostCustomVar = host.host.getAttribute("customVar") || "";
       if (data.attendee && data.attendee !== "" && potentialHostAttendee !== "" || data.customVar && data.customVar !== "" && potentialHostCustomVar !== "") {
@@ -13928,7 +13928,7 @@
         return data.icsFile;
       }
       return "";
-    }();
+    })();
     if (data.proxy) {
       atcb_open_cal_url(data, type, "", false, subEvent);
       return;
@@ -13955,21 +13955,21 @@
       }
     }
     const usedTimeZones = [];
-    const loopStart = function() {
+    const loopStart = (function() {
       if (subEvent != "all") {
         return subEvent;
       }
       return 0;
-    }();
-    const loopEnd = function() {
+    })();
+    const loopEnd = (function() {
       if (subEvent != "all") {
         return subEvent;
       }
       return data.dates.length - 1;
-    }();
+    })();
     for (let i = loopStart; i <= loopEnd; i++) {
       const formattedDate = atcb_generate_time(data.dates[`${i}`], "clean", "ical");
-      const timeAddon = function() {
+      const timeAddon = (function() {
         if (formattedDate.allday) {
           return ";VALUE=DATE";
         }
@@ -13981,7 +13981,7 @@
           usedTimeZones.push(data.dates[`${i}`].timeZone);
           return ";" + timeZoneBlock[1];
         }
-      }();
+      })();
       ics_lines.push("BEGIN:VEVENT");
       if (data.dates[`${i}`].uid && data.dates[`${i}`].uid !== "") {
         ics_lines.push("UID:" + data.dates[`${i}`].uid);
@@ -14015,12 +14015,12 @@
         ics_lines.push(data.recurrence);
       }
       if (data.dates[`${i}`].availability && data.dates[`${i}`].availability !== "") {
-        const transpVal = function() {
+        const transpVal = (function() {
           if (data.dates[`${i}`].availability == "free") {
             return "TRANSPARENT";
           }
           return "OPAQUE";
-        }();
+        })();
         ics_lines.push("TRANSP:" + transpVal);
       }
       ics_lines.push("SEQUENCE:" + data.dates[`${i}`].sequence);
@@ -14030,13 +14030,13 @@
       ics_lines.push("END:VEVENT");
     }
     ics_lines.push("END:VCALENDAR");
-    const dataUrl = function() {
+    const dataUrl = (function() {
       if (givenIcsFile != "") {
         return givenIcsFile;
       }
       const icsContent = atcb_format_ical_lines(ics_lines.join("\r\n"));
       return "data:text/calendar;charset=utf-8," + encodeURIComponent(icsContent);
-    }();
+    })();
     if (atcbIsiOS() && !atcbIsSafari() || atcbIsWebView() && (atcbIsiOS() || atcbIsAndroid() && atcbIsProblematicWebView())) {
       atcb_ical_copy_note(host, dataUrl, data, keyboardTrigger);
       return;
@@ -14044,12 +14044,12 @@
     atcb_save_file(dataUrl, filename);
   }
   function atcb_determine_ical_filename(data, subEvent) {
-    const filenameSuffix = function() {
+    const filenameSuffix = (function() {
       if (subEvent != "all" && subEvent != 0) {
         return "-" + parseInt(subEvent) + 1;
       }
       return "";
-    }();
+    })();
     if (data.iCalFileName != null && data.iCalFileName != "") {
       return data.iCalFileName + filenameSuffix;
     }
@@ -14117,12 +14117,12 @@
       const durationMS = newEndDate - newStartDate;
       const durationHours = Math.floor(durationMS / 1e3 / 60 / 60);
       const durationMinutes = Math.floor((durationMS - durationHours * 60 * 60 * 1e3) / 1e3 / 60 % 60);
-      const durationString = function() {
+      const durationString = (function() {
         if (durationHours < 10) {
           return "0" + durationHours + ":" + ("0" + durationMinutes).slice(-2);
         }
         return durationHours + ":" + ("0" + durationMinutes).slice(-2);
-      }();
+      })();
       if (targetCal == "ical" || targetCal == "google" && !/GMT[+|-]\d{1,2}|Etc\/U|Etc\/Zulu|CET|CST6CDT|EET|EST|MET|MST|PST8PDT|WET/i.test(data.timeZone)) {
         return {
           start: atcb_format_datetime(newStartDate, "clean", true, true),
@@ -14164,13 +14164,13 @@
       if (targetCal === "msteams") {
         if (atcbIsMobile()) {
           const offset3 = newStartDate.getTimezoneOffset();
-          const formattedOffset = function() {
+          const formattedOffset = (function() {
             if (offset3 < 0) {
               return "+" + ("0" + Math.abs(offset3 / 60)).slice(-2) + ":" + ("0" + Math.abs(offset3 % 60)).slice(-2);
             } else {
               return "-" + ("0" + Math.abs(offset3 / 60)).slice(-2) + ":" + ("0" + Math.abs(offset3 % 60)).slice(-2);
             }
-          }();
+          })();
           return {
             start: atcb_format_datetime(newStartDate, style2, false, true) + "T00:00:00" + formattedOffset,
             end: atcb_format_datetime(newEndDate, style2, false, true) + "T00:00:00" + formattedOffset,
@@ -14191,7 +14191,7 @@
     }
   }
   function atcb_format_datetime(datetime, style2 = "delimiters", includeTime = true, removeZ = false) {
-    const regex = function() {
+    const regex = (function() {
       if (includeTime) {
         if (style2 == "clean") {
           return /(-|:|(\.\d{3}))/g;
@@ -14202,7 +14202,7 @@
         return /(-|T(\d{2}:\d{2}:\d{2}\.\d{3})Z)/g;
       }
       return /T(\d{2}:\d{2}:\d{2}\.\d{3})Z/g;
-    }();
+    })();
     const output = removeZ ? datetime.toISOString().replace(regex, "").replace("Z", "") : datetime.toISOString().replace(regex, "");
     return output;
   }
@@ -14262,27 +14262,27 @@
       timeZoneInfoEnd = "GMT";
     }
     const magicLocationPhrases = ["global", "world-wide", "worldwide", "online"];
-    const convertable = function() {
+    const convertable = (function() {
       let i = 0;
       let j = dates.length - 1;
       if (subEvent != "all") {
         i = j = subEvent;
       }
       for (i; i <= j; i++) {
-        const magicLocation = function() {
+        const magicLocation = (function() {
           if (dates[`${i}`].location && dates[`${i}`].location !== "") {
             if (magicLocationPhrases.includes(dates[`${i}`].location.toLowerCase())) {
               return true;
             }
           }
           return false;
-        }();
+        })();
         if (!magicLocation && !dates[`${i}`].onlineEvent) {
           return false;
         }
       }
       return true;
-    }();
+    })();
     if (convertable) {
       timeZoneInfoStart = timeZoneInfoEnd = browserTimezone;
     } else {
@@ -14294,18 +14294,18 @@
       }
     }
     const now2 = /* @__PURE__ */ new Date();
-    const dropYearStart = function() {
+    const dropYearStart = (function() {
       if (!enforceYear && startDateInfo.getFullYear() === now2.getFullYear()) {
         return true;
       }
       return false;
-    }();
-    const dropYearEnd = function() {
+    })();
+    const dropYearEnd = (function() {
       if (!enforceYear && endDateInfo.getFullYear() === now2.getFullYear()) {
         return true;
       }
       return false;
-    }();
+    })();
     const formatOptionsStart = get_format_options(timeZoneInfoStart, dropYearStart, language);
     const formatOptionsEnd = get_format_options(timeZoneInfoEnd, dropYearEnd, language);
     if (startDateInfo.toLocaleDateString(language, formatOptionsEnd.DateLong) === endDateInfo.toLocaleDateString(language, formatOptionsEnd.DateLong)) {
@@ -14372,12 +14372,12 @@
     return timeBlocks;
   }
   function get_format_options(timeZoneInfo, dropYear = false, language = "en") {
-    const hoursFormat = function() {
+    const hoursFormat = (function() {
       if (language === "en") {
         return "h12";
       }
       return "h23";
-    }();
+    })();
     if (dropYear) {
       return {
         DateLong: {
@@ -14480,13 +14480,13 @@
   }
   function atcb_parse_url_code(input) {
     const urlText = input.split("|");
-    const text = function() {
+    const text = (function() {
       if (urlText.length > 1 && urlText[1] != "") {
         return urlText[1];
       } else {
         return urlText[0];
       }
-    }();
+    })();
     return '<a href="' + urlText[0] + '" target="' + atcbDefaultTarget + '" rel="noopener">' + text + "</a>";
   }
   function atcb_rewrite_ical_text(content, inQuotes = false) {
@@ -14606,7 +14606,7 @@
     }
   }
   function atcb_manage_body_scroll(host, modalObj = null) {
-    const modal = function() {
+    const modal = (function() {
       if (modalObj != null) {
         return modalObj;
       } else {
@@ -14616,7 +14616,7 @@
         }
         return allModals[allModals.length - 1];
       }
-    }();
+    })();
     if (modal == null) {
       return;
     }
@@ -14687,13 +14687,13 @@
     };
   }
   function atcb_log_event(event, trigger, identifier) {
-    const parentEl = function() {
+    const parentEl = (function() {
       const customTrigger = document.getElementById(identifier);
       if (customTrigger) {
         return customTrigger;
       }
       return document.querySelector('[atcb-button-id="' + identifier + '"]');
-    }();
+    })();
     if (parentEl) {
       parentEl.setAttribute("atcb-last-event", event + ":" + trigger);
     }
@@ -15812,7 +15812,7 @@
         if (atcbWcBooleanParams.includes(attr)) {
           val = !inputVal || inputVal === "" || inputVal.toLowerCase() === "true" ? true : false;
         } else if (atcbWcObjectParams.includes(attr)) {
-          const cleanedInput = function() {
+          const cleanedInput = (function() {
             if (!inputVal || inputVal === "") {
               return "{}";
             }
@@ -15820,10 +15820,10 @@
               return "{" + inputVal + "}";
             }
             return inputVal;
-          }();
+          })();
           val = JSON.parse(cleanedInput);
         } else if (atcbWcObjectArrayParams.includes(attr)) {
-          const cleanedInput = function() {
+          const cleanedInput = (function() {
             if (!inputVal || inputVal === "") {
               return "[]";
             }
@@ -15831,10 +15831,10 @@
               return "[" + inputVal + "]";
             }
             return inputVal;
-          }();
+          })();
           val = JSON.parse(cleanedInput);
         } else if (atcbWcArrayParams.includes(attr)) {
-          const cleanedInput = function() {
+          const cleanedInput = (function() {
             let newVal = inputVal;
             if (inputVal.includes('"') || inputVal.includes("'")) {
               if (inputVal.includes("[")) {
@@ -15847,7 +15847,7 @@
               newVal = newVal.replace(/\s/g, "");
             }
             return newVal;
-          }();
+          })();
           if (cleanedInput.includes("','")) {
             val = cleanedInput.split("','");
           } else {
@@ -15915,7 +15915,7 @@
   }
   function atcb_set_light_mode(shadowRoot, data) {
     shadowRoot.host.classList.remove("atcb-dark", "atcb-light", "atcb-bodyScheme");
-    const hostLightMode = function() {
+    const hostLightMode = (function() {
       if (data.lightMode == "bodyScheme") {
         if (document.body.classList.contains("atcb-dark") || document.documentElement.classList.contains("atcb-dark") || document.body.classList.contains("atcp-dark") || document.documentElement.classList.contains("atcp-dark") || document.body.classList.contains("dark") || document.documentElement.classList.contains("dark")) {
           return "dark";
@@ -15924,7 +15924,7 @@
         }
       }
       return data.lightMode;
-    }();
+    })();
     shadowRoot.host.classList.add("atcb-" + hostLightMode);
   }
   function atcb_csp_nonce(host) {
@@ -15957,18 +15957,18 @@
         generalCssContent.setAttribute("nonce", nonceVal);
       }
       host.prepend(generalCssContent);
-      const overrideDefaultCss = function() {
+      const overrideDefaultCss = (function() {
         if (data.styleLight) {
           return ":host{" + atcb_secure_content(data.styleLight.replace(/(\\r\\n|\\n|\\r)/g, ""), false) + "}";
         }
         return "";
-      }();
-      const overrideDarkCss = function() {
+      })();
+      const overrideDarkCss = (function() {
         if (data.styleDark) {
           return ":host(.atcb-dark){" + atcb_secure_content(data.styleDark.replace(/(\\r\\n|\\n|\\r)/g, ""), false) + "}";
         }
         return "";
-      }();
+      })();
       if (data.customCss && data.customCss !== "") {
         const cssFile = document.createElement("link");
         cssFile.setAttribute("rel", "stylesheet");
@@ -16078,12 +16078,12 @@
   }
   function atcb_init_log(pro = "", debug = false) {
     if (!atcbInitialGlobalInit) {
-      const versionOutput = function() {
+      const versionOutput = (function() {
         if (debug) {
           return " (version " + atcbVersion + ")";
         }
         return "";
-      }();
+      })();
       if (pro != "") {
         console.log("Add to Calendar PRO script initialized" + versionOutput + " | https://add-to-calendar-pro.com");
       } else {
@@ -16159,20 +16159,20 @@
     }
   }
   function atcb_global_listener_keyup(event) {
-    const host = function() {
+    const host = (function() {
       const root = document.querySelector('[atcb-button-id="' + atcbStates["active"] + '"]');
       if (root) {
         return root.shadowRoot;
       }
       return null;
-    }();
+    })();
     if (host && event.key === "Escape") {
       atcb_log_event("closeList", "Ecs Hit", atcbStates["active"]);
       atcb_toggle(host, "close", "", "", true);
     }
   }
   function atcb_global_listener_keydown(event) {
-    const host = function() {
+    const host = (function() {
       const root = document.querySelector('[atcb-button-id="' + atcbStates["active"] + '"]');
       const rootModal = document.getElementById(atcbStates["active"] + "-modal-host");
       if (rootModal) {
@@ -16182,7 +16182,7 @@
         return root.shadowRoot;
       }
       return null;
-    }();
+    })();
     if (host && host.querySelector(".atcb-list") && (event.key === "ArrowDown" || event.key === "ArrowUp" || event.key === "Tab")) {
       event.preventDefault();
       let targetFocus = 0;
@@ -16216,7 +16216,7 @@
     }
   }
   function atcb_global_listener_resize() {
-    const host = function() {
+    const host = (function() {
       const root = document.querySelector('[atcb-button-id="' + atcbStates["active"] + '"]');
       const rootModal = document.getElementById(atcbStates["active"] + "-modal-host");
       if (rootModal) {
@@ -16226,7 +16226,7 @@
         return root.shadowRoot;
       }
       return null;
-    }();
+    })();
     if (host) {
       const activeOverlay = host.querySelector("#atcb-bgoverlay");
       if (activeOverlay) {
@@ -23773,7 +23773,7 @@
   }
   var Spectrum = (
     /** @class */
-    function() {
+    (function() {
       function Spectrum2(entry, snap, singleStep) {
         this.xPct = [];
         this.xVal = [];
@@ -23945,7 +23945,7 @@
         this.xHighestCompleteStep[i] = step;
       };
       return Spectrum2;
-    }()
+    })()
   );
   var defaultFormatter = {
     to: function(value) {
@@ -28221,7 +28221,7 @@
       cancel
     };
   }
-  var _Splide = /* @__PURE__ */ function() {
+  var _Splide = /* @__PURE__ */ (function() {
     function _Splide2(target, options) {
       this.event = EventInterface();
       this.Components = {};
@@ -28353,7 +28353,7 @@
       }
     }]);
     return _Splide2;
-  }();
+  })();
   var Splide = _Splide;
   Splide.defaults = {};
   Splide.STATES = STATES;
