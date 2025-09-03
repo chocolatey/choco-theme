@@ -47,7 +47,7 @@ const copyTheme = async ({
     }
 
     // Copy theme
-    await fs.cp(source, destination, { recursive: isFolder });
+    await fs.cp(source, destination, { force: true, recursive: isFolder });
 
     console.log(`✅ ${task} copied`);
 };
@@ -183,18 +183,6 @@ const init = async () => {
                 );
             }
 
-            // Favicons
-            if (repository.name !== repositoryConfig.boxstarter.name) {
-                parallelTasksInitial.push(
-                    {
-                        task: 'Favicons',
-                        source: repositoryConfig.theme.favicons,
-                        destination: repository.favicons,
-                        isFolder: true
-                    }
-                );
-            }
-
             // Font Awesome and PT Sans
             if (repository.name !== repositoryConfig.zendesk.name) {
                 parallelTasksInitial.push(
@@ -214,7 +202,7 @@ const init = async () => {
             }
 
             // Images
-            if (repository.name !== repositoryConfig.zendesk.name && repository.name !== repositoryConfig.ccm.name) {
+            if (repository.images) {
                 parallelTasksInitial.push(
                     {
                         task: 'Images',
@@ -286,18 +274,6 @@ const init = async () => {
                     replacementContentIsFile: false
                 });
                 console.log('✅ Font Awesome font path updated');
-
-                // Images for headers
-                console.log('🚀 Updating image paths for headers...');
-                await updateContent({
-                    destination: repository.css,
-                    targetFile: `${repository.name}.min.css`,
-                    targetFileDestination: repository.css,
-                    targetFileContentToReplace: '/assets/images',
-                    replaceWithContent: '/Content/images',
-                    replacementContentIsFile: false
-                });
-                console.log('✅ Image paths for headers updated');
             }
 
             if (repository.name === repositoryConfig.ccm.name) {
