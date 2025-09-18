@@ -3,8 +3,8 @@
 
     if (stickyHeader) {
         const navImage = document.querySelector('.navbar-brand-desktop');
-        const logoSmall = '/assets/images/global-shared/logo.svg';
-        const logoLarge = '/assets/images/global-shared/logo-square.svg';
+        const logoSmall = 'https://img.chocolatey.org/logos/chocolatey-icon.svg';
+        const logoLarge = 'https://img.chocolatey.org/logos/chocolatey.svg';
 
         document.body.classList.add('sticky-nav-active');
 

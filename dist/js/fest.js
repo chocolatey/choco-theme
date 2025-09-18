@@ -1,5 +1,5 @@
 /*!
-  * choco-theme v1.3.2 (https://github.com/chocolatey/choco-theme#readme)
+  * choco-theme v1.4.0 (https://github.com/chocolatey/choco-theme#readme)
   * Copyright 2020-2024 Chocolatey Software
   * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -370,8 +370,8 @@
     const stickyHeader = document.querySelector("header.sticky-top");
     if (stickyHeader) {
       const navImage = document.querySelector(".navbar-brand-desktop");
-      const logoSmall = "/assets/images/global-shared/logo.svg";
-      const logoLarge = "/assets/images/global-shared/logo-square.svg";
+      const logoSmall = "https://img.chocolatey.org/logos/chocolatey-icon.svg";
+      const logoLarge = "https://img.chocolatey.org/logos/chocolatey.svg";
       document.body.classList.add("sticky-nav-active");
       if (document.body.scrollTop == 0 || document.documentElement.scrollTop == 0) {
         navImage.setAttribute("src", logoLarge);

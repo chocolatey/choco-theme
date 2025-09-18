@@ -21,7 +21,7 @@ export const purgeCss = async ({
 }: PurgeCss): Promise<void> => {
     console.log('🚀 Purging CSS with PurgeCSS...');
     // Copy non purged CSS and add a temp extension
-    await fs.cp(source, `${repository.css}${repository.name}.min.temp.css`);
+    await fs.cp(source, `${repository.css}${repository.name}.min.temp.css`, { force: true });
 
     const purgeCSSResult = await new PurgeCSS().purge({
         content: repository.purgeCss.content,
