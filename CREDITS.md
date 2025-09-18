@@ -26,14 +26,14 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [rimraf@5.0.10](#rimraf5010)
   * [MIT License](#mit-license-1)
     * [@eonasdan/tempus-dominus@v6.10.4](#eonasdantempus-dominusv6104)
-    * [@eslint/js@9.34.0](#eslintjs9340)
+    * [@eslint/js@9.35.0](#eslintjs9350)
     * [@fortawesome/fontawesome-free@6.7.2](#fortawesomefontawesome-free672-1)
     * [@microsoft/signalr@8.0.17](#microsoftsignalr8017)
     * [@octokit/types@14.1.0](#octokittypes1410)
-    * [@stylistic/eslint-plugin@5.2.3](#stylisticeslint-plugin523)
+    * [@stylistic/eslint-plugin@5.3.1](#stylisticeslint-plugin531)
     * [@types/bootstrap@5.2.10](#typesbootstrap5210)
     * [@types/luxon@3.7.1](#typesluxon371)
-    * [@types/node@22.18.0](#typesnode22180)
+    * [@types/node@22.18.6](#typesnode22186)
     * [abp-web-resources@5.9.3](#abp-web-resources593)
     * [block-ui@2.70.1](#block-ui2701)
     * [bootstrap@5.3.3](#bootstrap533)
@@ -41,10 +41,10 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [clipboard@2.0.11](#clipboard2011)
     * [cropperjs@1.6.2](#cropperjs162)
     * [cssnano@cssnano@6.1.2](#cssnanocssnano612)
-    * [datatables.net-bs5@2.3.3](#datatablesnet-bs5233)
-    * [datatables.net-dt@2.3.3](#datatablesnet-dt233)
-    * [esbuild@0.25.9](#esbuild0259)
-    * [eslint@9.34.0](#eslint9340)
+    * [datatables.net-bs5@2.3.4](#datatablesnet-bs5234)
+    * [datatables.net-dt@2.3.4](#datatablesnet-dt234)
+    * [esbuild@0.25.10](#esbuild02510)
+    * [eslint@9.35.0](#eslint9350)
     * [eslint-plugin-playwright@2.2.2](#eslint-plugin-playwright222)
     * [flatpickr@4.6.13](#flatpickr4613)
     * [globals@15.15.0](#globals15150)
@@ -53,7 +53,7 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [jquery-serializejson@3.2.1](#jquery-serializejson321)
     * [jquery-validation@1.21.0](#jquery-validation1210)
     * [jstree@3.3.17](#jstree3317)
-    * [luxon@3.7.1](#luxon371)
+    * [luxon@3.7.2](#luxon372)
     * [marked@12.0.2](#marked1202)
     * [moment@2.30.1](#moment2301)
     * [moment-timezone@0.5.48](#moment-timezone0548)
@@ -67,14 +67,14 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [pwstrength-bootstrap@3.1.3](#pwstrength-bootstrap313)
     * [sortablejs@1.15.6](#sortablejs1156)
     * [spin.js@4.1.2](#spinjs412)
-    * [stylelint@16.23.1](#stylelint16231)
+    * [stylelint@16.24.0](#stylelint16240)
     * [stylelint-config-twbs-bootstrap@16.1.0](#stylelint-config-twbs-bootstrap1610)
-    * [sweetalert2@11.22.5](#sweetalert211225)
+    * [sweetalert2@11.23.0](#sweetalert211230)
     * [timeago@1.6.7](#timeago167)
     * [ts-node@10.9.2](#ts-node1092)
     * [tsx@4.20.5](#tsx4205)
     * [turndown@7.2.1](#turndown721)
-    * [typescript-eslint@8.41.0](#typescript-eslint8410)
+    * [typescript-eslint@8.44.0](#typescript-eslint8440)
     * [underscore@1.13.7](#underscore1137)
   * [MIT No Attribution License](#mit-no-attribution-license-1)
     * [postcss-preset-env@9.6.0](#postcss-preset-env960)
@@ -814,9 +814,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@eonasdan/tempus-dominus](https://github.com/Eonasdan/tempus-dominus) - [License terms.](https://github.com/Eonasdan/tempus-dominus/blob/5a81b754dd37925a83c28762ff1afb3b53114bfd/LICENSE)
 
-#### @eslint/js@9.34.0
+#### @eslint/js@9.35.0
 
-[@eslint/js](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/b8875f67a7bc99824f19147f4a669be7e98f3eee/LICENSE)
+[@eslint/js](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/8401101d1e3e3e4e1edc2a9e59cafc9956bf2610/LICENSE)
 
 #### @fortawesome/fontawesome-free@6.7.2
 
@@ -830,9 +830,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@octokit/types](https://github.com/octokit/types.ts) - [License terms.](https://github.com/octokit/types.ts/blob/a7ec8303ea2c1d3aa3fa72a6c592857edfb76f45/LICENSE)
 
-#### @stylistic/eslint-plugin@5.2.3
+#### @stylistic/eslint-plugin@5.3.1
 
-[@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic) - [License terms.](https://github.com/eslint-stylistic/eslint-stylistic/blob/621b82a1a9602a641d25cb63167e9257ed4e9a43/LICENSE)
+[@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic) - [License terms.](https://github.com/eslint-stylistic/eslint-stylistic/blob/c58673516abbd28166a296631b638bd2198b34cd/LICENSE)
 
 #### @types/bootstrap@5.2.10
 
@@ -842,7 +842,7 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@types/luxon](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/luxon) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/643225315bb7631642d06e39af178e0b2eb1e129/LICENSE)
 
-#### @types/node@22.18.0
+#### @types/node@22.18.6
 
 [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/610b2deb01be15ce329a4ba5b7f05659833582a0/LICENSE)
 
@@ -874,21 +874,21 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [cssnano](https://github.com/cssnano/cssnano) - [License terms.](https://github.com/cssnano/cssnano/blob/760ba29a4255c6a4ad39e2dfba1b15ab72d9c382/LICENSE-MIT)
 
-#### datatables.net-bs5@2.3.3
+#### datatables.net-bs5@2.3.4
 
-[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/3e2b7ae87f1fc918e2268b8d355660e43b36eadb/License.txt)
+[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/b62a7995d443d6b9116cc7c29c01ae44105b6420/License.txt)
 
-#### datatables.net-dt@2.3.3
+#### datatables.net-dt@2.3.4
 
-[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/4f2fd7cf6105adc51bb571569b9fd6d150b32a08/License.txt)
+[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/d85363c92a63a1eb266770db269477df2a9f8b25/License.txt)
 
-#### esbuild@0.25.9
+#### esbuild@0.25.10
 
-[esbuild](https://github.com/evanw/esbuild) - [License terms.](https://github.com/evanw/esbuild/blob/195e05c16f03a341390feef38b8ebf17d3075e14/LICENSE.md)
+[esbuild](https://github.com/evanw/esbuild) - [License terms.](https://github.com/evanw/esbuild/blob/d6b668f96fb00d6a6d035f058e38b6bd2507beb6/LICENSE.md)
 
-#### eslint@9.34.0
+#### eslint@9.35.0
 
-[eslint](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/b8875f67a7bc99824f19147f4a669be7e98f3eee/LICENSE)
+[eslint](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/8401101d1e3e3e4e1edc2a9e59cafc9956bf2610/LICENSE)
 
 #### eslint-plugin-playwright@2.2.2
 
@@ -922,9 +922,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [jstree](https://github.com/vakata/jstree) - [License terms.](https://github.com/vakata/jstree/blob/6256df013ebd98aea138402d8ac96db3efe0c0da/LICENSE-MIT)
 
-#### luxon@3.7.1
+#### luxon@3.7.2
 
-[luxon](https://github.com/moment/luxon) - [License terms.](https://github.com/moment/luxon/blob/3b2f374e1fcdcaeb62d3093dc786eac8dd889318/LICENSE.md)
+[luxon](https://github.com/moment/luxon) - [License terms.](https://github.com/moment/luxon/blob/4262a38ded7762e22608a9feb9f117b40d338ced/LICENSE.md)
 
 #### marked@12.0.2
 
@@ -978,17 +978,17 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [spin.js](https://github.com/fgnass/spin.js) - [License terms.](https://github.com/fgnass/spin.js/blob/653e79c5ef1f068e5a1a31da5b79b6d1e1b1674d/LICENSE.md)
 
-#### stylelint@16.23.1
+#### stylelint@16.24.0
 
-[stylelint](https://github.com/stylelint/stylelint) - [License terms.](https://github.com/stylelint/stylelint/blob/a282f6c2b0b4e8e15d0324b79a3c325a536daf63/LICENSE)
+[stylelint](https://github.com/stylelint/stylelint) - [License terms.](https://github.com/stylelint/stylelint/blob/34ec717b7f167f66a9015f85206e9c6214fdbc0a/LICENSE)
 
 #### stylelint-config-twbs-bootstrap@16.1.0
 
 [stylelint-config-twbs-bootstrap](https://github.com/twbs/stylelint-config-twbs-bootstrap) - [License terms.](https://github.com/twbs/stylelint-config-twbs-bootstrap/blob/f77749e132382ffb7674a77908e77a01e1a4a951/LICENSE)
 
-#### sweetalert2@11.22.5
+#### sweetalert2@11.23.0
 
-[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/80d573e06fd96be1ff62052364e489b8735f30d7/LICENSE)
+[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/fc465a4330aa6782b9253442702a3b89849c8461/LICENSE)
 
 #### timeago@1.6.7
 
@@ -1006,9 +1006,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [turndown](https://github.com/mixmark-io/turndown) - [License terms.](https://github.com/mixmark-io/turndown/blob/0df0c0506233e0459ba21974f30b9ad3f1feb20f/LICENSE)
 
-#### typescript-eslint@8.41.0
+#### typescript-eslint@8.44.0
 
-[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) - [License terms.](https://github.com/typescript-eslint/typescript-eslint/blob/31a73361bd6449974c89b78ef77be0d04e77510b/LICENSE)
+[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) - [License terms.](https://github.com/typescript-eslint/typescript-eslint/blob/77056f77e6fdca54b66ec692e5cefbd9f7a626dd/LICENSE)
 
 #### underscore@1.13.7
 

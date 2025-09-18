@@ -97,7 +97,7 @@ const init = async () => {
 
         controlLinks (
             '@types/node',
-            '22.17.0',
+            '22.18.6',
             'https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node'
         );
 
