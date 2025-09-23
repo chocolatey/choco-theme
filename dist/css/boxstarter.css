@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* choco-theme boxstarter v1.4.0 (https://github.com/chocolatey/choco-theme#readme)
+* choco-theme boxstarter v1.4.1 (https://github.com/chocolatey/choco-theme#readme)
 * Copyright 2020-2024 Chocolatey Software
 * Licensed under MIT (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
 */
@@ -55029,15 +55029,15 @@ a.circle.text-bg-body-contrast:hover {
 }
 
 .bg-architect-factory {
-  background-image: radial-gradient(circle, rgba(var(--bs-body-bg-rgb), 0) 0%, rgba(var(--bs-body-bg-rgb), 1) 100%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 1) 0%, rgba(var(--bs-body-bg-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 0) 85%, rgba(var(--bs-body-bg-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+  background-image: radial-gradient(circle, rgba(var(--bs-body-bg-rgb), 0) 0%, rgba(var(--bs-body-bg-rgb), 1) 100%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 1) 0%, rgba(var(--bs-body-bg-rgb), 0) 15%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 0) 85%, rgba(var(--bs-body-bg-rgb), 1) 100%), url("https://img.chocolatey.org/svg-backgrounds/architect-factory.svg");
 }
 
 .bg-architect-factory-top {
-  background-image: linear-gradient(to right, rgba(var(--bs-body-bg-rgb), 0.4) 0%, rgba(var(--bs-body-bg-rgb), 1) 30%, rgba(var(--bs-body-bg-rgb), 1) 70%, rgba(var(--bs-body-bg-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 0) 85%, rgba(var(--bs-body-bg-rgb), 1) 100%), url("/assets/images/architect-factory.svg");
+  background-image: linear-gradient(to right, rgba(var(--bs-body-bg-rgb), 0.4) 0%, rgba(var(--bs-body-bg-rgb), 1) 30%, rgba(var(--bs-body-bg-rgb), 1) 70%, rgba(var(--bs-body-bg-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 0) 85%, rgba(var(--bs-body-bg-rgb), 1) 100%), url("https://img.chocolatey.org/svg-backgrounds/architect-factory.svg");
 }
 
 .bg-architect-factory-bottom-primary {
-  background-image: linear-gradient(to right, rgba(var(--bs-body-bg-rgb), 0.4) 0%, rgba(var(--bs-body-bg-rgb), 1) 30%, rgba(var(--bs-body-bg-rgb), 1) 70%, rgba(var(--bs-body-bg-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 1) 0%, rgba(var(--bs-body-bg-rgb), 0) 15%), url("/assets/images/architect-factory-green.svg");
+  background-image: linear-gradient(to right, rgba(var(--bs-body-bg-rgb), 0.4) 0%, rgba(var(--bs-body-bg-rgb), 1) 30%, rgba(var(--bs-body-bg-rgb), 1) 70%, rgba(var(--bs-body-bg-rgb), 0.4) 100%), linear-gradient(to bottom, rgba(var(--bs-body-bg-rgb), 1) 0%, rgba(var(--bs-body-bg-rgb), 0) 15%), url("https://img.chocolatey.org/svg-backgrounds/architect-factory-green.svg");
 }
 
 .bg-retrowave1,

@@ -4,7 +4,7 @@
     "link": "https://github.com/chocolatey/choco-theme",
     "licenseLink": "https://github.com/chocolatey/choco-theme/blob/main/LICENSE",
     "licenseName": "LICENSE",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "dependencies": [
         {
             "name": "@eonasdan/tempus-dominus",
@@ -21,11 +21,11 @@
         {
             "name": "@eslint/js",
             "link": "https://github.com/eslint/eslint",
-            "version": "9.35.0",
+            "version": "9.36.0",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/eslint/eslint/blob/8401101d1e3e3e4e1edc2a9e59cafc9956bf2610/LICENSE",
+                    "link": "https://github.com/eslint/eslint/blob/b4857e54e54b5dba96d156cd8d8b4d42dc5a3bf4/LICENSE",
                     "name": "LICENSE"
                 }
             ]
@@ -79,11 +79,11 @@
         {
             "name": "@stylistic/eslint-plugin",
             "link": "https://github.com/eslint-stylistic/eslint-stylistic",
-            "version": "5.3.1",
+            "version": "5.4.0",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/eslint-stylistic/eslint-stylistic/blob/c58673516abbd28166a296631b638bd2198b34cd/LICENSE",
+                    "link": "https://github.com/eslint-stylistic/eslint-stylistic/blob/04da3bbb7311fdb4aaf41ebb2e30c27dd988c09a/LICENSE",
                     "name": "LICENSE"
                 }
             ]
@@ -259,11 +259,11 @@
         {
             "name": "eslint",
             "link": "https://github.com/eslint/eslint",
-            "version": "9.35.0",
+            "version": "9.36.0",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/eslint/eslint/blob/8401101d1e3e3e4e1edc2a9e59cafc9956bf2610/LICENSE",
+                    "link": "https://github.com/eslint/eslint/blob/b4857e54e54b5dba96d156cd8d8b4d42dc5a3bf4/LICENSE",
                     "name": "LICENSE"
                 }
             ]
@@ -667,11 +667,11 @@
         {
             "name": "typescript-eslint",
             "link": "https://github.com/typescript-eslint/typescript-eslint",
-            "version": "8.44.0",
+            "version": "8.44.1",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/typescript-eslint/typescript-eslint/blob/77056f77e6fdca54b66ec692e5cefbd9f7a626dd/LICENSE",
+                    "link": "https://github.com/typescript-eslint/typescript-eslint/blob/c1980522cd11f2de1a49ff6a30b4be7765a843ff/LICENSE",
                     "name": "LICENSE"
                 }
             ]

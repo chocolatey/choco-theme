@@ -26,11 +26,11 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [rimraf@5.0.10](#rimraf5010)
   * [MIT License](#mit-license-1)
     * [@eonasdan/tempus-dominus@v6.10.4](#eonasdantempus-dominusv6104)
-    * [@eslint/js@9.35.0](#eslintjs9350)
+    * [@eslint/js@9.36.0](#eslintjs9360)
     * [@fortawesome/fontawesome-free@6.7.2](#fortawesomefontawesome-free672-1)
     * [@microsoft/signalr@8.0.17](#microsoftsignalr8017)
     * [@octokit/types@14.1.0](#octokittypes1410)
-    * [@stylistic/eslint-plugin@5.3.1](#stylisticeslint-plugin531)
+    * [@stylistic/eslint-plugin@5.4.0](#stylisticeslint-plugin540)
     * [@types/bootstrap@5.2.10](#typesbootstrap5210)
     * [@types/luxon@3.7.1](#typesluxon371)
     * [@types/node@22.18.6](#typesnode22186)
@@ -44,7 +44,7 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [datatables.net-bs5@2.3.4](#datatablesnet-bs5234)
     * [datatables.net-dt@2.3.4](#datatablesnet-dt234)
     * [esbuild@0.25.10](#esbuild02510)
-    * [eslint@9.35.0](#eslint9350)
+    * [eslint@9.36.0](#eslint9360)
     * [eslint-plugin-playwright@2.2.2](#eslint-plugin-playwright222)
     * [flatpickr@4.6.13](#flatpickr4613)
     * [globals@15.15.0](#globals15150)
@@ -74,7 +74,7 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [ts-node@10.9.2](#ts-node1092)
     * [tsx@4.20.5](#tsx4205)
     * [turndown@7.2.1](#turndown721)
-    * [typescript-eslint@8.44.0](#typescript-eslint8440)
+    * [typescript-eslint@8.44.1](#typescript-eslint8441)
     * [underscore@1.13.7](#underscore1137)
   * [MIT No Attribution License](#mit-no-attribution-license-1)
     * [postcss-preset-env@9.6.0](#postcss-preset-env960)
@@ -814,9 +814,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@eonasdan/tempus-dominus](https://github.com/Eonasdan/tempus-dominus) - [License terms.](https://github.com/Eonasdan/tempus-dominus/blob/5a81b754dd37925a83c28762ff1afb3b53114bfd/LICENSE)
 
-#### @eslint/js@9.35.0
+#### @eslint/js@9.36.0
 
-[@eslint/js](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/8401101d1e3e3e4e1edc2a9e59cafc9956bf2610/LICENSE)
+[@eslint/js](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/b4857e54e54b5dba96d156cd8d8b4d42dc5a3bf4/LICENSE)
 
 #### @fortawesome/fontawesome-free@6.7.2
 
@@ -830,9 +830,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@octokit/types](https://github.com/octokit/types.ts) - [License terms.](https://github.com/octokit/types.ts/blob/a7ec8303ea2c1d3aa3fa72a6c592857edfb76f45/LICENSE)
 
-#### @stylistic/eslint-plugin@5.3.1
+#### @stylistic/eslint-plugin@5.4.0
 
-[@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic) - [License terms.](https://github.com/eslint-stylistic/eslint-stylistic/blob/c58673516abbd28166a296631b638bd2198b34cd/LICENSE)
+[@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic) - [License terms.](https://github.com/eslint-stylistic/eslint-stylistic/blob/04da3bbb7311fdb4aaf41ebb2e30c27dd988c09a/LICENSE)
 
 #### @types/bootstrap@5.2.10
 
@@ -886,9 +886,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [esbuild](https://github.com/evanw/esbuild) - [License terms.](https://github.com/evanw/esbuild/blob/d6b668f96fb00d6a6d035f058e38b6bd2507beb6/LICENSE.md)
 
-#### eslint@9.35.0
+#### eslint@9.36.0
 
-[eslint](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/8401101d1e3e3e4e1edc2a9e59cafc9956bf2610/LICENSE)
+[eslint](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/b4857e54e54b5dba96d156cd8d8b4d42dc5a3bf4/LICENSE)
 
 #### eslint-plugin-playwright@2.2.2
 
@@ -1006,9 +1006,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [turndown](https://github.com/mixmark-io/turndown) - [License terms.](https://github.com/mixmark-io/turndown/blob/0df0c0506233e0459ba21974f30b9ad3f1feb20f/LICENSE)
 
-#### typescript-eslint@8.44.0
+#### typescript-eslint@8.44.1
 
-[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) - [License terms.](https://github.com/typescript-eslint/typescript-eslint/blob/77056f77e6fdca54b66ec692e5cefbd9f7a626dd/LICENSE)
+[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) - [License terms.](https://github.com/typescript-eslint/typescript-eslint/blob/c1980522cd11f2de1a49ff6a30b4be7765a843ff/LICENSE)
 
 #### underscore@1.13.7
 
