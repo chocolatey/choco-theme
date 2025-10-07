@@ -1,0 +1,32 @@
+{
+    "name": "@chocolatey-software/org",
+    "version": "2.0.0",
+    "description": "Chocolatey Software theme assets for use on chocolatey.org.",
+    "author": "Chocolatey Software (https://chocolatey.org/)",
+    "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/org#readme",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@types/bootstrap": "^5.2.10",
+        "@types/jquery": "^3",
+        "@types/prismjs": "^1"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^7.0.0",
+        "@splidejs/splide": "^4.1.4",
+        "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+        "@splidejs/splide-extension-intersection": "^0.2.0",
+        "add-to-calendar-button": "^2.9.1",
+        "balance-text": "^3.3.1",
+        "bootstrap": "^5.3.7",
+        "clipboard": "^2.0.11",
+        "jquery": "^3.7.1",
+        "nouislider": "^15.8.1",
+        "prismjs": "^1.30.0"
+    },
+    "files": [
+        "LICENSE",
+        "package.json",
+        "README.md",
+        "dist/"
+    ]
+}
