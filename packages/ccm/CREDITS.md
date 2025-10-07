@@ -1,6 +1,6 @@
 <img alt="Chocolatey logo" width="260" style="margin-right: 1rem;" src="https://img.chocolatey.org/logos/chocolatey.png"> <img alt="Chocolatey icon logo" width="200" src="https://img.chocolatey.org/logos/chocolatey-icon.png">
 
-# choco-theme Third Party Licenses
+# @chocolatey-software/ccm Third Party Licenses
 
 ---
 
@@ -9,77 +9,44 @@ Chocolatey uses a number of 3rd party components. Their details are below.
 * [Open Source License Types (Reference)](#open-source-license-types-reference)
   * [Apache v2.0 License](#apache-v20-license)
   * [Attribution 4.0 International License](#attribution-40-international-license)
-  * [ISC License](#isc-license)
   * [MIT License](#mit-license)
-  * [MIT No Attribution License](#mit-no-attribution-license)
   * [SIL OPEN FONT 1.1 LICENSE](#sil-open-font-11-license)
 * [Chocolatey Software Component License](#chocolatey-software-component-licenses)
   * [Chocolatey Open Source](#chocolatey-open-source)
-* [choco-theme](#choco-theme)
+* [@chocolatey-software/ccm](#chocolatey-softwareccm)
   * [Apache v2.0 License](#apache-v20-license-1)
     * [fuse.js@7.1.0](#fusejs710)
-    * [typescript@5.8.3](#typescript583)
   * [Attribution 4.0 International License](#attribution-40-international-license-1)
-    * [@fortawesome/fontawesome-free@6.7.2](#fortawesomefontawesome-free672)
-  * [ISC License](#isc-license-1)
-    * [chartist-plugin-legend@0.6.2](#chartist-plugin-legend062)
-    * [rimraf@5.0.10](#rimraf5010)
+    * [@fortawesome/fontawesome-free@7.1.0](#fortawesomefontawesome-free710)
   * [MIT License](#mit-license-1)
     * [@eonasdan/tempus-dominus@v6.10.4](#eonasdantempus-dominusv6104)
-    * [@eslint/js@9.36.0](#eslintjs9360)
-    * [@fortawesome/fontawesome-free@6.7.2](#fortawesomefontawesome-free672-1)
-    * [@microsoft/signalr@8.0.17](#microsoftsignalr8017)
-    * [@octokit/types@14.1.0](#octokittypes1410)
-    * [@stylistic/eslint-plugin@5.4.0](#stylisticeslint-plugin540)
-    * [@types/bootstrap@5.2.10](#typesbootstrap5210)
-    * [@types/luxon@3.7.1](#typesluxon371)
-    * [@types/node@22.18.6](#typesnode22186)
+    * [@fortawesome/fontawesome-free@7.1.0](#fortawesomefontawesome-free710-1)
+    * [@microsoft/signalr@9.0.6](#microsoftsignalr906)
+    * [@popperjs/core@2.11.8](#popperjscore2118)
     * [abp-web-resources@5.9.3](#abp-web-resources593)
     * [block-ui@2.70.1](#block-ui2701)
-    * [bootstrap@5.3.3](#bootstrap533)
-    * [chartist@0.11.4](#chartist0114)
+    * [bootstrap@5.3.8](#bootstrap538)
     * [clipboard@2.0.11](#clipboard2011)
     * [cropperjs@1.6.2](#cropperjs162)
-    * [cssnano@cssnano@6.1.2](#cssnanocssnano612)
     * [datatables.net-bs5@2.3.4](#datatablesnet-bs5234)
     * [datatables.net-dt@2.3.4](#datatablesnet-dt234)
-    * [esbuild@0.25.10](#esbuild02510)
-    * [eslint@9.36.0](#eslint9360)
-    * [eslint-plugin-playwright@2.2.2](#eslint-plugin-playwright222)
-    * [flatpickr@4.6.13](#flatpickr4613)
-    * [globals@15.15.0](#globals15150)
-    * [html-to-pdfmake@2.5.31](#html-to-pdfmake2531)
     * [jquery@3.7.1](#jquery371)
     * [jquery-serializejson@3.2.1](#jquery-serializejson321)
     * [jquery-validation@1.21.0](#jquery-validation1210)
     * [jstree@3.3.17](#jstree3317)
     * [luxon@3.7.2](#luxon372)
-    * [marked@12.0.2](#marked1202)
     * [moment@2.30.1](#moment2301)
-    * [moment-timezone@0.5.48](#moment-timezone0548)
+    * [moment-timezone@0.6.0](#moment-timezone060)
     * [mustache@4.2.0](#mustache420)
-    * [npm-run-all2@6.2.6](#npm-run-all2626)
-    * [octokit@5.0.3](#octokit503)
-    * [pdfmake@0.2.20](#pdfmake0220)
-    * [postcss@8.5.6](#postcss856)
-    * [postcss-cli@11.0.1](#postcss-cli1101)
-    * [purgecss@6.0.0](#purgecss600)
+    * [prismjs@1.30.0](#prismjs1300)
     * [pwstrength-bootstrap@3.1.3](#pwstrength-bootstrap313)
     * [sortablejs@1.15.6](#sortablejs1156)
     * [spin.js@4.1.2](#spinjs412)
-    * [stylelint@16.24.0](#stylelint16240)
-    * [stylelint-config-twbs-bootstrap@16.1.0](#stylelint-config-twbs-bootstrap1610)
-    * [sweetalert2@11.23.0](#sweetalert211230)
+    * [sweetalert2@11.26.3](#sweetalert211263)
     * [timeago@1.6.7](#timeago167)
-    * [ts-node@10.9.2](#ts-node1092)
-    * [tsx@4.20.5](#tsx4205)
-    * [turndown@7.2.1](#turndown721)
-    * [typescript-eslint@8.44.1](#typescript-eslint8441)
     * [underscore@1.13.7](#underscore1137)
-  * [MIT No Attribution License](#mit-no-attribution-license-1)
-    * [postcss-preset-env@9.6.0](#postcss-preset-env960)
   * [SIL OPEN FONT 1.1 LICENSE](#sil-open-font-11-license-1)
-    * [@fortawesome/fontawesome-free@6.7.2](#fortawesomefontawesome-free672-2)
+    * [@fortawesome/fontawesome-free@7.1.0](#fortawesomefontawesome-free710-2)
 
 ## Open Source License Types (Reference)
 
@@ -670,18 +637,6 @@ public licenses.
 Creative Commons may be contacted at creativecommons.org.
 ```
 
-### ISC License
-
-The [ISC License](https://opensource.org/license/isc-license-txt) has the following terms:
-
-```text
-Copyright <YEAR> <OWNER>
-
-Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
-
-THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-```
-
 ### MIT License
 
 The [MIT License](https://mit-license.org/) has the following terms:
@@ -708,18 +663,6 @@ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
 ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
-
-### MIT No Attribution License
-
-The [MIT No Attribution License](https://opensource.org/license/mit-0) has the following terms:
-
-```text
-Copyright <YEAR><COPYRIGHT HOLDER>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
 ### SIL OPEN FONT 1.1 LICENSE
@@ -778,9 +721,9 @@ Chocolatey Open Source components fall under the [Apache v2.0 license](https://w
 https://www.apache.org/licenses/LICENSE-2.0
 ```
 
-* [choco-theme](https://github.com/chocolatey/choco-theme) - [License terms.](https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
+* [@chocolatey-software/ccm](https://github.com/chocolatey/choco-theme/blob/main/packages/ccm) - [License terms.](https://github.com/chocolatey/choco-theme/blob/main/packages/ccm/LICENSE)
 
-## choco-theme
+## @chocolatey-software/ccm
 
 ### Apache v2.0 License
 
@@ -788,25 +731,11 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [fuse.js](https://github.com/krisk/Fuse) - [License terms.](https://github.com/krisk/Fuse/blob/8119c18862f7df585688b1320ff307eb19f8ff89/LICENSE)
 
-#### typescript@5.8.3
-
-[typescript](https://github.com/microsoft/TypeScript) - [License terms.](https://github.com/microsoft/TypeScript/blob/83dc0bb2ed91fe0815ab28dc3ff95fae7425e413/LICENSE.txt)
-
 ### Attribution 4.0 International License
 
-#### @fortawesome/fontawesome-free@6.7.2
+#### @fortawesome/fontawesome-free@7.1.0
 
-[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/af620534bfc3c2d4cbefcfeec29603bbe7809e64/LICENSE.txt)
-
-### ISC License
-
-#### chartist-plugin-legend@0.6.2
-
-[chartist-plugin-legend](https://github.com/CodeYellowBV/chartist-plugin-legend) - [License terms.](https://github.com/CodeYellowBV/chartist-plugin-legend/blob/4e86f4352b0a3041f3a36c487499b1bec1108e56/LICENSE)
-
-#### rimraf@5.0.10
-
-[rimraf](https://github.com/isaacs/rimraf) - [License terms.](https://github.com/isaacs/rimraf/blob/982faa77dc2398f5e4e1daa9a8f35d3bb82168c0/LICENSE)
+[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/41cfe644047fc3a4c49c22acc721cacc3e1021fe/LICENSE.txt)
 
 ### MIT License
 
@@ -814,37 +743,17 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@eonasdan/tempus-dominus](https://github.com/Eonasdan/tempus-dominus) - [License terms.](https://github.com/Eonasdan/tempus-dominus/blob/5a81b754dd37925a83c28762ff1afb3b53114bfd/LICENSE)
 
-#### @eslint/js@9.36.0
+#### @fortawesome/fontawesome-free@7.1.0
 
-[@eslint/js](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/b4857e54e54b5dba96d156cd8d8b4d42dc5a3bf4/LICENSE)
+[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/41cfe644047fc3a4c49c22acc721cacc3e1021fe/LICENSE.txt)
 
-#### @fortawesome/fontawesome-free@6.7.2
+#### @microsoft/signalr@9.0.6
 
-[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/af620534bfc3c2d4cbefcfeec29603bbe7809e64/LICENSE.txt)
+[@microsoft/signalr](https://github.com/dotnet/aspnetcore) - [License terms.](https://github.com/dotnet/aspnetcore/blob/379bfc7b2559e7cc9f42f997a497b2f2dd8e12d2/LICENSE.txt)
 
-#### @microsoft/signalr@8.0.17
+#### @popperjs/core@2.11.8
 
-[@microsoft/signalr](https://github.com/dotnet/aspnetcore) - [License terms.](https://github.com/dotnet/aspnetcore/blob/fa4d80b76c2431a825be026f6bbabca63e1f42ef/LICENSE.txt)
-
-#### @octokit/types@14.1.0
-
-[@octokit/types](https://github.com/octokit/types.ts) - [License terms.](https://github.com/octokit/types.ts/blob/a7ec8303ea2c1d3aa3fa72a6c592857edfb76f45/LICENSE)
-
-#### @stylistic/eslint-plugin@5.4.0
-
-[@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic) - [License terms.](https://github.com/eslint-stylistic/eslint-stylistic/blob/04da3bbb7311fdb4aaf41ebb2e30c27dd988c09a/LICENSE)
-
-#### @types/bootstrap@5.2.10
-
-[@types/bootstrap](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/bootstrap) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/451dc8fc19383bc12af59522020e571957f1684e/LICENSE)
-
-#### @types/luxon@3.7.1
-
-[@types/luxon](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/luxon) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/643225315bb7631642d06e39af178e0b2eb1e129/LICENSE)
-
-#### @types/node@22.18.6
-
-[@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node) - [License terms.](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/610b2deb01be15ce329a4ba5b7f05659833582a0/LICENSE)
+[@popperjs/core](https://github.com/popperjs/popper-core) - [License terms.](https://github.com/floating-ui/floating-ui/blob/92195083958c9496988ed4526b82b75b7256b5a4/LICENSE.md)
 
 #### abp-web-resources@5.9.3
 
@@ -854,13 +763,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [block-ui](https://github.com/malsup/blockui) - [License terms.](https://malsup.github.io/mit-license.txt)
 
-#### bootstrap@5.3.3
+#### bootstrap@5.3.8
 
-[bootstrap](https://github.com/twbs/bootstrap) - [License terms.](https://github.com/twbs/bootstrap/blob/6e1f75f420f68e1d52733b8e407fc7c3766c9dba/LICENSE)
-
-#### chartist@0.11.4
-
-[chartist](https://github.com/gionkunz/chartist-js) - [License terms.](https://github.com/gionkunz/chartist-js/blob/c55b2c129c3fc4e447bbea2f3bbe2b3246fd9eb9/LICENSE-MIT)
+[bootstrap](https://github.com/twbs/bootstrap) - [License terms.](https://github.com/twbs/bootstrap/blob/25aa8cc0b32f0d1a54be575347e6d84b70b1acd7/LICENSE)
 
 #### clipboard@2.0.11
 
@@ -870,10 +775,6 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [cropperjs](https://github.com/fengyuanchen/cropperjs) - [License terms.](https://github.com/fengyuanchen/cropperjs/blob/da3f6f7d4b9c29c7234ddf114c71a27a269855f0/LICENSE)
 
-#### cssnano@cssnano@6.1.2
-
-[cssnano](https://github.com/cssnano/cssnano) - [License terms.](https://github.com/cssnano/cssnano/blob/760ba29a4255c6a4ad39e2dfba1b15ab72d9c382/LICENSE-MIT)
-
 #### datatables.net-bs5@2.3.4
 
 [datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/b62a7995d443d6b9116cc7c29c01ae44105b6420/License.txt)
@@ -881,30 +782,6 @@ https://www.apache.org/licenses/LICENSE-2.0
 #### datatables.net-dt@2.3.4
 
 [datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/d85363c92a63a1eb266770db269477df2a9f8b25/License.txt)
-
-#### esbuild@0.25.10
-
-[esbuild](https://github.com/evanw/esbuild) - [License terms.](https://github.com/evanw/esbuild/blob/d6b668f96fb00d6a6d035f058e38b6bd2507beb6/LICENSE.md)
-
-#### eslint@9.36.0
-
-[eslint](https://github.com/eslint/eslint) - [License terms.](https://github.com/eslint/eslint/blob/b4857e54e54b5dba96d156cd8d8b4d42dc5a3bf4/LICENSE)
-
-#### eslint-plugin-playwright@2.2.2
-
-[eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright) - [License terms.](https://github.com/playwright-community/eslint-plugin-playwright/blob/38a559e69978c19206d4a7a032f8fb4227306a11/LICENSE)
-
-#### flatpickr@4.6.13
-
-[flatpickr](https://github.com/chmln/flatpickr) - [License terms.](https://github.com/chmln/flatpickr/blob/82df19a8a595bb9c008da93b30f241c4155fa058/LICENSE.md)
-
-#### globals@15.15.0
-
-[globals](https://github.com/sindresorhus/globals) - [License terms.](https://github.com/sindresorhus/globals/blob/8a43ab65056483c0248c7be3a69fdb2866d859a2/license)
-
-#### html-to-pdfmake@2.5.31
-
-[html-to-pdfmake](https://github.com/Aymkdn/html-to-pdfmake) - [License terms.](https://github.com/Aymkdn/html-to-pdfmake/blob/26dc771bee4c04662d6b642971bc9fdd6a4de978/LICENSE)
 
 #### jquery@3.7.1
 
@@ -926,45 +803,21 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [luxon](https://github.com/moment/luxon) - [License terms.](https://github.com/moment/luxon/blob/4262a38ded7762e22608a9feb9f117b40d338ced/LICENSE.md)
 
-#### marked@12.0.2
-
-[marked](https://github.com/markedjs/marked) - [License terms.](https://github.com/markedjs/marked/blob/c6a98ea66c36d12255543e2fabd8f8236dbc5276/LICENSE.md)
-
 #### moment@2.30.1
 
 [moment](https://github.com/moment/moment) - [License terms.](https://github.com/moment/moment/blob/485d9a7d709bd5f3869a7ad24630cf0746d072dc/LICENSE)
 
-#### moment-timezone@0.5.48
+#### moment-timezone@0.6.0
 
-[moment-timezone](https://github.com/moment/moment-timezone) - [License terms.](https://github.com/moment/moment-timezone/blob/fcec4545800e8980a956acb2f443b0f16d9cdb16/LICENSE)
+[moment-timezone](https://github.com/moment/moment-timezone) - [License terms.](https://github.com/moment/moment-timezone/blob/92c6a36c9d2f28658d3f122839022aacca56a9ef/LICENSE)
 
 #### mustache@4.2.0
 
 [mustache](https://github.com/janl/mustache.js) - [License terms.](https://github.com/janl/mustache.js/blob/bd29972ab8a0f4c592f35483615ab9a274396300/LICENSE)
 
-#### npm-run-all2@6.2.6
+#### prismjs@1.30.0
 
-[npm-run-all2](https://github.com/bcomnes/npm-run-all2) - [License terms.](https://github.com/bcomnes/npm-run-all2/blob/67a6356a185f6ca5b4a39d88613c8aa491c648c0/LICENSE)
-
-#### octokit@5.0.3
-
-[octokit](https://github.com/octokit/octokit.js) - [License terms.](https://github.com/octokit/octokit.js/blob/310e4cb7d6cc12210947befbd8aaf88d4f0b17e5/LICENSE)
-
-#### pdfmake@0.2.20
-
-[pdfmake](https://github.com/bpampuch/pdfmake) - [License terms.](https://github.com/bpampuch/pdfmake/blob/975e26f66317cba1e509df3d1c9bb76fd22174d7/LICENSE)
-
-#### postcss@8.5.6
-
-[postcss](https://github.com/postcss/postcss) - [License terms.](https://github.com/postcss/postcss/blob/91d6eb5c3d1ca8acb4e8e3926005acf2b066c211/LICENSE)
-
-#### postcss-cli@11.0.1
-
-[postcss-cli](https://github.com/postcss/postcss-cli) - [License terms.](https://github.com/postcss/postcss-cli/blob/7bea18069b334b0d537d5c772ce20b1637c7e5d6/LICENSE)
-
-#### purgecss@6.0.0
-
-[purgecss](https://github.com/FullHuman/purgecss) - [License terms.](https://github.com/FullHuman/purgecss/blob/152ccba46e781902f302b7adca1788a6909e9569/LICENSE)
+[prismjs](https://github.com/PrismJS/prism) - [License terms.](https://github.com/PrismJS/prism/blob/76dde18a575831c91491895193f56081ac08b0c5/LICENSE)
 
 #### pwstrength-bootstrap@3.1.3
 
@@ -978,50 +831,20 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [spin.js](https://github.com/fgnass/spin.js) - [License terms.](https://github.com/fgnass/spin.js/blob/653e79c5ef1f068e5a1a31da5b79b6d1e1b1674d/LICENSE.md)
 
-#### stylelint@16.24.0
+#### sweetalert2@11.26.3
 
-[stylelint](https://github.com/stylelint/stylelint) - [License terms.](https://github.com/stylelint/stylelint/blob/34ec717b7f167f66a9015f85206e9c6214fdbc0a/LICENSE)
-
-#### stylelint-config-twbs-bootstrap@16.1.0
-
-[stylelint-config-twbs-bootstrap](https://github.com/twbs/stylelint-config-twbs-bootstrap) - [License terms.](https://github.com/twbs/stylelint-config-twbs-bootstrap/blob/f77749e132382ffb7674a77908e77a01e1a4a951/LICENSE)
-
-#### sweetalert2@11.23.0
-
-[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/fc465a4330aa6782b9253442702a3b89849c8461/LICENSE)
+[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/649d60a5c9ba80d116f649c91ab0af2c5e5e2930/LICENSE)
 
 #### timeago@1.6.7
 
 [timeago](https://github.com/rmm5t/jquery-timeago) - [License terms.](https://github.com/rmm5t/jquery-timeago/blob/48fdda3ca724dcd655e8e990f6d7fbd203718905/LICENSE.txt)
 
-#### ts-node@10.9.2
-
-[ts-node](https://github.com/TypeStrong/ts-node) - [License terms.](https://github.com/TypeStrong/ts-node/blob/057ac1beb118f9c42d21e876a17320ad73ea6be2/LICENSE)
-
-#### tsx@4.20.5
-
-[tsx](https://github.com/privatenumber/tsx) - [License terms.](https://github.com/privatenumber/tsx/blob/e6d1a4726540eb4dbef9b331acb13a294c674e96/LICENSE)
-
-#### turndown@7.2.1
-
-[turndown](https://github.com/mixmark-io/turndown) - [License terms.](https://github.com/mixmark-io/turndown/blob/0df0c0506233e0459ba21974f30b9ad3f1feb20f/LICENSE)
-
-#### typescript-eslint@8.44.1
-
-[typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) - [License terms.](https://github.com/typescript-eslint/typescript-eslint/blob/c1980522cd11f2de1a49ff6a30b4be7765a843ff/LICENSE)
-
 #### underscore@1.13.7
 
 [underscore](https://github.com/jashkenas/underscore) - [License terms.](https://github.com/jashkenas/underscore/blob/d2e7e613a597bec6b16c946e42c91950dcc1a215/LICENSE)
 
-### MIT No Attribution License
-
-#### postcss-preset-env@9.6.0
-
-[postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env) - [License terms.](https://github.com/csstools/postcss-plugins/blob/5d45f917601848f9d41f23424de4a98133e5bc2b/LICENSE.md)
-
 ### SIL OPEN FONT 1.1 LICENSE
 
-#### @fortawesome/fontawesome-free@6.7.2
+#### @fortawesome/fontawesome-free@7.1.0
 
-[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/af620534bfc3c2d4cbefcfeec29603bbe7809e64/LICENSE.txt)
+[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/41cfe644047fc3a4c49c22acc721cacc3e1021fe/LICENSE.txt)

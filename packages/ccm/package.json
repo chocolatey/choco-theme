@@ -1,0 +1,63 @@
+{
+    "name": "@chocolatey-software/ccm",
+    "version": "2.0.0",
+    "description": "Chocolatey Software theme assets for use on Chocolatey Central Management",
+    "author": "Chocolatey Software (https://chocolatey.org/)",
+    "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm#readme",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@types/bootstrap": "^5.2.10",
+        "@types/jquery": "^3",
+        "@types/jstree": "^3",
+        "@types/luxon": "^3",
+        "@types/mustache": "^4",
+        "@types/prismjs": "^1",
+        "@types/signalr": "^2.4.3",
+        "@types/sortablejs": "^1",
+        "@types/timeago": "^1",
+        "@types/underscore": "^1",
+        "license-report": "^6.8.0"
+    },
+    "dependencies": {
+        "@eonasdan/tempus-dominus": "^6.10.4",
+        "@fortawesome/fontawesome-free": "^7.0.0",
+        "@microsoft/signalr": "^9.0.6",
+        "@popperjs/core": "^2.11.8",
+        "abp-web-resources": "^5.9.3",
+        "block-ui": "^2.70.1",
+        "bootstrap": "^5.3.8",
+        "clipboard": "^2.0.11",
+        "cropperjs": "^1.6.2",
+        "datatables.net-bs5": "^2.3.3",
+        "datatables.net-dt": "^2.3.3",
+        "fuse.js": "^7.1.0",
+        "jquery": "^3.7.1",
+        "jquery-serializejson": "^3.2.1",
+        "jquery-validation": "^1.21.0",
+        "jstree": "^3.3.17",
+        "luxon": "^3.7.1",
+        "moment": "^2.30.1",
+        "moment-timezone": "^0.6.0",
+        "mustache": "^4.2.0",
+        "prismjs": "^1.30.0",
+        "pwstrength-bootstrap": "^3.1.3",
+        "sortablejs": "^1.15.6",
+        "spin.js": "^4.1.2",
+        "sweetalert2": "^11.22.5",
+        "timeago": "^1.6.7",
+        "underscore": "^1.13.7"
+    },
+    "scripts": {
+        "credits-rename": "npx tsx build/functions/credits-rename.ts",
+        "credits": "echo 🚀 Generating the CREDITS.json file... && yarn credits-rename && license-report --only=prod --fields=name --fields=link --fields=installedVersion --fields=licenseType --output=json > CREDITS.json && npx tsx build/credits.ts && echo ✅ CREDITS.json file generated successfully"
+    },
+    "files": [
+        "CREDITS.json",
+        "CREDITS.md",
+        "CREDITS.pdf",
+        "LICENSE",
+        "package.json",
+        "README.md",
+        "dist/"
+    ]
+}
