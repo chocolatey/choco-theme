@@ -1,22 +1,20 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env tsx
 
 /*!
  * Configuration for repositories.
- * Copyright 2020-2024 Chocolatey Software
- * Licensed under Apache License (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
  */
 
 export interface RepositoryConfig {
     name: string;
     css: string;
     js: string;
-    favicons: string;
-    fontAwesome: string;
-    ptSans: string;
+    fontAwesome?: string;
+    ptSans?: string;
     images?: string;
     partials: string;
     root: string;
     language: string;
+    eslintConfig?: string;
     purgeCss?: {
         content: string[];
         safelist: (string | RegExp)[];
@@ -26,10 +24,8 @@ export interface RepositoryConfig {
 export const defaultRepositoryConfig = {
     css: 'input/assets/css/',
     js: 'input/assets/js/',
-    favicons: 'input/',
     fontAwesome: 'input/assets/fonts/fontawesome-free/',
     ptSans: 'input/assets/fonts/PT_Sans/',
-    images: 'input/assets/images/global-shared/',
     partials: 'input/global-partials/',
     language: 'cshtml',
     purgeCss: {
@@ -55,11 +51,12 @@ export const defaultRepositoryConfig = {
 export const astroRepositoryConfig = {
     css: 'public/styles/',
     js: 'public/scripts/',
-    favicons: 'public/',
     fontAwesome: 'public/fonts/fontawesome-free/',
     ptSans: 'public/fonts/PT_Sans/',
     partials: 'src/components/global/',
+    images: '',
     language: 'astro',
+    eslintConfig: 'eslint.config.mjs',
     purgeCss: {
         content: [
             'src/**/*.astro',
@@ -71,8 +68,8 @@ export const astroRepositoryConfig = {
             'src/**/*.ts',
             'src/**/*.json',
             'public/**/*.js',
-            'node_modules/choco-astro/src/**/*.astro',
-            'node_modules/choco-astro/src/**/*.ts'
+            'node_modules/@chocolatey-software/astro/src/**/*.astro',
+            'node_modules/@chocolatey-software/astro/src/**/*.ts'
         ],
         safelist: [
             '::-webkit-scrollbar',
@@ -100,31 +97,31 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
     ccm: {
         ...defaultRepositoryConfig,
         name: 'ccm',
-        favicons: 'wwwroot/',
         css: 'wwwroot/css/',
-        js: 'wwwroot/js/',
+        js: 'wwwroot/js/dist/',
         fontAwesome: 'wwwroot/fonts/fontawesome-free/',
         ptSans: 'wwwroot/fonts/PT_Sans/',
-        partials: 'Areas/Admin/Views/Global/'
+        partials: '',
+        eslintConfig: 'eslint.config.mjs'
     },
-    community: {
+    ccr: {
         ...defaultRepositoryConfig,
-        name: 'community',
+        name: 'ccr',
         css: 'Content/css/',
         js: 'Scripts/',
-        favicons: './',
         fontAwesome: 'Content/fonts/fontawesome-free/',
         ptSans: 'Content/fonts/PT_Sans/',
-        images: 'Content/Images/global-shared/',
-        partials: 'Views/GlobalPartials/'
+        partials: 'Views/GlobalPartials/',
+        eslintConfig: 'eslint.config.mjs'
     },
     credits: {
         ...astroRepositoryConfig,
-        name: 'credits'
+        name: 'credits',
     },
     design: {
         ...defaultRepositoryConfig,
-        name: 'design'
+        name: 'design',
+        images: 'input/assets/images/global-shared/',
     },
     docs: {
         ...astroRepositoryConfig,
@@ -136,46 +133,32 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
     },
     org: {
         ...defaultRepositoryConfig,
-        name: 'org'
+        name: 'org',
+        images: 'input/assets/images/global-shared/'
     },
-    portal: {
+    licensing: {
         ...defaultRepositoryConfig,
-        name: 'portal',
-        favicons: 'wwwroot/',
+        name: 'licensing',
         css: 'wwwroot/css/',
         js: 'wwwroot/js/',
         fontAwesome: 'wwwroot/fonts/fontawesome-free/',
         ptSans: 'wwwroot/fonts/PT_Sans/',
-        partials: 'Pages/Global/'
-    },
-    playwright: {
-        ...defaultRepositoryConfig,
-        name: 'playwright'
-    },
-    theme: {
-        name: 'choco-theme',
-        css: 'node_modules/choco-theme/dist/css/',
-        js: 'node_modules/choco-theme/dist/js/',
-        favicons: 'node_modules/choco-theme/images/favicons/',
-        fontAwesome: 'node_modules/@fortawesome/fontawesome-free/webfonts/',
-        ptSans: 'node_modules/choco-theme/fonts/PT_Sans/',
-        images: 'node_modules/choco-theme/images/global-shared/',
-        partials: 'node_modules/choco-theme/dist/partials/',
-        language: 'mixed',
-        root: 'node_modules/choco-theme/'
+        partials: 'Pages/Global/',
+        eslintConfig: 'eslint.config.mjs'
     },
     zendesk: {
         ...defaultRepositoryConfig,
         name: 'zendesk',
         css: 'assets/',
         js: 'assets/',
-        favicons: 'assets/',
+        fontAwesome: '',
+        ptSans: '',
         partials: 'global-partials/',
         language: 'hbs'
     }
 };
 
-// Merge purgeCss section into the portal configuration
+// Merge purgeCss section into the licensing configuration
 repositoryConfig.ccm.purgeCss = {
     content: [
         `${repositoryConfig.ccm.js}**/*.js`,
@@ -208,11 +191,11 @@ repositoryConfig.design.purgeCss = {
     ]
 };
 
-// Merge purgeCss section into the community configuration
-repositoryConfig.community.purgeCss = {
+// Merge purgeCss section into the ccr configuration
+repositoryConfig.ccr.purgeCss = {
     content: [
-        `${repositoryConfig.community.js}*.js`,
-        `${repositoryConfig.community.partials}*.cshtml`,
+        `${repositoryConfig.ccr.js}*.js`,
+        `${repositoryConfig.ccr.partials}*.cshtml`,
         'App_Code/**/*.cshtml',
         'Errors/**/*.*',
         'Views/**/*.*'
@@ -242,25 +225,29 @@ repositoryConfig.org.purgeCss = {
     ]
 };
 
-// Merge purgeCss section into the portal configuration
-repositoryConfig.portal.purgeCss = {
+// Merge purgeCss section into the licensing configuration
+repositoryConfig.licensing.purgeCss = {
     content: [
-        `${repositoryConfig.portal.js}*.js`,
+        `${repositoryConfig.licensing.js}*.js`,
         'Areas/**/*.cshtml',
         'Pages/**/*.cshtml'
     ],
     safelist: [
         ...defaultRepositoryConfig.purgeCss.safelist,
         /^ct-series-/,
+        /^ct-legend-/,
         /^bg-(secondary|danger|success)/,
         /^callout-(danger|success)/,
+        'ct-legend',
+        'ct-series',
         'data-license-type',
         'Architect',
         'ManagedServiceProvider',
         'Professional',
         'Business',
         'Trial',
-        /^dt-column-header/
+        /^dt-column-header/,
+        /^stroke-(blue|pink|purple|green|red|yellow|orange|success|danger|info|primary)/
     ]
 };
 

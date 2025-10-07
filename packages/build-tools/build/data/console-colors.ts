@@ -1,9 +1,7 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env tsx
 
 /*!
  * Colors that are used in the terminal while running choco-theme commands.
- * Copyright 2020-2024 Chocolatey Software
- * Licensed under Apache License (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
  */
 
 export const revert = '\x1b[0m';

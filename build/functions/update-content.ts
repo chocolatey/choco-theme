@@ -1,13 +1,11 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env tsx
 
 /*!
  * Function to update variable content in a file depending on the repository.
- * Copyright 2020-2024 Chocolatey Software
- * Licensed under Apache License (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
  */
 
-import * as fs from 'fs/promises';
-import path from 'node:path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 // General variables
 const utf8Encoding = 'utf-8';
@@ -22,7 +20,7 @@ export interface UpdateContent {
     replacementTemplate?: string | null;
 }
 
-export const updateContent = async ({
+export const updateContent = ({
     destination,
     targetFile,
     targetFileDestination,
@@ -30,11 +28,11 @@ export const updateContent = async ({
     replaceWithContent,
     replacementContentIsFile = false,
     replacementTemplate = null
-}: UpdateContent): Promise<void> => {
-    const originalContent = await fs.readFile(path.join(targetFileDestination, targetFile), utf8Encoding);
+}: UpdateContent) => {
+    const originalContent = fs.readFileSync(path.join(targetFileDestination, targetFile), utf8Encoding);
 
     if (replacementContentIsFile) {
-        replaceWithContent = await fs.readFile(path.join(destination, replaceWithContent), utf8Encoding);
+        replaceWithContent = fs.readFileSync(path.join(destination, replaceWithContent), utf8Encoding);
     }
 
     if (replacementTemplate) {
@@ -47,5 +45,5 @@ export const updateContent = async ({
 
     const newFile = originalContent.replaceAll(targetFileContentToReplace, replaceWithContent);
 
-    await fs.writeFile(path.join(targetFileDestination, targetFile), newFile, utf8Encoding);
+    fs.writeFileSync(path.join(targetFileDestination, targetFile), newFile, utf8Encoding);
 };
