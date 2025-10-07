@@ -1,0 +1,15 @@
+{
+    "name": "@chocolatey-software/assets",
+    "version": "2.0.0",
+    "description": "Chocolatey Software theme assets bused by various Chocolatey projects and websites",
+    "author": "Chocolatey Software (https://chocolatey.org/)",
+    "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/assets#readme",
+    "license": "Apache-2.0",
+    "files": [
+        "LICENSE",
+        "package.json",
+        "README.md",
+        "fonts/",
+        "images/"
+    ]
+}
