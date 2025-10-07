@@ -1,0 +1,262 @@
+.btn-collapse {
+    text-decoration: none;
+
+    &::before {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        margin-right: calc($spacer / 2);
+        font: var(--fa-font-solid);
+        content: "\f054";
+        transition: transform .35s ease;
+    }
+
+    // Angle down
+    &:not(.collapsed) {
+        &::before {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+// Icons inside a circle
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+// Status balls
+#status h3 {
+    line-height: 1.75rem;
+}
+
+.status {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0 .75rem 0 0;
+    overflow: hidden;
+    list-style: none;
+    border-radius: 50%;
+
+    &.status-sm {
+        width: 15px;
+        height: 15px;
+        margin: 0 .5rem 0 0;
+    }
+
+    li {
+        position: absolute;
+        top: -20%;
+        right: -20%;
+        width: 70%;
+        height: 70%;
+        overflow: hidden;
+        transform-origin: 0% 100%;
+
+        &:first-child {
+            transform: rotate(0deg) skewY(30deg);
+        }
+
+        &:nth-child(2) {
+            transform: rotate(120deg) skewY(30deg);
+        }
+
+        &:nth-child(3) {
+            transform: rotate(240deg) skewY(30deg);
+        }
+
+        [class*="status-"] {
+            position: absolute;
+            left: -100%;
+            width: 200%;
+            height: 200%;
+            padding-top: 20px;
+            text-align: center;
+            transform: skewY(-60deg) rotate(15deg);
+        }
+
+        .status-failing,
+        .status-flagged-error,
+        .status-investigate-none,
+        .status-scannerexempted-none,
+        .status-investigate-unknown,
+        .status-scannerexempted-unknown,
+        .status-investigate-note {
+            background: var(--bs-red);
+        }
+
+        .status-pending,
+        .status-flagged-note,
+        .status-pending-none,
+        .status-pending-unknown {
+            background: var(--bs-yellow);
+        }
+
+        .status-passing,
+        .status-notflagged-none,
+        .status-notflagged-unknown {
+            background: var(--bs-green);
+        }
+
+        .status-exempted,
+        .status-unknown,
+        .status-exempted-none,
+        .status-unknown-none,
+        .status-exempted-unknown,
+        .status-unknown-unknown,
+        .status-exempted-note {
+            background: var(--bs-secondary);
+        }
+
+        .status-flagged-none,
+        .status-flagged-warning,
+        .status-flagged-unknown {
+            background: var(--bs-orange);
+        }
+    }
+}
+
+.container-text-small .circle:not(.circle-sm):not(.circle-lg),
+.circle-sm {
+    width: 25px;
+    height: 25px;
+
+    i {
+        font-size: $small-font-size;
+    }
+}
+
+.container-text-large .circle:not(.circle-sm):not(.circle-lg),
+.container-text-large-md-small .circle:not(.circle-sm):not(.circle-lg),
+.circle-lg
+{
+    width: 40px;
+    height: 40px;
+}
+
+.wrong {
+    &::before {
+        font: var(--fa-font-solid);
+        text-align: center;
+        content: "\f00d";
+    }
+}
+
+.course-list li.completed,
+.course-list li.mod-completed,
+.correct,
+.step-tabs li.step-inactive {
+    &::before {
+        font: var(--fa-font-solid);
+        text-align: center;
+        content: "\f00c";
+    }
+}
+
+.list-circle li.list-circle-fa-star {
+    &::before {
+        font: var(--fa-font-solid);
+        content: "\f005";
+    }
+}
+
+.list-circle li.list-circle-fa-cogs {
+    &::before {
+        font: var(--fa-font-solid);
+        content: "\f085";
+    }
+}
+
+.list-circle li.list-circle-fa-users {
+    &::before {
+        font: var(--fa-font-solid);
+        content: "\f0c0";
+    }
+}
+
+.list-circle li.list-circle-fa-user-lock {
+    &::before {
+        font: var(--fa-font-solid);
+        content: "\f502";
+    }
+}
+
+.list-circle li.list-circle-fa-paper-plane {
+    &::before {
+        font: var(--fa-font-solid);
+        content: "\f198";
+    }
+}
+
+.list-circle li.list-circle-fa-edit {
+    &::before {
+        font: var(--fa-font-solid);
+        content: "\f044";
+    }
+}
+
+.list-curve p:first-child {
+    &::after {
+        font: var(--fa-font-solid);
+        content: "\f106";
+    }
+}
+
+.list-curve p:not(:last-child) {
+    &::before {
+        font: var(--fa-font-solid);
+        content: "\f00d";
+    }
+}
+
+.list-curve p:last-child,
+.list-circle li.list-circle-fa-check,
+.list-circle.list-circle-fa-check li {
+    &::before {
+        font: var(--fa-font-solid);
+        content: "\f00c";
+    }
+}
+
+.list-circle li.list-circle-fa-plus,
+.list-circle.list-circle-fa-plus li {
+    &::before {
+        font: var(--fa-font-solid);
+        content: "\2b";
+    }
+}
+
+.list-curve p:last-child {
+    &::after {
+        font: var(--fa-font-solid);
+        content: "\f107";
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .container-text-small-md-none,
+    .container-text-large-md-none {
+        .circle:not(.circle-sm):not(.circle-lg) {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .container-text-small-md,
+    .container-text-large-md-small {
+        .circle:not(.circle-sm):not(.circle-lg) {
+            width: 25px;
+            height: 25px;
+
+            i {
+                font-size: $small-font-size;
+            }
+        }
+    }
+}

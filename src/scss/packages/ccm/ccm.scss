@@ -1,0 +1,46 @@
+// Base choco-theme
+@import "../../chocolatey-choco-theme";
+
+// Font Awesome Free
+@import "../../libraries/fontawesome";
+
+// Custom Styles
+@import "../../utilities/fonts";
+@import "../../utilities/base";
+@import "../../components/theme-toggle";
+@import "../../components/top-navigation";
+@import "../../components/global-navigation";
+@import "../../components/search";
+@import "../../components/right-navigation";
+@import "../../utilities/reset";
+@import "../../components/cards";
+@import "../../utilities/backgrounds-headers";
+@import "../../utilities/text";
+@import "../../components/alerts";
+@import "../../components/callouts";
+@import "../../components/buttons-badges";
+@import "../../libraries/prism";
+@import "../../libraries/prism-overrides";
+@import "../../utilities/inputs";
+@import "../../components/lists";
+@import "../../utilities/dividers";
+@import "../../components/collapsing-sidebar";
+@import "../../components/tooltips";
+@import "../../components/tables";
+@import "../../libraries/datatables";
+@import "../../components/pagination";
+@import "../../components/tabs";
+@import "../../components/code";
+@import "../../components/dropdowns";
+@import "../../components/modals";
+@import "../../utilities/links";
+@import "../../components/popovers";
+@import "../../components/step-counter";
+@import "../../utilities/validation";
+@import "../../utilities/borders";
+@import "../../utilities/form-checks";
+@import "../../libraries/sortable";
+@import "../../libraries/playwright";
+@import "../../components/toast";
+@import "../../utilities/icons";
+@import "styles";
