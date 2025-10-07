@@ -1,14 +1,14 @@
-name: yarn npm audit
+name: Publish Dry Run
 on: [pull_request]
 jobs:
-  yarn-npm-audit:
+  publish-dry-run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: yarn install --immutable
-      - name: Run yarn npm audit
-        run: yarn audit
-        continue-on-error: false
+      - run: yarn
+      - run: yarn publish-dry-run
