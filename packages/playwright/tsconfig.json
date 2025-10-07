@@ -1,0 +1,22 @@
+{   // https://github.com/withastro/astro/blob/main/packages/astro/tsconfigs/base.json
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "strict": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "verbatimModuleSyntax": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "allowJs": true,
+        "jsx": "preserve",
+        "paths": {
+            "@choco-playwright/*": ["./global/*"]
+        }
+    }
+}
