@@ -1,0 +1,12 @@
+import '@choco-theme/lib/prism.js';
+import '@choco-theme/get-window-height.js';
+import '@choco-theme/callouts.js';
+import '@choco-theme/ts/code.ts';
+import '@choco-theme/collapse-nested.js';
+import '@choco-theme/collapse-responsive.js';
+import '@choco-theme/collapse-y-height.js';
+import '@choco-theme/scrollspy.js';
+import '@choco-theme/reset-modal.js';
+import '@choco-theme/reset-toast.js';
+import '@choco-theme/status-modal.js';
+import '@choco-theme/theme-toggle.js';

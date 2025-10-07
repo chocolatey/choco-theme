@@ -33,10 +33,16 @@ export default defineConfig([
     // Ignore patterns
     globalIgnores([
         'js/src/lib/*',
+        'src/js/lib/*',
+        'src/scripts/lib/*',
         '**/dist/*',
         '**/node_modules/*',
         '**/*.min.js',
-        '.astro/*'
+        '.astro/*',
+        'packages/**/dist/scripts/*',
+        'packages/**/src/scripts/lib/*',
+        'public/scripts/*',
+        'temp/*',
     ]),
 
     // JS files only
@@ -70,7 +76,8 @@ export default defineConfig([
         languageOptions: {
             parser: tsParser,
             parserOptions: {
-                project: 'tsconfig.json',
+                project: './tsconfig.json',
+                tsconfigRootDir: import.meta.dirname
             },
         },
         extends: [
