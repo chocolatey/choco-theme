@@ -1,0 +1,27 @@
+{
+    "name": "@chocolatey-software/blog",
+    "version": "2.0.0",
+    "description": "Chocolatey Software theme assets for use on blog.chocolatey.org.",
+    "author": "Chocolatey Software (https://chocolatey.org/)",
+    "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/blog#readme",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@types/anchor-js": "^5",
+        "@types/bootstrap": "^5.2.10",
+        "@types/luxon": "^3",
+        "@types/prismjs": "^1"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^7.0.0",
+        "anchor-js": "^5.0.0",
+        "bootstrap": "^5.3.7",
+        "luxon": "^3.7.1",
+        "prismjs": "^1.30.0"
+    },
+    "files": [
+        "LICENSE",
+        "package.json",
+        "README.md",
+        "dist/"
+    ]
+}
