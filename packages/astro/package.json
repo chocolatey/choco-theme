@@ -1,0 +1,24 @@
+{
+    "name": "@chocolatey-software/astro",
+    "version": "2.0.0",
+    "description": "Chocolatey Software theme assets for Astro.",
+    "author": "Chocolatey Software (https://chocolatey.org/)",
+    "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/astro#readme",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "@astrojs/check": "0.9.5",
+        "@astrojs/mdx": "4.3.7",
+        "@astrojs/node": "9.5.0",
+        "@astrojs/rss": "4.0.12",
+        "@astrojs/sitemap": "3.6.0",
+        "astro": "5.14.8",
+        "rehype-mermaid": "^3.0.0",
+        "remark-custom-header-id": "^1.0.0"
+    },
+    "files": [
+        "LICENSE",
+        "package.json",
+        "README.md",
+        "src/"
+    ]
+}

@@ -1,0 +1,55 @@
+---
+import { z } from 'zod';
+
+// Iframe - Define the schema
+const iframeSchema = z.object({
+    title: z.string().optional(),
+    link: z.string().url(),
+    ratio: z.enum([
+        '1x1',
+        '4x3',
+        '16x9',
+        '21x9',
+        '700x506',
+        '1200x630'
+    ]),
+});
+
+// Iframe - Define the type
+type Iframe = z.infer<typeof iframeSchema>;
+type IframeTitle = Iframe['title'];
+type IframeLink = Iframe['link'];
+type IframeIframe = Iframe['ratio'];
+
+interface Props {
+    content: Iframe
+    title: IframeTitle,
+    link: IframeLink,
+    ratio: IframeIframe,
+}
+
+let { content, title, link, ratio } = Astro.props;
+
+if (title) {
+    title = title;
+} else if (content && content.title) {
+    title = content.title;
+} else {
+    title = '';
+}
+
+link = link ? link : content.link;
+ratio = ratio ? ratio : content.ratio;
+
+content = {
+    title,
+    link,
+    ratio
+}
+
+iframeSchema.parse(content);
+---
+
+<div class={`ratio ratio-${ratio} mb-3`}>
+    <iframe src={link} title={title} style="border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>

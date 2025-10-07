@@ -1,0 +1,28 @@
+---
+import { z } from 'zod';
+
+// CollapseButton - Define the schema
+const collapseButtonSchema = z.object({
+    id: z.string(),
+    title: z.string(),
+    btnColor: z.enum(['primary', 'success', 'danger']).optional().default('primary'),
+    isActive: z.boolean().optional().default(false)
+});
+
+// CollapseButton - Define the type
+type Collapse = z.infer<typeof collapseButtonSchema>;
+
+const { content } = Astro.props;
+
+interface Props {
+    content: Collapse
+}
+
+// Validate the content
+collapseButtonSchema.parse(content);
+---
+
+<button class={`btn btn-${content.btnColor ? content.btnColor : 'primary'} btn-collapse mb-3 ${content.isActive ? '' : 'collapsed'}`} type="button" data-bs-toggle="collapse" data-bs-target={`#${content.id}`} aria-expanded={content.isActive ? 'true' : 'false'} aria-controls={content.id}>{content.title}</button>
+<div class={`collapse mb-3 ${content.isActive ? 'show' : ''}`} id={content.id}>
+    <slot />
+</div>

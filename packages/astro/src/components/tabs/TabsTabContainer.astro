@@ -1,0 +1,45 @@
+---
+import { z } from 'zod';
+
+// Tabs - Define the schema
+export const tabsSchema = z.object({
+    id: z.string(),
+    title: z.string(),
+    isActive: z.boolean().optional().default(false),
+    updateAnchor: z.boolean().optional().default(true),
+    multiTab: z.string().optional()
+});
+
+// Tabs - Define the type
+export type Tabs = z.infer<typeof tabsSchema>;
+
+const { content, multi } = Astro.props;
+
+interface Props {
+    content: Tabs[],
+    multi: string
+}
+
+if (multi === 'version') {
+    content.map((item, index: number) => {
+        item.multiTab = `{"choco-version": "choco-v${content.length - index}"}`;
+    });
+}
+
+content.map(item => {
+    item.updateAnchor = item.updateAnchor === false ? item.updateAnchor : true;
+
+    // Validate the content
+    tabsSchema.parse(item);
+});
+---
+
+<ul class="nav nav-tabs" role="tablist">
+    {
+        content.map(item => (
+            <li class="nav-item">
+                <a class={`nav-link ${item.isActive ? 'active' : ''} ${item.updateAnchor ? '' : 'd-hash-none'}`} id={`${item.id}-tab`} data-bs-toggle="tab" href={`#${item.id}`} role="tab" aria-controls={item.id} aria-selected={item.isActive ? true : false} data-choco-tab-multi={item.multiTab ? item.multiTab : ''}>{item.title}</a>
+            </li>
+        ))
+    }
+</ul>

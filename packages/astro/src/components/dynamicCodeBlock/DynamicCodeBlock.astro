@@ -1,0 +1,33 @@
+---
+import { z } from 'zod';
+
+const dynamicCodeBlockSchema = z.object({
+    language: z.enum(['markup', 'css', 'clike', 'javascript', 'bash', 'csharp', 'diff', 'json', 'powershell', 'puppet', 'python', 'ruby', 'scss', 'shell-session', 'xml-doc', 'yaml'])
+});
+
+type DynamicCodeBlock = z.infer<typeof dynamicCodeBlockSchema>;
+type DynamicCodeBlockLanguage = DynamicCodeBlock['language'];
+
+interface Props {
+    language: DynamicCodeBlockLanguage
+}
+
+const { language } = Astro.props;
+
+const content = {
+    language
+}
+
+dynamicCodeBlockSchema.parse(content);
+
+const generateRandomClass = () => {
+    const randomNumber = Math.floor(Math.random() * 1000);
+    return `dynamic-code-block-${randomNumber}`;
+};
+---
+
+<div class="dynamic-code-block-container copy-command">
+    <pre class=`language-${language}`><code class={generateRandomClass()}>
+        <slot />
+    </code></pre>
+</div>

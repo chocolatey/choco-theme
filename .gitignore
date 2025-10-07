@@ -12,3 +12,6 @@ package-lock.json
 
 # Generated on build
 temp/
+
+# Generated types
+.astro/
