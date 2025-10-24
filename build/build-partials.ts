@@ -1,27 +1,41 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env tsx
 
 /*!
- * Script to build partials.
- * Copyright 2020-2024 Chocolatey Software
- * Licensed under Apache License (https://github.com/chocolatey/choco-theme/blob/main/LICENSE)
+ * Script to compile partials.
  */
 
-import * as fs from 'fs/promises';
-import path from 'node:path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import { getPackageNamesRequested } from './functions/get-package-names-requested';
+import { repositoryConfig } from '../packages/build-tools/build/data/repository-config';
 import { updateContent } from './functions/update-content';
 
-export interface UpdateLanguageAttributes {
+const packageNamesRequested = getPackageNamesRequested([
+    'assets',
+    'astro',
+    'build-tools',
+    'ccm',
+    'core',
+    'feed-tools',
+    'playwright'
+]);
+
+if (packageNamesRequested.length === 0) {
+    process.exit(0);
+}
+
+interface UpdateLanguageAttributes {
     files: string[];
     destination: string;
     newExt: string;
 }
 
-const updateLanguageAttributes = async ({
+const updateLanguageAttributes = ({
     files,
     destination,
     newExt
-}: UpdateLanguageAttributes): Promise<void> => {
-    for await (const file of files) {
+}: UpdateLanguageAttributes) => {
+    files.forEach(file => {
         const oldExt = path.extname(file);
 
         if (oldExt !== newExt) {
@@ -35,7 +49,7 @@ const updateLanguageAttributes = async ({
                 newFileName = newFileName.toLowerCase();
 
                 // Add partial front matter
-                await updateContent({
+                updateContent({
                     destination: destination,
                     targetFile: file,
                     targetFileDestination: destination,
@@ -46,107 +60,86 @@ const updateLanguageAttributes = async ({
                 });
             }
 
-            await fs.rename(path.join(destination, file), path.join(destination, `${newFileName}${newExt}`));
+            fs.renameSync(path.join(destination, file), path.join(destination, `${newFileName}${newExt}`));
         }
-    }
+    });
 };
 
-const init = async () => {
-    try {
-        console.log('🚀 Building partials...');
+const partialLanguages = new Set<string>();
+packageNamesRequested.forEach(workspace => {
+    const repositoryInfo = repositoryConfig[workspace];
 
-        const destinationTemp = './dist/partials/temp';
-        const destinationCshtml = './dist/partials/cshtml';
-        const destinationHbs = './dist/partials/hbs';
-        const destinationAstro = './dist/partials/astro';
+    if (repositoryInfo) {
+        partialLanguages.add(repositoryInfo.language);
+    }
+});
 
-        await fs.cp('./partials/', destinationTemp, { recursive: true });
+partialLanguages.forEach(language => {
+    const tempOutputDir = `temp/partials/${language}/`;
 
-        // Update GlobalNavigation.html
-        await updateContent({
-            destination: destinationTemp,
-            targetFile: 'GlobalNavigation.html',
-            targetFileDestination: destinationTemp,
-            targetFileContentToReplace: '<input id="themeToggle" />',
-            replaceWithContent: 'ThemeToggle.html',
-            replacementContentIsFile: true
-        });
+    // Copy files to temporary output directory
+    fs.mkdirSync(tempOutputDir, { recursive: true });
+    fs.cpSync('src/partials/', tempOutputDir, { recursive: true, force: true });
 
-        await fs.cp(destinationTemp, destinationCshtml, { recursive: true });
-        await fs.cp(destinationTemp, destinationHbs, { recursive: true });
-        await fs.cp(destinationTemp, destinationAstro, { recursive: true });
-        await fs.rm(destinationTemp, { recursive: true });
+    updateContent({
+        destination: tempOutputDir,
+        targetFile: 'GlobalNavigation.html',
+        targetFileDestination: tempOutputDir,
+        targetFileContentToReplace: '<input id="themeToggle" />',
+        replaceWithContent: 'ThemeToggle.html',
+        replacementContentIsFile: true
+    });
 
-        // hbs files
-        await updateContent({
-            destination: destinationHbs,
+    if (language === 'astro' || language === 'hbs') {
+        fs.rmSync(path.join(tempOutputDir, 'TopAlertBanner.html'));
+
+        updateContent({
+            destination: tempOutputDir,
             targetFile: 'SocialMedia.html',
-            targetFileDestination: destinationHbs,
+            targetFileDestination: tempOutputDir,
             targetFileContentToReplace: '@@chocolatey',
             replaceWithContent: '@chocolatey',
             replacementContentIsFile: false
         });
+    }
 
-        // astro files
-        await updateContent({
-            destination: destinationAstro,
-            targetFile: 'SocialMedia.html',
-            targetFileDestination: destinationAstro,
-            targetFileContentToReplace: '@@chocolatey',
-            replaceWithContent: '@chocolatey',
-            replacementContentIsFile: false
-        });
+    if (language === 'astro') {
+        // Handle astro-specific logic here
+    }
 
-        // Delete TopAlertBanner.html
-        await fs.rm(path.join(destinationHbs, 'TopAlertBanner.html'));
-        await fs.rm(path.join(destinationAstro, 'TopAlertBanner.html'));
+    if (language === 'hbs') {
+        // Handle hbs-specific logic here
+    }
 
-        // cshtml files
-        await updateContent({
-            destination: destinationCshtml,
+    if (language === 'cshtml') {
+        updateContent({
+            destination: tempOutputDir,
             targetFile: 'TopAlertBanner.html',
-            targetFileDestination: destinationCshtml,
+            targetFileDestination: tempOutputDir,
             targetFileContentToReplace: 'topNoticeText = ""',
             replaceWithContent: 'AlertText.html',
             replacementContentIsFile: true,
             replacementTemplate: 'topNoticeText = "{0}"'
         });
-
-        // Delete AlertText.html
-        await fs.rm(path.join(destinationHbs, 'AlertText.html'));
-        await fs.rm(path.join(destinationCshtml, 'AlertText.html'));
-        await fs.rm(path.join(destinationAstro, 'AlertText.html'));
-
-        // Update file extensions and casing of names
-        const filesHbs = await fs.readdir(destinationHbs);
-        const filesCshtml = await fs.readdir(destinationCshtml);
-        const filesAstro = await fs.readdir(destinationAstro);
-
-        await updateLanguageAttributes({
-            files: filesHbs,
-            destination: destinationHbs,
-            newExt: '.hbs'
-        });
-
-        await updateLanguageAttributes({
-            files: filesCshtml,
-            destination: destinationCshtml,
-            newExt: '.cshtml'
-        });
-
-        await updateLanguageAttributes({
-            files: filesAstro,
-            destination: destinationAstro,
-            newExt: '.astro'
-        });
-
-        console.log('✅ Partials built');
-    } catch (error) {
-        console.error(error);
     }
-};
 
-init().catch(error => {
-    console.error(error);
-    process.exit(1);
+    fs.rmSync(path.join(tempOutputDir, 'AlertText.html'));
+
+    // Update extension
+    const files = fs.readdirSync(tempOutputDir);
+    updateLanguageAttributes({
+        files: files,
+        destination: tempOutputDir,
+        newExt: `.${language}`
+    });
+});
+
+// Place into packages
+packageNamesRequested.forEach(workspace => {
+    const repositoryInfo = repositoryConfig[workspace];
+
+    const destination = `packages/${workspace}/dist/partials/`;
+    fs.mkdirSync(destination, { recursive: true });
+    fs.cpSync(`temp/partials/${repositoryInfo.language}/`, destination, { recursive: true, force: true });
+    console.log(`✅ Partials built and copied for ${workspace}`);
 });

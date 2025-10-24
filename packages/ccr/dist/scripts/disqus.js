@@ -1,0 +1,16 @@
+(() => {
+  // src/scripts/packages/disqus.js
+  (() => {
+    const disqusShortname = "chocolatey";
+    const dsq = document.createElement("script");
+    dsq.type = "text/javascript";
+    dsq.async = true;
+    dsq.src = `//${disqusShortname}.disqus.com/embed.js`;
+    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(dsq);
+    document.addEventListener("themeChanged", () => {
+      if (document.readyState == "complete") {
+        DISQUS.reset({ reload: true, config: disqus_config });
+      }
+    });
+  })();
+})();

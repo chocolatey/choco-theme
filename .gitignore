@@ -9,3 +9,9 @@ package-lock.json
 .yarn/plugins
 .yarn/sdks
 .yarn/versions
+
+# Generated on build
+temp/
+
+# Generated types
+.astro/

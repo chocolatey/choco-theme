@@ -1,0 +1,7 @@
+---
+const { content } = Astro.props;
+---
+
+<div class={`tab-pane fade ${content.isActive ? 'show active' : ''}`} id={content.id} role="tabpanel" aria-labelledby={`${content.id}-tab`} tabindex="0">
+    <slot />
+</div>

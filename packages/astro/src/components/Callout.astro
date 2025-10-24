@@ -1,0 +1,71 @@
+---
+import { z } from 'zod';
+
+// Collapse - Define the schema
+const calloutSchema = z.object({
+    title: z.string().optional(),
+    type: z.enum(['none', 'info', 'success', 'warning', 'danger'])
+});
+
+// Collapse - Define the type
+type Callout = z.infer<typeof calloutSchema>;
+type CalloutTitle = Callout['title'];
+type CalloutType = Callout['type'];
+
+interface Props {
+    content?: Callout
+    title: CalloutTitle
+    type: CalloutType
+}
+
+let { content, title, type } = Astro.props;
+
+if (title) {
+    title = title;
+} else if (content && content.title) {
+    title = content.title;
+} else {
+    title = '';
+}
+
+type = type ? type : (content && content.type ? content.type : 'none');
+let icon = '';
+
+switch (type) {
+    case 'info':
+        icon = 'info';
+        title = title || 'NOTE';
+        break;
+    case 'success':
+        icon = 'check';
+        title = title || 'SUCCESS';
+        break;
+    case 'warning':
+        icon = 'triangle-exclamation';
+        title = title || 'WARNING';
+        break;
+    case 'danger':
+        icon = 'xmark';
+        title = title || 'DANGER';
+        break;
+}
+
+content = {
+    title,
+    type
+}
+
+calloutSchema.parse(content);
+---
+
+<blockquote class={`callout-${type}`}>
+    {(title && type !== 'none') && (
+        <div class="callout-header d-flex align-items-center">
+            <span class={`flex-shrink-0 text-bg-${type} h-px-30 w-px-30 d-flex align-items-center justify-content-center rounded me-3`}>
+                <span class={`fa-solid fa-${icon}`}></span>
+            </span>
+            <p class="lead"><strong>{title}</strong></p>
+        </div>
+    )}
+    <slot />
+</blockquote>

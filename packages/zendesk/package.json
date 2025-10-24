@@ -1,0 +1,21 @@
+{
+    "name": "@chocolatey-software/zendesk",
+    "version": "2.0.0",
+    "description": "Chocolatey Software theme assets for use on Zendesk.",
+    "author": "Chocolatey Software (https://chocolatey.org/)",
+    "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/zendesk#readme",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@types/bootstrap": "^5.2.10"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^7.0.0",
+        "bootstrap": "^5.3.7"
+    },
+    "files": [
+        "LICENSE",
+        "package.json",
+        "README.md",
+        "dist/"
+    ]
+}

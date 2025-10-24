@@ -1,0 +1,41 @@
+---
+import { z } from 'zod';
+
+// Define the schema
+const dynamicCodeBlockInputSchema = z.object({
+    name: z.string(),
+    defaultValue: z.string(),
+    label: z.string().optional()
+});
+
+// Define the type
+type DynamicCodeBlockInput = z.infer<typeof dynamicCodeBlockInputSchema>;
+
+interface Props {
+    name: DynamicCodeBlockInput['name'],
+    defaultValue: DynamicCodeBlockInput['defaultValue']
+    label?: DynamicCodeBlockInput['label']
+}
+
+const { name, defaultValue, label } = Astro.props;
+
+const content = {
+    name,
+    defaultValue,
+    label
+};
+
+// Validate the content
+dynamicCodeBlockInputSchema.parse(content);
+---
+
+<div class="row align-items-center mb-3">
+    {label && (
+        <div class="col-lg-auto pe-lg-0">
+            <label for={name} class="col-form-label">{label}:</label>
+        </div>
+    )}
+    <div class="col-lg-6">
+        <input id={name} class="form-control dynamic-code-block-input" type="text" name={name} data-default-value={defaultValue} placeholder={defaultValue} />
+    </div>
+</div>

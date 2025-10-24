@@ -1,5 +1,5 @@
 {
-    "allowImportingTsExtensions": true, // Needed for playwright.config.ts
+    "allowImportingTsExtensions": true,
     "compilerOptions": {
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
@@ -8,6 +8,10 @@
         "preserveConstEnums": true,
         "lib": [
             "ES2021.String"
-        ]
+        ],
+        "paths": {
+            "@choco-core/*": ["./packages/core/src/scripts/*"],
+            "@choco-theme/*": ["./src/scripts/*"]
+        }
     }
 }

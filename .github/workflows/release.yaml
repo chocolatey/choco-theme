@@ -1,4 +1,4 @@
-name: Publish Package to npmjs
+name: Publish Packages to npm
 on:
   workflow_dispatch:
   release:
@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v4
         with:
@@ -16,6 +18,6 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@chocolatey-software'
       - run: yarn
-      - run: yarn npm publish --access public
+      - run: yarn workspaces foreach --since --no-private npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
