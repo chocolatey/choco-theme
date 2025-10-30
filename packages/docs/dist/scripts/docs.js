@@ -14435,6 +14435,11 @@
     });
   };
 
+  // packages/core/src/scripts/util/escape-html.js
+  var escapeHtml = (str) => {
+    return str.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  };
+
   // packages/core/src/scripts/util/set-cookie.js
   var setCookie = (name, value, expirationDays, domainName) => {
     let expires;
@@ -14504,7 +14509,9 @@
       const inputCookie = getCookie(inputVariable);
       const regex = new RegExp(`\\b${inputVariable}\\b`, "g");
       for (const dynamicCodeBlockContainer of dynamicCodeBlockContainers) {
-        dynamicCodeBlockContainer.innerHTML = dynamicCodeBlockContainer.innerHTML.replaceAll(regex, `<span class="${inputVariable}">${inputCookie ? inputCookie : inputDefaultValue}</span>`);
+        const value = inputCookie ? inputCookie : inputDefaultValue;
+        const escapedValue = escapeHtml(value);
+        dynamicCodeBlockContainer.innerHTML = dynamicCodeBlockContainer.innerHTML.replaceAll(regex, `<span class="${inputVariable}">${escapedValue}</span>`);
       }
       replaceCodeVariableInCodeBlock(input, inputVariable, inputDefaultValue, inputCookie);
       validateInputs();

@@ -1,4 +1,5 @@
 import { copyCodeBlocks } from '@choco-core/util/copy-code-blocks';
+import { escapeHtml } from '@choco-core/util/escape-html';
 import { getCookie } from '@choco-core/util/get-cookie';
 import { setCookie } from '@choco-core/util/set-cookie';
 
@@ -65,7 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const regex = new RegExp(`\\b${inputVariable}\\b`, 'g');
 
         for (const dynamicCodeBlockContainer of dynamicCodeBlockContainers) {
-            dynamicCodeBlockContainer.innerHTML = dynamicCodeBlockContainer.innerHTML.replaceAll(regex, `<span class="${inputVariable}">${inputCookie ? inputCookie : inputDefaultValue}</span>`);
+            const value = inputCookie ? inputCookie : inputDefaultValue;
+            const escapedValue = escapeHtml(value);
+
+            dynamicCodeBlockContainer.innerHTML = dynamicCodeBlockContainer.innerHTML.replaceAll(regex, `<span class="${inputVariable}">${escapedValue}</span>`);
         }
 
         replaceCodeVariableInCodeBlock(input, inputVariable, inputDefaultValue, inputCookie);
