@@ -41622,7 +41622,7 @@ textarea.form-control-lg {
 .far,
 .fab,
 .fa {
-  --_fa-family: var(--fa-family, var(--fa-style-family, "Font Awesome 7 Free"));
+  --_fa-family: var(--fa-family, var(--fa-style-family, 'Font Awesome 7 Free'));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: var(--fa-display, inline-block);
@@ -49977,7 +49977,7 @@ textarea.form-control-lg {
  * Copyright 2025 Fonticons, Inc.
  */
 :root, :host {
-  --fa-family-classic: "Font Awesome 7 Free";
+  --fa-family-classic: 'Font Awesome 7 Free';
   --fa-font-solid: normal 900 1em/1 var(--fa-family-classic);
   /* deprecated: this older custom property will be removed next major release */
   --fa-style-family-classic: var(--fa-family-classic);
@@ -50009,7 +50009,7 @@ textarea.form-control-lg {
  * Copyright 2025 Fonticons, Inc.
  */
 :root, :host {
-  --fa-family-classic: "Font Awesome 7 Free";
+  --fa-family-classic: 'Font Awesome 7 Free';
   --fa-font-regular: normal 400 1em/1 var(--fa-family-classic);
   /* deprecated: this older custom property will be removed next major release */
   --fa-style-family-classic: var(--fa-family-classic);
@@ -50041,7 +50041,7 @@ textarea.form-control-lg {
  * Copyright 2025 Fonticons, Inc.
  */
 :root, :host {
-  --fa-family-brands: "Font Awesome 7 Brands";
+  --fa-family-brands: 'Font Awesome 7 Brands';
   --fa-font-brands: normal 400 1em/1 var(--fa-family-brands);
 }
 
