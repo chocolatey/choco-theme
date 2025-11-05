@@ -3,13 +3,13 @@ import type { Page } from '@playwright/test';
 
 const selectors = {
     btnAction: '#mainActionButton',
-    btnThemeToggle: '#themeToggleBtn',
+    btnThemeToggle: '.dropdown-theme .dropdown-toggle',
 };
 
 export const locatorsGlobal = (page: Page) => ({
     theme: {
-        btnToggle: page.locator(selectors.btnThemeToggle),
-        btnToggleIcon: page.locator(`${selectors.btnThemeToggle} .fa-solid`),
+        btnToggle: page.locator(`${selectors.btnThemeToggle}:visible`),
+        btnToggleIcon: page.locator(`${selectors.btnThemeToggle}:visible .fa-solid`),
         dropdownMenu: page.locator(`${selectors.btnThemeToggle} + .dropdown-menu.show`)
     },
     components: {
