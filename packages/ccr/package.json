@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/ccr",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Chocolatey Software theme assets for use on community.chocolatey.org",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccr#readme",

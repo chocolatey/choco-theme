@@ -6,6 +6,8 @@ export const tabsSchema = z.object({
     id: z.string(),
     title: z.string(),
     isActive: z.boolean().optional().default(false),
+    isDisabled: z.boolean().optional().default(false),
+    isHidden: z.boolean().optional().default(false),
     updateAnchor: z.boolean().optional().default(true),
     multiTab: z.string().optional()
 });
@@ -36,9 +38,9 @@ content.map(item => {
 
 <ul class="nav nav-tabs" role="tablist">
     {
-        content.map(item => (
+        content.filter(item => !item.isHidden).map(item => (
             <li class="nav-item">
-                <a class={`nav-link ${item.isActive ? 'active' : ''} ${item.updateAnchor ? '' : 'd-hash-none'}`} id={`${item.id}-tab`} data-bs-toggle="tab" href={`#${item.id}`} role="tab" aria-controls={item.id} aria-selected={item.isActive ? true : false} data-choco-tab-multi={item.multiTab ? item.multiTab : ''}>{item.title}</a>
+                <a class={`nav-link ${item.isActive ? 'active' : ''} ${item.updateAnchor ? '' : 'd-hash-none'} ${item.isDisabled ? 'disabled' : ''}`} id={`${item.id}-tab`} data-bs-toggle="tab" href={item.isDisabled ? null :`#${item.id}`} aria-disabled={item.isDisabled} role="tab" aria-controls={item.id} aria-selected={item.isActive ? true : false} data-choco-tab-multi={item.multiTab ? item.multiTab : ''}>{item.title}</a>
             </li>
         ))
     }

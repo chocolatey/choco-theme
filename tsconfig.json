@@ -10,6 +10,7 @@
             "ES2021.String"
         ],
         "paths": {
+            "@choco-astro/*": ["./packages/astro/src/*"],
             "@choco-core/*": ["./packages/core/src/scripts/*"],
             "@choco-theme/*": ["./src/scripts/*"]
         }
