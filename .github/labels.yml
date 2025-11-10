@@ -7,6 +7,8 @@
   color: "D4C5F9"
 - name: "ChocolateyCentralManagement"
   color: "D4C5F9"
+- name: "ChocolateyCreditsGenerator"
+  color: "D4C5F9"
 - name: "ChocolateyDesign"
   color: "D4C5F9"
 - name: "ChocolateyDocs"
