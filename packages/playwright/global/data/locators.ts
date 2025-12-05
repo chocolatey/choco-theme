@@ -24,6 +24,7 @@ export const locatorsGlobal = (page: Page) => ({
         html: page.locator('html'),
         main: page.locator('main'),
         pageTitle: page.locator('h1'),
+        skipLink: page.locator('#skip')
     },
     modals: {
         btnCancel: page.locator('.modal-footer button.close-button'),
