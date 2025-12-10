@@ -41601,7 +41601,7 @@ textarea.form-control-lg {
 .far,
 .fab,
 .fa {
-  --_fa-family: var(--fa-family, var(--fa-style-family, "Font Awesome 7 Free"));
+  --_fa-family: var(--fa-family, var(--fa-style-family, 'Font Awesome 7 Free'));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: var(--fa-display, inline-block);
@@ -49956,7 +49956,7 @@ textarea.form-control-lg {
  * Copyright 2025 Fonticons, Inc.
  */
 :root, :host {
-  --fa-family-classic: "Font Awesome 7 Free";
+  --fa-family-classic: 'Font Awesome 7 Free';
   --fa-font-solid: normal 900 1em/1 var(--fa-family-classic);
   /* deprecated: this older custom property will be removed next major release */
   --fa-style-family-classic: var(--fa-family-classic);
@@ -49988,7 +49988,7 @@ textarea.form-control-lg {
  * Copyright 2025 Fonticons, Inc.
  */
 :root, :host {
-  --fa-family-classic: "Font Awesome 7 Free";
+  --fa-family-classic: 'Font Awesome 7 Free';
   --fa-font-regular: normal 400 1em/1 var(--fa-family-classic);
   /* deprecated: this older custom property will be removed next major release */
   --fa-style-family-classic: var(--fa-family-classic);
@@ -50020,7 +50020,7 @@ textarea.form-control-lg {
  * Copyright 2025 Fonticons, Inc.
  */
 :root, :host {
-  --fa-family-brands: "Font Awesome 7 Brands";
+  --fa-family-brands: 'Font Awesome 7 Brands';
   --fa-font-brands: normal 400 1em/1 var(--fa-family-brands);
 }
 
@@ -52289,7 +52289,7 @@ lite-youtube > iframe {
 }
 
 /* play button */
-lite-youtube > .lty-playbtn {
+lite-youtube > .lyt-playbtn {
   display: block;
   /* Make the button element cover the whole area for a large hover/click target… */
   width: 100%;
@@ -52306,8 +52306,8 @@ lite-youtube > .lty-playbtn {
   border: 0;
 }
 
-lite-youtube:hover > .lty-playbtn,
-lite-youtube .lty-playbtn:focus {
+lite-youtube:hover > .lyt-playbtn,
+lite-youtube .lyt-playbtn:focus {
   filter: none;
 }
 
@@ -52317,7 +52317,7 @@ lite-youtube.lyt-activated {
 }
 
 lite-youtube.lyt-activated::before,
-lite-youtube.lyt-activated > .lty-playbtn {
+lite-youtube.lyt-activated > .lyt-playbtn {
   opacity: 0;
   pointer-events: none;
 }

@@ -10840,7 +10840,7 @@
   }
 
   // node_modules/add-to-calendar-button/dist/module/index.js
-  var atcbVersion = "2.12.12";
+  var atcbVersion = "2.13.3";
   var atcbCssTemplate = {
     "default": ':host{width:fit-content;--base-font-size-l:16px;--base-font-size-m:16px;--base-font-size-s:16px;--font:arial,helvetica,"Twemoji Mozilla","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","EmojiOne Color","Android Emoji",sans-serif;--accent-color:#1e90ff;--wrapper-padding:1px;--buttonslist-gap:5px;--btn-background:#f5f5f5;--btn-hover-background:#fff;--btn-hover-border:#d2d2d2;--btn-border:#d2d2d2;--btn-border-radius:6px;--btn-padding-x:1em;--btn-padding-y:.65em;--btn-font-weight:600;--btn-text:#333;--btn-hover-text:#000;--btn-shadow:rgb(0 0 0 / 08%) 0 4px 14px -2px,rgb(0 0 0 / 12%) 0 2px 6px -1px;--btn-hover-shadow:rgb(0 0 0 / 14%) 0 5px 16px -2px,rgb(0 0 0 / 14%) 0 3px 8px -2px;--btn-active-shadow:rgb(0 0 0 / 16%) 0 6px 17px -2px,rgb(0 0 0 / 14%) 0 4px 8px -2px;--list-background:#f5f5f5;--list-hover-background:#fff;--list-text:#333;--list-font-weight:400;--list-hover-text:#000;--list-close-background:#e5e5e5;--list-close-text:#777;--list-border-radius:6px;--list-padding:.8em;--list-shadow:rgb(0 0 0 / 12%) 0 4px 18px -2px,rgb(0 0 0 / 14%) 0 2px 8px -1px;--list-modal-shadow:rgb(0 0 0 / 18%) 0 4px 34px -3px,rgb(0 0 0 / 14%) 0 2px 12px -2px;--input-border-radius:6px;--input-background:#fff;--status-active-text:#fff;--form-error:#c5372c;--form-success:#338a36;--modal-text:#000;--modal-text-align:center;--modal-text-align-rtl:center;--modal-background:#f5f5f5;--modal-border-radius:6px;--modal-shadow:drop-shadow(3px 6px 28px rgb(0 0 0 / 30%));--modal-btn-bar:#c6c8cd;--modal-btn-background:#f5f5f5;--modal-btn-secondary-background:#e2e1e6;--modal-btn-hover-background:#fff;--modal-btn-border:#d2d2d2;--modal-btn-font-weight:600;--modal-btn-text:#2e2e2e;--modal-btn-hover-text:#161616;--modal-btn-secondary-text:#666567;--modal-btn-shadow:rgb(0 0 0 / 08%) 0 4px 14px -2px,rgb(0 0 0 / 08%) 0 2px 6px -1px;--modal-btn-hover-shadow:rgb(0 0 0 / 14%) 0 5px 17px -2px,rgb(0 0 0 / 12%) 0 3px 8px -2px;--modal-headline-text-align:center;--modal-headline-text-transform:none;--date-btn-text:#1d1d1e;--date-btn-text-secondary:#3a3a3f;--date-btn-cal-day-text:#fff;--date-btn-cal-month-text:#d3d2d7;--date-btn-cal-background:#313132;--date-btn-background:#eae9ed;--date-btn-hover-background:#fff;--date-btn-headline-line-clamp:1;--date-btn-shadow:rgb(0 0 0 / 08%) 0 4px 14px -2px,rgb(0 0 0 / 12%) 0 2px 6px -1px;--date-btn-hover-shadow:rgb(0 0 0 / 14%) 0 5px 16px -2px,rgb(0 0 0 / 14%) 0 3px 8px -2px;--checkmark-background:drop-shadow(0 0 4px #fff);--overlay-background:rgb(20 20 20 / 25%);--icon-ms365-color:#ea3e23;--icon-yahoo-color:#5f01d1;--icon-filter:none}:host(.atcb-dark){--btn-background:#2e2e2e;--btn-hover-background:#373737;--btn-hover-border:#3d3d3d;--btn-border:#3d3d3d;--btn-text:#dedede;--btn-hover-text:#f1f1f1;--btn-shadow:rgb(255 255 255 / 3%) -3px -3px 34px -1px,rgb(0 0 0 / 10%) 2px 3px 14px -2px,rgb(0 0 0 / 12%) 1px 2px 8px -1px;--btn-hover-shadow:rgb(0 0 0 / 18%) 2px 5px 24px -4px,rgb(0 0 0 / 14%) 1px 2px 10px -2px;--btn-active-shadow:rgb(0 0 0 / 20%) 2px 5px 24px -4px,rgb(0 0 0 / 14%) 1px 2px 10px -2px;--list-background:#2e2e2e;--list-hover-background:#373737;--list-text:#dedede;--list-hover-text:#f1f1f1;--list-close-background:#282828;--list-close-text:#777;--list-shadow:rgb(0 0 0 / 12%) 0 4px 24px -2px,rgb(0 0 0 / 14%) 0 2px 10px -1px;--list-modal-shadow:rgb(0 0 0 / 18%) -1px 3px 34px 2px;--modal-text:#f1f1f1;--modal-background:#242424;--modal-shadow:drop-shadow(3px 6px 28px rgb(0 0 0 / 30%));--modal-btn-bar:#38383a;--modal-btn-background:#181819;--modal-btn-secondary-background:#2e2d30;--modal-btn-hover-background:#434246;--modal-btn-border:#434246;--modal-btn-text:#dbdbdb;--modal-btn-hover-text:#fff;--modal-btn-secondary-text:#b8b8b8;--modal-btn-shadow:rgb(255 255 255 / 3%) -2px -2px 14px,rgb(0 0 0 / 10%) 3px 3px 14px -2px,rgb(0 0 0 / 12%) 1px 2px 10px -1px;--input-background:#434246;--status-active-text:#000;--form-error:#db8680;--form-success:#99de9c;--date-btn-text:#ebebf0;--date-btn-text-secondary:#b5b5bd;--date-btn-cal-day-text:#101010;--date-btn-cal-month-text:#3e3e3f;--date-btn-cal-background:#c7c7cd;--date-btn-background:#363636;--date-btn-hover-background:#474747;--date-btn-shadow:rgb(0 0 0 / 10%) 0 0 24px -2px,rgb(0 0 0 / 12%) 1px 2px 8px -1px;--checkmark-background:drop-shadow(0 0 4px #0a0a0a);--overlay-background:rgb(20 20 20 / 60%);--icon-ms365-color:#ea3e23;--icon-yahoo-color:#bebebe;--icon-filter:grayscale(.2)}.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-l)}@media (width <= 991px){.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-m)}}@media (width <= 575px){.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-s)}}.atcb-initialized.atcb-buttons-list{gap:var(--buttonslist-gap)}.atcb-button-wrapper{display:block;padding:var(--wrapper-padding);position:relative}.atcb-button{align-items:center;background-color:var(--btn-background);border:1px solid var(--btn-border);border-radius:var(--btn-border-radius);box-shadow:var(--btn-shadow);box-sizing:content-box;color:var(--btn-text);cursor:pointer;display:flex;font-family:var(--font);font-size:1em;font-weight:var(--btn-font-weight);justify-content:center;line-height:1.5em;margin:.13em;max-width:300px;padding:var(--btn-padding-y) var(--btn-padding-x);position:relative;text-align:center;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:auto;z-index:1}.atcb-button:not(.atcb-no-text,.atcb-modal-style,.atcb-dropoverlay,.atcb-single){min-width:calc(11.6em - 2 * var(--btn-padding-x))}.atcb-button.atcb-no-text{display:flex;place-content:center center;align-items:center;height:3em;width:3em;padding:0}.atcb-rtl .atcb-button{direction:rtl;text-align:right}.atcb-button:focus-visible{outline:2px solid var(--accent-color)}.atcb-button:not([disabled]):focus,.atcb-button:not([disabled]):hover{background-color:var(--btn-hover-background);border-color:var(--btn-hover-border);box-shadow:var(--btn-hover-shadow);color:var(--btn-hover-text);margin:0;padding:calc(var(--btn-padding-y) + .13em) calc(var(--btn-padding-x) + .13em)}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay){z-index:15000000}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay),.atcb-button.atcb-single:not([disabled]):focus,.atcb-button.atcb-single:not([disabled]):hover{background-color:var(--btn-hover-background);border-color:var(--btn-hover-border);box-shadow:var(--btn-active-shadow);color:var(--btn-hover-text);margin:0;padding:calc(var(--btn-padding-y) + .13em) calc(var(--btn-padding-x) + .13em)}.atcb-button:not([disabled]).atcb-no-text.atcb-active,.atcb-button:not([disabled]).atcb-no-text:focus,.atcb-button:not([disabled]).atcb-no-text:hover{height:3.26em;width:3.26em;padding:0!important}.atcb-button.atcb-active.atcb-dropoverlay{z-index:14000090}.atcb-icon{flex-grow:0;flex-shrink:0;height:1em;line-height:1em;margin-right:.8em;width:1em}.atcb-rtl .atcb-icon{margin-right:0;margin-left:.8em}.atcb-no-text .atcb-icon{margin-right:0;margin-left:0}.atcb-icon svg{fill:currentcolor;height:100%;width:100%}.atcb-text{overflow-wrap:anywhere}.atcb-dropdown-anchor{bottom:4px;height:1px;width:100%;opacity:0;position:absolute}.atcb-list-wrapper{box-sizing:border-box;font-weight:var(--list-font-weight);padding:0 4px;position:absolute;z-index:14000090}.atcb-list-wrapper.atcb-dropoverlay{z-index:15000000;max-width:max-content}.atcb-list{background-color:var(--list-background);border-radius:0 0 var(--list-border-radius) var(--list-border-radius);box-sizing:border-box;box-shadow:var(--list-shadow);color:var(--list-text);display:block;font-family:var(--font);min-width:100%;position:relative;user-select:none;-webkit-user-select:none;width:fit-content}.atcb-list-item{align-items:center;background-color:var(--list-background);box-sizing:border-box;cursor:pointer;display:flex;font-size:1em;line-height:1.75em;padding:var(--list-padding);text-align:left;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.atcb-rtl .atcb-list-item{direction:rtl;text-align:right}.atcb-list-item:hover{background-color:var(--list-hover-background);color:var(--list-hover-text)}.atcb-list-item:focus-visible{background-color:var(--list-hover-background);color:var(--accent-color);outline:0}.atcb-list-item:last-child{border-radius:0 0 var(--list-border-radius) var(--list-border-radius)}.atcb-dropup .atcb-list-item:last-child{border-radius:0;padding-bottom:calc(var(--list-padding) + .45em)}.atcb-dropoverlay .atcb-list .atcb-list-item:first-child,.atcb-dropup .atcb-list,.atcb-dropup .atcb-list-item:first-child,.atcb-list.atcb-modal .atcb-list-item:first-child{border-radius:var(--list-border-radius) var(--list-border-radius) 0 0}.atcb-dropoverlay .atcb-list .atcb-list-item:only-child,.atcb-list.atcb-modal .atcb-list-item:only-child{border-radius:var(--list-border-radius)}.atcb-list.atcb-generated-button:not(.atcb-modal) .atcb-list-item:first-child{padding-top:calc(var(--list-padding) + .45em)}.atcb-dropoverlay .atcb-list.atcb-generated-button:not(.atcb-modal) .atcb-list-item:first-child,.atcb-dropup .atcb-list.atcb-generated-button:not(.atcb-modal) .atcb-list-item:first-child{padding-top:var(--list-padding)}.atcb-dropoverlay .atcb-list,.atcb-list.atcb-modal{border-radius:var(--list-border-radius)}.atcb-list.atcb-modal{box-shadow:var(--list-modal-shadow)}.atcb-list-item .atcb-icon{margin:0 auto}.atcb-list-item .atcb-icon+.atcb-text{margin-left:.7em;width:100%}.atcb-rtl .atcb-list-item .atcb-icon+.atcb-text{margin-left:0;margin-right:.7em}.atcb-list-item-close{background-color:var(--list-close-background)}.atcb-list-item.atcb-list-item-close:not(:focus-visible){color:var(--list-close-text)}.atcb-list-item-close svg{fill:currentcolor}.atcb-modal{display:block;margin:auto;width:auto;min-width:auto;position:relative;z-index:14000090}.atcb-modal-box{filter:var(--modal-shadow);color:var(--modal-text);cursor:default;box-sizing:border-box;font-family:var(--font);line-height:1.5em;text-align:var(--modal-text-align);user-select:none;-webkit-user-select:none;touch-action:manipulation;width:100%;margin-bottom:20px;-webkit-tap-highlight-color:transparent}@media (width > 575px){.atcb-modal-box{width:32em}}.atcb-modal-box.atcb-rtl{text-align:var(--modal-text-align-rtl);direction:rtl;padding:1.25em 1em 1.25em 2em}.atcb-modal-icon{height:2.5em;width:2.5em;border-radius:100%;background-color:var(--modal-background);padding:1.75em;margin:auto}.atcb-modal-icon svg{fill:currentcolor;height:100%;width:100%}.atcb-modal-headline{background-color:var(--modal-background);border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;font-size:1.3em;font-weight:600;line-height:1.5em;padding:1.8em 1.5em 1.3em;text-transform:var(--modal-headline-text-transform);text-align:var(--modal-headline-text-align)}.atcb-modal-icon+.atcb-modal-headline{margin-top:-2.6em;padding-top:2.6em}.atcb-modal-content{background-color:var(--modal-background);font-size:1em;padding:.3em 2em 2.2em}.atcb-modal-content ol,.atcb-modal-content ul{margin:1em auto;text-align:left;width:fit-content}.atcb-rtl .atcb-modal-content ol,.atcb-rtl .atcb-modal-content ul{text-align:right}.atcb-modal-content-subevents{margin:auto;width:fit-content}.atcb-modal-icon+.atcb-modal-content{border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;margin-top:-2.6em;padding-top:2.6em}@media (width <= 575px){.atcb-modal-headline{padding:1.8em 1em 1em}.atcb-modal-content{padding:.3em 1.5em 1.5em}.atcb-modal-icon+.atcb-modal-content{padding-top:1.8em}}.atcb-modal-buttons{background-color:var(--modal-btn-bar);border-radius:0 0 var(--modal-border-radius) var(--modal-border-radius);box-sizing:border-box;padding:.6em;text-align:center;width:100%;display:flex;justify-content:center;flex-flow:row-reverse wrap;align-items:center}a.atcb-modal-btn,button.atcb-modal-btn{background-color:var(--modal-btn-secondary-background);border:0;border-radius:var(--btn-border-radius);box-shadow:var(--modal-btn-shadow);color:var(--modal-btn-secondary-text);cursor:pointer;display:inline-block;font-family:var(--font);font-size:.9em;font-weight:var(--modal-btn-font-weight);line-height:1em;margin:.625em;padding:1em 1.25em;position:relative;text-align:center;text-decoration:none;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}a.atcb-modal-btn.btn-small,button.atcb-modal-btn.btn-small{padding:.6em .8em}a.atcb-modal-btn.atcb-modal-btn-primary,button.atcb-modal-btn.atcb-modal-btn-primary{background-color:var(--modal-btn-background);color:var(--modal-btn-text)}a.atcb-modal-btn.atcb-modal-btn-border,button.atcb-modal-btn.atcb-modal-btn-border{border:1px solid var(--modal-btn-border)}a.atcb-modal-btn:focus-visible,button.atcb-modal-btn:focus-visible{background-color:var(--modal-btn-hover-background);outline:2px solid var(--accent-color)}a.atcb-modal-btn:disabled,button.atcb-button:disabled,button.atcb-modal-btn:disabled,button.atcb-subevent-btn:disabled{cursor:not-allowed;opacity:.75;filter:brightness(95%);border-style:dashed;box-shadow:none}a.atcb-modal-btn:not([disabled]):hover,button.atcb-modal-btn:not([disabled]):hover{background-color:var(--modal-btn-hover-background);box-shadow:var(--modal-btn-hover-shadow);color:var(--modal-btn-hover-text);text-decoration:none}.atcb-subevent-btn{display:flex;align-items:flex-start;cursor:pointer;font-family:var(--font);font-size:1em;box-shadow:var(--date-btn-shadow);background-color:var(--date-btn-background);border:0;border-radius:7px 4px 4px 7px;padding:0;margin:0;touch-action:manipulation;position:relative;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:100%}.atcb-subevent-btn:hover{align-items:center}.atcb-subevent-btn:focus,.atcb-subevent-btn:hover{background-color:var(--date-btn-hover-background);box-shadow:var(--date-btn-hover-shadow)}.atcb-subevent-btn:focus-visible{outline:2px solid var(--accent-color)}.atcb-subevent-btn+.atcb-subevent-btn{margin-top:30px}.atcb-date-btn-left{border-radius:4px 0 0 4px;align-self:stretch;background-color:var(--date-btn-cal-background);padding:.7em .8em .8em;width:2.7em;align-items:center;display:flex;flex-direction:column;flex-shrink:0}.atcb-rtl .atcb-date-btn-left{border-radius:0 4px 4px 0}.atcb-subevent-btn:hover .atcb-date-btn-left{opacity:.8}.atcb-date-btn-day{color:var(--date-btn-cal-day-text);font-weight:400;font-size:2em;word-break:keep-all;padding-bottom:.1em}.atcb-initialized[lang=ja] .atcb-date-btn-day,.atcb-initialized[lang=ko] .atcb-date-btn-day,.atcb-initialized[lang=zh] .atcb-date-btn-day{font-size:1.3em}.atcb-date-btn-month{color:var(--date-btn-cal-month-text);font-weight:600;font-size:1em}.atcb-date-btn-right{position:relative;color:var(--date-btn-text);min-width:13.5em;overflow-wrap:anywhere}.atcb-subevent-btn .atcb-date-btn-right{width:100%}.atcb-date-btn-details{opacity:1;padding:.7em .8em;text-align:left}.atcb-rtl .atcb-date-btn-details{text-align:right}.atcb-date-btn-hover{position:absolute;top:0;left:0;width:100%;opacity:0;height:100%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1em;padding:.4em .7em;box-sizing:border-box}.atcb-subevent-btn:hover .atcb-date-btn-details{opacity:0}.atcb-subevent-btn:hover .atcb-date-btn-hover{opacity:1}.atcb-date-btn-headline{font-weight:600;font-size:.9em;margin-bottom:.5em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:var(--date-btn-headline-line-clamp);line-clamp:var(--date-btn-headline-line-clamp)}.atcb-date-btn-content{display:flex;align-items:flex-start;font-size:.8em;color:var(--date-btn-text-secondary)}.atcb-date-btn-content.atcb-date-btn-cancelled{color:var(--form-error);font-weight:700}.atcb-date-btn-content-location{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.atcb-date-btn-content-icon{display:inline-block;height:.9em;margin:.075em .4em 0 0;width:.9em;flex-shrink:0}.atcb-rtl .atcb-date-btn-content-icon{margin-right:0;margin-left:.4em}.atcb-initialized[lang=ja] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon,.atcb-initialized[lang=ko] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon,.atcb-initialized[lang=zh] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon{margin-top:.15em}.atcb-date-btn-content-icon svg{height:100%;fill:currentcolor;width:100%}.atcb-date-btn-content+.atcb-date-btn-content{margin-top:.3em;padding-right:.6em}.atcb-date-btn-content-text span:not(.atcb-icon-ical){padding-right:.3em;display:inline-block}.atcb-date-btn-plus{position:absolute;border-radius:4px 0;bottom:0;right:0;background:var(--date-btn-cal-background);color:var(--date-btn-cal-day-text);display:flex;font-size:.9em;font-weight:400;height:1em;width:1em;padding:.1em;justify-content:center;align-items:center}.atcb-button:focus-visible .atcb-date-btn-plus,.atcb-subevent-btn:focus-visible .atcb-date-btn-plus{background-color:var(--accent-color)}.atcb-checkmark{display:none}.atcb-saved .atcb-checkmark{box-sizing:content-box;color:var(--btn-text);display:block;position:absolute;top:-.9em;right:-.5em;padding:.5em;border-radius:100%;height:1.2em}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay) .atcb-checkmark,.atcb-button.atcb-single:focus .atcb-checkmark,.atcb-button.atcb-single:hover .atcb-checkmark{top:-.77em;right:-.37em}.atcb-checkmark svg{height:100%;filter:var(--checkmark-background);width:auto}#atcb-bgoverlay{backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);background-color:var(--overlay-background);border:0;box-sizing:border-box;display:flex;height:calc(100vh + 100px);inset-inline:0;left:0;right:0;top:0;min-height:100%;min-width:100%;overflow-y:auto;padding:20px 20px 130px;position:fixed;width:100vw;z-index:14000000}#atcb-bgoverlay:not(dialog){animation:atcb-bgoverlay-animate .2s ease 0s 1 normal forwards;opacity:0}#atcb-bgoverlay.atcb-no-bg{animation:none;backdrop-filter:none;-webkit-backdrop-filter:none;opacity:1;background-color:transparent}@keyframes atcb-bgoverlay-animate{0%{opacity:0}100%{opacity:1}}.atcb-icon-outlookcom,.atcb-icon.atcb-icon-ms365{padding-bottom:.05em}.atcb-icon.atcb-icon-apple,.atcb-icon.atcb-icon-ical{padding-bottom:.15em}.atcb-icon.atcb-icon-trigger{padding-bottom:.15em}.atcb-icon.atcb-icon-rsvp{height:1.5em;width:1.5em}.atcb-icon.atcb-icon-apple svg{fill:currentcolor}.atcb-icon.atcb-icon-ical svg{fill:currentcolor}.atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-ms365-color)}.atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-yahoo-color)}.atcb-icon.atcb-icon-google svg,.atcb-icon.atcb-icon-msteams svg,.atcb-icon.atcb-icon-outlookcom svg{filter:var(--icon-filter)}.rsvp-inline-wrapper{filter:none;min-width:100%;margin-bottom:0}.atcb-modal-content.no-headline{border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;padding-top:1.8em}.rsvp-inline-wrapper .atcb-modal-content,.rsvp-inline-wrapper .atcb-modal-headline,.rsvp-inline-wrapper.atcb-modal-box{background-color:transparent;border-radius:0;box-sizing:border-box;padding:0;width:100%}.rsvp-inline-wrapper .atcb-modal-headline{padding-bottom:1.5em}.pro{text-align:center}.pro a:not(.atcb-modal-btn),.pro a:not(.atcb-modal-btn):active,.pro a:not(.atcb-modal-btn):visited{color:var(--modal-btn-text);text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--accent-color)}.pro a:not(.atcb-modal-btn):hover{color:var(--accent-color);text-decoration:none}.pro .pro-share-buttons{display:flex;flex-wrap:wrap;justify-content:center}.pro #rsvp-atcb{display:flex;flex-wrap:wrap;gap:.4em;justify-content:center}.pro-form{text-align:left}.pro-form:not(.no-intro){border-top:1px solid var(--modal-btn-border);margin-top:1.5em;padding-top:1.5em}.pro-form.no-intro:not(.no-headline){padding-top:.5em}.pro-field+.pro-field{padding-top:1.3em}.pro-field-type-label+.pro-field-type-radio{padding-top:0}.pro-field-type-checkbox,.pro-field-type-radio div{align-items:center;display:flex}.pro-field-type-checkbox input,.pro-field-type-radio input{cursor:pointer}.pro-field label{display:block;font-size:.9em;opacity:.7}.pro-field-type-checkbox label,.pro-field-type-radio label{cursor:pointer;opacity:.8;padding-left:.3em}.pro-field input[type=email],.pro-field input[type=number],.pro-field input[type=text]{background-color:var(--input-background);border:1px solid var(--modal-btn-border);border-radius:var(--input-border-radius);box-sizing:border-box;caret-color:var(--accent-color);color:var(--modal-text);font-size:.9em;opacity:.8;padding:.7em;transition:all .1s ease-in-out;width:100%}.pro-field input[type=checkbox],.pro-field input[type=radio]{accent-color:var(--accent-color);height:1.2rem;opacity:.8;transition:all .1s ease-in-out;width:1.2em}.pro-field input:disabled,.pro-field input:disabled+label{cursor:not-allowed;opacity:.75;filter:brightness(95%)}.pro-field input:not([disabled]):hover{opacity:1}.pro-field input[type=email]:focus,.pro-field input[type=number]:focus,.pro-field input[type=text]:focus{border-color:var(--accent-color);outline:1px solid var(--accent-color)}.pro-field input[type=checkbox]:focus,.pro-field input[type=radio]:focus{outline-color:var(--accent-color);outline-width:2px}#submit-error{color:var(--form-error);display:none;font-weight:700;padding-top:1.5em;text-align:center}.pro-form.form-error #submit-error{display:block}.pro-field input.error{accent-color:var(--form-error);border:2px solid var(--form-error)}.pro-field input.error+label,.pro-field:has(input.error) label{color:var(--form-error);opacity:1}#rsvp-status-group{border-bottom:1px solid var(--modal-btn-border);font-weight:700;margin-bottom:1.5em;padding-bottom:2em;text-align:center}#rsvp-status-group .pro-field{align-items:center;display:flex;flex-wrap:wrap;gap:3%;justify-content:center;margin-top:1em}@media (width <= 575px){#rsvp-status-group .pro-field{flex-direction:column;gap:1.2em}#rsvp-status-group .pro-field div{width:80%}}#rsvp-status-group .pro-field div{min-width:28%;position:relative}#rsvp-status-group input{opacity:0;position:absolute;top:0;left:0;height:100%;width:100%;margin:0;cursor:pointer}#rsvp-status-group label{align-items:center;border:1px solid var(--modal-btn-text);border-radius:var(--input-border-radius);box-shadow:var(--btn-shadow);color:var(--modal-btn-text);display:flex;flex-direction:column;font-weight:700;text-transform:uppercase;justify-content:center;opacity:.6;padding:.8em;transition:all .1s ease-in-out;width:100%}#rsvp-status-group label.status-confirmed{border-color:var(--form-success);color:var(--form-success)}#rsvp-status-group label.status-declined{border-color:var(--form-error);color:var(--form-error)}#rsvp-status-group input:checked+label{background-color:var(--modal-text);box-shadow:var(--btn-hover-shadow);color:var(--status-active-text);opacity:1;transform:scale(1.08)}#rsvp-status-group input:focus-visible+label{outline:2px solid var(--accent-color);outline-offset:2px}#rsvp-status-group input:not([disabled])+label:hover,#rsvp-status-group input:not([disabled]):hover+label{box-shadow:var(--btn-hover-shadow);opacity:1;transform:scale(1.08)}#rsvp-status-group input:checked+label.status-confirmed{background-color:var(--form-success)}#rsvp-status-group input:checked+label.status-declined{background-color:var(--form-error)}#rsvp-success-msg,#rsvp-success-msg-demo,#rsvp-success-msg-doi,#rsvp-success-msg-email,#ty-success-msg{display:none;font-weight:700;line-height:1.6em;padding-top:.5em;text-align:center}#rsvp-success-msg,#rsvp-success-msg-demo,#ty-success-msg{padding:1.5em 0}#rsvp-success-msg-demo,#rsvp-success-msg-email{color:var(--form-success)}#rsvp-success-msg-doi{color:var(--form-error);padding-top:1em;font-size:.8em}#pro-form-submit{display:block;margin:auto;min-width:150px}.pro-form-fine{font-size:.8em;margin:.5em auto 1em;opacity:.5;text-align:center}.pro-form.form-error .pro-form-fine{opacity:0}.pro-waiting{background-color:var(--modal-btn-background);border:1px solid var(--modal-btn-border);border-radius:var(--btn-border-radius);box-sizing:border-box;color:var(--modal-btn-text);cursor:wait;display:none;line-height:.5em;margin:auto;min-width:150px;padding:.5em 1.25em 1.2em;text-align:center;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:fit-content}@media (width > 575px){#pro-form-submit,.pro-waiting{min-width:200px}}.pro-waiting span:not(.atcb-icon-ical){animation-name:blink;animation-duration:1s;animation-iteration-count:infinite;animation-fill-mode:both;font-size:2.5em}.pro-field label span:not(.atcb-icon-ical){color:var(--form-error);font-weight:700;padding-left:2px}.pro-waiting span:not(.atcb-icon-ical):nth-child(2){animation-delay:.15s}.pro-waiting span:not(.atcb-icon-ical):nth-child(3){animation-delay:.3s}@keyframes blink{0%{opacity:.2}20%{opacity:1}100%{opacity:.2}}.pro #rsvp-sent-content{align-items:center;display:flex;flex-direction:column;gap:1.5em}#rsvp-status-group span{color:inherit}.atcb-modal-content .pro p:not(.pro-form-fine){margin:0}.atcb-modal-content .pro p.pro-pt{margin-top:1.5em}.atcb-modal-content .pro .pro-field p{font-size:.9em}.pro .btn-flex{align-items:center;display:flex}.pro .atcb-modal-btn svg{fill:none;height:1.5em;margin-right:.5em;stroke:currentcolor;width:auto}#atcb-reference{box-sizing:border-box;color:#000;filter:drop-shadow( 1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow( 0 1px 0 #fff) drop-shadow( 0 -1px 0 #fff);height:auto;padding:8px 0;text-align:center;transform:translate3d(0,0,0);width:100%;z-index:15000000}#atcb-reference.fixed-ref{position:fixed;bottom:10px;right:40px;width:auto}#atcb-reference.atcb-dropup{position:absolute;margin-top:-1px}.atcb-modal-host-initialized #atcb-reference.atcb-dropup{text-align:left}:host(.atcb-dark) #atcb-reference{color:#fff;filter:drop-shadow( 1px 0 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow( 0 1px 0 #000) drop-shadow( 0 -1px 0 #000)}#atcb-reference a,#atcb-reference a:active,#atcb-reference a:visited{opacity:.8;width:150px;max-width:100%;margin:auto;display:inline-block;text-decoration:none}#atcb-reference a:hover{opacity:1;text-decoration:none}#atcb-reference svg{fill:var(--list-text)}',
     "simple": ':host{width:fit-content;--base-font-size-l:16px;--base-font-size-m:16px;--base-font-size-s:16px;--font:arial,helvetica,"Twemoji Mozilla","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","EmojiOne Color","Android Emoji",sans-serif;--accent-color:#1e90ff;--wrapper-padding:1px;--buttonslist-gap:5px;--btn-background:#fff;--btn-hover-background:#283768;--btn-hover-border:#333;--btn-border-width:1px;--btn-border:#333;--btn-border-radius:0;--btn-padding-x:1.1em;--btn-padding-y:.65em;--btn-font-weight:600;--btn-text:#000;--btn-hover-text:#fff;--list-background:#fff;--list-hover-background:#283768;--list-text:#333;--list-font-weight:400;--list-hover-text:#fff;--list-close-background:#e5e5e5;--list-close-text:#777;--list-border-width:1px;--list-border:#333;--list-border-radius:0px;--list-padding:.8em 1.2em;--list-min-width:100%;--list-modal-shadow:rgb(0 0 0 / 12%) 0 4px 33px -3px,rgb(0 0 0 / 10%) 0 2px 8px -2px;--modal-text:#000;--modal-text-align:center;--modal-text-align-rtl:center;--modal-background:#f5f5f5;--modal-border-radius:0px;--modal-shadow:drop-shadow(3px 6px 28px rgb(0 0 0 / 14%));--modal-btn-bar:#c6c8cd;--modal-btn-background:#fff;--modal-btn-secondary-background:#e2e1e6;--modal-btn-hover-background:#eef4f6;--modal-btn-border:#d2d2d2;--modal-btn-border-width:1px;--modal-btn-font-weight:600;--modal-btn-text:#2e2e2e;--modal-btn-hover-text:#161616;--modal-btn-secondary-text:#666567;--modal-headline-text-align:center;--modal-headline-text-transform:none;--input-border-radius:3px;--input-background:#fff;--status-active-text:#fff;--form-error:#c5372c;--form-success:#338a36;--date-btn-text:#1d1d1e;--date-btn-text-secondary:#3a3a3f;--date-btn-cal-day-text:#fff;--date-btn-cal-month-text:#d3d2d7;--date-btn-cal-background:#313132;--date-btn-background:#eae9ed;--date-btn-hover-background:#fff;--date-btn-headline-line-clamp:1;--checkmark-background:drop-shadow(0 0 3px #fff);--overlay-background:rgb(20 20 20 / 40%);--icon-ms365-color:#ea3e23;--icon-hover-ms365-color:#fff;--icon-yahoo-color:#5f01d1;--icon-hover-yahoo-color:#fff;--icon-filter:none}:host(.atcb-dark){--btn-background:#182244;--btn-hover-background:#283768;--btn-hover-border:#283768;--btn-border:#283768;--btn-text:#dedede;--btn-hover-text:#f1f1f1;--list-background:#182244;--list-hover-background:#283768;--list-text:#dedede;--list-hover-text:#f1f1f1;--list-close-background:#121213;--list-close-text:#cacaca;--list-border:#283768;--list-modal-shadow:rgb(0 0 0 / 14%) -1px 3px 33px 2px;--modal-text:#f1f1f1;--modal-background:#242424;--modal-shadow:drop-shadow(3px 6px 28px rgb(0 0 0 / 16%));--modal-btn-bar:#38383a;--modal-btn-background:#181819;--modal-btn-secondary-background:#2e2d30;--modal-btn-hover-background:#434246;--modal-btn-border:#434246;--modal-btn-text:#dbdbdb;--modal-btn-hover-text:#fff;--modal-btn-secondary-text:#b8b8b8;--input-background:#434246;--status-active-text:#000;--form-error:#db8680;--form-success:#99de9c;--date-btn-text:#ebebf0;--date-btn-text-secondary:#b5b5bd;--date-btn-cal-day-text:#101010;--date-btn-cal-month-text:#3e3e3f;--date-btn-cal-background:#c7c7cd;--date-btn-background:#363636;--date-btn-hover-background:#474747;--checkmark-background:drop-shadow(0 0 3px #0a0a0a);--overlay-background:rgb(20 20 20 / 50%);--icon-ms365-color:#bebebe;--icon-hover-ms365-color:#bebebe;--icon-yahoo-color:#bebebe;--icon-hover-yahoo-color:#bebebe;--icon-filter:grayscale(.2)}.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-l)}@media (width <= 991px){.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-m)}}@media (width <= 575px){.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-s)}}.atcb-initialized.atcb-buttons-list{gap:var(--buttonslist-gap)}.atcb-button-wrapper{display:block;padding:var(--wrapper-padding);position:relative}.atcb-button{align-items:center;background-color:var(--btn-background);border:var(--btn-border-width) solid var(--btn-border);border-radius:var(--btn-border-radius);color:var(--btn-text);cursor:pointer;display:flex;font-family:var(--font);font-size:1em;font-weight:var(--btn-font-weight);justify-content:center;line-height:1.5em;margin:.13em;max-width:350px;padding:var(--btn-padding-y) var(--btn-padding-x);position:relative;text-align:center;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:auto;z-index:1}.atcb-button.atcb-no-text{min-width:0;border-radius:100%;display:flex;place-content:center center;align-items:center;height:3em;width:3em;padding:0}.atcb-rtl .atcb-button{direction:rtl;text-align:right}.atcb-button:focus-visible{outline:2px solid var(--accent-color)}.atcb-button.atcb-active.atcb-no-text:not(.atcb-modal-style,.atcb-dropoverlay),.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-no-text),.atcb-button.atcb-single.atcb-no-text:not([disabled]):focus,.atcb-button.atcb-single.atcb-no-text:not([disabled]):hover,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):focus,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):hover,.atcb-button:not([disabled]):focus,.atcb-button:not([disabled]):hover{background-color:var(--btn-hover-background);border-color:var(--btn-hover-border);color:var(--btn-hover-text)}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay){z-index:15000000}.atcb-button.atcb-dropup::after,.atcb-button:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-dropup)::before{content:"";width:0;height:0;position:absolute;left:0;right:0;margin:0 auto}.atcb-button:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-dropup)::before{top:100%;border:0 solid transparent;border-bottom:none;border-top-color:var(--btn-hover-border)}.atcb-button.atcb-dropup::after{bottom:100%;border:0 solid transparent;border-top:none;border-bottom-color:var(--btn-hover-border)}.atcb-button.atcb-active.atcb-dropup::after,.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-dropup)::before{border-width:.35em;transition:border-width .1s linear .1s}.atcb-button.atcb-active.atcb-dropoverlay{z-index:14000090}.atcb-icon{flex-grow:0;flex-shrink:0;height:1em;line-height:1em;margin-right:.8em;width:1em}.atcb-rtl .atcb-icon{margin-right:0;margin-left:.8em}.atcb-no-text .atcb-icon{margin-right:0;margin-left:0}.atcb-icon svg{fill:currentcolor;height:100%;width:100%}.atcb-text{overflow-wrap:anywhere}.atcb-dropdown-anchor{bottom:-15px;height:0;width:100%;opacity:0;position:absolute}.atcb-list-wrapper{box-sizing:border-box;font-weight:var(--list-font-weight);position:absolute;z-index:14000090;width:auto}.atcb-list-wrapper:not(.atcb-dropup,.atcb-dropoverlay){animation:list-entrance-bottom .2s ease 0s 1 normal forwards}.atcb-list-wrapper.atcb-dropup{animation:list-entrance-top .2s ease 0s 1 normal forwards}.atcb-list-wrapper.atcb-dropoverlay{animation:list-entrance-center .2s ease 0s 1 normal forwards;z-index:15000000}@keyframes list-entrance-bottom{0%{opacity:0;transform:translateY(250px)}100%{opacity:1;transform:translateY(0)}}@keyframes list-entrance-top{0%{opacity:0;transform:translateY(-250px)}100%{opacity:1;transform:translateY(0)}}@keyframes list-entrance-center{0%{opacity:0;transform:scaleY(1)}1%{opacity:1;transform:scaleY(0)}100%{opacity:1;transform:scaleY(1)}}.atcb-list{background-color:var(--list-background);border:var(--list-border-width) solid var(--list-border);border-radius:var(--list-border-radius);box-sizing:border-box;color:var(--list-text);display:block;font-family:var(--font);min-width:var(--list-min-width);position:relative;user-select:none;-webkit-user-select:none;width:fit-content}.atcb-list-item{align-items:center;background-color:var(--list-background);box-sizing:border-box;cursor:pointer;display:flex;font-size:1em;line-height:1.75em;padding:var(--list-padding);text-align:left;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.atcb-rtl .atcb-list-item{direction:rtl;text-align:right}.atcb-list-item:hover{background-color:var(--list-hover-background);color:var(--list-hover-text)}.atcb-list-item:focus-visible{background-color:var(--list-hover-background);color:var(--accent-color);outline:0}.atcb-list-item:last-child{border-radius:0 0 var(--list-border-radius) var(--list-border-radius)}.atcb-list-item:first-child{border-radius:var(--list-border-radius) var(--list-border-radius) 0 0}.atcb-list-item:only-child{border-radius:var(--list-border-radius)}.atcb-list.atcb-modal{box-shadow:var(--list-modal-shadow)}.atcb-list-item .atcb-icon{margin:0 auto}.atcb-list-item .atcb-icon+.atcb-text{margin-left:.7em;width:100%}.atcb-rtl .atcb-list-item .atcb-icon+.atcb-text{margin-left:0;margin-right:.7em}.atcb-list-item-close{background-color:var(--list-close-background)}.atcb-list-item.atcb-list-item-close:not(:focus-visible){color:var(--list-close-text)}.atcb-list-item.atcb-list-item-close:not(:focus-visible):hover{color:var(--list-hover-text)}.atcb-list-item-close svg{fill:currentcolor}.atcb-modal{display:block;margin:auto;width:auto;min-width:auto;position:relative;z-index:14000090}.atcb-modal-box{filter:var(--modal-shadow);color:var(--modal-text);cursor:default;box-sizing:border-box;font-family:var(--font);line-height:1.5em;text-align:var(--modal-text-align);user-select:none;-webkit-user-select:none;touch-action:manipulation;width:100%;margin-bottom:20px;-webkit-tap-highlight-color:transparent}@media (width > 575px){.atcb-modal-box{width:32em}}.atcb-modal-box.atcb-rtl{text-align:var(--modal-text-align-rtl);direction:rtl;padding:1.25em 1em 1.25em 2em}.atcb-modal-icon{height:2.5em;width:2.5em;border-radius:100%;background-color:var(--modal-background);padding:1.75em;margin:auto}.atcb-modal-icon svg{fill:currentcolor;height:100%;width:100%}.atcb-modal-headline{background-color:var(--modal-background);border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;font-size:1.3em;font-weight:600;line-height:1.5em;padding:1.8em 1.5em 1.3em;text-transform:var(--modal-headline-text-transform);text-align:var(--modal-headline-text-align)}.atcb-modal-icon+.atcb-modal-headline{margin-top:-2.6em;padding-top:2.6em}.atcb-modal-content{background-color:var(--modal-background);font-size:1em;padding:.3em 2em 2.2em}.atcb-modal-content ol,.atcb-modal-content ul{margin:1em auto;text-align:left;width:fit-content}.atcb-rtl .atcb-modal-content ol,.atcb-rtl .atcb-modal-content ul{text-align:right}.atcb-modal-icon+.atcb-modal-content{border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;margin-top:-2.6em;padding-top:2.6em}.atcb-modal-content-subevents{margin:auto;width:fit-content}@media (width <= 575px){.atcb-modal-headline{padding:1.8em 1em 1em}.atcb-modal-content{padding:.3em 1.5em 1.5em}.atcb-modal-icon+.atcb-modal-content{padding-top:1.8em}}.atcb-modal-buttons{background-color:var(--modal-btn-bar);border-radius:0 0 var(--modal-border-radius) var(--modal-border-radius);box-sizing:border-box;padding:.6em;text-align:center;width:100%;display:flex;justify-content:center;flex-flow:row-reverse wrap;align-items:center}a.atcb-modal-btn,button.atcb-modal-btn{background-color:var(--modal-btn-secondary-background);border:0;border-radius:var(--btn-border-radius);color:var(--modal-btn-secondary-text);cursor:pointer;display:inline-block;font-family:var(--font);font-size:.9em;font-weight:var(--modal-btn-font-weight);line-height:1em;margin:.625em;padding:1em 1.25em;position:relative;text-align:center;text-decoration:none;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}a.atcb-modal-btn.btn-small,button.atcb-modal-btn.btn-small{padding:.6em .8em}a.atcb-modal-btn.atcb-modal-btn-primary,button.atcb-modal-btn.atcb-modal-btn-primary{background-color:var(--modal-btn-background);color:var(--modal-btn-text)}a.atcb-modal-btn.atcb-modal-btn-border,button.atcb-modal-btn.atcb-modal-btn-border{border:var(--modal-btn-border-width) solid var(--modal-btn-border)}a.atcb-modal-btn:focus-visible,button.atcb-modal-btn:focus-visible{background-color:var(--modal-btn-hover-background);outline:2px solid var(--accent-color)}a.atcb-modal-btn:disabled,button.atcb-button:disabled,button.atcb-modal-btn:disabled,button.atcb-subevent-btn:disabled{cursor:not-allowed;opacity:.75;filter:brightness(95%);border-style:dashed;box-shadow:none}a.atcb-modal-btn:not([disabled]):hover,button.atcb-modal-btn:not([disabled]):hover{background-color:var(--modal-btn-hover-background);color:var(--modal-btn-hover-text);text-decoration:none}.atcb-subevent-btn{display:flex;align-items:flex-start;cursor:pointer;font-family:var(--font);font-size:1em;background-color:var(--date-btn-background);border:0;border-radius:7px 4px 4px 7px;padding:0;margin:0;touch-action:manipulation;position:relative;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:100%}.atcb-subevent-btn:hover{align-items:center}.atcb-subevent-btn:focus,.atcb-subevent-btn:hover{background-color:var(--date-btn-hover-background)}.atcb-subevent-btn:focus-visible{outline:2px solid var(--accent-color)}.atcb-subevent-btn+.atcb-subevent-btn{margin-top:30px}.atcb-date-btn-left{border-radius:4px 0 0 4px;align-self:stretch;background-color:var(--date-btn-cal-background);padding:.7em .8em .8em;width:2.7em;align-items:center;display:flex;flex-direction:column;flex-shrink:0}.atcb-rtl .atcb-date-btn-left{border-radius:0 4px 4px 0}.atcb-subevent-btn:hover .atcb-date-btn-left{opacity:.8}.atcb-date-btn-day{color:var(--date-btn-cal-day-text);font-weight:400;font-size:2em;word-break:keep-all;padding-bottom:.1em}.atcb-initialized[lang=ja] .atcb-date-btn-day,.atcb-initialized[lang=ko] .atcb-date-btn-day,.atcb-initialized[lang=zh] .atcb-date-btn-day{font-size:1.3em}.atcb-date-btn-month{color:var(--date-btn-cal-month-text);font-weight:600;font-size:1em}.atcb-date-btn-right{position:relative;color:var(--date-btn-text);min-width:13.5em;overflow-wrap:anywhere}.atcb-subevent-btn .atcb-date-btn-right{width:100%}.atcb-date-btn-details{opacity:1;padding:.7em .8em;text-align:left}.atcb-rtl .atcb-date-btn-details{text-align:right}.atcb-date-btn-hover{position:absolute;top:0;left:0;width:100%;opacity:0;height:100%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1em;padding:.4em .7em;box-sizing:border-box}.atcb-subevent-btn:hover .atcb-date-btn-details{opacity:0}.atcb-subevent-btn:hover .atcb-date-btn-hover{opacity:1}.atcb-date-btn-headline{font-weight:600;font-size:.9em;margin-bottom:.5em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:var(--date-btn-headline-line-clamp);line-clamp:var(--date-btn-headline-line-clamp)}.atcb-date-btn-content{display:flex;align-items:flex-start;font-size:.8em;color:var(--date-btn-text-secondary)}.atcb-date-btn-content.atcb-date-btn-cancelled{color:var(--form-error);font-weight:700}.atcb-date-btn-content-location{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.atcb-date-btn-content-icon{display:inline-block;height:.9em;margin:.075em .4em 0 0;width:.9em;flex-shrink:0}.atcb-rtl .atcb-date-btn-content-icon{margin-right:0;margin-left:.4em}.atcb-initialized[lang=ja] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon,.atcb-initialized[lang=ko] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon,.atcb-initialized[lang=zh] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon{margin-top:.15em}.atcb-date-btn-content-icon svg{height:100%;fill:currentcolor;width:100%}.atcb-date-btn-content+.atcb-date-btn-content{margin-top:.3em;padding-right:.6em}.atcb-date-btn-content-text span:not(.atcb-icon-ical){padding-right:.3em;display:inline-block}.atcb-date-btn-plus{position:absolute;border-radius:4px 0;bottom:0;right:0;background:var(--date-btn-cal-background);color:var(--date-btn-cal-day-text);display:flex;font-size:.9em;font-weight:400;height:1em;width:1em;padding:.1em;justify-content:center;align-items:center}.atcb-button:focus-visible .atcb-date-btn-plus,.atcb-subevent-btn:focus-visible .atcb-date-btn-plus{background-color:var(--accent-color)}.atcb-checkmark{display:none}.atcb-saved .atcb-checkmark{box-sizing:content-box;color:var(--btn-text);display:block;position:absolute;top:-.9em;right:-.5em;padding:.5em;border-radius:100%;height:1.2em}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay) .atcb-checkmark,.atcb-button:focus .atcb-checkmark,.atcb-button:hover .atcb-checkmark{top:-.77em;right:-.37em}.atcb-checkmark svg{height:100%;filter:var(--checkmark-background);width:auto}#atcb-bgoverlay{backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);background-color:var(--overlay-background);border:0;box-sizing:border-box;display:flex;height:calc(100vh + 100px);inset-inline:0;left:0;right:0;top:0;min-height:100%;min-width:100%;overflow-y:auto;padding:20px 20px 130px;position:fixed;width:100vw;z-index:14000000}#atcb-bgoverlay:not(dialog){animation:atcb-bgoverlay-animate .2s ease 0s 1 normal forwards;opacity:0}#atcb-bgoverlay.atcb-no-bg{animation:none;backdrop-filter:none;-webkit-backdrop-filter:none;opacity:1;background-color:transparent}@keyframes atcb-bgoverlay-animate{0%{opacity:0}100%{opacity:1}}.atcb-icon-outlookcom,.atcb-icon.atcb-icon-ms365{padding-bottom:.05em}.atcb-icon.atcb-icon-apple,.atcb-icon.atcb-icon-ical,.atcb-icon.atcb-icon-trigger{padding-bottom:.15em}.atcb-icon.atcb-icon-rsvp{height:1.5em;width:1.5em}.atcb-icon.atcb-icon-apple svg,.atcb-icon.atcb-icon-ical svg{fill:currentcolor}.atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-ms365-color)}.atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-yahoo-color)}.atcb-icon.atcb-icon-google svg,.atcb-icon.atcb-icon-msteams svg,.atcb-icon.atcb-icon-outlookcom svg{filter:var(--icon-filter)}.pro .atcb-modal-btn svg{fill:none;height:1.5em;margin-right:.5em;stroke:currentcolor;width:auto}.atcb-list-item:focus-visible .atcb-icon.atcb-icon-ms365 svg,.atcb-list-item:hover .atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-hover-ms365-color)}.atcb-list-item:focus-visible .atcb-icon.atcb-icon-yahoo svg,.atcb-list-item:hover .atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-hover-yahoo-color)}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-no-text) .atcb-icon.atcb-icon-ms365 svg,.atcb-button:not([disabled]):focus .atcb-icon.atcb-icon-ms365 svg,.atcb-button:not([disabled]):hover .atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-hover-ms365-color)}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-no-text) .atcb-icon.atcb-icon-yahoo svg,.atcb-button:not([disabled]):focus .atcb-icon.atcb-icon-yahoo svg,.atcb-button:not([disabled]):hover .atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-hover-yahoo-color)}.atcb-button.atcb-active.atcb-no-text:not(.atcb-modal-style,.atcb-dropoverlay) .atcb-icon.atcb-icon-ms365 svg,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):focus .atcb-icon.atcb-icon-ms365 svg,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):hover .atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-hover-ms365-color)}.atcb-button.atcb-active.atcb-no-text:not(.atcb-modal-style,.atcb-dropoverlay) .atcb-icon.atcb-icon-yahoo svg,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):focus .atcb-icon.atcb-icon-yahoo svg,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):hover .atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-hover-yahoo-color)}.atcb-button.atcb-single.atcb-no-text:not([disabled]):focus .atcb-icon.atcb-icon-ms365 svg,.atcb-button.atcb-single.atcb-no-text:not([disabled]):hover .atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-hover-ms365-color)}.atcb-button.atcb-single.atcb-no-text:not([disabled]):focus .atcb-icon.atcb-icon-yahoo svg,.atcb-button.atcb-single.atcb-no-text:not([disabled]):hover .atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-hover-yahoo-color)}.rsvp-inline-wrapper{filter:none;min-width:100%;margin-bottom:0}.atcb-modal-content.no-headline{border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;padding-top:1.8em}.rsvp-inline-wrapper .atcb-modal-content,.rsvp-inline-wrapper .atcb-modal-headline,.rsvp-inline-wrapper.atcb-modal-box{background-color:transparent;border-radius:0;box-sizing:border-box;padding:0;width:100%}.rsvp-inline-wrapper .atcb-modal-headline{padding-bottom:1.5em}.pro{text-align:center}.pro a:not(.atcb-modal-btn),.pro a:not(.atcb-modal-btn):active,.pro a:not(.atcb-modal-btn):visited{color:var(--modal-btn-text);text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--accent-color)}.pro a:not(.atcb-modal-btn):hover{color:var(--accent-color);text-decoration:none}.pro .pro-share-buttons{display:flex;flex-wrap:wrap;justify-content:center}.pro #rsvp-atcb{display:flex;flex-wrap:wrap;gap:.4em;justify-content:center}.pro-form{text-align:left}.pro-form:not(.no-intro){border-top:var(--modal-btn-border-width) solid var(--modal-btn-border);margin-top:1.5em;padding-top:1.5em}.pro-form.no-intro:not(.no-headline){padding-top:.5em}.pro-field+.pro-field{padding-top:1.3em}.pro-field-type-label+.pro-field-type-radio{padding-top:0}.pro-field-type-checkbox,.pro-field-type-radio div{align-items:center;display:flex}.pro-field-type-checkbox input,.pro-field-type-radio input{cursor:pointer}.pro-field label{display:block;font-size:.9em;opacity:.7}.pro-field-type-checkbox label,.pro-field-type-radio label{cursor:pointer;opacity:.8;padding-left:.3em}.pro-field input[type=email],.pro-field input[type=number],.pro-field input[type=text]{background-color:var(--input-background);border:var(--modal-btn-border-width) solid var(--modal-btn-border);border-radius:var(--input-border-radius);box-sizing:border-box;caret-color:var(--accent-color);color:var(--modal-text);font-size:.9em;opacity:.8;padding:.7em;transition:all .1s ease-in-out;width:100%}.pro-field input[type=checkbox],.pro-field input[type=radio]{accent-color:var(--accent-color);height:1.2rem;opacity:.8;transition:all .1s ease-in-out;width:1.2em}.pro-field input:disabled,.pro-field input:disabled+label{cursor:not-allowed;opacity:.75;filter:brightness(95%)}.pro-field input:not([disabled]):hover{opacity:1}.pro-field input[type=email]:focus,.pro-field input[type=number]:focus,.pro-field input[type=text]:focus{border-color:var(--accent-color);outline:1px solid var(--accent-color)}.pro-field input[type=checkbox]:focus,.pro-field input[type=radio]:focus{outline-color:var(--accent-color);outline-width:2px}#submit-error{color:var(--form-error);display:none;font-weight:700;padding-top:1.5em;text-align:center}.pro-form.form-error #submit-error{display:block}.pro-field input.error{accent-color:var(--form-error);border:2px solid var(--form-error)}.pro-field input.error+label,.pro-field:has(input.error) label{color:var(--form-error);opacity:1}#rsvp-status-group{border-bottom:var(--modal-btn-border-width) solid var(--modal-btn-border);font-weight:700;margin-bottom:1.5em;padding-bottom:2em;text-align:center}#rsvp-status-group .pro-field{align-items:center;display:flex;flex-wrap:wrap;gap:3%;justify-content:center;margin-top:1em}@media (width <= 575px){#rsvp-status-group .pro-field{flex-direction:column;gap:1.2em}#rsvp-status-group .pro-field div{width:80%}}#rsvp-status-group .pro-field div{min-width:28%;position:relative}#rsvp-status-group input{opacity:0;position:absolute;top:0;left:0;height:100%;width:100%;margin:0;cursor:pointer}#rsvp-status-group label{align-items:center;border:1px solid var(--modal-btn-text);border-radius:var(--input-border-radius);color:var(--modal-btn-text);display:flex;flex-direction:column;font-weight:700;text-transform:uppercase;justify-content:center;opacity:.6;padding:.8em;transition:all .1s ease-in-out;width:100%}#rsvp-status-group label.status-confirmed{border-color:var(--form-success);color:var(--form-success)}#rsvp-status-group label.status-declined{border-color:var(--form-error);color:var(--form-error)}#rsvp-status-group input:checked+label{background-color:var(--modal-text);color:var(--status-active-text);opacity:1;transform:scale(1.08)}#rsvp-status-group input:focus-visible+label{outline:2px solid var(--accent-color);outline-offset:2px}#rsvp-status-group input:not([disabled])+label:hover,#rsvp-status-group input:not([disabled]):hover+label{opacity:1;transform:scale(1.08)}#rsvp-status-group input:checked+label.status-confirmed{background-color:var(--form-success)}#rsvp-status-group input:checked+label.status-declined{background-color:var(--form-error)}#rsvp-success-msg,#rsvp-success-msg-demo,#rsvp-success-msg-doi,#rsvp-success-msg-email,#ty-success-msg{display:none;font-weight:700;line-height:1.6em;padding-top:.5em;text-align:center}#rsvp-success-msg,#rsvp-success-msg-demo,#ty-success-msg{padding:1.5em 0}#rsvp-success-msg-demo,#rsvp-success-msg-email{color:var(--form-success)}#rsvp-success-msg-doi{color:var(--form-error);padding-top:1em;font-size:.8em}#pro-form-submit{display:block;margin:auto;min-width:150px}.pro-form-fine{font-size:.8em;margin:.5em auto 1em;opacity:.5;text-align:center}.pro-form.form-error .pro-form-fine{opacity:0}.pro-waiting{background-color:var(--modal-btn-background);border:var(--modal-btn-border-width) solid var(--modal-btn-border);border-radius:var(--btn-border-radius);box-sizing:border-box;color:var(--modal-btn-text);cursor:wait;display:none;line-height:.5em;margin:auto;min-width:150px;padding:.5em 1.25em 1.2em;text-align:center;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:fit-content}@media (width > 575px){#pro-form-submit,.pro-waiting{min-width:200px}}.pro-waiting span:not(.atcb-icon-ical){animation-name:blink;animation-duration:1s;animation-iteration-count:infinite;animation-fill-mode:both;font-size:2.5em}.pro-field label span:not(.atcb-icon-ical){color:var(--form-error);font-weight:700;padding-left:2px}.pro-waiting span:not(.atcb-icon-ical):nth-child(2){animation-delay:.15s}.pro-waiting span:not(.atcb-icon-ical):nth-child(3){animation-delay:.3s}@keyframes blink{0%{opacity:.2}20%{opacity:1}100%{opacity:.2}}.pro #rsvp-sent-content{align-items:center;display:flex;flex-direction:column;gap:1.5em}#rsvp-status-group span{color:inherit}.atcb-modal-content .pro p:not(.pro-form-fine){margin:0}.atcb-modal-content .pro p.pro-pt{margin-top:1.5em}.atcb-modal-content .pro .pro-field p{font-size:.9em}.pro .btn-flex{align-items:center;display:flex}#atcb-reference{box-sizing:border-box;color:#000;filter:drop-shadow( 1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow( 0 1px 0 #fff) drop-shadow( 0 -1px 0 #fff);height:auto;padding:8px 0;text-align:center;transform:translate3d(0,0,0);width:100%;z-index:15000000}#atcb-reference.fixed-ref{position:fixed;bottom:10px;right:40px;width:auto}#atcb-reference.atcb-dropup{position:absolute;margin-top:-1px}.atcb-modal-host-initialized #atcb-reference.atcb-dropup{text-align:left}:host(.atcb-dark) #atcb-reference{color:#fff;filter:drop-shadow( 1px 0 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow( 0 1px 0 #000) drop-shadow( 0 -1px 0 #000)}#atcb-reference a,#atcb-reference a:active,#atcb-reference a:visited{opacity:.8;width:150px;max-width:100%;margin:auto;display:inline-block;text-decoration:none}#atcb-reference a:hover{opacity:1;text-decoration:none}#atcb-reference svg{fill:var(--list-text)}',
@@ -11054,7 +11054,7 @@
   ];
   var atcbWcObjectParams = ["customLabels", "ty", "rsvp", "customVar"];
   var atcbWcObjectArrayParams = ["dates"];
-  var atcbWcArrayParams = ["images", "options", "optionsMobile", "optionsIOS"];
+  var atcbWcArrayParams = ["recurrence_byDay", "recurrence_byMonth", "recurrence_byMonthDay", "images", "options", "optionsMobile", "optionsIOS"];
   var atcbWcNumberParams = ["sequence", "recurrence_interval", "recurrence_count"];
   var atcbIcon = {
     trigger: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200.016"><path d="M132.829 7.699c0-4.248 4.199-7.699 9.391-7.699s9.391 3.451 9.391 7.699v33.724c0 4.248-4.199 7.699-9.391 7.699s-9.391-3.451-9.391-7.699zm-5.941 123.747c2.979 0 5.404 2.425 5.404 5.404s-2.425 5.404-5.404 5.404l-21.077-.065-.065 21.045c0 2.979-2.425 5.404-5.404 5.404s-5.404-2.425-5.404-5.404l.065-21.061-21.045-.081c-2.979 0-5.404-2.425-5.404-5.404s2.425-5.404 5.404-5.404l21.061.065.065-21.045c0-2.979 2.425-5.404 5.404-5.404s5.404 2.425 5.404 5.404l-.065 21.077 21.061.065zM48.193 7.699C48.193 3.451 52.393 0 57.585 0s9.391 3.451 9.391 7.699v33.724c0 4.248-4.199 7.699-9.391 7.699s-9.391-3.451-9.391-7.699zM10.417 73.763h179.167V34.945c0-1.302-.537-2.49-1.4-3.369-.863-.863-2.051-1.4-3.369-1.4h-17.171c-2.881 0-5.208-2.327-5.208-5.208s2.327-5.208 5.208-5.208h17.171c4.183 0 7.975 1.709 10.726 4.46S200 30.762 200 34.945v44.043 105.843c0 4.183-1.709 7.975-4.46 10.726s-6.543 4.46-10.726 4.46H15.186c-4.183 0-7.975-1.709-10.726-4.46C1.709 192.79 0 188.997 0 184.814V78.988 34.945c0-4.183 1.709-7.975 4.46-10.726s6.543-4.46 10.726-4.46h18.343c2.881 0 5.208 2.327 5.208 5.208s-2.327 5.208-5.208 5.208H15.186c-1.302 0-2.49.537-3.369 1.4-.863.863-1.4 2.051-1.4 3.369zm179.167 10.433H10.417v100.618c0 1.302.537 2.49 1.4 3.369.863.863 2.051 1.4 3.369 1.4h169.629c1.302 0 2.49-.537 3.369-1.4.863-.863 1.4-2.051 1.4-3.369zM82.08 30.176c-2.881 0-5.208-2.327-5.208-5.208s2.327-5.208 5.208-5.208h34.977c2.881 0 5.208 2.327 5.208 5.208s-2.327 5.208-5.208 5.208z"/></svg>',
@@ -11578,7 +11578,11 @@
       }
     });
     if (dateTimeData.timeZone === "currentBrowser" || dateTimeData.useUserTZ) {
-      const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "GMT";
+      let browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "GMT";
+      const validTimeZones = tzlib_get_timezones();
+      if (!validTimeZones.includes(browserTimezone)) {
+        browserTimezone = atcb_map_special_time_zones(browserTimezone);
+      }
       if (dateTimeData.useUserTZ && dateTimeData.startTime && dateTimeData.startTime !== "" && dateTimeData.endTime && dateTimeData.endTime !== "") {
         const newStartDateTime = atcb_translate_via_time_zone(dateTimeData.startDate, dateTimeData.startTime, dateTimeData.timeZone, browserTimezone);
         const newEndDateTime = atcb_translate_via_time_zone(dateTimeData.endDate, dateTimeData.endTime, dateTimeData.timeZone, browserTimezone);
@@ -12257,11 +12261,17 @@
       if (tyData.type === "share") {
         const copyBtn = tyHost.getElementById("atcb-ty-share-copy");
         copyBtn.addEventListener("click", function() {
-          atcb_copy_to_clipboard(tyData.url);
-          copyBtn.innerHTML = copiedIcon + atcb_translate_hook("label.share.copied", data) + "!";
-          setTimeout(function() {
-            copyBtn.innerHTML = copyIcon + atcb_translate_hook("label.share.copy", data);
-          }, 3e3);
+          return __async(this, null, function* () {
+            try {
+              yield atcb_copy_to_clipboard(tyData.url);
+              copyBtn.innerHTML = copiedIcon + atcb_translate_hook("label.share.copied", data) + "!";
+              setTimeout(function() {
+                copyBtn.innerHTML = copyIcon + atcb_translate_hook("label.share.copy", data);
+              }, 3e3);
+            } catch (error) {
+              console.error("Error copying to clipboard:", error);
+            }
+          });
         });
         copyBtn.addEventListener("keyup", function(event) {
           if (event.key === "Enter") {
@@ -12880,7 +12890,7 @@
         if (!data.blockInteraction) {
           parent.addEventListener(
             "click",
-            atcb_debounce_leading(() => {
+            atcb_debounce_leading(() => __async(null, null, function* () {
               var _a;
               if (oneOption) {
                 (_a = host.querySelector("#" + parent.id)) == null ? void 0 : _a.blur();
@@ -12889,22 +12899,24 @@
                 atcb_toggle(host, "close");
                 atcb_log_event("openCalendarLink", parent.id, data.identifier);
               }
-              atcb_generate_links(host, type, data);
-            })
+              yield atcb_generate_links(host, type, data);
+            }))
           );
           parent.addEventListener("keyup", function(event) {
-            var _a;
-            if (event.key === "Enter") {
-              event.preventDefault();
-              if (oneOption) {
-                (_a = host.querySelector("#" + parent.id)) == null ? void 0 : _a.blur();
-                atcb_log_event("openSingletonLink", parent.id, data.identifier);
-              } else {
-                atcb_toggle(host, "close");
-                atcb_log_event("openCalendarLink", parent.id, data.identifier);
+            return __async(this, null, function* () {
+              var _a;
+              if (event.key === "Enter") {
+                event.preventDefault();
+                if (oneOption) {
+                  (_a = host.querySelector("#" + parent.id)) == null ? void 0 : _a.blur();
+                  atcb_log_event("openSingletonLink", parent.id, data.identifier);
+                } else {
+                  atcb_toggle(host, "close");
+                  atcb_log_event("openCalendarLink", parent.id, data.identifier);
+                }
+                yield atcb_generate_links(host, type, data, "all", true);
               }
-              atcb_generate_links(host, type, data, "all", true);
-            }
+            });
           });
         }
         break;
@@ -13247,11 +13259,11 @@
             }
             modalSubEventButton.addEventListener(
               "click",
-              atcb_debounce(() => {
+              atcb_debounce(() => __async(null, null, function* () {
                 atcb_log_event("openSubEventLink", modalSubEventButton.id, data.identifier);
                 modalSubEventButton.blur();
-                atcb_generate_links(mainHost, subEvents[0], data, subEvents[`${i}`], keyboardTrigger, true);
-              })
+                yield atcb_generate_links(mainHost, subEvents[0], data, subEvents[`${i}`], keyboardTrigger, true);
+              }))
             );
           } else {
             modalSubEventButton.setAttribute("disabled", true);
@@ -13313,31 +13325,35 @@
           case "yahoo2nd":
             modalButton.addEventListener(
               "click",
-              atcb_debounce(() => {
+              atcb_debounce(() => __async(null, null, function* () {
                 atcb_close(mainHost);
-                atcb_subscribe_yahoo_modal_switch(mainHost, data);
-              })
+                yield atcb_subscribe_yahoo_modal_switch(mainHost, data);
+              }))
             );
             modalButton.addEventListener("keyup", function(event) {
-              if (event.key === "Enter" || event.code == "Space" || event.key === "Alt" && event.key === "Control" && event.code === "Space") {
-                atcb_toggle(mainHost, "close", "", "", true);
-                atcb_subscribe_yahoo_modal_switch(mainHost, data, keyboardTrigger);
-              }
+              return __async(this, null, function* () {
+                if (event.key === "Enter" || event.code == "Space" || event.key === "Alt" && event.key === "Control" && event.code === "Space") {
+                  atcb_toggle(mainHost, "close", "", "", true);
+                  yield atcb_subscribe_yahoo_modal_switch(mainHost, data, keyboardTrigger);
+                }
+              });
             });
             break;
           case "2timeslink":
             modalButton.addEventListener(
               "click",
-              atcb_debounce(() => {
+              atcb_debounce(() => __async(null, null, function* () {
                 atcb_close(mainHost);
-                atcb_generate_links(mainHost, goto.type, data, goto.id, keyboardTrigger, false, true);
-              })
+                yield atcb_generate_links(mainHost, goto.type, data, goto.id, keyboardTrigger, false, true);
+              }))
             );
             modalButton.addEventListener("keyup", function(event) {
-              if (event.key === "Enter" || event.code == "Space" || event.key === "Alt" && event.key === "Control" && event.code === "Space") {
-                atcb_toggle(mainHost, "close", "", "", true);
-                atcb_generate_links(mainHost, goto.type, data, goto.id, keyboardTrigger, false, true);
-              }
+              return __async(this, null, function* () {
+                if (event.key === "Enter" || event.code == "Space" || event.key === "Alt" && event.key === "Control" && event.code === "Space") {
+                  atcb_toggle(mainHost, "close", "", "", true);
+                  yield atcb_generate_links(mainHost, goto.type, data, goto.id, keyboardTrigger, false, true);
+                }
+              });
             });
             break;
           case "none":
@@ -13353,8 +13369,10 @@
     });
   }
   function atcb_subscribe_yahoo_modal_switch(host, data, keyboardTrigger) {
-    atcb_set_fully_successful(host, data);
-    atcb_generate_links(host, "yahoo2nd", data, "all", keyboardTrigger);
+    return __async(this, null, function* () {
+      atcb_set_fully_successful(host, data);
+      yield atcb_generate_links(host, "yahoo2nd", data, "all", keyboardTrigger);
+    });
   }
   function atcb_generate_date_button(data, parent, subEvent = "all", oneOption = false, forceFullDate = false) {
     if (subEvent !== "all") {
@@ -13689,63 +13707,65 @@
     return schemaRecurrenceContent;
   }
   function atcb_generate_links(host, type, data, subEvent = "all", keyboardTrigger = false, multiDateModal = false, skipDoubleLink = false) {
-    let linkType = type;
-    if (type === "apple") {
-      linkType = "ical";
-    }
-    if (subEvent !== "all") {
-      subEvent = parseInt(subEvent) - 1;
-    } else if (data.dates.length == 1) {
-      subEvent = 0;
-    }
-    if (data.subscribe) {
-      atcb_generate_subscribe_links(host, type, linkType, data, keyboardTrigger);
-      return;
-    }
-    if (subEvent !== "all") {
-      if (data.dates[`${subEvent}`].status.toLowerCase() === "cancelled" && linkType !== "ical") {
-        atcb_create_modal(host, data, "warning", atcb_translate_hook("date.status.cancelled", data), atcb_translate_hook("date.status.cancelled.cta", data), [], [], keyboardTrigger);
-      } else {
-        if (!skipDoubleLink) {
-        }
-        switch (linkType) {
-          case "ical":
-            atcb_generate_ical(host, data, type, subEvent, keyboardTrigger);
-            break;
-          case "google":
-            atcb_generate_google(data, data.dates[`${subEvent}`], subEvent);
-            break;
-          case "msteams":
-            atcb_generate_msteams(data, data.dates[`${subEvent}`], subEvent);
-            break;
-          case "ms365":
-            atcb_generate_microsoft(data, data.dates[`${subEvent}`], subEvent);
-            break;
-          case "outlookcom":
-            atcb_generate_microsoft(data, data.dates[`${subEvent}`], subEvent, "outlookcom");
-            break;
-          case "yahoo":
-            atcb_generate_yahoo(data, data.dates[`${subEvent}`], subEvent);
-            break;
-        }
-        const modalHost = document.getElementById(data.identifier + "-modal-host");
-        if (modalHost) {
-          const subEventButton = modalHost.shadowRoot.getElementById(data.identifier + "-" + type + "-" + (subEvent + 1));
-          if (subEventButton) {
-            subEventButton.classList.add("atcb-saved");
+    return __async(this, null, function* () {
+      let linkType = type;
+      if (type === "apple") {
+        linkType = "ical";
+      }
+      if (subEvent !== "all") {
+        subEvent = parseInt(subEvent) - 1;
+      } else if (data.dates.length == 1) {
+        subEvent = 0;
+      }
+      if (data.subscribe) {
+        yield atcb_generate_subscribe_links(host, type, linkType, data, keyboardTrigger);
+        return;
+      }
+      if (subEvent !== "all") {
+        if (data.dates[`${subEvent}`].status.toLowerCase() === "cancelled" && linkType !== "ical") {
+          atcb_create_modal(host, data, "warning", atcb_translate_hook("date.status.cancelled", data), atcb_translate_hook("date.status.cancelled.cta", data), [], [], keyboardTrigger);
+        } else {
+          if (!skipDoubleLink) {
+          }
+          switch (linkType) {
+            case "ical":
+              atcb_generate_ical(host, data, type, subEvent, keyboardTrigger);
+              break;
+            case "google":
+              atcb_generate_google(data, data.dates[`${subEvent}`], subEvent);
+              break;
+            case "msteams":
+              atcb_generate_msteams(data, data.dates[`${subEvent}`], subEvent);
+              break;
+            case "ms365":
+              atcb_generate_microsoft(data, data.dates[`${subEvent}`], subEvent);
+              break;
+            case "outlookcom":
+              atcb_generate_microsoft(data, data.dates[`${subEvent}`], subEvent, "outlookcom");
+              break;
+            case "yahoo":
+              atcb_generate_yahoo(data, data.dates[`${subEvent}`], subEvent);
+              break;
+          }
+          const modalHost = document.getElementById(data.identifier + "-modal-host");
+          if (modalHost) {
+            const subEventButton = modalHost.shadowRoot.getElementById(data.identifier + "-" + type + "-" + (subEvent + 1));
+            if (subEventButton) {
+              subEventButton.classList.add("atcb-saved");
+            }
+          }
+          if (data.dates[`${subEvent}`].status.toLowerCase() !== "cancelled") atcbStates[`${data.identifier}`][`${type}`][`${subEvent}`]++;
+          const filteredStates = atcbStates[`${data.identifier}`][`${type}`].filter(function(value) {
+            return value < 1;
+          });
+          if (filteredStates.length == 0) {
+            atcb_set_fully_successful(host, data, multiDateModal);
           }
         }
-        if (data.dates[`${subEvent}`].status.toLowerCase() !== "cancelled") atcbStates[`${data.identifier}`][`${type}`][`${subEvent}`]++;
-        const filteredStates = atcbStates[`${data.identifier}`][`${type}`].filter(function(value) {
-          return value < 1;
-        });
-        if (filteredStates.length == 0) {
-          atcb_set_fully_successful(host, data, multiDateModal);
-        }
+        return;
       }
-      return;
-    }
-    atcb_generate_multidate_links(host, type, linkType, data, keyboardTrigger, multiDateModal);
+      atcb_generate_multidate_links(host, type, linkType, data, keyboardTrigger, multiDateModal);
+    });
   }
   function atcb_generate_multidate_links(host, type, linkType, data, keyboardTrigger, multiDateModal) {
     if (linkType === "ical" && !data.dates.some((theSubEvent) => theSubEvent.status.toLowerCase() === "cancelled") && data.dates.every((theSubEvent) => (theSubEvent.organizer || "") === (data.dates[0].organizer || ""))) {
@@ -13765,71 +13785,86 @@
     }
   }
   function atcb_generate_subscribe_links(host, type, linkType, data, keyboardTrigger) {
-    const adjustedFileUrl = data.icsFile.replace("https://", "webcal://");
-    switch (linkType) {
-      case "ical":
-        if (atcbIsAndroid() || data.fakeAndroid) {
-          atcb_subscribe_ical(data, data.icsFile, type);
+    return __async(this, null, function* () {
+      const adjustedFileUrl = data.icsFile.replace("https://", "webcal://");
+      let copied = false;
+      switch (linkType) {
+        case "ical":
+          if (atcbIsAndroid() || data.fakeAndroid) {
+            atcb_subscribe_ical(data, data.icsFile, type);
+            break;
+          }
+          atcb_subscribe_ical(data, adjustedFileUrl, type, host, keyboardTrigger);
           break;
-        }
-        atcb_subscribe_ical(data, adjustedFileUrl, type, host, keyboardTrigger);
-        break;
-      case "google":
-        atcb_subscribe_google(data, adjustedFileUrl);
-        break;
-      case "ms365":
-        atcb_subscribe_microsoft(data, adjustedFileUrl, data.name);
-        break;
-      case "outlookcom":
-        atcb_subscribe_microsoft(data, adjustedFileUrl, data.name, "outlookcom");
-        break;
-      case "yahoo":
-        if (data.proxy) {
-          atcb_open_cal_url(data, "yahoo", "", true);
+        case "google":
+          atcb_subscribe_google(data, adjustedFileUrl);
+          break;
+        case "ms365":
+          atcb_subscribe_microsoft(data, adjustedFileUrl, data.name);
+          break;
+        case "outlookcom":
+          atcb_subscribe_microsoft(data, adjustedFileUrl, data.name, "outlookcom");
+          break;
+        case "yahoo":
+          if (data.proxy) {
+            atcb_open_cal_url(data, "yahoo", "", true);
+            return;
+          }
+          try {
+            yield atcb_copy_to_clipboard(data.icsFile);
+            copied = true;
+          } catch (e) {
+            console.warn(e);
+            copied = false;
+          }
+          atcb_create_modal(
+            host,
+            data,
+            "yahoo",
+            atcb_translate_hook("modal.subscribe.yahoo.h", data),
+            atcb_translate_hook("modal.clipboard.text", data) + "<br>" + atcb_translate_hook("modal.subscribe.yahoo.text", data),
+            [
+              {
+                label: atcb_translate_hook("modal.subscribe.yahoo.button", data),
+                primary: true,
+                type: "yahoo2nd",
+                href: "https://www.yahoo.com/calendar"
+              },
+              { label: atcb_translate_hook("cancel", data) }
+            ],
+            [],
+            keyboardTrigger
+          );
           return;
-        }
-        atcb_copy_to_clipboard(data.icsFile);
-        atcb_create_modal(
-          host,
-          data,
-          "yahoo",
-          atcb_translate_hook("modal.subscribe.yahoo.h", data),
-          atcb_translate_hook("modal.clipboard.text", data) + "<br>" + atcb_translate_hook("modal.subscribe.yahoo.text", data),
-          [
-            {
-              label: atcb_translate_hook("modal.subscribe.yahoo.button", data),
-              primary: true,
-              type: "yahoo2nd",
-              href: "https://www.yahoo.com/calendar"
-            },
-            { label: atcb_translate_hook("cancel", data) }
-          ],
-          [],
-          keyboardTrigger
-        );
-        return;
-      case "yahoo2nd":
-        atcb_copy_to_clipboard(data.icsFile);
-        atcb_create_modal(
-          host,
-          data,
-          "yahoo",
-          atcb_translate_hook("modal.subscribe.yahoo.h", data),
-          atcb_translate_hook("modal.clipboard.text", data) + "<br>" + atcb_translate_hook("modal.subscribe.yahoo.text", data),
-          [
-            {
-              label: atcb_translate_hook("modal.subscribe.yahoo.button", data),
-              type: "none",
-              href: "https://www.yahoo.com/calendar"
-            },
-            { label: atcb_translate_hook("cancel", data) }
-          ],
-          [],
-          keyboardTrigger
-        );
-        return;
-    }
-    atcb_set_fully_successful(host, data);
+        case "yahoo2nd":
+          try {
+            yield atcb_copy_to_clipboard(data.icsFile);
+            copied = true;
+          } catch (e) {
+            console.warn(e);
+            copied = false;
+          }
+          atcb_create_modal(
+            host,
+            data,
+            "yahoo",
+            atcb_translate_hook("modal.subscribe.yahoo.h", data),
+            atcb_translate_hook("modal.clipboard.text", data) + "<br>" + atcb_translate_hook("modal.subscribe.yahoo.text", data),
+            [
+              {
+                label: atcb_translate_hook("modal.subscribe.yahoo.button", data),
+                type: "none",
+                href: "https://www.yahoo.com/calendar"
+              },
+              { label: atcb_translate_hook("cancel", data) }
+            ],
+            [],
+            keyboardTrigger
+          );
+          return;
+      }
+      atcb_set_fully_successful(host, data);
+    });
   }
   function atcb_set_fully_successful(host, data, multiDateModal = false) {
     const trigger = host.getElementById(data.identifier);
@@ -13860,7 +13895,14 @@
       return encodeURIComponent(fileUrl);
     })();
     if ((atcbIsAndroid() || data.fakeAndroid) && isGoogleCalId) {
-      atcb_open_cal_url(data, "google", "intent://" + baseUrlApp + newFileUrl + "#Intent;scheme=https;package=com.google.android.calendar;end", true);
+      if (!atcbIsWebView()) {
+        const httpsUrl = baseUrl + newFileUrl;
+        const fallback = encodeURIComponent(httpsUrl);
+        const intentUrl = "intent://" + baseUrlApp + newFileUrl + "#Intent;scheme=https;package=com.google.android.calendar;S.browser_fallback_url=" + fallback + ";end";
+        atcb_open_cal_url(data, "google", intentUrl, true);
+      } else {
+        atcb_open_cal_url(data, "google", baseUrl + newFileUrl, true);
+      }
       return;
     }
     atcb_open_cal_url(data, "google", baseUrl + newFileUrl, true);
@@ -13887,7 +13929,7 @@
     }
     const formattedDate = atcb_generate_time(date, "clean", "google");
     urlParts.push("dates=" + encodeURIComponent(formattedDate.start) + "%2F" + encodeURIComponent(formattedDate.end));
-    if (date.timeZone && date.timeZone !== "" && !/GMT[+|-]\d{1,2}|Etc\/U|Etc\/Zulu|CET|CST6CDT|EET|EST|MET|MST|PST8PDT|WET/i.test(date.timeZone) && !formattedDate.allday) {
+    if (date.timeZone && date.timeZone !== "" && !/GMT[+|-]\d{1,2}|Etc\/U|Etc\/Zulu|CET|CST6CDT|EET|EST|MET|MST|PST8PDT|WET|PST|PDT|MDT|CST|CDT|EDT|EEST|CEST|HST|HDT|AKST|AKDT|AST|ADT|AEST|AEDT|NZST|NZDT|IST|IDT|WEST|ACST|ACDT|BST/i.test(date.timeZone) && !formattedDate.allday) {
       urlParts.push("ctz=" + date.timeZone);
     }
     if (date.name && date.name !== "") {
@@ -13923,7 +13965,10 @@
     }
     let fullUrl = urlParts.join("&");
     if (atcbIsAndroid() || data.fakeAndroid) {
-      fullUrl = "intent://" + fullUrl.slice(8) + "#Intent;scheme=https;package=com.google.android.calendar;end";
+      if (!atcbIsWebView()) {
+        const fallback = encodeURIComponent(fullUrl);
+        fullUrl = "intent://" + fullUrl.slice(8) + "#Intent;scheme=https;package=com.google.android.calendar;S.browser_fallback_url=" + fallback + ";end";
+      }
     }
     atcb_open_cal_url(data, "google", fullUrl, false, subEvent);
   }
@@ -14117,7 +14162,7 @@
           return ";VALUE=DATE";
         }
         if (data.dates[`${i}`].timeZone && data.dates[`${i}`].timeZone !== "") {
-          const timeZone = /GMT[+|-]\d{1,2}|Etc\/U|Etc\/Zulu|CET|CST6CDT|EET|EST|MET|MST|PST8PDT|WET/i.test(data.dates[`${i}`].timeZone) ? "GMT" : data.dates[`${i}`].timeZone;
+          const timeZone = /GMT[+|-]\d{1,2}|Etc\/U|Etc\/Zulu|CET|CST6CDT|EET|EST|MET|MST|PST8PDT|WET|PST|PDT|MDT|CST|CDT|EDT|EEST|CEST|HST|HDT|AKST|AKDT|AST|ADT|AEST|AEDT|NZST|NZDT|IST|IDT|WEST|ACST|ACDT|BST/i.test(data.dates[`${i}`].timeZone) ? "GMT" : data.dates[`${i}`].timeZone;
           const timeZoneBlock = tzlib_get_ical_block(timeZone);
           if (!usedTimeZones.includes(timeZone)) {
             ics_lines.push(timeZoneBlock[0]);
@@ -14206,21 +14251,30 @@
     return "event" + filenameSuffix;
   }
   function atcb_ical_copy_note(host, dataUrl, data, keyboardTrigger) {
-    atcb_copy_to_clipboard(dataUrl);
-    if (atcbIsiOS() && !atcbIsSafari()) {
-      atcb_create_modal(
-        host,
-        data,
-        "warning",
-        atcb_translate_hook("modal.opensafari.ical.h", data),
-        atcb_translate_hook("modal.opensafari.ical.text", data) + "<br>" + atcb_translate_hook("modal.clipboard.text", data) + "<br>" + atcb_translate_hook("modal.opensafari.ical.steps", data),
-        [],
-        [],
-        keyboardTrigger
-      );
-      return;
-    }
-    atcb_create_modal(host, data, "warning", atcb_translate_hook("modal.webview.ical.h", data), atcb_translate_hook("modal.webview.ical.text", data) + "<br>" + atcb_translate_hook("modal.clipboard.text", data) + "<br>" + atcb_translate_hook("modal.webview.ical.steps", data), [], [], keyboardTrigger);
+    return __async(this, null, function* () {
+      let copied = false;
+      try {
+        yield atcb_copy_to_clipboard(dataUrl);
+        copied = true;
+      } catch (e) {
+        console.warn(e);
+        copied = false;
+      }
+      if (atcbIsiOS() && !atcbIsSafari()) {
+        atcb_create_modal(
+          host,
+          data,
+          "warning",
+          atcb_translate_hook("modal.opensafari.ical.h", data),
+          atcb_translate_hook("modal.opensafari.ical.text", data) + "<br>" + atcb_translate_hook("modal.clipboard.text", data) + "<br>" + atcb_translate_hook("modal.opensafari.ical.steps", data),
+          [],
+          [],
+          keyboardTrigger
+        );
+        return;
+      }
+      atcb_create_modal(host, data, "warning", atcb_translate_hook("modal.webview.ical.h", data), atcb_translate_hook("modal.webview.ical.text", data) + "<br>" + atcb_translate_hook("modal.clipboard.text", data) + "<br>" + atcb_translate_hook("modal.webview.ical.steps", data), [], [], keyboardTrigger);
+    });
   }
   function atcb_saved_hook(host, data) {
     atcb_log_event("success", data.identifier, data.identifier);
@@ -14267,7 +14321,7 @@
         }
         return durationHours + ":" + ("0" + durationMinutes).slice(-2);
       })();
-      if ((targetCal == "ical" || targetCal == "google") && !/GMT[+|-]\d{1,2}|Etc\/U|Etc\/Zulu|CET|CST6CDT|EET|EST|MET|MST|PST8PDT|WET/i.test(data.timeZone)) {
+      if ((targetCal == "ical" || targetCal == "google") && !/GMT[+|-]\d{1,2}|Etc\/U|Etc\/Zulu|CET|CST6CDT|EET|EST|MET|MST|PST8PDT|WET|PST|PDT|MDT|CST|CDT|EDT|EEST|CEST|HST|HDT|AKST|AKDT|AST|ADT|AEST|AEDT|NZST|NZDT|IST|IDT|WEST|ACST|ACDT|BST/i.test(data.timeZone)) {
         return {
           start: atcb_format_datetime(newStartDate, "clean", true, true),
           end: atcb_format_datetime(newEndDate, "clean", true, true),
@@ -15038,28 +15092,105 @@
       adjustedCount: rrule.COUNT ? rrule.COUNT - countDate : count - countDate
     };
   }
+  function atcb_map_special_time_zones(timeZone) {
+    if (!timeZone) return "GMT";
+    const mapping = {
+      PST: "PST8PDT",
+      PDT: "PST8PDT",
+      MST: "MST7MDT",
+      MDT: "MST7MDT",
+      CST: "CST6CDT",
+      CDT: "CST6CDT",
+      EST: "EST5EDT",
+      EDT: "EST5EDT",
+      HDT: "US/Hawaii",
+      HST: "US/Hawaii",
+      AKST: "US/Alaska",
+      AKDT: "US/Alaska",
+      IST: "Asia/Jerusalem",
+      IDT: "Asia/Jerusalem",
+      AEST: "Australia/Brisbane",
+      AEDT: "Australia/ACT",
+      ACST: "Australia/North",
+      ACDT: "Australia/South",
+      NZST: "NZ",
+      NZDT: "NZ",
+      BST: "Europe/London",
+      AST: "America/Puerto_Rico",
+      ADT: "Canada/Atlantic",
+      WEST: "Europe/Lisbon"
+    };
+    return mapping[`${timeZone.toUpperCase()}`] || "GMT";
+  }
   function atcb_copy_to_clipboard(dataString) {
-    const tmpInput = document.createElement("input");
-    document.body.append(tmpInput);
-    const editable = tmpInput.contentEditable;
-    const readOnly = tmpInput.readOnly;
-    tmpInput.contentEditable = true;
-    tmpInput.readOnly = false;
-    tmpInput.value = dataString;
-    if (atcbIsiOS()) {
-      var range = document.createRange();
-      range.selectNodeContents(tmpInput);
-      var selection = window.getSelection();
-      selection.removeAllRanges();
-      selection.addRange(range);
-      tmpInput.setSelectionRange(0, 999999);
-    } else {
-      tmpInput.select();
-    }
-    tmpInput.contentEditable = editable;
-    tmpInput.readOnly = readOnly;
-    document.execCommand("copy");
-    tmpInput.remove();
+    return __async(this, null, function* () {
+      const v = (dataString != null ? dataString : "").toString().trim();
+      if (!v) throw new Error("No value to copy!");
+      const legacyCopy = () => {
+        if (typeof window === "undefined" || typeof document === "undefined") return false;
+        if (!document.queryCommandSupported || !document.queryCommandSupported("copy")) return false;
+        const ta = document.createElement("textarea");
+        const prevFocus = document.activeElement;
+        ta.value = v;
+        ta.setAttribute("readonly", "");
+        ta.style.contain = "strict";
+        ta.style.position = "fixed";
+        ta.style.top = "-9999px";
+        ta.style.left = "-9999px";
+        ta.style.opacity = "0";
+        ta.style.outline = "none";
+        ta.style.pointerEvents = "none";
+        ta.style.fontSize = "12pt";
+        document.body.appendChild(ta);
+        try {
+          ta.focus();
+          ta.select();
+          if (atcbIsiOS()) {
+            ta.selectionStart = 0;
+            ta.selectionEnd = v.length;
+          }
+          const ok = document.execCommand("copy");
+          document.body.removeChild(ta);
+          if (prevFocus && typeof prevFocus.focus === "function") prevFocus.focus();
+          return ok;
+        } catch (e) {
+          document.body.removeChild(ta);
+          if (prevFocus && typeof prevFocus.focus === "function") prevFocus.focus();
+          return false;
+        }
+      };
+      const secure = (() => {
+        try {
+          if (typeof window !== "undefined" && "isSecureContext" in window && window.isSecureContext) return true;
+          if (typeof window !== "undefined" && window.location && window.location.protocol === "https:") return true;
+          if (typeof window !== "undefined" && window.location && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")) return true;
+          return false;
+        } catch (e) {
+          return false;
+        }
+      })();
+      if (secure && typeof navigator !== "undefined" && navigator.clipboard) {
+        try {
+          if (typeof navigator.clipboard.writeText === "function") {
+            yield navigator.clipboard.writeText(v);
+            return "Copied!";
+          }
+        } catch (e) {
+        }
+        try {
+          if (typeof window !== "undefined" && typeof window.ClipboardItem !== "undefined" && typeof navigator.clipboard.write === "function") {
+            const type = "text/plain";
+            const blob = new Blob([v], { type });
+            const data = [new ClipboardItem({ [type]: blob })];
+            yield navigator.clipboard.write(data);
+            return "Copied!";
+          }
+        } catch (e) {
+        }
+      }
+      if (legacyCopy()) return "Copied!";
+      throw new Error("Clipboard copy not supported in this environment");
+    });
   }
   function atcb_debounce(func, timeout = 200) {
     let timer;
@@ -15137,7 +15268,7 @@
       event
     });
   }
-  var rtlLanguages = ["ar", "fa"];
+  var rtlLanguages = ["ar", "fa", "he"];
   var calendarNames = {
     apple: "Apple",
     google: "Google",
@@ -15997,6 +16128,41 @@
       "form.error.required": "Nem t\xF6lt\xF6tt\xE9l ki megfelel\u0151en minden k\xF6telez\u0151 mez\u0151t",
       "form.error.sending": "Hiba t\xF6rt\xE9nt a v\xE1lasz k\xFCld\xE9se sor\xE1n. K\xE9rj\xFCk, pr\xF3b\xE1ld \xFAjra k\xE9s\u0151bb",
       "form.success": "Sikeresen elk\xFCldve!"
+    }),
+    he: __spreadProps(__spreadValues({
+      "label.addtocalendar": "\u05D4\u05D5\u05E1\u05E4\u05D4 \u05DC\u05D9\u05D5\u05DE\u05DF",
+      ical: "\u05E7\u05D5\u05D1\u05E5 iCal"
+    }, calendarNames), {
+      "modal.button.default": "\u05DC\u05D7\u05E6\u05D5 \u05DB\u05D0\u05DF",
+      "modal.webview.ical.h": "\u05E4\u05EA\u05D9\u05D7\u05D4 \u05D1\u05D3\u05E4\u05D3\u05E4\u05DF",
+      "modal.webview.ical.text": "\u05DC\u05E6\u05E2\u05E8\u05E0\u05D5, \u05DC\u05D3\u05E4\u05D3\u05E4\u05E0\u05D9\u05DD \u05D1\u05EA\u05D5\u05DA \u05D0\u05E4\u05DC\u05D9\u05E7\u05E6\u05D9\u05D5\u05EA \u05D9\u05E9 \u05D1\u05E2\u05D9\u05D5\u05EA \u05E2\u05DD \u05D4\u05D3\u05E8\u05DA \u05E9\u05D1\u05D4 \u05D0\u05E0\u05D7\u05E0\u05D5 \u05D9\u05D5\u05E6\u05E8\u05D9\u05DD \u05D0\u05EA \u05E7\u05D5\u05D1\u05E5 \u05D4\u05D9\u05D5\u05DE\u05DF.",
+      "modal.clipboard.text": "\u05D4\u05E2\u05EA\u05E7\u05E0\u05D5 \u05D0\u05D5\u05D8\u05D5\u05DE\u05D8\u05D9\u05EA \u05DB\u05EA\u05D5\u05D1\u05EA \u05E7\u05E1\u05D5\u05DE\u05D4 \u05D0\u05DC \u05D4\u05DC\u05D5\u05D7 \u05E9\u05DC\u05DA.",
+      "modal.webview.ical.steps": "<ol><li><strong>\u05E4\u05EA\u05D7 \u05D3\u05E4\u05D3\u05E4\u05DF \u05D0\u05D7\u05E8</strong> \u05D1\u05D8\u05DC\u05E4\u05D5\u05DF \u05E9\u05DC\u05DA, ...</li><li><strong>\u05D4\u05D3\u05D1\u05E7</strong> \u05D0\u05EA \u05D4\u05EA\u05D5\u05DB\u05DF \u05DE\u05D4\u05DC\u05D5\u05D7, \u05D5\u05E6\u05D0 \u05DC\u05D3\u05E8\u05DA.</li></ol>",
+      "modal.opensafari.ical.h": "\u05E4\u05EA\u05D7 \u05D0\u05EA \u05E1\u05E4\u05D0\u05E8\u05D9",
+      "modal.opensafari.ical.text": "\u05DC\u05E6\u05E2\u05E8\u05E0\u05D5, \u05DC-iOS \u05D9\u05E9 \u05D1\u05E2\u05D9\u05D5\u05EA \u05D1\u05D9\u05E6\u05D9\u05E8\u05D4 \u05D5\u05E4\u05EA\u05D9\u05D7\u05D4 \u05E9\u05DC \u05E7\u05D5\u05D1\u05E5 \u05D4\u05D9\u05D5\u05DE\u05DF \u05DE\u05D7\u05D5\u05E5 \u05DC\u05E1\u05E4\u05D0\u05E8\u05D9.",
+      "modal.opensafari.ical.steps": "<ol><li><strong>\u05E4\u05EA\u05D7 \u05D0\u05EA \u05E1\u05E4\u05D0\u05E8\u05D9</strong>, ...</li><li><strong>\u05D4\u05D3\u05D1\u05E7</strong> \u05D0\u05EA \u05D4\u05EA\u05D5\u05DB\u05DF \u05DE\u05D4\u05DC\u05D5\u05D7, \u05D5\u05E6\u05D0 \u05DC\u05D3\u05E8\u05DA.</li></ol>",
+      "modal.multidate.h": "\u05D6\u05D5 \u05E1\u05D3\u05E8\u05EA \u05D0\u05D9\u05E8\u05D5\u05E2\u05D9\u05DD",
+      "modal.multidate.text": "\u05D4\u05D5\u05E1\u05E3 \u05D0\u05EA \u05D4\u05D0\u05D9\u05E8\u05D5\u05E2\u05D9\u05DD \u05D4\u05D1\u05D5\u05D3\u05D3\u05D9\u05DD \u05D0\u05D7\u05D3 \u05D0\u05D7\u05D3:",
+      "date.status.cancelled": "\u05EA\u05D0\u05E8\u05D9\u05DA \u05D6\u05D4 \u05D1\u05D5\u05D8\u05DC.",
+      "date.status.cancelled.cta": "\u05D9\u05E9 \u05DC\u05E2\u05D3\u05DB\u05DF \u05D0\u05EA \u05D4\u05D9\u05D5\u05DE\u05DF!",
+      "modal.subscribe.yahoo.h": "\u05D4\u05D5\u05E1\u05E4\u05D4 \u05DC\u05D9\u05D5\u05DE\u05DF Yahoo",
+      "modal.subscribe.yahoo.text": '<ol><li>\u05E4\u05EA\u05D7 \u05D0\u05EA \u05D9\u05D5\u05DE\u05DF Yahoo.</li><li>\u05DC\u05D7\u05E5 \u05E2\u05DC \u05D8\u05D0\u05D1 "\u05E4\u05E2\u05D5\u05DC\u05D5\u05EA".</li><li>\u05DC\u05D7\u05E5 \u05E2\u05DC "\u05E2\u05E7\u05D5\u05D1 \u05D0\u05D7\u05E8 \u05D9\u05D5\u05DE\u05E0\u05D9\u05DD \u05D0\u05D7\u05E8\u05D9\u05DD".</li><li>\u05E7\u05D1\u05E2 \u05E9\u05DD, \u05D5\u05D4\u05D3\u05D1\u05E7 \u05D0\u05EA \u05EA\u05D5\u05DB\u05DF \u05D4\u05DC\u05D5\u05D7 \u05E9\u05DC\u05DA \u05DC\u05E9\u05D3\u05D4 \u05D4\u05DB\u05EA\u05D5\u05D1\u05EA.</li></ol>',
+      "modal.subscribe.yahoo.button": "\u05E4\u05EA\u05D7 \u05D0\u05EA \u05D9\u05D5\u05DE\u05DF Yahoo",
+      close: "\u05E1\u05D2\u05D9\u05E8\u05D4",
+      continue: "\u05D4\u05DE\u05E9\u05DA",
+      cancel: "\u05D1\u05D9\u05D8\u05D5\u05DC",
+      expired: "\u05E4\u05D2 \u05EA\u05D5\u05E7\u05E3",
+      recurring: "\u05D7\u05D5\u05D6\u05E8",
+      thankyou: "\u05EA\u05D5\u05D3\u05D4",
+      submit: "\u05E9\u05DC\u05D9\u05D7\u05D4",
+      "label.rsvp": "\u05D0\u05D9\u05E9\u05D5\u05E8 \u05D4\u05D2\u05E2\u05D4",
+      "label.share.email": "\u05E9\u05D9\u05EA\u05D5\u05E3 \u05D1\u05DE\u05D9\u05D9\u05DC",
+      "label.share.copy": "\u05D4\u05E2\u05EA\u05E7 \u05E7\u05D9\u05E9\u05D5\u05E8",
+      "label.share.copied": "\u05D4\u05D5\u05E2\u05EA\u05E7",
+      "label.share.email.subject": "\u05E9\u05DE\u05D9\u05E8\u05EA \u05D0\u05D9\u05E8\u05D5\u05E2 \u05D6\u05D4",
+      "form.error.required": "\u05DC\u05D0 \u05DE\u05D9\u05DC\u05D0\u05EA \u05D1\u05D4\u05DC\u05DB\u05D4 \u05D0\u05EA \u05DB\u05DC \u05D4\u05E9\u05D3\u05D5\u05EA",
+      "form.error.sending": "\u05D0\u05D9\u05E8\u05E2\u05D4 \u05E9\u05D2\u05D9\u05D0\u05D4 \u05D1\u05E2\u05EA \u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA\u05DA. \u05D0\u05E0\u05D0 \u05E0\u05E1\u05D5 \u05E9\u05D5\u05D1 \u05DE\u05D0\u05D5\u05D7\u05E8 \u05D9\u05D5\u05EA\u05E8",
+      "form.success": "\u05E0\u05E9\u05DC\u05D7 \u05D1\u05D4\u05E6\u05DC\u05D7\u05D4!"
     })
   };
   var availableLanguages = Object.keys(i18nStrings);
@@ -16265,24 +16431,20 @@
           })();
           val = JSON.parse(cleanedInput);
         } else if (atcbWcArrayParams.includes(attr)) {
-          const cleanedInput = (function() {
-            let newVal = inputVal;
-            if (inputVal.includes('"') || inputVal.includes("'")) {
-              if (inputVal.includes("[")) {
-                newVal = inputVal.substring(2, inputVal.length - 2);
-              } else {
-                newVal = inputVal.substring(1, inputVal.length - 1);
-              }
-            }
-            if (!inputVal.includes("|")) {
-              newVal = newVal.replace(/\s/g, "");
-            }
-            return newVal;
-          })();
-          if (cleanedInput.includes("','")) {
-            val = cleanedInput.split("','");
+          val = inputVal;
+          if (inputVal.includes("[")) {
+            val = val.substring(1, val.length - 1);
+          }
+          if (inputVal.includes('"') || inputVal.includes("'")) {
+            val = val.substring(1, val.length - 1);
+          }
+          if (!inputVal.includes("|")) {
+            val = val.replace(/\s/g, "");
+          }
+          if (val.includes("','")) {
+            val = val.split("','");
           } else {
-            val = cleanedInput.split('","');
+            val = val.split('","');
           }
         } else if (atcbWcNumberParams.includes(attr)) {
           val = parseInt(inputVal);
@@ -29775,7 +29937,7 @@ add-to-calendar-button/dist/module/index.js:
    *  Add to Calendar Button
    *  ++++++++++++++++++++++
    *
-   *  Version: 2.12.12
+   *  Version: 2.13.3
    *  Creator: Jens Kuerschner (https://jekuer.com)
    *  Project: https://github.com/add2cal/add-to-calendar-button
    *  License: Elastic License 2.0 (ELv2) (https://github.com/add2cal/add-to-calendar-button/blob/main/LICENSE.txt)

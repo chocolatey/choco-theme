@@ -1,0 +1,37 @@
+---
+import { z } from 'zod';
+import Callout from '@choco-astro/components/Callout.astro';
+
+const dynamicCodeBlockValidationSchema = z.object({
+    title: z.string().optional(),
+    message: z.string().optional(),
+    inputNames: z.array(z.string())
+});
+
+type DynamicCodeBlockValidation = z.infer<typeof dynamicCodeBlockValidationSchema>;
+type DynamicCodeBlockValidationTitle = DynamicCodeBlockValidation['title'];
+type DynamicCodeBlockValidationMessage = DynamicCodeBlockValidation['message'];
+type DynamicCodeBlockValidationInputNames = DynamicCodeBlockValidation['inputNames'];
+
+interface Props {
+    title?: DynamicCodeBlockValidationTitle
+    message?: DynamicCodeBlockValidationMessage
+    inputNames?: DynamicCodeBlockValidationInputNames
+}
+
+const { title, message, inputNames } = Astro.props;
+
+const content = {
+    title,
+    message,
+    inputNames
+};
+
+dynamicCodeBlockValidationSchema.parse(content);
+---
+
+<div class="dynamic-code-block-validation fade d-none" data-input-names={inputNames}>
+    <Callout type="danger" title={title || 'Validation Error'}>
+        <p>{message || 'Not all fields are complete.'}</p>
+    </Callout>
+</div>

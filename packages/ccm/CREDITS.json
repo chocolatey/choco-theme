@@ -4,7 +4,7 @@
     "link": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm",
     "licenseLink": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm/LICENSE",
     "licenseName": "LICENSE",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "dependencies": [
         {
             "name": "@eonasdan/tempus-dominus",
@@ -127,11 +127,11 @@
         {
             "name": "datatables.net-bs5",
             "link": "https://github.com/DataTables/Dist-DataTables-Bootstrap5",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/b62a7995d443d6b9116cc7c29c01ae44105b6420/License.txt",
+                    "link": "https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/89b79812ed1f34c9fec44dafcc6a1975529a5147/License.txt",
                     "name": "License.txt"
                 }
             ]
@@ -139,11 +139,11 @@
         {
             "name": "datatables.net-dt",
             "link": "https://github.com/DataTables/Dist-DataTables-DataTables",
-            "version": "2.3.4",
+            "version": "2.3.5",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/DataTables/Dist-DataTables-DataTables/blob/d85363c92a63a1eb266770db269477df2a9f8b25/License.txt",
+                    "link": "https://github.com/DataTables/Dist-DataTables-DataTables/blob/73712a244e65d0e002773ba8ee95fe9eeaf29ca1/License.txt",
                     "name": "License.txt"
                 }
             ]
@@ -307,11 +307,11 @@
         {
             "name": "sweetalert2",
             "link": "https://github.com/sweetalert2/sweetalert2",
-            "version": "11.26.3",
+            "version": "11.26.4",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/sweetalert2/sweetalert2/blob/649d60a5c9ba80d116f649c91ab0af2c5e5e2930/LICENSE",
+                    "link": "https://github.com/sweetalert2/sweetalert2/blob/fb13fa2154031d03260df329325e9a032f64e016/LICENSE",
                     "name": "LICENSE"
                 }
             ]
