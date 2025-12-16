@@ -27,7 +27,7 @@ export interface C4bAddOnPrice {
 
 export const c4bAddOnPrice: C4bAddOnPrice[] = [
     {
-        packaging: 575,
+        packaging: 600,
         standardSupport: 1000
     }
 ];
@@ -133,22 +133,22 @@ export const c4bStandardSubscription: C4bSubscription[] = [
         maxNodes: 35
     },
     {
-        pricePerNode: 17.50,
+        pricePerNode: 18.00,
         minNodes: 40,
         maxNodes: 499
     },
     {
-        pricePerNode: 17.10,
+        pricePerNode: 17.60,
         minNodes: 500,
         maxNodes: 1999
     },
     {
-        pricePerNode: 16.50,
+        pricePerNode: 17.00,
         minNodes: 2000,
         maxNodes: 9999
     },
     {
-        pricePerNode: 16,
+        pricePerNode: 16.50,
         minNodes: 10000,
         maxNodes: 50000
     }
@@ -156,17 +156,17 @@ export const c4bStandardSubscription: C4bSubscription[] = [
 
 export const c4bPremiumSubscription: C4bSubscription[] = [
     {
-        pricePerNode: 28.22,
+        pricePerNode: 29.04,
         minNodes: 1500,
         maxNodes: 1999
     },
     {
-        pricePerNode: 27.22,
+        pricePerNode: 28.04,
         minNodes: 2000,
         maxNodes: 9999
     },
     {
-        pricePerNode: 26.40,
+        pricePerNode: 27.23,
         minNodes: 10000,
         maxNodes: 50000
     }
