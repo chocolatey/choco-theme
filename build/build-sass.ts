@@ -34,6 +34,7 @@ const compileSass = (fileName: string, filePath: string) => {
         sourceMap: false,
         quietDeps: true,
         silenceDeprecations: [
+            'if-function', // Silence deprecation warnings for `if()` function in Sass. This is not yet compatible with Bootstrap.
             'import', // Silence deprecation warnings for `@import` in Sass. This is not yet compatible with Bootstrap.
             'global-builtin' // Silence deprecation warnings for `global-builtin` in Sass. This is not yet compatible with Bootstrap.
         ]
