@@ -24057,7 +24057,7 @@
   };
   var c4bAddOnPrice = [
     {
-      packaging: 575,
+      packaging: 600,
       standardSupport: 1e3
     }
   ];
@@ -24132,39 +24132,39 @@
       maxNodes: 35
     },
     {
-      pricePerNode: 17.5,
+      pricePerNode: 18,
       minNodes: 40,
       maxNodes: 499
     },
     {
-      pricePerNode: 17.1,
+      pricePerNode: 17.6,
       minNodes: 500,
       maxNodes: 1999
     },
     {
-      pricePerNode: 16.5,
+      pricePerNode: 17,
       minNodes: 2e3,
       maxNodes: 9999
     },
     {
-      pricePerNode: 16,
+      pricePerNode: 16.5,
       minNodes: 1e4,
       maxNodes: 5e4
     }
   ];
   var c4bPremiumSubscription = [
     {
-      pricePerNode: 28.22,
+      pricePerNode: 29.04,
       minNodes: 1500,
       maxNodes: 1999
     },
     {
-      pricePerNode: 27.22,
+      pricePerNode: 28.04,
       minNodes: 2e3,
       maxNodes: 9999
     },
     {
-      pricePerNode: 26.4,
+      pricePerNode: 27.23,
       minNodes: 1e4,
       maxNodes: 5e4
     }
