@@ -12,8 +12,8 @@
         "@types/prismjs": "^1"
     },
     "dependencies": {
-        "@docsearch/css": "^3.9.0",
-        "@docsearch/js": "^3.9.0",
+        "@docsearch/css": "^4.4.0",
+        "@docsearch/js": "^4.4.0",
         "@fortawesome/fontawesome-free": "^7.0.0",
         "anchor-js": "^5.0.0",
         "bootstrap": "^5.3.7",
