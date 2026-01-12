@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/docs",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "Chocolatey Software theme assets for use on docs.chocolatey.org.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/docs#readme",
