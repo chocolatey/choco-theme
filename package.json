@@ -19,7 +19,7 @@
         "stylelint-config-twbs-bootstrap": "^16.1.0"
     },
     "scripts": {
-        "audit": "yarn npm audit --all --recursive",
+        "audit": "yarn npm audit --all --recursive --exclude jpeg-exif",
         "build": "yarn build-clean \"$@\" dist && yarn build-js \"$@\" && yarn build-sass \"$@\" && yarn build-partials \"$@\" && yarn build-assets \"$@\" && yarn build-clean \"$@\" temp",
         "build-assets": "npx tsx build/build-assets.ts",
         "build-clean": "npx tsx build/build-clean.ts",
