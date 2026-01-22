@@ -36,9 +36,9 @@ export const expectTableActionsMenuEntries = async (
             await dropdownMenu.waitFor();
             await expect(dropdownMenu, `Row: ${name} - Clicking the Actions button displays the Actions dropdown menu`).toBeVisible();
 
-            const menuEntries = await dropdownMenu.locator('li').allTextContents();
-            expect.soft(menuEntries.length, `Row: ${name} - Actions menu contains expected number of items`).toEqual(expectedActionMenuEntries.length);
-            expect(menuEntries, `Row: ${name} - Actions menu contains the expected items`).toEqual(expectedActionMenuEntries);
+            const menuItems = dropdownMenu.locator('li');
+            await expect.soft(menuItems, `Row: ${name} - Actions menu contains expected number of items`).toHaveCount(expectedActionMenuEntries.length);
+            await expect.soft(menuItems, `Row: ${name} - Actions menu contains the expected items`).toHaveText(expectedActionMenuEntries);
 
             // Close the Actions menu again
             await actionsButton.click();

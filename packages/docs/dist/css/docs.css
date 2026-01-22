@@ -52255,7 +52255,7 @@ textarea.form-control-lg {
   --fa: "\f8e8";
 }
 
-/*! @docsearch/css 4.4.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
+/*! @docsearch/css 4.5.4 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 :root {
   --docsearch-primary-color:#003dff;
   --docsearch-soft-primary-color:rgba(0,61,255,.1);
@@ -52393,6 +52393,7 @@ html[data-theme=dark] {
   box-shadow: none !important;
   color: var(--docsearch-key-color);
   display: flex;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 14px;
   height: 24px;
   justify-content: center;

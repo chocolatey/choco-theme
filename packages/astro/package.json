@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/astro",
-    "version": "2.1.0",
+    "version": "2.5.0",
     "description": "Chocolatey Software theme assets for Astro.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/astro#readme",
@@ -10,7 +10,7 @@
         "@astrojs/node": "9.5.2",
         "@astrojs/rss": "4.0.15",
         "@astrojs/sitemap": "3.7.0",
-        "astro": "5.16.13",
+        "astro": "5.17.1",
         "rehype-mermaid": "^3.0.0",
         "remark-custom-header-id": "^1.0.0"
     },

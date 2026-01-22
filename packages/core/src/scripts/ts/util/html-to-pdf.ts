@@ -8,7 +8,7 @@ export const htmlToPdf = (contentId: string, exportName: string) => {
     const exportButton = document.querySelectorAll('.export-to-pdf');
 
     exportButton.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', async () => {
             const html = document.getElementById(contentId);
 
             if (!html) return;
@@ -178,7 +178,7 @@ export const htmlToPdf = (contentId: string, exportName: string) => {
 
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
-            pdfMake.createPdf(output).download(`${exportName}.pdf`); // Ignore type error here, caused by bug mentioned above
+            await pdfMake.createPdf(output).download(`${exportName}.pdf`); // Ignore type error here, caused by bug mentioned above
         });
     });
 };

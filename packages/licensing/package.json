@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/licensing",
-    "version": "2.1.0",
+    "version": "2.5.0",
     "description": "Chocolatey Software theme assets for licensing.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/licensing#readme",
@@ -18,7 +18,7 @@
         "datatables.net-dt": "^2.3.3",
         "flatpickr": "^4.6.13",
         "jquery": "^3.7.1",
-        "jquery-validation": "^1.21.0",
+        "jquery-validation": "1.21.0",
         "jquery-validation-unobtrusive": "^4.0.0",
         "luxon": "^3.7.1",
         "marked": "^16.3.0",
