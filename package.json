@@ -1,6 +1,6 @@
 {
     "name": "choco-theme",
-    "version": "2.3.0",
+    "version": "2.4.0",
     "packageManager": "yarn@4.10.3",
     "private": true,
     "license": "Apache-2.0",
@@ -28,7 +28,7 @@
         "build-sass": "npx tsx build/build-sass.ts",
         "eslint": "npx eslint",
         "stylelint": "stylelint \"src/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
-        "publish-dry-run": "yarn workspaces foreach --since --no-private --dry-run npm publish --access public",
+        "publish-dry-run": "yarn workspaces foreach --all --no-private npm publish --tolerate-republish --dry-run --access public",
         "update-version": "yarn workspaces foreach --since version"
     }
 }
