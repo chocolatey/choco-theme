@@ -15,10 +15,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           registry-url: 'https://registry.npmjs.org'
       - run: yarn
-      - run: yarn workspaces foreach --since --no-private npm publish --access public
+      - run: yarn workspaces foreach --all --no-private npm publish --tolerate-republish --access public
