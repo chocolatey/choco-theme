@@ -28,8 +28,8 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [bootstrap@5.3.8](#bootstrap538)
     * [clipboard@2.0.11](#clipboard2011)
     * [cropperjs@1.6.2](#cropperjs162)
-    * [datatables.net-bs5@2.3.5](#datatablesnet-bs5235)
-    * [datatables.net-dt@2.3.5](#datatablesnet-dt235)
+    * [datatables.net-bs5@2.3.7](#datatablesnet-bs5237)
+    * [datatables.net-dt@2.3.7](#datatablesnet-dt237)
     * [jquery@3.7.1](#jquery371)
     * [jquery-serializejson@3.2.1](#jquery-serializejson321)
     * [jquery-validation@1.21.0](#jquery-validation1210)
@@ -42,7 +42,7 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [pwstrength-bootstrap@3.1.3](#pwstrength-bootstrap313)
     * [sortablejs@1.15.6](#sortablejs1156)
     * [spin.js@4.1.2](#spinjs412)
-    * [sweetalert2@11.26.4](#sweetalert211264)
+    * [sweetalert2@11.26.18](#sweetalert2112618)
     * [timeago@1.6.7](#timeago167)
     * [underscore@1.13.7](#underscore1137)
   * [SIL OPEN FONT 1.1 LICENSE](#sil-open-font-11-license-1)
@@ -775,13 +775,13 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [cropperjs](https://github.com/fengyuanchen/cropperjs) - [License terms.](https://github.com/fengyuanchen/cropperjs/blob/da3f6f7d4b9c29c7234ddf114c71a27a269855f0/LICENSE)
 
-#### datatables.net-bs5@2.3.5
+#### datatables.net-bs5@2.3.7
 
-[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/89b79812ed1f34c9fec44dafcc6a1975529a5147/License.txt)
+[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/449af852d09e47d8322b8fd911226f32b1813c6a/License.txt)
 
-#### datatables.net-dt@2.3.5
+#### datatables.net-dt@2.3.7
 
-[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/73712a244e65d0e002773ba8ee95fe9eeaf29ca1/License.txt)
+[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/e0b5e465a348d760e9bcb61882fcb1554e295665/License.txt)
 
 #### jquery@3.7.1
 
@@ -831,9 +831,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [spin.js](https://github.com/fgnass/spin.js) - [License terms.](https://github.com/fgnass/spin.js/blob/653e79c5ef1f068e5a1a31da5b79b6d1e1b1674d/LICENSE.md)
 
-#### sweetalert2@11.26.4
+#### sweetalert2@11.26.18
 
-[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/fb13fa2154031d03260df329325e9a032f64e016/LICENSE)
+[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/01f6d8062cb841a3b232264c5ff2ef5c03e84404/LICENSE)
 
 #### timeago@1.6.7
 

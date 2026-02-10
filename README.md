@@ -14,6 +14,7 @@ Before running any commands below, ensure you have ran `yarn` in the root of thi
 | yarn build <package>                              | Builds the specified package. All packages will be built if no package is specified. |
 | yarn eslint                                       | Runs ESLint to determine code style errors in JS and TS files. |
 | yarn stylelint                                    | Runs Stylelint to determine code style errors in SCSS files. |
+| yarn link-github <branch> <package>               | Ran from the consuming repository of a package. This will link the passed in package to the chocolatey/choco-theme upstream branch provided. |
 | yarn link-local <package>                         | Ran from the consuming repository of a package. This will link the passed in package to your local instance. |
 | yarn update-version <major> <minor> <patch>       | Updates package versions only if the package contains changes. Accepts `major`, `minor`, or `patch` after `update-version`. See the [documentation for more details](https://yarnpkg.com/cli/version). |
 | yarn publish-dry-run                              | Shows what packages will be published without publishing them. |

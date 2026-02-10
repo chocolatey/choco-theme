@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/ccm",
-    "version": "2.1.0",
+    "version": "2.5.0",
     "description": "Chocolatey Software theme assets for use on Chocolatey Central Management",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm#readme",
@@ -33,7 +33,7 @@
         "fuse.js": "^7.1.0",
         "jquery": "^3.7.1",
         "jquery-serializejson": "^3.2.1",
-        "jquery-validation": "^1.21.0",
+        "jquery-validation": "1.21.0",
         "jstree": "^3.3.17",
         "luxon": "^3.7.1",
         "moment": "^2.30.1",
