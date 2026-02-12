@@ -16,8 +16,7 @@
         "@types/sortablejs": "^1",
         "@types/timeago": "^1",
         "@types/underscore": "^1",
-        "license-report": "^6.8.0",
-        "msnodesqlv8": "^5.1.3"
+        "license-report": "^6.8.0"
     },
     "dependencies": {
         "@eonasdan/tempus-dominus": "^6.10.4",
