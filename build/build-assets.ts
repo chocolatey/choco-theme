@@ -20,6 +20,7 @@ const packageNamesRequestedConfigs = getPackageNamesRequested([
     'fest',
     'org',
     'playwright',
+    'test-tools',
     'zendesk'
 ]);
 

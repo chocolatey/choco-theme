@@ -16,7 +16,8 @@ const packageNamesRequested = getPackageNamesRequested([
     'build-tools',
     'core',
     'feed-tools',
-    'playwright'
+    'playwright',
+    'test-tools'
 ]);
 const containsValidation = [repositoryConfig.ccr.name, repositoryConfig.licensing.name];
 const containsDisqus = [repositoryConfig.ccr.name, repositoryConfig.blog.name];
