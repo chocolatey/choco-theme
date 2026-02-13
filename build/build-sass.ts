@@ -18,6 +18,7 @@ const packageNamesRequested = getPackageNamesRequested([
     'build-tools',
     'core',
     'feed-tools',
+    'test-tools',
     'playwright'
 ]);
 

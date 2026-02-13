@@ -17,6 +17,7 @@ const packageNamesRequested = getPackageNamesRequested([
     'ccm',
     'core',
     'feed-tools',
+    'test-tools',
     'playwright'
 ]);
 
