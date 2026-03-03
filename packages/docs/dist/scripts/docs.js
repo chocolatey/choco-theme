@@ -23049,7 +23049,7 @@
       return t2;
     })([{ url: "".concat(e11, "-1.algolianet.com"), accept: "readWrite", protocol: "https" }, { url: "".concat(e11, "-2.algolianet.com"), accept: "readWrite", protocol: "https" }, { url: "".concat(e11, "-3.algolianet.com"), accept: "readWrite", protocol: "https" }]));
   }
-  var vD = "4.5.4";
+  var vD = "4.6.0";
   function mD(e11, t2, n2) {
     var r2 = It.useMemo(function() {
       var r3 = (function(e12, t3) {
@@ -24011,6 +24011,6 @@ jquery/dist/jquery.js:
    *)
 
 @docsearch/js/dist/esm/index.js:
-  (*! @docsearch/js 4.5.4 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com *)
+  (*! @docsearch/js 4.6.0 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com *)
   (*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE *)
 */

@@ -278,7 +278,7 @@
           ret.index = c;
           ret.width = w;
         }
-        function getSpaceWidth(el, h) {
+        function getSpaceWidth(el, h2) {
           const container = document.createElement("div");
           container.style.display = "block";
           container.style.position = "absolute";
@@ -298,7 +298,7 @@
           const dims = space.getBoundingClientRect();
           container.parentNode.removeChild(container);
           const spaceRatio = dims.height / dims.width;
-          return h / spaceRatio;
+          return h2 / spaceRatio;
         }
         function getElementsList(elements) {
           if (!elements) {
@@ -621,9 +621,9 @@
              */
             getLanguage: function(element) {
               while (element) {
-                var m = lang.exec(element.className);
-                if (m) {
-                  return m[1].toLowerCase();
+                var m2 = lang.exec(element.className);
+                if (m2) {
+                  return m2[1].toLowerCase();
                 }
                 element = element.parentElement;
               }
@@ -1177,11 +1177,11 @@
             }
             var patterns = grammar[token];
             patterns = Array.isArray(patterns) ? patterns : [patterns];
-            for (var j = 0; j < patterns.length; ++j) {
-              if (rematch && rematch.cause == token + "," + j) {
+            for (var j2 = 0; j2 < patterns.length; ++j2) {
+              if (rematch && rematch.cause == token + "," + j2) {
                 return;
               }
-              var patternObj = patterns[j];
+              var patternObj = patterns[j2];
               var inside = patternObj.inside;
               var lookbehind = !!patternObj.lookbehind;
               var greedy = !!patternObj.greedy;
@@ -1256,7 +1256,7 @@
                 }
                 if (removeCount > 1) {
                   var nestedRematch = {
-                    cause: token + "," + j,
+                    cause: token + "," + j2,
                     reach
                   };
                   matchGrammar(text, tokenList, grammar, currentNode.prev, pos, nestedRematch);
@@ -1987,7 +1987,7 @@
       })(Prism2);
       (function(Prism3) {
         function replace(pattern, replacements) {
-          return pattern.replace(/<<(\d+)>>/g, function(m, index) {
+          return pattern.replace(/<<(\d+)>>/g, function(m2, index) {
             return "(?:" + replacements[+index] + ")";
           });
         }
@@ -3634,10 +3634,10 @@
             var prefixToken = new Prism2.Token("prefix", PREFIXES[env.type], [/\w+/.exec(env.type)[0]]);
             var prefix = Prism2.Token.stringify(prefixToken, env.language);
             var lines = [];
-            var m;
+            var m2;
             HTML_LINE.lastIndex = 0;
-            while (m = HTML_LINE.exec(highlighted)) {
-              lines.push(prefix + m[0]);
+            while (m2 = HTML_LINE.exec(highlighted)) {
+              lines.push(prefix + m2[0]);
             }
             if (/(?:^|[\r\n]).$/.test(decoded)) {
               lines.push(prefix);
@@ -4427,8 +4427,8 @@
             }));
           },
           eq: function(i) {
-            var len = this.length, j = +i + (i < 0 ? len : 0);
-            return this.pushStack(j >= 0 && j < len ? [this[j]] : []);
+            var len = this.length, j2 = +i + (i < 0 ? len : 0);
+            return this.pushStack(j2 >= 0 && j2 < len ? [this[j2]] : []);
           },
           end: function() {
             return this.prevObject || this.constructor();
@@ -4575,9 +4575,9 @@
           // Support: Android <=4.0 only, PhantomJS 1 only
           // push.apply(_, arraylike) throws on ancient WebKit
           merge: function(first, second) {
-            var len = +second.length, j = 0, i = first.length;
-            for (; j < len; j++) {
-              first[i++] = second[j];
+            var len = +second.length, j2 = 0, i = first.length;
+            for (; j2 < len; j2++) {
+              first[i++] = second[j2];
             }
             first.length = i;
             return first;
@@ -4725,7 +4725,7 @@
             };
           }
           function find(selector, context, results, seed) {
-            var m, i2, elem, nid, match2, groups, newSelector, newContext = context && context.ownerDocument, nodeType = context ? context.nodeType : 9;
+            var m2, i2, elem, nid, match2, groups, newSelector, newContext = context && context.ownerDocument, nodeType = context ? context.nodeType : 9;
             results = results || [];
             if (typeof selector !== "string" || !selector || nodeType !== 1 && nodeType !== 9 && nodeType !== 11) {
               return results;
@@ -4735,10 +4735,10 @@
               context = context || document3;
               if (documentIsHTML) {
                 if (nodeType !== 11 && (match2 = rquickExpr2.exec(selector))) {
-                  if (m = match2[1]) {
+                  if (m2 = match2[1]) {
                     if (nodeType === 9) {
-                      if (elem = context.getElementById(m)) {
-                        if (elem.id === m) {
+                      if (elem = context.getElementById(m2)) {
+                        if (elem.id === m2) {
                           push3.call(results, elem);
                           return results;
                         }
@@ -4746,7 +4746,7 @@
                         return results;
                       }
                     } else {
-                      if (newContext && (elem = newContext.getElementById(m)) && find.contains(context, elem) && elem.id === m) {
+                      if (newContext && (elem = newContext.getElementById(m2)) && find.contains(context, elem) && elem.id === m2) {
                         push3.call(results, elem);
                         return results;
                       }
@@ -4754,8 +4754,8 @@
                   } else if (match2[2]) {
                     push3.apply(results, context.getElementsByTagName(selector));
                     return results;
-                  } else if ((m = match2[3]) && context.getElementsByClassName) {
-                    push3.apply(results, context.getElementsByClassName(m));
+                  } else if ((m2 = match2[3]) && context.getElementsByClassName) {
+                    push3.apply(results, context.getElementsByClassName(m2));
                     return results;
                   }
                 }
@@ -4858,10 +4858,10 @@
             return markFunction(function(argument) {
               argument = +argument;
               return markFunction(function(seed, matches3) {
-                var j, matchIndexes = fn([], seed.length, argument), i2 = matchIndexes.length;
+                var j2, matchIndexes = fn([], seed.length, argument), i2 = matchIndexes.length;
                 while (i2--) {
-                  if (seed[j = matchIndexes[i2]]) {
-                    seed[j] = !(matches3[j] = seed[j]);
+                  if (seed[j2 = matchIndexes[i2]]) {
+                    seed[j2] = !(matches3[j2] = seed[j2]);
                   }
                 }
               });
@@ -5057,18 +5057,18 @@
             throw new Error("Syntax error, unrecognized expression: " + msg);
           };
           jQuery3.uniqueSort = function(results) {
-            var elem, duplicates = [], j = 0, i2 = 0;
+            var elem, duplicates = [], j2 = 0, i2 = 0;
             hasDuplicate = !support.sortStable;
             sortInput = !support.sortStable && slice4.call(results, 0);
             sort.call(results, sortOrder);
             if (hasDuplicate) {
               while (elem = results[i2++]) {
                 if (elem === results[i2]) {
-                  j = duplicates.push(i2);
+                  j2 = duplicates.push(i2);
                 }
               }
-              while (j--) {
-                splice.call(results, duplicates[j], 1);
+              while (j2--) {
+                splice.call(results, duplicates[j2], 1);
               }
             }
             sortInput = null;
@@ -5622,7 +5622,7 @@
             });
           }
           function matcherFromTokens(tokens) {
-            var checkContext, matcher, j, len = tokens.length, leadingRelative = Expr.relative[tokens[0].type], implicitRelative = leadingRelative || Expr.relative[" "], i2 = leadingRelative ? 1 : 0, matchContext = addCombinator(function(elem) {
+            var checkContext, matcher, j2, len = tokens.length, leadingRelative = Expr.relative[tokens[0].type], implicitRelative = leadingRelative || Expr.relative[" "], i2 = leadingRelative ? 1 : 0, matchContext = addCombinator(function(elem) {
               return elem === checkContext;
             }, implicitRelative, true), matchAnyContext = addCombinator(function(elem) {
               return indexOf.call(checkContext, elem) > -1;
@@ -5637,9 +5637,9 @@
               } else {
                 matcher = Expr.filter[tokens[i2].type].apply(null, tokens[i2].matches);
                 if (matcher[expando]) {
-                  j = ++i2;
-                  for (; j < len; j++) {
-                    if (Expr.relative[tokens[j].type]) {
+                  j2 = ++i2;
+                  for (; j2 < len; j2++) {
+                    if (Expr.relative[tokens[j2].type]) {
                       break;
                     }
                   }
@@ -5650,9 +5650,9 @@
                       tokens.slice(0, i2 - 1).concat({ value: tokens[i2 - 2].type === " " ? "*" : "" })
                     ).replace(rtrimCSS, "$1"),
                     matcher,
-                    i2 < j && matcherFromTokens(tokens.slice(i2, j)),
-                    j < len && matcherFromTokens(tokens = tokens.slice(j)),
-                    j < len && toSelector(tokens)
+                    i2 < j2 && matcherFromTokens(tokens.slice(i2, j2)),
+                    j2 < len && matcherFromTokens(tokens = tokens.slice(j2)),
+                    j2 < len && toSelector(tokens)
                   );
                 }
                 matchers.push(matcher);
@@ -5662,18 +5662,18 @@
           }
           function matcherFromGroupMatchers(elementMatchers, setMatchers) {
             var bySet = setMatchers.length > 0, byElement = elementMatchers.length > 0, superMatcher = function(seed, context, xml, results, outermost) {
-              var elem, j, matcher, matchedCount = 0, i2 = "0", unmatched = seed && [], setMatched = [], contextBackup = outermostContext, elems = seed || byElement && Expr.find.TAG("*", outermost), dirrunsUnique = dirruns += contextBackup == null ? 1 : Math.random() || 0.1, len = elems.length;
+              var elem, j2, matcher, matchedCount = 0, i2 = "0", unmatched = seed && [], setMatched = [], contextBackup = outermostContext, elems = seed || byElement && Expr.find.TAG("*", outermost), dirrunsUnique = dirruns += contextBackup == null ? 1 : Math.random() || 0.1, len = elems.length;
               if (outermost) {
                 outermostContext = context == document3 || context || outermost;
               }
               for (; i2 !== len && (elem = elems[i2]) != null; i2++) {
                 if (byElement && elem) {
-                  j = 0;
+                  j2 = 0;
                   if (!context && elem.ownerDocument != document3) {
                     setDocument(elem);
                     xml = !documentIsHTML;
                   }
-                  while (matcher = elementMatchers[j++]) {
+                  while (matcher = elementMatchers[j2++]) {
                     if (matcher(elem, context || document3, xml)) {
                       push3.call(results, elem);
                       break;
@@ -5694,8 +5694,8 @@
               }
               matchedCount += i2;
               if (bySet && i2 !== matchedCount) {
-                j = 0;
-                while (matcher = setMatchers[j++]) {
+                j2 = 0;
+                while (matcher = setMatchers[j2++]) {
                   matcher(unmatched, setMatched, context, xml);
                 }
                 if (seed) {
@@ -7027,7 +7027,7 @@
         }
         var rhtml = /<|&#?\w+;/;
         function buildFragment(elems, context, scripts, selection, ignored) {
-          var elem, tmp, tag, wrap, attached, j, fragment = context.createDocumentFragment(), nodes = [], i = 0, l2 = elems.length;
+          var elem, tmp, tag, wrap, attached, j2, fragment = context.createDocumentFragment(), nodes = [], i = 0, l2 = elems.length;
           for (; i < l2; i++) {
             elem = elems[i];
             if (elem || elem === 0) {
@@ -7040,8 +7040,8 @@
                 tag = (rtagName.exec(elem) || ["", ""])[1].toLowerCase();
                 wrap = wrapMap[tag] || wrapMap._default;
                 tmp.innerHTML = wrap[1] + jQuery3.htmlPrefilter(elem) + wrap[2];
-                j = wrap[0];
-                while (j--) {
+                j2 = wrap[0];
+                while (j2--) {
                   tmp = tmp.lastChild;
                 }
                 jQuery3.merge(nodes, tmp.childNodes);
@@ -7065,8 +7065,8 @@
               setGlobalEval(tmp);
             }
             if (scripts) {
-              j = 0;
-              while (elem = tmp[j++]) {
+              j2 = 0;
+              while (elem = tmp[j2++]) {
                 if (rscriptType.test(elem.type || "")) {
                   scripts.push(elem);
                 }
@@ -7197,7 +7197,7 @@
           },
           // Detach an event or set of events from an element
           remove: function(elem, types, handler, selector, mappedTypes) {
-            var j, origCount, tmp, events, t, handleObj, special, handlers, type, namespaces, origType, elemData = dataPriv.hasData(elem) && dataPriv.get(elem);
+            var j2, origCount, tmp, events, t, handleObj, special, handlers, type, namespaces, origType, elemData = dataPriv.hasData(elem) && dataPriv.get(elem);
             if (!elemData || !(events = elemData.events)) {
               return;
             }
@@ -7217,11 +7217,11 @@
               type = (selector ? special.delegateType : special.bindType) || type;
               handlers = events[type] || [];
               tmp = tmp[2] && new RegExp("(^|\\.)" + namespaces.join("\\.(?:.*\\.|)") + "(\\.|$)");
-              origCount = j = handlers.length;
-              while (j--) {
-                handleObj = handlers[j];
+              origCount = j2 = handlers.length;
+              while (j2--) {
+                handleObj = handlers[j2];
                 if ((mappedTypes || origType === handleObj.origType) && (!handler || handler.guid === handleObj.guid) && (!tmp || tmp.test(handleObj.namespace)) && (!selector || selector === handleObj.selector || selector === "**" && handleObj.selector)) {
-                  handlers.splice(j, 1);
+                  handlers.splice(j2, 1);
                   if (handleObj.selector) {
                     handlers.delegateCount--;
                   }
@@ -7242,7 +7242,7 @@
             }
           },
           dispatch: function(nativeEvent) {
-            var i, j, ret, matched, handleObj, handlerQueue, args = new Array(arguments.length), event = jQuery3.event.fix(nativeEvent), handlers = (dataPriv.get(this, "events") || /* @__PURE__ */ Object.create(null))[event.type] || [], special = jQuery3.event.special[event.type] || {};
+            var i, j2, ret, matched, handleObj, handlerQueue, args = new Array(arguments.length), event = jQuery3.event.fix(nativeEvent), handlers = (dataPriv.get(this, "events") || /* @__PURE__ */ Object.create(null))[event.type] || [], special = jQuery3.event.special[event.type] || {};
             args[0] = event;
             for (i = 1; i < arguments.length; i++) {
               args[i] = arguments[i];
@@ -7255,8 +7255,8 @@
             i = 0;
             while ((matched = handlerQueue[i++]) && !event.isPropagationStopped()) {
               event.currentTarget = matched.elem;
-              j = 0;
-              while ((handleObj = matched.handlers[j++]) && !event.isImmediatePropagationStopped()) {
+              j2 = 0;
+              while ((handleObj = matched.handlers[j2++]) && !event.isImmediatePropagationStopped()) {
                 if (!event.rnamespace || handleObj.namespace === false || event.rnamespace.test(handleObj.namespace)) {
                   event.handleObj = handleObj;
                   event.data = handleObj.data;
@@ -9118,8 +9118,8 @@
           addClass: function(value) {
             var classNames, cur, curValue, className, i, finalValue;
             if (isFunction2(value)) {
-              return this.each(function(j) {
-                jQuery3(this).addClass(value.call(this, j, getClass(this)));
+              return this.each(function(j2) {
+                jQuery3(this).addClass(value.call(this, j2, getClass(this)));
               });
             }
             classNames = classesToArray(value);
@@ -9146,8 +9146,8 @@
           removeClass: function(value) {
             var classNames, cur, curValue, className, i, finalValue;
             if (isFunction2(value)) {
-              return this.each(function(j) {
-                jQuery3(this).removeClass(value.call(this, j, getClass(this)));
+              return this.each(function(j2) {
+                jQuery3(this).removeClass(value.call(this, j2, getClass(this)));
               });
             }
             if (!arguments.length) {
@@ -10656,191 +10656,156 @@
   });
 
   // node_modules/timezones-ical-library/dist/mjs/index.js
-  var tzlibZonesDB = { "Zulu": ["Etc/UTC", 0], "WET": ["Europe/Lisbon", 1], "W-SU": ["Europe/Moscow", 2], "Universal": ["Etc/UTC", 0], "UTC": ["Etc/UTC", 0], "UCT": ["Etc/UTC", 0], "Turkey": ["Europe/Istanbul", 3], "Singapore": ["Asia/Singapore", 4], "ROK": ["Asia/Seoul", 5], "ROC": ["Asia/Taipei", 6], "Portugal": ["Europe/Lisbon", 1], "Poland": ["Europe/Warsaw", 7], "PST8PDT": ["America/Los_Angeles", 8], "PRC": ["Asia/Shanghai", 6], "Navajo": ["America/Denver", 9], "NZ": ["Pacific/Auckland", 10], "NZ-CHAT": ["Pacific/Chatham", 11], "MST7MDT": ["America/Denver", 9], "MST": ["America/Phoenix", 12], "MET": ["Europe/Brussels", 7], "Libya": ["Africa/Tripoli", 13], "Kwajalein": ["Pacific/Kwajalein", 14], "Japan": ["Asia/Tokyo", 15], "Jamaica": ["America/Jamaica", 16], "Israel": ["Asia/Jerusalem", 17], "Iran": ["Asia/Tehran", 18], "Iceland": ["Africa/Abidjan", 19], "Hongkong": ["Asia/Hong_Kong", 20], "HST": ["Pacific/Honolulu", 21], "Greenwich": ["Etc/GMT", 19], "GMT0": ["Etc/GMT", 19], "GMT": ["Etc/GMT", 19], "GMT-0": ["Etc/GMT", 19], "GMT+0": ["Etc/GMT", 19], "GB": ["Europe/London", 22], "GB-Eire": ["Europe/London", 22], "Eire": ["Europe/Dublin", 23], "Egypt": ["Africa/Cairo", 24], "EST5EDT": ["America/New_York", 25], "EST": ["America/Panama", 16], "EET": ["Europe/Athens", 26], "Cuba": ["America/Havana", 27], "CST6CDT": ["America/Chicago", 28], "CET": ["Europe/Brussels", 7], "US": { "Samoa": ["Pacific/Pago_Pago", 29], "Pacific": ["America/Los_Angeles", 8], "Mountain": ["America/Denver", 9], "Michigan": ["America/Detroit", 25], "Indiana-Starke": ["America/Indiana/Knox", 28], "Hawaii": ["Pacific/Honolulu", 21], "Eastern": ["America/New_York", 25], "East-Indiana": ["America/Indiana/Indianapolis", 25], "Central": ["America/Chicago", 28], "Arizona": ["America/Phoenix", 12], "Aleutian": ["America/Adak", 30], "Alaska": ["America/Anchorage", 31] }, "Pacific": { "Yap": ["Pacific/Port_Moresby", 32], "Wallis": ["Pacific/Tarawa", 14], "Wake": ["Pacific/Tarawa", 14], "Truk": ["Pacific/Port_Moresby", 32], "Tongatapu": ["", 33], "Tarawa": ["", 14], "Tahiti": ["", 34], "Samoa": ["Pacific/Pago_Pago", 29], "Saipan": ["Pacific/Guam", 35], "Rarotonga": ["", 34], "Port_Moresby": ["", 32], "Ponape": ["Pacific/Guadalcanal", 36], "Pohnpei": ["Pacific/Guadalcanal", 36], "Pitcairn": ["", 37], "Palau": ["", 38], "Pago_Pago": ["", 29], "Noumea": ["", 36], "Norfolk": ["", 39], "Niue": ["", 40], "Nauru": ["", 14], "Midway": ["Pacific/Pago_Pago", 29], "Marquesas": ["", 41], "Majuro": ["Pacific/Tarawa", 14], "Kwajalein": ["", 14], "Kosrae": ["", 36], "Kiritimati": ["", 42], "Kanton": ["", 33], "Johnston": ["Pacific/Honolulu", 21], "Honolulu": ["", 21], "Guam": ["", 35], "Guadalcanal": ["", 36], "Gambier": ["", 43], "Galapagos": ["", 44], "Funafuti": ["Pacific/Tarawa", 14], "Fiji": ["", 14], "Fakaofo": ["", 33], "Enderbury": ["Pacific/Kanton", 33], "Efate": ["", 36], "Easter": ["", 45], "Chuuk": ["Pacific/Port_Moresby", 32], "Chatham": ["", 11], "Bougainville": ["", 36], "Auckland": ["", 10], "Apia": ["", 33] }, "Mexico": { "General": ["America/Mexico_City", 46], "BajaSur": ["America/Mazatlan", 12], "BajaNorte": ["America/Tijuana", 8] }, "Indian": { "Reunion": ["Asia/Dubai", 47], "Mayotte": ["Africa/Nairobi", 48], "Mauritius": ["", 47], "Maldives": ["", 49], "Mahe": ["Asia/Dubai", 47], "Kerguelen": ["Indian/Maldives", 49], "Comoro": ["Africa/Nairobi", 48], "Cocos": ["Asia/Yangon", 50], "Christmas": ["Asia/Bangkok", 51], "Chagos": ["", 52], "Antananarivo": ["Africa/Nairobi", 48] }, "Europe": { "Zurich": ["", 7], "Zaporozhye": ["Europe/Kyiv", 53], "Zagreb": ["Europe/Belgrade", 7], "Warsaw": ["", 7], "Volgograd": ["", 2], "Vilnius": ["", 26], "Vienna": ["", 7], "Vatican": ["Europe/Rome", 7], "Vaduz": ["Europe/Zurich", 7], "Uzhgorod": ["Europe/Kyiv", 53], "Ulyanovsk": ["", 47], "Tiraspol": ["Europe/Chisinau", 54], "Tirane": ["", 7], "Tallinn": ["", 26], "Stockholm": ["Europe/Berlin", 7], "Sofia": ["", 26], "Skopje": ["Europe/Belgrade", 7], "Simferopol": ["", 2], "Saratov": ["", 47], "Sarajevo": ["Europe/Belgrade", 7], "San_Marino": ["Europe/Rome", 7], "Samara": ["", 47], "Rome": ["", 7], "Riga": ["", 26], "Prague": ["", 7], "Podgorica": ["Europe/Belgrade", 7], "Paris": ["", 7], "Oslo": ["Europe/Berlin", 7], "Nicosia": ["Asia/Nicosia", 53], "Moscow": ["", 2], "Monaco": ["Europe/Paris", 7], "Minsk": ["", 3], "Mariehamn": ["Europe/Helsinki", 26], "Malta": ["", 7], "Madrid": ["", 7], "Luxembourg": ["Europe/Brussels", 7], "London": ["", 22], "Ljubljana": ["Europe/Belgrade", 7], "Lisbon": ["", 1], "Kyiv": ["", 53], "Kirov": ["", 2], "Kiev": ["Europe/Kyiv", 53], "Kaliningrad": ["", 13], "Jersey": ["Europe/London", 22], "Istanbul": ["", 3], "Isle_of_Man": ["Europe/London", 22], "Helsinki": ["", 26], "Guernsey": ["Europe/London", 22], "Gibraltar": ["", 7], "Dublin": ["", 23], "Copenhagen": ["Europe/Berlin", 7], "Chisinau": ["", 54], "Busingen": ["Europe/Zurich", 7], "Budapest": ["", 7], "Bucharest": ["", 26], "Brussels": ["", 7], "Bratislava": ["Europe/Prague", 7], "Berlin": ["", 7], "Belgrade": ["", 7], "Belfast": ["Europe/London", 22], "Athens": ["", 26], "Astrakhan": ["", 47], "Andorra": ["", 7], "Amsterdam": ["Europe/Brussels", 7] }, "Etc": { "Zulu": ["Etc/UTC", 0], "Universal": ["Etc/UTC", 0], "UTC": ["", 0], "UCT": ["Etc/UTC", 0], "Greenwich": ["Etc/GMT", 19], "GMT0": ["Etc/GMT", 19], "GMT": ["", 19], "GMT-9": ["", 38], "GMT-8": ["", 4], "GMT-7": ["", 51], "GMT-6": ["", 52], "GMT-5": ["", 49], "GMT-4": ["", 47], "GMT-3": ["", 3], "GMT-2": ["", 55], "GMT-14": ["", 42], "GMT-13": ["", 33], "GMT-12": ["", 14], "GMT-11": ["", 36], "GMT-10": ["", 32], "GMT-1": ["", 56], "GMT-0": ["Etc/GMT", 19], "GMT+9": ["", 43], "GMT+8": ["", 37], "GMT+7": ["", 57], "GMT+6": ["", 44], "GMT+5": ["", 58], "GMT+4": ["", 59], "GMT+3": ["", 60], "GMT+2": ["", 61], "GMT+12": ["", 62], "GMT+11": ["", 40], "GMT+10": ["", 34], "GMT+1": ["", 63], "GMT+0": ["Etc/GMT", 19] }, "Chile": { "EasterIsland": ["Pacific/Easter", 45], "Continental": ["America/Santiago", 64] }, "Canada": { "Yukon": ["America/Whitehorse", 12], "Saskatchewan": ["America/Regina", 46], "Pacific": ["America/Vancouver", 8], "Newfoundland": ["America/St_Johns", 65], "Mountain": ["America/Edmonton", 9], "Eastern": ["America/Toronto", 25], "Central": ["America/Winnipeg", 28], "Atlantic": ["America/Halifax", 66] }, "Brazil": { "West": ["America/Manaus", 59], "East": ["America/Sao_Paulo", 60], "DeNoronha": ["America/Noronha", 61], "Acre": ["America/Rio_Branco", 58] }, "Australia": { "Yancowinna": ["Australia/Broken_Hill", 67], "West": ["Australia/Perth", 68], "Victoria": ["Australia/Melbourne", 69], "Tasmania": ["Australia/Hobart", 70], "Sydney": ["", 69], "South": ["Australia/Adelaide", 67], "Queensland": ["Australia/Brisbane", 71], "Perth": ["", 68], "North": ["Australia/Darwin", 72], "NSW": ["Australia/Sydney", 69], "Melbourne": ["", 69], "Lord_Howe": ["", 73], "Lindeman": ["", 71], "LHI": ["Australia/Lord_Howe", 73], "Hobart": ["", 70], "Eucla": ["", 74], "Darwin": ["", 72], "Currie": ["Australia/Hobart", 70], "Canberra": ["Australia/Sydney", 69], "Broken_Hill": ["", 67], "Brisbane": ["", 71], "Adelaide": ["", 67], "ACT": ["Australia/Sydney", 69] }, "Atlantic": { "Stanley": ["", 60], "St_Helena": ["Africa/Abidjan", 19], "South_Georgia": ["", 61], "Reykjavik": ["Africa/Abidjan", 19], "Madeira": ["", 75], "Jan_Mayen": ["Europe/Berlin", 7], "Faroe": ["", 75], "Faeroe": ["Atlantic/Faroe", 75], "Cape_Verde": ["", 63], "Canary": ["", 75], "Bermuda": ["", 66], "Azores": ["", 76] }, "Asia": { "Yerevan": ["", 47], "Yekaterinburg": ["", 49], "Yangon": ["", 50], "Yakutsk": ["", 38], "Vladivostok": ["", 32], "Vientiane": ["Asia/Bangkok", 51], "Ust-Nera": ["", 32], "Urumqi": ["", 52], "Ulan_Bator": ["Asia/Ulaanbaatar", 4], "Ulaanbaatar": ["", 4], "Ujung_Pandang": ["Asia/Makassar", 77], "Tomsk": ["", 51], "Tokyo": ["", 15], "Thimphu": ["", 52], "Thimbu": ["Asia/Thimphu", 52], "Tel_Aviv": ["Asia/Jerusalem", 17], "Tehran": ["", 18], "Tbilisi": ["", 47], "Tashkent": ["", 49], "Taipei": ["", 6], "Srednekolymsk": ["", 36], "Singapore": ["", 4], "Shanghai": ["", 6], "Seoul": ["", 5], "Samarkand": ["", 49], "Sakhalin": ["", 36], "Saigon": ["Asia/Ho_Chi_Minh", 51], "Riyadh": ["", 3], "Rangoon": ["Asia/Yangon", 50], "Qyzylorda": ["", 49], "Qostanay": ["", 49], "Qatar": ["", 3], "Pyongyang": ["", 5], "Pontianak": ["", 78], "Phnom_Penh": ["Asia/Bangkok", 51], "Oral": ["", 49], "Omsk": ["", 52], "Novosibirsk": ["", 51], "Novokuznetsk": ["", 51], "Nicosia": ["", 53], "Muscat": ["Asia/Dubai", 47], "Manila": ["", 79], "Makassar": ["", 77], "Magadan": ["", 36], "Macau": ["", 6], "Macao": ["Asia/Macau", 6], "Kuwait": ["Asia/Riyadh", 3], "Kuching": ["", 4], "Kuala_Lumpur": ["Asia/Singapore", 4], "Krasnoyarsk": ["", 51], "Kolkata": ["", 80], "Khandyga": ["", 38], "Katmandu": ["Asia/Kathmandu", 81], "Kathmandu": ["", 81], "Kashgar": ["Asia/Urumqi", 52], "Karachi": ["", 82], "Kamchatka": ["", 14], "Kabul": ["", 83], "Jerusalem": ["", 17], "Jayapura": ["", 84], "Jakarta": ["", 78], "Istanbul": ["Europe/Istanbul", 3], "Irkutsk": ["", 4], "Hovd": ["", 51], "Hong_Kong": ["", 20], "Ho_Chi_Minh": ["", 51], "Hebron": ["", 85], "Harbin": ["Asia/Shanghai", 6], "Gaza": ["", 85], "Famagusta": ["", 26], "Dushanbe": ["", 49], "Dubai": ["", 47], "Dili": ["", 38], "Dhaka": ["", 52], "Damascus": ["", 3], "Dacca": ["Asia/Dhaka", 52], "Colombo": ["", 86], "Chungking": ["Asia/Shanghai", 6], "Chongqing": ["Asia/Shanghai", 6], "Choibalsan": ["Asia/Ulaanbaatar", 4], "Chita": ["", 38], "Calcutta": ["Asia/Kolkata", 80], "Brunei": ["Asia/Kuching", 4], "Bishkek": ["", 52], "Beirut": ["", 87], "Barnaul": ["", 51], "Bangkok": ["", 51], "Baku": ["", 47], "Bahrain": ["Asia/Qatar", 3], "Baghdad": ["", 3], "Atyrau": ["", 49], "Ashkhabad": ["Asia/Ashgabat", 49], "Ashgabat": ["", 49], "Aqtobe": ["", 49], "Aqtau": ["", 49], "Anadyr": ["", 14], "Amman": ["", 3], "Almaty": ["", 49], "Aden": ["Asia/Riyadh", 3] }, "Arctic": { "Longyearbyen": ["Europe/Berlin", 7] }, "Antarctica": { "Vostok": ["", 49], "Troll": ["", 88], "Syowa": ["Asia/Riyadh", 3], "South_Pole": ["Pacific/Auckland", 10], "Rothera": ["", 60], "Palmer": ["", 60], "McMurdo": ["Pacific/Auckland", 10], "Mawson": ["", 49], "Macquarie": ["", 69], "DumontDUrville": ["Pacific/Port_Moresby", 32], "Davis": ["", 51], "Casey": ["", 4] }, "America": { "Yellowknife": ["America/Edmonton", 9], "Yakutat": ["", 31], "Winnipeg": ["", 28], "Whitehorse": ["", 12], "Virgin": ["America/Puerto_Rico", 89], "Vancouver": ["", 8], "Tortola": ["America/Puerto_Rico", 89], "Toronto": ["", 25], "Tijuana": ["", 8], "Thunder_Bay": ["America/Toronto", 25], "Thule": ["", 66], "Tegucigalpa": ["", 46], "Swift_Current": ["", 46], "St_Vincent": ["America/Puerto_Rico", 89], "St_Thomas": ["America/Puerto_Rico", 89], "St_Lucia": ["America/Puerto_Rico", 89], "St_Kitts": ["America/Puerto_Rico", 89], "St_Johns": ["", 65], "St_Barthelemy": ["America/Puerto_Rico", 89], "Sitka": ["", 31], "Shiprock": ["America/Denver", 9], "Scoresbysund": ["", 90], "Sao_Paulo": ["", 60], "Santo_Domingo": ["", 89], "Santiago": ["", 64], "Santarem": ["", 60], "Santa_Isabel": ["America/Tijuana", 8], "Rosario": ["America/Argentina/Cordoba", 60], "Rio_Branco": ["", 58], "Resolute": ["", 91], "Regina": ["", 46], "Recife": ["", 60], "Rankin_Inlet": ["", 28], "Rainy_River": ["America/Winnipeg", 28], "Punta_Arenas": ["", 60], "Puerto_Rico": ["", 89], "Porto_Velho": ["", 59], "Porto_Acre": ["America/Rio_Branco", 58], "Port_of_Spain": ["America/Puerto_Rico", 89], "Port-au-Prince": ["", 25], "Phoenix": ["", 12], "Paramaribo": ["", 60], "Pangnirtung": ["America/Iqaluit", 25], "Panama": ["", 16], "Ojinaga": ["", 28], "Nuuk": ["", 92], "Noronha": ["", 61], "Nome": ["", 31], "Nipigon": ["America/Toronto", 25], "New_York": ["", 25], "Nassau": ["America/Toronto", 25], "Montserrat": ["America/Puerto_Rico", 89], "Montreal": ["America/Toronto", 25], "Montevideo": ["", 60], "Monterrey": ["", 46], "Moncton": ["", 66], "Miquelon": ["", 93], "Mexico_City": ["", 46], "Metlakatla": ["", 31], "Merida": ["", 46], "Menominee": ["", 28], "Mendoza": ["America/Argentina/Mendoza", 60], "Mazatlan": ["", 12], "Matamoros": ["", 28], "Martinique": ["", 89], "Marigot": ["America/Puerto_Rico", 89], "Manaus": ["", 59], "Managua": ["", 46], "Maceio": ["", 60], "Lower_Princes": ["America/Puerto_Rico", 89], "Louisville": ["America/Kentucky/Louisville", 25], "Los_Angeles": ["", 8], "Lima": ["", 58], "La_Paz": ["", 59], "Kralendijk": ["America/Puerto_Rico", 89], "Knox_IN": ["America/Indiana/Knox", 28], "Juneau": ["", 31], "Jujuy": ["America/Argentina/Jujuy", 60], "Jamaica": ["", 16], "Iqaluit": ["", 25], "Inuvik": ["", 9], "Indianapolis": ["America/Indiana/Indianapolis", 25], "Hermosillo": ["", 12], "Havana": ["", 27], "Halifax": ["", 66], "Guyana": ["", 59], "Guayaquil": ["", 58], "Guatemala": ["", 46], "Guadeloupe": ["America/Puerto_Rico", 89], "Grenada": ["America/Puerto_Rico", 89], "Grand_Turk": ["", 94], "Goose_Bay": ["", 95], "Godthab": ["America/Nuuk", 92], "Glace_Bay": ["", 66], "Fortaleza": ["", 60], "Fort_Wayne": ["America/Indiana/Indianapolis", 25], "Fort_Nelson": ["", 12], "Ensenada": ["America/Tijuana", 8], "El_Salvador": ["", 46], "Eirunepe": ["", 58], "Edmonton": ["", 9], "Dominica": ["America/Puerto_Rico", 89], "Detroit": ["", 25], "Denver": ["", 9], "Dawson_Creek": ["", 12], "Dawson": ["", 12], "Danmarkshavn": ["", 19], "Curacao": ["America/Puerto_Rico", 89], "Cuiaba": ["", 59], "Creston": ["America/Phoenix", 12], "Coyhaique": ["", 60], "Costa_Rica": ["", 46], "Cordoba": ["America/Argentina/Cordoba", 60], "Coral_Harbour": ["America/Panama", 16], "Ciudad_Juarez": ["", 9], "Chihuahua": ["", 46], "Chicago": ["", 28], "Cayman": ["America/Panama", 16], "Cayenne": ["", 60], "Catamarca": ["America/Argentina/Catamarca", 60], "Caracas": ["", 59], "Cancun": ["", 16], "Campo_Grande": ["", 59], "Cambridge_Bay": ["", 9], "Buenos_Aires": ["America/Argentina/Buenos_Aires", 60], "Boise": ["", 9], "Bogota": ["", 58], "Boa_Vista": ["", 59], "Blanc-Sablon": ["America/Puerto_Rico", 89], "Belize": ["", 46], "Belem": ["", 60], "Barbados": ["", 89], "Bahia_Banderas": ["", 46], "Bahia": ["", 60], "Atka": ["America/Adak", 30], "Atikokan": ["America/Panama", 16], "Asuncion": ["", 60], "Aruba": ["America/Puerto_Rico", 89], "Araguaina": ["", 60], "Antigua": ["America/Puerto_Rico", 89], "Anguilla": ["America/Puerto_Rico", 89], "Anchorage": ["", 31], "Adak": ["", 30], "North_Dakota": { "New_Salem": ["", 28], "Center": ["", 28], "Beulah": ["", 28] }, "Kentucky": { "Monticello": ["", 25], "Louisville": ["", 25] }, "Indiana": { "Winamac": ["", 94], "Vincennes": ["", 25], "Vevay": ["", 25], "Tell_City": ["", 28], "Petersburg": ["", 25], "Marengo": ["", 25], "Knox": ["", 28], "Indianapolis": ["", 25] }, "Argentina": { "Ushuaia": ["", 60], "Tucuman": ["", 60], "San_Luis": ["", 60], "San_Juan": ["", 60], "Salta": ["", 60], "Rio_Gallegos": ["", 60], "Mendoza": ["", 60], "La_Rioja": ["", 60], "Jujuy": ["", 60], "Cordoba": ["", 60], "ComodRivadavia": ["America/Argentina/Catamarca", 60], "Catamarca": ["", 60], "Buenos_Aires": ["", 60] } }, "Africa": { "Windhoek": ["", 96], "Tunis": ["", 97], "Tripoli": ["", 13], "Timbuktu": ["Africa/Abidjan", 19], "Sao_Tome": ["", 19], "Porto-Novo": ["Africa/Lagos", 98], "Ouagadougou": ["Africa/Abidjan", 19], "Nouakchott": ["Africa/Abidjan", 19], "Niamey": ["Africa/Lagos", 98], "Ndjamena": ["", 98], "Nairobi": ["", 48], "Monrovia": ["", 19], "Mogadishu": ["Africa/Nairobi", 48], "Mbabane": ["Africa/Johannesburg", 99], "Maseru": ["Africa/Johannesburg", 99], "Maputo": ["", 96], "Malabo": ["Africa/Lagos", 98], "Lusaka": ["Africa/Maputo", 96], "Lubumbashi": ["Africa/Maputo", 96], "Luanda": ["Africa/Lagos", 98], "Lome": ["Africa/Abidjan", 19], "Libreville": ["Africa/Lagos", 98], "Lagos": ["", 98], "Kinshasa": ["Africa/Lagos", 98], "Kigali": ["Africa/Maputo", 96], "Khartoum": ["", 96], "Kampala": ["Africa/Nairobi", 48], "Juba": ["", 96], "Johannesburg": ["", 99], "Harare": ["Africa/Maputo", 96], "Gaborone": ["Africa/Maputo", 96], "Freetown": ["Africa/Abidjan", 19], "El_Aaiun": ["", 56], "Douala": ["Africa/Lagos", 98], "Djibouti": ["Africa/Nairobi", 48], "Dar_es_Salaam": ["Africa/Nairobi", 48], "Dakar": ["Africa/Abidjan", 19], "Conakry": ["Africa/Abidjan", 19], "Ceuta": ["", 7], "Casablanca": ["", 56], "Cairo": ["", 24], "Bujumbura": ["Africa/Maputo", 96], "Brazzaville": ["Africa/Lagos", 98], "Blantyre": ["Africa/Maputo", 96], "Bissau": ["", 19], "Banjul": ["Africa/Abidjan", 19], "Bangui": ["Africa/Lagos", 98], "Bamako": ["Africa/Abidjan", 19], "Asmera": ["Africa/Nairobi", 48], "Asmara": ["Africa/Nairobi", 48], "Algiers": ["", 97], "Addis_Ababa": ["Africa/Nairobi", 48], "Accra": ["Africa/Abidjan", 19], "Abidjan": ["", 19] } };
-  var tzlibZonesDetailsDB = ["20260106T202324Z<n><bs><n><tz>UTC<n><of>+0000<n><ot>+0000<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>WET<n><of>+0100<n><ot>+0000<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n><bd><n><tz>WEST<n><of>+0000<n><ot>+0100<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n>", "20260106T202324Z<n><bs><n><tz>MSK<n><of>+0300<n><ot>+0300<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+03<n><of>+0300<n><ot>+0300<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+08<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>KST<n><of>+0900<n><ot>+0900<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>CST<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bd><n><tz>CEST<n><of>+0100<n><ot>+0200<n><s>19700329T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>CET<n><of>+0200<n><ot>+0100<n><s>19701025T030000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bd><n><tz>PDT<n><of>-0800<n><ot>-0700<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>PST<n><of>-0700<n><ot>-0800<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bd><n><tz>MDT<n><of>-0700<n><ot>-0600<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>MST<n><of>-0600<n><ot>-0700<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bd><n><tz>NZDT<n><of>+1200<n><ot>+1300<n><s>19700927T020000<n><r>FREQ=YEARLY;BYMONTH=9;BYDAY=-1SU<n><ed><n><bs><n><tz>NZST<n><of>+1300<n><ot>+1200<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bd><n><tz>+1345<n><of>+1245<n><ot>+1345<n><s>19700927T024500<n><r>FREQ=YEARLY;BYMONTH=9;BYDAY=-1SU<n><ed><n><bs><n><tz>+1245<n><of>+1345<n><ot>+1245<n><s>19700405T034500<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>MST<n><of>-0700<n><ot>-0700<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>EET<n><of>+0200<n><ot>+0200<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+12<n><of>+1200<n><ot>+1200<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>JST<n><of>+0900<n><ot>+0900<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>EST<n><of>-0500<n><ot>-0500<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bd><n><tz>IDT<n><of>+0200<n><ot>+0300<n><s>19700327T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1FR<n><ed><n><bs><n><tz>IST<n><of>+0300<n><ot>+0200<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>+0330<n><of>+0330<n><ot>+0330<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>GMT<n><of>+0000<n><ot>+0000<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>HKT<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>HST<n><of>-1000<n><ot>-1000<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bd><n><tz>BST<n><of>+0000<n><ot>+0100<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>GMT<n><of>+0100<n><ot>+0000<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>IST<n><of>+0000<n><ot>+0100<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><es><n><bd><n><tz>GMT<n><of>+0100<n><ot>+0000<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><ed><n>", "20260106T202324Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700424T000000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=-1FR<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701030T000000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1FR<n><es><n>", "20260106T202324Z<n><bd><n><tz>EDT<n><of>-0500<n><ot>-0400<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>EST<n><of>-0400<n><ot>-0500<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700329T030000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701025T040000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>CST<n><of>-0400<n><ot>-0500<n><s>19701101T010000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>CDT<n><of>-0500<n><ot>-0400<n><s>19700308T000000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260106T202324Z<n><bd><n><tz>CDT<n><of>-0600<n><ot>-0500<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>CST<n><of>-0500<n><ot>-0600<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>SST<n><of>-1100<n><ot>-1100<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bd><n><tz>HDT<n><of>-1000<n><ot>-0900<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>HST<n><of>-0900<n><ot>-1000<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bd><n><tz>AKDT<n><of>-0900<n><ot>-0800<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>AKST<n><of>-0800<n><ot>-0900<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>+10<n><of>+1000<n><ot>+1000<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+13<n><of>+1300<n><ot>+1300<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-10<n><of>-1000<n><ot>-1000<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>ChST<n><of>+1000<n><ot>+1000<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+11<n><of>+1100<n><ot>+1100<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-08<n><of>-0800<n><ot>-0800<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+09<n><of>+0900<n><ot>+0900<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bd><n><tz>+12<n><of>+1100<n><ot>+1200<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n><bs><n><tz>+11<n><of>+1200<n><ot>+1100<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>-11<n><of>-1100<n><ot>-1100<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-0930<n><of>-0930<n><ot>-0930<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+14<n><of>+1400<n><ot>+1400<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-09<n><of>-0900<n><ot>-0900<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-06<n><of>-0600<n><ot>-0600<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-06<n><of>-0500<n><ot>-0600<n><s>19700404T220000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SA<n><es><n><bd><n><tz>-05<n><of>-0600<n><ot>-0500<n><s>19700905T220000<n><r>FREQ=YEARLY;BYMONTH=9;BYDAY=1SA<n><ed><n>", "20260106T202324Z<n><bs><n><tz>CST<n><of>-0600<n><ot>-0600<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+04<n><of>+0400<n><ot>+0400<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>EAT<n><of>+0300<n><ot>+0300<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+05<n><of>+0500<n><ot>+0500<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+0630<n><of>+0630<n><ot>+0630<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+07<n><of>+0700<n><ot>+0700<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+06<n><of>+0600<n><ot>+0600<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701025T040000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700329T030000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n>", "20260106T202324Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700329T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701025T030000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>+02<n><of>+0200<n><ot>+0200<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+01<n><of>+0100<n><ot>+0100<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-07<n><of>-0700<n><ot>-0700<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-05<n><of>-0500<n><ot>-0500<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-04<n><of>-0400<n><ot>-0400<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-03<n><of>-0300<n><ot>-0300<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-02<n><of>-0200<n><ot>-0200<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-12<n><of>-1200<n><ot>-1200<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-01<n><of>-0100<n><ot>-0100<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-04<n><of>-0300<n><ot>-0400<n><s>19700405T000000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n><bd><n><tz>-03<n><of>-0400<n><ot>-0300<n><s>19700906T000000<n><r>FREQ=YEARLY;BYMONTH=9;BYDAY=1SU<n><ed><n>", "20260106T202324Z<n><bs><n><tz>NST<n><of>-0230<n><ot>-0330<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>NDT<n><of>-0330<n><ot>-0230<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260106T202324Z<n><bd><n><tz>ADT<n><of>-0400<n><ot>-0300<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>AST<n><of>-0300<n><ot>-0400<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>ACST<n><of>+1030<n><ot>+0930<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n><bd><n><tz>ACDT<n><of>+0930<n><ot>+1030<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n>", "20260106T202324Z<n><bs><n><tz>AWST<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>AEST<n><of>+1100<n><ot>+1000<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n><bd><n><tz>AEDT<n><of>+1000<n><ot>+1100<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n>", "20260106T202324Z<n><bd><n><tz>AEDT<n><of>+1000<n><ot>+1100<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n><bs><n><tz>AEST<n><of>+1100<n><ot>+1000<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>AEST<n><of>+1000<n><ot>+1000<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>ACST<n><of>+0930<n><ot>+0930<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+1030<n><of>+1100<n><ot>+1030<n><s>19700405T020000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n><bd><n><tz>+11<n><of>+1030<n><ot>+1100<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n>", "20260106T202324Z<n><bs><n><tz>+0845<n><of>+0845<n><ot>+0845<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bd><n><tz>WEST<n><of>+0000<n><ot>+0100<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>WET<n><of>+0100<n><ot>+0000<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bd><n><tz>+00<n><of>-0100<n><ot>+0000<n><s>19700329T000000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>-01<n><of>+0000<n><ot>-0100<n><s>19701025T010000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>WITA<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>WIB<n><of>+0700<n><ot>+0700<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>PST<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>IST<n><of>+0530<n><ot>+0530<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+0545<n><of>+0545<n><ot>+0545<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>PKT<n><of>+0500<n><ot>+0500<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>+0430<n><of>+0430<n><ot>+0430<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>WIT<n><of>+0900<n><ot>+0900<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700328T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SA<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701024T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SA<n><es><n>", "20260106T202324Z<n><bs><n><tz>+0530<n><of>+0530<n><ot>+0530<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700329T000000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701025T000000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bd><n><tz>+02<n><of>+0000<n><ot>+0200<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>+00<n><of>+0200<n><ot>+0000<n><s>19701025T030000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>AST<n><of>-0400<n><ot>-0400<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>-02<n><of>-0100<n><ot>-0200<n><s>19701025T000000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n><bd><n><tz>-01<n><of>-0200<n><ot>-0100<n><s>19700328T230000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SA<n><ed><n>", "20260106T202324Z<n><bs><n><tz>CST<n><of>-0500<n><ot>-0600<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>CDT<n><of>-0600<n><ot>-0500<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260106T202324Z<n><bd><n><tz>-01<n><of>-0200<n><ot>-0100<n><s>19700328T230000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SA<n><ed><n><bs><n><tz>-02<n><of>-0100<n><ot>-0200<n><s>19701025T000000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260106T202324Z<n><bd><n><tz>-02<n><of>-0300<n><ot>-0200<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>-03<n><of>-0200<n><ot>-0300<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260106T202324Z<n><bs><n><tz>EST<n><of>-0400<n><ot>-0500<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>EDT<n><of>-0500<n><ot>-0400<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260106T202324Z<n><bs><n><tz>AST<n><of>-0300<n><ot>-0400<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>ADT<n><of>-0400<n><ot>-0300<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260106T202324Z<n><bs><n><tz>CAT<n><of>+0200<n><ot>+0200<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>CET<n><of>+0100<n><ot>+0100<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>WAT<n><of>+0100<n><ot>+0100<n><s>19700101T000000<n><es><n>", "20260106T202324Z<n><bs><n><tz>SAST<n><of>+0200<n><ot>+0200<n><s>19700101T000000<n><es><n>"];
-  function tzlib_get_content(tzName) {
-    const nameParts = tzName.split("/");
-    if (nameParts.length === 3 && (!tzlibZonesDB[`${nameParts[0]}`] || !tzlibZonesDB[`${nameParts[0]}`][`${nameParts[1]}`] || !tzlibZonesDB[`${nameParts[0]}`][`${nameParts[1]}`][`${nameParts[2]}`]) || nameParts.length === 2 && (!tzlibZonesDB[`${nameParts[0]}`] || !tzlibZonesDB[`${nameParts[0]}`][`${nameParts[1]}`]) || nameParts.length === 1 && !tzlibZonesDB[`${nameParts[0]}`]) {
-      console.error("Given timezone not valid.");
-      return "";
-    }
-    if (nameParts.length === 3) {
-      return [
-        tzlibZonesDB[`${nameParts[0]}`][`${nameParts[1]}`][`${nameParts[2]}`][0],
-        tzlib_enrich_data(
-          tzlibZonesDetailsDB[tzlibZonesDB[`${nameParts[0]}`][`${nameParts[1]}`][`${nameParts[2]}`][1]]
-        )
-      ];
-    }
-    if (nameParts.length === 2) {
-      return [
-        tzlibZonesDB[`${nameParts[0]}`][`${nameParts[1]}`][0],
-        tzlib_enrich_data(tzlibZonesDetailsDB[tzlibZonesDB[`${nameParts[0]}`][`${nameParts[1]}`][1]])
-      ];
-    }
-    return [
-      tzlibZonesDB[`${nameParts[0]}`][0],
-      tzlib_enrich_data(tzlibZonesDetailsDB[tzlibZonesDB[`${nameParts[0]}`][1]])
-    ];
+  var m = { db: { Africa: { Abidjan: ["", 0], Accra: ["59/Abidjan", 0], Addis_Ababa: ["59/Nairobi", 1], Algiers: ["", 2], Asmara: ["59/Nairobi", 1], Asmera: ["59/Nairobi", 1], Bamako: ["59/Abidjan", 0], Bangui: ["59/Lagos", 3], Banjul: ["59/Abidjan", 0], Bissau: ["", 0], Blantyre: ["59/Maputo", 4], Brazzaville: ["59/Lagos", 3], Bujumbura: ["59/Maputo", 4], Cairo: ["", 5], Casablanca: ["", 6], Ceuta: ["", 7], Conakry: ["59/Abidjan", 0], Dakar: ["59/Abidjan", 0], Dar_es_Salaam: ["59/Nairobi", 1], Djibouti: ["59/Nairobi", 1], Douala: ["59/Lagos", 3], El_Aaiun: ["", 6], Freetown: ["59/Abidjan", 0], Gaborone: ["59/Maputo", 4], Harare: ["59/Maputo", 4], Johannesburg: ["", 8], Juba: ["", 4], Kampala: ["59/Nairobi", 1], Khartoum: ["", 4], Kigali: ["59/Maputo", 4], Kinshasa: ["59/Lagos", 3], Lagos: ["", 3], Libreville: ["59/Lagos", 3], Lome: ["59/Abidjan", 0], Luanda: ["59/Lagos", 3], Lubumbashi: ["59/Maputo", 4], Lusaka: ["59/Maputo", 4], Malabo: ["59/Lagos", 3], Maputo: ["", 4], Maseru: ["59/Johannesburg", 8], Mbabane: ["59/Johannesburg", 8], Mogadishu: ["59/Nairobi", 1], Monrovia: ["", 0], Nairobi: ["", 1], Ndjamena: ["", 3], Niamey: ["59/Lagos", 3], Nouakchott: ["59/Abidjan", 0], Ouagadougou: ["59/Abidjan", 0], "Porto-Novo": ["59/Lagos", 3], Sao_Tome: ["", 0], Timbuktu: ["59/Abidjan", 0], Tripoli: ["", 9], Tunis: ["", 2], Windhoek: ["", 4] }, America: { Adak: ["", 10], Anchorage: ["", 11], Anguilla: ["58/Puerto_Rico", 12], Antigua: ["58/Puerto_Rico", 12], Araguaina: ["", 13], Argentina: { Buenos_Aires: ["", 13], Catamarca: ["", 13], ComodRivadavia: ["58/Argentina/Catamarca", 13], Cordoba: ["", 13], Jujuy: ["", 13], La_Rioja: ["", 13], Mendoza: ["", 13], Rio_Gallegos: ["", 13], Salta: ["", 13], San_Juan: ["", 13], San_Luis: ["", 13], Tucuman: ["", 13], Ushuaia: ["", 13] }, Aruba: ["58/Puerto_Rico", 12], Asuncion: ["", 13], Atikokan: ["58/Panama", 14], Atka: ["58/Adak", 10], Bahia: ["", 13], Bahia_Banderas: ["", 15], Barbados: ["", 12], Belem: ["", 13], Belize: ["", 15], "Blanc-Sablon": ["58/Puerto_Rico", 12], Boa_Vista: ["", 16], Bogota: ["", 17], Boise: ["", 18], Buenos_Aires: ["58/Argentina/Buenos_Aires", 13], Cambridge_Bay: ["", 18], Campo_Grande: ["", 16], Cancun: ["", 14], Caracas: ["", 16], Catamarca: ["58/Argentina/Catamarca", 13], Cayenne: ["", 13], Cayman: ["58/Panama", 14], Chicago: ["", 19], Chihuahua: ["", 15], Ciudad_Juarez: ["", 18], Coral_Harbour: ["58/Panama", 14], Cordoba: ["58/Argentina/Cordoba", 13], Costa_Rica: ["", 15], Coyhaique: ["", 13], Creston: ["58/Phoenix", 20], Cuiaba: ["", 16], Curacao: ["58/Puerto_Rico", 12], Danmarkshavn: ["", 0], Dawson: ["", 20], Dawson_Creek: ["", 20], Denver: ["", 18], Detroit: ["", 21], Dominica: ["58/Puerto_Rico", 12], Edmonton: ["", 18], Eirunepe: ["", 17], El_Salvador: ["", 15], Ensenada: ["58/Tijuana", 22], Fort_Nelson: ["", 20], Fort_Wayne: ["58/Indiana/Indianapolis", 21], Fortaleza: ["", 13], Glace_Bay: ["", 23], Godthab: ["58/Nuuk", 24], Goose_Bay: ["", 25], Grand_Turk: ["", 26], Grenada: ["58/Puerto_Rico", 12], Guadeloupe: ["58/Puerto_Rico", 12], Guatemala: ["", 15], Guayaquil: ["", 17], Guyana: ["", 16], Halifax: ["", 23], Havana: ["", 27], Hermosillo: ["", 20], Indiana: { Indianapolis: ["", 21], Knox: ["", 19], Marengo: ["", 21], Petersburg: ["", 21], Tell_City: ["", 19], Vevay: ["", 21], Vincennes: ["", 21], Winamac: ["", 26] }, Indianapolis: ["58/Indiana/Indianapolis", 21], Inuvik: ["", 18], Iqaluit: ["", 21], Jamaica: ["", 14], Jujuy: ["58/Argentina/Jujuy", 13], Juneau: ["", 11], Kentucky: { Louisville: ["", 21], Monticello: ["", 21] }, Knox_IN: ["58/Indiana/Knox", 19], Kralendijk: ["58/Puerto_Rico", 12], La_Paz: ["", 16], Lima: ["", 17], Los_Angeles: ["", 22], Louisville: ["58/Kentucky/Louisville", 21], Lower_Princes: ["58/Puerto_Rico", 12], Maceio: ["", 13], Managua: ["", 15], Manaus: ["", 16], Marigot: ["58/Puerto_Rico", 12], Martinique: ["", 12], Matamoros: ["", 19], Mazatlan: ["", 20], Mendoza: ["58/Argentina/Mendoza", 13], Menominee: ["", 19], Merida: ["", 15], Metlakatla: ["", 11], Mexico_City: ["", 15], Miquelon: ["", 28], Moncton: ["", 23], Monterrey: ["", 15], Montevideo: ["", 13], Montreal: ["58/Toronto", 21], Montserrat: ["58/Puerto_Rico", 12], Nassau: ["58/Toronto", 21], New_York: ["", 21], Nipigon: ["58/Toronto", 21], Nome: ["", 11], Noronha: ["", 29], North_Dakota: { Beulah: ["", 19], Center: ["", 19], New_Salem: ["", 19] }, Nuuk: ["", 24], Ojinaga: ["", 19], Panama: ["", 14], Pangnirtung: ["58/Iqaluit", 21], Paramaribo: ["", 13], Phoenix: ["", 20], Port_of_Spain: ["58/Puerto_Rico", 12], "Port-au-Prince": ["", 21], Porto_Acre: ["58/Rio_Branco", 17], Porto_Velho: ["", 16], Puerto_Rico: ["", 12], Punta_Arenas: ["", 13], Rainy_River: ["58/Winnipeg", 19], Rankin_Inlet: ["", 19], Recife: ["", 13], Regina: ["", 15], Resolute: ["", 30], Rio_Branco: ["", 17], Rosario: ["58/Argentina/Cordoba", 13], Santa_Isabel: ["58/Tijuana", 22], Santarem: ["", 13], Santiago: ["", 31], Santo_Domingo: ["", 12], Sao_Paulo: ["", 13], Scoresbysund: ["", 32], Shiprock: ["58/Denver", 18], Sitka: ["", 11], St_Barthelemy: ["58/Puerto_Rico", 12], St_Johns: ["", 33], St_Kitts: ["58/Puerto_Rico", 12], St_Lucia: ["58/Puerto_Rico", 12], St_Thomas: ["58/Puerto_Rico", 12], St_Vincent: ["58/Puerto_Rico", 12], Swift_Current: ["", 15], Tegucigalpa: ["", 15], Thule: ["", 23], Thunder_Bay: ["58/Toronto", 21], Tijuana: ["", 22], Toronto: ["", 21], Tortola: ["58/Puerto_Rico", 12], Vancouver: ["", 22], Virgin: ["58/Puerto_Rico", 12], Whitehorse: ["", 20], Winnipeg: ["", 19], Yakutat: ["", 11], Yellowknife: ["58/Edmonton", 18] }, Antarctica: { Casey: ["", 34], Davis: ["", 35], DumontDUrville: ["Pacific/Port_Moresby", 36], Macquarie: ["", 37], Mawson: ["", 38], McMurdo: ["Pacific/Auckland", 39], Palmer: ["", 13], Rothera: ["", 13], South_Pole: ["Pacific/Auckland", 39], Syowa: ["Asia/Riyadh", 40], Troll: ["", 41], Vostok: ["", 38] }, Arctic: { Longyearbyen: ["Europe/Berlin", 7] }, Asia: { Aden: ["55/Riyadh", 40], Almaty: ["", 38], Amman: ["", 40], Anadyr: ["", 42], Aqtau: ["", 38], Aqtobe: ["", 38], Ashgabat: ["", 38], Ashkhabad: ["55/Ashgabat", 38], Atyrau: ["", 38], Baghdad: ["", 40], Bahrain: ["55/Qatar", 40], Baku: ["", 43], Bangkok: ["", 35], Barnaul: ["", 35], Beirut: ["", 44], Bishkek: ["", 45], Brunei: ["55/Kuching", 34], Calcutta: ["55/Kolkata", 46], Chita: ["", 47], Choibalsan: ["55/Ulaanbaatar", 34], Chongqing: ["55/Shanghai", 48], Chungking: ["55/Shanghai", 48], Colombo: ["", 49], Dacca: ["55/Dhaka", 45], Damascus: ["", 40], Dhaka: ["", 45], Dili: ["", 47], Dubai: ["", 43], Dushanbe: ["", 38], Famagusta: ["", 50], Gaza: ["", 51], Harbin: ["55/Shanghai", 48], Hebron: ["", 51], Ho_Chi_Minh: ["", 35], Hong_Kong: ["", 52], Hovd: ["", 35], Irkutsk: ["", 34], Istanbul: ["Europe/Istanbul", 40], Jakarta: ["", 53], Jayapura: ["", 54], Jerusalem: ["", 55], Kabul: ["", 56], Kamchatka: ["", 42], Karachi: ["", 57], Kashgar: ["55/Urumqi", 45], Kathmandu: ["", 58], Katmandu: ["55/Kathmandu", 58], Khandyga: ["", 47], Kolkata: ["", 46], Krasnoyarsk: ["", 35], Kuala_Lumpur: ["55/Singapore", 34], Kuching: ["", 34], Kuwait: ["55/Riyadh", 40], Macao: ["55/Macau", 48], Macau: ["", 48], Magadan: ["", 59], Makassar: ["", 60], Manila: ["", 61], Muscat: ["55/Dubai", 43], Nicosia: ["", 62], Novokuznetsk: ["", 35], Novosibirsk: ["", 35], Omsk: ["", 45], Oral: ["", 38], Phnom_Penh: ["55/Bangkok", 35], Pontianak: ["", 53], Pyongyang: ["", 63], Qatar: ["", 40], Qostanay: ["", 38], Qyzylorda: ["", 38], Rangoon: ["55/Yangon", 64], Riyadh: ["", 40], Saigon: ["55/Ho_Chi_Minh", 35], Sakhalin: ["", 59], Samarkand: ["", 38], Seoul: ["", 63], Shanghai: ["", 48], Singapore: ["", 34], Srednekolymsk: ["", 59], Taipei: ["", 48], Tashkent: ["", 38], Tbilisi: ["", 43], Tehran: ["", 65], Tel_Aviv: ["55/Jerusalem", 55], Thimbu: ["55/Thimphu", 45], Thimphu: ["", 45], Tokyo: ["", 66], Tomsk: ["", 35], Ujung_Pandang: ["55/Makassar", 60], Ulaanbaatar: ["", 34], Ulan_Bator: ["55/Ulaanbaatar", 34], Urumqi: ["", 45], "Ust-Nera": ["", 36], Vientiane: ["55/Bangkok", 35], Vladivostok: ["", 36], Yakutsk: ["", 47], Yangon: ["", 64], Yekaterinburg: ["", 38], Yerevan: ["", 43] }, Atlantic: { Azores: ["", 67], Bermuda: ["", 23], Canary: ["", 68], Cape_Verde: ["", 69], Faeroe: ["54/Faroe", 68], Faroe: ["", 68], Jan_Mayen: ["Europe/Berlin", 7], Madeira: ["", 68], Reykjavik: ["Africa/Abidjan", 0], South_Georgia: ["", 29], St_Helena: ["Africa/Abidjan", 0], Stanley: ["", 13] }, Australia: { ACT: ["53/Sydney", 37], Adelaide: ["", 70], Brisbane: ["", 71], Broken_Hill: ["", 70], Canberra: ["53/Sydney", 37], Currie: ["53/Hobart", 72], Darwin: ["", 73], Eucla: ["", 74], Hobart: ["", 72], LHI: ["53/Lord_Howe", 75], Lindeman: ["", 71], Lord_Howe: ["", 75], Melbourne: ["", 37], North: ["53/Darwin", 73], NSW: ["53/Sydney", 37], Perth: ["", 76], Queensland: ["53/Brisbane", 71], South: ["53/Adelaide", 70], Sydney: ["", 37], Tasmania: ["53/Hobart", 72], Victoria: ["53/Melbourne", 37], West: ["53/Perth", 76], Yancowinna: ["53/Broken_Hill", 70] }, Brazil: { Acre: ["America/Rio_Branco", 17], DeNoronha: ["America/Noronha", 29], East: ["America/Sao_Paulo", 13], West: ["America/Manaus", 16] }, Canada: { Atlantic: ["America/Halifax", 23], Central: ["America/Winnipeg", 19], Eastern: ["America/Toronto", 21], Mountain: ["America/Edmonton", 18], Newfoundland: ["America/St_Johns", 33], Pacific: ["America/Vancouver", 22], Saskatchewan: ["America/Regina", 15], Yukon: ["America/Whitehorse", 20] }, CET: ["Europe/Brussels", 7], Chile: { Continental: ["America/Santiago", 31], EasterIsland: ["Pacific/Easter", 77] }, CST6CDT: ["America/Chicago", 19], Cuba: ["America/Havana", 27], EET: ["Europe/Athens", 50], Egypt: ["Africa/Cairo", 5], Eire: ["Europe/Dublin", 78], EST: ["America/Panama", 14], EST5EDT: ["America/New_York", 21], Etc: { GMT: ["", 0], "GMT-0": ["49/GMT", 0], "GMT-1": ["", 6], "GMT-10": ["", 36], "GMT-11": ["", 59], "GMT-12": ["", 42], "GMT-13": ["", 79], "GMT-14": ["", 80], "GMT-2": ["", 81], "GMT-3": ["", 40], "GMT-4": ["", 43], "GMT-5": ["", 38], "GMT-6": ["", 45], "GMT-7": ["", 35], "GMT-8": ["", 34], "GMT-9": ["", 47], "GMT+0": ["49/GMT", 0], "GMT+1": ["", 69], "GMT+10": ["", 82], "GMT+11": ["", 83], "GMT+12": ["", 84], "GMT+2": ["", 29], "GMT+3": ["", 13], "GMT+4": ["", 16], "GMT+5": ["", 17], "GMT+6": ["", 85], "GMT+7": ["", 86], "GMT+8": ["", 87], "GMT+9": ["", 88], GMT0: ["49/GMT", 0], Greenwich: ["49/GMT", 0], UCT: ["49/UTC", 89], Universal: ["49/UTC", 89], UTC: ["", 89], Zulu: ["49/UTC", 89] }, Europe: { Amsterdam: ["48/Brussels", 7], Andorra: ["", 7], Astrakhan: ["", 43], Athens: ["", 50], Belfast: ["48/London", 90], Belgrade: ["", 7], Berlin: ["", 7], Bratislava: ["48/Prague", 7], Brussels: ["", 7], Bucharest: ["", 50], Budapest: ["", 7], Busingen: ["48/Zurich", 7], Chisinau: ["", 91], Copenhagen: ["48/Berlin", 7], Dublin: ["", 78], Gibraltar: ["", 7], Guernsey: ["48/London", 90], Helsinki: ["", 50], Isle_of_Man: ["48/London", 90], Istanbul: ["", 40], Jersey: ["48/London", 90], Kaliningrad: ["", 9], Kiev: ["48/Kyiv", 62], Kirov: ["", 92], Kyiv: ["", 62], Lisbon: ["", 93], Ljubljana: ["48/Belgrade", 7], London: ["", 90], Luxembourg: ["48/Brussels", 7], Madrid: ["", 7], Malta: ["", 7], Mariehamn: ["48/Helsinki", 50], Minsk: ["", 40], Monaco: ["48/Paris", 7], Moscow: ["", 92], Nicosia: ["Asia/Nicosia", 62], Oslo: ["48/Berlin", 7], Paris: ["", 7], Podgorica: ["48/Belgrade", 7], Prague: ["", 7], Riga: ["", 50], Rome: ["", 7], Samara: ["", 43], San_Marino: ["48/Rome", 7], Sarajevo: ["48/Belgrade", 7], Saratov: ["", 43], Simferopol: ["", 92], Skopje: ["48/Belgrade", 7], Sofia: ["", 50], Stockholm: ["48/Berlin", 7], Tallinn: ["", 50], Tirane: ["", 7], Tiraspol: ["48/Chisinau", 91], Ulyanovsk: ["", 43], Uzhgorod: ["48/Kyiv", 62], Vaduz: ["48/Zurich", 7], Vatican: ["48/Rome", 7], Vienna: ["", 7], Vilnius: ["", 50], Volgograd: ["", 92], Warsaw: ["", 7], Zagreb: ["48/Belgrade", 7], Zaporozhye: ["48/Kyiv", 62], Zurich: ["", 7] }, GB: ["Europe/London", 90], "GB-Eire": ["Europe/London", 90], GMT: ["Etc/GMT", 0], "GMT-0": ["Etc/GMT", 0], "GMT+0": ["Etc/GMT", 0], GMT0: ["Etc/GMT", 0], Greenwich: ["Etc/GMT", 0], Hongkong: ["Asia/Hong_Kong", 52], HST: ["Pacific/Honolulu", 94], Iceland: ["Africa/Abidjan", 0], Indian: { Antananarivo: ["Africa/Nairobi", 1], Chagos: ["", 45], Christmas: ["Asia/Bangkok", 35], Cocos: ["Asia/Yangon", 64], Comoro: ["Africa/Nairobi", 1], Kerguelen: ["47/Maldives", 38], Mahe: ["Asia/Dubai", 43], Maldives: ["", 38], Mauritius: ["", 43], Mayotte: ["Africa/Nairobi", 1], Reunion: ["Asia/Dubai", 43] }, Iran: ["Asia/Tehran", 65], Israel: ["Asia/Jerusalem", 55], Jamaica: ["America/Jamaica", 14], Japan: ["Asia/Tokyo", 66], Kwajalein: ["Pacific/Kwajalein", 42], Libya: ["Africa/Tripoli", 9], MET: ["Europe/Brussels", 7], Mexico: { BajaNorte: ["America/Tijuana", 22], BajaSur: ["America/Mazatlan", 20], General: ["America/Mexico_City", 15] }, MST: ["America/Phoenix", 20], MST7MDT: ["America/Denver", 18], Navajo: ["America/Denver", 18], NZ: ["Pacific/Auckland", 39], "NZ-CHAT": ["Pacific/Chatham", 95], Pacific: { Apia: ["", 79], Auckland: ["", 39], Bougainville: ["", 59], Chatham: ["", 95], Chuuk: ["45/Port_Moresby", 36], Easter: ["", 77], Efate: ["", 59], Enderbury: ["45/Kanton", 79], Fakaofo: ["", 79], Fiji: ["", 42], Funafuti: ["45/Tarawa", 42], Galapagos: ["", 85], Gambier: ["", 88], Guadalcanal: ["", 59], Guam: ["", 96], Honolulu: ["", 94], Johnston: ["45/Honolulu", 94], Kanton: ["", 79], Kiritimati: ["", 80], Kosrae: ["", 59], Kwajalein: ["", 42], Majuro: ["45/Tarawa", 42], Marquesas: ["", 97], Midway: ["45/Pago_Pago", 98], Nauru: ["", 42], Niue: ["", 83], Norfolk: ["", 99], Noumea: ["", 59], Pago_Pago: ["", 98], Palau: ["", 47], Pitcairn: ["", 87], Pohnpei: ["45/Guadalcanal", 59], Ponape: ["45/Guadalcanal", 59], Port_Moresby: ["", 36], Rarotonga: ["", 82], Saipan: ["45/Guam", 96], Samoa: ["45/Pago_Pago", 98], Tahiti: ["", 82], Tarawa: ["", 42], Tongatapu: ["", 79], Truk: ["45/Port_Moresby", 36], Wake: ["45/Tarawa", 42], Wallis: ["45/Tarawa", 42], Yap: ["45/Port_Moresby", 36] }, Poland: ["Europe/Warsaw", 7], Portugal: ["Europe/Lisbon", 93], PRC: ["Asia/Shanghai", 48], PST8PDT: ["America/Los_Angeles", 22], ROC: ["Asia/Taipei", 48], ROK: ["Asia/Seoul", 63], Singapore: ["Asia/Singapore", 34], Turkey: ["Europe/Istanbul", 40], UCT: ["Etc/UTC", 89], Universal: ["Etc/UTC", 89], US: { Alaska: ["America/Anchorage", 11], Aleutian: ["America/Adak", 10], Arizona: ["America/Phoenix", 20], Central: ["America/Chicago", 19], "East-Indiana": ["America/Indiana/Indianapolis", 21], Eastern: ["America/New_York", 21], Hawaii: ["Pacific/Honolulu", 94], "Indiana-Starke": ["America/Indiana/Knox", 19], Michigan: ["America/Detroit", 21], Mountain: ["America/Denver", 18], Pacific: ["America/Los_Angeles", 22], Samoa: ["Pacific/Pago_Pago", 98] }, UTC: ["Etc/UTC", 89], "W-SU": ["Europe/Moscow", 92], WET: ["Europe/Lisbon", 93], Zulu: ["Etc/UTC", 89] }, details: ["20260119T222047Z<n><bs><n><tz>GMT<n><of>+0000<n><ot>+0000<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>EAT<n><of>+0300<n><ot>+0300<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>CET<n><of>+0100<n><ot>+0100<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>WAT<n><of>+0100<n><ot>+0100<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>CAT<n><of>+0200<n><ot>+0200<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700424T000000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=-1FR<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701030T000000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1FR<n><es><n>", "20260119T222047Z<n><bs><n><tz>+01<n><of>+0100<n><ot>+0100<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>CEST<n><of>+0100<n><ot>+0200<n><s>19700329T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>CET<n><of>+0200<n><ot>+0100<n><s>19701025T030000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>SAST<n><of>+0200<n><ot>+0200<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>EET<n><of>+0200<n><ot>+0200<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>HDT<n><of>-1000<n><ot>-0900<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>HST<n><of>-0900<n><ot>-1000<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bd><n><tz>AKDT<n><of>-0900<n><ot>-0800<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>AKST<n><of>-0800<n><ot>-0900<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>AST<n><of>-0400<n><ot>-0400<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-03<n><of>-0300<n><ot>-0300<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>EST<n><of>-0500<n><ot>-0500<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>CST<n><of>-0600<n><ot>-0600<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-04<n><of>-0400<n><ot>-0400<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-05<n><of>-0500<n><ot>-0500<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>MDT<n><of>-0700<n><ot>-0600<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>MST<n><of>-0600<n><ot>-0700<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bd><n><tz>CDT<n><of>-0600<n><ot>-0500<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>CST<n><of>-0500<n><ot>-0600<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>MST<n><of>-0700<n><ot>-0700<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>EDT<n><of>-0500<n><ot>-0400<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>EST<n><of>-0400<n><ot>-0500<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bd><n><tz>PDT<n><of>-0800<n><ot>-0700<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>PST<n><of>-0700<n><ot>-0800<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bd><n><tz>ADT<n><of>-0400<n><ot>-0300<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>AST<n><of>-0300<n><ot>-0400<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bd><n><tz>-01<n><of>-0200<n><ot>-0100<n><s>19700328T230000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SA<n><ed><n><bs><n><tz>-02<n><of>-0100<n><ot>-0200<n><s>19701025T000000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>AST<n><of>-0300<n><ot>-0400<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>ADT<n><of>-0400<n><ot>-0300<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>EST<n><of>-0400<n><ot>-0500<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>EDT<n><of>-0500<n><ot>-0400<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>CST<n><of>-0400<n><ot>-0500<n><s>19701101T010000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>CDT<n><of>-0500<n><ot>-0400<n><s>19700308T000000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260119T222047Z<n><bd><n><tz>-02<n><of>-0300<n><ot>-0200<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n><bs><n><tz>-03<n><of>-0200<n><ot>-0300<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>-02<n><of>-0200<n><ot>-0200<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>CST<n><of>-0500<n><ot>-0600<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>CDT<n><of>-0600<n><ot>-0500<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>-04<n><of>-0300<n><ot>-0400<n><s>19700405T000000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n><bd><n><tz>-03<n><of>-0400<n><ot>-0300<n><s>19700906T000000<n><r>FREQ=YEARLY;BYMONTH=9;BYDAY=1SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>-02<n><of>-0100<n><ot>-0200<n><s>19701025T000000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n><bd><n><tz>-01<n><of>-0200<n><ot>-0100<n><s>19700328T230000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SA<n><ed><n>", "20260119T222047Z<n><bs><n><tz>NST<n><of>-0230<n><ot>-0330<n><s>19701101T020000<n><r>FREQ=YEARLY;BYMONTH=11;BYDAY=1SU<n><es><n><bd><n><tz>NDT<n><of>-0330<n><ot>-0230<n><s>19700308T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=2SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>+08<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+07<n><of>+0700<n><ot>+0700<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+10<n><of>+1000<n><ot>+1000<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>AEST<n><of>+1100<n><ot>+1000<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n><bd><n><tz>AEDT<n><of>+1000<n><ot>+1100<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>+05<n><of>+0500<n><ot>+0500<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>NZDT<n><of>+1200<n><ot>+1300<n><s>19700927T020000<n><r>FREQ=YEARLY;BYMONTH=9;BYDAY=-1SU<n><ed><n><bs><n><tz>NZST<n><of>+1300<n><ot>+1200<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>+03<n><of>+0300<n><ot>+0300<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>+02<n><of>+0000<n><ot>+0200<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>+00<n><of>+0200<n><ot>+0000<n><s>19701025T030000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>+12<n><of>+1200<n><ot>+1200<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+04<n><of>+0400<n><ot>+0400<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700329T000000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701025T000000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>+06<n><of>+0600<n><ot>+0600<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>IST<n><of>+0530<n><ot>+0530<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+09<n><of>+0900<n><ot>+0900<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>CST<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+0530<n><of>+0530<n><ot>+0530<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700329T030000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701025T040000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700328T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SA<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701024T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SA<n><es><n>", "20260119T222047Z<n><bs><n><tz>HKT<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>WIB<n><of>+0700<n><ot>+0700<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>WIT<n><of>+0900<n><ot>+0900<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>IDT<n><of>+0200<n><ot>+0300<n><s>19700327T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1FR<n><ed><n><bs><n><tz>IST<n><of>+0300<n><ot>+0200<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>+0430<n><of>+0430<n><ot>+0430<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>PKT<n><of>+0500<n><ot>+0500<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+0545<n><of>+0545<n><ot>+0545<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+11<n><of>+1100<n><ot>+1100<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>WITA<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>PST<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701025T040000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700329T030000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>KST<n><of>+0900<n><ot>+0900<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+0630<n><of>+0630<n><ot>+0630<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+0330<n><of>+0330<n><ot>+0330<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>JST<n><of>+0900<n><ot>+0900<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>+00<n><of>-0100<n><ot>+0000<n><s>19700329T000000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>-01<n><of>+0000<n><ot>-0100<n><s>19701025T010000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bd><n><tz>WEST<n><of>+0000<n><ot>+0100<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>WET<n><of>+0100<n><ot>+0000<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>-01<n><of>-0100<n><ot>-0100<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>ACST<n><of>+1030<n><ot>+0930<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n><bd><n><tz>ACDT<n><of>+0930<n><ot>+1030<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>AEST<n><of>+1000<n><ot>+1000<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>AEDT<n><of>+1000<n><ot>+1100<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n><bs><n><tz>AEST<n><of>+1100<n><ot>+1000<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>ACST<n><of>+0930<n><ot>+0930<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+0845<n><of>+0845<n><ot>+0845<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+1030<n><of>+1100<n><ot>+1030<n><s>19700405T020000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n><bd><n><tz>+11<n><of>+1030<n><ot>+1100<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>AWST<n><of>+0800<n><ot>+0800<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-06<n><of>-0500<n><ot>-0600<n><s>19700404T220000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SA<n><es><n><bd><n><tz>-05<n><of>-0600<n><ot>-0500<n><s>19700905T220000<n><r>FREQ=YEARLY;BYMONTH=9;BYDAY=1SA<n><ed><n>", "20260119T222047Z<n><bs><n><tz>IST<n><of>+0000<n><ot>+0100<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><es><n><bd><n><tz>GMT<n><of>+0100<n><ot>+0000<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>+13<n><of>+1300<n><ot>+1300<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+14<n><of>+1400<n><ot>+1400<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>+02<n><of>+0200<n><ot>+0200<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-10<n><of>-1000<n><ot>-1000<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-11<n><of>-1100<n><ot>-1100<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-12<n><of>-1200<n><ot>-1200<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-06<n><of>-0600<n><ot>-0600<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-07<n><of>-0700<n><ot>-0700<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-08<n><of>-0800<n><ot>-0800<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-09<n><of>-0900<n><ot>-0900<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>UTC<n><of>+0000<n><ot>+0000<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>BST<n><of>+0000<n><ot>+0100<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>GMT<n><of>+0100<n><ot>+0000<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bd><n><tz>EEST<n><of>+0200<n><ot>+0300<n><s>19700329T020000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n><bs><n><tz>EET<n><of>+0300<n><ot>+0200<n><s>19701025T030000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>MSK<n><of>+0300<n><ot>+0300<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>WET<n><of>+0100<n><ot>+0000<n><s>19701025T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU<n><es><n><bd><n><tz>WEST<n><of>+0000<n><ot>+0100<n><s>19700329T010000<n><r>FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU<n><ed><n>", "20260119T222047Z<n><bs><n><tz>HST<n><of>-1000<n><ot>-1000<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>+1345<n><of>+1245<n><ot>+1345<n><s>19700927T024500<n><r>FREQ=YEARLY;BYMONTH=9;BYDAY=-1SU<n><ed><n><bs><n><tz>+1245<n><of>+1345<n><ot>+1245<n><s>19700405T034500<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n>", "20260119T222047Z<n><bs><n><tz>ChST<n><of>+1000<n><ot>+1000<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>-0930<n><of>-0930<n><ot>-0930<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bs><n><tz>SST<n><of>-1100<n><ot>-1100<n><s>19700101T000000<n><es><n>", "20260119T222047Z<n><bd><n><tz>+12<n><of>+1100<n><ot>+1200<n><s>19701004T020000<n><r>FREQ=YEARLY;BYMONTH=10;BYDAY=1SU<n><ed><n><bs><n><tz>+11<n><of>+1200<n><ot>+1100<n><s>19700405T030000<n><r>FREQ=YEARLY;BYMONTH=4;BYDAY=1SU<n><es><n>"], toplevel: ["Zulu", "WET", "W-SU", "Universal", "UTC", "UCT", "Turkey", "Singapore", "ROK", "ROC", "Portugal", "Poland", "PST8PDT", "PRC", "Navajo", "NZ", "NZ-CHAT", "MST7MDT", "MST", "MET", "Libya", "Kwajalein", "Japan", "Jamaica", "Israel", "Iran", "Iceland", "Hongkong", "HST", "Greenwich", "GMT0", "GMT", "GMT-0", "GMT+0", "GB", "GB-Eire", "Eire", "Egypt", "EST5EDT", "EST", "EET", "Cuba", "CST6CDT", "CET", "US", "Pacific", "Mexico", "Indian", "Europe", "Etc", "Chile", "Canada", "Brazil", "Australia", "Atlantic", "Asia", "Arctic", "Antarctica", "America", "Africa"] };
+  var Z = m;
+  function g(T) {
+    return T.replace(/[^+\-\w]/g, "\\$&");
   }
-  function tzlib_enrich_data(string) {
-    const shortenerMap = {
-      "<br>": "<n>",
-      "TZNAME:": "<tz>",
-      "TZOFFSETFROM:": "<of>",
-      "TZOFFSETTO:": "<ot>",
-      "DTSTART:": "<s>",
-      "RRULE:": "<r>",
-      "BEGIN:DAYLIGHT": "<bd>",
-      "END:DAYLIGHT": "<ed>",
-      "BEGIN:STANDARD": "<bs>",
-      "END:STANDARD": "<es>"
-    };
-    for (const [key, value] of Object.entries(shortenerMap)) {
-      string = string.replaceAll(value, key);
-    }
-    return string;
+  var C = { "<br>": "<n>", "TZNAME:": "<tz>", "TZOFFSETFROM:": "<of>", "TZOFFSETTO:": "<ot>", "DTSTART:": "<s>", "RRULE:": "<r>", "BEGIN:DAYLIGHT": "<bd>", "END:DAYLIGHT": "<ed>", "BEGIN:STANDARD": "<bs>", "END:STANDARD": "<es>" };
+  function O(T) {
+    for (let [u, r] of Object.entries(C)) T = T.replaceAll(r, u);
+    return T;
   }
-  function tzlib_get_ical_block(tzName, jsonType = false) {
-    const tzBlock = tzlib_get_content(tzName);
-    if (tzBlock[1] == null || tzBlock[1] == "") {
-      return "";
-    }
-    const location2 = (function() {
-      if (tzBlock[0] == "") {
-        return tzName;
-      } else {
-        return tzBlock[0];
+  function P(T) {
+    let u = T.db, r = T.toplevel, s2 = (n2, a) => {
+      if (n2 === "") return a;
+      let e = n2.match(/^(\d+)\/(.+)$/);
+      if (e) {
+        let t = Number(e[1]), c = r.find((A, b) => b === t);
+        if (c != null) return `${c}/${e[2]}`;
       }
-    })();
-    const tzidLine = "TZID=" + location2;
-    const output = [
-      "BEGIN:VTIMEZONE\r\nTZID:" + location2 + "\r\nX-LIC-LOCATION:" + location2 + "\r\nLAST-MODIFIED:" + tzBlock[1].replace(/[^\w_\-:,;=+/<br>]/g, "").replace(/<br>/g, "\r\n") + "END:VTIMEZONE",
-      tzidLine
-    ];
-    if (jsonType) {
-      return JSON.stringify(output);
-    }
-    return output;
-  }
-  function tzlib_get_offset(tzName, isoDate, isoTime) {
-    const tzBlock = tzlib_get_content(tzName);
-    if (tzBlock[1] == null || tzBlock[1] == "") {
-      return "";
-    }
-    if (!isoDate.match(/^\d{4}-\d{2}-\d{2}$/)) {
-      console.error("offset calculation failed: date misspelled [-> YYYY-MM-DD]");
-      return "";
-    }
-    if (!isoTime.match(/^\d{2}:\d{2}$/)) {
-      console.error("offset calculation failed: time misspelled [-> hh:mm]");
-      return "";
-    }
-    if (!tzBlock[1].match(/BEGIN:DAYLIGHT/i)) {
-      return tzBlock[1].match(/TZOFFSETTO:([+|-]\d{4})/i)[1];
-    }
-    const dateString = isoDate + "T" + isoTime + ":00";
-    const date = new Date(dateString);
-    const dateYear = date.getFullYear();
-    const dateMonth = date.getMonth() + 1;
-    const dateDay = date.getDate();
-    const dateHour = date.getHours();
-    const timezoneData = tzBlock[1].replace(/[^\w_\-:,;=+/<br>]/g, "").split("<br>");
-    const tzBreakpoints = { 1: {}, 2: {} };
-    let breakpointCount = 0;
-    for (let i = 0; i < timezoneData.length; i++) {
-      if (timezoneData[`${i}`].startsWith("TZOFFSETTO")) {
-        breakpointCount++;
-        tzBreakpoints[`${breakpointCount}`].offset = timezoneData[`${i}`].split(":")[1];
-      }
-      if (timezoneData[`${i}`].startsWith("DTSTART")) {
-        tzBreakpoints[`${breakpointCount}`].hour = parseInt(timezoneData[`${i}`].substr(17, 2));
-      }
-      if (timezoneData[`${i}`].startsWith("RRULE")) {
-        let rruleParts = timezoneData[`${i}`].split(";");
-        let rruleMonth = parseInt(rruleParts[1].split("=")[1]);
-        tzBreakpoints[`${breakpointCount}`].month = parseInt(rruleMonth);
-        tzBreakpoints[`${breakpointCount}`].day = rruleParts[2].split("=")[1];
-      }
-    }
-    if (tzBreakpoints[1].month > tzBreakpoints[2].month) {
-      [tzBreakpoints[1], tzBreakpoints[2]] = [tzBreakpoints[2], tzBreakpoints[1]];
-    }
-    if (dateMonth != tzBreakpoints[1].month && dateMonth != tzBreakpoints[2].month) {
-      if (dateMonth < tzBreakpoints[1].month || dateMonth > tzBreakpoints[2].month) {
-        return tzBreakpoints[2].offset;
-      } else {
-        return tzBreakpoints[1].offset;
-      }
-    }
-    const theCase = (function() {
-      return Object.keys(tzBreakpoints).find((key) => tzBreakpoints[`${key}`].month == dateMonth);
-    })();
-    const helperArrayWeekdays = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
-    const numberDays = new Date(dateYear, dateMonth, 0).getDate();
-    let weekdayCount = new Date(dateYear, dateMonth - 1, 1).getDay();
-    const weekdays2 = { SU: {}, MO: {}, TU: {}, WE: {}, TH: {}, FR: {}, SA: {} };
-    for (let d = 1; d <= numberDays; d++) {
-      const occurence = Object.keys(weekdays2[helperArrayWeekdays[`${weekdayCount}`]]).length + 1;
-      weekdays2[helperArrayWeekdays[`${weekdayCount}`]][`${occurence}`] = d;
-      weekdayCount++;
-      if (weekdayCount == 7) {
-        weekdayCount = 0;
-      }
-    }
-    const actualDay = (function() {
-      if (tzBreakpoints[`${theCase}`].day[0] == "-") {
-        const breakpointWeekday = tzBreakpoints[`${theCase}`].day.substr(2, 2);
-        const dayIndex = Object.keys(weekdays2[`${breakpointWeekday}`]).length + 1 - parseInt(tzBreakpoints[`${theCase}`].day[1]);
-        return weekdays2[`${breakpointWeekday}`][`${dayIndex}`];
-      } else {
-        const breakpointWeekday = tzBreakpoints[`${theCase}`].day.substr(1, 2);
-        return weekdays2[`${breakpointWeekday}`][tzBreakpoints[`${theCase}`].day[0]];
-      }
-    })();
-    if (dateDay > actualDay || dateDay == actualDay && dateHour >= tzBreakpoints[`${theCase}`].hour) {
-      return tzBreakpoints[`${theCase}`].offset;
-    }
-    const fallbackCase = (function() {
-      if (theCase == 1) {
-        return 2;
-      } else {
-        return 1;
-      }
-    })();
-    return tzBreakpoints[`${fallbackCase}`].offset;
-  }
-  var tzlibZoneNames = [];
-  function tzlib_get_timezones(jsonType = false) {
-    if (tzlibZoneNames.length == 0) {
-      tzlibZoneNames = (function() {
-        let namesArr = [];
-        for (const [key, value] of Object.entries(tzlibZonesDB)) {
-          if (typeof value === "object" && !Array.isArray(value)) {
-            for (const [key2, value2] of Object.entries(value)) {
-              if (typeof value2 === "object" && !Array.isArray(value2)) {
-                for (const [key3] of Object.entries(value2)) {
-                  namesArr.push(key + "/" + key2 + "/" + key3);
-                }
-              } else {
-                namesArr.push(key + "/" + key2);
-              }
-            }
-          } else {
-            namesArr.push(key);
-          }
+      return n2;
+    }, i = {};
+    for (let [n2, a] of Object.entries(u)) if (typeof a == "object" && !Array.isArray(a)) {
+      i[`${n2}`] = {};
+      let e = a;
+      for (let [t, c] of Object.entries(e)) if (typeof c == "object" && !Array.isArray(c)) {
+        i[`${n2}`][`${t}`] = {};
+        let A = c;
+        for (let [b, o] of Object.entries(A)) {
+          let l2 = o, d = `${n2}/${t}/${b}`;
+          i[`${n2}`][`${t}`][`${b}`] = [s2(l2[0], d), l2[1]];
         }
-        return namesArr;
-      })();
+      } else {
+        let A = c, b = `${n2}/${t}`;
+        i[`${n2}`][`${t}`] = [s2(A[0], b), A[1]];
+      }
+    } else {
+      let e = a;
+      i[`${n2}`] = [s2(e[0], n2), e[1]];
     }
-    if (jsonType) {
-      return JSON.stringify(tzlibZoneNames);
+    return i;
+  }
+  function D(T) {
+    let u = P(Z), r = T.split("/"), s2;
+    try {
+      if (r.length === 3) {
+        let n2 = u[`${r[0]}`];
+        if (n2 && !Array.isArray(n2)) {
+          let a = n2[`${r[1]}`];
+          a && !Array.isArray(a) && (s2 = a[`${r[2]}`]);
+        }
+      } else if (r.length === 2) {
+        let n2 = u[`${r[0]}`];
+        n2 && !Array.isArray(n2) && (s2 = n2[`${r[1]}`]);
+      } else s2 = u[`${r[0]}`];
+      if (s2 == null || !Array.isArray(s2) || s2.length < 2) throw new Error("Given time zone not valid.");
+      let i = s2;
+      return [i[0], O(Z.details[i[1]])];
+    } catch (e) {
+      return console.error("Given time zone not valid."), "";
     }
-    return tzlibZoneNames;
+  }
+  var h = m;
+  function j(T, u = false) {
+    let r = D(T);
+    if (typeof r == "string" || !r[1] || r[1] === "") return "";
+    let s2 = r, i = (function() {
+      return s2[0] == "" ? T : s2[0];
+    })(), n2 = "TZID=" + i, a = [`BEGIN:VTIMEZONE\r
+TZID:` + i + `\r
+X-LIC-LOCATION:` + i + `\r
+LAST-MODIFIED:` + s2[1].replace(/[^\w\-:,;=+/<>]/g, "").replace(/<br>/g, `\r
+`) + "END:VTIMEZONE", n2];
+    return u ? JSON.stringify(a) : a;
+  }
+  function I(T, u, r) {
+    let s2 = D(T);
+    if (typeof s2 == "string" || s2[1] == null || s2[1] == "") return "";
+    let i = s2;
+    if (!u.match(/^\d{4}-\d{2}-\d{2}$/)) return console.error("offset calculation failed: date misspelled [-> YYYY-MM-DD]"), "";
+    if (!r.match(/^\d{2}:\d{2}$/)) return console.error("offset calculation failed: time misspelled [-> hh:mm]"), "";
+    if (!i[1].match(/BEGIN:DAYLIGHT/i)) {
+      let Y = i[1].match(/TZOFFSETTO:([+|-]\d{4})/i);
+      return Y ? Y[1] : "";
+    }
+    let n2 = u + "T" + r + ":00", a = new Date(n2), e = a.getFullYear(), t = a.getMonth() + 1, c = a.getDate(), A = a.getHours(), b = i[1].replace(/[^\w\-:,;=+/<>]/g, "").split("<br>"), o = { 1: {}, 2: {} }, l2 = 0;
+    for (let Y = 0; Y < b.length; Y++) {
+      let f = b[Y];
+      if (f.startsWith("TZOFFSETTO") && (l2++, o[`${l2}`] && (o[`${l2}`].offset = f.split(":")[1])), f.startsWith("DTSTART") && o[`${l2}`] && (o[`${l2}`].hour = parseInt(f.substr(17, 2))), f.startsWith("RRULE")) {
+        let z = f.split(";"), k = z[1].split("=")[1], L = parseInt(k);
+        o[`${l2}`] && (o[`${l2}`].month = L, o[`${l2}`].day = z[2].split("=")[1]);
+      }
+    }
+    o[1].month !== void 0 && o[2].month !== void 0 && o[1].month > o[2].month && ([o[1], o[2]] = [o[2], o[1]]);
+    let d = o[1], E = o[2];
+    if (d.month === void 0 || E.month === void 0 || d.offset === void 0 || E.offset === void 0) return "";
+    if (t != d.month && t != E.month) return t < d.month || t > E.month ? E.offset : d.offset;
+    let B = (function() {
+      return Object.keys(o).find((Y) => o[`${Y}`].month == t);
+    })();
+    if (!B) return E.offset;
+    let M = o[`${B}`], y = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"], _ = new Date(e, t, 0).getDate(), S = new Date(e, t - 1, 1).getDay(), R = { SU: {}, MO: {}, TU: {}, WE: {}, TH: {}, FR: {}, SA: {} };
+    for (let Y = 1; Y <= _; Y++) {
+      let f = y[S], z = Object.keys(R[`${f}`]).length + 1;
+      R[`${f}`][`${z}`] = Y, S++, S == 7 && (S = 0);
+    }
+    let p = (function() {
+      if (!M.day) return 0;
+      if (M.day[0] == "-") {
+        let Y = M.day.substr(2, 2), f = Object.keys(R[`${Y}`]).length + 1 - parseInt(M.day[1]);
+        return R[`${Y}`][`${f}`];
+      } else {
+        let Y = M.day.substr(1, 2);
+        return R[`${Y}`][M.day[0]];
+      }
+    })();
+    if (c > p || c == p && A >= (M.hour || 0)) return M.offset || "";
+    let N = (function() {
+      return B == "1" ? "2" : "1";
+    })();
+    return o[`${N}`].offset || "";
+  }
+  function $(T = false) {
+    let u = [], s2 = ((n2) => {
+      let a = {};
+      for (let [e, t] of Object.entries(n2)) if (typeof t == "object" && !Array.isArray(t)) {
+        a[`${e}`] = {};
+        let c = t;
+        for (let [A, b] of Object.entries(c)) if (typeof b == "object" && !Array.isArray(b)) {
+          a[`${e}`][`${A}`] = {};
+          let o = b;
+          for (let [l2, d] of Object.entries(o)) {
+            let E = d, B = E[0].replace(new RegExp(`^${g(e)}/${g(A)}/`), `${h.toplevel.indexOf(e)}/${A}/`);
+            a[`${e}`][`${A}`][`${l2}`] = [B, E[1]];
+          }
+        } else {
+          let o = b, l2 = o[0].replace(new RegExp(`^${g(e)}/`), `${h.toplevel.indexOf(e)}/`);
+          a[`${e}`][`${A}`] = [l2, o[1]];
+        }
+      } else {
+        let c = t, A = c[0].replace(new RegExp(`^${g(e)}/`), `${h.toplevel.indexOf(e)}/`);
+        a[`${e}`] = [A, c[1]];
+      }
+      return a;
+    })(h.db), i = (n2, a = "") => {
+      for (let [e, t] of Object.entries(n2)) typeof t == "object" && !Array.isArray(t) ? i(t, a + e + "/") : u.push(a + e);
+    };
+    return i(s2), T ? JSON.stringify(u) : u;
   }
 
   // node_modules/add-to-calendar-button/dist/module/index.js
-  var atcbVersion = "2.13.5";
+  var atcbVersion = "2.13.8";
   var atcbCssTemplate = {
     "default": ':host{width:fit-content;--base-font-size-l:16px;--base-font-size-m:16px;--base-font-size-s:16px;--font:arial,helvetica,"Twemoji Mozilla","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","EmojiOne Color","Android Emoji",sans-serif;--accent-color:#1e90ff;--wrapper-padding:1px;--buttonslist-gap:5px;--btn-background:#f5f5f5;--btn-hover-background:#fff;--btn-hover-border:#d2d2d2;--btn-border:#d2d2d2;--btn-border-radius:6px;--btn-padding-x:1em;--btn-padding-y:.65em;--btn-font-weight:600;--btn-text:#333;--btn-hover-text:#000;--btn-shadow:rgb(0 0 0 / 08%) 0 4px 14px -2px,rgb(0 0 0 / 12%) 0 2px 6px -1px;--btn-hover-shadow:rgb(0 0 0 / 14%) 0 5px 16px -2px,rgb(0 0 0 / 14%) 0 3px 8px -2px;--btn-active-shadow:rgb(0 0 0 / 16%) 0 6px 17px -2px,rgb(0 0 0 / 14%) 0 4px 8px -2px;--list-background:#f5f5f5;--list-hover-background:#fff;--list-text:#333;--list-font-weight:400;--list-hover-text:#000;--list-close-background:#e5e5e5;--list-close-text:#777;--list-border-radius:6px;--list-padding:.8em;--list-shadow:rgb(0 0 0 / 12%) 0 4px 18px -2px,rgb(0 0 0 / 14%) 0 2px 8px -1px;--list-modal-shadow:rgb(0 0 0 / 18%) 0 4px 34px -3px,rgb(0 0 0 / 14%) 0 2px 12px -2px;--input-border-radius:6px;--input-background:#fff;--status-active-text:#fff;--form-error:#c5372c;--form-success:#338a36;--modal-text:#000;--modal-text-align:center;--modal-text-align-rtl:center;--modal-background:#f5f5f5;--modal-border-radius:6px;--modal-shadow:drop-shadow(3px 6px 28px rgb(0 0 0 / 30%));--modal-btn-bar:#c6c8cd;--modal-btn-background:#f5f5f5;--modal-btn-secondary-background:#e2e1e6;--modal-btn-hover-background:#fff;--modal-btn-border:#d2d2d2;--modal-btn-font-weight:600;--modal-btn-text:#2e2e2e;--modal-btn-hover-text:#161616;--modal-btn-secondary-text:#666567;--modal-btn-shadow:rgb(0 0 0 / 08%) 0 4px 14px -2px,rgb(0 0 0 / 08%) 0 2px 6px -1px;--modal-btn-hover-shadow:rgb(0 0 0 / 14%) 0 5px 17px -2px,rgb(0 0 0 / 12%) 0 3px 8px -2px;--modal-headline-text-align:center;--modal-headline-text-transform:none;--date-btn-text:#1d1d1e;--date-btn-text-secondary:#3a3a3f;--date-btn-cal-day-text:#fff;--date-btn-cal-month-text:#d3d2d7;--date-btn-cal-background:#313132;--date-btn-background:#eae9ed;--date-btn-hover-background:#fff;--date-btn-headline-line-clamp:1;--date-btn-shadow:rgb(0 0 0 / 08%) 0 4px 14px -2px,rgb(0 0 0 / 12%) 0 2px 6px -1px;--date-btn-hover-shadow:rgb(0 0 0 / 14%) 0 5px 16px -2px,rgb(0 0 0 / 14%) 0 3px 8px -2px;--checkmark-background:drop-shadow(0 0 4px #fff);--overlay-background:rgb(20 20 20 / 25%);--icon-ms365-color:#ea3e23;--icon-yahoo-color:#5f01d1;--icon-filter:none}:host(.atcb-dark){--btn-background:#2e2e2e;--btn-hover-background:#373737;--btn-hover-border:#3d3d3d;--btn-border:#3d3d3d;--btn-text:#dedede;--btn-hover-text:#f1f1f1;--btn-shadow:rgb(255 255 255 / 3%) -3px -3px 34px -1px,rgb(0 0 0 / 10%) 2px 3px 14px -2px,rgb(0 0 0 / 12%) 1px 2px 8px -1px;--btn-hover-shadow:rgb(0 0 0 / 18%) 2px 5px 24px -4px,rgb(0 0 0 / 14%) 1px 2px 10px -2px;--btn-active-shadow:rgb(0 0 0 / 20%) 2px 5px 24px -4px,rgb(0 0 0 / 14%) 1px 2px 10px -2px;--list-background:#2e2e2e;--list-hover-background:#373737;--list-text:#dedede;--list-hover-text:#f1f1f1;--list-close-background:#282828;--list-close-text:#777;--list-shadow:rgb(0 0 0 / 12%) 0 4px 24px -2px,rgb(0 0 0 / 14%) 0 2px 10px -1px;--list-modal-shadow:rgb(0 0 0 / 18%) -1px 3px 34px 2px;--modal-text:#f1f1f1;--modal-background:#242424;--modal-shadow:drop-shadow(3px 6px 28px rgb(0 0 0 / 30%));--modal-btn-bar:#38383a;--modal-btn-background:#181819;--modal-btn-secondary-background:#2e2d30;--modal-btn-hover-background:#434246;--modal-btn-border:#434246;--modal-btn-text:#dbdbdb;--modal-btn-hover-text:#fff;--modal-btn-secondary-text:#b8b8b8;--modal-btn-shadow:rgb(255 255 255 / 3%) -2px -2px 14px,rgb(0 0 0 / 10%) 3px 3px 14px -2px,rgb(0 0 0 / 12%) 1px 2px 10px -1px;--input-background:#434246;--status-active-text:#000;--form-error:#db8680;--form-success:#99de9c;--date-btn-text:#ebebf0;--date-btn-text-secondary:#b5b5bd;--date-btn-cal-day-text:#101010;--date-btn-cal-month-text:#3e3e3f;--date-btn-cal-background:#c7c7cd;--date-btn-background:#363636;--date-btn-hover-background:#474747;--date-btn-shadow:rgb(0 0 0 / 10%) 0 0 24px -2px,rgb(0 0 0 / 12%) 1px 2px 8px -1px;--checkmark-background:drop-shadow(0 0 4px #0a0a0a);--overlay-background:rgb(20 20 20 / 60%);--icon-ms365-color:#ea3e23;--icon-yahoo-color:#bebebe;--icon-filter:grayscale(.2)}.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-l)}@media (width <= 991px){.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-m)}}@media (width <= 575px){.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-s)}}.atcb-initialized.atcb-buttons-list{gap:var(--buttonslist-gap)}.atcb-button-wrapper{display:block;padding:var(--wrapper-padding);position:relative}.atcb-button{align-items:center;background-color:var(--btn-background);border:1px solid var(--btn-border);border-radius:var(--btn-border-radius);box-shadow:var(--btn-shadow);box-sizing:content-box;color:var(--btn-text);cursor:pointer;display:flex;font-family:var(--font);font-size:1em;font-weight:var(--btn-font-weight);justify-content:center;line-height:1.5em;margin:.13em;max-width:300px;padding:var(--btn-padding-y) var(--btn-padding-x);position:relative;text-align:center;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:auto;z-index:1}.atcb-button:not(.atcb-no-text,.atcb-modal-style,.atcb-dropoverlay,.atcb-single){min-width:calc(11.6em - 2 * var(--btn-padding-x))}.atcb-button.atcb-no-text{display:flex;place-content:center center;align-items:center;height:3em;width:3em;padding:0}.atcb-rtl .atcb-button{direction:rtl;text-align:right}.atcb-button:focus-visible{outline:2px solid var(--accent-color)}.atcb-button:not([disabled]):focus,.atcb-button:not([disabled]):hover{background-color:var(--btn-hover-background);border-color:var(--btn-hover-border);box-shadow:var(--btn-hover-shadow);color:var(--btn-hover-text);margin:0;padding:calc(var(--btn-padding-y) + .13em) calc(var(--btn-padding-x) + .13em)}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay){z-index:15000000}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay),.atcb-button.atcb-single:not([disabled]):focus,.atcb-button.atcb-single:not([disabled]):hover{background-color:var(--btn-hover-background);border-color:var(--btn-hover-border);box-shadow:var(--btn-active-shadow);color:var(--btn-hover-text);margin:0;padding:calc(var(--btn-padding-y) + .13em) calc(var(--btn-padding-x) + .13em)}.atcb-button:not([disabled]).atcb-no-text.atcb-active,.atcb-button:not([disabled]).atcb-no-text:focus,.atcb-button:not([disabled]).atcb-no-text:hover{height:3.26em;width:3.26em;padding:0!important}.atcb-button.atcb-active.atcb-dropoverlay{z-index:14000090}.atcb-icon{flex-grow:0;flex-shrink:0;height:1em;line-height:1em;margin-right:.8em;width:1em}.atcb-rtl .atcb-icon{margin-right:0;margin-left:.8em}.atcb-no-text .atcb-icon{margin-right:0;margin-left:0}.atcb-icon svg{fill:currentcolor;height:100%;width:100%}.atcb-text{overflow-wrap:anywhere}.atcb-dropdown-anchor{bottom:4px;height:1px;width:100%;opacity:0;position:absolute}.atcb-list-wrapper{box-sizing:border-box;font-weight:var(--list-font-weight);padding:0 4px;position:absolute;z-index:14000090}.atcb-list-wrapper.atcb-dropoverlay{z-index:15000000;max-width:max-content}.atcb-list{background-color:var(--list-background);border-radius:0 0 var(--list-border-radius) var(--list-border-radius);box-sizing:border-box;box-shadow:var(--list-shadow);color:var(--list-text);display:block;font-family:var(--font);min-width:100%;position:relative;user-select:none;-webkit-user-select:none;width:fit-content}.atcb-list-item{align-items:center;background-color:var(--list-background);box-sizing:border-box;cursor:pointer;display:flex;font-size:1em;line-height:1.75em;padding:var(--list-padding);text-align:left;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.atcb-rtl .atcb-list-item{direction:rtl;text-align:right}.atcb-list-item:hover{background-color:var(--list-hover-background);color:var(--list-hover-text)}.atcb-list-item:focus-visible{background-color:var(--list-hover-background);color:var(--accent-color);outline:0}.atcb-list-item:last-child{border-radius:0 0 var(--list-border-radius) var(--list-border-radius)}.atcb-dropup .atcb-list-item:last-child{border-radius:0;padding-bottom:calc(var(--list-padding) + .45em)}.atcb-dropoverlay .atcb-list .atcb-list-item:first-child,.atcb-dropup .atcb-list,.atcb-dropup .atcb-list-item:first-child,.atcb-list.atcb-modal .atcb-list-item:first-child{border-radius:var(--list-border-radius) var(--list-border-radius) 0 0}.atcb-dropoverlay .atcb-list .atcb-list-item:only-child,.atcb-list.atcb-modal .atcb-list-item:only-child{border-radius:var(--list-border-radius)}.atcb-list.atcb-generated-button:not(.atcb-modal) .atcb-list-item:first-child{padding-top:calc(var(--list-padding) + .45em)}.atcb-dropoverlay .atcb-list.atcb-generated-button:not(.atcb-modal) .atcb-list-item:first-child,.atcb-dropup .atcb-list.atcb-generated-button:not(.atcb-modal) .atcb-list-item:first-child{padding-top:var(--list-padding)}.atcb-dropoverlay .atcb-list,.atcb-list.atcb-modal{border-radius:var(--list-border-radius)}.atcb-list.atcb-modal{box-shadow:var(--list-modal-shadow)}.atcb-list-item .atcb-icon{margin:0 auto}.atcb-list-item .atcb-icon+.atcb-text{margin-left:.7em;width:100%}.atcb-rtl .atcb-list-item .atcb-icon+.atcb-text{margin-left:0;margin-right:.7em}.atcb-list-item-close{background-color:var(--list-close-background)}.atcb-list-item.atcb-list-item-close:not(:focus-visible){color:var(--list-close-text)}.atcb-list-item-close svg{fill:currentcolor}.atcb-modal{display:block;margin:auto;width:auto;min-width:auto;position:relative;z-index:14000090}.atcb-modal-box{filter:var(--modal-shadow);color:var(--modal-text);cursor:default;box-sizing:border-box;font-family:var(--font);line-height:1.5em;text-align:var(--modal-text-align);user-select:none;-webkit-user-select:none;touch-action:manipulation;width:100%;margin-bottom:20px;-webkit-tap-highlight-color:transparent}@media (width > 575px){.atcb-modal-box{width:32em}}.atcb-modal-box.atcb-rtl{text-align:var(--modal-text-align-rtl);direction:rtl;padding:1.25em 1em 1.25em 2em}.atcb-modal-icon{height:2.5em;width:2.5em;border-radius:100%;background-color:var(--modal-background);padding:1.75em;margin:auto}.atcb-modal-icon svg{fill:currentcolor;height:100%;width:100%}.atcb-modal-headline{background-color:var(--modal-background);border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;font-size:1.3em;font-weight:600;line-height:1.5em;padding:1.8em 1.5em 1.3em;text-transform:var(--modal-headline-text-transform);text-align:var(--modal-headline-text-align)}.atcb-modal-icon+.atcb-modal-headline{margin-top:-2.6em;padding-top:2.6em}.atcb-modal-content{background-color:var(--modal-background);font-size:1em;padding:.3em 2em 2.2em}.atcb-modal-content ol,.atcb-modal-content ul{margin:1em auto;text-align:left;width:fit-content}.atcb-rtl .atcb-modal-content ol,.atcb-rtl .atcb-modal-content ul{text-align:right}.atcb-modal-content-subevents{margin:auto;width:fit-content}.atcb-modal-icon+.atcb-modal-content{border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;margin-top:-2.6em;padding-top:2.6em}@media (width <= 575px){.atcb-modal-headline{padding:1.8em 1em 1em}.atcb-modal-content{padding:.3em 1.5em 1.5em}.atcb-modal-icon+.atcb-modal-content{padding-top:1.8em}}.atcb-modal-buttons{background-color:var(--modal-btn-bar);border-radius:0 0 var(--modal-border-radius) var(--modal-border-radius);box-sizing:border-box;padding:.6em;text-align:center;width:100%;display:flex;justify-content:center;flex-flow:row-reverse wrap;align-items:center}a.atcb-modal-btn,button.atcb-modal-btn{background-color:var(--modal-btn-secondary-background);border:0;border-radius:var(--btn-border-radius);box-shadow:var(--modal-btn-shadow);color:var(--modal-btn-secondary-text);cursor:pointer;display:inline-block;font-family:var(--font);font-size:.9em;font-weight:var(--modal-btn-font-weight);line-height:1em;margin:.625em;padding:1em 1.25em;position:relative;text-align:center;text-decoration:none;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}a.atcb-modal-btn.btn-small,button.atcb-modal-btn.btn-small{padding:.6em .8em}a.atcb-modal-btn.atcb-modal-btn-primary,button.atcb-modal-btn.atcb-modal-btn-primary{background-color:var(--modal-btn-background);color:var(--modal-btn-text)}a.atcb-modal-btn.atcb-modal-btn-border,button.atcb-modal-btn.atcb-modal-btn-border{border:1px solid var(--modal-btn-border)}a.atcb-modal-btn:focus-visible,button.atcb-modal-btn:focus-visible{background-color:var(--modal-btn-hover-background);outline:2px solid var(--accent-color)}a.atcb-modal-btn:disabled,button.atcb-button:disabled,button.atcb-modal-btn:disabled,button.atcb-subevent-btn:disabled{cursor:not-allowed;opacity:.75;filter:brightness(95%);border-style:dashed;box-shadow:none}a.atcb-modal-btn:not([disabled]):hover,button.atcb-modal-btn:not([disabled]):hover{background-color:var(--modal-btn-hover-background);box-shadow:var(--modal-btn-hover-shadow);color:var(--modal-btn-hover-text);text-decoration:none}.atcb-subevent-btn{display:flex;align-items:flex-start;cursor:pointer;font-family:var(--font);font-size:1em;box-shadow:var(--date-btn-shadow);background-color:var(--date-btn-background);border:0;border-radius:7px 4px 4px 7px;padding:0;margin:0;touch-action:manipulation;position:relative;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:100%}.atcb-subevent-btn:hover{align-items:center}.atcb-subevent-btn:focus,.atcb-subevent-btn:hover{background-color:var(--date-btn-hover-background);box-shadow:var(--date-btn-hover-shadow)}.atcb-subevent-btn:focus-visible{outline:2px solid var(--accent-color)}.atcb-subevent-btn+.atcb-subevent-btn{margin-top:30px}.atcb-date-btn-left{border-radius:4px 0 0 4px;align-self:stretch;background-color:var(--date-btn-cal-background);padding:.7em .8em .8em;width:2.7em;align-items:center;display:flex;flex-direction:column;flex-shrink:0}.atcb-rtl .atcb-date-btn-left{border-radius:0 4px 4px 0}.atcb-subevent-btn:hover .atcb-date-btn-left{opacity:.8}.atcb-date-btn-day{color:var(--date-btn-cal-day-text);font-weight:400;font-size:2em;word-break:keep-all;padding-bottom:.1em}.atcb-initialized[lang=ja] .atcb-date-btn-day,.atcb-initialized[lang=ko] .atcb-date-btn-day,.atcb-initialized[lang=zh] .atcb-date-btn-day{font-size:1.3em}.atcb-date-btn-month{color:var(--date-btn-cal-month-text);font-weight:600;font-size:1em}.atcb-date-btn-right{position:relative;color:var(--date-btn-text);min-width:13.5em;overflow-wrap:anywhere}.atcb-subevent-btn .atcb-date-btn-right{width:100%}.atcb-date-btn-details{opacity:1;padding:.7em .8em;text-align:left}.atcb-rtl .atcb-date-btn-details{text-align:right}.atcb-date-btn-hover{position:absolute;top:0;left:0;width:100%;opacity:0;height:100%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1em;padding:.4em .7em;box-sizing:border-box}.atcb-subevent-btn:hover .atcb-date-btn-details{opacity:0}.atcb-subevent-btn:hover .atcb-date-btn-hover{opacity:1}.atcb-date-btn-headline{font-weight:600;font-size:.9em;margin-bottom:.5em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:var(--date-btn-headline-line-clamp);line-clamp:var(--date-btn-headline-line-clamp)}.atcb-date-btn-content{display:flex;align-items:flex-start;font-size:.8em;color:var(--date-btn-text-secondary)}.atcb-date-btn-content.atcb-date-btn-cancelled{color:var(--form-error);font-weight:700}.atcb-date-btn-content-location{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.atcb-date-btn-content-icon{display:inline-block;height:.9em;margin:.075em .4em 0 0;width:.9em;flex-shrink:0}.atcb-rtl .atcb-date-btn-content-icon{margin-right:0;margin-left:.4em}.atcb-initialized[lang=ja] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon,.atcb-initialized[lang=ko] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon,.atcb-initialized[lang=zh] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon{margin-top:.15em}.atcb-date-btn-content-icon svg{height:100%;fill:currentcolor;width:100%}.atcb-date-btn-content+.atcb-date-btn-content{margin-top:.3em;padding-right:.6em}.atcb-date-btn-content-text span:not(.atcb-icon-ical){padding-right:.3em;display:inline-block}.atcb-date-btn-plus{position:absolute;border-radius:4px 0;bottom:0;right:0;background:var(--date-btn-cal-background);color:var(--date-btn-cal-day-text);display:flex;font-size:.9em;font-weight:400;height:1em;width:1em;padding:.1em;justify-content:center;align-items:center}.atcb-button:focus-visible .atcb-date-btn-plus,.atcb-subevent-btn:focus-visible .atcb-date-btn-plus{background-color:var(--accent-color)}.atcb-checkmark{display:none}.atcb-saved .atcb-checkmark{box-sizing:content-box;color:var(--btn-text);display:block;position:absolute;top:-.9em;right:-.5em;padding:.5em;border-radius:100%;height:1.2em}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay) .atcb-checkmark,.atcb-button.atcb-single:focus .atcb-checkmark,.atcb-button.atcb-single:hover .atcb-checkmark{top:-.77em;right:-.37em}.atcb-checkmark svg{height:100%;filter:var(--checkmark-background);width:auto}#atcb-bgoverlay{backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);background-color:var(--overlay-background);border:0;box-sizing:border-box;display:flex;height:calc(100vh + 100px);inset-inline:0;left:0;right:0;top:0;min-height:100%;min-width:100%;overflow-y:auto;padding:20px 20px 130px;position:fixed;width:100vw;z-index:14000000}#atcb-bgoverlay:not(dialog){animation:atcb-bgoverlay-animate .2s ease 0s 1 normal forwards;opacity:0}#atcb-bgoverlay.atcb-no-bg{animation:none;backdrop-filter:none;-webkit-backdrop-filter:none;opacity:1;background-color:transparent}@keyframes atcb-bgoverlay-animate{0%{opacity:0}100%{opacity:1}}.atcb-icon-outlookcom,.atcb-icon.atcb-icon-ms365{padding-bottom:.05em}.atcb-icon.atcb-icon-apple,.atcb-icon.atcb-icon-ical{padding-bottom:.15em}.atcb-icon.atcb-icon-trigger{padding-bottom:.15em}.atcb-icon.atcb-icon-rsvp{height:1.5em;width:1.5em}.atcb-icon.atcb-icon-apple svg{fill:currentcolor}.atcb-icon.atcb-icon-ical svg{fill:currentcolor}.atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-ms365-color)}.atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-yahoo-color)}.atcb-icon.atcb-icon-google svg,.atcb-icon.atcb-icon-msteams svg,.atcb-icon.atcb-icon-outlookcom svg{filter:var(--icon-filter)}.rsvp-inline-wrapper{filter:none;min-width:100%;margin-bottom:0}.atcb-modal-content.no-headline{border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;padding-top:1.8em}.rsvp-inline-wrapper .atcb-modal-content,.rsvp-inline-wrapper .atcb-modal-headline,.rsvp-inline-wrapper.atcb-modal-box{background-color:transparent;border-radius:0;box-sizing:border-box;padding:0;width:100%}.rsvp-inline-wrapper .atcb-modal-headline{padding-bottom:1.5em}.pro{text-align:center}.pro a:not(.atcb-modal-btn),.pro a:not(.atcb-modal-btn):active,.pro a:not(.atcb-modal-btn):visited{color:var(--modal-btn-text);text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--accent-color)}.pro a:not(.atcb-modal-btn):hover{color:var(--accent-color);text-decoration:none}.pro .pro-share-buttons{display:flex;flex-wrap:wrap;justify-content:center}.pro #rsvp-atcb{display:flex;flex-wrap:wrap;gap:.4em;justify-content:center}.pro-form{text-align:left}.pro-form:not(.no-intro){border-top:1px solid var(--modal-btn-border);margin-top:1.5em;padding-top:1.5em}.pro-form.no-intro:not(.no-headline){padding-top:.5em}.pro-field+.pro-field{padding-top:1.3em}.pro-field-type-label+.pro-field-type-radio{padding-top:0}.pro-field-type-checkbox,.pro-field-type-radio div{align-items:center;display:flex}.pro-field-type-checkbox input,.pro-field-type-radio input{cursor:pointer}.pro-field label{display:block;font-size:.9em;opacity:.7}.pro-field-type-checkbox label,.pro-field-type-radio label{cursor:pointer;opacity:.8;padding-left:.3em}.pro-field input[type=email],.pro-field input[type=number],.pro-field input[type=text]{background-color:var(--input-background);border:1px solid var(--modal-btn-border);border-radius:var(--input-border-radius);box-sizing:border-box;caret-color:var(--accent-color);color:var(--modal-text);font-size:.9em;opacity:.8;padding:.7em;transition:all .1s ease-in-out;width:100%}.pro-field input[type=checkbox],.pro-field input[type=radio]{accent-color:var(--accent-color);height:1.2rem;opacity:.8;transition:all .1s ease-in-out;width:1.2em}.pro-field input:disabled,.pro-field input:disabled+label{cursor:not-allowed;opacity:.75;filter:brightness(95%)}.pro-field input:not([disabled]):hover{opacity:1}.pro-field input[type=email]:focus,.pro-field input[type=number]:focus,.pro-field input[type=text]:focus{border-color:var(--accent-color);outline:1px solid var(--accent-color)}.pro-field input[type=checkbox]:focus,.pro-field input[type=radio]:focus{outline-color:var(--accent-color);outline-width:2px}#submit-error{color:var(--form-error);display:none;font-weight:700;padding-top:1.5em;text-align:center}.pro-form.form-error #submit-error{display:block}.pro-field input.error{accent-color:var(--form-error);border:2px solid var(--form-error)}.pro-field input.error+label,.pro-field:has(input.error) label{color:var(--form-error);opacity:1}#rsvp-status-group{border-bottom:1px solid var(--modal-btn-border);font-weight:700;margin-bottom:1.5em;padding-bottom:2em;text-align:center}#rsvp-status-group .pro-field{align-items:center;display:flex;flex-wrap:wrap;gap:3%;justify-content:center;margin-top:1em}@media (width <= 575px){#rsvp-status-group .pro-field{flex-direction:column;gap:1.2em}#rsvp-status-group .pro-field div{width:80%}}#rsvp-status-group .pro-field div{min-width:28%;position:relative}#rsvp-status-group input{opacity:0;position:absolute;top:0;left:0;height:100%;width:100%;margin:0;cursor:pointer}#rsvp-status-group label{align-items:center;border:1px solid var(--modal-btn-text);border-radius:var(--input-border-radius);box-shadow:var(--btn-shadow);color:var(--modal-btn-text);display:flex;flex-direction:column;font-weight:700;text-transform:uppercase;justify-content:center;opacity:.6;padding:.8em;transition:all .1s ease-in-out;width:100%}#rsvp-status-group label.status-confirmed{border-color:var(--form-success);color:var(--form-success)}#rsvp-status-group label.status-declined{border-color:var(--form-error);color:var(--form-error)}#rsvp-status-group input:checked+label{background-color:var(--modal-text);box-shadow:var(--btn-hover-shadow);color:var(--status-active-text);opacity:1;transform:scale(1.08)}#rsvp-status-group input:focus-visible+label{outline:2px solid var(--accent-color);outline-offset:2px}#rsvp-status-group input:not([disabled])+label:hover,#rsvp-status-group input:not([disabled]):hover+label{box-shadow:var(--btn-hover-shadow);opacity:1;transform:scale(1.08)}#rsvp-status-group input:checked+label.status-confirmed{background-color:var(--form-success)}#rsvp-status-group input:checked+label.status-declined{background-color:var(--form-error)}#rsvp-success-msg,#rsvp-success-msg-demo,#rsvp-success-msg-doi,#rsvp-success-msg-email,#ty-success-msg{display:none;font-weight:700;line-height:1.6em;padding-top:.5em;text-align:center}#rsvp-success-msg,#rsvp-success-msg-demo,#ty-success-msg{padding:1.5em 0}#rsvp-success-msg-demo,#rsvp-success-msg-email{color:var(--form-success)}#rsvp-success-msg-doi{color:var(--form-error);padding-top:1em;font-size:.8em}#pro-form-submit{display:block;margin:auto;min-width:150px}.pro-form-fine{font-size:.8em;margin:.5em auto 1em;opacity:.5;text-align:center}.pro-form.form-error .pro-form-fine{opacity:0}.pro-waiting{background-color:var(--modal-btn-background);border:1px solid var(--modal-btn-border);border-radius:var(--btn-border-radius);box-sizing:border-box;color:var(--modal-btn-text);cursor:wait;display:none;line-height:.5em;margin:auto;min-width:150px;padding:.5em 1.25em 1.2em;text-align:center;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:fit-content}@media (width > 575px){#pro-form-submit,.pro-waiting{min-width:200px}}.pro-waiting span:not(.atcb-icon-ical){animation-name:blink;animation-duration:1s;animation-iteration-count:infinite;animation-fill-mode:both;font-size:2.5em}.pro-field label span:not(.atcb-icon-ical){color:var(--form-error);font-weight:700;padding-left:2px}.pro-waiting span:not(.atcb-icon-ical):nth-child(2){animation-delay:.15s}.pro-waiting span:not(.atcb-icon-ical):nth-child(3){animation-delay:.3s}@keyframes blink{0%{opacity:.2}20%{opacity:1}100%{opacity:.2}}.pro #rsvp-sent-content{align-items:center;display:flex;flex-direction:column;gap:1.5em}#rsvp-status-group span{color:inherit}.atcb-modal-content .pro p:not(.pro-form-fine){margin:0}.atcb-modal-content .pro p.pro-pt{margin-top:1.5em}.atcb-modal-content .pro .pro-field p{font-size:.9em}.pro .btn-flex{align-items:center;display:flex}.pro .atcb-modal-btn svg{fill:none;height:1.5em;margin-right:.5em;stroke:currentcolor;width:auto}#atcb-reference{box-sizing:border-box;color:#000;filter:drop-shadow( 1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow( 0 1px 0 #fff) drop-shadow( 0 -1px 0 #fff);height:auto;padding:8px 0;text-align:center;transform:translate3d(0,0,0);width:100%;z-index:15000000}#atcb-reference.fixed-ref{position:fixed;bottom:10px;right:40px;width:auto}#atcb-reference.atcb-dropup{position:absolute;margin-top:-1px}.atcb-modal-host-initialized #atcb-reference.atcb-dropup{text-align:left}:host(.atcb-dark) #atcb-reference{color:#fff;filter:drop-shadow( 1px 0 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow( 0 1px 0 #000) drop-shadow( 0 -1px 0 #000)}#atcb-reference a,#atcb-reference a:active,#atcb-reference a:visited{opacity:.8;width:150px;max-width:100%;margin:auto;display:inline-block;text-decoration:none}#atcb-reference a:hover{opacity:1;text-decoration:none}#atcb-reference svg{fill:var(--list-text)}',
     "simple": ':host{width:fit-content;--base-font-size-l:16px;--base-font-size-m:16px;--base-font-size-s:16px;--font:arial,helvetica,"Twemoji Mozilla","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","EmojiOne Color","Android Emoji",sans-serif;--accent-color:#1e90ff;--wrapper-padding:1px;--buttonslist-gap:5px;--btn-background:#fff;--btn-hover-background:#283768;--btn-hover-border:#333;--btn-border-width:1px;--btn-border:#333;--btn-border-radius:0;--btn-padding-x:1.1em;--btn-padding-y:.65em;--btn-font-weight:600;--btn-text:#000;--btn-hover-text:#fff;--list-background:#fff;--list-hover-background:#283768;--list-text:#333;--list-font-weight:400;--list-hover-text:#fff;--list-close-background:#e5e5e5;--list-close-text:#777;--list-border-width:1px;--list-border:#333;--list-border-radius:0px;--list-padding:.8em 1.2em;--list-min-width:100%;--list-modal-shadow:rgb(0 0 0 / 12%) 0 4px 33px -3px,rgb(0 0 0 / 10%) 0 2px 8px -2px;--modal-text:#000;--modal-text-align:center;--modal-text-align-rtl:center;--modal-background:#f5f5f5;--modal-border-radius:0px;--modal-shadow:drop-shadow(3px 6px 28px rgb(0 0 0 / 14%));--modal-btn-bar:#c6c8cd;--modal-btn-background:#fff;--modal-btn-secondary-background:#e2e1e6;--modal-btn-hover-background:#eef4f6;--modal-btn-border:#d2d2d2;--modal-btn-border-width:1px;--modal-btn-font-weight:600;--modal-btn-text:#2e2e2e;--modal-btn-hover-text:#161616;--modal-btn-secondary-text:#666567;--modal-headline-text-align:center;--modal-headline-text-transform:none;--input-border-radius:3px;--input-background:#fff;--status-active-text:#fff;--form-error:#c5372c;--form-success:#338a36;--date-btn-text:#1d1d1e;--date-btn-text-secondary:#3a3a3f;--date-btn-cal-day-text:#fff;--date-btn-cal-month-text:#d3d2d7;--date-btn-cal-background:#313132;--date-btn-background:#eae9ed;--date-btn-hover-background:#fff;--date-btn-headline-line-clamp:1;--checkmark-background:drop-shadow(0 0 3px #fff);--overlay-background:rgb(20 20 20 / 40%);--icon-ms365-color:#ea3e23;--icon-hover-ms365-color:#fff;--icon-yahoo-color:#5f01d1;--icon-hover-yahoo-color:#fff;--icon-filter:none}:host(.atcb-dark){--btn-background:#182244;--btn-hover-background:#283768;--btn-hover-border:#283768;--btn-border:#283768;--btn-text:#dedede;--btn-hover-text:#f1f1f1;--list-background:#182244;--list-hover-background:#283768;--list-text:#dedede;--list-hover-text:#f1f1f1;--list-close-background:#121213;--list-close-text:#cacaca;--list-border:#283768;--list-modal-shadow:rgb(0 0 0 / 14%) -1px 3px 33px 2px;--modal-text:#f1f1f1;--modal-background:#242424;--modal-shadow:drop-shadow(3px 6px 28px rgb(0 0 0 / 16%));--modal-btn-bar:#38383a;--modal-btn-background:#181819;--modal-btn-secondary-background:#2e2d30;--modal-btn-hover-background:#434246;--modal-btn-border:#434246;--modal-btn-text:#dbdbdb;--modal-btn-hover-text:#fff;--modal-btn-secondary-text:#b8b8b8;--input-background:#434246;--status-active-text:#000;--form-error:#db8680;--form-success:#99de9c;--date-btn-text:#ebebf0;--date-btn-text-secondary:#b5b5bd;--date-btn-cal-day-text:#101010;--date-btn-cal-month-text:#3e3e3f;--date-btn-cal-background:#c7c7cd;--date-btn-background:#363636;--date-btn-hover-background:#474747;--checkmark-background:drop-shadow(0 0 3px #0a0a0a);--overlay-background:rgb(20 20 20 / 50%);--icon-ms365-color:#bebebe;--icon-hover-ms365-color:#bebebe;--icon-yahoo-color:#bebebe;--icon-hover-yahoo-color:#bebebe;--icon-filter:grayscale(.2)}.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-l)}@media (width <= 991px){.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-m)}}@media (width <= 575px){.atcb-button-wrapper,.atcb-list,.atcb-modal-box{font-size:var(--base-font-size-s)}}.atcb-initialized.atcb-buttons-list{gap:var(--buttonslist-gap)}.atcb-button-wrapper{display:block;padding:var(--wrapper-padding);position:relative}.atcb-button{align-items:center;background-color:var(--btn-background);border:var(--btn-border-width) solid var(--btn-border);border-radius:var(--btn-border-radius);color:var(--btn-text);cursor:pointer;display:flex;font-family:var(--font);font-size:1em;font-weight:var(--btn-font-weight);justify-content:center;line-height:1.5em;margin:.13em;max-width:350px;padding:var(--btn-padding-y) var(--btn-padding-x);position:relative;text-align:center;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:auto;z-index:1}.atcb-button.atcb-no-text{min-width:0;border-radius:100%;display:flex;place-content:center center;align-items:center;height:3em;width:3em;padding:0}.atcb-rtl .atcb-button{direction:rtl;text-align:right}.atcb-button:focus-visible{outline:2px solid var(--accent-color)}.atcb-button.atcb-active.atcb-no-text:not(.atcb-modal-style,.atcb-dropoverlay),.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-no-text),.atcb-button.atcb-single.atcb-no-text:not([disabled]):focus,.atcb-button.atcb-single.atcb-no-text:not([disabled]):hover,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):focus,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):hover,.atcb-button:not([disabled]):focus,.atcb-button:not([disabled]):hover{background-color:var(--btn-hover-background);border-color:var(--btn-hover-border);color:var(--btn-hover-text)}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay){z-index:15000000}.atcb-button.atcb-dropup::after,.atcb-button:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-dropup)::before{content:"";width:0;height:0;position:absolute;left:0;right:0;margin:0 auto}.atcb-button:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-dropup)::before{top:100%;border:0 solid transparent;border-bottom:none;border-top-color:var(--btn-hover-border)}.atcb-button.atcb-dropup::after{bottom:100%;border:0 solid transparent;border-top:none;border-bottom-color:var(--btn-hover-border)}.atcb-button.atcb-active.atcb-dropup::after,.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-dropup)::before{border-width:.35em;transition:border-width .1s linear .1s}.atcb-button.atcb-active.atcb-dropoverlay{z-index:14000090}.atcb-icon{flex-grow:0;flex-shrink:0;height:1em;line-height:1em;margin-right:.8em;width:1em}.atcb-rtl .atcb-icon{margin-right:0;margin-left:.8em}.atcb-no-text .atcb-icon{margin-right:0;margin-left:0}.atcb-icon svg{fill:currentcolor;height:100%;width:100%}.atcb-text{overflow-wrap:anywhere}.atcb-dropdown-anchor{bottom:-15px;height:0;width:100%;opacity:0;position:absolute}.atcb-list-wrapper{box-sizing:border-box;font-weight:var(--list-font-weight);position:absolute;z-index:14000090;width:auto}.atcb-list-wrapper:not(.atcb-dropup,.atcb-dropoverlay){animation:list-entrance-bottom .2s ease 0s 1 normal forwards}.atcb-list-wrapper.atcb-dropup{animation:list-entrance-top .2s ease 0s 1 normal forwards}.atcb-list-wrapper.atcb-dropoverlay{animation:list-entrance-center .2s ease 0s 1 normal forwards;z-index:15000000}@keyframes list-entrance-bottom{0%{opacity:0;transform:translateY(250px)}100%{opacity:1;transform:translateY(0)}}@keyframes list-entrance-top{0%{opacity:0;transform:translateY(-250px)}100%{opacity:1;transform:translateY(0)}}@keyframes list-entrance-center{0%{opacity:0;transform:scaleY(1)}1%{opacity:1;transform:scaleY(0)}100%{opacity:1;transform:scaleY(1)}}.atcb-list{background-color:var(--list-background);border:var(--list-border-width) solid var(--list-border);border-radius:var(--list-border-radius);box-sizing:border-box;color:var(--list-text);display:block;font-family:var(--font);min-width:var(--list-min-width);position:relative;user-select:none;-webkit-user-select:none;width:fit-content}.atcb-list-item{align-items:center;background-color:var(--list-background);box-sizing:border-box;cursor:pointer;display:flex;font-size:1em;line-height:1.75em;padding:var(--list-padding);text-align:left;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.atcb-rtl .atcb-list-item{direction:rtl;text-align:right}.atcb-list-item:hover{background-color:var(--list-hover-background);color:var(--list-hover-text)}.atcb-list-item:focus-visible{background-color:var(--list-hover-background);color:var(--accent-color);outline:0}.atcb-list-item:last-child{border-radius:0 0 var(--list-border-radius) var(--list-border-radius)}.atcb-list-item:first-child{border-radius:var(--list-border-radius) var(--list-border-radius) 0 0}.atcb-list-item:only-child{border-radius:var(--list-border-radius)}.atcb-list.atcb-modal{box-shadow:var(--list-modal-shadow)}.atcb-list-item .atcb-icon{margin:0 auto}.atcb-list-item .atcb-icon+.atcb-text{margin-left:.7em;width:100%}.atcb-rtl .atcb-list-item .atcb-icon+.atcb-text{margin-left:0;margin-right:.7em}.atcb-list-item-close{background-color:var(--list-close-background)}.atcb-list-item.atcb-list-item-close:not(:focus-visible){color:var(--list-close-text)}.atcb-list-item.atcb-list-item-close:not(:focus-visible):hover{color:var(--list-hover-text)}.atcb-list-item-close svg{fill:currentcolor}.atcb-modal{display:block;margin:auto;width:auto;min-width:auto;position:relative;z-index:14000090}.atcb-modal-box{filter:var(--modal-shadow);color:var(--modal-text);cursor:default;box-sizing:border-box;font-family:var(--font);line-height:1.5em;text-align:var(--modal-text-align);user-select:none;-webkit-user-select:none;touch-action:manipulation;width:100%;margin-bottom:20px;-webkit-tap-highlight-color:transparent}@media (width > 575px){.atcb-modal-box{width:32em}}.atcb-modal-box.atcb-rtl{text-align:var(--modal-text-align-rtl);direction:rtl;padding:1.25em 1em 1.25em 2em}.atcb-modal-icon{height:2.5em;width:2.5em;border-radius:100%;background-color:var(--modal-background);padding:1.75em;margin:auto}.atcb-modal-icon svg{fill:currentcolor;height:100%;width:100%}.atcb-modal-headline{background-color:var(--modal-background);border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;font-size:1.3em;font-weight:600;line-height:1.5em;padding:1.8em 1.5em 1.3em;text-transform:var(--modal-headline-text-transform);text-align:var(--modal-headline-text-align)}.atcb-modal-icon+.atcb-modal-headline{margin-top:-2.6em;padding-top:2.6em}.atcb-modal-content{background-color:var(--modal-background);font-size:1em;padding:.3em 2em 2.2em}.atcb-modal-content ol,.atcb-modal-content ul{margin:1em auto;text-align:left;width:fit-content}.atcb-rtl .atcb-modal-content ol,.atcb-rtl .atcb-modal-content ul{text-align:right}.atcb-modal-icon+.atcb-modal-content{border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;margin-top:-2.6em;padding-top:2.6em}.atcb-modal-content-subevents{margin:auto;width:fit-content}@media (width <= 575px){.atcb-modal-headline{padding:1.8em 1em 1em}.atcb-modal-content{padding:.3em 1.5em 1.5em}.atcb-modal-icon+.atcb-modal-content{padding-top:1.8em}}.atcb-modal-buttons{background-color:var(--modal-btn-bar);border-radius:0 0 var(--modal-border-radius) var(--modal-border-radius);box-sizing:border-box;padding:.6em;text-align:center;width:100%;display:flex;justify-content:center;flex-flow:row-reverse wrap;align-items:center}a.atcb-modal-btn,button.atcb-modal-btn{background-color:var(--modal-btn-secondary-background);border:0;border-radius:var(--btn-border-radius);color:var(--modal-btn-secondary-text);cursor:pointer;display:inline-block;font-family:var(--font);font-size:.9em;font-weight:var(--modal-btn-font-weight);line-height:1em;margin:.625em;padding:1em 1.25em;position:relative;text-align:center;text-decoration:none;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}a.atcb-modal-btn.btn-small,button.atcb-modal-btn.btn-small{padding:.6em .8em}a.atcb-modal-btn.atcb-modal-btn-primary,button.atcb-modal-btn.atcb-modal-btn-primary{background-color:var(--modal-btn-background);color:var(--modal-btn-text)}a.atcb-modal-btn.atcb-modal-btn-border,button.atcb-modal-btn.atcb-modal-btn-border{border:var(--modal-btn-border-width) solid var(--modal-btn-border)}a.atcb-modal-btn:focus-visible,button.atcb-modal-btn:focus-visible{background-color:var(--modal-btn-hover-background);outline:2px solid var(--accent-color)}a.atcb-modal-btn:disabled,button.atcb-button:disabled,button.atcb-modal-btn:disabled,button.atcb-subevent-btn:disabled{cursor:not-allowed;opacity:.75;filter:brightness(95%);border-style:dashed;box-shadow:none}a.atcb-modal-btn:not([disabled]):hover,button.atcb-modal-btn:not([disabled]):hover{background-color:var(--modal-btn-hover-background);color:var(--modal-btn-hover-text);text-decoration:none}.atcb-subevent-btn{display:flex;align-items:flex-start;cursor:pointer;font-family:var(--font);font-size:1em;background-color:var(--date-btn-background);border:0;border-radius:7px 4px 4px 7px;padding:0;margin:0;touch-action:manipulation;position:relative;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:100%}.atcb-subevent-btn:hover{align-items:center}.atcb-subevent-btn:focus,.atcb-subevent-btn:hover{background-color:var(--date-btn-hover-background)}.atcb-subevent-btn:focus-visible{outline:2px solid var(--accent-color)}.atcb-subevent-btn+.atcb-subevent-btn{margin-top:30px}.atcb-date-btn-left{border-radius:4px 0 0 4px;align-self:stretch;background-color:var(--date-btn-cal-background);padding:.7em .8em .8em;width:2.7em;align-items:center;display:flex;flex-direction:column;flex-shrink:0}.atcb-rtl .atcb-date-btn-left{border-radius:0 4px 4px 0}.atcb-subevent-btn:hover .atcb-date-btn-left{opacity:.8}.atcb-date-btn-day{color:var(--date-btn-cal-day-text);font-weight:400;font-size:2em;word-break:keep-all;padding-bottom:.1em}.atcb-initialized[lang=ja] .atcb-date-btn-day,.atcb-initialized[lang=ko] .atcb-date-btn-day,.atcb-initialized[lang=zh] .atcb-date-btn-day{font-size:1.3em}.atcb-date-btn-month{color:var(--date-btn-cal-month-text);font-weight:600;font-size:1em}.atcb-date-btn-right{position:relative;color:var(--date-btn-text);min-width:13.5em;overflow-wrap:anywhere}.atcb-subevent-btn .atcb-date-btn-right{width:100%}.atcb-date-btn-details{opacity:1;padding:.7em .8em;text-align:left}.atcb-rtl .atcb-date-btn-details{text-align:right}.atcb-date-btn-hover{position:absolute;top:0;left:0;width:100%;opacity:0;height:100%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1em;padding:.4em .7em;box-sizing:border-box}.atcb-subevent-btn:hover .atcb-date-btn-details{opacity:0}.atcb-subevent-btn:hover .atcb-date-btn-hover{opacity:1}.atcb-date-btn-headline{font-weight:600;font-size:.9em;margin-bottom:.5em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:var(--date-btn-headline-line-clamp);line-clamp:var(--date-btn-headline-line-clamp)}.atcb-date-btn-content{display:flex;align-items:flex-start;font-size:.8em;color:var(--date-btn-text-secondary)}.atcb-date-btn-content.atcb-date-btn-cancelled{color:var(--form-error);font-weight:700}.atcb-date-btn-content-location{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.atcb-date-btn-content-icon{display:inline-block;height:.9em;margin:.075em .4em 0 0;width:.9em;flex-shrink:0}.atcb-rtl .atcb-date-btn-content-icon{margin-right:0;margin-left:.4em}.atcb-initialized[lang=ja] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon,.atcb-initialized[lang=ko] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon,.atcb-initialized[lang=zh] .atcb-date-btn-content:not(.atcb-date-btn-content-location) .atcb-date-btn-content-icon{margin-top:.15em}.atcb-date-btn-content-icon svg{height:100%;fill:currentcolor;width:100%}.atcb-date-btn-content+.atcb-date-btn-content{margin-top:.3em;padding-right:.6em}.atcb-date-btn-content-text span:not(.atcb-icon-ical){padding-right:.3em;display:inline-block}.atcb-date-btn-plus{position:absolute;border-radius:4px 0;bottom:0;right:0;background:var(--date-btn-cal-background);color:var(--date-btn-cal-day-text);display:flex;font-size:.9em;font-weight:400;height:1em;width:1em;padding:.1em;justify-content:center;align-items:center}.atcb-button:focus-visible .atcb-date-btn-plus,.atcb-subevent-btn:focus-visible .atcb-date-btn-plus{background-color:var(--accent-color)}.atcb-checkmark{display:none}.atcb-saved .atcb-checkmark{box-sizing:content-box;color:var(--btn-text);display:block;position:absolute;top:-.9em;right:-.5em;padding:.5em;border-radius:100%;height:1.2em}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay) .atcb-checkmark,.atcb-button:focus .atcb-checkmark,.atcb-button:hover .atcb-checkmark{top:-.77em;right:-.37em}.atcb-checkmark svg{height:100%;filter:var(--checkmark-background);width:auto}#atcb-bgoverlay{backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);background-color:var(--overlay-background);border:0;box-sizing:border-box;display:flex;height:calc(100vh + 100px);inset-inline:0;left:0;right:0;top:0;min-height:100%;min-width:100%;overflow-y:auto;padding:20px 20px 130px;position:fixed;width:100vw;z-index:14000000}#atcb-bgoverlay:not(dialog){animation:atcb-bgoverlay-animate .2s ease 0s 1 normal forwards;opacity:0}#atcb-bgoverlay.atcb-no-bg{animation:none;backdrop-filter:none;-webkit-backdrop-filter:none;opacity:1;background-color:transparent}@keyframes atcb-bgoverlay-animate{0%{opacity:0}100%{opacity:1}}.atcb-icon-outlookcom,.atcb-icon.atcb-icon-ms365{padding-bottom:.05em}.atcb-icon.atcb-icon-apple,.atcb-icon.atcb-icon-ical,.atcb-icon.atcb-icon-trigger{padding-bottom:.15em}.atcb-icon.atcb-icon-rsvp{height:1.5em;width:1.5em}.atcb-icon.atcb-icon-apple svg,.atcb-icon.atcb-icon-ical svg{fill:currentcolor}.atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-ms365-color)}.atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-yahoo-color)}.atcb-icon.atcb-icon-google svg,.atcb-icon.atcb-icon-msteams svg,.atcb-icon.atcb-icon-outlookcom svg{filter:var(--icon-filter)}.pro .atcb-modal-btn svg{fill:none;height:1.5em;margin-right:.5em;stroke:currentcolor;width:auto}.atcb-list-item:focus-visible .atcb-icon.atcb-icon-ms365 svg,.atcb-list-item:hover .atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-hover-ms365-color)}.atcb-list-item:focus-visible .atcb-icon.atcb-icon-yahoo svg,.atcb-list-item:hover .atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-hover-yahoo-color)}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-no-text) .atcb-icon.atcb-icon-ms365 svg,.atcb-button:not([disabled]):focus .atcb-icon.atcb-icon-ms365 svg,.atcb-button:not([disabled]):hover .atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-hover-ms365-color)}.atcb-button.atcb-active:not(.atcb-modal-style,.atcb-dropoverlay,.atcb-no-text) .atcb-icon.atcb-icon-yahoo svg,.atcb-button:not([disabled]):focus .atcb-icon.atcb-icon-yahoo svg,.atcb-button:not([disabled]):hover .atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-hover-yahoo-color)}.atcb-button.atcb-active.atcb-no-text:not(.atcb-modal-style,.atcb-dropoverlay) .atcb-icon.atcb-icon-ms365 svg,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):focus .atcb-icon.atcb-icon-ms365 svg,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):hover .atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-hover-ms365-color)}.atcb-button.atcb-active.atcb-no-text:not(.atcb-modal-style,.atcb-dropoverlay) .atcb-icon.atcb-icon-yahoo svg,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):focus .atcb-icon.atcb-icon-yahoo svg,.atcb-button.atcb-single:not(.atcb-no-text,[disabled]):hover .atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-hover-yahoo-color)}.atcb-button.atcb-single.atcb-no-text:not([disabled]):focus .atcb-icon.atcb-icon-ms365 svg,.atcb-button.atcb-single.atcb-no-text:not([disabled]):hover .atcb-icon.atcb-icon-ms365 svg{fill:var(--icon-hover-ms365-color)}.atcb-button.atcb-single.atcb-no-text:not([disabled]):focus .atcb-icon.atcb-icon-yahoo svg,.atcb-button.atcb-single.atcb-no-text:not([disabled]):hover .atcb-icon.atcb-icon-yahoo svg{fill:var(--icon-hover-yahoo-color)}.rsvp-inline-wrapper{filter:none;min-width:100%;margin-bottom:0}.atcb-modal-content.no-headline{border-radius:var(--modal-border-radius) var(--modal-border-radius) 0 0;padding-top:1.8em}.rsvp-inline-wrapper .atcb-modal-content,.rsvp-inline-wrapper .atcb-modal-headline,.rsvp-inline-wrapper.atcb-modal-box{background-color:transparent;border-radius:0;box-sizing:border-box;padding:0;width:100%}.rsvp-inline-wrapper .atcb-modal-headline{padding-bottom:1.5em}.pro{text-align:center}.pro a:not(.atcb-modal-btn),.pro a:not(.atcb-modal-btn):active,.pro a:not(.atcb-modal-btn):visited{color:var(--modal-btn-text);text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--accent-color)}.pro a:not(.atcb-modal-btn):hover{color:var(--accent-color);text-decoration:none}.pro .pro-share-buttons{display:flex;flex-wrap:wrap;justify-content:center}.pro #rsvp-atcb{display:flex;flex-wrap:wrap;gap:.4em;justify-content:center}.pro-form{text-align:left}.pro-form:not(.no-intro){border-top:var(--modal-btn-border-width) solid var(--modal-btn-border);margin-top:1.5em;padding-top:1.5em}.pro-form.no-intro:not(.no-headline){padding-top:.5em}.pro-field+.pro-field{padding-top:1.3em}.pro-field-type-label+.pro-field-type-radio{padding-top:0}.pro-field-type-checkbox,.pro-field-type-radio div{align-items:center;display:flex}.pro-field-type-checkbox input,.pro-field-type-radio input{cursor:pointer}.pro-field label{display:block;font-size:.9em;opacity:.7}.pro-field-type-checkbox label,.pro-field-type-radio label{cursor:pointer;opacity:.8;padding-left:.3em}.pro-field input[type=email],.pro-field input[type=number],.pro-field input[type=text]{background-color:var(--input-background);border:var(--modal-btn-border-width) solid var(--modal-btn-border);border-radius:var(--input-border-radius);box-sizing:border-box;caret-color:var(--accent-color);color:var(--modal-text);font-size:.9em;opacity:.8;padding:.7em;transition:all .1s ease-in-out;width:100%}.pro-field input[type=checkbox],.pro-field input[type=radio]{accent-color:var(--accent-color);height:1.2rem;opacity:.8;transition:all .1s ease-in-out;width:1.2em}.pro-field input:disabled,.pro-field input:disabled+label{cursor:not-allowed;opacity:.75;filter:brightness(95%)}.pro-field input:not([disabled]):hover{opacity:1}.pro-field input[type=email]:focus,.pro-field input[type=number]:focus,.pro-field input[type=text]:focus{border-color:var(--accent-color);outline:1px solid var(--accent-color)}.pro-field input[type=checkbox]:focus,.pro-field input[type=radio]:focus{outline-color:var(--accent-color);outline-width:2px}#submit-error{color:var(--form-error);display:none;font-weight:700;padding-top:1.5em;text-align:center}.pro-form.form-error #submit-error{display:block}.pro-field input.error{accent-color:var(--form-error);border:2px solid var(--form-error)}.pro-field input.error+label,.pro-field:has(input.error) label{color:var(--form-error);opacity:1}#rsvp-status-group{border-bottom:var(--modal-btn-border-width) solid var(--modal-btn-border);font-weight:700;margin-bottom:1.5em;padding-bottom:2em;text-align:center}#rsvp-status-group .pro-field{align-items:center;display:flex;flex-wrap:wrap;gap:3%;justify-content:center;margin-top:1em}@media (width <= 575px){#rsvp-status-group .pro-field{flex-direction:column;gap:1.2em}#rsvp-status-group .pro-field div{width:80%}}#rsvp-status-group .pro-field div{min-width:28%;position:relative}#rsvp-status-group input{opacity:0;position:absolute;top:0;left:0;height:100%;width:100%;margin:0;cursor:pointer}#rsvp-status-group label{align-items:center;border:1px solid var(--modal-btn-text);border-radius:var(--input-border-radius);color:var(--modal-btn-text);display:flex;flex-direction:column;font-weight:700;text-transform:uppercase;justify-content:center;opacity:.6;padding:.8em;transition:all .1s ease-in-out;width:100%}#rsvp-status-group label.status-confirmed{border-color:var(--form-success);color:var(--form-success)}#rsvp-status-group label.status-declined{border-color:var(--form-error);color:var(--form-error)}#rsvp-status-group input:checked+label{background-color:var(--modal-text);color:var(--status-active-text);opacity:1;transform:scale(1.08)}#rsvp-status-group input:focus-visible+label{outline:2px solid var(--accent-color);outline-offset:2px}#rsvp-status-group input:not([disabled])+label:hover,#rsvp-status-group input:not([disabled]):hover+label{opacity:1;transform:scale(1.08)}#rsvp-status-group input:checked+label.status-confirmed{background-color:var(--form-success)}#rsvp-status-group input:checked+label.status-declined{background-color:var(--form-error)}#rsvp-success-msg,#rsvp-success-msg-demo,#rsvp-success-msg-doi,#rsvp-success-msg-email,#ty-success-msg{display:none;font-weight:700;line-height:1.6em;padding-top:.5em;text-align:center}#rsvp-success-msg,#rsvp-success-msg-demo,#ty-success-msg{padding:1.5em 0}#rsvp-success-msg-demo,#rsvp-success-msg-email{color:var(--form-success)}#rsvp-success-msg-doi{color:var(--form-error);padding-top:1em;font-size:.8em}#pro-form-submit{display:block;margin:auto;min-width:150px}.pro-form-fine{font-size:.8em;margin:.5em auto 1em;opacity:.5;text-align:center}.pro-form.form-error .pro-form-fine{opacity:0}.pro-waiting{background-color:var(--modal-btn-background);border:var(--modal-btn-border-width) solid var(--modal-btn-border);border-radius:var(--btn-border-radius);box-sizing:border-box;color:var(--modal-btn-text);cursor:wait;display:none;line-height:.5em;margin:auto;min-width:150px;padding:.5em 1.25em 1.2em;text-align:center;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;width:fit-content}@media (width > 575px){#pro-form-submit,.pro-waiting{min-width:200px}}.pro-waiting span:not(.atcb-icon-ical){animation-name:blink;animation-duration:1s;animation-iteration-count:infinite;animation-fill-mode:both;font-size:2.5em}.pro-field label span:not(.atcb-icon-ical){color:var(--form-error);font-weight:700;padding-left:2px}.pro-waiting span:not(.atcb-icon-ical):nth-child(2){animation-delay:.15s}.pro-waiting span:not(.atcb-icon-ical):nth-child(3){animation-delay:.3s}@keyframes blink{0%{opacity:.2}20%{opacity:1}100%{opacity:.2}}.pro #rsvp-sent-content{align-items:center;display:flex;flex-direction:column;gap:1.5em}#rsvp-status-group span{color:inherit}.atcb-modal-content .pro p:not(.pro-form-fine){margin:0}.atcb-modal-content .pro p.pro-pt{margin-top:1.5em}.atcb-modal-content .pro .pro-field p{font-size:.9em}.pro .btn-flex{align-items:center;display:flex}#atcb-reference{box-sizing:border-box;color:#000;filter:drop-shadow( 1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow( 0 1px 0 #fff) drop-shadow( 0 -1px 0 #fff);height:auto;padding:8px 0;text-align:center;transform:translate3d(0,0,0);width:100%;z-index:15000000}#atcb-reference.fixed-ref{position:fixed;bottom:10px;right:40px;width:auto}#atcb-reference.atcb-dropup{position:absolute;margin-top:-1px}.atcb-modal-host-initialized #atcb-reference.atcb-dropup{text-align:left}:host(.atcb-dark) #atcb-reference{color:#fff;filter:drop-shadow( 1px 0 0 #000) drop-shadow(-1px 0 0 #000) drop-shadow( 0 1px 0 #000) drop-shadow( 0 -1px 0 #000)}#atcb-reference a,#atcb-reference a:active,#atcb-reference a:visited{opacity:.8;width:150px;max-width:100%;margin:auto;display:inline-block;text-decoration:none}#atcb-reference a:hover{opacity:1;text-decoration:none}#atcb-reference svg{fill:var(--list-text)}',
@@ -11189,8 +11154,8 @@
     const tzid = ((_e = data.dates) == null ? void 0 : _e[0].timeZone) || data.timeZone || "UTC";
     const diff2 = (function() {
       if (endTime && endTime !== "" && startTime && startTime !== "") {
-        const origStart = startTime && startTime !== "" ? /* @__PURE__ */ new Date(`${startDate}T${startTime}:00${toIsoOffset2(tzlib_get_offset(tzid, startDate, startTime))}`) : /* @__PURE__ */ new Date(`${startDate}T00:00:00${toIsoOffset2(tzlib_get_offset(tzid, startDate, "00:00"))}`);
-        const origEnd = endTime && endTime !== "" ? /* @__PURE__ */ new Date(`${endDate}T${endTime}:00${toIsoOffset2(tzlib_get_offset(tzid, endDate, endTime))}`) : /* @__PURE__ */ new Date(`${endDate}T00:00:00${toIsoOffset2(tzlib_get_offset(tzid, endDate, "00:00"))}`);
+        const origStart = startTime && startTime !== "" ? /* @__PURE__ */ new Date(`${startDate}T${startTime}:00${toIsoOffset2(I(tzid, startDate, startTime))}`) : /* @__PURE__ */ new Date(`${startDate}T00:00:00${toIsoOffset2(I(tzid, startDate, "00:00"))}`);
+        const origEnd = endTime && endTime !== "" ? /* @__PURE__ */ new Date(`${endDate}T${endTime}:00${toIsoOffset2(I(tzid, endDate, endTime))}`) : /* @__PURE__ */ new Date(`${endDate}T00:00:00${toIsoOffset2(I(tzid, endDate, "00:00"))}`);
         return origEnd.getTime() - origStart.getTime();
       }
       return 0;
@@ -11204,13 +11169,13 @@
       const digits = raw.replace(/\D/g, "").padStart(4, "0").slice(0, 4);
       return `${sign2}${digits.slice(0, 2)}:${digits.slice(2)}`;
     }
-    const offset3 = startTime && startTime !== "" ? tzlib_get_offset(tzid, startDate, startTime) : "";
+    const offset3 = startTime && startTime !== "" ? I(tzid, startDate, startTime) : "";
     const startDateTime = (function() {
       if (startTime && startTime !== "") {
         const isoOff = toIsoOffset2(offset3);
         return /* @__PURE__ */ new Date(`${startDate}T${startTime}:00${isoOff}`);
       }
-      const localMidnightOffset = toIsoOffset2(tzlib_get_offset(tzid, startDate, "00:00"));
+      const localMidnightOffset = toIsoOffset2(I(tzid, startDate, "00:00"));
       return /* @__PURE__ */ new Date(`${startDate}T00:00:00${localMidnightOffset}`);
     })();
     const isAllDay = !(startTime && startTime !== "");
@@ -11241,7 +11206,7 @@
     } else {
       return data;
     }
-    const newStartInstant = startTime ? /* @__PURE__ */ new Date(`${data.startDate}T${startTime}:00${toIsoOffset2(tzlib_get_offset(tzid, data.startDate, startTime))}`) : /* @__PURE__ */ new Date(`${data.startDate}T00:00:00${toIsoOffset2(tzlib_get_offset(tzid, data.startDate, "00:00"))}`);
+    const newStartInstant = startTime ? /* @__PURE__ */ new Date(`${data.startDate}T${startTime}:00${toIsoOffset2(I(tzid, data.startDate, startTime))}`) : /* @__PURE__ */ new Date(`${data.startDate}T00:00:00${toIsoOffset2(I(tzid, data.startDate, "00:00"))}`);
     const newEndDateTime = new Date(newStartInstant.getTime() + diff2);
     const nextEndLocal = formatInTz(newEndDateTime, tzid, !!(endTime && endTime !== ""));
     if (nextEndLocal.date) {
@@ -11535,6 +11500,7 @@
       const value = data.customVar[`${key}`];
       dateEntry.name = atcb_replace_placeholder(dateEntry.name, key, value);
       dateEntry.location = atcb_replace_placeholder(dateEntry.location, key, value);
+      dateEntry.description = atcb_replace_placeholder(dateEntry.description, key, value);
     }
     return data;
   }
@@ -11574,7 +11540,7 @@
     });
     if (dateTimeData.timeZone === "currentBrowser" || dateTimeData.useUserTZ) {
       let browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "GMT";
-      const validTimeZones = tzlib_get_timezones();
+      const validTimeZones = $();
       if (!validTimeZones.includes(browserTimezone)) {
         browserTimezone = atcb_map_special_time_zones(browserTimezone);
       }
@@ -11594,7 +11560,7 @@
     try {
       const tmpDate = (function() {
         if (timeString) {
-          const offsetEnd = tzlib_get_offset(timeZone, dateString, timeString);
+          const offsetEnd = I(timeZone, dateString, timeString);
           return /* @__PURE__ */ new Date(dateString + " " + timeString + ":00 GMT" + offsetEnd);
         }
         return new Date(dateString);
@@ -11924,7 +11890,7 @@
   }
   function atcb_validate_timezone(data, msgPrefix, i, msgSuffix) {
     return __async(this, null, function* () {
-      const validTimeZones = tzlib_get_timezones();
+      const validTimeZones = $();
       if (!validTimeZones.includes(data.dates[`${i}`].timeZone)) {
         throw new Error(msgPrefix + " failed: invalid time zone given" + msgSuffix);
       }
@@ -14159,7 +14125,7 @@
         }
         if (data.dates[`${i}`].timeZone && data.dates[`${i}`].timeZone !== "") {
           const timeZone = /GMT[+|-]\d{1,2}|Etc\/U|Etc\/Zulu|CET|CST6CDT|EET|EST|MET|MST|PST8PDT|WET|PST|PDT|MDT|CST|CDT|EDT|EEST|CEST|HST|HDT|AKST|AKDT|AST|ADT|AEST|AEDT|NZST|NZDT|IST|IDT|WEST|ACST|ACDT|BST/i.test(data.dates[`${i}`].timeZone) ? "GMT" : data.dates[`${i}`].timeZone;
-          const timeZoneBlock = tzlib_get_ical_block(timeZone);
+          const timeZoneBlock = j(timeZone);
           if (!usedTimeZones.includes(timeZone)) {
             ics_lines.push(timeZoneBlock[0]);
           }
@@ -14325,8 +14291,8 @@
           allday: false
         };
       }
-      const offsetStart = tzlib_get_offset(data.timeZone, data.startDate, data.startTime);
-      const offsetEnd = tzlib_get_offset(data.timeZone, data.endDate, data.endTime);
+      const offsetStart = I(data.timeZone, data.startDate, data.startTime);
+      const offsetEnd = I(data.timeZone, data.endDate, data.endTime);
       if (addTimeZoneOffset) {
         const formattedOffsetStart = offsetStart.slice(0, 3) + ":" + offsetStart.slice(3);
         const formattedOffsetEnd = offsetEnd.slice(0, 3) + ":" + offsetEnd.slice(3);
@@ -14410,7 +14376,7 @@
   }
   function atcb_translate_via_time_zone(date, time, baseTimeZone, targetTimeZone) {
     const dateTime = /* @__PURE__ */ new Date(`${date}T${time}:00Z`);
-    const offset3 = tzlib_get_offset(baseTimeZone, date, time);
+    const offset3 = I(baseTimeZone, date, time);
     const dateTimeUTC = new Date(dateTime.getTime() - offsetToMilliseconds(offset3));
     const formatter = new Intl.DateTimeFormat("en-CA", {
       year: "numeric",
@@ -14457,11 +14423,11 @@
     const magicLocationPhrases = ["global", "world-wide", "worldwide", "online"];
     const convertable = (function() {
       let i = 0;
-      let j = dates.length - 1;
+      let j2 = dates.length - 1;
       if (subEvent != "all") {
-        i = j = subEvent;
+        i = j2 = subEvent;
       }
-      for (i; i <= j; i++) {
+      for (i; i <= j2; i++) {
         const magicLocation = (function() {
           if (dates[`${i}`].location && dates[`${i}`].location !== "") {
             if (magicLocationPhrases.includes(dates[`${i}`].location.toLowerCase().trim())) {
@@ -15048,7 +15014,7 @@
     const dateStr = `${d.getUTCFullYear()}-${pad2(d.getUTCMonth() + 1)}-${pad2(d.getUTCDate())}`;
     const safeTimeZone = timeZone || "UTC";
     try {
-      const off = tzlib_get_offset(safeTimeZone, dateStr, hhmm);
+      const off = I(safeTimeZone, dateStr, hhmm);
       return /* @__PURE__ */ new Date(`${dateStr}T${hhmm}:00${toIsoOffset(off)}`);
     } catch (e) {
       return new Date(dateObj.getTime() + days * 864e5);
@@ -17892,7 +17858,7 @@
       });
     }
     extract(dt, intlOpts, field) {
-      const df = this.dtFormatter(dt, intlOpts), results = df.formatToParts(), matching = results.find((m) => m.type.toLowerCase() === field);
+      const df = this.dtFormatter(dt, intlOpts), results = df.formatToParts(), matching = results.find((m2) => m2.type.toLowerCase() === field);
       return matching ? matching.value : null;
     }
     numberFormatter(opts = {}) {
@@ -18686,7 +18652,7 @@
       intlOpts.timeZone = timeZone;
     }
     const modified = __spreadValues({ timeZoneName: offsetFormat }, intlOpts);
-    const parsed = new Intl.DateTimeFormat(locale, modified).formatToParts(date).find((m) => m.type.toLowerCase() === "timezonename");
+    const parsed = new Intl.DateTimeFormat(locale, modified).formatToParts(date).find((m2) => m2.type.toLowerCase() === "timezonename");
     return parsed ? parsed.value : null;
   }
   function signedOffset(offHourStr, offMinuteStr) {
@@ -19185,9 +19151,9 @@
     return RegExp(`^${full}$`);
   }
   function combineExtractors(...extractors) {
-    return (m) => extractors.reduce(
+    return (m2) => extractors.reduce(
       ([mergedVals, mergedZone, cursor], ex) => {
-        const [val, zone, next] = ex(m, cursor);
+        const [val, zone, next] = ex(m2, cursor);
         return [__spreadValues(__spreadValues({}, mergedVals), val), zone || mergedZone, next];
       },
       [{}, null, 1]
@@ -19198,9 +19164,9 @@
       return [null, null];
     }
     for (const [regex, extractor] of patterns) {
-      const m = regex.exec(s2);
-      if (m) {
-        return extractor(m);
+      const m2 = regex.exec(s2);
+      if (m2) {
+        return extractor(m2);
       }
     }
     return [null, null];
@@ -19231,8 +19197,8 @@
   );
   var sqlTimeExtensionRegex = RegExp(`(?: ${sqlTimeRegex.source})?`);
   function int(match2, pos, fallback) {
-    const m = match2[pos];
-    return isUndefined(m) ? fallback : parseInteger(m);
+    const m2 = match2[pos];
+    return isUndefined(m2) ? fallback : parseInteger(m2);
   }
   function extractISOYmd(match2, cursor) {
     const item = {
@@ -21036,7 +21002,7 @@
     }
   }
   function offset(regex, groups) {
-    return { regex, deser: ([, h, m]) => signedOffset(h, m), groups };
+    return { regex, deser: ([, h2, m2]) => signedOffset(h2, m2), groups };
   }
   function simple(regex) {
     return { regex, deser: ([s2]) => s2 };
@@ -21262,9 +21228,9 @@
       let matchIndex = 1;
       for (const i in handlers) {
         if (hasOwnProperty(handlers, i)) {
-          const h = handlers[i], groups = h.groups ? h.groups + 1 : 1;
-          if (!h.literal && h.token) {
-            all[h.token.val[0]] = h.deser(matches2.slice(matchIndex, matchIndex + groups));
+          const h2 = handlers[i], groups = h2.groups ? h2.groups + 1 : 1;
+          if (!h2.literal && h2.token) {
+            all[h2.token.val[0]] = h2.deser(matches2.slice(matchIndex, matchIndex + groups));
           }
           matchIndex += groups;
         }
@@ -24436,51 +24402,51 @@
     return value * (range[1] - range[0]) / 100 + range[0];
   }
   function getJ(value, arr) {
-    var j = 1;
-    while (value >= arr[j]) {
-      j += 1;
+    var j2 = 1;
+    while (value >= arr[j2]) {
+      j2 += 1;
     }
-    return j;
+    return j2;
   }
   function toStepping(xVal, xPct, value) {
     if (value >= xVal.slice(-1)[0]) {
       return 100;
     }
-    var j = getJ(value, xVal);
-    var va = xVal[j - 1];
-    var vb = xVal[j];
-    var pa = xPct[j - 1];
-    var pb = xPct[j];
+    var j2 = getJ(value, xVal);
+    var va = xVal[j2 - 1];
+    var vb = xVal[j2];
+    var pa = xPct[j2 - 1];
+    var pb = xPct[j2];
     return pa + toPercentage([va, vb], value) / subRangeRatio(pa, pb);
   }
   function fromStepping(xVal, xPct, value) {
     if (value >= 100) {
       return xVal.slice(-1)[0];
     }
-    var j = getJ(value, xPct);
-    var va = xVal[j - 1];
-    var vb = xVal[j];
-    var pa = xPct[j - 1];
-    var pb = xPct[j];
+    var j2 = getJ(value, xPct);
+    var va = xVal[j2 - 1];
+    var vb = xVal[j2];
+    var pa = xPct[j2 - 1];
+    var pb = xPct[j2];
     return isPercentage([va, vb], (value - pa) * subRangeRatio(pa, pb));
   }
   function getStep(xPct, xSteps, snap, value) {
     if (value === 100) {
       return value;
     }
-    var j = getJ(value, xPct);
-    var a = xPct[j - 1];
-    var b = xPct[j];
+    var j2 = getJ(value, xPct);
+    var a = xPct[j2 - 1];
+    var b = xPct[j2];
     if (snap) {
       if (value - a > (b - a) / 2) {
         return b;
       }
       return a;
     }
-    if (!xSteps[j - 1]) {
+    if (!xSteps[j2 - 1]) {
       return value;
     }
-    return xPct[j - 1] + closest(value - xPct[j - 1], xSteps[j - 1]);
+    return xPct[j2 - 1] + closest(value - xPct[j2 - 1], xSteps[j2 - 1]);
   }
   var Spectrum = (
     /** @class */
@@ -24581,29 +24547,29 @@
         return value;
       };
       Spectrum2.prototype.getDefaultStep = function(value, isDown, size) {
-        var j = getJ(value, this.xPct);
-        if (value === 100 || isDown && value === this.xPct[j - 1]) {
-          j = Math.max(j - 1, 1);
+        var j2 = getJ(value, this.xPct);
+        if (value === 100 || isDown && value === this.xPct[j2 - 1]) {
+          j2 = Math.max(j2 - 1, 1);
         }
-        return (this.xVal[j] - this.xVal[j - 1]) / size;
+        return (this.xVal[j2] - this.xVal[j2 - 1]) / size;
       };
       Spectrum2.prototype.getNearbySteps = function(value) {
-        var j = getJ(value, this.xPct);
+        var j2 = getJ(value, this.xPct);
         return {
           stepBefore: {
-            startValue: this.xVal[j - 2],
-            step: this.xNumSteps[j - 2],
-            highestStep: this.xHighestCompleteStep[j - 2]
+            startValue: this.xVal[j2 - 2],
+            step: this.xNumSteps[j2 - 2],
+            highestStep: this.xHighestCompleteStep[j2 - 2]
           },
           thisStep: {
-            startValue: this.xVal[j - 1],
-            step: this.xNumSteps[j - 1],
-            highestStep: this.xHighestCompleteStep[j - 1]
+            startValue: this.xVal[j2 - 1],
+            step: this.xNumSteps[j2 - 1],
+            highestStep: this.xHighestCompleteStep[j2 - 1]
           },
           stepAfter: {
-            startValue: this.xVal[j],
-            step: this.xNumSteps[j],
-            highestStep: this.xHighestCompleteStep[j]
+            startValue: this.xVal[j2],
+            step: this.xNumSteps[j2],
+            highestStep: this.xHighestCompleteStep[j2]
           }
         };
       };
@@ -25885,14 +25851,14 @@
         });
       }
       var l2 = 0;
-      var h = 100;
+      var h2 = 100;
       if (index !== 0) {
         l2 = locations[index - 1];
       }
       if (index !== scope_Connects.length - 1) {
-        h = locations[index];
+        h2 = locations[index];
       }
-      var connectWidth = h - l2;
+      var connectWidth = h2 - l2;
       var translateRule = "translate(" + inRuleOrder(transformDirection(l2, connectWidth) + "%", "0") + ")";
       var scaleRule = "scale(" + inRuleOrder(connectWidth / 100, "1") + ")";
       scope_Connects[index].style[options.transformRule] = translateRule + " " + scaleRule;
@@ -26973,8 +26939,8 @@
     var queries = [];
     function setup() {
       var isMin = options.mediaQuery === "min";
-      ownKeys(breakpoints).sort(function(n2, m) {
-        return isMin ? +n2 - +m : +m - +n2;
+      ownKeys(breakpoints).sort(function(n2, m2) {
+        return isMin ? +n2 - +m2 : +m2 - +n2;
       }).forEach(function(key) {
         register(breakpoints[key], "(" + (isMin ? "min" : "max") + "-width:" + key + "px)");
       });
@@ -30040,18 +30006,17 @@ jquery/dist/jquery.js:
 
 timezones-ical-library/dist/mjs/index.js:
   (*!
-   *  @preserve
-   *
-   * ++++++++++++++++++++++++++++++++++++++
-   * Add to Calendar TimeZones iCal Library
-   * ++++++++++++++++++++++++++++++++++++++
-   *
-   * Version: 1.11.1
-   * Creator: Jens Kuerschner (https://jekuer.com)
-   * Project: https://github.com/add2cal/timezones-ical-library
-   * License: Apache-2.0
-   *
-   *)
+  *  @preserve
+  *
+  * ++++++++++++++++++++++++++++++++++++++
+  * Add to Calendar Time Zones iCal Library
+  * ++++++++++++++++++++++++++++++++++++++
+  *
+  * Creator: Jens Kuerschner (https://jekuer.com)
+  * Project: https://github.com/add2cal/timezones-ical-library
+  * License: Apache-2.0
+  *
+  *)
 
 add-to-calendar-button/dist/module/index.js:
   (*!
@@ -30061,7 +30026,7 @@ add-to-calendar-button/dist/module/index.js:
    *  Add to Calendar Button
    *  ++++++++++++++++++++++
    *
-   *  Version: 2.13.5
+   *  Version: 2.13.8
    *  Creator: Jens Kuerschner (https://jekuer.com)
    *  Project: https://github.com/add2cal/add-to-calendar-button
    *  License: Elastic License 2.0 (ELv2) (https://github.com/add2cal/add-to-calendar-button/blob/main/LICENSE.txt)

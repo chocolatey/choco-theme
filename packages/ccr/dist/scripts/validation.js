@@ -8192,7 +8192,7 @@
               }).length === 1 && lastActive;
             },
             elements: function() {
-              var validator = this, rulesCache = {}, selectors = ["input", "select", "textarea", "[contenteditable]"], formId = this.currentForm.id, elements;
+              var validator = this, rulesCache = {}, selectors = ["input", "select", "textarea", "[contenteditable]"], formId = this.currentForm.getAttribute("id"), elements;
               elements = $2(this.currentForm).find(selectors.concat(this.settings.customElements).join(", ")).not(":submit, :reset, :image, :disabled").not(this.settings.ignore);
               if (formId) {
                 elements = elements.add(
@@ -8500,7 +8500,7 @@
               return /radio|checkbox/i.test(element.type);
             },
             findByName: function(name) {
-              var formId = this.currentForm.id, selector = "[name='" + this.escapeCssMeta(name) + "']", elements = $2(this.currentForm).find(selector);
+              var formId = this.currentForm.getAttribute("id"), selector = "[name='" + this.escapeCssMeta(name) + "']", elements = $2(this.currentForm).find(selector);
               if (formId) {
                 elements = elements.add(
                   $2(selector).filter("[form='" + this.escapeCssMeta(formId) + "']")
@@ -9247,7 +9247,7 @@ jquery-validation/dist/jquery.validate.js:
 
 jquery-validation/dist/jquery.validate.js:
   (*!
-   * jQuery Validation Plugin v1.22.0
+   * jQuery Validation Plugin v1.22.1
    *
    * https://jqueryvalidation.org/
    *
