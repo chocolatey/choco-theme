@@ -11497,7 +11497,7 @@ ${templateEnter}`;
             target = {};
           }
           for (var prop2 in obj) {
-            if (obj.hasOwnProperty(prop2) && (overwrite !== false || !target.hasOwnProperty(prop2))) {
+            if (Object.prototype.hasOwnProperty.call(obj, prop2) && (overwrite !== false || !Object.prototype.hasOwnProperty.call(target, prop2))) {
               target[prop2] = obj[prop2];
             }
           }
@@ -22046,7 +22046,7 @@ ${templateEnter}`;
         };
         CodeMirror2.fromTextArea = fromTextArea;
         addLegacyProps(CodeMirror2);
-        CodeMirror2.version = "5.65.20";
+        CodeMirror2.version = "5.65.21";
         return CodeMirror2;
       }));
     }

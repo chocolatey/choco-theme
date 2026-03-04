@@ -4,7 +4,7 @@
     "link": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm",
     "licenseLink": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm/LICENSE",
     "licenseName": "LICENSE",
-    "version": "2.5.0",
+    "version": "2.5.2",
     "dependencies": [
         {
             "name": "@eonasdan/tempus-dominus",
@@ -21,21 +21,21 @@
         {
             "name": "@fortawesome/fontawesome-free",
             "link": "https://github.com/FortAwesome/Font-Awesome",
-            "version": "7.1.0",
+            "version": "7.2.0",
             "licenses": [
                 {
                     "type": "CC-BY-4.0",
-                    "link": "https://github.com/FortAwesome/Font-Awesome/blob/41cfe644047fc3a4c49c22acc721cacc3e1021fe/LICENSE.txt",
+                    "link": "https://github.com/FortAwesome/Font-Awesome/blob/337dd2045d5621ce0f8567c33c256f3dedeed55d/LICENSE.txt",
                     "name": "LICENSE.txt"
                 },
                 {
                     "type": "OFL-1.1",
-                    "link": "https://github.com/FortAwesome/Font-Awesome/blob/41cfe644047fc3a4c49c22acc721cacc3e1021fe/LICENSE.txt",
+                    "link": "https://github.com/FortAwesome/Font-Awesome/blob/337dd2045d5621ce0f8567c33c256f3dedeed55d/LICENSE.txt",
                     "name": "LICENSE.txt"
                 },
                 {
                     "type": "MIT",
-                    "link": "https://github.com/FortAwesome/Font-Awesome/blob/41cfe644047fc3a4c49c22acc721cacc3e1021fe/LICENSE.txt",
+                    "link": "https://github.com/FortAwesome/Font-Awesome/blob/337dd2045d5621ce0f8567c33c256f3dedeed55d/LICENSE.txt",
                     "name": "LICENSE.txt"
                 }
             ]
@@ -283,11 +283,11 @@
         {
             "name": "sortablejs",
             "link": "https://github.com/SortableJS/Sortable",
-            "version": "1.15.6",
+            "version": "1.15.7",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/SortableJS/Sortable/blob/63ecb31937d19fcb30aa924e82ee8a769ef34492/LICENSE",
+                    "link": "https://github.com/SortableJS/Sortable/blob/031649b8116565e02419e8aa2d252d7d8c82b9da/LICENSE",
                     "name": "LICENSE"
                 }
             ]
@@ -307,11 +307,11 @@
         {
             "name": "sweetalert2",
             "link": "https://github.com/sweetalert2/sweetalert2",
-            "version": "11.26.18",
+            "version": "11.26.21",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/sweetalert2/sweetalert2/blob/01f6d8062cb841a3b232264c5ff2ef5c03e84404/LICENSE",
+                    "link": "https://github.com/sweetalert2/sweetalert2/blob/2d365fc4309eb48a0608b0595ae3de2de3f03b04/LICENSE",
                     "name": "LICENSE"
                 }
             ]
@@ -331,11 +331,11 @@
         {
             "name": "underscore",
             "link": "https://github.com/jashkenas/underscore",
-            "version": "1.13.7",
+            "version": "1.13.8",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/jashkenas/underscore/blob/d2e7e613a597bec6b16c946e42c91950dcc1a215/LICENSE",
+                    "link": "https://github.com/jashkenas/underscore/blob/9374840c22e348083d0d072f30dc980622523259/LICENSE",
                     "name": "LICENSE"
                 }
             ]

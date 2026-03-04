@@ -17,10 +17,10 @@ Chocolatey uses a number of 3rd party components. Their details are below.
   * [Apache v2.0 License](#apache-v20-license-1)
     * [fuse.js@7.1.0](#fusejs710)
   * [Attribution 4.0 International License](#attribution-40-international-license-1)
-    * [@fortawesome/fontawesome-free@7.1.0](#fortawesomefontawesome-free710)
+    * [@fortawesome/fontawesome-free@7.2.0](#fortawesomefontawesome-free720)
   * [MIT License](#mit-license-1)
     * [@eonasdan/tempus-dominus@v6.10.4](#eonasdantempus-dominusv6104)
-    * [@fortawesome/fontawesome-free@7.1.0](#fortawesomefontawesome-free710-1)
+    * [@fortawesome/fontawesome-free@7.2.0](#fortawesomefontawesome-free720-1)
     * [@microsoft/signalr@9.0.6](#microsoftsignalr906)
     * [@popperjs/core@2.11.8](#popperjscore2118)
     * [abp-web-resources@5.9.3](#abp-web-resources593)
@@ -40,13 +40,13 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [mustache@4.2.0](#mustache420)
     * [prismjs@1.30.0](#prismjs1300)
     * [pwstrength-bootstrap@3.1.3](#pwstrength-bootstrap313)
-    * [sortablejs@1.15.6](#sortablejs1156)
+    * [sortablejs@1.15.7](#sortablejs1157)
     * [spin.js@4.1.2](#spinjs412)
-    * [sweetalert2@11.26.18](#sweetalert2112618)
+    * [sweetalert2@11.26.21](#sweetalert2112621)
     * [timeago@1.6.7](#timeago167)
-    * [underscore@1.13.7](#underscore1137)
+    * [underscore@1.13.8](#underscore1138)
   * [SIL OPEN FONT 1.1 LICENSE](#sil-open-font-11-license-1)
-    * [@fortawesome/fontawesome-free@7.1.0](#fortawesomefontawesome-free710-2)
+    * [@fortawesome/fontawesome-free@7.2.0](#fortawesomefontawesome-free720-2)
 
 ## Open Source License Types (Reference)
 
@@ -733,9 +733,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 ### Attribution 4.0 International License
 
-#### @fortawesome/fontawesome-free@7.1.0
+#### @fortawesome/fontawesome-free@7.2.0
 
-[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/41cfe644047fc3a4c49c22acc721cacc3e1021fe/LICENSE.txt)
+[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/337dd2045d5621ce0f8567c33c256f3dedeed55d/LICENSE.txt)
 
 ### MIT License
 
@@ -743,9 +743,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@eonasdan/tempus-dominus](https://github.com/Eonasdan/tempus-dominus) - [License terms.](https://github.com/Eonasdan/tempus-dominus/blob/5a81b754dd37925a83c28762ff1afb3b53114bfd/LICENSE)
 
-#### @fortawesome/fontawesome-free@7.1.0
+#### @fortawesome/fontawesome-free@7.2.0
 
-[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/41cfe644047fc3a4c49c22acc721cacc3e1021fe/LICENSE.txt)
+[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/337dd2045d5621ce0f8567c33c256f3dedeed55d/LICENSE.txt)
 
 #### @microsoft/signalr@9.0.6
 
@@ -823,28 +823,28 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [pwstrength-bootstrap](https://github.com/ablanco/jquery.pwstrength.bootstrap) - [License terms.](https://github.com/ablanco/jquery.pwstrength.bootstrap/blob/7dd598f7088bff1146c4e040eff217f37aee600f/MIT-LICENSE.txt)
 
-#### sortablejs@1.15.6
+#### sortablejs@1.15.7
 
-[sortablejs](https://github.com/SortableJS/Sortable) - [License terms.](https://github.com/SortableJS/Sortable/blob/63ecb31937d19fcb30aa924e82ee8a769ef34492/LICENSE)
+[sortablejs](https://github.com/SortableJS/Sortable) - [License terms.](https://github.com/SortableJS/Sortable/blob/031649b8116565e02419e8aa2d252d7d8c82b9da/LICENSE)
 
 #### spin.js@4.1.2
 
 [spin.js](https://github.com/fgnass/spin.js) - [License terms.](https://github.com/fgnass/spin.js/blob/653e79c5ef1f068e5a1a31da5b79b6d1e1b1674d/LICENSE.md)
 
-#### sweetalert2@11.26.18
+#### sweetalert2@11.26.21
 
-[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/01f6d8062cb841a3b232264c5ff2ef5c03e84404/LICENSE)
+[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/2d365fc4309eb48a0608b0595ae3de2de3f03b04/LICENSE)
 
 #### timeago@1.6.7
 
 [timeago](https://github.com/rmm5t/jquery-timeago) - [License terms.](https://github.com/rmm5t/jquery-timeago/blob/48fdda3ca724dcd655e8e990f6d7fbd203718905/LICENSE.txt)
 
-#### underscore@1.13.7
+#### underscore@1.13.8
 
-[underscore](https://github.com/jashkenas/underscore) - [License terms.](https://github.com/jashkenas/underscore/blob/d2e7e613a597bec6b16c946e42c91950dcc1a215/LICENSE)
+[underscore](https://github.com/jashkenas/underscore) - [License terms.](https://github.com/jashkenas/underscore/blob/9374840c22e348083d0d072f30dc980622523259/LICENSE)
 
 ### SIL OPEN FONT 1.1 LICENSE
 
-#### @fortawesome/fontawesome-free@7.1.0
+#### @fortawesome/fontawesome-free@7.2.0
 
-[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/41cfe644047fc3a4c49c22acc721cacc3e1021fe/LICENSE.txt)
+[@fortawesome/fontawesome-free](https://github.com/FortAwesome/Font-Awesome) - [License terms.](https://github.com/FortAwesome/Font-Awesome/blob/337dd2045d5621ce0f8567c33c256f3dedeed55d/LICENSE.txt)
