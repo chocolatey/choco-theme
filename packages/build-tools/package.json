@@ -15,7 +15,7 @@
         "eslint": "^9.34.0",
         "eslint-plugin-playwright": "^2.2.2",
         "globals": "^16.4.0",
-        "purgecss": "^7.0.2",
+        "purgecss": "^8.0.0",
         "tsx": "^4.20.5",
         "typescript": "^5.9.2",
         "typescript-eslint": "^8.42.0"
