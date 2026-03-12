@@ -26,7 +26,7 @@
         "build-js": "npx tsx build/build-js.ts",
         "build-partials": "npx tsx build/build-partials.ts",
         "build-sass": "npx tsx build/build-sass.ts",
-        "eslint": "npx eslint",
+        "eslint": "npx eslint --max-warnings 0",
         "stylelint": "stylelint \"src/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
         "publish-dry-run": "yarn workspaces foreach --all --no-private npm publish --tolerate-republish --dry-run --access public",
         "update-version": "yarn workspaces foreach --since version"

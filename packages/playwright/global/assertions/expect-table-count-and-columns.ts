@@ -18,12 +18,12 @@ export const expectTableCountAndColumns = async (
 ): Promise<void> => {
     await test.step('Test number of tables and table column headers', async () => {
         // Select all tables on the page
-        const tables: Locator[] = await page.locator('table').all();
+        const tables: Locator = page.locator('table');
 
-        expect.soft(tables.length, 'Expect correct number of tables').toBe(tablesExpected.length);
+        await expect.soft(tables, 'Expect correct number of tables').toHaveCount(tablesExpected.length);
 
         // Loop through each table and its corresponding expected headers
-        for (const [index, table] of tables.entries()) {
+        for (const [index, table] of (await tables.all()).entries()) {
             const expected = tablesExpected[index];
             const tableColumns = (await table.locator('thead tr th').allTextContents()).map(s => s.trim());
 
@@ -31,7 +31,7 @@ export const expectTableCountAndColumns = async (
                 await expect.soft(page.locator(`#${expected.section}Container h2`)).toHaveText(expected.title);
             }
 
-            expect.soft(tableColumns.length, `${expected.section} - Expect correct number of table columns`).toBe(expected.columns.length);
+            expect.soft(tableColumns, `${expected.section} - Expect correct number of table columns`).toHaveLength(expected.columns.length);
 
             expect.soft(tableColumns, `${expected.section} - Expect correct tables column titles`).toEqual(expected.columns);
 
