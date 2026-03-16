@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/blog",
-    "version": "2.5.2",
+    "version": "2.6.0",
     "description": "Chocolatey Software theme assets for use on blog.chocolatey.org.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/blog#readme",

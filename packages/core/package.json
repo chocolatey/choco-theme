@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/core",
-    "version": "2.5.0",
+    "version": "2.6.0",
     "description": "Theme assets for use on Chocolatey Software websites.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/core#readme",
@@ -10,7 +10,7 @@
         "datatables.net-dt": "^2.3.3",
         "html-to-pdfmake": "^2.5.31",
         "luxon": "^3.7.1",
-        "pdfmake": "^0.2.20",
+        "pdfmake": "^0.3.5",
         "turndown": "^7.2.1"
     },
     "files": [

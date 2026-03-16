@@ -4,7 +4,7 @@
     "link": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm",
     "licenseLink": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm/LICENSE",
     "licenseName": "LICENSE",
-    "version": "2.5.2",
+    "version": "2.6.0",
     "dependencies": [
         {
             "name": "@eonasdan/tempus-dominus",
@@ -307,11 +307,11 @@
         {
             "name": "sweetalert2",
             "link": "https://github.com/sweetalert2/sweetalert2",
-            "version": "11.26.21",
+            "version": "11.26.22",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/sweetalert2/sweetalert2/blob/2d365fc4309eb48a0608b0595ae3de2de3f03b04/LICENSE",
+                    "link": "https://github.com/sweetalert2/sweetalert2/blob/355e20784039c5d7f45f0898e340af4874c517b7/LICENSE",
                     "name": "LICENSE"
                 }
             ]

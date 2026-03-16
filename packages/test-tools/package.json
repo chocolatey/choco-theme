@@ -1,12 +1,12 @@
 {
     "name": "@chocolatey-software/test-tools",
-    "version": "2.5.1",
+    "version": "2.6.0",
     "description": "Chocolatey Software tools for testing and test automation.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/test-tools#readme",
     "license": "Apache-2.0",
     "dependencies": {
-        "msnodesqlv8": "^5.1.3"
+        "msnodesqlv8": "^5.1.5"
     },
     "files": [
         "LICENSE",

@@ -113,13 +113,14 @@ export default defineConfig([
     // Playwright-specific config
     {
         ...playwright.configs['flat/recommended'],
-        files: ['playwright/**/*.ts'],
+        files: ['playwright/**/*.ts', 'packages/playwright/**/*.ts'],
         rules: {
             ...playwright.configs['flat/recommended'].rules,
             'playwright/expect-expect': 'off',
             'playwright/no-conditional-expect': 'off',
             'playwright/no-conditional-in-test': 'off',
-            'playwright/no-wait-for-timeout': 'off'
+            'playwright/no-wait-for-timeout': 'off',
+            'playwright/prefer-locator': 'off'
         }
     }
 ]);

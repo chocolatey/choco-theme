@@ -42,7 +42,7 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [pwstrength-bootstrap@3.1.3](#pwstrength-bootstrap313)
     * [sortablejs@1.15.7](#sortablejs1157)
     * [spin.js@4.1.2](#spinjs412)
-    * [sweetalert2@11.26.21](#sweetalert2112621)
+    * [sweetalert2@11.26.22](#sweetalert2112622)
     * [timeago@1.6.7](#timeago167)
     * [underscore@1.13.8](#underscore1138)
   * [SIL OPEN FONT 1.1 LICENSE](#sil-open-font-11-license-1)
@@ -831,9 +831,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [spin.js](https://github.com/fgnass/spin.js) - [License terms.](https://github.com/fgnass/spin.js/blob/653e79c5ef1f068e5a1a31da5b79b6d1e1b1674d/LICENSE.md)
 
-#### sweetalert2@11.26.21
+#### sweetalert2@11.26.22
 
-[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/2d365fc4309eb48a0608b0595ae3de2de3f03b04/LICENSE)
+[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/355e20784039c5d7f45f0898e340af4874c517b7/LICENSE)
 
 #### timeago@1.6.7
 
