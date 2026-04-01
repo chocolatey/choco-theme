@@ -4,7 +4,7 @@
     "link": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm",
     "licenseLink": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm/LICENSE",
     "licenseName": "LICENSE",
-    "version": "2.6.0",
+    "version": "2.7.0",
     "dependencies": [
         {
             "name": "@eonasdan/tempus-dominus",
@@ -151,11 +151,11 @@
         {
             "name": "fuse.js",
             "link": "https://github.com/krisk/Fuse",
-            "version": "7.1.0",
+            "version": "7.3.0",
             "licenses": [
                 {
                     "type": "Apache-2.0",
-                    "link": "https://github.com/krisk/Fuse/blob/8119c18862f7df585688b1320ff307eb19f8ff89/LICENSE",
+                    "link": "https://github.com/krisk/Fuse/blob/aae48f51475284f97d47c0d16b1aaa7ef7f910b1/LICENSE",
                     "name": "LICENSE"
                 }
             ]
@@ -235,11 +235,11 @@
         {
             "name": "moment-timezone",
             "link": "https://github.com/moment/moment-timezone",
-            "version": "0.6.0",
+            "version": "0.6.1",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/moment/moment-timezone/blob/92c6a36c9d2f28658d3f122839022aacca56a9ef/LICENSE",
+                    "link": "https://github.com/moment/moment-timezone/blob/13e724cb72093aa297f6e4a5acd69cbb4afd52a5/LICENSE",
                     "name": "LICENSE"
                 }
             ]
@@ -307,11 +307,11 @@
         {
             "name": "sweetalert2",
             "link": "https://github.com/sweetalert2/sweetalert2",
-            "version": "11.26.22",
+            "version": "11.26.24",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/sweetalert2/sweetalert2/blob/355e20784039c5d7f45f0898e340af4874c517b7/LICENSE",
+                    "link": "https://github.com/sweetalert2/sweetalert2/blob/b3b27fd7bf6dd3359249b52fd690bd732a2d11f2/LICENSE",
                     "name": "LICENSE"
                 }
             ]

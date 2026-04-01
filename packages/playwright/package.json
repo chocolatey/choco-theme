@@ -1,17 +1,17 @@
 {
     "name": "@chocolatey-software/playwright",
-    "version": "2.6.0",
+    "version": "2.7.0",
     "description": "Chocolatey Software theme assets for Playwright.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/playwright#readme",
     "license": "Apache-2.0",
     "dependencies": {
-        "@axe-core/playwright": "^4.10.1",
-        "@cj-tech-master/excelts": "^4.2.2",
+        "@axe-core/playwright": "^4.11.1",
+        "@cj-tech-master/excelts": "^4.2.3",
         "@playwright/test": "1.57.0",
         "axe-html-reporter": "^2.2.11",
-        "fast-xml-parser": "^5.2.5",
-        "mssql": "^12.2.0",
+        "fast-xml-parser": "^5.5.11",
+        "mssql": "^12.2.1",
         "pdf-parse": "^2.4.5"
     },
     "files": [

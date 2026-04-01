@@ -1,5 +1,5 @@
 ---
-import { z } from 'zod';
+import { z } from 'astro/zod';
 
 const dynamicCodeBlockSchema = z.object({
     language: z.enum(['markup', 'css', 'clike', 'javascript', 'bash', 'csharp', 'diff', 'json', 'powershell', 'puppet', 'python', 'ruby', 'scss', 'shell-session', 'xml-doc', 'yaml'])

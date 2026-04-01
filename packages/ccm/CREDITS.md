@@ -1,4 +1,4 @@
-<img alt="Chocolatey logo" width="260" style="margin-right: 1rem;" src="https://img.chocolatey.org/logos/chocolatey.png"> <img alt="Chocolatey icon logo" width="200" src="https://img.chocolatey.org/logos/chocolatey-icon.png">
+<img alt="Chocolatey logo" width="260" style="margin-right: 1rem;" src="https://img.chocolatey.org/logos/chocolatey.png" data-astro-source-file="C:/source/credits-generator/src/pages/credits.astro" data-astro-source-loc="48:26"> <img alt="Chocolatey icon logo" width="200" src="https://img.chocolatey.org/logos/chocolatey-icon.png" data-astro-source-file="C:/source/credits-generator/src/pages/credits.astro" data-astro-source-loc="49:26">
 
 # @chocolatey-software/ccm Third Party Licenses
 
@@ -15,7 +15,7 @@ Chocolatey uses a number of 3rd party components. Their details are below.
   * [Chocolatey Open Source](#chocolatey-open-source)
 * [@chocolatey-software/ccm](#chocolatey-softwareccm)
   * [Apache v2.0 License](#apache-v20-license-1)
-    * [fuse.js@7.1.0](#fusejs710)
+    * [fuse.js@7.3.0](#fusejs730)
   * [Attribution 4.0 International License](#attribution-40-international-license-1)
     * [@fortawesome/fontawesome-free@7.2.0](#fortawesomefontawesome-free720)
   * [MIT License](#mit-license-1)
@@ -36,13 +36,13 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [jstree@3.3.17](#jstree3317)
     * [luxon@3.7.2](#luxon372)
     * [moment@2.30.1](#moment2301)
-    * [moment-timezone@0.6.0](#moment-timezone060)
+    * [moment-timezone@0.6.1](#moment-timezone061)
     * [mustache@4.2.0](#mustache420)
     * [prismjs@1.30.0](#prismjs1300)
     * [pwstrength-bootstrap@3.1.3](#pwstrength-bootstrap313)
     * [sortablejs@1.15.7](#sortablejs1157)
     * [spin.js@4.1.2](#spinjs412)
-    * [sweetalert2@11.26.22](#sweetalert2112622)
+    * [sweetalert2@11.26.24](#sweetalert2112624)
     * [timeago@1.6.7](#timeago167)
     * [underscore@1.13.8](#underscore1138)
   * [SIL OPEN FONT 1.1 LICENSE](#sil-open-font-11-license-1)
@@ -727,9 +727,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 ### Apache v2.0 License
 
-#### fuse.js@7.1.0
+#### fuse.js@7.3.0
 
-[fuse.js](https://github.com/krisk/Fuse) - [License terms.](https://github.com/krisk/Fuse/blob/8119c18862f7df585688b1320ff307eb19f8ff89/LICENSE)
+[fuse.js](https://github.com/krisk/Fuse) - [License terms.](https://github.com/krisk/Fuse/blob/aae48f51475284f97d47c0d16b1aaa7ef7f910b1/LICENSE)
 
 ### Attribution 4.0 International License
 
@@ -807,9 +807,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [moment](https://github.com/moment/moment) - [License terms.](https://github.com/moment/moment/blob/485d9a7d709bd5f3869a7ad24630cf0746d072dc/LICENSE)
 
-#### moment-timezone@0.6.0
+#### moment-timezone@0.6.1
 
-[moment-timezone](https://github.com/moment/moment-timezone) - [License terms.](https://github.com/moment/moment-timezone/blob/92c6a36c9d2f28658d3f122839022aacca56a9ef/LICENSE)
+[moment-timezone](https://github.com/moment/moment-timezone) - [License terms.](https://github.com/moment/moment-timezone/blob/13e724cb72093aa297f6e4a5acd69cbb4afd52a5/LICENSE)
 
 #### mustache@4.2.0
 
@@ -831,9 +831,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [spin.js](https://github.com/fgnass/spin.js) - [License terms.](https://github.com/fgnass/spin.js/blob/653e79c5ef1f068e5a1a31da5b79b6d1e1b1674d/LICENSE.md)
 
-#### sweetalert2@11.26.22
+#### sweetalert2@11.26.24
 
-[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/355e20784039c5d7f45f0898e340af4874c517b7/LICENSE)
+[sweetalert2](https://github.com/sweetalert2/sweetalert2) - [License terms.](https://github.com/sweetalert2/sweetalert2/blob/b3b27fd7bf6dd3359249b52fd690bd732a2d11f2/LICENSE)
 
 #### timeago@1.6.7
 
