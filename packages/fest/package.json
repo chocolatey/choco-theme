@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/fest",
-    "version": "2.5.2",
+    "version": "2.7.0",
     "description": "Chocolatey Software theme assets for use on chocolateyfest.com.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/fest#readme",
@@ -10,8 +10,8 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^7.2.0",
-        "bootstrap": "^5.3.7",
-        "lite-youtube-embed": "^0.3.3"
+        "bootstrap": "^5.3.8",
+        "lite-youtube-embed": "^0.3.4"
     },
     "files": [
         "LICENSE",
