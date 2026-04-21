@@ -435,6 +435,7 @@ $sizing-px: (
     30: 30px,
     35: 35px,
     40: 40px,
+    42: 42px,
     50: 50px,
     60: 60px,
     65: 65px,
@@ -443,13 +444,20 @@ $sizing-px: (
     80: 80px,
     90: 90px,
     100: 100px,
+    107: 107px,
+    110: 110px,
     125: 125px,
     130: 130px,
+    191: 191px,
     200: 200px,
+    205: 205px,
     250: 250px,
     300: 300px,
+    335: 335px,
     400: 400px,
-    500: 500px
+    450: 450px,
+    500: 500px,
+    650: 650px
 );
 
 $sizing-percent: (
@@ -504,7 +512,9 @@ $aspect-ratios: map.merge($aspect-ratios, $aspect-ratios-custom);
 $zindex-levels-custom: (
     4: 4,
     5: 5,
-    1021: 1021
+    1021: 1021,
+    1070: 1070,
+    2000: 2000
 );
 
 $zindex-levels: map.merge($zindex-levels, $zindex-levels-custom);

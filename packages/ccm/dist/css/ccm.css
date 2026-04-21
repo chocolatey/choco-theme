@@ -16840,6 +16840,14 @@ textarea.form-control-lg {
   z-index: 1021 !important;
 }
 
+.z-1070 {
+  z-index: 1070 !important;
+}
+
+.z-2000 {
+  z-index: 2000 !important;
+}
+
 .rotate-10 {
   transform: rotate(10deg) !important;
 }
@@ -18236,6 +18244,10 @@ textarea.form-control-lg {
   min-height: 40px !important;
 }
 
+.min-h-px-42 {
+  min-height: 42px !important;
+}
+
 .min-h-px-50 {
   min-height: 50px !important;
 }
@@ -18268,6 +18280,14 @@ textarea.form-control-lg {
   min-height: 100px !important;
 }
 
+.min-h-px-107 {
+  min-height: 107px !important;
+}
+
+.min-h-px-110 {
+  min-height: 110px !important;
+}
+
 .min-h-px-125 {
   min-height: 125px !important;
 }
@@ -18276,8 +18296,16 @@ textarea.form-control-lg {
   min-height: 130px !important;
 }
 
+.min-h-px-191 {
+  min-height: 191px !important;
+}
+
 .min-h-px-200 {
   min-height: 200px !important;
+}
+
+.min-h-px-205 {
+  min-height: 205px !important;
 }
 
 .min-h-px-250 {
@@ -18288,12 +18316,156 @@ textarea.form-control-lg {
   min-height: 300px !important;
 }
 
+.min-h-px-335 {
+  min-height: 335px !important;
+}
+
 .min-h-px-400 {
   min-height: 400px !important;
 }
 
+.min-h-px-450 {
+  min-height: 450px !important;
+}
+
 .min-h-px-500 {
   min-height: 500px !important;
+}
+
+.min-h-px-650 {
+  min-height: 650px !important;
+}
+
+.max-h-px-0 {
+  max-height: 0 !important;
+}
+
+.max-h-px-5 {
+  max-height: 5px !important;
+}
+
+.max-h-px-10 {
+  max-height: 10px !important;
+}
+
+.max-h-px-15 {
+  max-height: 15px !important;
+}
+
+.max-h-px-16 {
+  max-height: 16px !important;
+}
+
+.max-h-px-20 {
+  max-height: 20px !important;
+}
+
+.max-h-px-25 {
+  max-height: 25px !important;
+}
+
+.max-h-px-30 {
+  max-height: 30px !important;
+}
+
+.max-h-px-35 {
+  max-height: 35px !important;
+}
+
+.max-h-px-40 {
+  max-height: 40px !important;
+}
+
+.max-h-px-42 {
+  max-height: 42px !important;
+}
+
+.max-h-px-50 {
+  max-height: 50px !important;
+}
+
+.max-h-px-60 {
+  max-height: 60px !important;
+}
+
+.max-h-px-65 {
+  max-height: 65px !important;
+}
+
+.max-h-px-70 {
+  max-height: 70px !important;
+}
+
+.max-h-px-75 {
+  max-height: 75px !important;
+}
+
+.max-h-px-80 {
+  max-height: 80px !important;
+}
+
+.max-h-px-90 {
+  max-height: 90px !important;
+}
+
+.max-h-px-100 {
+  max-height: 100px !important;
+}
+
+.max-h-px-107 {
+  max-height: 107px !important;
+}
+
+.max-h-px-110 {
+  max-height: 110px !important;
+}
+
+.max-h-px-125 {
+  max-height: 125px !important;
+}
+
+.max-h-px-130 {
+  max-height: 130px !important;
+}
+
+.max-h-px-191 {
+  max-height: 191px !important;
+}
+
+.max-h-px-200 {
+  max-height: 200px !important;
+}
+
+.max-h-px-205 {
+  max-height: 205px !important;
+}
+
+.max-h-px-250 {
+  max-height: 250px !important;
+}
+
+.max-h-px-300 {
+  max-height: 300px !important;
+}
+
+.max-h-px-335 {
+  max-height: 335px !important;
+}
+
+.max-h-px-400 {
+  max-height: 400px !important;
+}
+
+.max-h-px-450 {
+  max-height: 450px !important;
+}
+
+.max-h-px-500 {
+  max-height: 500px !important;
+}
+
+.max-h-px-650 {
+  max-height: 650px !important;
 }
 
 .min-w-px-0 {
@@ -18336,6 +18508,10 @@ textarea.form-control-lg {
   min-width: 40px !important;
 }
 
+.min-w-px-42 {
+  min-width: 42px !important;
+}
+
 .min-w-px-50 {
   min-width: 50px !important;
 }
@@ -18368,6 +18544,14 @@ textarea.form-control-lg {
   min-width: 100px !important;
 }
 
+.min-w-px-107 {
+  min-width: 107px !important;
+}
+
+.min-w-px-110 {
+  min-width: 110px !important;
+}
+
 .min-w-px-125 {
   min-width: 125px !important;
 }
@@ -18376,8 +18560,16 @@ textarea.form-control-lg {
   min-width: 130px !important;
 }
 
+.min-w-px-191 {
+  min-width: 191px !important;
+}
+
 .min-w-px-200 {
   min-width: 200px !important;
+}
+
+.min-w-px-205 {
+  min-width: 205px !important;
 }
 
 .min-w-px-250 {
@@ -18388,12 +18580,24 @@ textarea.form-control-lg {
   min-width: 300px !important;
 }
 
+.min-w-px-335 {
+  min-width: 335px !important;
+}
+
 .min-w-px-400 {
   min-width: 400px !important;
 }
 
+.min-w-px-450 {
+  min-width: 450px !important;
+}
+
 .min-w-px-500 {
   min-width: 500px !important;
+}
+
+.min-w-px-650 {
+  min-width: 650px !important;
 }
 
 .h-px-0 {
@@ -18436,6 +18640,10 @@ textarea.form-control-lg {
   height: 40px !important;
 }
 
+.h-px-42 {
+  height: 42px !important;
+}
+
 .h-px-50 {
   height: 50px !important;
 }
@@ -18468,6 +18676,14 @@ textarea.form-control-lg {
   height: 100px !important;
 }
 
+.h-px-107 {
+  height: 107px !important;
+}
+
+.h-px-110 {
+  height: 110px !important;
+}
+
 .h-px-125 {
   height: 125px !important;
 }
@@ -18476,8 +18692,16 @@ textarea.form-control-lg {
   height: 130px !important;
 }
 
+.h-px-191 {
+  height: 191px !important;
+}
+
 .h-px-200 {
   height: 200px !important;
+}
+
+.h-px-205 {
+  height: 205px !important;
 }
 
 .h-px-250 {
@@ -18488,12 +18712,24 @@ textarea.form-control-lg {
   height: 300px !important;
 }
 
+.h-px-335 {
+  height: 335px !important;
+}
+
 .h-px-400 {
   height: 400px !important;
 }
 
+.h-px-450 {
+  height: 450px !important;
+}
+
 .h-px-500 {
   height: 500px !important;
+}
+
+.h-px-650 {
+  height: 650px !important;
 }
 
 .w-px-0 {
@@ -18536,6 +18772,10 @@ textarea.form-control-lg {
   width: 40px !important;
 }
 
+.w-px-42 {
+  width: 42px !important;
+}
+
 .w-px-50 {
   width: 50px !important;
 }
@@ -18568,6 +18808,14 @@ textarea.form-control-lg {
   width: 100px !important;
 }
 
+.w-px-107 {
+  width: 107px !important;
+}
+
+.w-px-110 {
+  width: 110px !important;
+}
+
 .w-px-125 {
   width: 125px !important;
 }
@@ -18576,8 +18824,16 @@ textarea.form-control-lg {
   width: 130px !important;
 }
 
+.w-px-191 {
+  width: 191px !important;
+}
+
 .w-px-200 {
   width: 200px !important;
+}
+
+.w-px-205 {
+  width: 205px !important;
 }
 
 .w-px-250 {
@@ -18588,12 +18844,24 @@ textarea.form-control-lg {
   width: 300px !important;
 }
 
+.w-px-335 {
+  width: 335px !important;
+}
+
 .w-px-400 {
   width: 400px !important;
 }
 
+.w-px-450 {
+  width: 450px !important;
+}
+
 .w-px-500 {
   width: 500px !important;
+}
+
+.w-px-650 {
+  width: 650px !important;
 }
 
 .min-h-0 {
@@ -22588,6 +22856,9 @@ textarea.form-control-lg {
   .h-px-sm-40 {
     height: 40px !important;
   }
+  .h-px-sm-42 {
+    height: 42px !important;
+  }
   .h-px-sm-50 {
     height: 50px !important;
   }
@@ -22612,14 +22883,26 @@ textarea.form-control-lg {
   .h-px-sm-100 {
     height: 100px !important;
   }
+  .h-px-sm-107 {
+    height: 107px !important;
+  }
+  .h-px-sm-110 {
+    height: 110px !important;
+  }
   .h-px-sm-125 {
     height: 125px !important;
   }
   .h-px-sm-130 {
     height: 130px !important;
   }
+  .h-px-sm-191 {
+    height: 191px !important;
+  }
   .h-px-sm-200 {
     height: 200px !important;
+  }
+  .h-px-sm-205 {
+    height: 205px !important;
   }
   .h-px-sm-250 {
     height: 250px !important;
@@ -22627,11 +22910,20 @@ textarea.form-control-lg {
   .h-px-sm-300 {
     height: 300px !important;
   }
+  .h-px-sm-335 {
+    height: 335px !important;
+  }
   .h-px-sm-400 {
     height: 400px !important;
   }
+  .h-px-sm-450 {
+    height: 450px !important;
+  }
   .h-px-sm-500 {
     height: 500px !important;
+  }
+  .h-px-sm-650 {
+    height: 650px !important;
   }
 }
 @media (min-width: 768px) {
@@ -26370,6 +26662,9 @@ textarea.form-control-lg {
   .h-px-md-40 {
     height: 40px !important;
   }
+  .h-px-md-42 {
+    height: 42px !important;
+  }
   .h-px-md-50 {
     height: 50px !important;
   }
@@ -26394,14 +26689,26 @@ textarea.form-control-lg {
   .h-px-md-100 {
     height: 100px !important;
   }
+  .h-px-md-107 {
+    height: 107px !important;
+  }
+  .h-px-md-110 {
+    height: 110px !important;
+  }
   .h-px-md-125 {
     height: 125px !important;
   }
   .h-px-md-130 {
     height: 130px !important;
   }
+  .h-px-md-191 {
+    height: 191px !important;
+  }
   .h-px-md-200 {
     height: 200px !important;
+  }
+  .h-px-md-205 {
+    height: 205px !important;
   }
   .h-px-md-250 {
     height: 250px !important;
@@ -26409,11 +26716,20 @@ textarea.form-control-lg {
   .h-px-md-300 {
     height: 300px !important;
   }
+  .h-px-md-335 {
+    height: 335px !important;
+  }
   .h-px-md-400 {
     height: 400px !important;
   }
+  .h-px-md-450 {
+    height: 450px !important;
+  }
   .h-px-md-500 {
     height: 500px !important;
+  }
+  .h-px-md-650 {
+    height: 650px !important;
   }
 }
 @media (min-width: 992px) {
@@ -30152,6 +30468,9 @@ textarea.form-control-lg {
   .h-px-lg-40 {
     height: 40px !important;
   }
+  .h-px-lg-42 {
+    height: 42px !important;
+  }
   .h-px-lg-50 {
     height: 50px !important;
   }
@@ -30176,14 +30495,26 @@ textarea.form-control-lg {
   .h-px-lg-100 {
     height: 100px !important;
   }
+  .h-px-lg-107 {
+    height: 107px !important;
+  }
+  .h-px-lg-110 {
+    height: 110px !important;
+  }
   .h-px-lg-125 {
     height: 125px !important;
   }
   .h-px-lg-130 {
     height: 130px !important;
   }
+  .h-px-lg-191 {
+    height: 191px !important;
+  }
   .h-px-lg-200 {
     height: 200px !important;
+  }
+  .h-px-lg-205 {
+    height: 205px !important;
   }
   .h-px-lg-250 {
     height: 250px !important;
@@ -30191,11 +30522,20 @@ textarea.form-control-lg {
   .h-px-lg-300 {
     height: 300px !important;
   }
+  .h-px-lg-335 {
+    height: 335px !important;
+  }
   .h-px-lg-400 {
     height: 400px !important;
   }
+  .h-px-lg-450 {
+    height: 450px !important;
+  }
   .h-px-lg-500 {
     height: 500px !important;
+  }
+  .h-px-lg-650 {
+    height: 650px !important;
   }
 }
 @media (min-width: 1200px) {
@@ -33934,6 +34274,9 @@ textarea.form-control-lg {
   .h-px-xl-40 {
     height: 40px !important;
   }
+  .h-px-xl-42 {
+    height: 42px !important;
+  }
   .h-px-xl-50 {
     height: 50px !important;
   }
@@ -33958,14 +34301,26 @@ textarea.form-control-lg {
   .h-px-xl-100 {
     height: 100px !important;
   }
+  .h-px-xl-107 {
+    height: 107px !important;
+  }
+  .h-px-xl-110 {
+    height: 110px !important;
+  }
   .h-px-xl-125 {
     height: 125px !important;
   }
   .h-px-xl-130 {
     height: 130px !important;
   }
+  .h-px-xl-191 {
+    height: 191px !important;
+  }
   .h-px-xl-200 {
     height: 200px !important;
+  }
+  .h-px-xl-205 {
+    height: 205px !important;
   }
   .h-px-xl-250 {
     height: 250px !important;
@@ -33973,11 +34328,20 @@ textarea.form-control-lg {
   .h-px-xl-300 {
     height: 300px !important;
   }
+  .h-px-xl-335 {
+    height: 335px !important;
+  }
   .h-px-xl-400 {
     height: 400px !important;
   }
+  .h-px-xl-450 {
+    height: 450px !important;
+  }
   .h-px-xl-500 {
     height: 500px !important;
+  }
+  .h-px-xl-650 {
+    height: 650px !important;
   }
 }
 @media (min-width: 1400px) {
@@ -37716,6 +38080,9 @@ textarea.form-control-lg {
   .h-px-xxl-40 {
     height: 40px !important;
   }
+  .h-px-xxl-42 {
+    height: 42px !important;
+  }
   .h-px-xxl-50 {
     height: 50px !important;
   }
@@ -37740,14 +38107,26 @@ textarea.form-control-lg {
   .h-px-xxl-100 {
     height: 100px !important;
   }
+  .h-px-xxl-107 {
+    height: 107px !important;
+  }
+  .h-px-xxl-110 {
+    height: 110px !important;
+  }
   .h-px-xxl-125 {
     height: 125px !important;
   }
   .h-px-xxl-130 {
     height: 130px !important;
   }
+  .h-px-xxl-191 {
+    height: 191px !important;
+  }
   .h-px-xxl-200 {
     height: 200px !important;
+  }
+  .h-px-xxl-205 {
+    height: 205px !important;
   }
   .h-px-xxl-250 {
     height: 250px !important;
@@ -37755,11 +38134,20 @@ textarea.form-control-lg {
   .h-px-xxl-300 {
     height: 300px !important;
   }
+  .h-px-xxl-335 {
+    height: 335px !important;
+  }
   .h-px-xxl-400 {
     height: 400px !important;
   }
+  .h-px-xxl-450 {
+    height: 450px !important;
+  }
   .h-px-xxl-500 {
     height: 500px !important;
+  }
+  .h-px-xxl-650 {
+    height: 650px !important;
   }
 }
 @media (min-width: 1600px) {
@@ -41498,6 +41886,9 @@ textarea.form-control-lg {
   .h-px-xxxl-40 {
     height: 40px !important;
   }
+  .h-px-xxxl-42 {
+    height: 42px !important;
+  }
   .h-px-xxxl-50 {
     height: 50px !important;
   }
@@ -41522,14 +41913,26 @@ textarea.form-control-lg {
   .h-px-xxxl-100 {
     height: 100px !important;
   }
+  .h-px-xxxl-107 {
+    height: 107px !important;
+  }
+  .h-px-xxxl-110 {
+    height: 110px !important;
+  }
   .h-px-xxxl-125 {
     height: 125px !important;
   }
   .h-px-xxxl-130 {
     height: 130px !important;
   }
+  .h-px-xxxl-191 {
+    height: 191px !important;
+  }
   .h-px-xxxl-200 {
     height: 200px !important;
+  }
+  .h-px-xxxl-205 {
+    height: 205px !important;
   }
   .h-px-xxxl-250 {
     height: 250px !important;
@@ -41537,11 +41940,20 @@ textarea.form-control-lg {
   .h-px-xxxl-300 {
     height: 300px !important;
   }
+  .h-px-xxxl-335 {
+    height: 335px !important;
+  }
   .h-px-xxxl-400 {
     height: 400px !important;
   }
+  .h-px-xxxl-450 {
+    height: 450px !important;
+  }
   .h-px-xxxl-500 {
     height: 500px !important;
+  }
+  .h-px-xxxl-650 {
+    height: 650px !important;
   }
 }
 @media (min-width: 1200px) {
@@ -58676,6 +59088,19 @@ a:not(.btn).disabled {
     font-size: 0.875em;
   }
 }
+.block-ui {
+  position: relative;
+  pointer-events: none; /* prevents interaction */
+}
+
+.block-ui::before {
+  position: absolute;
+  inset: 0;
+  z-index: 2000;
+  content: "";
+  background: rgba(0, 0, 0, 0.4); /* overlay */
+}
+
 /* stylelint-disable selector-max-type */
 .chocolatey-ccm #appSidebar {
   max-width: 325px;
