@@ -178,7 +178,8 @@ repositoryConfig.ccm.purgeCss = {
         /^text-bg-(blue|pink|purple|green|red|yellow|orange)/,
         /^fill-(blue|pink|purple|green|red|yellow|orange|success|danger|info|primary)/,
         /^selected/,
-        /^dt-column-header/
+        /^dt-column-header/,
+        /^fa-(brands|google|twitter|x-twitter|square-x-twitter|google|microsoft|facebook|facebook-f|square-facebook)/,
     ]
 };
 
