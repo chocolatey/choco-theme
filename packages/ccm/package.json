@@ -8,7 +8,6 @@
     "devDependencies": {
         "@types/bootstrap": "^5.2.10",
         "@types/jquery": "^3",
-        "@types/jstree": "^3",
         "@types/luxon": "^3",
         "@types/mustache": "^4",
         "@types/prismjs": "^1",
@@ -33,7 +32,6 @@
         "jquery": "^3.7.1",
         "jquery-serializejson": "^3.2.1",
         "jquery-validation": "1.21.0",
-        "jstree": "^3.3.17",
         "luxon": "^3.7.2",
         "moment": "^2.30.1",
         "moment-timezone": "^0.6.1",
