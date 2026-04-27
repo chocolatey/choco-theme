@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/org",
-    "version": "2.7.0",
+    "version": "2.8.0",
     "description": "Chocolatey Software theme assets for use on chocolatey.org.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/org#readme",
@@ -15,7 +15,7 @@
         "@splidejs/splide": "^4.1.4",
         "@splidejs/splide-extension-auto-scroll": "^0.5.3",
         "@splidejs/splide-extension-intersection": "^0.2.0",
-        "add-to-calendar-button": "^2.13.8",
+        "add-to-calendar-button": "^2.13.9",
         "balance-text": "^3.3.1",
         "bootstrap": "^5.3.8",
         "clipboard": "^2.0.11",

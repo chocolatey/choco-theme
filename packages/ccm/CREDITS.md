@@ -1,4 +1,4 @@
-<img alt="Chocolatey logo" width="260" style="margin-right: 1rem;" src="https://img.chocolatey.org/logos/chocolatey.png" data-astro-source-file="C:/source/credits-generator/src/pages/credits.astro" data-astro-source-loc="48:26"> <img alt="Chocolatey icon logo" width="200" src="https://img.chocolatey.org/logos/chocolatey-icon.png" data-astro-source-file="C:/source/credits-generator/src/pages/credits.astro" data-astro-source-loc="49:26">
+<img alt="Chocolatey logo" width="260" style="margin-right: 1rem;" src="https://img.chocolatey.org/logos/chocolatey.png"> <img alt="Chocolatey icon logo" width="200" src="https://img.chocolatey.org/logos/chocolatey-icon.png">
 
 # @chocolatey-software/ccm Third Party Licenses
 
@@ -23,23 +23,20 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [@fortawesome/fontawesome-free@7.2.0](#fortawesomefontawesome-free720-1)
     * [@microsoft/signalr@9.0.6](#microsoftsignalr906)
     * [@popperjs/core@2.11.8](#popperjscore2118)
-    * [abp-web-resources@5.9.3](#abp-web-resources593)
-    * [block-ui@2.70.1](#block-ui2701)
+    * [abp-web-resources@6.1.0](#abp-web-resources610)
     * [bootstrap@5.3.8](#bootstrap538)
     * [clipboard@2.0.11](#clipboard2011)
     * [cropperjs@1.6.2](#cropperjs162)
-    * [datatables.net-bs5@2.3.7](#datatablesnet-bs5237)
-    * [datatables.net-dt@2.3.7](#datatablesnet-dt237)
+    * [datatables.net-bs5@2.3.8](#datatablesnet-bs5238)
+    * [datatables.net-dt@2.3.8](#datatablesnet-dt238)
     * [jquery@3.7.1](#jquery371)
     * [jquery-serializejson@3.2.1](#jquery-serializejson321)
     * [jquery-validation@1.21.0](#jquery-validation1210)
-    * [jstree@3.3.17](#jstree3317)
     * [luxon@3.7.2](#luxon372)
     * [moment@2.30.1](#moment2301)
-    * [moment-timezone@0.6.1](#moment-timezone061)
+    * [moment-timezone@0.6.2](#moment-timezone062)
     * [mustache@4.2.0](#mustache420)
     * [prismjs@1.30.0](#prismjs1300)
-    * [pwstrength-bootstrap@3.1.3](#pwstrength-bootstrap313)
     * [sortablejs@1.15.7](#sortablejs1157)
     * [spin.js@4.1.2](#spinjs412)
     * [sweetalert2@11.26.24](#sweetalert2112624)
@@ -755,13 +752,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [@popperjs/core](https://github.com/popperjs/popper-core) - [License terms.](https://github.com/floating-ui/floating-ui/blob/92195083958c9496988ed4526b82b75b7256b5a4/LICENSE.md)
 
-#### abp-web-resources@5.9.3
+#### abp-web-resources@6.1.0
 
-[abp-web-resources](https://github.com/aspnetboilerplate/bower-abp-resources) - [License terms.](https://github.com/aspnetboilerplate/bower-abp-resources/blob/77305bc69ff614ea202c6b46f8b482c2aebf45ae/LICENSE)
-
-#### block-ui@2.70.1
-
-[block-ui](https://github.com/malsup/blockui) - [License terms.](https://malsup.github.io/mit-license.txt)
+[abp-web-resources](https://github.com/aspnetboilerplate/bower-abp-resources) - [License terms.](https://github.com/aspnetboilerplate/bower-abp-resources/blob/8084a3756221b966693d17458faca7f8e8ebdcd0/LICENSE)
 
 #### bootstrap@5.3.8
 
@@ -775,13 +768,13 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [cropperjs](https://github.com/fengyuanchen/cropperjs) - [License terms.](https://github.com/fengyuanchen/cropperjs/blob/da3f6f7d4b9c29c7234ddf114c71a27a269855f0/LICENSE)
 
-#### datatables.net-bs5@2.3.7
+#### datatables.net-bs5@2.3.8
 
-[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/449af852d09e47d8322b8fd911226f32b1813c6a/License.txt)
+[datatables.net-bs5](https://github.com/DataTables/Dist-DataTables-Bootstrap5) - [License terms.](https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/fb6bb07ee24644ecefcd5e794c47157e343ef300/License.txt)
 
-#### datatables.net-dt@2.3.7
+#### datatables.net-dt@2.3.8
 
-[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/e0b5e465a348d760e9bcb61882fcb1554e295665/License.txt)
+[datatables.net-dt](https://github.com/DataTables/Dist-DataTables-DataTables) - [License terms.](https://github.com/DataTables/Dist-DataTables-DataTables/blob/abd021d271654c89f2a0ac8876b08cb3fcf533fd/License.txt)
 
 #### jquery@3.7.1
 
@@ -795,10 +788,6 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [jquery-validation](https://github.com/jquery-validation/jquery-validation) - [License terms.](https://github.com/jquery-validation/jquery-validation/blob/b4f8d54633adb224457790d2bd48673d0cd984b4/LICENSE.md)
 
-#### jstree@3.3.17
-
-[jstree](https://github.com/vakata/jstree) - [License terms.](https://github.com/vakata/jstree/blob/6256df013ebd98aea138402d8ac96db3efe0c0da/LICENSE-MIT)
-
 #### luxon@3.7.2
 
 [luxon](https://github.com/moment/luxon) - [License terms.](https://github.com/moment/luxon/blob/4262a38ded7762e22608a9feb9f117b40d338ced/LICENSE.md)
@@ -807,9 +796,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [moment](https://github.com/moment/moment) - [License terms.](https://github.com/moment/moment/blob/485d9a7d709bd5f3869a7ad24630cf0746d072dc/LICENSE)
 
-#### moment-timezone@0.6.1
+#### moment-timezone@0.6.2
 
-[moment-timezone](https://github.com/moment/moment-timezone) - [License terms.](https://github.com/moment/moment-timezone/blob/13e724cb72093aa297f6e4a5acd69cbb4afd52a5/LICENSE)
+[moment-timezone](https://github.com/moment/moment-timezone) - [License terms.](https://github.com/moment/moment-timezone/blob/466c8906ddb72a8cebaaa357542a7784e689c079/LICENSE)
 
 #### mustache@4.2.0
 
@@ -818,10 +807,6 @@ https://www.apache.org/licenses/LICENSE-2.0
 #### prismjs@1.30.0
 
 [prismjs](https://github.com/PrismJS/prism) - [License terms.](https://github.com/PrismJS/prism/blob/76dde18a575831c91491895193f56081ac08b0c5/LICENSE)
-
-#### pwstrength-bootstrap@3.1.3
-
-[pwstrength-bootstrap](https://github.com/ablanco/jquery.pwstrength.bootstrap) - [License terms.](https://github.com/ablanco/jquery.pwstrength.bootstrap/blob/7dd598f7088bff1146c4e040eff217f37aee600f/MIT-LICENSE.txt)
 
 #### sortablejs@1.15.7
 

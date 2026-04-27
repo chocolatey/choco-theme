@@ -10299,7 +10299,7 @@
               if ("object" != typeof t5 || !t5) return t5;
               var n3 = t5[Symbol.toPrimitive];
               if (void 0 !== n3) {
-                var r2 = n3.call(t5, e5 || "default");
+                var r2 = n3.call(t5, e5);
                 if ("object" != typeof r2) return r2;
                 throw new TypeError("@@toPrimitive must return a primitive value.");
               }
@@ -10387,9 +10387,7 @@
           return new Promise((function(n2, r2) {
             var i2;
             return (i2 = t3.data).cache && i2.store ? n2() : new Promise((function(t4, n3) {
-              return "function" == typeof i2.src ? new Promise((function(t5, n4) {
-                return "AsyncFunction" === i2.src.constructor.name ? i2.src(e3).then(t5, n4) : t5(i2.src(e3));
-              })).then(t4, n3) : t4(i2.src);
+              return "function" == typeof i2.src ? i2.src(e3).then(t4, n3) : t4(i2.src);
             })).then((function(e4) {
               try {
                 return t3.feedback = i2.store = e4, f("response", t3), n2();
@@ -10451,7 +10449,7 @@
           })), n2.filter && (i2 = n2.filter(i2));
           var o2 = i2.slice(0, e3.resultsList.maxResults);
           e3.feedback = { query: t3, matches: i2, results: o2 }, f("results", e3);
-        }, m = "aria-expanded", v = "aria-activedescendant", y = "aria-selected", b = function(t3, e3) {
+        }, m = "aria-expanded", v = "aria-activedescendant", b = "aria-selected", y = function(t3, e3) {
           t3.feedback.selection = r({ index: e3 }, t3.feedback.results[e3]);
         }, g = function(t3) {
           t3.isOpen || ((t3.wrapper || t3.input).setAttribute(m, true), t3.list.removeAttribute("hidden"), t3.isOpen = true, f("open", t3));
@@ -10461,14 +10459,14 @@
           var n2 = e3.resultItem, r2 = e3.list.getElementsByTagName(n2.tag), o2 = !!n2.selected && n2.selected.split(" ");
           if (e3.isOpen && r2.length) {
             var s2, u2, a2 = e3.cursor;
-            t3 >= r2.length && (t3 = 0), t3 < 0 && (t3 = r2.length - 1), e3.cursor = t3, a2 > -1 && (r2[a2].removeAttribute(y), o2 && (u2 = r2[a2].classList).remove.apply(u2, i(o2))), r2[t3].setAttribute(y, true), o2 && (s2 = r2[t3].classList).add.apply(s2, i(o2)), e3.input.setAttribute(v, r2[e3.cursor].id), e3.list.scrollTop = r2[t3].offsetTop - e3.list.clientHeight + r2[t3].clientHeight + 5, e3.feedback.cursor = e3.cursor, b(e3, t3), f("navigate", e3);
+            t3 >= r2.length && (t3 = 0), t3 < 0 && (t3 = r2.length - 1), e3.cursor = t3, a2 > -1 && (r2[a2].removeAttribute(b), o2 && (u2 = r2[a2].classList).remove.apply(u2, i(o2))), r2[t3].setAttribute(b, true), o2 && (s2 = r2[t3].classList).add.apply(s2, i(o2)), e3.input.setAttribute(v, r2[e3.cursor].id), e3.list.scrollTop = r2[t3].offsetTop - e3.list.clientHeight + r2[t3].clientHeight + 5, e3.feedback.cursor = e3.cursor, y(e3, t3), f("navigate", e3);
           }
         }, A = function(t3) {
           O(t3.cursor + 1, t3);
         }, S = function(t3) {
           O(t3.cursor - 1, t3);
         }, j = function(t3, e3, n2) {
-          (n2 = n2 >= 0 ? n2 : t3.cursor) < 0 || (t3.feedback.event = e3, b(t3, n2), f("selection", t3), w(t3));
+          (n2 = n2 >= 0 ? n2 : t3.cursor) < 0 || (t3.feedback.event = e3, y(t3, n2), f("selection", t3), w(t3));
         };
         function k(t3, e3) {
           var n2 = this;
