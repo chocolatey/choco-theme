@@ -7,15 +7,16 @@
 
   // src/scripts/get-window-height.js
   var getWindowHeight = () => {
+    var _a, _b;
     const vh = window.innerHeight * 0.01;
-    document.querySelector("html").setAttribute("style", `--vh:${vh}px;`);
+    (_a = document.querySelector("html")) == null ? void 0 : _a.style.setProperty("--vh", `${vh}px`);
     const header = document.querySelector("header");
     const footer = document.querySelector("footer");
     if (!header || !footer) {
       return;
     }
     const mh = window.innerHeight - outerHeightTrue(header) - outerHeightTrue(footer);
-    document.querySelector("main").setAttribute("style", `--mh:${mh}px;`);
+    (_b = document.querySelector("main")) == null ? void 0 : _b.style.setProperty("--mh", `${mh}px`);
   };
   getWindowHeight();
   window.onresize = getWindowHeight;

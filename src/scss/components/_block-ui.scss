@@ -1,0 +1,12 @@
+.block-ui {
+    position: relative;
+    pointer-events: none; /* prevents interaction */
+}
+
+.block-ui::before {
+    position: absolute;
+    inset: 0;
+    z-index: 2000;
+    content: "";
+    background: rgba(0, 0, 0, .4); /* overlay */
+}

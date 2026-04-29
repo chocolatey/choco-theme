@@ -93,15 +93,10 @@ packageNamesRequested.forEach(async workspace => {
 
     if (repositoryInfo.name === repositoryConfig.ccm.name) {
         // Compile SASS
-        const jstreeFile = compileSass('jstree.scss', 'src/scss/packages/ccm/');
         const tempusDominusFile = compileSass('tempus-dominus.scss', 'src/scss/packages/ccm/');
         const vendorsFile = compileSass('vendors.scss', 'src/scss/packages/ccm/');
 
-        // Modify the contents of the CSS
-        jstreeFile.css = jstreeFile.css.replaceAll('url("32px.png")', 'var(--jstree-image-checkbox-path)');
-
         // Output CSS
-        await outputAndMinifyCss('jstree', workspace, jstreeFile);
         await outputAndMinifyCss('tempus-dominus', workspace, tempusDominusFile);
         await outputAndMinifyCss('vendors', workspace, vendorsFile);
     }

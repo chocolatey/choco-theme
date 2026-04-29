@@ -14,11 +14,14 @@
         "packages/*"
     ],
     "devDependencies": {
-        "cssnano": "^7.1.4",
-        "postcss": "^8.5.9",
+        "cssnano": "^7.1.7",
+        "postcss": "^8.5.12",
         "sass": "^1.99.0",
         "stylelint": "^16.26.1",
         "stylelint-config-twbs-bootstrap": "^16.1.0"
+    },
+    "resolutions": {
+        "uuid": "^14.0.0"
     },
     "scripts": {
         "audit": "yarn npm audit --all --recursive --no-deprecations",

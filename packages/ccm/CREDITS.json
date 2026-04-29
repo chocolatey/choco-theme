@@ -4,7 +4,7 @@
     "link": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm",
     "licenseLink": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm/LICENSE",
     "licenseName": "LICENSE",
-    "version": "2.7.0",
+    "version": "2.8.0",
     "dependencies": [
         {
             "name": "@eonasdan/tempus-dominus",
@@ -67,24 +67,12 @@
         {
             "name": "abp-web-resources",
             "link": "https://github.com/aspnetboilerplate/bower-abp-resources",
-            "version": "5.9.3",
+            "version": "6.1.0",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/aspnetboilerplate/bower-abp-resources/blob/77305bc69ff614ea202c6b46f8b482c2aebf45ae/LICENSE",
+                    "link": "https://github.com/aspnetboilerplate/bower-abp-resources/blob/8084a3756221b966693d17458faca7f8e8ebdcd0/LICENSE",
                     "name": "LICENSE"
-                }
-            ]
-        },
-        {
-            "name": "block-ui",
-            "link": "https://github.com/malsup/blockui",
-            "version": "2.70.1",
-            "licenses": [
-                {
-                    "type": "MIT",
-                    "link": "https://malsup.github.io/mit-license.txt",
-                    "name": "mit-license.txt"
                 }
             ]
         },
@@ -127,11 +115,11 @@
         {
             "name": "datatables.net-bs5",
             "link": "https://github.com/DataTables/Dist-DataTables-Bootstrap5",
-            "version": "2.3.7",
+            "version": "2.3.8",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/449af852d09e47d8322b8fd911226f32b1813c6a/License.txt",
+                    "link": "https://github.com/DataTables/Dist-DataTables-Bootstrap5/blob/fb6bb07ee24644ecefcd5e794c47157e343ef300/License.txt",
                     "name": "License.txt"
                 }
             ]
@@ -139,11 +127,11 @@
         {
             "name": "datatables.net-dt",
             "link": "https://github.com/DataTables/Dist-DataTables-DataTables",
-            "version": "2.3.7",
+            "version": "2.3.8",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/DataTables/Dist-DataTables-DataTables/blob/e0b5e465a348d760e9bcb61882fcb1554e295665/License.txt",
+                    "link": "https://github.com/DataTables/Dist-DataTables-DataTables/blob/abd021d271654c89f2a0ac8876b08cb3fcf533fd/License.txt",
                     "name": "License.txt"
                 }
             ]
@@ -197,18 +185,6 @@
             ]
         },
         {
-            "name": "jstree",
-            "link": "https://github.com/vakata/jstree",
-            "version": "3.3.17",
-            "licenses": [
-                {
-                    "type": "MIT",
-                    "link": "https://github.com/vakata/jstree/blob/6256df013ebd98aea138402d8ac96db3efe0c0da/LICENSE-MIT",
-                    "name": "LICENSE-MIT"
-                }
-            ]
-        },
-        {
             "name": "luxon",
             "link": "https://github.com/moment/luxon",
             "version": "3.7.2",
@@ -235,11 +211,11 @@
         {
             "name": "moment-timezone",
             "link": "https://github.com/moment/moment-timezone",
-            "version": "0.6.1",
+            "version": "0.6.2",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/moment/moment-timezone/blob/13e724cb72093aa297f6e4a5acd69cbb4afd52a5/LICENSE",
+                    "link": "https://github.com/moment/moment-timezone/blob/466c8906ddb72a8cebaaa357542a7784e689c079/LICENSE",
                     "name": "LICENSE"
                 }
             ]
@@ -265,18 +241,6 @@
                     "type": "MIT",
                     "link": "https://github.com/PrismJS/prism/blob/76dde18a575831c91491895193f56081ac08b0c5/LICENSE",
                     "name": "LICENSE"
-                }
-            ]
-        },
-        {
-            "name": "pwstrength-bootstrap",
-            "link": "https://github.com/ablanco/jquery.pwstrength.bootstrap",
-            "version": "3.1.3",
-            "licenses": [
-                {
-                    "type": "MIT",
-                    "link": "https://github.com/ablanco/jquery.pwstrength.bootstrap/blob/7dd598f7088bff1146c4e040eff217f37aee600f/MIT-LICENSE.txt",
-                    "name": "MIT-LICENSE.txt"
                 }
             ]
         },

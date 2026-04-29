@@ -42,6 +42,11 @@ $utilities: map.merge(
             class: min-h-px,
             values: $sizing-px
         ),
+        "max-height-px": (
+            property: max-height,
+            class: max-h-px,
+            values: $sizing-px
+        ),
         "min-width-px": (
             property: min-width,
             class: min-w-px,

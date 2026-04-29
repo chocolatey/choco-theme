@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/docs",
-    "version": "2.7.0",
+    "version": "2.8.0",
     "description": "Chocolatey Software theme assets for use on docs.chocolatey.org.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/docs#readme",
@@ -12,8 +12,8 @@
         "@types/prismjs": "^1"
     },
     "dependencies": {
-        "@docsearch/css": "^4.6.2",
-        "@docsearch/js": "^4.6.2",
+        "@docsearch/css": "^4.6.3",
+        "@docsearch/js": "^4.6.3",
         "@fortawesome/fontawesome-free": "^7.2.0",
         "anchor-js": "^5.0.0",
         "bootstrap": "^5.3.8",
