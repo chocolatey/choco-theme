@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/feed-tools",
-    "version": "2.8.0",
+    "version": "2.9.0",
     "description": "Chocolatey Software feed tools.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/feed-tools#readme",
@@ -12,7 +12,7 @@
         "feed": "^5.2.1",
         "gray-matter": "^4.0.3",
         "markdown-it": "^14.1.1",
-        "sanitize-html": "^2.17.3"
+        "sanitize-html": "^2.17.4"
     },
     "files": [
         "LICENSE",
