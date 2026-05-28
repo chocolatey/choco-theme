@@ -1,6 +1,6 @@
 {
     "name": "@chocolatey-software/feed-tools",
-    "version": "2.8.0",
+    "version": "2.9.0",
     "description": "Chocolatey Software feed tools.",
     "author": "Chocolatey Software (https://chocolatey.org/)",
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/feed-tools#readme",
