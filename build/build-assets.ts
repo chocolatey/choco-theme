@@ -17,7 +17,6 @@ const packageNamesRequestedConfigs = getPackageNamesRequested([
     'core',
     'design',
     'feed-tools',
-    'fest',
     'org',
     'playwright',
     'test-tools',

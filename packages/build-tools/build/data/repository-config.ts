@@ -128,7 +128,7 @@ export const repositoryConfig: Record<string, RepositoryConfig> = {
         name: 'docs'
     },
     fest: {
-        ...defaultRepositoryConfig,
+        ...astroRepositoryConfig,
         name: 'fest'
     },
     org: {
