@@ -1,6 +1,6 @@
 {
     "name": "choco-theme",
-    "packageManager": "yarn@4.13.0",
+    "packageManager": "yarn@4.15.0",
     "private": true,
     "license": "Apache-2.0",
     "repository": {
