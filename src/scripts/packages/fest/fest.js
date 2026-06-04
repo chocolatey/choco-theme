@@ -1,4 +1,5 @@
 import 'lite-youtube-embed';
+import '@choco-theme/get-window-height.js';
 import '@choco-theme/alerts.js';
 import '@choco-theme/callouts.js';
 import '@choco-theme/lazyload.js';
