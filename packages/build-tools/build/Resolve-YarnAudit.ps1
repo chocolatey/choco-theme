@@ -22,14 +22,7 @@ yarn audit --json |
 
         git add $filesToCommit
 
-        # Only commit if something is staged
-        git diff --cached --quiet
-        if ($LASTEXITCODE -eq 1) {
-            git commit -m "(#$IssueNumber) Update $package"
-        }
-        else {
-            Write-Host "No changes for $package"
-        }
+        git commit -m "(#$IssueNumber) Update $package"
     }
 
 yarn audit
