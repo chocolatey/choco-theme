@@ -11,6 +11,8 @@ Before running any commands below, ensure you have ran `yarn` in the root of thi
 | Script                                            | Action                                                                                        |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | yarn audit                                        | Audits all dependencies recursively. |
+| yarn audit-direct                                 | Audits direct dependencies only. |
+| yarn audit-resolve -- <issueNumber>               | Resolves transient dependencies in the yarn.lock file only. |
 | yarn build <package>                              | Builds the specified package. All packages will be built if no package is specified. |
 | yarn eslint                                       | Runs ESLint to determine code style errors in JS and TS files. |
 | yarn stylelint                                    | Runs Stylelint to determine code style errors in SCSS files. |
