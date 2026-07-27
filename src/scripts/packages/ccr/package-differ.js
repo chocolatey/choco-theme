@@ -44,7 +44,7 @@
                     }
 
                     // Create diff containers
-                    let fileContainer = '';
+                    let fileContainer;
 
                     // Display containers based on roles
                     // Logged out
