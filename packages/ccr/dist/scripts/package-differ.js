@@ -61,7 +61,7 @@
                 } else if (diffFileName.includes(".js")) {
                   diffLanguage = "language-diff-js";
                 }
-                let fileContainer = "";
+                let fileContainer;
                 let diffCollapseShow = "";
                 let diffCollapseExpanded = "false";
                 let diffBtnText = "Show";

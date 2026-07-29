@@ -11502,8 +11502,8 @@ ${templateEnter}`;
           }
         }
         if (calloutHeader) {
-          let calloutIcon = "";
-          let calloutIconColor = "";
+          let calloutIcon;
+          let calloutIconColor;
           let calloutHeaderText = calloutHeader.textContent;
           if (callout.classList.contains("callout-success") || calloutHeaderText.includes(":choco-success:")) {
             calloutIconColor = "success";

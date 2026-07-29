@@ -7,7 +7,7 @@ import { escapeCode } from '@choco-core/util/escape-code';
         const codeOriginal = el;
         const codeLanguage = codeOriginal.getAttribute('data-language');
         const codeReplace = codeOriginal.getAttribute('data-replace');
-        let codeHighlight = '';
+        let codeHighlight;
 
         switch (codeLanguage) {
             case 'HTML':

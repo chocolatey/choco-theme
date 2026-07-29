@@ -23671,8 +23671,8 @@ LAST-MODIFIED:` + s2[1].replace(/[^\w\-:,;=+/<>]/g, "").replace(/<br>/g, `\r
           }
         }
         if (calloutHeader) {
-          let calloutIcon = "";
-          let calloutIconColor = "";
+          let calloutIcon;
+          let calloutIconColor;
           let calloutHeaderText = calloutHeader.textContent;
           if (callout.classList.contains("callout-success") || calloutHeaderText.includes(":choco-success:")) {
             calloutIconColor = "success";

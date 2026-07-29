@@ -9852,7 +9852,7 @@
       const codeOriginal = el;
       const codeLanguage = codeOriginal.getAttribute("data-language");
       const codeReplace = codeOriginal.getAttribute("data-replace");
-      let codeHighlight = "";
+      let codeHighlight;
       switch (codeLanguage) {
         case "HTML":
         case "Astro":
@@ -9905,8 +9905,8 @@
           }
         }
         if (calloutHeader) {
-          let calloutIcon = "";
-          let calloutIconColor = "";
+          let calloutIcon;
+          let calloutIconColor;
           let calloutHeaderText = calloutHeader.textContent;
           if (callout.classList.contains("callout-success") || calloutHeaderText.includes(":choco-success:")) {
             calloutIconColor = "success";

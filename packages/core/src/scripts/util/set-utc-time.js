@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 
 export const setUtcTime = (addDays = 0, addYears = 0, oldDate) => {
-    let newDate = '';
+    let newDate;
 
     if (!oldDate) {
         newDate = DateTime.utc().plus({ days: addDays, years: addYears }).toString();
