@@ -180,6 +180,7 @@ repositoryConfig.ccm.purgeCss = {
         /^selected/,
         /^dt-column-header/,
         /^fa-(brands|google|twitter|x-twitter|square-x-twitter|google|microsoft|facebook|facebook-f|square-facebook)/,
+        /^alert-(warning|danger|success|info)/,
     ]
 };
 
