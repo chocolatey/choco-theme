@@ -179,7 +179,7 @@ repositoryConfig.ccm.purgeCss = {
         /^fill-(blue|pink|purple|green|red|yellow|orange|success|danger|info|primary)/,
         /^selected/,
         /^dt-column-header/,
-        /^fa-(brands|google|twitter|x-twitter|square-x-twitter|google|microsoft|facebook|facebook-f|square-facebook)/,
+        /^fa-(brands|facebook|facebook-f|google|microsoft|openid|square-facebook|square-x-twitter|twitter|x-twitter)/,
         /^alert-(warning|danger|success|info)/,
     ]
 };
