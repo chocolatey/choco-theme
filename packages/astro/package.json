@@ -10,7 +10,7 @@
         "@astrojs/node": "11.0.3",
         "@astrojs/rss": "4.0.19",
         "@astrojs/sitemap": "3.7.3",
-        "astro": "7.1.5",
+        "astro": "7.2.8",
         "rehype-mermaid": "^3.0.0",
         "remark-custom-header-id": "^1.0.0"
     },
