@@ -6,12 +6,12 @@
     "homepage": "https://github.com/chocolatey/choco-theme/blob/main/packages/feed-tools#readme",
     "license": "Apache-2.0",
     "dependencies": {
-        "@types/markdown-it": "^14",
+        "@types/markdown-it": "^14.2.0",
         "@types/sanitize-html": "^2",
         "fast-glob": "^3.3.3",
         "feed": "^5.2.1",
         "gray-matter": "^4.0.3",
-        "markdown-it": "^14.3.0",
+        "markdown-it": "^14.3.2",
         "sanitize-html": "^2.17.7"
     },
     "files": [

@@ -757,7 +757,7 @@ __metadata:
     jquery-validation: "npm:1.21.0"
     license-report: "npm:^6.8.2"
     luxon: "npm:^3.7.2"
-    moment: "npm:^2.30.1"
+    moment: "npm:^2.31.0"
     moment-timezone: "npm:^0.6.2"
     mustache: "npm:^4.2.0"
     prismjs: "npm:^1.30.0"
@@ -860,12 +860,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chocolatey-software/feed-tools@workspace:packages/feed-tools"
   dependencies:
-    "@types/markdown-it": "npm:^14"
+    "@types/markdown-it": "npm:^14.2.0"
     "@types/sanitize-html": "npm:^2"
     fast-glob: "npm:^3.3.3"
     feed: "npm:^5.2.1"
     gray-matter: "npm:^4.0.3"
-    markdown-it: "npm:^14.3.0"
+    markdown-it: "npm:^14.3.2"
     sanitize-html: "npm:^2.17.7"
   languageName: unknown
   linkType: soft
@@ -3503,13 +3503,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/markdown-it@npm:^14":
-  version: 14.1.2
-  resolution: "@types/markdown-it@npm:14.1.2"
+"@types/markdown-it@npm:^14.2.0":
+  version: 14.2.0
+  resolution: "@types/markdown-it@npm:14.2.0"
   dependencies:
     "@types/linkify-it": "npm:^5"
     "@types/mdurl": "npm:^2"
-  checksum: 10c0/34f709f0476bd4e7b2ba7c3341072a6d532f1f4cb6f70aef371e403af8a08a7c372ba6907ac426bc618d356dab660c5b872791ff6c1ead80c483e0d639c6f127
+  checksum: 10c0/60ff1a0495ef303310744566342c49b4b3e76fbdca82c5ec28d88731fc934b0c63335d25bca6133903c877f2c41c59cdfddefb3626c6ee0780b9573ddf6aefe4
   languageName: node
   linkType: hard
 
@@ -7982,9 +7982,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it@npm:^14.3.0":
-  version: 14.3.0
-  resolution: "markdown-it@npm:14.3.0"
+"markdown-it@npm:^14.3.2":
+  version: 14.3.2
+  resolution: "markdown-it@npm:14.3.2"
   dependencies:
     argparse: "npm:^2.0.1"
     entities: "npm:^4.5.0"
@@ -7994,7 +7994,7 @@ __metadata:
     uc.micro: "npm:^2.1.0"
   bin:
     markdown-it: bin/markdown-it.mjs
-  checksum: 10c0/b2dea908968109d6e9088ac972254bca842157d85d2e6838d0eb263cd8106e7e6a72663b138366cc98f57441d9f3f2ebfb842bf7b2f9e1c13187ebe70e0af8f9
+  checksum: 10c0/51d03a244bbacc84aa7229fd784ccc16a76cb853cf93f668c4dfc1e9eb22d03138678e7743accac2304e03151a995068492fde56c7a9fbe6785b4169036cf590
   languageName: node
   linkType: hard
 
@@ -8906,10 +8906,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment@npm:^2.29.4, moment@npm:^2.30.1":
+"moment@npm:^2.29.4":
   version: 2.30.1
   resolution: "moment@npm:2.30.1"
   checksum: 10c0/865e4279418c6de666fca7786607705fd0189d8a7b7624e2e56be99290ac846f90878a6f602e34b4e0455c549b85385b1baf9966845962b313699e7cb847543a
+  languageName: node
+  linkType: hard
+
+"moment@npm:^2.31.0":
+  version: 2.31.0
+  resolution: "moment@npm:2.31.0"
+  checksum: 10c0/3755b186b8ff62c565685ce69dde55bf46003c0329139be5c8dd7845cd567bfd7d02be3a13e379a25acb9e98f6b87136c4776745e440615a4f5ca8dd9a8815b9
   languageName: node
   linkType: hard
 
