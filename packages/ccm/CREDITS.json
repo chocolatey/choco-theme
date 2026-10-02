@@ -4,7 +4,7 @@
     "link": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm",
     "licenseLink": "https://github.com/chocolatey/choco-theme/blob/main/packages/ccm/LICENSE",
     "licenseName": "LICENSE",
-    "version": "2.13.0",
+    "version": "2.14.1",
     "dependencies": [
         {
             "name": "@eonasdan/tempus-dominus",
@@ -199,11 +199,11 @@
         {
             "name": "moment",
             "link": "https://github.com/moment/moment",
-            "version": "2.30.1",
+            "version": "2.31.0",
             "licenses": [
                 {
                     "type": "MIT",
-                    "link": "https://github.com/moment/moment/blob/485d9a7d709bd5f3869a7ad24630cf0746d072dc/LICENSE",
+                    "link": "https://github.com/moment/moment/blob/15b45d48a176312e8f34143c5a800090abf4787f/LICENSE",
                     "name": "LICENSE"
                 }
             ]
