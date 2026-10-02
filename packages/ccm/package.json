@@ -33,7 +33,7 @@
         "jquery-serializejson": "^3.2.1",
         "jquery-validation": "1.21.0",
         "luxon": "^3.7.2",
-        "moment": "^2.30.1",
+        "moment": "^2.31.0",
         "moment-timezone": "^0.6.2",
         "mustache": "^4.2.0",
         "prismjs": "^1.30.0",
