@@ -914,7 +914,7 @@ __metadata:
     "@types/bootstrap": "npm:^5.2.10"
     "@types/jquery": "npm:^3"
     "@types/prismjs": "npm:^1"
-    add-to-calendar-button: "npm:^3.3.0"
+    add-to-calendar-button: "npm:^3.5.0"
     balance-text: "npm:^3.3.1"
     bootstrap: "npm:^5.3.8"
     clipboard: "npm:^2.0.11"
@@ -3953,13 +3953,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"add-to-calendar-button@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "add-to-calendar-button@npm:3.3.0"
+"add-to-calendar-button@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "add-to-calendar-button@npm:3.5.0"
   dependencies:
     lit: "npm:^3.3.3"
     timezones-ical-library: "npm:^2.3.2"
-  checksum: 10c0/f4b99628ac20bb4823a688e44195ccf9ae772da5c8573aa6e50796d6b418b6be95fb53ee4b5cf40cf9b2874aedbaaadad162ef4af1d04c5b0946d598c331b561
+  checksum: 10c0/b6c4eef73186eca1dcf7e36c316a9bcf9a835c6d22ff859088fefe577c0f0ce8620453af44253f7ffd67a15d6889836d4b325cef63d1202d8f07283827e74f93
   languageName: node
   linkType: hard
 
