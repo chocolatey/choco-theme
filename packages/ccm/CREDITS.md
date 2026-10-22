@@ -33,7 +33,7 @@ Chocolatey uses a number of 3rd party components. Their details are below.
     * [jquery-serializejson@3.2.1](#jquery-serializejson321)
     * [jquery-validation@1.21.0](#jquery-validation1210)
     * [luxon@3.7.2](#luxon372)
-    * [moment@2.30.1](#moment2301)
+    * [moment@2.31.0](#moment2310)
     * [moment-timezone@0.6.2](#moment-timezone062)
     * [mustache@4.2.0](#mustache420)
     * [prismjs@1.30.0](#prismjs1300)
@@ -792,9 +792,9 @@ https://www.apache.org/licenses/LICENSE-2.0
 
 [luxon](https://github.com/moment/luxon) - [License terms.](https://github.com/moment/luxon/blob/4262a38ded7762e22608a9feb9f117b40d338ced/LICENSE.md)
 
-#### moment@2.30.1
+#### moment@2.31.0
 
-[moment](https://github.com/moment/moment) - [License terms.](https://github.com/moment/moment/blob/485d9a7d709bd5f3869a7ad24630cf0746d072dc/LICENSE)
+[moment](https://github.com/moment/moment) -[License terms.](https://github.com/moment/moment/blob/15b45d48a176312e8f34143c5a800090abf4787f/LICENSE)
 
 #### moment-timezone@0.6.2
 
