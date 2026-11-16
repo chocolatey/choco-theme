@@ -137,22 +137,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/internal-helpers@npm:0.13.0":
-  version: 0.13.0
-  resolution: "@astrojs/internal-helpers@npm:0.13.0"
-  dependencies:
-    "@types/hast": "npm:^3.0.5"
-    "@types/mdast": "npm:^4.0.4"
-    picomatch: "npm:^4.0.7"
-    retext-smartypants: "npm:^6.2.0"
-    shiki: "npm:^4.5.0"
-    smol-toml: "npm:^1.9.1"
-    unified: "npm:^11.0.5"
-    yaml: "npm:^2.9.1"
-  checksum: 10c0/c0c930ef9b48d8d16da63b83da0e9c3c2b47b5c1821aa8067fde7eba4cfd55423743dbeb3f8455d9e1708389ed85047a01a5de334e6ecc7f75f8382deaddd9c8
-  languageName: node
-  linkType: hard
-
 "@astrojs/internal-helpers@npm:^0.13.2":
   version: 0.13.2
   resolution: "@astrojs/internal-helpers@npm:0.13.2"
@@ -169,19 +153,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/markdown-remark@npm:^7.3.4":
-  version: 7.3.4
-  resolution: "@astrojs/markdown-remark@npm:7.3.4"
+"@astrojs/markdown-remark@npm:^7.3.9":
+  version: 7.3.9
+  resolution: "@astrojs/markdown-remark@npm:7.3.9"
   dependencies:
-    "@astrojs/internal-helpers": "npm:0.13.0"
-    "@astrojs/prism": "npm:4.1.1"
+    "@astrojs/internal-helpers": "npm:^0.13.2"
+    "@astrojs/prism": "npm:^4.1.2"
     "@mdx-js/mdx": "npm:^3.1.1"
     acorn: "npm:^8.19.0"
     estree-util-visit: "npm:^2.0.0"
     github-slugger: "npm:^2.0.0"
     hast-util-from-html: "npm:^2.0.3"
-    hast-util-to-html: "npm:^9.0.5"
-    hast-util-to-text: "npm:^4.0.2"
+    hast-util-to-html: "npm:^9.0.6"
+    hast-util-to-text: "npm:^4.0.3"
     mdast-util-definitions: "npm:^6.0.0"
     rehype-raw: "npm:^7.0.0"
     rehype-stringify: "npm:^10.0.1"
@@ -192,22 +176,10 @@ __metadata:
     source-map: "npm:^0.8.0"
     unified: "npm:^11.0.5"
     unist-util-remove-position: "npm:^5.0.0"
-    unist-util-visit: "npm:^5.1.0"
-    unist-util-visit-parents: "npm:^6.0.2"
+    unist-util-visit: "npm:^5.2.0"
+    unist-util-visit-parents: "npm:^6.1.0"
     vfile: "npm:^6.0.3"
-  checksum: 10c0/731381b29a815533fd83102d0e11222003d18dac33840a60b539272f0c5b88779d68b3d80d8ce4bc72ad5fa23372c0073c227a708300a6cdc878d3d1c7ed193b
-  languageName: node
-  linkType: hard
-
-"@astrojs/markdown-satteri@npm:0.4.5":
-  version: 0.4.5
-  resolution: "@astrojs/markdown-satteri@npm:0.4.5"
-  dependencies:
-    "@astrojs/internal-helpers": "npm:0.13.0"
-    "@astrojs/prism": "npm:4.1.1"
-    github-slugger: "npm:^2.0.0"
-    satteri: "npm:^0.10.5"
-  checksum: 10c0/13363b13239ba959f406bbf6dd9601f5c01e4642213a51d7c0184edf255465b78b7dbb4e86800ab92e4aa2c51d4f0d2e5c9f8d69ee28960ec110529ad8f09c5c
+  checksum: 10c0/ab26a18d685e533191898d381c91593d87f642f9bbf845770b0645ea39fef556da92e07da66867546cb14d36335e49cf4f2179b9f5e8154d6c7f5d35e5df8d32
   languageName: node
   linkType: hard
 
@@ -223,13 +195,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/mdx@npm:8.1.1":
-  version: 8.1.1
-  resolution: "@astrojs/mdx@npm:8.1.1"
+"@astrojs/mdx@npm:8.1.6":
+  version: 8.1.6
+  resolution: "@astrojs/mdx@npm:8.1.6"
   dependencies:
-    "@astrojs/internal-helpers": "npm:0.13.0"
-    "@astrojs/markdown-satteri": "npm:0.4.5"
-    es-module-lexer: "npm:^3.0.3"
+    "@astrojs/internal-helpers": "npm:^0.13.2"
+    "@astrojs/markdown-satteri": "npm:^0.4.10"
+    es-module-lexer: "npm:^3.0.4"
   peerDependencies:
     "@astrojs/markdown-remark": ^7.3.0
     "@astrojs/markdown-satteri": ^0.4.0
@@ -237,7 +209,7 @@ __metadata:
   peerDependenciesMeta:
     "@astrojs/markdown-remark":
       optional: true
-  checksum: 10c0/88258e770791d4757cdf4af21cc6c523875d0e5c0e91ddaf60c59b9d1704940c20dc66b64f6ed824de2eaa5ec733b48ceede964ed09b692c6d733f0461cf6d07
+  checksum: 10c0/f1dd503a24f56c637054c78d3e03d55cf851398a3922c21f03d3f40b689ff972fbfdb0187ad7107749aa25a8e6ff2161a16d9b5d933ec2418839511d7731fb4c
   languageName: node
   linkType: hard
 
@@ -251,15 +223,6 @@ __metadata:
   peerDependencies:
     astro: ^7.2.1
   checksum: 10c0/41dc41a4891b358e6c03aa78124d4de11202dff4e88538319f6cb51172966638d7db509f94ff184d3e4186feb7e04326290227df605a53675270241d9830f531
-  languageName: node
-  linkType: hard
-
-"@astrojs/prism@npm:4.1.1":
-  version: 4.1.1
-  resolution: "@astrojs/prism@npm:4.1.1"
-  dependencies:
-    prismjs: "npm:^1.30.0"
-  checksum: 10c0/21bdf54704b5e0cba740e58211a1ba63b9f2443a9a327912d1406c38e11874689210b45d764d82bf10fedf0d5b1892631b93b9377da6b0172b2520d35f994e72
   languageName: node
   linkType: hard
 
@@ -293,13 +256,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/sitemap@npm:3.7.4":
-  version: 3.7.4
-  resolution: "@astrojs/sitemap@npm:3.7.4"
+"@astrojs/sitemap@npm:3.7.5":
+  version: 3.7.5
+  resolution: "@astrojs/sitemap@npm:3.7.5"
   dependencies:
-    sitemap: "npm:^9.0.0"
-    zod: "npm:^4.3.6"
-  checksum: 10c0/6aff00b6963f00a44e14db1cf26c4682702b43417c145d8d7a6871508ecbf80ba8db689b92acb9ab3b3ca9a14f1a1576b57c54d5c70e9e0e7acf477851329d29
+    sitemap: "npm:^10.0.0"
+    zod: "npm:^4.6.7"
+  checksum: 10c0/d1dd47c67fc98d4e8376a336a3cff9e0c0991f17f947260425f7bb66f50560982aa4be38a73532d6f4bd487bc42e10fd78bf80a453e2ecd4c1d6dce0401bc373
   languageName: node
   linkType: hard
 
@@ -622,24 +585,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bruits/satteri-darwin-arm64@npm:0.10.5":
-  version: 0.10.5
-  resolution: "@bruits/satteri-darwin-arm64@npm:0.10.5"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@bruits/satteri-darwin-arm64@npm:0.11.7":
   version: 0.11.7
   resolution: "@bruits/satteri-darwin-arm64@npm:0.11.7"
   conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@bruits/satteri-darwin-x64@npm:0.10.5":
-  version: 0.10.5
-  resolution: "@bruits/satteri-darwin-x64@npm:0.10.5"
-  conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
@@ -657,24 +606,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bruits/satteri-linux-arm64-gnu@npm:0.10.5":
-  version: 0.10.5
-  resolution: "@bruits/satteri-linux-arm64-gnu@npm:0.10.5"
-  conditions: os=linux & cpu=arm64 & libc=glibc
-  languageName: node
-  linkType: hard
-
 "@bruits/satteri-linux-arm64-gnu@npm:0.11.7":
   version: 0.11.7
   resolution: "@bruits/satteri-linux-arm64-gnu@npm:0.11.7"
   conditions: os=linux & cpu=arm64 & libc=glibc
-  languageName: node
-  linkType: hard
-
-"@bruits/satteri-linux-arm64-musl@npm:0.10.5":
-  version: 0.10.5
-  resolution: "@bruits/satteri-linux-arm64-musl@npm:0.10.5"
-  conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
@@ -685,13 +620,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bruits/satteri-linux-x64-gnu@npm:0.10.5":
-  version: 0.10.5
-  resolution: "@bruits/satteri-linux-x64-gnu@npm:0.10.5"
-  conditions: os=linux & cpu=x64 & libc=glibc
-  languageName: node
-  linkType: hard
-
 "@bruits/satteri-linux-x64-gnu@npm:0.11.7":
   version: 0.11.7
   resolution: "@bruits/satteri-linux-x64-gnu@npm:0.11.7"
@@ -699,28 +627,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bruits/satteri-linux-x64-musl@npm:0.10.5":
-  version: 0.10.5
-  resolution: "@bruits/satteri-linux-x64-musl@npm:0.10.5"
-  conditions: os=linux & cpu=x64 & libc=musl
-  languageName: node
-  linkType: hard
-
 "@bruits/satteri-linux-x64-musl@npm:0.11.7":
   version: 0.11.7
   resolution: "@bruits/satteri-linux-x64-musl@npm:0.11.7"
   conditions: os=linux & cpu=x64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@bruits/satteri-wasm32-wasi@npm:0.10.5":
-  version: 0.10.5
-  resolution: "@bruits/satteri-wasm32-wasi@npm:0.10.5"
-  dependencies:
-    "@emnapi/core": "npm:1.11.1"
-    "@emnapi/runtime": "npm:1.11.1"
-    "@napi-rs/wasm-runtime": "npm:^1.2.3"
-  conditions: cpu=wasm32
   languageName: node
   linkType: hard
 
@@ -735,24 +645,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bruits/satteri-win32-arm64-msvc@npm:0.10.5":
-  version: 0.10.5
-  resolution: "@bruits/satteri-win32-arm64-msvc@npm:0.10.5"
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@bruits/satteri-win32-arm64-msvc@npm:0.11.7":
   version: 0.11.7
   resolution: "@bruits/satteri-win32-arm64-msvc@npm:0.11.7"
   conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@bruits/satteri-win32-x64-msvc@npm:0.10.5":
-  version: 0.10.5
-  resolution: "@bruits/satteri-win32-x64-msvc@npm:0.10.5"
-  conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
@@ -811,11 +707,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chocolatey-software/astro@workspace:packages/astro"
   dependencies:
-    "@astrojs/markdown-remark": "npm:^7.3.4"
-    "@astrojs/mdx": "npm:8.1.1"
+    "@astrojs/markdown-remark": "npm:^7.3.9"
+    "@astrojs/mdx": "npm:8.1.6"
     "@astrojs/node": "npm:11.1.13"
     "@astrojs/rss": "npm:4.0.19"
-    "@astrojs/sitemap": "npm:3.7.4"
+    "@astrojs/sitemap": "npm:3.7.5"
     astro: "npm:7.4.12"
     rehype-mermaid: "npm:^3.0.0"
     remark-custom-header-id: "npm:^1.0.0"
@@ -2426,18 +2322,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/wasm-runtime@npm:^1.2.3":
-  version: 1.2.3
-  resolution: "@napi-rs/wasm-runtime@npm:1.2.3"
-  dependencies:
-    "@tybys/wasm-util": "npm:^0.10.3"
-  peerDependencies:
-    "@emnapi/core": ^1.7.1 || ^2.0.0-alpha.4
-    "@emnapi/runtime": ^1.7.1 || ^2.0.0-alpha.4
-  checksum: 10c0/6da0a4bf9df79e9abfb3e3d462f6a5d42889be39426040038c9dd5925865585d7dbd06dd439c2ffc20f49ef2751412da5bd748cfb3c5b049142d72c0550f6f79
-  languageName: node
-  linkType: hard
-
 "@napi-rs/wasm-runtime@npm:^1.2.7":
   version: 1.2.7
   resolution: "@napi-rs/wasm-runtime@npm:1.2.7"
@@ -3786,7 +3670,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=22":
+"@types/node@npm:*, @types/node@npm:>=22, @types/node@npm:^22.0.0 || ^24.0.0 || ^26.0.0":
   version: 26.6.6
   resolution: "@types/node@npm:26.6.6"
   dependencies:
@@ -3795,7 +3679,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^24.12.2, @types/node@npm:^24.9.2":
+"@types/node@npm:^24.12.2":
   version: 24.12.2
   resolution: "@types/node@npm:24.12.2"
   dependencies:
@@ -4277,13 +4161,6 @@ __metadata:
   version: 1.0.1
   resolution: "anynum@npm:1.0.1"
   checksum: 10c0/cfda92c9215722fc4b15faa33d0eb3d5dfd28fba6cb67c1f50d214feaa7ba6497814a3e110777853585de6d91c8c962a1ae425b637d3598d9f9d8f6f6802e5bb
-  languageName: node
-  linkType: hard
-
-"arg@npm:^5.0.0":
-  version: 5.0.2
-  resolution: "arg@npm:5.0.2"
-  checksum: 10c0/ccaf86f4e05d342af6666c569f844bec426595c567d32a8289715087825c2ca7edd8a3d204e4d2fb2aa4602e09a57d0c13ea8c9eea75aac3dbb4af5514e6800e
   languageName: node
   linkType: hard
 
@@ -5954,7 +5831,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-module-lexer@npm:^3.0.3, es-module-lexer@npm:^3.0.4":
+"es-module-lexer@npm:^3.0.4":
   version: 3.0.5
   resolution: "es-module-lexer@npm:3.0.5"
   checksum: 10c0/846a0fbe10fc0bf510995dbfa5bc48d78f9cb15ee3249a03d4c7f4f35e61924bef8602e82f08735e1d172e26df6bc4acc1d7ea2e96666eb654a55436b9b618e3
@@ -7141,7 +7018,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hast-util-to-html@npm:^9.0.0, hast-util-to-html@npm:^9.0.5, hast-util-to-html@npm:^9.0.6":
+"hast-util-to-html@npm:^9.0.0, hast-util-to-html@npm:^9.0.6":
   version: 9.0.6
   resolution: "hast-util-to-html@npm:9.0.6"
   dependencies:
@@ -7210,7 +7087,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hast-util-to-text@npm:^4.0.2":
+"hast-util-to-text@npm:^4.0.3":
   version: 4.0.3
   resolution: "hast-util-to-text@npm:4.0.3"
   dependencies:
@@ -10935,46 +10812,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"satteri@npm:^0.10.5":
-  version: 0.10.5
-  resolution: "satteri@npm:0.10.5"
-  dependencies:
-    "@bruits/satteri-darwin-arm64": "npm:0.10.5"
-    "@bruits/satteri-darwin-x64": "npm:0.10.5"
-    "@bruits/satteri-linux-arm64-gnu": "npm:0.10.5"
-    "@bruits/satteri-linux-arm64-musl": "npm:0.10.5"
-    "@bruits/satteri-linux-x64-gnu": "npm:0.10.5"
-    "@bruits/satteri-linux-x64-musl": "npm:0.10.5"
-    "@bruits/satteri-wasm32-wasi": "npm:0.10.5"
-    "@bruits/satteri-win32-arm64-msvc": "npm:0.10.5"
-    "@bruits/satteri-win32-x64-msvc": "npm:0.10.5"
-    "@types/estree-jsx": "npm:^1.0.5"
-    "@types/hast": "npm:^3.0.5"
-    "@types/mdast": "npm:^4.0.4"
-    "@types/unist": "npm:^3.0.3"
-  dependenciesMeta:
-    "@bruits/satteri-darwin-arm64":
-      optional: true
-    "@bruits/satteri-darwin-x64":
-      optional: true
-    "@bruits/satteri-linux-arm64-gnu":
-      optional: true
-    "@bruits/satteri-linux-arm64-musl":
-      optional: true
-    "@bruits/satteri-linux-x64-gnu":
-      optional: true
-    "@bruits/satteri-linux-x64-musl":
-      optional: true
-    "@bruits/satteri-wasm32-wasi":
-      optional: true
-    "@bruits/satteri-win32-arm64-msvc":
-      optional: true
-    "@bruits/satteri-win32-x64-msvc":
-      optional: true
-  checksum: 10c0/e1a9f6f9784c8ea79be59ddb803403999521632ef57a595579e1e310646172c9661a0ce41c2667ed9b82a55d697dd192f6470e9a6ee348d5b207172d89d0cba3
-  languageName: node
-  linkType: hard
-
 "satteri@npm:^0.11.6":
   version: 0.11.7
   resolution: "satteri@npm:0.11.7"
@@ -11216,7 +11053,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^4.5.0, shiki@npm:^4.6.0":
+"shiki@npm:^4.6.0":
   version: 4.6.0
   resolution: "shiki@npm:4.6.0"
   dependencies:
@@ -11264,17 +11101,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sitemap@npm:^9.0.0":
-  version: 9.0.1
-  resolution: "sitemap@npm:9.0.1"
+"sitemap@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "sitemap@npm:10.0.0"
   dependencies:
-    "@types/node": "npm:^24.9.2"
+    "@types/node": "npm:^22.0.0 || ^24.0.0 || ^26.0.0"
     "@types/sax": "npm:^1.2.1"
-    arg: "npm:^5.0.0"
     sax: "npm:^1.4.1"
   bin:
-    sitemap: dist/esm/cli.js
-  checksum: 10c0/dddd3c9f30fd09655fa2c1bd9bb182ed860717b3ba681fdc1ac66ad25b5f399dafdd8b87d5ba4ee914ea14e7b11841aadc3af61e4a45242a14f28194efe12416
+    sitemap: dist/cli.js
+  checksum: 10c0/9f9e5b5aa83a381c151ad6b02f043ee748c2368e0a7591d559bc6d9283b26b0745c405a814b640a0e077c617e62019f89fd8d68fce5d16163ade4fe5a1ab27b6
   languageName: node
   linkType: hard
 
@@ -12256,7 +12092,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unist-util-visit-parents@npm:^6.0.2, unist-util-visit-parents@npm:^6.1.0":
+"unist-util-visit-parents@npm:^6.1.0":
   version: 6.1.0
   resolution: "unist-util-visit-parents@npm:6.1.0"
   dependencies:
@@ -12277,7 +12113,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unist-util-visit@npm:^5.1.0":
+"unist-util-visit@npm:^5.2.0":
   version: 5.2.0
   resolution: "unist-util-visit@npm:5.2.0"
   dependencies:
