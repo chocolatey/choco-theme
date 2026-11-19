@@ -42,17 +42,17 @@ source ~/.bashrc
 After setting the environment variable, the below command can be ran from the consuming project or website from where the `package.json` is located.
 
 ```powershell
-yarn link-packages <package name>
+yarn link-local <package name>
 
 // Examples
-yarn link-packages astro // Link the @chocolatey-software/astro package
+yarn link-local astro // Link the @chocolatey-software/astro package
 
-yarn link-packages astro docs // Link the @chocolatey-software/astro and @chocolatey-software/docs packages
+yarn link-local astro docs // Link the @chocolatey-software/astro and @chocolatey-software/docs packages
 
-yarn link-packages // Link all @chocolatey/software/* packages listed in the package.json
+yarn link-local // Link all @chocolatey/software/* packages listed in the package.json
 ```
 
-Any changes that are made in the linked package(s) will be reflected in the consuming project or website locally. If the consuming project or website utilizes assets that are located in the `/dist` folder of the package, the build step must first be ran for that package within choco-theme. For example, if you have linked the docs repository using `yarn link-packages docs`, then in order to see changes reflected in your locally running website, you must first run `yarn build docs` to regenerate the `/dist` folder for @chocolatey-software/docs package.
+Any changes that are made in the linked package(s) will be reflected in the consuming project or website locally. If the consuming project or website utilizes assets that are located in the `/dist` folder of the package, the build step must first be ran for that package within choco-theme. For example, if you have linked the docs repository using `yarn link-local docs`, then in order to see changes reflected in your locally running website, you must first run `yarn build docs` to regenerate the `/dist` folder for @chocolatey-software/docs package.
 
 ### Install ESLint Extension
 
